@@ -2,6 +2,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     systems.url = "github:nix-systems/default";
+
+    flake-utils.url = "github:numtide/flake-utils";
+    flake-utils.inputs.systems.follows = "systems";
     devenv.url = "github:cachix/devenv";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -14,32 +17,30 @@
   outputs = {
     self,
     nixpkgs,
-    devenv,
-    systems,
     ...
-  } @ inputs: let
-    forEachSystem = nixpkgs.lib.genAttrs (import systems);
-  in {
-    packages = forEachSystem (system: {
-      devenv-up = self.devShells.${system}.default.config.procfileScript;
-      devenv-test = self.devShells.${system}.default.config.test;
-    });
-
-    devShells = forEachSystem (system: let
+  } @ inputs:
+    inputs.flake-utils.lib.eachDefaultSystem (system: let
+      #
       pkgs = import nixpkgs {
         inherit system;
         overlays = [];
         config.allowUnfree = true;
       };
-      # Rosetta is required some pkgs for macOS on Apple Silicon
+      # Rosetta is required to translate some packages macOS on Apple Silicon.
       rosettaPkgs =
         if isDarwin && isAarch64
         then pkgs.pkgsx86_64Darwin
         else pkgs;
 
       inherit (pkgs.stdenv) isLinux isDarwin isAarch64;
+      inherit (pkgs) lib;
     in {
-      default = devenv.lib.mkShell {
+      packages = {
+        devenv-up = self.devShells.${system}.default.config.procfileScript;
+        devenv-test = self.devShells.${system}.default.config.test;
+      };
+
+      devShells.default = inputs.devenv.lib.mkShell {
         inherit inputs pkgs;
         modules = [
           {
@@ -88,12 +89,12 @@
                 alejandra
                 libclang
               ]
-              ++ (pkgs.lib.optionals isLinux (with pkgs; [
+              ++ (lib.optionals isLinux (with pkgs; [
                 xorg.libX11
                 ghdl
                 nvc
               ]))
-              ++ (pkgs.lib.optionals isDarwin (with pkgs; [
+              ++ (lib.optionals isDarwin (with pkgs; [
                 darwin.apple_sdk.frameworks.CoreFoundation
                 darwin.apple_sdk.frameworks.Security
                 darwin.apple_sdk.frameworks.SystemConfiguration
@@ -107,18 +108,18 @@
 
               export REPO_ROOT=$(git rev-parse --show-toplevel)
               export LD_LIBRARY_PATH=${
-                pkgs.lib.makeLibraryPath (
+                lib.makeLibraryPath (
                   (with pkgs; [
                     pkgs.mesa
                     stdenv.cc
                     tbb # Intel Threading Building Blocks
                     llvmPackages.openmp # OpenMP support
                   ])
-                  ++ (pkgs.lib.optionals isLinux [
+                  ++ (lib.optionals isLinux [
                     pkgs.xorg.libX11
                     pkgs.ghdl
                   ])
-                  ++ (pkgs.lib.optionals isDarwin [
+                  ++ (lib.optionals isDarwin [
                     pkgs.darwin.apple_sdk.frameworks.CoreFoundation
                     pkgs.darwin.apple_sdk.frameworks.Security
                     pkgs.darwin.apple_sdk.frameworks.SystemConfiguration
@@ -154,5 +155,4 @@
         ];
       };
     });
-  };
 }
