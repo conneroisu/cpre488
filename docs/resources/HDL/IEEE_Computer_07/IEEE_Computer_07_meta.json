@@ -1,0 +1,844 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Achieving High Performance\nwith FPGA-Based Computing",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          49.380231857299805,
+          46.001692950725555
+        ],
+        [
+          515.3457183837891,
+          46.001692950725555
+        ],
+        [
+          514.862060546875,
+          211.60658025741577
+        ],
+        [
+          48.255231857299805,
+          211.60658025741577
+        ]
+      ]
+    },
+    {
+      "title": "AVOIDING IMPLEMENTATIONAL HEAT",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          293.0262794494629,
+          710.7050814628601
+        ],
+        [
+          477.677001953125,
+          709.1582064628601
+        ],
+        [
+          477.677001953125,
+          722.2233963012695
+        ],
+        [
+          293.0262794494629,
+          722.2233963012695
+        ]
+      ]
+    },
+    {
+      "title": "Table 1. HPC/FPGA application design techniques.",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          54.3905029296875,
+          86.76374101638794
+        ],
+        [
+          245.73037719726562,
+          86.76374101638794
+        ],
+        [
+          244.6233673095703,
+          95.31073522567749
+        ],
+        [
+          53.521416664123535,
+          95.31073522567749
+        ]
+      ]
+    },
+    {
+      "title": "APPLICATION RESTRUCTURING",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          47.838223457336426,
+          615.120593547821
+        ],
+        [
+          199.5992889404297,
+          615.120593547821
+        ],
+        [
+          199.5992889404297,
+          626.223388671875
+        ],
+        [
+          47.838223457336426,
+          626.223388671875
+        ]
+      ]
+    },
+    {
+      "title": "Method 1: Use an algorithm optimal for FPGAs",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          47.647353172302246,
+          675.2233963012695
+        ],
+        [
+          276.89398193359375,
+          674.2972011566162
+        ],
+        [
+          276.89398193359375,
+          686.2233963012695
+        ],
+        [
+          47.647353172302246,
+          686.2233963012695
+        ]
+      ]
+    },
+    {
+      "title": "Method 2: Use a computing mode \nappropriate for FPGAs",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          294.3462219238281,
+          651.223388671875
+        ],
+        [
+          462.81283950805664,
+          651.1500163078308
+        ],
+        [
+          462.350341796875,
+          674.2232894897461
+        ],
+        [
+          293.49072647094727,
+          675.0271611213684
+        ]
+      ]
+    },
+    {
+      "title": "Method 3: Use appropriate FPGA structures",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          48.12389373779297,
+          435.223388671875
+        ],
+        [
+          262.6622619628906,
+          434.9778699874878
+        ],
+        [
+          262.6622619628906,
+          446.223388671875
+        ],
+        [
+          47.08167743682861,
+          447.11173725128174
+        ]
+      ]
+    },
+    {
+      "title": "Method 4: Living with Amdahl's law",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          48.12389373779297,
+          687.2233963012695
+        ],
+        [
+          223.44309997558594,
+          686.0364661216736
+        ],
+        [
+          223.06906127929688,
+          698.2233963012695
+        ],
+        [
+          47.5715389251709,
+          698.2233963012695
+        ]
+      ]
+    },
+    {
+      "title": "DESIGN AND IMPLEMENTATION",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          294.39569091796875,
+          519.223388671875
+        ],
+        [
+          448.57129669189453,
+          518.4728178977966
+        ],
+        [
+          447.7555236816406,
+          530.223388671875
+        ],
+        [
+          293.5445251464844,
+          530.223388671875
+        ]
+      ]
+    },
+    {
+      "title": "Method 5: Hide latency of \nindependent functions",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          294.39569091796875,
+          567.223388671875
+        ],
+        [
+          423.23760986328125,
+          566.1853294372559
+        ],
+        [
+          423.23760986328125,
+          590.2232818603516
+        ],
+        [
+          293.4854393005371,
+          590.2232818603516
+        ]
+      ]
+    },
+    {
+      "title": "Method 6: Use rate-matching to \nremove bottlenecks",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          47.640624046325684,
+          231.223388671875
+        ],
+        [
+          206.5348358154297,
+          231.223388671875
+        ],
+        [
+          206.5348358154297,
+          254.2232666015625
+        ],
+        [
+          47.640624046325684,
+          254.2232666015625
+        ]
+      ]
+    },
+    {
+      "title": "Method 7: Take advantage of \nFPGA-specific hardware",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          47.329286098480225,
+          685.9403529167175
+        ],
+        [
+          193.09059143066406,
+          685.9403529167175
+        ],
+        [
+          193.09059143066406,
+          710.2232894897461
+        ],
+        [
+          47.329286098480225,
+          710.2232894897461
+        ]
+      ]
+    },
+    {
+      "title": "ARITHMETIC OPERATIONS",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          294.20111083984375,
+          543.223388671875
+        ],
+        [
+          422.0904350280762,
+          542.083574295044
+        ],
+        [
+          421.12677001953125,
+          554.223388671875
+        ],
+        [
+          293.80932998657227,
+          554.3120441436768
+        ]
+      ]
+    },
+    {
+      "title": "Method 8: Use appropriate \narithmetic precision",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          293.11547470092773,
+          591.223388671875
+        ],
+        [
+          428.78057861328125,
+          590.419783115387
+        ],
+        [
+          428.78057861328125,
+          614.2232818603516
+        ],
+        [
+          291.99047470092773,
+          614.2232818603516
+        ]
+      ]
+    },
+    {
+      "title": "Method 9: Use appropriate arithmetic mode",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          48.04215717315674,
+          351.223388671875
+        ],
+        [
+          265.0406188964844,
+          351.223388671875
+        ],
+        [
+          265.0406188964844,
+          362.223388671875
+        ],
+        [
+          48.04215717315674,
+          362.223388671875
+        ]
+      ]
+    },
+    {
+      "title": "Method 10: Minimize use of high-cost\narithmetic operations",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          47.68758201599121,
+          663.223388671875
+        ],
+        [
+          233.73404502868652,
+          663.223388671875
+        ],
+        [
+          233.73404502868652,
+          686.2232894897461
+        ],
+        [
+          47.68758201599121,
+          686.2232894897461
+        ]
+      ]
+    },
+    {
+      "title": "SYSTEM AND INTEGRATION ISSUES",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          294.39569091796875,
+          279.223388671875
+        ],
+        [
+          465.3845329284668,
+          278.46414828300476
+        ],
+        [
+          464.2595329284668,
+          290.223388671875
+        ],
+        [
+          294.39569091796875,
+          290.223388671875
+        ]
+      ]
+    },
+    {
+      "title": "Method 11: Create families of applications,\nnot point solutions",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          294.3716239929199,
+          363.223388671875
+        ],
+        [
+          506.5042304992676,
+          362.7512512207031
+        ],
+        [
+          505.77716064453125,
+          386.2232971191406
+        ],
+        [
+          293.2466239929199,
+          386.2989864349365
+        ]
+      ]
+    },
+    {
+      "title": "Method 12: Scale application for maximal use\nof FPGA hardware",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          48.16092109680176,
+          542.4818587303162
+        ],
+        [
+          272.5578918457031,
+          542.4818587303162
+        ],
+        [
+          272.5578918457031,
+          566.2232971191406
+        ],
+        [
+          47.03592109680176,
+          566.2232971191406
+        ]
+      ]
+    },
+    {
+      "title": "Acknowledgments",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          294.39569091796875,
+          315.9776306152344
+        ],
+        [
+          379.3008499145508,
+          314.699298620224
+        ],
+        [
+          378.1758499145508,
+          325.9776306152344
+        ],
+        [
+          294.39569091796875,
+          326.8554003238678
+        ]
+      ]
+    },
+    {
+      "title": "References",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          294.39569091796875,
+          411.9776306152344
+        ],
+        [
+          343.07568359375,
+          410.85298347473145
+        ],
+        [
+          343.07568359375,
+          421.9776306152344
+        ],
+        [
+          294.3299102783203,
+          422.52205181121826
+        ]
+      ]
+    },
+    {
+      "title": "Get \naccess",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          214.70924377441406,
+          462.608642578125
+        ],
+        [
+          360.1823043823242,
+          462.608642578125
+        ],
+        [
+          360.1823043823242,
+          550.618483543396
+        ],
+        [
+          214.70924377441406,
+          550.618483543396
+        ]
+      ]
+    },
+    {
+      "title": "to individual IEEE Computer Society \ndocuments online.",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          218.4854850769043,
+          564.8474731445312
+        ],
+        [
+          397.82696533203125,
+          564.8474731445312
+        ],
+        [
+          397.82696533203125,
+          591.1544165611267
+        ],
+        [
+          217.3604850769043,
+          591.1544165611267
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          139
+        ],
+        [
+          "Line",
+          66
+        ],
+        [
+          "Text",
+          10
+        ],
+        [
+          "PageFooter",
+          3
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          176
+        ],
+        [
+          "Line",
+          89
+        ],
+        [
+          "TableCell",
+          26
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          236
+        ],
+        [
+          "Line",
+          115
+        ],
+        [
+          "Text",
+          20
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          225
+        ],
+        [
+          "Line",
+          117
+        ],
+        [
+          "Text",
+          15
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          227
+        ],
+        [
+          "Line",
+          110
+        ],
+        [
+          "Text",
+          15
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          252
+        ],
+        [
+          "Line",
+          128
+        ],
+        [
+          "Text",
+          11
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          218
+        ],
+        [
+          "Line",
+          104
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "ListItem",
+          7
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          186
+        ],
+        [
+          "Line",
+          92
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "ListItem",
+          5
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/IEEE_Computer_07"
+}

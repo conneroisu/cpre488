@@ -1,0 +1,324 @@
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+--                                                                           --
+-- File Name: TB_Network_Detection.vhd                                                  --
+-- Author: Phillip Jones (phjones@iastate.edu  )                             --
+-- Date: 2/1/2018                                                           --
+--                                                                           --
+-- Description: Base testbench for generating stimulus input for             -- 
+-- DUT  (Device Under Test)                                                  --
+--                                                                           --
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+
+entity TB_Network_Detection is
+port
+(
+my_in : in std_logic -- input needed to keep modelsim from complainning???
+);
+end TB_Network_Detection;
+
+architecture rtl of TB_Network_Detection is
+
+----------------------------------------------
+--       Component declarations             --
+----------------------------------------------
+
+-- Device under test
+
+component Network_Detection
+port
+(
+  sysclk        : in std_logic;                     -- system clock
+  reset         : in std_logic;                     -- reset registers and coutners
+  sop           : in std_logic;                     -- indicate start of a packet
+  data          : in std_logic_vector(7 downto 0);  -- Packet data
+  valid_data    : in std_logic;                     -- Indicate packet data is valid
+  alert_cnt_out : out std_logic_vector(7 downto 0) -- Number of alerts
+);
+end component Network_Detection;
+
+
+
+----------------------------------------------
+--          Signal declarations             --
+----------------------------------------------
+
+  -- Make sure to add addtional states here if you want a longer sequence of inputs sent to DUT!!
+type my_input_states is (S0, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, 
+                         S12, S13, S14, S15, STOP_TEST);
+
+signal dut1_inputs : std_logic_vector(7 downto 0);  -- inputs to dut 1
+signal dut2_inputs : std_logic_vector(7 downto 0);  
+
+signal dut1_outputs : std_logic_vector(7 downto 0); -- outputs from dut 1
+signal dut2_outputs : std_logic_vector(7 downto 0);
+
+signal  input_state    : my_input_states;  -- Direct which input vector to use
+
+signal clk : std_logic;
+signal reset : std_logic;
+
+
+begin
+
+
+-- Processes
+
+-------------------------------------------
+-------------------------------------------
+-- Process Name: system_clk_gen          --
+--                                       --
+-- Description: Generat clock to run the --
+-- simulation.                           --
+--                                       --
+--                                       --
+-------------------------------------------
+-------------------------------------------  
+system_clk_gen : process   -- 500 MHz clock
+begin
+  clk <= '0';
+  wait for 10 ns;
+    loop
+      wait for 1 ns;
+      clk <= '1';
+      wait for 1 ns;
+      clk <= '0';
+    end loop;
+end process system_clk_gen;
+
+
+-------------------------------------------
+-------------------------------------------
+-- Process Name: toggle_reset            --
+--                                       --
+-- Description: Toggle system reset.     --
+-- used if DUT requires a reset signal   --
+--                                       --
+--                                       --
+-------------------------------------------
+-------------------------------------------  
+toggle_reset : process
+begin
+  reset <= '1'; -- place circuit in reset
+  wait for 95 ns;
+  reset <= '0'; 
+  wait;
+end process toggle_reset;
+
+
+
+
+------------------------------------------------------------
+------------------------------------------------------------
+--                                                        --
+-- Process Name: DUT stimulus                             --
+--                                                        --
+-- Send inputs to dut. Holds inputs for HOLD_INPUT_reg    --
+--  clk cycles                                            --
+--                                                        --
+------------------------------------------------------------
+------------------------------------------------------------
+DUT_stimulus : process(clk)
+begin
+  if (clk = '1' and clk'event) then
+
+    -- Initialize the test
+    if(reset = '1') then
+      input_state    <= S0;
+      dut1_inputs    <= (others => '0');
+      dut2_inputs    <= (others => '0');
+    else
+
+      -- Cycle thought DUT input stimulus patteren
+      case input_state is
+        
+
+      when S0 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '0';   -- valid_data = 0;
+        dut2_inputs <= x"AF";
+
+        input_state <= S1;
+        
+
+      when S1 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '0';  -- valid_data = 0;
+        dut2_inputs <= x"BC";
+
+        input_state <= S2;
+
+
+      when S2 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '0';  -- valid_data = 0;
+        dut2_inputs <= x"DD";
+
+        input_state <= S3;
+
+
+      when S3 =>
+
+        dut1_inputs(0) <= '1';  -- SOP = 1;  (Start of a Network Packet)
+        dut1_inputs(1) <= '1';  -- valid_data = 1;
+        dut2_inputs <= x"40";   -- IP source 0x40
+
+        input_state <= S4;
+
+
+      when S4 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '1';  -- valid_data = 1;
+        dut2_inputs <= x"50";   -- Port source 0x50
+
+        input_state <= S5;
+
+
+      when S5 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '1';  -- valid_data = 1;
+        dut2_inputs <= x"08";   -- Packet Payload length
+
+        input_state <= S6;
+
+
+      when S6 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '1';  -- valid_data = 1;
+        dut2_inputs <= x"61";   -- Payload (x"61" is ASCII "a")
+
+        input_state <= S7;
+
+
+      when S7 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '1';  -- valid_data = 1;
+        dut2_inputs <= x"62";   -- Payload (x"61" is ASCII "b")
+
+        input_state <= S8;
+
+
+      when S8 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '1';  -- valid_data = 1;
+        dut2_inputs <= x"63";   -- Payload (x"61" is ASCII "c")
+
+        input_state <= S9;
+
+
+      when S9 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '1';  -- valid_data = 1;
+        dut2_inputs <= x"61";   -- Payload (x"61" is ASCII "a")
+
+        input_state <= S10;
+
+
+      when S10 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '1';  -- valid_data = 1;
+        dut2_inputs <= x"63";   -- Payload (x"61" is ASCII "c")
+
+        input_state <= S11;
+
+
+      when S11 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '1';  -- valid_data = 1;
+        dut2_inputs <= x"6F";   -- Payload (x"6F" is ASCII "o")
+
+        input_state <= S12;
+
+
+      when S12 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '1';  -- valid_data = 1;
+        dut2_inputs <= x"72";   -- Payload (x"72" is ASCII "r")
+
+        input_state <= S13;
+
+
+      when S13 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '0';  -- valid_data = 0;
+        dut2_inputs <= x"61";   -- Payload (x"61" is ASCII "a")
+
+        input_state <= S14;
+
+
+      when S14 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '1';  -- valid_data = 1;
+        dut2_inputs <= x"6E";   -- Payload (x"6E" is ASCII "n")
+
+        input_state <= S15;
+
+
+      when S15 =>
+
+        dut1_inputs(0) <= '0';  -- SOP = 0;
+        dut1_inputs(1) <= '1';  -- valid_data = 0;
+        dut2_inputs <= x"61";   -- Payload (x"61" is ASCII "a")
+
+        input_state <= STOP_TEST;
+
+
+      when STOP_TEST =>
+
+        dut1_inputs <= (others => '0');
+        dut2_inputs <= (others => '0');
+
+        input_state <= STOP_TEST;
+         
+         
+      when OTHERS =>
+
+        input_state <= STOP_TEST;
+        
+      end case;  
+
+    end if;
+  end if;
+end process DUT_stimulus;
+
+
+
+-- Combinational assignments
+
+  -- none
+
+-- Connect DUT (Network Detection circuit) to the testbench
+
+my_dut : Network_Detection
+port map
+(
+  sysclk        => clk,             -- system clock
+  reset         => reset,           -- reset registers and coutners
+  sop           => dut1_inputs(0),  -- indicate start of a packet
+  data          => dut2_inputs,     -- Packet data
+  valid_data    => dut1_inputs(1),  -- Indicate packet data is valid
+  alert_cnt_out => dut1_outputs     -- Number of alerts
+);
+
+
+end rtl;

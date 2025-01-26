@@ -1,0 +1,27 @@
+{
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.copilot",
+        "github.codespaces",
+        "ms-python.vscode-pylance",
+        "redhat.vscode-yaml",
+        "redhat.vscode-xml",
+        "visualstudioexptteam.vscodeintellicode",
+        "bradlc.vscode-tailwindcss",
+        "christian-kohler.path-intellisense",
+        "supermaven.supermaven",
+        "jnoortheen.nix-ide",
+        "mkhl.direnv",
+        "tamasfe.even-better-toml",
+        "eamodio.gitlens",
+        "streetsidesoftware.code-spell-checker",
+        "editorconfig.editorconfig",
+        "ms-vscode.cpptools"
+      ]
+    }
+  },
+  "image": "ghcr.io/cachix/devenv:latest",
+  "overrideCommand": false,
+  "updateContentCommand": "devenv test"
+}
