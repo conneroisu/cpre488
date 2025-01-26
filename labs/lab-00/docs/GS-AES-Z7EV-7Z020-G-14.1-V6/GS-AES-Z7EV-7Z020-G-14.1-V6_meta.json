@@ -1,0 +1,2901 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Getting Started Guide",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          174.13999938964844,
+          102.95704579353333
+        ],
+        [
+          438.2125496864319,
+          102.95704579353333
+        ],
+        [
+          437.8923034667969,
+          133.23678874969482
+        ],
+        [
+          173.46195673942566,
+          133.23678874969482
+        ]
+      ]
+    },
+    {
+      "title": "Revision History",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          71.16077730059624,
+          53.264217495918274
+        ],
+        [
+          165.7391815185547,
+          53.264217495918274
+        ],
+        [
+          165.7391815185547,
+          67.20852756500244
+        ],
+        [
+          71.16077730059624,
+          67.20852756500244
+        ]
+      ]
+    },
+    {
+      "title": "AVNET DESIGN KIT TECHNICAL SUPPORT \nFILES AND DOWNLOADS WEB ACCESS \nINSTRUCTIONS",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          71.44461750984192,
+          56.01119166612625
+        ],
+        [
+          530.0657348632812,
+          54.46431666612625
+        ],
+        [
+          530.0657348632812,
+          132.67596435546875
+        ],
+        [
+          71.44461750984192,
+          133.3960883617401
+        ]
+      ]
+    },
+    {
+      "title": "LICENSE AGREEMENT",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          72.02399444580078,
+          189.0296630859375
+        ],
+        [
+          201.36734926700592,
+          187.4945104122162
+        ],
+        [
+          200.17203676700592,
+          200.91830563545227
+        ],
+        [
+          70.88683632016182,
+          202.46518063545227
+        ]
+      ]
+    },
+    {
+      "title": "",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          70.99770677089691,
+          51.93932694196701
+        ],
+        [
+          310.20759630203247,
+          51.93932694196701
+        ],
+        [
+          310.20759630203247,
+          82.07255154848099
+        ],
+        [
+          70.99770677089691,
+          82.07255154848099
+        ]
+      ]
+    },
+    {
+      "title": "",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          87.93420660495758,
+          51.112645983695984
+        ],
+        [
+          242.26098597049713,
+          51.112645983695984
+        ],
+        [
+          242.26098597049713,
+          77.10827028751373
+        ],
+        [
+          87.93420660495758,
+          77.10827028751373
+        ]
+      ]
+    },
+    {
+      "title": "GETTING STARTED WITH\nZEDBOARD",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          71.11232078075409,
+          81.20567983388901
+        ],
+        [
+          344.79957818984985,
+          81.20567983388901
+        ],
+        [
+          343.60426568984985,
+          134.65072917938232
+        ],
+        [
+          69.91700828075409,
+          134.65072917938232
+        ]
+      ]
+    },
+    {
+      "title": "WHAT'S INSIDE THE BOX?",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          71.70192450284958,
+          84.93247997760773
+        ],
+        [
+          361.5997619628906,
+          83.38560497760773
+        ],
+        [
+          361.5997619628906,
+          109.20464015007019
+        ],
+        [
+          70.50661200284958,
+          110.75151515007019
+        ]
+      ]
+    },
+    {
+      "title": "ZedBoard Kit contents:",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          71.21265363693237,
+          373.383727312088
+        ],
+        [
+          202.13743591308594,
+          371.836852312088
+        ],
+        [
+          202.13743591308594,
+          385.2596740722656
+        ],
+        [
+          71.21265363693237,
+          386.4068305492401
+        ]
+      ]
+    },
+    {
+      "title": "WHAT'S ON THE WEB?",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          72.02399444580078,
+          533.2874693870544
+        ],
+        [
+          324.9622497558594,
+          531.7405943870544
+        ],
+        [
+          324.9622497558594,
+          559.0220160484314
+        ],
+        [
+          70.9516350030899,
+          560.5688910484314
+        ]
+      ]
+    },
+    {
+      "title": "Official Documentation:",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          72.02399444580078,
+          593.7453660964966
+        ],
+        [
+          203.3884334564209,
+          592.1984910964966
+        ],
+        [
+          202.1931209564209,
+          605.9999885559082
+        ],
+        [
+          71.94786402583122,
+          607.5468635559082
+        ]
+      ]
+    },
+    {
+      "title": "Tutorials and Reference Designs:",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          72.02399444580078,
+          660.4963645935059
+        ],
+        [
+          255.20173573493958,
+          658.9494895935059
+        ],
+        [
+          254.80616760253906,
+          672.5896835327148
+        ],
+        [
+          71.47897982597351,
+          674.098837852478
+        ]
+      ]
+    },
+    {
+      "title": "ZEDBOARD KEY FEATURES",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          71.76749378442764,
+          83.99542343616486
+        ],
+        [
+          378.7344665527344,
+          82.44854843616486
+        ],
+        [
+          378.7344665527344,
+          110.3974517583847
+        ],
+        [
+          70.57218128442764,
+          111.9443267583847
+        ]
+      ]
+    },
+    {
+      "title": "ZEDBOARD BASIC SETUP AND \nOPERATION",
+      "heading_level": null,
+      "page_id": 10,
+      "polygon": [
+        [
+          70.96053564548492,
+          55.36115884780884
+        ],
+        [
+          410.58807373046875,
+          53.81428384780884
+        ],
+        [
+          410.58807373046875,
+          106.96408367156982
+        ],
+        [
+          70.96053564548492,
+          108.51095867156982
+        ]
+      ]
+    },
+    {
+      "title": "Hardware Setup",
+      "heading_level": null,
+      "page_id": 10,
+      "polygon": [
+        [
+          90.02399444580078,
+          173.3692091703415
+        ],
+        [
+          178.94141471385956,
+          171.8223341703415
+        ],
+        [
+          177.74610221385956,
+          185.3096923828125
+        ],
+        [
+          89.59716761112213,
+          186.1925092935562
+        ]
+      ]
+    },
+    {
+      "title": "Linux Startup and Shutdown",
+      "heading_level": null,
+      "page_id": 12,
+      "polygon": [
+        [
+          89.18637013435364,
+          54.646729946136475
+        ],
+        [
+          247.987144947052,
+          54.646729946136475
+        ],
+        [
+          247.987144947052,
+          66.89366948604584
+        ],
+        [
+          89.18637013435364,
+          66.89366948604584
+        ]
+      ]
+    },
+    {
+      "title": "Example Design Description",
+      "heading_level": null,
+      "page_id": 13,
+      "polygon": [
+        [
+          89.32205021381378,
+          53.09903472661972
+        ],
+        [
+          248.50465393066406,
+          53.09903472661972
+        ],
+        [
+          248.50465393066406,
+          68.27627044916153
+        ],
+        [
+          89.32205021381378,
+          68.27627044916153
+        ]
+      ]
+    },
+    {
+      "title": "ZedBoard System Block Diagram",
+      "heading_level": null,
+      "page_id": 13,
+      "polygon": [
+        [
+          72.02399444580078,
+          73.3826739192009
+        ],
+        [
+          237.7308807373047,
+          73.3826739192009
+        ],
+        [
+          237.7308807373047,
+          86.03947538137436
+        ],
+        [
+          72.02399444580078,
+          86.03947538137436
+        ]
+      ]
+    },
+    {
+      "title": "Demo 1 \u2013 Interacting with GPIO Switches and LEDs",
+      "heading_level": null,
+      "page_id": 14,
+      "polygon": [
+        [
+          70.8459489941597,
+          53.220745861530304
+        ],
+        [
+          353.8164031505585,
+          53.220745861530304
+        ],
+        [
+          353.8164031505585,
+          67.18203860521317
+        ],
+        [
+          70.8459489941597,
+          67.18203860521317
+        ]
+      ]
+    },
+    {
+      "title": "Purpose",
+      "heading_level": null,
+      "page_id": 14,
+      "polygon": [
+        [
+          70.91155475378036,
+          75.72343289852142
+        ],
+        [
+          116.16191864013672,
+          75.72343289852142
+        ],
+        [
+          116.16191864013672,
+          87.83304762840271
+        ],
+        [
+          70.91155475378036,
+          87.83304762840271
+        ]
+      ]
+    },
+    {
+      "title": "Running the Demo on ZedBoard Hardware",
+      "heading_level": null,
+      "page_id": 14,
+      "polygon": [
+        [
+          71.0233690738678,
+          134.22463989257812
+        ],
+        [
+          281.85332322120667,
+          134.22463989257812
+        ],
+        [
+          281.85332322120667,
+          146.45978951454163
+        ],
+        [
+          71.0233690738678,
+          146.45978951454163
+        ]
+      ]
+    },
+    {
+      "title": "Demo 2 \u2013 OLED Display",
+      "heading_level": null,
+      "page_id": 16,
+      "polygon": [
+        [
+          71.10771542787552,
+          52.91716432571411
+        ],
+        [
+          203.65669298171997,
+          52.91716432571411
+        ],
+        [
+          203.65669298171997,
+          67.29534101486206
+        ],
+        [
+          71.10771542787552,
+          67.29534101486206
+        ]
+      ]
+    },
+    {
+      "title": "Purpose",
+      "heading_level": null,
+      "page_id": 16,
+      "polygon": [
+        [
+          71.12415790557861,
+          76.36943542957306
+        ],
+        [
+          116.16191864013672,
+          76.36943542957306
+        ],
+        [
+          116.16191864013672,
+          88.37238621711731
+        ],
+        [
+          71.12415790557861,
+          88.37238621711731
+        ]
+      ]
+    },
+    {
+      "title": "Running the Demo on ZedBoard Hardware",
+      "heading_level": null,
+      "page_id": 16,
+      "polygon": [
+        [
+          72.02399444580078,
+          177.57575511932373
+        ],
+        [
+          282.0808732509613,
+          177.57575511932373
+        ],
+        [
+          281.1965637207031,
+          189.8992919921875
+        ],
+        [
+          70.93471831083298,
+          189.8992919921875
+        ]
+      ]
+    },
+    {
+      "title": "Demo 3 \u2013 VGA Display",
+      "heading_level": null,
+      "page_id": 18,
+      "polygon": [
+        [
+          71.14813765883446,
+          52.95928466320038
+        ],
+        [
+          196.74862718582153,
+          52.95928466320038
+        ],
+        [
+          196.74862718582153,
+          66.99706435203552
+        ],
+        [
+          71.14813765883446,
+          66.99706435203552
+        ]
+      ]
+    },
+    {
+      "title": "Purpose",
+      "heading_level": null,
+      "page_id": 18,
+      "polygon": [
+        [
+          71.31838524341583,
+          76.2805802822113
+        ],
+        [
+          116.16191864013672,
+          76.2805802822113
+        ],
+        [
+          116.16191864013672,
+          88.4231926202774
+        ],
+        [
+          71.31838524341583,
+          88.4231926202774
+        ]
+      ]
+    },
+    {
+      "title": "Running the Demo on ZedBoard Hardware",
+      "heading_level": null,
+      "page_id": 18,
+      "polygon": [
+        [
+          71.15158027410507,
+          135.2855554819107
+        ],
+        [
+          282.3512485027313,
+          135.2855554819107
+        ],
+        [
+          282.3512485027313,
+          147.29925537109375
+        ],
+        [
+          71.15158027410507,
+          147.29925537109375
+        ]
+      ]
+    },
+    {
+      "title": "Demo 4 \u2013 HDMI Display",
+      "heading_level": null,
+      "page_id": 20,
+      "polygon": [
+        [
+          71.11185112595558,
+          53.02107846736908
+        ],
+        [
+          200.96951973438263,
+          53.02107846736908
+        ],
+        [
+          200.96951973438263,
+          66.88095903396606
+        ],
+        [
+          71.11185112595558,
+          66.88095903396606
+        ]
+      ]
+    },
+    {
+      "title": "Purpose",
+      "heading_level": null,
+      "page_id": 20,
+      "polygon": [
+        [
+          71.16952747106552,
+          76.3455959558487
+        ],
+        [
+          116.16191864013672,
+          76.3455959558487
+        ],
+        [
+          116.16191864013672,
+          88.25927734375
+        ],
+        [
+          71.16952747106552,
+          88.25927734375
+        ]
+      ]
+    },
+    {
+      "title": "Running the Demo on ZedBoard Hardware",
+      "heading_level": null,
+      "page_id": 20,
+      "polygon": [
+        [
+          71.09568679332733,
+          135.3495090007782
+        ],
+        [
+          282.38759887218475,
+          135.3495090007782
+        ],
+        [
+          282.38759887218475,
+          147.29925537109375
+        ],
+        [
+          71.09568679332733,
+          147.29925537109375
+        ]
+      ]
+    },
+    {
+      "title": "Demo 5 \u2013 Ethernet",
+      "heading_level": null,
+      "page_id": 22,
+      "polygon": [
+        [
+          71.04624992609024,
+          53.556717216968536
+        ],
+        [
+          174.1321678161621,
+          53.556717216968536
+        ],
+        [
+          174.1321678161621,
+          66.72967529296875
+        ],
+        [
+          71.04624992609024,
+          66.72967529296875
+        ]
+      ]
+    },
+    {
+      "title": "Purpose",
+      "heading_level": null,
+      "page_id": 22,
+      "polygon": [
+        [
+          71.02394360303879,
+          77.12770771980286
+        ],
+        [
+          116.16191864013672,
+          77.12770771980286
+        ],
+        [
+          116.16191864013672,
+          88.25927734375
+        ],
+        [
+          71.02394360303879,
+          88.25927734375
+        ]
+      ]
+    },
+    {
+      "title": "Host PC Networking Configuration",
+      "heading_level": null,
+      "page_id": 22,
+      "polygon": [
+        [
+          70.70156890153885,
+          135.53818309307098
+        ],
+        [
+          241.47005081176758,
+          135.53818309307098
+        ],
+        [
+          241.47005081176758,
+          147.29925537109375
+        ],
+        [
+          70.70156890153885,
+          147.29925537109375
+        ]
+      ]
+    },
+    {
+      "title": "Running the Demo on ZedBoard Hardware",
+      "heading_level": null,
+      "page_id": 23,
+      "polygon": [
+        [
+          70.75520074367523,
+          585.7392730712891
+        ],
+        [
+          282.4544266462326,
+          585.7392730712891
+        ],
+        [
+          282.4544266462326,
+          596.7792816162109
+        ],
+        [
+          70.75520074367523,
+          598.1160621643066
+        ]
+      ]
+    },
+    {
+      "title": "Demo 6 \u2013 USB-OTG",
+      "heading_level": null,
+      "page_id": 27,
+      "polygon": [
+        [
+          71.234668135643,
+          53.327079355716705
+        ],
+        [
+          180.46161890029907,
+          53.327079355716705
+        ],
+        [
+          180.46161890029907,
+          66.7566574215889
+        ],
+        [
+          71.234668135643,
+          66.7566574215889
+        ]
+      ]
+    },
+    {
+      "title": "Purpose",
+      "heading_level": null,
+      "page_id": 27,
+      "polygon": [
+        [
+          71.17967748641968,
+          76.87546956539154
+        ],
+        [
+          116.16191864013672,
+          76.87546956539154
+        ],
+        [
+          116.16191864013672,
+          88.38527369499207
+        ],
+        [
+          71.17967748641968,
+          88.38527369499207
+        ]
+      ]
+    },
+    {
+      "title": "Running the Demo on ZedBoard Hardware",
+      "heading_level": null,
+      "page_id": 27,
+      "polygon": [
+        [
+          70.99432343244553,
+          154.19834232330322
+        ],
+        [
+          282.2442219257355,
+          154.19834232330322
+        ],
+        [
+          282.2442219257355,
+          165.81092762947083
+        ],
+        [
+          70.99432343244553,
+          165.81092762947083
+        ]
+      ]
+    },
+    {
+      "title": "Demo 7 \u2013 SD Card",
+      "heading_level": null,
+      "page_id": 29,
+      "polygon": [
+        [
+          70.95281597971916,
+          53.00590145587921
+        ],
+        [
+          172.99494659900665,
+          53.00590145587921
+        ],
+        [
+          172.99494659900665,
+          67.03498327732086
+        ],
+        [
+          70.95281597971916,
+          67.03498327732086
+        ]
+      ]
+    },
+    {
+      "title": "Purpose",
+      "heading_level": null,
+      "page_id": 29,
+      "polygon": [
+        [
+          71.10409954190254,
+          76.49993884563446
+        ],
+        [
+          116.16191864013672,
+          76.49993884563446
+        ],
+        [
+          116.16191864013672,
+          88.43335390090942
+        ],
+        [
+          71.10409954190254,
+          88.43335390090942
+        ]
+      ]
+    },
+    {
+      "title": "Running the Demo on ZedBoard Hardware",
+      "heading_level": null,
+      "page_id": 29,
+      "polygon": [
+        [
+          71.26301157474518,
+          175.79278671741486
+        ],
+        [
+          281.14013671875,
+          175.79278671741486
+        ],
+        [
+          281.14013671875,
+          188.21929931640625
+        ],
+        [
+          71.26301157474518,
+          188.21929931640625
+        ]
+      ]
+    },
+    {
+      "title": "Figure 27 \u2013 Directory Listing of SD Card",
+      "heading_level": null,
+      "page_id": 30,
+      "polygon": [
+        [
+          239.0023112297058,
+          631.5032687187195
+        ],
+        [
+          391.9473023414612,
+          629.9563937187195
+        ],
+        [
+          391.9473023414612,
+          640.0142669677734
+        ],
+        [
+          239.0023112297058,
+          640.2123713493347
+        ]
+      ]
+    },
+    {
+      "title": "What's Next",
+      "heading_level": null,
+      "page_id": 31,
+      "polygon": [
+        [
+          70.99512594938278,
+          53.50595211982727
+        ],
+        [
+          141.0633544921875,
+          53.50595211982727
+        ],
+        [
+          141.0633544921875,
+          66.72967529296875
+        ],
+        [
+          70.99512594938278,
+          66.72967529296875
+        ]
+      ]
+    },
+    {
+      "title": "Where To Get More Information",
+      "heading_level": null,
+      "page_id": 31,
+      "polygon": [
+        [
+          70.87079966068268,
+          130.1553007364273
+        ],
+        [
+          247.0587158203125,
+          130.1553007364273
+        ],
+        [
+          247.0587158203125,
+          143.27534329891205
+        ],
+        [
+          70.87079966068268,
+          143.27534329891205
+        ]
+      ]
+    },
+    {
+      "title": "Xilinx Website",
+      "heading_level": null,
+      "page_id": 31,
+      "polygon": [
+        [
+          71.75728449225426,
+          203.81927490234375
+        ],
+        [
+          144.18223571777344,
+          202.5656132698059
+        ],
+        [
+          144.18223571777344,
+          214.8592529296875
+        ],
+        [
+          70.56197199225426,
+          216.3342547416687
+        ]
+      ]
+    },
+    {
+      "title": "Cypress Website",
+      "heading_level": null,
+      "page_id": 31,
+      "polygon": [
+        [
+          72.02399444580078,
+          280.7755150794983
+        ],
+        [
+          158.22079467773438,
+          279.2286400794983
+        ],
+        [
+          158.22079467773438,
+          293.2492980957031
+        ],
+        [
+          71.25714772939682,
+          294.31619453430176
+        ]
+      ]
+    },
+    {
+      "title": "Getting Additional Help and Support",
+      "heading_level": null,
+      "page_id": 32,
+      "polygon": [
+        [
+          71.61345613002777,
+          53.442612290382385
+        ],
+        [
+          273.7737731933594,
+          53.442612290382385
+        ],
+        [
+          273.7737731933594,
+          67.61931002140045
+        ],
+        [
+          71.61345613002777,
+          67.61931002140045
+        ]
+      ]
+    },
+    {
+      "title": "Avnet Support",
+      "heading_level": null,
+      "page_id": 32,
+      "polygon": [
+        [
+          71.4593455195427,
+          74.27877849340439
+        ],
+        [
+          144.7996826171875,
+          74.27877849340439
+        ],
+        [
+          144.7996826171875,
+          86.10270899534225
+        ],
+        [
+          71.4593455195427,
+          86.10270899534225
+        ]
+      ]
+    },
+    {
+      "title": "Xilinx Support",
+      "heading_level": null,
+      "page_id": 32,
+      "polygon": [
+        [
+          72.02399444580078,
+          418.50115871429443
+        ],
+        [
+          142.967041015625,
+          418.50115871429443
+        ],
+        [
+          142.967041015625,
+          430.6692810058594
+        ],
+        [
+          70.84755402803421,
+          430.6692810058594
+        ]
+      ]
+    },
+    {
+      "title": "Appendix I: Installing and Licensing Xilinx Software",
+      "heading_level": null,
+      "page_id": 33,
+      "polygon": [
+        [
+          71.25500464439392,
+          53.46636915206909
+        ],
+        [
+          357.3974609375,
+          53.46636915206909
+        ],
+        [
+          357.3974609375,
+          67.43918037414551
+        ],
+        [
+          71.25500464439392,
+          67.43918037414551
+        ]
+      ]
+    },
+    {
+      "title": "Install ISE WebPACK or Design Suite",
+      "heading_level": null,
+      "page_id": 33,
+      "polygon": [
+        [
+          71.46668672561646,
+          77.26082521677017
+        ],
+        [
+          258.5751037597656,
+          75.71395021677017
+        ],
+        [
+          258.5751037597656,
+          88.3792724609375
+        ],
+        [
+          71.46668672561646,
+          89.56250113248825
+        ]
+      ]
+    },
+    {
+      "title": "Appendix II: QSPI Flash Example Application",
+      "heading_level": null,
+      "page_id": 34,
+      "polygon": [
+        [
+          70.72147679328918,
+          52.786053121089935
+        ],
+        [
+          319.1257481575012,
+          52.786053121089935
+        ],
+        [
+          319.1257481575012,
+          67.59545284509659
+        ],
+        [
+          70.72147679328918,
+          67.59545284509659
+        ]
+      ]
+    },
+    {
+      "title": "Boot ZedBoard from QSPI",
+      "heading_level": null,
+      "page_id": 34,
+      "polygon": [
+        [
+          70.89187940955162,
+          75.29737311601639
+        ],
+        [
+          200.4461327791214,
+          75.29737311601639
+        ],
+        [
+          200.4461327791214,
+          88.7164358496666
+        ],
+        [
+          70.89187940955162,
+          88.7164358496666
+        ]
+      ]
+    },
+    {
+      "title": "Appendix III: Using Linux Host PC",
+      "heading_level": null,
+      "page_id": 35,
+      "polygon": [
+        [
+          70.66461664438248,
+          52.91019541025162
+        ],
+        [
+          259.04294657707214,
+          52.91019541025162
+        ],
+        [
+          259.04294657707214,
+          67.2106459736824
+        ],
+        [
+          70.66461664438248,
+          67.2106459736824
+        ]
+      ]
+    },
+    {
+      "title": "Connect Terminal to ZedBoard USB-UART",
+      "heading_level": null,
+      "page_id": 35,
+      "polygon": [
+        [
+          71.47717416286469,
+          104.22540020942688
+        ],
+        [
+          281.8325124979019,
+          104.22540020942688
+        ],
+        [
+          281.8325124979019,
+          116.57928466796875
+        ],
+        [
+          71.47717416286469,
+          116.57928466796875
+        ]
+      ]
+    },
+    {
+      "title": "Connect Networking to ZedBoard USB-UART",
+      "heading_level": null,
+      "page_id": 36,
+      "polygon": [
+        [
+          70.41820746660233,
+          467.0292663574219
+        ],
+        [
+          294.9980399608612,
+          467.0292663574219
+        ],
+        [
+          294.9980399608612,
+          478.5984420776367
+        ],
+        [
+          70.41820746660233,
+          478.5984420776367
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          4
+        ],
+        [
+          "Picture",
+          3
+        ],
+        [
+          "Line",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Text",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          51
+        ],
+        [
+          "TableCell",
+          21
+        ],
+        [
+          "Line",
+          13
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Table",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          154
+        ],
+        [
+          "Line",
+          58
+        ],
+        [
+          "ListItem",
+          7
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          60
+        ],
+        [
+          "Line",
+          22
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "TableCell",
+          96
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "TableOfContents",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "TableCell",
+          66
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "TableOfContents",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          62
+        ],
+        [
+          "Line",
+          16
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          75
+        ],
+        [
+          "Line",
+          22
+        ],
+        [
+          "ListItem",
+          15
+        ],
+        [
+          "SectionHeader",
+          5
+        ],
+        [
+          "ListGroup",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Text",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          123
+        ],
+        [
+          "Line",
+          30
+        ],
+        [
+          "ListItem",
+          28
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          11
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Line",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 10,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          120
+        ],
+        [
+          "Line",
+          32
+        ],
+        [
+          "ListItem",
+          8
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "ListGroup",
+          3
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 11,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          58
+        ],
+        [
+          "TableCell",
+          33
+        ],
+        [
+          "Line",
+          14
+        ],
+        [
+          "ListItem",
+          5
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "ListGroup",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Form",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 12,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "TableCell",
+          56
+        ],
+        [
+          "Span",
+          46
+        ],
+        [
+          "Line",
+          9
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "Table",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "TableGroup",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 13,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          27
+        ],
+        [
+          "Line",
+          7
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 14,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          68
+        ],
+        [
+          "Line",
+          14
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Text",
+          1
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 15,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          59
+        ],
+        [
+          "Line",
+          9
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 16,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          63
+        ],
+        [
+          "TableCell",
+          46
+        ],
+        [
+          "Line",
+          16
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "Text",
+          3
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 17,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "TableCell",
+          63
+        ],
+        [
+          "Span",
+          39
+        ],
+        [
+          "Line",
+          8
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "TableGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 18,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          61
+        ],
+        [
+          "Line",
+          15
+        ],
+        [
+          "ListItem",
+          4
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Text",
+          1
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 19,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          13
+        ],
+        [
+          "Line",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "ListItem",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 20,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          79
+        ],
+        [
+          "Line",
+          15
+        ],
+        [
+          "ListItem",
+          4
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Text",
+          1
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 21,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          13
+        ],
+        [
+          "Line",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "ListItem",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 22,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "TableCell",
+          96
+        ],
+        [
+          "Span",
+          77
+        ],
+        [
+          "Line",
+          15
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Form",
+          1
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "TableGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 23,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          59
+        ],
+        [
+          "TableCell",
+          48
+        ],
+        [
+          "Line",
+          11
+        ],
+        [
+          "ListItem",
+          5
+        ],
+        [
+          "Form",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 24,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          45
+        ],
+        [
+          "Line",
+          7
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "PictureGroup",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 25,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          53
+        ],
+        [
+          "Line",
+          11
+        ],
+        [
+          "ListItem",
+          6
+        ],
+        [
+          "TableCell",
+          5
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "ListGroup",
+          2
+        ],
+        [
+          "Form",
+          1
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 26,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          26
+        ],
+        [
+          "Line",
+          6
+        ],
+        [
+          "ListItem",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Code",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 27,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          66
+        ],
+        [
+          "TableCell",
+          20
+        ],
+        [
+          "Line",
+          16
+        ],
+        [
+          "ListItem",
+          5
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "TableGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 28,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          52
+        ],
+        [
+          "TableCell",
+          48
+        ],
+        [
+          "Line",
+          12
+        ],
+        [
+          "ListItem",
+          4
+        ],
+        [
+          "Table",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "TableGroup",
+          2
+        ],
+        [
+          "Text",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 29,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          57
+        ],
+        [
+          "TableCell",
+          48
+        ],
+        [
+          "Line",
+          14
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "TableGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 30,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "TableCell",
+          80
+        ],
+        [
+          "Span",
+          69
+        ],
+        [
+          "Line",
+          14
+        ],
+        [
+          "ListItem",
+          4
+        ],
+        [
+          "Table",
+          2
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "TableGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 31,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          79
+        ],
+        [
+          "Line",
+          21
+        ],
+        [
+          "ListItem",
+          12
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "ListGroup",
+          3
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 32,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          89
+        ],
+        [
+          "Line",
+          25
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "ListItem",
+          9
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "Picture",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "ListGroup",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 33,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          64
+        ],
+        [
+          "Line",
+          16
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "ListItem",
+          4
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 34,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          33
+        ],
+        [
+          "Line",
+          11
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 35,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          55
+        ],
+        [
+          "Line",
+          12
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 36,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "TableCell",
+          270
+        ],
+        [
+          "Span",
+          29
+        ],
+        [
+          "Line",
+          7
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Form",
+          1
+        ],
+        [
+          "TableGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 37,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          35
+        ],
+        [
+          "Line",
+          7
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 38,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          9
+        ],
+        [
+          "Line",
+          4
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/GS-AES-Z7EV-7Z020-G-14.1-V6"
+}

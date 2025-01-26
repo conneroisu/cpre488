@@ -1,0 +1,271 @@
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+--                                                                           --
+-- File Name: Network_Detection.vhd                                          --
+-- Author: Phillip Jones (phjones@iastate.edu)                               --
+-- Date: 2/1/2018                                                            --
+--                                                                           --
+-- Description: Example network data string identifier                       --
+--                                                                           --
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+
+entity Network_Detection is
+port
+(
+  sysclk        : in std_logic;                     -- system clock
+  reset         : in std_logic;                     -- reset registers and coutners
+  sop           : in std_logic;                     -- indicate start of a packet
+  data          : in std_logic_vector(7 downto 0);  -- Packet data
+  valid_data    : in std_logic;                     -- Indicate packet data is valid
+  alert_cnt_out : out std_logic_vector(7 downto 0)  -- Number of alerts
+);
+end Network_Detection;
+
+architecture rtl of Network_Detection is
+
+----------------------------------------------
+--       Component declarations             --
+----------------------------------------------
+
+-- None
+
+
+
+----------------------------------------------
+--          Signal declarations             --
+----------------------------------------------
+
+-- Declare types
+type STATE_TYPE is (WAIT_SOP, WAIT_SRC_PORT, WAIT_PKT_LEN, 
+                    WAIT_c, WAIT_o, WAIT_r, WAIT_n);  -- Names of statemachine states
+
+-- signals
+signal curr_state : STATE_TYPE;  -- current state
+signal nxt_state  : STATE_TYPE;  -- next state
+
+signal vld_pkt_len  : std_logic;  -- Indicate Packet Length has arrived
+signal alert        : std_logic;  -- Indicate "corn" found
+
+signal  alert_cnt       : std_logic_vector(7 downto 0);  -- count number of alerts
+signal  pkt_len_reg     : std_logic_vector(7 downto 0);  -- store packet length 
+signal  packet_position : std_logic_vector(7 downto 0);  -- track position in packet 
+
+
+begin
+
+
+-- Processes --
+
+------------------------------------------------------------
+------------------------------------------------------------
+--                                                        --
+-- Process Name: UPDATE_state                             --
+-- Description: Assign next state to current state        --
+--                                                        --
+------------------------------------------------------------
+------------------------------------------------------------
+UPDATE_state : process(sysclk)
+begin
+
+  if (sysclk = '1' and sysclk'event) then
+    if (reset = '1') then
+      curr_state       <= WAIT_SOP;
+    else
+      curr_state       <= nxt_state;
+    end if;
+  end if;
+
+end process UPDATE_state;
+
+
+
+------------------------------------------------------------
+------------------------------------------------------------
+--                                                        --
+-- Process Name: Find_corn                                --
+-- Description: Find the string "corn" in a network       --
+-- packet.                                                --
+------------------------------------------------------------
+------------------------------------------------------------
+Find_corn : process(curr_state, sop, data, valid_data)
+begin
+
+  -- defaults
+  nxt_state             <= curr_state;
+  vld_pkt_len           <= '0';
+  alert                 <= '0';
+ 
+  case curr_state is
+
+  -- Wait for the start of a packet
+  when WAIT_SOP =>
+
+    -- Wait for sop to indicate start of a packet (Also when IP src arrives)
+    if( sop = '1' ) then
+      nxt_state <= WAIT_SRC_PORT;
+    end if;    
+    
+	 
+  -- Wait for the source port ot arrive. The byte after SOP
+  when WAIT_SRC_PORT =>
+    
+    -- the next byte will be the source port
+    if(valid_data = '1') then
+      nxt_state <= WAIT_PKT_LEN;       
+    end if;
+
+
+  -- Wait for packet length to arrive.  The byte after source port
+  when WAIT_PKT_LEN =>
+   
+    -- the next byte will be packet length
+    if(valid_data = '1') then
+      vld_pkt_len <= '1';  -- raise flag to load packet length to a register
+      nxt_state <= WAIT_c;
+    end if;
+
+
+  -- Wait for the "c" in "corn"
+  when WAIT_c =>
+    
+    -- make sure there is valid data
+    if(valid_data = '1') then
+	 
+      -- If a "c" is found, then serch for the "o" in "corn" 
+      if(data = x"63") then  -- x"63" is ASCII "c"
+        nxt_state <= WAIT_o;
+      end if;
+      
+    end if;
+
+
+  -- Wait for the "o" in "corn"
+  when WAIT_o =>
+  
+    -- make sure there is valid data
+    if(valid_data = '1') then
+	 
+      -- If a "o" is found, then serch for the "r" in "corn" 
+      if(data = x"6F") then  -- x"6F" is ASCII "o"
+        nxt_state <= WAIT_r;
+      else
+        nxt_state <= WAIT_c; -- Go back to beging of "corn" search
+      end if;
+      
+    end if;
+
+
+  -- Wait for the "r" in "corn"
+  when WAIT_r =>
+  
+    -- make sure there is valid data
+    if(valid_data = '1') then
+	 
+      -- If a "r" is found, then serch for the "n" in "corn" 
+      if(data = x"72") then -- x"72" is ASCII "r"
+        nxt_state <= WAIT_n;
+      else
+        nxt_state <= WAIT_c; -- Go back to beginning of "corn" search
+      end if;
+      
+    end if;
+ 
+
+  -- Wait for the "n" in "corn"
+  when WAIT_n =>
+  
+    -- make sure there is valid data
+    if(valid_data = '1') then
+	 
+      -- If a "n" is found, then raise Alert and serch for next occurence of "corn" 
+      if(data = x"6E") then -- x"6E" is ASCII "n"
+        alert <= '1';
+      end if;
+		
+      nxt_state <= Wait_c; -- Go back to beginning of "corn" search
+	     
+    end if;
+
+    
+  when others =>
+    nxt_state <= WAIT_SOP;
+  
+  
+  end case;
+
+              
+end process Find_corn;
+
+
+
+------------------------------------------------------------
+------------------------------------------------------------
+--                                                        --
+-- Process Name:Manage_Cnt_Reg                            --
+-- Description: Manage counters and registers             --
+--                                                        --
+------------------------------------------------------------
+------------------------------------------------------------
+Manage_Cnt_Reg: process(sysclk)
+begin
+  if (sysclk = '1' and sysclk'event) then
+
+    -- reset registers and counters
+    if (reset = '1') then
+      
+      alert_cnt       <= (others => '0');  -- count number of alerts
+      pkt_len_reg     <= (others => '0');  -- store packet length 
+      packet_position <= (others => '0');  -- track position in packet 
+           
+    else
+            
+      -- Count number of alerts
+      if(sop = '1') then
+        alert_cnt <= x"00";
+      elsif(alert = '1') then
+        alert_cnt <= alert_cnt + 1;
+      else
+        alert_cnt <= alert_cnt;
+      end if;
+
+      -- Store Length of Packet payload
+      if(vld_pkt_len = '1') then
+        pkt_len_reg <= data;
+      else
+        pkt_len_reg <= pkt_len_reg;   
+      end if;
+ 
+      -- Track position in network packet
+      if(vld_pkt_len = '1') then
+        packet_position <= x"00";
+      elsif(valid_data = '1') then
+        packet_position <= packet_position + 1;
+      else
+        packet_position <= packet_position;
+      end if;
+
+      
+    end if;
+
+  end if;
+end process Manage_Cnt_Reg;
+
+
+-- Combinational assignments --
+
+alert_cnt_out <= alert_cnt;   -- Send alert_counter to output
+
+
+
+-- Wire up components
+
+  -- None
+
+
+end rtl;
