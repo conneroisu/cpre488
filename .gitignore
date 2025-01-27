@@ -256,6 +256,20 @@ cython_debug/
 poetry.toml
 .ruff_cache/
 pyrightconfig.json
+
+# Custom additions
+
 .obsidian
+
+# Only allow snippets folder in .obsidian
+!.obsidian/snippets
+!.obsidian/snippets/**
+
+# All submission PDFs should be ignored
+*submission*.pdf
+*Submission*.pdf
+*submission/**
+*Submission/**
+
 .devenv
 .obsidian.vimrc
