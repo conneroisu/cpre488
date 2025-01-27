@@ -3,7 +3,7 @@ Nolan Eastburn
 Conner Ohnesorge
 
 
-# Orientation Lab Report
+# Orientation Lab Notes
 
 1. Switch 2 turns the joke off. (Calling this Partypooper Mode)
 2. BTNL (Button Left) triggers a counter over LEDs from LD0 to LD7 (LD7 is the MSB while LD0 is the LSB)
