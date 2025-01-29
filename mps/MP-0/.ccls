@@ -1,0 +1,18 @@
+clang
+%c -std=c11
+%cpp -std=c++2a
+%h %hpp --include=./sw/nes_bootloader/src/NESCore/*.h
+%h %hpp --include=./sw/nes_bootloader/src/xilsd/diskio.h
+%h %hpp --include=./sw/nes_bootloader/src/xilsd/ff.h
+%h %hpp --include=./sw/nes_bootloader/src/xilsd/integer.h
+%h %hpp --include=./sw/nes_bootloader/src/xilsd/ffconf.h
+%h %hpp --include=./sw/nes_bootloader/src/xilsd/mmc.c
+%h %hpp --include=./sw/nes_bootloader/src/xilsd/xilsd.h
+%h %hpp --include=./sw/nes_bootloader/src/xilsd/sd_hardware.h
+%h %hpp --include=./sw/nes_bootloader/src/*.h
+-Iinc
+-DMACRO
+-I./sw/nes_bootloader/src/xilsd/
+-I./sw/nes_bootloader/src/NESCore/
+-I./sw/nes_bootloader/src/NESCore/mapper/
+-I./sw/nes_bootloader/src/
