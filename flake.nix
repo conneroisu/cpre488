@@ -69,12 +69,13 @@
 
             packages = with pkgs;
               [
-                zig
+                nixd
                 go
                 tcl
-                gnum4
 
                 watchexec
+
+                # C/C++
                 meson
                 gnumake
                 cmake
@@ -82,15 +83,14 @@
                 gdb
                 gnum4
                 stdenv.cc
+                libclang
 
                 tbb # Intel Threading Building Blocks
                 llvmPackages.openmp # OpenMP support
                 binutils
                 alejandra
-                libclang
                 (pkgs.buildFHSEnv {
                   name = "xilinx-env";
-                  inherit "bash";
                   targetPkgs = pkgs:
                     with pkgs; let
                       ncurses' = ncurses5.overrideAttrs (old: {
@@ -157,11 +157,6 @@
                 nvc
               ]))
               ++ (lib.optionals isDarwin (with pkgs; [
-                darwin.apple_sdk.frameworks.CoreFoundation
-                darwin.apple_sdk.frameworks.Security
-                darwin.apple_sdk.frameworks.SystemConfiguration
-                darwin.apple_sdk.frameworks.Foundation
-                darwin.apple_sdk.frameworks.IOKit
                 rosettaPkgs.ghdl
                 rosettaPkgs.nvc
               ]));
@@ -169,6 +164,28 @@
             enterShell = ''
 
               export REPO_ROOT=$(git rev-parse --show-toplevel)
+              export C_INCLUDE_PATH=${
+                pkgs.lib.makeSearchPathOutput "dev" "include" (
+                  (with pkgs; [
+                    glibc.dev
+                    gcc
+                    mesa
+                    zlib
+                    tbb
+                    llvmPackages.openmp
+                  ])
+                  ++ (pkgs.lib.optionals pkgs.stdenv.isLinux (
+                    with pkgs; [
+                      # Linux-specific includes here
+                    ]
+                  ))
+                  ++ (pkgs.lib.optionals pkgs.stdenv.isDarwin (
+                    with pkgs; [
+                      # Darwin-specific includes here
+                    ]
+                  ))
+                )
+              }:$C_INCLUDE_PATH
               export LD_LIBRARY_PATH=${
                 lib.makeLibraryPath (
                   (with pkgs; [
