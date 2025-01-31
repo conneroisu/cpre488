@@ -1,6 +1,8 @@
 # gitignore template for Xilinx Vivado Design Suite
 # website: https://www.xilinx.com/support/download.html
 
+!*
+
 # [home]
 *.jou
 *.log
@@ -75,25 +77,6 @@
 *.runs/impl*/*.tcl
 *.runs/impl*/*.bat
 !*.runs/impl*/*utilization*.rpt
-
-### block design
-*/*/bd/*/hdl
-*/*/*/bd/*/hdl
-
-*/*/bd/*/*.xdc
-*/*/*/bd/*/*.xdc
-
-*/*/bd/*/ip/*/*.xdc
-*/*/*/bd/*/ip/*/*.xdc
-
-*/*/bd/*/ip/*/*/
-*/*/*/bd/*/ip/*/*/
-
-*/*/bd/*/ip/*/*.vhd
-*/*/*/bd/*/ip/*/*.vhd
-
-*/*/bd/*/ip/*/*.xml
-*/*/*/bd/*/ip/*/*.xml
 
 *.c
 *.h
