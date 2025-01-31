@@ -16,3 +16,6 @@ timestamp=[2025-01-31 10:47:28], mode=BUILD, duration=0:00:00.360, duration_ms=3
 timestamp=[2025-01-31 10:47:34], mode=BUILD, duration=0:00:00.688, duration_ms=688, data={name=IP_Design, configuration=Debug, clean_build=false}
 timestamp=[2025-01-31 10:50:31], mode=BUILD, duration=0:00:00.437, duration_ms=437, data={name=IP_Design, configuration=Debug, clean_build=false}
 timestamp=[2025-01-31 10:50:36], mode=BUILD, duration=0:00:00.672, duration_ms=672, data={name=IP_Design, configuration=Debug, clean_build=false}
+timestamp=[2025-01-31 11:14:42], mode=WORKBENCH_START, duration=0:00:05.334, duration_ms=5334, data={}
+timestamp=[2025-01-31 11:14:43], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.015, duration_ms=15, data={}
+timestamp=[2025-01-31 11:14:43], mode=WORKBENCH_UI_INIT, duration=0:00:00.739, duration_ms=739, data={editors_count=5, platform_editors_count=4, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=IP_Design,IP_Design_System,IP_wrapper,RemoteSystemsTempFiles}
