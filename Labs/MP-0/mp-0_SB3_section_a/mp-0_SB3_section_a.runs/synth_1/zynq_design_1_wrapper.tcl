@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 5
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
@@ -79,7 +80,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir U:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.cache/wt [current_project]
 set_property parent.project_path U:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
@@ -109,7 +110,17 @@ set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/m
 set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_0/bd_033f_ila_lib_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/bd_033f_ooc.xdc]
 set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/zynq_design_1_system_ila_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc]
+set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/zynq_design_1_v_tc_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/zynq_design_1_v_tc_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xbar_1/zynq_design_1_xbar_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_1/zynq_design_1_auto_pc_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_2/zynq_design_1_auto_pc_2_ooc.xdc]
 set_property used_in_implementation false [get_files -all U:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/zynq_design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }

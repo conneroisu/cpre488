@@ -2448,3 +2448,68 @@ con
 ----------------End of Script----------------
 
 19:00:51 INFO  : Launch script is exported to file 'U:\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_zynq_design_system_standalone.tcl'
+19:06:16 INFO  : Disconnected from the channel tcfchan#1.
+09:06:55 INFO  : Launching XSCT server: xsct.bat -n  -interactive U:\cpre488\Labs\MP-0\workspace\temp_xsdb_launch_script.tcl
+09:06:57 INFO  : XSCT server has started successfully.
+09:06:58 ERROR : Error encountered while initializing user repository paths
+Reason: No Platforms Found.
+
+
+09:06:58 INFO  : Platform repository initialization has completed.
+09:06:58 INFO  : plnx-install-location is set to ''
+09:06:58 INFO  : Successfully done setting XSCT server connection channel  
+09:06:58 INFO  : Registering command handlers for Vitis TCF services
+09:07:01 INFO  : Successfully done setting workspace for the tool. 
+09:07:01 INFO  : Successfully done query RDI_DATADIR 
+09:07:09 INFO  : Checking for BSP changes to sync application flags for project 'Zynq_Design'...
+09:07:09 ERROR : Failed to get platform details for the project 'Zynq_Design'. Cannot sync application flags.
+09:28:57 INFO  : Checking for BSP changes to sync application flags for project 'Zynq_Design'...
+09:29:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:29:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+09:29:16 INFO  : FPGA configured successfully with bitstream "U:/cpre488/Labs/MP-0/workspace/Zynq_Design/_ide/bitstream/zynq_design_1_wrapper.bit"
+09:29:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:29:26 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+09:29:26 INFO  : 'jtag frequency' command is executed.
+09:29:26 INFO  : Context for 'APU' is selected.
+09:29:26 INFO  : System reset is completed.
+09:29:29 INFO  : 'after 3000' command is executed.
+09:29:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+09:29:31 INFO  : FPGA configured successfully with bitstream "U:/cpre488/Labs/MP-0/workspace/Zynq_Design/_ide/bitstream/zynq_design_1_wrapper.bit"
+09:29:31 INFO  : Context for 'APU' is selected.
+09:29:31 INFO  : Hardware design and registers information is loaded from 'U:/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+09:29:31 INFO  : 'configparams force-mem-access 1' command is executed.
+09:29:31 INFO  : Context for 'APU' is selected.
+09:29:31 INFO  : Sourcing of 'U:/cpre488/Labs/MP-0/workspace/Zynq_Design/_ide/psinit/ps7_init.tcl' is done.
+09:29:32 INFO  : 'ps7_init' command is executed.
+09:29:32 INFO  : 'ps7_post_config' command is executed.
+09:29:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:29:32 INFO  : The application 'U:/cpre488/Labs/MP-0/workspace/Zynq_Design/Debug/Zynq_Design.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:29:32 INFO  : 'configparams force-mem-access 0' command is executed.
+09:29:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file U:/cpre488/Labs/MP-0/workspace/Zynq_Design/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw U:/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source U:/cpre488/Labs/MP-0/workspace/Zynq_Design/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow U:/cpre488/Labs/MP-0/workspace/Zynq_Design/Debug/Zynq_Design.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:29:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:29:32 INFO  : 'con' command is executed.
+09:29:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+09:29:32 INFO  : Launch script is exported to file 'U:\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_zynq_design_system_standalone.tcl'
+11:52:09 INFO  : Disconnected from the channel tcfchan#1.

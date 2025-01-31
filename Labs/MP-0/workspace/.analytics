@@ -64,3 +64,7 @@ timestamp=[2025-01-30 19:00:09], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00
 timestamp=[2025-01-30 19:00:09], mode=WORKBENCH_UI_INIT, duration=0:00:00.495, duration_ms=495, data={editors_count=7, platform_editors_count=3, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,Zynq_Design,Zynq_Design_system,zynq_design_1_wrapper}
 timestamp=[2025-01-30 19:00:14], mode=BUILD, duration=0:00:00.353, duration_ms=353, data={name=Zynq_Design, configuration=Debug, clean_build=false}
 timestamp=[2025-01-30 19:00:27], mode=BUILD, duration=0:00:01.150, duration_ms=1150, data={name=Zynq_Design, configuration=Debug, clean_build=false}
+timestamp=[2025-01-31 09:06:57], mode=WORKBENCH_START, duration=0:00:07.335, duration_ms=7335, data={}
+timestamp=[2025-01-31 09:06:58], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.051, duration_ms=51, data={}
+timestamp=[2025-01-31 09:06:58], mode=WORKBENCH_UI_INIT, duration=0:00:00.678, duration_ms=678, data={editors_count=7, platform_editors_count=3, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,Zynq_Design,Zynq_Design_system,zynq_design_1_wrapper}
+timestamp=[2025-01-31 09:29:04], mode=BUILD, duration=0:00:04.505, duration_ms=4505, data={name=Zynq_Design, configuration=Debug, clean_build=false}

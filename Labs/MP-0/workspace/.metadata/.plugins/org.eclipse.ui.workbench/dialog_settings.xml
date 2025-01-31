@@ -12,4 +12,15 @@
 		<list key="textArray">
 		</list>
 	</section>
+	<section name="FileSystemImportWizard">
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="U:\cpre488\Labs\MP-0\sw\nes_bootloader\src\NESCore"/>
+			<item value="U:\cpre488\Labs\MP-0\sw\nes_bootloader\src\NESCore\mapper"/>
+			<item value="U:\cpre488\Labs\MP-0\sw\nes_bootloader\src\xilsd"/>
+			<item value="U:\cpre488\Labs\MP-0\sw\nes_bootloader\src"/>
+			<item value="U:\cpre488\Labs\MP-0\sw\vga_test\src"/>
+		</list>
+	</section>
 </section>

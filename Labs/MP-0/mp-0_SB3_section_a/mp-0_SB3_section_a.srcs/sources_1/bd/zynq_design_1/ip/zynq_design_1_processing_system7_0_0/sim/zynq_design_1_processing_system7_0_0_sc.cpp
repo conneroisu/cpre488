@@ -100,10 +100,10 @@ zynq_design_1_processing_system7_0_0_sc::zynq_design_1_processing_system7_0_0_sc
     model_param_props.addLong("C_TRACE_INTERNAL_WIDTH", "2");
     model_param_props.addLong("C_USE_AXI_NONSECURE", "0");
     model_param_props.addLong("C_USE_M_AXI_GP0", "1");
-    model_param_props.addLong("C_USE_M_AXI_GP1", "0");
+    model_param_props.addLong("C_USE_M_AXI_GP1", "1");
     model_param_props.addLong("C_USE_S_AXI_GP0", "0");
     model_param_props.addLong("C_USE_S_AXI_GP1", "0");
-    model_param_props.addLong("C_USE_S_AXI_HP0", "0");
+    model_param_props.addLong("C_USE_S_AXI_HP0", "1");
     model_param_props.addLong("C_USE_S_AXI_HP1", "0");
     model_param_props.addLong("C_USE_S_AXI_HP2", "0");
     model_param_props.addLong("C_USE_S_AXI_HP3", "0");
@@ -123,6 +123,10 @@ zynq_design_1_processing_system7_0_0_sc::zynq_design_1_processing_system7_0_0_sc
   // initialize sockets
   M_AXI_GP0_rd_socket = mp_impl->M_AXI_GP0_rd_socket;
   M_AXI_GP0_wr_socket = mp_impl->M_AXI_GP0_wr_socket;
+  M_AXI_GP1_rd_socket = mp_impl->M_AXI_GP1_rd_socket;
+  M_AXI_GP1_wr_socket = mp_impl->M_AXI_GP1_wr_socket;
+  S_AXI_HP0_rd_socket = mp_impl->S_AXI_HP0_rd_socket;
+  S_AXI_HP0_wr_socket = mp_impl->S_AXI_HP0_wr_socket;
 }
 
 zynq_design_1_processing_system7_0_0_sc::~zynq_design_1_processing_system7_0_0_sc()
