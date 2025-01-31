@@ -109,6 +109,8 @@ Thus, **`NESCore_Callback_OutputFrame()`** is triggered once per frame near the 
 
 ## [TASK] Step 2: Describe what configuration options are available and how they may be potentially useful in an embedded system?
 
+
+
 ## [TASK] Step 5: Are these buttons, LEDs, and switches connected via the PS subsystem or the PL subsystem? Briefly defend your answer. Note also that all three peripherals appear to be the same exact IP type (axi_gpio) – how can this be possible?
  
 The LEDS, buttons and switches are connected to the PS subsystem as they are connected/controlled through gpio pins.
@@ -117,8 +119,14 @@ The LEDS, buttons and switches are connected to the PS subsystem as they are con
 
 ## [TASK] Step 7: modifications: Create a Software Application A nice feature is the ability to right-click on any function to view its declaration – do this for the print() function. In your writeup, use this feature and describe what print() does, and how. Why do you believe this function is used by Xilinx for their Hello World application, as opposed to the more conventional printf() function?
 
-<!-- TODO: In your writeup, use this feature and describe what print() does, and how. -->
-<!-- TODO: Why do you believe this function is used by Xilinx for their Hello World application, as opposed to the more conventional printf() function? -->
+Right-clicking on the print() function opens a dialog for going to a specific declaration of the function from the available declarations. Clicking on the declartions.
+
+If certain Xilinx preprocessor macros are defined, the print function output is console. 
+You give the print function a `*char` and it sends the "string" to the UART on stdout base address.
+
+We think that Xilinx has this feature because methods/functions can be declared the same name in different files across larger projects.
+
+This is used in the Hello World example to print the "Hello World" string to the console while operating correctly in the xilinx simulator and on the actual fpga hardware.
 
 ## [TASK] Step 9: Connect to the Vivado Logic Analyzer: i) Take a screen capture of an LED wire turning on? Can you turn the LED on and off fast enough to get a screen capture of the Logic Analyzer displaying this pulse? If so, then provide this screen capture as well. For how long does the pulse stay high?
 
