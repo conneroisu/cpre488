@@ -10692,3 +10692,68 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:14:43.603
 !MESSAGE XSCT command with result: [set query_var1 $::env(RDI_DATADIR)], Result: [null, C:/Xilinx/Vitis/2020.1/data]. Thread: Worker-5: Initializing s/w repositories
+!SESSION 2025-01-31 11:26:35.354 -----------------------------------------------
+eclipse.buildId=2020.1
+java.version=9.0.4
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\neastbur\cpre488\mps\MP-0\eclipse_workspace
+
+!ENTRY org.eclipse.launchbar.core 2 0 2025-01-31 11:26:38.030
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2025-01-31 11:26:38.032
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2025-01-31 11:26:38.033
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.ui 4 4 2025-01-31 11:26:38.210
+!MESSAGE Plug-in 'org.eclipse.ui.editors' contributed an invalid Menu Extension (Path: 'navigate' is invalid): org.eclipse.ui.edit.text.gotoLastEditPosition
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:40.113
+!MESSAGE XSCT Command: [plnx-install-path  ; ::scw::scw_mode gui], Thread: Thread-8
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:40.115
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-15
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:40.115
+!MESSAGE XSCT command with result: [plnx-install-path  ; ::scw::scw_mode gui], Result: [null, ]. Thread: Thread-8
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:40.115
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-15
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:40.116
+!MESSAGE XSCT Command: [setws C:/Users/neastbur/cpre488/mps/MP-0/eclipse_workspace], Thread: Thread-15
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:40.128
+!MESSAGE XSCT command with result: [setws C:/Users/neastbur/cpre488/mps/MP-0/eclipse_workspace], Result: [null, ]. Thread: Thread-15
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:42.204
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-1: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:42.318
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-1: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:42.319
+!MESSAGE XSCT Command: [set query_var1 $::env(RDI_DATADIR)], Thread: Worker-1: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:42.320
+!MESSAGE XSCT command with result: [set query_var1 $::env(RDI_DATADIR)], Result: [null, C:/Xilinx/Vitis/2020.1/data]. Thread: Worker-1: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:44.567
+!MESSAGE XSCT Command: [::hsi::utils::openhw C:/Users/neastbur/cpre488/mps/MP-0/eclipse_workspace/IP_wrapper/export/IP_wrapper/hw/IP_wrapper.xsa], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:46.232
+!MESSAGE XSCT command with result: [::hsi::utils::openhw C:/Users/neastbur/cpre488/mps/MP-0/eclipse_workspace/IP_wrapper/export/IP_wrapper/hw/IP_wrapper.xsa], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:46.233
+!MESSAGE XSCT Command: [::hsi::utils::get_design_properties -json C:/Users/neastbur/cpre488/mps/MP-0/eclipse_workspace/IP_wrapper/export/IP_wrapper/hw/IP_wrapper.xsa], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-01-31 11:26:46.235
+!MESSAGE XSCT command with result: [::hsi::utils::get_design_properties -json C:/Users/neastbur/cpre488/mps/MP-0/eclipse_workspace/IP_wrapper/export/IP_wrapper/hw/IP_wrapper.xsa], Result: [null, {"device": "7z020",
+"family": "zynq",
+"timestamp": "Fri Jan 31 09:28:17 2025",
+"vivado_version": "2020.1",
+"part": "xc7z020clg484-1",
+}]. Thread: main

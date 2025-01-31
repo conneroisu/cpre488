@@ -984,3 +984,12 @@ con
 11:14:43 INFO  : Platform repository initialization has completed.
 11:14:43 INFO  : Successfully done query RDI_DATADIR 
 11:14:43 INFO  : Registering command handlers for Vitis TCF services
+11:26:39 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\neastbur\cpre488\mps\MP-0\eclipse_workspace\temp_xsdb_launch_script.tcl
+11:26:40 INFO  : XSCT server has started successfully.
+11:26:40 INFO  : plnx-install-location is set to ''
+11:26:40 INFO  : Successfully done setting XSCT server connection channel  
+11:26:40 INFO  : Successfully done setting workspace for the tool. 
+11:26:42 INFO  : Platform repository initialization has completed.
+11:26:42 INFO  : Successfully done query RDI_DATADIR 
+11:26:42 INFO  : Registering command handlers for Vitis TCF services
+11:26:57 INFO  : Projects exported to 'C:\Users\neastbur\cpre488\mps\MP-0\IP_Design_System.ide.zip'

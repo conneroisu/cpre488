@@ -19,3 +19,6 @@ timestamp=[2025-01-31 10:50:36], mode=BUILD, duration=0:00:00.672, duration_ms=6
 timestamp=[2025-01-31 11:14:42], mode=WORKBENCH_START, duration=0:00:05.334, duration_ms=5334, data={}
 timestamp=[2025-01-31 11:14:43], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.015, duration_ms=15, data={}
 timestamp=[2025-01-31 11:14:43], mode=WORKBENCH_UI_INIT, duration=0:00:00.739, duration_ms=739, data={editors_count=5, platform_editors_count=4, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=IP_Design,IP_Design_System,IP_wrapper,RemoteSystemsTempFiles}
+timestamp=[2025-01-31 11:26:41], mode=WORKBENCH_START, duration=0:00:05.431, duration_ms=5431, data={}
+timestamp=[2025-01-31 11:26:42], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.017, duration_ms=17, data={}
+timestamp=[2025-01-31 11:26:42], mode=WORKBENCH_UI_INIT, duration=0:00:00.771, duration_ms=771, data={editors_count=5, platform_editors_count=4, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=IP_Design,IP_Design_System,IP_wrapper,RemoteSystemsTempFiles}
