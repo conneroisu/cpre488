@@ -1,0 +1,10 @@
+18:26:39 **** Incremental Build of configuration Debug for project Zynq_Design_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 54850 C:/Users/jaxie963/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm domain_ps7_cortexa9_0 C:/Users/jaxie963/workspace/Zynq_Design_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/jaxie963/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm --sys_config zynq_design_1_wrapper --bif C:/Users/jaxie963/workspace/Zynq_Design_system/Debug/system.bif --bitstream C:/Users/jaxie963/workspace/Zynq_Design/_ide/bitstream/zynq_design_1_wrapper.bit --elf C:/Users/jaxie963/workspace/Zynq_Design/Debug/Zynq_Design.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Users/jaxie963/workspace/Zynq_Design/_ide/bitstream/zynq_design_1_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image C:/Users/jaxie963/workspace/Zynq_Design_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+18:26:42 Build Finished (took 3s.29ms)
+

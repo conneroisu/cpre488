@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="false" key="Zynq_Design-skip_rev_check"/>
+	<item value="false" key="Zynq_Design-partial_bit"/>
+	<item value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zed 210248B9DA75&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zed-210248B9DA75-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zed-210248B9DA75-23727093-0&quot;}}]}" key="devices_info_Local"/>
+	<item value="" key="Zynq_Design-bmmFile"/>
+	<item value="Zynq_Design" key="programfpga.sdxproject"/>
+	<item value="Local" key="Zynq_Design-target"/>
+	<item value="Auto Detect" key="Zynq_Design-device"/>
+	<item value="_ide/bitstream/zynq_design_1_wrapper.bit" key="Zynq_Design-bitFile"/>
+</section>
