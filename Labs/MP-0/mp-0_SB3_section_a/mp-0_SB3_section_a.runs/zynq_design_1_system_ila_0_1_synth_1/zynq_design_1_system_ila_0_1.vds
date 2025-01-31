@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Jan 30 15:23:46 2025
-# Process ID: 9096
+# Start of session at: Thu Jan 30 18:22:45 2025
+# Process ID: 20608
 # Current directory: C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_system_ila_0_1_synth_1
 # Command line: vivado.exe -log zynq_design_1_system_ila_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_design_1_system_ila_0_1.tcl
 # Log file: C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_system_ila_0_1_synth_1/zynq_design_1_system_ila_0_1.vds
@@ -17,9 +17,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 16796
+INFO: [Synth 8-7075] Helper process launched with PID 20836
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1013.910 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1013.586 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'zynq_design_1_system_ila_0_1' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/synth/zynq_design_1_system_ila_0_1.vhd:83]
 INFO: [Synth 8-3491] module 'bd_033f' declared at 'c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/synth/bd_033f.vhd:11' bound to instance 'U0' of component 'bd_033f' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/synth/zynq_design_1_system_ila_0_1.vhd:306]
@@ -1382,7 +1382,7 @@ INFO: [Synth 8-638] synthesizing module 'bd_033f_ila_lib_0' [c:/Users/jaxie963/t
 	Parameter C_MU_TYPE bound to: 0 - type: integer 
 	Parameter C_TC_TYPE bound to: 0 - type: integer 
 	Parameter C_NUM_OF_PROBES bound to: 19 - type: integer 
-	Parameter C_DATA_DEPTH bound to: 1024 - type: integer 
+	Parameter C_DATA_DEPTH bound to: 8192 - type: integer 
 	Parameter C_MAJOR_VERSION bound to: 2020 - type: integer 
 	Parameter C_MINOR_VERSION bound to: 1 - type: integer 
 	Parameter C_BUILD_REVISION bound to: 0 - type: integer 
@@ -4488,7 +4488,7 @@ INFO: [Synth 8-6157] synthesizing module 'SRLC16E' [C:/Xilinx/Vivado/2020.1/scri
 INFO: [Synth 8-6155] done synthesizing module 'SRLC16E' (26#1) [C:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:78148]
 INFO: [Synth 8-6157] synthesizing module 'FDRE' [C:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:13724]
 INFO: [Synth 8-6155] done synthesizing module 'FDRE' (31#1) [C:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:13724]
-INFO: [Synth 8-256] done synthesizing module 'bd_033f_ila_lib_0' (49#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_0/synth/bd_033f_ila_lib_0.vhd:80]
+INFO: [Synth 8-256] done synthesizing module 'bd_033f_ila_lib_0' (51#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_0/synth/bd_033f_ila_lib_0.vhd:80]
 INFO: [Synth 8-3491] module 'bd_033f_slot_1_ar_0' declared at 'c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_5/synth/bd_033f_slot_1_ar_0.v:58' bound to instance 'slot_1_ar' of component 'bd_033f_slot_1_ar_0' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/synth/bd_033f.vhd:320]
 INFO: [Synth 8-6157] synthesizing module 'bd_033f_slot_1_ar_0' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_5/synth/bd_033f_slot_1_ar_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
@@ -4526,37 +4526,37 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/ja
 	Parameter IN31_WIDTH bound to: 1 - type: integer 
 	Parameter dout_width bound to: 2 - type: integer 
 	Parameter NUM_PORTS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (50#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'bd_033f_slot_1_ar_0' (51#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_5/synth/bd_033f_slot_1_ar_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (52#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'bd_033f_slot_1_ar_0' (53#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_5/synth/bd_033f_slot_1_ar_0.v:58]
 INFO: [Synth 8-3491] module 'bd_033f_slot_1_aw_0' declared at 'c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_2/synth/bd_033f_slot_1_aw_0.v:58' bound to instance 'slot_1_aw' of component 'bd_033f_slot_1_aw_0' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/synth/bd_033f.vhd:326]
 INFO: [Synth 8-6157] synthesizing module 'bd_033f_slot_1_aw_0' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_2/synth/bd_033f_slot_1_aw_0.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'bd_033f_slot_1_aw_0' (52#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_2/synth/bd_033f_slot_1_aw_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'bd_033f_slot_1_aw_0' (54#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_2/synth/bd_033f_slot_1_aw_0.v:58]
 INFO: [Synth 8-3491] module 'bd_033f_slot_1_b_0' declared at 'c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_4/synth/bd_033f_slot_1_b_0.v:58' bound to instance 'slot_1_b' of component 'bd_033f_slot_1_b_0' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/synth/bd_033f.vhd:332]
 INFO: [Synth 8-6157] synthesizing module 'bd_033f_slot_1_b_0' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_4/synth/bd_033f_slot_1_b_0.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'bd_033f_slot_1_b_0' (53#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_4/synth/bd_033f_slot_1_b_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'bd_033f_slot_1_b_0' (55#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_4/synth/bd_033f_slot_1_b_0.v:58]
 INFO: [Synth 8-3491] module 'bd_033f_slot_1_r_0' declared at 'c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_6/synth/bd_033f_slot_1_r_0.v:58' bound to instance 'slot_1_r' of component 'bd_033f_slot_1_r_0' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/synth/bd_033f.vhd:338]
 INFO: [Synth 8-6157] synthesizing module 'bd_033f_slot_1_r_0' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_6/synth/bd_033f_slot_1_r_0.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'bd_033f_slot_1_r_0' (54#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_6/synth/bd_033f_slot_1_r_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'bd_033f_slot_1_r_0' (56#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_6/synth/bd_033f_slot_1_r_0.v:58]
 INFO: [Synth 8-3491] module 'bd_033f_slot_1_w_0' declared at 'c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_3/synth/bd_033f_slot_1_w_0.v:58' bound to instance 'slot_1_w' of component 'bd_033f_slot_1_w_0' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/synth/bd_033f.vhd:344]
 INFO: [Synth 8-6157] synthesizing module 'bd_033f_slot_1_w_0' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_3/synth/bd_033f_slot_1_w_0.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'bd_033f_slot_1_w_0' (55#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_3/synth/bd_033f_slot_1_w_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'bd_033f_slot_1_w_0' (57#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_3/synth/bd_033f_slot_1_w_0.v:58]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_lib'. This will prevent further optimization [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/synth/bd_033f.vhd:297]
-INFO: [Synth 8-256] done synthesizing module 'bd_033f' (56#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/synth/bd_033f.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'zynq_design_1_system_ila_0_1' (57#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/synth/zynq_design_1_system_ila_0_1.vhd:83]
+INFO: [Synth 8-256] done synthesizing module 'bd_033f' (58#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/synth/bd_033f.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'zynq_design_1_system_ila_0_1' (59#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/synth/zynq_design_1_system_ila_0_1.vhd:83]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:34 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:29 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:35 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:29 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:35 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.134 . Memory (MB): peak = 1317.777 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 230 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.153 . Memory (MB): peak = 1381.410 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 254 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -4572,22 +4572,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/zynq_design_1_system_ila_0_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1317.777 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1381.410 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 167 instances were transformed.
   CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 144 instances
   CFGLUT5 => SRLC32E: 23 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.114 . Memory (MB): peak = 1317.777 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.137 . Memory (MB): peak = 1381.410 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -4602,7 +4602,7 @@ Applied set_property DONT_TOUCH = true for U0/slot_1_b. (constraint file  auto g
 Applied set_property DONT_TOUCH = true for U0/slot_1_ar. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for U0/slot_1_r. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:35 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized19'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s'
@@ -4836,7 +4836,7 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in m
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized18'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:37 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:44 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -4857,25 +4857,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:43 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:50 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:48 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:55 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:49 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:49 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:57 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -4931,37 +4931,37 @@ INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[2] to constant 0
 INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[1] to constant 0
 INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[0] to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:51 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:51 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:51 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:51 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -4977,36 +4977,36 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |CARRY4   |    59|
+|1     |CARRY4   |    70|
 |2     |CFGLUT5  |   167|
 |3     |LUT1     |    48|
-|4     |LUT2     |    67|
-|5     |LUT3     |   124|
-|6     |LUT4     |   240|
-|7     |LUT5     |    74|
-|8     |LUT6     |   797|
+|4     |LUT2     |    66|
+|5     |LUT3     |   238|
+|6     |LUT4     |   250|
+|7     |LUT5     |    66|
+|8     |LUT6     |   785|
 |9     |MUXF7    |    20|
 |10    |RAMB18E1 |     1|
-|11    |RAMB36E1 |     3|
-|12    |SRL16E   |   126|
-|13    |SRLC16E  |     2|
-|14    |SRLC32E  |    17|
-|15    |FDRE     |  2384|
-|16    |FDSE     |    10|
+|11    |RAMB36E1 |    27|
+|13    |SRL16E   |   126|
+|14    |SRLC16E  |     2|
+|15    |SRLC32E  |    17|
+|16    |FDRE     |  2413|
+|17    |FDSE     |    10|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1381.410 ; gain = 367.824
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:48 . Memory (MB): peak = 1317.777 ; gain = 303.867
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1317.777 ; gain = 303.867
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:55 . Memory (MB): peak = 1381.410 ; gain = 367.824
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1381.410 ; gain = 367.824
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 1317.777 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 250 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1381.410 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 285 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1317.777 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1381.410 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 167 instances were transformed.
   CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 144 instances
@@ -5015,11 +5015,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 141 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:57 . Memory (MB): peak = 1317.777 ; gain = 303.867
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:01:05 . Memory (MB): peak = 1381.410 ; gain = 367.824
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_system_ila_0_1_synth_1/zynq_design_1_system_ila_0_1.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP zynq_design_1_system_ila_0_1, cache-ID = 51add13e503ecb64
-INFO: [Coretcl 2-1174] Renamed 219 cell refs.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP zynq_design_1_system_ila_0_1, cache-ID = 3dd3d65366b6c3c4
+INFO: [Coretcl 2-1174] Renamed 269 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_system_ila_0_1_synth_1/zynq_design_1_system_ila_0_1.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file zynq_design_1_system_ila_0_1_utilization_synth.rpt -pb zynq_design_1_system_ila_0_1_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jan 30 15:24:53 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 30 18:23:59 2025...

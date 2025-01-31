@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Jan 30 15:24:54 2025
-# Process ID: 12780
+# Start of session at: Thu Jan 30 18:24:01 2025
+# Process ID: 20520
 # Current directory: C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1
 # Command line: vivado.exe -log zynq_design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_design_1_wrapper.tcl
 # Log file: C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/zynq_design_1_wrapper.vds
@@ -20,21 +20,21 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 15112
+INFO: [Synth 8-7075] Helper process launched with PID 20568
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1013.215 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 1013.484 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'zynq_design_1_wrapper' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/hdl/zynq_design_1_wrapper.vhd:43]
 INFO: [Synth 8-3491] module 'zynq_design_1' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1330' bound to instance 'zynq_design_1_i' of component 'zynq_design_1' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/hdl/zynq_design_1_wrapper.vhd:73]
 INFO: [Synth 8-638] synthesizing module 'zynq_design_1' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1363]
-INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_0_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'zynq_design_1_axi_gpio_0_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1770]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_0_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_axi_gpio_0_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_1_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'zynq_design_1_axi_gpio_1_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1793]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_1_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_axi_gpio_1_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_2_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_axi_gpio_2_0_stub.vhdl:5' bound to instance 'axi_gpio_2' of component 'zynq_design_1_axi_gpio_2_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1816]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_2_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_axi_gpio_2_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'zynq_design_1_processing_system7_0_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'zynq_design_1_processing_system7_0_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1839]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_processing_system7_0_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_processing_system7_0_0_stub.vhdl:79]
+INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_0_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'zynq_design_1_axi_gpio_0_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1770]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_0_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_axi_gpio_0_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_1_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'zynq_design_1_axi_gpio_1_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1793]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_1_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_axi_gpio_1_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_2_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_axi_gpio_2_0_stub.vhdl:5' bound to instance 'axi_gpio_2' of component 'zynq_design_1_axi_gpio_2_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1816]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_2_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_axi_gpio_2_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'zynq_design_1_processing_system7_0_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'zynq_design_1_processing_system7_0_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1839]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_processing_system7_0_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_processing_system7_0_0_stub.vhdl:79]
 INFO: [Synth 8-638] synthesizing module 'zynq_design_1_ps7_0_axi_periph_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:749]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_18AWEIM' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:61]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_18AWEIM' (1#1) [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:61]
@@ -43,32 +43,32 @@ INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1CEBHM' (2#1) [C:
 INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_VP3VRR' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:269]
 INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_VP3VRR' (3#1) [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:269]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_ZMS6PT' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:393]
-INFO: [Synth 8-3491] module 'zynq_design_1_auto_pc_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'zynq_design_1_auto_pc_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:576]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_auto_pc_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_auto_pc_0_stub.vhdl:70]
+INFO: [Synth 8-3491] module 'zynq_design_1_auto_pc_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'zynq_design_1_auto_pc_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:576]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_auto_pc_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_auto_pc_0_stub.vhdl:70]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_ZMS6PT' (4#1) [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:393]
-INFO: [Synth 8-3491] module 'zynq_design_1_xbar_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'zynq_design_1_xbar_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1246]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_xbar_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'zynq_design_1_xbar_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'zynq_design_1_xbar_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1246]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_xbar_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_xbar_0_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 'zynq_design_1_ps7_0_axi_periph_0' (5#1) [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:749]
-INFO: [Synth 8-3491] module 'zynq_design_1_rst_ps7_0_100M_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'zynq_design_1_rst_ps7_0_100M_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:2014]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_rst_ps7_0_100M_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_rst_ps7_0_100M_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'zynq_design_1_system_ila_0_1' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_system_ila_0_1_stub.vhdl:5' bound to instance 'system_ila_0' of component 'zynq_design_1_system_ila_0_1' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:2027]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_system_ila_0_1' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-12780-CO2041-16/realtime/zynq_design_1_system_ila_0_1_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'zynq_design_1_rst_ps7_0_100M_0' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'zynq_design_1_rst_ps7_0_100M_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:2014]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_rst_ps7_0_100M_0' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_rst_ps7_0_100M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'zynq_design_1_system_ila_0_1' declared at 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_system_ila_0_1_stub.vhdl:5' bound to instance 'system_ila_0' of component 'zynq_design_1_system_ila_0_1' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:2027]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_system_ila_0_1' [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-20520-CO2041-16/realtime/zynq_design_1_system_ila_0_1_stub.vhdl:33]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ps7_0_axi_periph'. This will prevent further optimization [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1910]
 INFO: [Synth 8-256] done synthesizing module 'zynq_design_1' (6#1) [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1363]
 INFO: [Synth 8-256] done synthesizing module 'zynq_design_1_wrapper' (7#1) [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/hdl/zynq_design_1_wrapper.vhd:43]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.215 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.484 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.215 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.484 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.215 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.484 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1013.215 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1013.484 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -86,28 +86,28 @@ Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp
 Finished Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xbar_0/zynq_design_1_xbar_0/zynq_design_1_xbar_0_in_context.xdc] for cell 'zynq_design_1_i/ps7_0_axi_periph/xbar'
 Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0_in_context.xdc] for cell 'zynq_design_1_i/rst_ps7_0_100M'
 Finished Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0_in_context.xdc] for cell 'zynq_design_1_i/rst_ps7_0_100M'
-Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0_in_context.xdc] for cell 'zynq_design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
-Finished Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0_in_context.xdc] for cell 'zynq_design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
 Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/zynq_design_1_system_ila_0_1/zynq_design_1_system_ila_0_1_in_context.xdc] for cell 'zynq_design_1_i/system_ila_0'
 Finished Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/zynq_design_1_system_ila_0_1/zynq_design_1_system_ila_0_1_in_context.xdc] for cell 'zynq_design_1_i/system_ila_0'
+Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0_in_context.xdc] for cell 'zynq_design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0_in_context.xdc] for cell 'zynq_design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
 Parsing XDC File [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1045.836 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1022.867 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1045.836 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1022.867 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1045.836 ; gain = 32.621
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.867 ; gain = 9.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1045.836 ; gain = 32.621
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.867 ; gain = 9.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -380,13 +380,13 @@ Applied set_property DONT_TOUCH = true for zynq_design_1_i/axi_gpio_2. (constrai
 Applied set_property DONT_TOUCH = true for zynq_design_1_i/ps7_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for zynq_design_1_i/ps7_0_axi_periph. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for zynq_design_1_i/rst_ps7_0_100M. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for zynq_design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for zynq_design_1_i/system_ila_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for zynq_design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1045.836 ; gain = 32.621
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.867 ; gain = 9.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1045.836 ; gain = 32.621
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.867 ; gain = 9.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -408,25 +408,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1045.836 ; gain = 32.621
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1022.867 ; gain = 9.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1045.836 ; gain = 32.621
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 1035.453 ; gain = 21.969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1045.836 ; gain = 32.621
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 1035.527 ; gain = 22.043
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1056.641 ; gain = 43.426
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 1055.145 ; gain = 41.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -444,37 +444,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1062.379 ; gain = 49.164
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1059.895 ; gain = 46.410
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1062.379 ; gain = 49.164
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1059.895 ; gain = 46.410
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1062.379 ; gain = 49.164
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1059.895 ; gain = 46.410
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1062.379 ; gain = 49.164
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1059.895 ; gain = 46.410
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1062.379 ; gain = 49.164
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1059.895 ; gain = 46.410
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1062.379 ; gain = 49.164
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1059.895 ; gain = 46.410
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -510,23 +510,25 @@ Report Cell Usage:
 |10    |OBUF                                      |     8|
 +------+------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1062.379 ; gain = 49.164
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1059.895 ; gain = 46.410
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 1062.379 ; gain = 16.543
-Synthesis Optimization Complete : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1062.379 ; gain = 49.164
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1059.895 ; gain = 37.027
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 1059.895 ; gain = 46.410
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1062.379 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1071.941 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1072.723 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1077.590 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 47 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1072.723 ; gain = 59.508
+synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 1077.590 ; gain = 64.105
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/zynq_design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file zynq_design_1_wrapper_utilization_synth.rpt -pb zynq_design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jan 30 15:25:20 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 30 18:24:29 2025...
