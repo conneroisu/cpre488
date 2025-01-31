@@ -126,7 +126,7 @@ You give the print function a `*char` and it sends the "string" to the UART on s
 
 We think that Xilinx has this feature because methods/functions can be declared the same name in different files across larger projects.
 
-This is used in the Hello World example to print the "Hello World" string to the console while operating correctly in the xilinx simulator and on the actual fpga hardware.
+This is used in the Hello World example to print the "Hello World" string to the console while operating correctly in the xilinx emulator and on the actual fpga hardware.
 
 ## [TASK] Step 9: Connect to the Vivado Logic Analyzer: i) Take a screen capture of an LED wire turning on? Can you turn the LED on and off fast enough to get a screen capture of the Logic Analyzer displaying this pulse? If so, then provide this screen capture as well. For how long does the pulse stay high?
 
