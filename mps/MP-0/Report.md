@@ -136,10 +136,7 @@ This is used in the Hello World example to print the "Hello World" string to the
 
 ## [TASK] Step 9: Connect to the Vivado Logic Analyzer: i) Take a screen capture of an LED wire turning on? Can you turn the LED on and off fast enough to get a screen capture of the Logic Analyzer displaying this pulse? If so, then provide this screen capture as well. For how long does the pulse stay high?
 
-i) instruction 11: In the Template page, select "Hello World", not "Peripheral Test" template
 In your writeup, use this feature and describe what print() does, and how.
-
-Why do you believe this function is used by Xilinx for their Hello World application, as opposed to the more conventional printf() function?
 
 Modify the nes_bootloader code such that the NES games are reasonably playable. In your report, describe your general approach to implementing both of the NESCore_Callback functions.
 
