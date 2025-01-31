@@ -264,5 +264,4 @@ pyrightconfig.json
 .devenv
 .obsidian.vimrc
 .ccls-cache
-*eclipse_workspace*
 *.zip_

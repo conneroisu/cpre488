@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdx:platform sdx:vendor="xilinx.com"
+              sdx:library="sdx"
+              sdx:name="IP_wrapper"
+              sdx:version="1.0"
+              sdx:schemaVersion="1.0"
+              xmlns:sdx="http://www.xilinx.com/sdx">
+    <sdx:description>
+IP_wrapper
+    </sdx:description>
+    <sdx:systemConfigurations sdx:defaultConfiguration="IP_wrapper">
+        <sdx:configuration sdx:name="IP_wrapper"
+                           sdx:displayName="IP_wrapper"
+                           sdx:defaultProcessorGroup="domain_ps7_cortexa9_0"
+                           sdx:runtimes="cpp">
+            <sdx:description>IP_wrapper</sdx:description>
+            <sdx:bootImages sdx:default="standard">
+                <sdx:image sdx:name="standard"
+                            sdx:bif="IP_wrapper/boot/IP_wrapper.bif"
+                            sdx:readme="IP_wrapper/boot/generic.readme"
+                            sdx:qemuArguments="IP_wrapper/qemu/qemu_args.txt"
+                            />
+                <sdx:image sdx:name="domain_ps7_cortexa9_0"
+                            sdx:bif="IP_wrapper/boot/IP_wrapper.bif"
+                            sdx:readme="IP_wrapper/boot/generic.readme"
+                            sdx:qemuArguments="IP_wrapper/domain_ps7_cortexa9_0/qemu/qemu_args.txt"
+                            />
+            </sdx:bootImages>
+            <sdx:processorGroup sdx:name="domain_ps7_cortexa9_0"
+                                sdx:displayName="domain_ps7_cortexa9_0"
+                                sdx:cpuType="cortex-a9"
+                                sdx:cpuInstance="ps7_cortexa9_0">
+                <sdx:os sdx:name="standalone"
+                        sdx:displayName="standalone"
+                        sdx:bspLibraryPaths="IP_wrapper/domain_ps7_cortexa9_0/bsplib/lib"
+                        sdx:bspIncludePaths="IP_wrapper/domain_ps7_cortexa9_0/bspinclude/include"
+                        sdx:bspConfig="IP_wrapper/domain_ps7_cortexa9_0/system.mss"
+                />
+            </sdx:processorGroup>
+        </sdx:configuration>
+    </sdx:systemConfigurations>
+</sdx:platform>
