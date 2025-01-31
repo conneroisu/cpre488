@@ -1,0 +1,24 @@
+Nothing to build in platform 'IP_wrapper'
+
+10:50:35 **** Incremental Build of configuration Debug for project IP_Design ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/neastbur/cpre488/mps/MP-0/eclipse_workspace/IP_wrapper/export/IP_wrapper/sw/IP_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: IP_Design.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/neastbur/cpre488/mps/MP-0/eclipse_workspace/IP_wrapper/export/IP_wrapper/sw/IP_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "IP_Design.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: IP_Design.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size IP_Design.elf  |tee "IP_Design.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  21696	   1144	  22568	  45408	   b160	IP_Design.elf
+'Finished building: IP_Design.elf.size'
+' '

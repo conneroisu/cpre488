@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="" key="IP_Design-bmmFile"/>
+	<item value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zed 210248A49A6F&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zed-210248A49A6F-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zed-210248A49A6F-23727093-0&quot;}}]}" key="devices_info_Local"/>
+	<item value="_ide/bitstream/IP_wrapper.bit" key="IP_Design-bitFile"/>
+	<item value="false" key="IP_Design-partial_bit"/>
+	<item value="false" key="IP_Design-skip_rev_check"/>
+	<item value="Auto Detect" key="IP_Design-device"/>
+	<item value="IP_Design" key="programfpga.sdxproject"/>
+	<item value="Local" key="IP_Design-target"/>
+</section>
