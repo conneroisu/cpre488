@@ -79,11 +79,8 @@
 !*.runs/impl*/*utilization*.rpt
 
 ### block design
-### block design
 */*/bd/*/hdl
 */*/*/bd/*/hdl
-*/*/bd/*/ip/*/*/
-*/*/*/bd/*/ip/*/*/
 */*/bd/*/ip/*/*.vhd
 */*/*/bd/*/ip/*/*.vhd
 */*/bd/*/ip/*/*.xml
