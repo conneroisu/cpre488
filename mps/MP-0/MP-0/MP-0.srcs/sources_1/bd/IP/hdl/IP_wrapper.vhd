@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Fri Jan 31 09:28:02 2025
---Host        : CO2041-05 running 64-bit major release  (build 9200)
+--Date        : Fri Jan 31 20:27:38 2025
+--Host        : DESKTOP-EGO35HT running 64-bit major release  (build 9200)
 --Command     : generate_target IP_wrapper.bd
 --Design      : IP_wrapper
 --Purpose     : IP block netlist
@@ -65,8 +65,8 @@ architecture STRUCTURE of IP_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   end component IP;
 begin
