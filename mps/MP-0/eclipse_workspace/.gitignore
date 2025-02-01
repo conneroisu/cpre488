@@ -1,1 +1,7 @@
-*.analytics
+# Eclipse workspace gitignore
+
+!*
+*.log
+RemoteSystemsTempFiles\*
+.analytics
+.metadata\*
