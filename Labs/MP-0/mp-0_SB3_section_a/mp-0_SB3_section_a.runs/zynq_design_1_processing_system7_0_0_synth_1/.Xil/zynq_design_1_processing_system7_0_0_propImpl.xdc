@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:u:/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_0/zynq_design_1_processing_system7_0_0.xdc rfile:../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_0/zynq_design_1_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:inst} [current_design]
+set_property SRC_FILE_INFO {cfile:c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_0/zynq_design_1_processing_system7_0_0.xdc rfile:../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_0/zynq_design_1_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:inst} [current_design]
 current_instance inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_0 0.3

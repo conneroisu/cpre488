@@ -11,6 +11,7 @@
 -endlib
 -makelib xcelium_lib/xpm -sv \
   "C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
   "C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 -endlib
 -makelib xcelium_lib/xpm \
@@ -74,14 +75,6 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/sim/zynq_design_1_rst_ps7_0_100M_0.vhd" \
--endlib
--makelib xcelium_lib/axi_protocol_converter_v2_1_21 \
-  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/8dfa/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/sim/zynq_design_1_auto_pc_0.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
   "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/ip/ip_0/sim/bd_033f_ila_lib_0.vhd" \
 -endlib
 -makelib xcelium_lib/gigantic_mux \
@@ -104,7 +97,84 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/bd_0/sim/bd_033f.vhd" \
   "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/sim/zynq_design_1_system_ila_0_1.vhd" \
+-endlib
+-makelib xcelium_lib/lib_pkg_v1_0_2 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/0513/hdl/lib_pkg_v1_0_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/lib_fifo_v1_0_14 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a5cb/hdl/lib_fifo_v1_0_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/blk_mem_gen_v8_4_4 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/2985/simulation/blk_mem_gen_v8_4.v" \
+-endlib
+-makelib xcelium_lib/lib_bmg_v1_0_13 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/af67/hdl/lib_bmg_v1_0_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/lib_srl_fifo_v1_0_2 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/axi_datamover_v5_1_23 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/af86/hdl/axi_datamover_v5_1_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/axi_vdma_v6_3_9 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl/axi_vdma_v6_3_rfs.v" \
+-endlib
+-makelib xcelium_lib/axi_vdma_v6_3_9 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl/axi_vdma_v6_3_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/sim/zynq_design_1_axi_vdma_0_0.vhd" \
+-endlib
+-makelib xcelium_lib/v_tc_v6_2_0 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/111e/hdl/v_tc_v6_2_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/sim/zynq_design_1_v_tc_0_0.vhd" \
+-endlib
+-makelib xcelium_lib/v_tc_v6_1_13 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b92e/hdl/v_tc_v6_1_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/v_vid_in_axi4s_v4_0_9 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b2aa/hdl/v_vid_in_axi4s_v4_0_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/v_axi4s_vid_out_v4_0_10 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/sim/zynq_design_1_v_axi4s_vid_out_0_0.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
   "../../../bd/zynq_design_1/sim/zynq_design_1.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_xbar_2/sim/zynq_design_1_xbar_2.v" \
+-endlib
+-makelib xcelium_lib/xlslice_v1_0_2 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_xlslice_0_0/sim/zynq_design_1_xlslice_0_0.v" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_xlslice_0_1/sim/zynq_design_1_xlslice_0_1.v" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_xlslice_0_2/sim/zynq_design_1_xlslice_0_2.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_1_1/bd_0/ip/ip_0/sim/bd_c36e_ila_lib_0.vhd" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_1_1/bd_0/sim/bd_c36e.vhd" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_1_1/sim/zynq_design_1_system_ila_1_1.vhd" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_2_1/bd_0/ip/ip_0/sim/bd_c39e_ila_lib_0.vhd" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_2_1/bd_0/sim/bd_c39e.vhd" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_2_1/sim/zynq_design_1_system_ila_2_1.vhd" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_0/sim/bd_03cf_ila_lib_0.vhd" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/sim/bd_03cf.vhd" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/sim/zynq_design_1_system_ila_3_1.vhd" \
+-endlib
+-makelib xcelium_lib/axi_protocol_converter_v2_1_21 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/8dfa/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/sim/zynq_design_1_auto_pc_0.v" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_auto_pc_1/sim/zynq_design_1_auto_pc_1.v" \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_auto_pc_2/sim/zynq_design_1_auto_pc_2.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="false" key="Zynq_Design-skip_rev_check"/>
-	<item value="false" key="Zynq_Design-partial_bit"/>
+	<item value="Local" key="mp0-section_a-target"/>
+	<item value="" key="mp0-section_a-bmmFile"/>
+	<item value="false" key="mp0-section_a-skip_rev_check"/>
 	<item value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zed 210248526090&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zed-210248526090-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zed-210248526090-23727093-0&quot;}}]}" key="devices_info_Local"/>
-	<item value="" key="Zynq_Design-bmmFile"/>
-	<item value="Zynq_Design" key="programfpga.sdxproject"/>
-	<item value="Local" key="Zynq_Design-target"/>
-	<item value="Auto Detect" key="Zynq_Design-device"/>
-	<item value="_ide/bitstream/zynq_design_1_wrapper.bit" key="Zynq_Design-bitFile"/>
+	<item value="Auto Detect" key="mp0-section_a-device"/>
+	<item value="_ide/bitstream/zynq_design_1_wrapper.bit" key="mp0-section_a-bitFile"/>
+	<item value="mp0-section_a" key="programfpga.sdxproject"/>
+	<item value="false" key="mp0-section_a-partial_bit"/>
 </section>

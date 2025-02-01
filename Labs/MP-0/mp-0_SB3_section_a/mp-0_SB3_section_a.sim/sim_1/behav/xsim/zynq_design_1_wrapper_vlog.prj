@@ -1,0 +1,24 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" --include "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" --include "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" --include "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_0/sim/zynq_design_1_processing_system7_0_0.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_xbar_0/sim/zynq_design_1_xbar_0.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/sim/zynq_design_1_v_axi4s_vid_out_0_0.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_xbar_2/sim/zynq_design_1_xbar_2.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_xlslice_0_0/sim/zynq_design_1_xlslice_0_0.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_xlslice_0_1/sim/zynq_design_1_xlslice_0_1.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_xlslice_0_2/sim/zynq_design_1_xlslice_0_2.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_1/bd_0/ip/ip_1/bd_c36e_g_inst_0_gigantic_mux.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_1/bd_0/ip/ip_1/sim/bd_c36e_g_inst_0.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_1/bd_0/ip/ip_2/sim/bd_c36e_slot_0_aw_0.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_1/bd_0/ip/ip_3/sim/bd_c36e_slot_0_w_0.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_1/bd_0/ip/ip_4/sim/bd_c36e_slot_0_b_0.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_1/bd_0/ip/ip_5/sim/bd_c36e_slot_0_ar_0.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_1/bd_0/ip/ip_6/sim/bd_c36e_slot_0_r_0.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/sim/zynq_design_1_auto_pc_0.v" \
+"../../../../mp-0_SB3_section_a.ip_user_files/bd/zynq_design_1/ip/zynq_design_1_auto_pc_1/sim/zynq_design_1_auto_pc_1.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
