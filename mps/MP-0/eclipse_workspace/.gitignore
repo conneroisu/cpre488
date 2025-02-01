@@ -1,0 +1,10 @@
+# Eclipse workspace gitignore
+
+!*
+*.log
+RemoteSystemsTempFiles/**
+.analytics
+.metadata/**
+*.o
+**/export/**
+*.elf
