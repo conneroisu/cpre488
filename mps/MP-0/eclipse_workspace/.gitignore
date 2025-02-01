@@ -5,7 +5,6 @@
 RemoteSystemsTempFiles/**
 .analytics
 .metadata/**
-**/export/**
 *.o
 **/lib/**
 *.elf
