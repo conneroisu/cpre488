@@ -78,16 +78,6 @@
 *.runs/impl*/*.bat
 !*.runs/impl*/*utilization*.rpt
 
-### block design
-*/*/bd/*/hdl
-*/*/*/bd/*/hdl
-*/*/bd/*/ip/*/*.vhd
-*/*/*/bd/*/ip/*/*.vhd
-*/*/bd/*/ip/*/*.xml
-*/*/*/bd/*/ip/*/*.xml
-
-*.bit
-*.rpt
 *.c
 *.h
 *.vho
