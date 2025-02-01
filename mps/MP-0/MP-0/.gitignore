@@ -78,6 +78,7 @@
 *.runs/impl*/*.bat
 !*.runs/impl*/*utilization*.rpt
 
+
 *.c
 *.h
 *.vho
@@ -86,5 +87,3 @@
 */*/*/bd/*/ip/*/*.tcl
 hw_handoff
 ipshared
-
-!*
