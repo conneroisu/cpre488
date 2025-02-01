@@ -46,40 +46,16 @@
  */
 
 #include <stdio.h>
-#include <string.h>
 #include "platform.h"
 #include "xil_printf.h"
-#include <xparameters.h>
-#include "xil_io.h"
 
-#define GPIO_DATA_OFFSET 0x0
-#define GPIO_TRI_OFFSET 0x4
 
 int main()
 {
     init_platform();
 
-    // Configure GPIO.
-    // Output is set by default, so only 2 GPIO blocks need to be set to input.
-    Xil_Out32(XPAR_GPIO_1_BASEADDR, 0x1);
-    Xil_Out32(XPAR_GPIO_2_BASEADDR, 0x1);
-
-    int gpio1_val = 0;
-    int gpio2_val = 0;
-
-
-    while(1)
-    {
-    	gpio1_val = Xil_In32(XPAR_GPIO_1_BASEADDR + GPIO_DATA_OFFSET);
-    	gpio2_val = Xil_In32(XPAR_GPIO_2_BASEADDR + GPIO_DATA_OFFSET);
-
-    	xil_printf("GPIO_1 Value: %d\r\n", gpio1_val);
-
-    	// Turn on LEDs corresponding to the switches.
-    	Xil_Out32(XPAR_GPIO_0_BASEADDR + GPIO_DATA_OFFSET, gpio2_val);
-
-    }
-
+    print("Hello World\n\r");
+    print("Successfully ran Hello World application");
     cleanup_platform();
     return 0;
 }
