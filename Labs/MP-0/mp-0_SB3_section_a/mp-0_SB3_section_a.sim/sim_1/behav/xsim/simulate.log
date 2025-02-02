@@ -1,0 +1,55 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+XilinxAXIVIP: Found at Path: zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.M_AXI_GP0.master
+[0] : *ZYNQ_VIP_INFO : M_AXI_GP0 : Port is ENABLED.
+XilinxAXIVIP: Found at Path: zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.M_AXI_GP1.master
+[0] : *ZYNQ_VIP_INFO : M_AXI_GP1 : Port is ENABLED.
+XilinxAXIVIP: Found at Path: zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.S_AXI_GP0.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_GP0 : Port is DISABLED.
+XilinxAXIVIP: Found at Path: zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.S_AXI_GP1.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_GP1 : Port is DISABLED.
+XilinxAXIVIP: Found at Path: zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.S_AXI_HP0.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP0 : Port is ENABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.S_AXI_HP1.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP1 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.S_AXI_HP2.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP2 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.S_AXI_HP3.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP3 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.S_AXI_ACP.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_ACP : Port is DISABLED.
+                   0 else checking line ......x
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. zynq_design_1_wrapper.zynq_design_1_i.axi_vdma_0.U0.I_PRMRY_DATAMOVER.gen_s2mm_full.I_S2MM_FULL_WRAPPER.gen_enable_indet_btt_sf.I_INDET_BTT.I_XD_FIFO.non_blk_mem.I_SYNC_FIFOGEN_FIFO.xpm_fifo_instance.xpm_fifo_sync_inst.xpm_fifo_base_inst.\gen_sdpram.xpm_memory_base_inst .config_drc
+Time: 1 ps  Iteration: 0  Process: /zynq_design_1_wrapper/zynq_design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/gen_s2mm_full/I_S2MM_FULL_WRAPPER/gen_enable_indet_btt_sf/I_INDET_BTT/I_XD_FIFO/non_blk_mem/I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance/xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/Initial294_424  Scope: zynq_design_1_wrapper.zynq_design_1_i.axi_vdma_0.U0.I_PRMRY_DATAMOVER.gen_s2mm_full.I_S2MM_FULL_WRAPPER.gen_enable_indet_btt_sf.I_INDET_BTT.I_XD_FIFO.non_blk_mem.I_SYNC_FIFOGEN_FIFO.xpm_fifo_instance.xpm_fifo_sync_inst.xpm_fifo_base_inst.\gen_sdpram.xpm_memory_base_inst .config_drc  File: /wrk/2020.1/nightly/2020_05_27_2902540/packages/customer/vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 488
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. zynq_design_1_wrapper.zynq_design_1_i.axi_vdma_0.U0.gen_sprt_for_mm2s.MM2S_LINEBUFFER_I.gen_linebuf_no_sof.gen_linebuffer.gen_sync_fifo.I_LINEBUFFER_FIFO.xpm_fifo_sync_inst.xpm_fifo_base_inst.\gen_sdpram.xpm_memory_base_inst .config_drc
+Time: 1 ps  Iteration: 0  Process: /zynq_design_1_wrapper/zynq_design_1_i/axi_vdma_0/U0/gen_sprt_for_mm2s/MM2S_LINEBUFFER_I/gen_linebuf_no_sof/gen_linebuffer/gen_sync_fifo/I_LINEBUFFER_FIFO/xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/Initial294_232  Scope: zynq_design_1_wrapper.zynq_design_1_i.axi_vdma_0.U0.gen_sprt_for_mm2s.MM2S_LINEBUFFER_I.gen_linebuf_no_sof.gen_linebuffer.gen_sync_fifo.I_LINEBUFFER_FIFO.xpm_fifo_sync_inst.xpm_fifo_base_inst.\gen_sdpram.xpm_memory_base_inst .config_drc  File: /wrk/2020.1/nightly/2020_05_27_2902540/packages/customer/vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 488
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. zynq_design_1_wrapper.zynq_design_1_i.axi_vdma_0.U0.gen_sprt_for_s2mm.S2MM_LINEBUFFER_I.gen_s2mm_flush_sof_logic.gen_linebuffer_flush_sof.gen_sync_fifo_flush_sof.I_LINEBUFFER_FIFO.xpm_fifo_sync_inst.xpm_fifo_base_inst.\gen_sdpram.xpm_memory_base_inst .config_drc
+Time: 1 ps  Iteration: 0  Process: /zynq_design_1_wrapper/zynq_design_1_i/axi_vdma_0/U0/gen_sprt_for_s2mm/S2MM_LINEBUFFER_I/gen_s2mm_flush_sof_logic/gen_linebuffer_flush_sof/gen_sync_fifo_flush_sof/I_LINEBUFFER_FIFO/xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/Initial294_293  Scope: zynq_design_1_wrapper.zynq_design_1_i.axi_vdma_0.U0.gen_sprt_for_s2mm.S2MM_LINEBUFFER_I.gen_s2mm_flush_sof_logic.gen_linebuffer_flush_sof.gen_sync_fifo_flush_sof.I_LINEBUFFER_FIFO.xpm_fifo_sync_inst.xpm_fifo_base_inst.\gen_sdpram.xpm_memory_base_inst .config_drc  File: /wrk/2020.1/nightly/2020_05_27_2902540/packages/customer/vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 488
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. zynq_design_1_wrapper.zynq_design_1_i.v_axi4s_vid_out_0.inst.COUPLER_INST.\generate_sync_fifo.FIFO_INST .XPM_FIFO_SYNC_INST.xpm_fifo_base_inst.\gen_sdpram.xpm_memory_base_inst .config_drc
+Time: 1 ps  Iteration: 0  Process: /zynq_design_1_wrapper/zynq_design_1_i/v_axi4s_vid_out_0/inst/COUPLER_INST/generate_sync_fifo.FIFO_INST/XPM_FIFO_SYNC_INST/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/Initial294_3218  Scope: zynq_design_1_wrapper.zynq_design_1_i.v_axi4s_vid_out_0.inst.COUPLER_INST.\generate_sync_fifo.FIFO_INST .XPM_FIFO_SYNC_INST.xpm_fifo_base_inst.\gen_sdpram.xpm_memory_base_inst .config_drc  File: /wrk/2020.1/nightly/2020_05_27_2902540/packages/customer/vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 488
+WARNING: 5 ns zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.M_AXI_GP0.master.IF : ARESET_N can't be X/Z after 1 cycle of clock. To downgrade, use <hierarchy_path to VIP>.IF.set_enable_xchecks_to_warn(), or filter using clr_enable_xchecks.
+WARNING: 5 ns zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.M_AXI_GP1.master.IF : ARESET_N can't be X/Z after 1 cycle of clock. To downgrade, use <hierarchy_path to VIP>.IF.set_enable_xchecks_to_warn(), or filter using clr_enable_xchecks.
+WARNING: 5 ns zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.S_AXI_HP0.slave.IF : ARESET_N can't be X/Z after 1 cycle of clock. To downgrade, use <hierarchy_path to VIP>.IF.set_enable_xchecks_to_warn(), or filter using clr_enable_xchecks.
+                   5 else checking line ......1
+
+Time: 15 ns Started: 5 ns Scope: /zynq_design_1_wrapper/zynq_design_1_i/processing_system7_0/inst/S_AXI_HP0/slave/IF/PC File: /wrk/2020.1/nightly/2020_05_27_2902540/packages/customer/vivado/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1344
+Fatal: AXI4_ERRM_AWVALID_RESET: The earliest point after reset that a master is permitted to begin driving AWVALID HIGH is at a rising ACLK edge after ARESETn is HIGH. Spec: Figure A3-1.
+Time: 15 ns  Iteration: 1  Process: /zynq_design_1_wrapper/zynq_design_1_i/processing_system7_0/inst/S_AXI_HP0/slave/IF/PC//zynq_design_1_wrapper/zynq_design_1_i/processing_system7_0/inst/S_AXI_HP0/slave/IF/PC  Scope: zynq_design_1_wrapper.zynq_design_1_i.processing_system7_0.inst.S_AXI_HP0.slave.IF.PC.arm_amba4_pc_msg_err  File: /wrk/2020.1/nightly/2020_05_27_2902540/packages/customer/vivado/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 15 ns : File "/wrk/2020.1/nightly/2020_05_27_2902540/packages/customer/vivado/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" Line 727
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks

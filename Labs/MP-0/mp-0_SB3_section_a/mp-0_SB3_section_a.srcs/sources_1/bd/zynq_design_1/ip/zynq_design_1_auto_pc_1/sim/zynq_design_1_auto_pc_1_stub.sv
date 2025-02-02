@@ -67,28 +67,6 @@ typedef bit bit_as_bool;
 module zynq_design_1_auto_pc_1 (
   input bit_as_bool aclk,
   input bit_as_bool aresetn,
-  input bit [0 : 0] s_axi_awid,
-  input bit [31 : 0] s_axi_awaddr,
-  input bit [7 : 0] s_axi_awlen,
-  input bit [2 : 0] s_axi_awsize,
-  input bit [1 : 0] s_axi_awburst,
-  input bit [0 : 0] s_axi_awlock,
-  input bit [3 : 0] s_axi_awcache,
-  input bit [2 : 0] s_axi_awprot,
-  input bit [3 : 0] s_axi_awregion,
-  input bit [3 : 0] s_axi_awqos,
-  input bit_as_bool s_axi_awvalid,
-  output bit_as_bool s_axi_awready,
-  input bit [63 : 0] s_axi_wdata,
-  input bit [7 : 0] s_axi_wstrb,
-  input bit_as_bool s_axi_wlast,
-  input bit_as_bool s_axi_wvalid,
-  output bit_as_bool s_axi_wready,
-  output bit [0 : 0] s_axi_bid,
-  output bit [1 : 0] s_axi_bresp,
-  output bit_as_bool s_axi_bvalid,
-  input bit_as_bool s_axi_bready,
-  input bit [0 : 0] s_axi_arid,
   input bit [31 : 0] s_axi_araddr,
   input bit [7 : 0] s_axi_arlen,
   input bit [2 : 0] s_axi_arsize,
@@ -100,34 +78,11 @@ module zynq_design_1_auto_pc_1 (
   input bit [3 : 0] s_axi_arqos,
   input bit_as_bool s_axi_arvalid,
   output bit_as_bool s_axi_arready,
-  output bit [0 : 0] s_axi_rid,
   output bit [63 : 0] s_axi_rdata,
   output bit [1 : 0] s_axi_rresp,
   output bit_as_bool s_axi_rlast,
   output bit_as_bool s_axi_rvalid,
   input bit_as_bool s_axi_rready,
-  output bit [0 : 0] m_axi_awid,
-  output bit [31 : 0] m_axi_awaddr,
-  output bit [3 : 0] m_axi_awlen,
-  output bit [2 : 0] m_axi_awsize,
-  output bit [1 : 0] m_axi_awburst,
-  output bit [1 : 0] m_axi_awlock,
-  output bit [3 : 0] m_axi_awcache,
-  output bit [2 : 0] m_axi_awprot,
-  output bit [3 : 0] m_axi_awqos,
-  output bit_as_bool m_axi_awvalid,
-  input bit_as_bool m_axi_awready,
-  output bit [0 : 0] m_axi_wid,
-  output bit [63 : 0] m_axi_wdata,
-  output bit [7 : 0] m_axi_wstrb,
-  output bit_as_bool m_axi_wlast,
-  output bit_as_bool m_axi_wvalid,
-  input bit_as_bool m_axi_wready,
-  input bit [0 : 0] m_axi_bid,
-  input bit [1 : 0] m_axi_bresp,
-  input bit_as_bool m_axi_bvalid,
-  output bit_as_bool m_axi_bready,
-  output bit [0 : 0] m_axi_arid,
   output bit [31 : 0] m_axi_araddr,
   output bit [3 : 0] m_axi_arlen,
   output bit [2 : 0] m_axi_arsize,
@@ -138,7 +93,6 @@ module zynq_design_1_auto_pc_1 (
   output bit [3 : 0] m_axi_arqos,
   output bit_as_bool m_axi_arvalid,
   input bit_as_bool m_axi_arready,
-  input bit [0 : 0] m_axi_rid,
   input bit [63 : 0] m_axi_rdata,
   input bit [1 : 0] m_axi_rresp,
   input bit_as_bool m_axi_rlast,
@@ -150,33 +104,11 @@ endmodule
 
 `ifdef XCELIUM
 (* XMSC_MODULE_EXPORT *)
-module zynq_design_1_auto_pc_1 (aclk,aresetn,s_axi_awid,s_axi_awaddr,s_axi_awlen,s_axi_awsize,s_axi_awburst,s_axi_awlock,s_axi_awcache,s_axi_awprot,s_axi_awregion,s_axi_awqos,s_axi_awvalid,s_axi_awready,s_axi_wdata,s_axi_wstrb,s_axi_wlast,s_axi_wvalid,s_axi_wready,s_axi_bid,s_axi_bresp,s_axi_bvalid,s_axi_bready,s_axi_arid,s_axi_araddr,s_axi_arlen,s_axi_arsize,s_axi_arburst,s_axi_arlock,s_axi_arcache,s_axi_arprot,s_axi_arregion,s_axi_arqos,s_axi_arvalid,s_axi_arready,s_axi_rid,s_axi_rdata,s_axi_rresp,s_axi_rlast,s_axi_rvalid,s_axi_rready,m_axi_awid,m_axi_awaddr,m_axi_awlen,m_axi_awsize,m_axi_awburst,m_axi_awlock,m_axi_awcache,m_axi_awprot,m_axi_awqos,m_axi_awvalid,m_axi_awready,m_axi_wid,m_axi_wdata,m_axi_wstrb,m_axi_wlast,m_axi_wvalid,m_axi_wready,m_axi_bid,m_axi_bresp,m_axi_bvalid,m_axi_bready,m_axi_arid,m_axi_araddr,m_axi_arlen,m_axi_arsize,m_axi_arburst,m_axi_arlock,m_axi_arcache,m_axi_arprot,m_axi_arqos,m_axi_arvalid,m_axi_arready,m_axi_rid,m_axi_rdata,m_axi_rresp,m_axi_rlast,m_axi_rvalid,m_axi_rready)
+module zynq_design_1_auto_pc_1 (aclk,aresetn,s_axi_araddr,s_axi_arlen,s_axi_arsize,s_axi_arburst,s_axi_arlock,s_axi_arcache,s_axi_arprot,s_axi_arregion,s_axi_arqos,s_axi_arvalid,s_axi_arready,s_axi_rdata,s_axi_rresp,s_axi_rlast,s_axi_rvalid,s_axi_rready,m_axi_araddr,m_axi_arlen,m_axi_arsize,m_axi_arburst,m_axi_arlock,m_axi_arcache,m_axi_arprot,m_axi_arqos,m_axi_arvalid,m_axi_arready,m_axi_rdata,m_axi_rresp,m_axi_rlast,m_axi_rvalid,m_axi_rready)
 (* integer foreign = "SystemC";
 *);
   input bit aclk;
   input bit aresetn;
-  input bit [0 : 0] s_axi_awid;
-  input bit [31 : 0] s_axi_awaddr;
-  input bit [7 : 0] s_axi_awlen;
-  input bit [2 : 0] s_axi_awsize;
-  input bit [1 : 0] s_axi_awburst;
-  input bit [0 : 0] s_axi_awlock;
-  input bit [3 : 0] s_axi_awcache;
-  input bit [2 : 0] s_axi_awprot;
-  input bit [3 : 0] s_axi_awregion;
-  input bit [3 : 0] s_axi_awqos;
-  input bit s_axi_awvalid;
-  output wire s_axi_awready;
-  input bit [63 : 0] s_axi_wdata;
-  input bit [7 : 0] s_axi_wstrb;
-  input bit s_axi_wlast;
-  input bit s_axi_wvalid;
-  output wire s_axi_wready;
-  output wire [0 : 0] s_axi_bid;
-  output wire [1 : 0] s_axi_bresp;
-  output wire s_axi_bvalid;
-  input bit s_axi_bready;
-  input bit [0 : 0] s_axi_arid;
   input bit [31 : 0] s_axi_araddr;
   input bit [7 : 0] s_axi_arlen;
   input bit [2 : 0] s_axi_arsize;
@@ -188,34 +120,11 @@ module zynq_design_1_auto_pc_1 (aclk,aresetn,s_axi_awid,s_axi_awaddr,s_axi_awlen
   input bit [3 : 0] s_axi_arqos;
   input bit s_axi_arvalid;
   output wire s_axi_arready;
-  output wire [0 : 0] s_axi_rid;
   output wire [63 : 0] s_axi_rdata;
   output wire [1 : 0] s_axi_rresp;
   output wire s_axi_rlast;
   output wire s_axi_rvalid;
   input bit s_axi_rready;
-  output wire [0 : 0] m_axi_awid;
-  output wire [31 : 0] m_axi_awaddr;
-  output wire [3 : 0] m_axi_awlen;
-  output wire [2 : 0] m_axi_awsize;
-  output wire [1 : 0] m_axi_awburst;
-  output wire [1 : 0] m_axi_awlock;
-  output wire [3 : 0] m_axi_awcache;
-  output wire [2 : 0] m_axi_awprot;
-  output wire [3 : 0] m_axi_awqos;
-  output wire m_axi_awvalid;
-  input bit m_axi_awready;
-  output wire [0 : 0] m_axi_wid;
-  output wire [63 : 0] m_axi_wdata;
-  output wire [7 : 0] m_axi_wstrb;
-  output wire m_axi_wlast;
-  output wire m_axi_wvalid;
-  input bit m_axi_wready;
-  input bit [0 : 0] m_axi_bid;
-  input bit [1 : 0] m_axi_bresp;
-  input bit m_axi_bvalid;
-  output wire m_axi_bready;
-  output wire [0 : 0] m_axi_arid;
   output wire [31 : 0] m_axi_araddr;
   output wire [3 : 0] m_axi_arlen;
   output wire [2 : 0] m_axi_arsize;
@@ -226,7 +135,6 @@ module zynq_design_1_auto_pc_1 (aclk,aresetn,s_axi_awid,s_axi_awaddr,s_axi_awlen
   output wire [3 : 0] m_axi_arqos;
   output wire m_axi_arvalid;
   input bit m_axi_arready;
-  input bit [0 : 0] m_axi_rid;
   input bit [63 : 0] m_axi_rdata;
   input bit [1 : 0] m_axi_rresp;
   input bit m_axi_rlast;
@@ -237,31 +145,9 @@ endmodule
 
 `ifdef RIVIERA
 (* SC_MODULE_EXPORT *)
-module zynq_design_1_auto_pc_1 (aclk,aresetn,s_axi_awid,s_axi_awaddr,s_axi_awlen,s_axi_awsize,s_axi_awburst,s_axi_awlock,s_axi_awcache,s_axi_awprot,s_axi_awregion,s_axi_awqos,s_axi_awvalid,s_axi_awready,s_axi_wdata,s_axi_wstrb,s_axi_wlast,s_axi_wvalid,s_axi_wready,s_axi_bid,s_axi_bresp,s_axi_bvalid,s_axi_bready,s_axi_arid,s_axi_araddr,s_axi_arlen,s_axi_arsize,s_axi_arburst,s_axi_arlock,s_axi_arcache,s_axi_arprot,s_axi_arregion,s_axi_arqos,s_axi_arvalid,s_axi_arready,s_axi_rid,s_axi_rdata,s_axi_rresp,s_axi_rlast,s_axi_rvalid,s_axi_rready,m_axi_awid,m_axi_awaddr,m_axi_awlen,m_axi_awsize,m_axi_awburst,m_axi_awlock,m_axi_awcache,m_axi_awprot,m_axi_awqos,m_axi_awvalid,m_axi_awready,m_axi_wid,m_axi_wdata,m_axi_wstrb,m_axi_wlast,m_axi_wvalid,m_axi_wready,m_axi_bid,m_axi_bresp,m_axi_bvalid,m_axi_bready,m_axi_arid,m_axi_araddr,m_axi_arlen,m_axi_arsize,m_axi_arburst,m_axi_arlock,m_axi_arcache,m_axi_arprot,m_axi_arqos,m_axi_arvalid,m_axi_arready,m_axi_rid,m_axi_rdata,m_axi_rresp,m_axi_rlast,m_axi_rvalid,m_axi_rready)
+module zynq_design_1_auto_pc_1 (aclk,aresetn,s_axi_araddr,s_axi_arlen,s_axi_arsize,s_axi_arburst,s_axi_arlock,s_axi_arcache,s_axi_arprot,s_axi_arregion,s_axi_arqos,s_axi_arvalid,s_axi_arready,s_axi_rdata,s_axi_rresp,s_axi_rlast,s_axi_rvalid,s_axi_rready,m_axi_araddr,m_axi_arlen,m_axi_arsize,m_axi_arburst,m_axi_arlock,m_axi_arcache,m_axi_arprot,m_axi_arqos,m_axi_arvalid,m_axi_arready,m_axi_rdata,m_axi_rresp,m_axi_rlast,m_axi_rvalid,m_axi_rready)
   input bit aclk;
   input bit aresetn;
-  input bit [0 : 0] s_axi_awid;
-  input bit [31 : 0] s_axi_awaddr;
-  input bit [7 : 0] s_axi_awlen;
-  input bit [2 : 0] s_axi_awsize;
-  input bit [1 : 0] s_axi_awburst;
-  input bit [0 : 0] s_axi_awlock;
-  input bit [3 : 0] s_axi_awcache;
-  input bit [2 : 0] s_axi_awprot;
-  input bit [3 : 0] s_axi_awregion;
-  input bit [3 : 0] s_axi_awqos;
-  input bit s_axi_awvalid;
-  output wire s_axi_awready;
-  input bit [63 : 0] s_axi_wdata;
-  input bit [7 : 0] s_axi_wstrb;
-  input bit s_axi_wlast;
-  input bit s_axi_wvalid;
-  output wire s_axi_wready;
-  output wire [0 : 0] s_axi_bid;
-  output wire [1 : 0] s_axi_bresp;
-  output wire s_axi_bvalid;
-  input bit s_axi_bready;
-  input bit [0 : 0] s_axi_arid;
   input bit [31 : 0] s_axi_araddr;
   input bit [7 : 0] s_axi_arlen;
   input bit [2 : 0] s_axi_arsize;
@@ -273,34 +159,11 @@ module zynq_design_1_auto_pc_1 (aclk,aresetn,s_axi_awid,s_axi_awaddr,s_axi_awlen
   input bit [3 : 0] s_axi_arqos;
   input bit s_axi_arvalid;
   output wire s_axi_arready;
-  output wire [0 : 0] s_axi_rid;
   output wire [63 : 0] s_axi_rdata;
   output wire [1 : 0] s_axi_rresp;
   output wire s_axi_rlast;
   output wire s_axi_rvalid;
   input bit s_axi_rready;
-  output wire [0 : 0] m_axi_awid;
-  output wire [31 : 0] m_axi_awaddr;
-  output wire [3 : 0] m_axi_awlen;
-  output wire [2 : 0] m_axi_awsize;
-  output wire [1 : 0] m_axi_awburst;
-  output wire [1 : 0] m_axi_awlock;
-  output wire [3 : 0] m_axi_awcache;
-  output wire [2 : 0] m_axi_awprot;
-  output wire [3 : 0] m_axi_awqos;
-  output wire m_axi_awvalid;
-  input bit m_axi_awready;
-  output wire [0 : 0] m_axi_wid;
-  output wire [63 : 0] m_axi_wdata;
-  output wire [7 : 0] m_axi_wstrb;
-  output wire m_axi_wlast;
-  output wire m_axi_wvalid;
-  input bit m_axi_wready;
-  input bit [0 : 0] m_axi_bid;
-  input bit [1 : 0] m_axi_bresp;
-  input bit m_axi_bvalid;
-  output wire m_axi_bready;
-  output wire [0 : 0] m_axi_arid;
   output wire [31 : 0] m_axi_araddr;
   output wire [3 : 0] m_axi_arlen;
   output wire [2 : 0] m_axi_arsize;
@@ -311,7 +174,6 @@ module zynq_design_1_auto_pc_1 (aclk,aresetn,s_axi_awid,s_axi_awaddr,s_axi_awlen
   output wire [3 : 0] m_axi_arqos;
   output wire m_axi_arvalid;
   input bit m_axi_arready;
-  input bit [0 : 0] m_axi_rid;
   input bit [63 : 0] m_axi_rdata;
   input bit [1 : 0] m_axi_rresp;
   input bit m_axi_rlast;

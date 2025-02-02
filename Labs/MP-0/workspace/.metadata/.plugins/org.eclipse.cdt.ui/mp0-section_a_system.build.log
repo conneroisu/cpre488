@@ -1,10 +1,10 @@
-23:40:17 **** Incremental Build of configuration Debug for project mp0-section_a_system ****
+17:49:06 **** Incremental Build of configuration Debug for project mp0-section_a_system ****
 make all 
 Generating bif file for the system project
-generate_system_bif.bat 52012 C:/Users/jaxie963/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm domain_ps7_cortexa9_0 C:/Users/jaxie963/cpre488/Labs/MP-0/workspace/mp0-section_a_system/Debug/system.bif
+generate_system_bif.bat 62653 C:/Users/jaxie963/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm domain_ps7_cortexa9_0 C:/Users/jaxie963/cpre488/Labs/MP-0/workspace/mp0-section_a_system/Debug/system.bif
 sdcard_gen --xpfm C:/Users/jaxie963/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm --sys_config zynq_design_1_wrapper --bif C:/Users/jaxie963/cpre488/Labs/MP-0/workspace/mp0-section_a_system/Debug/system.bif --bitstream C:/Users/jaxie963/cpre488/Labs/MP-0/workspace/mp0-section_a/_ide/bitstream/zynq_design_1_wrapper.bit --elf C:/Users/jaxie963/cpre488/Labs/MP-0/workspace/mp0-section_a/Debug/mp0-section_a.elf,ps7_cortexa9_0
 creating BOOT.BIN using C:/Users/jaxie963/cpre488/Labs/MP-0/workspace/mp0-section_a/_ide/bitstream/zynq_design_1_wrapper.bit
 Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image C:/Users/jaxie963/cpre488/Labs/MP-0/workspace/mp0-section_a_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
 
-23:40:20 Build Finished (took 3s.1ms)
+17:49:09 Build Finished (took 2s.936ms)
 

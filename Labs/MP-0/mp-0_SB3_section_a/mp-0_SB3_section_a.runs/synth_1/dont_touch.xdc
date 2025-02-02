@@ -6,9 +6,6 @@
 # Block Designs: bd/zynq_design_1/zynq_design_1.bd
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1 || ORIG_REF_NAME==zynq_design_1} -quiet] -quiet
 
-# IP: bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_0/zynq_design_1_processing_system7_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_processing_system7_0_0 || ORIG_REF_NAME==zynq_design_1_processing_system7_0_0} -quiet] -quiet
-
 # IP: bd/zynq_design_1/ip/zynq_design_1_axi_gpio_0_0/zynq_design_1_axi_gpio_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_axi_gpio_0_0 || ORIG_REF_NAME==zynq_design_1_axi_gpio_0_0} -quiet] -quiet
 
@@ -27,9 +24,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_p
 # IP: bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_rst_ps7_0_100M_0 || ORIG_REF_NAME==zynq_design_1_rst_ps7_0_100M_0} -quiet] -quiet
 
-# IP: bd/zynq_design_1/ip/zynq_design_1_system_ila_0_1/zynq_design_1_system_ila_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_system_ila_0_1 || ORIG_REF_NAME==zynq_design_1_system_ila_0_1} -quiet] -quiet
-
 # IP: bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_axi_vdma_0_0 || ORIG_REF_NAME==zynq_design_1_axi_vdma_0_0} -quiet] -quiet
 
@@ -38,12 +32,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_v
 
 # IP: bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_v_axi4s_vid_out_0_0 || ORIG_REF_NAME==zynq_design_1_v_axi4s_vid_out_0_0} -quiet] -quiet
-
-# IP: bd/zynq_design_1/ip/zynq_design_1_xbar_2/zynq_design_1_xbar_2.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_xbar_2 || ORIG_REF_NAME==zynq_design_1_xbar_2} -quiet] -quiet
-
-# IP: bd/zynq_design_1/ip/zynq_design_1_axi_mem_intercon_1/zynq_design_1_axi_mem_intercon_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_axi_mem_intercon_1 || ORIG_REF_NAME==zynq_design_1_axi_mem_intercon_1} -quiet] -quiet
 
 # IP: bd/zynq_design_1/ip/zynq_design_1_xlslice_0_0/zynq_design_1_xlslice_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_xlslice_0_0 || ORIG_REF_NAME==zynq_design_1_xlslice_0_0} -quiet] -quiet
@@ -54,8 +42,14 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_x
 # IP: bd/zynq_design_1/ip/zynq_design_1_xlslice_0_2/zynq_design_1_xlslice_0_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_xlslice_0_2 || ORIG_REF_NAME==zynq_design_1_xlslice_0_2} -quiet] -quiet
 
-# IP: bd/zynq_design_1/ip/zynq_design_1_system_ila_1_1/zynq_design_1_system_ila_1_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_system_ila_1_1 || ORIG_REF_NAME==zynq_design_1_system_ila_1_1} -quiet] -quiet
+# IP: bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_processing_system7_0_1 || ORIG_REF_NAME==zynq_design_1_processing_system7_0_1} -quiet] -quiet
+
+# IP: bd/zynq_design_1/ip/zynq_design_1_axi_interconnect_0_0/zynq_design_1_axi_interconnect_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_axi_interconnect_0_0 || ORIG_REF_NAME==zynq_design_1_axi_interconnect_0_0} -quiet] -quiet
+
+# IP: bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/zynq_design_1_system_ila_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_system_ila_0_0 || ORIG_REF_NAME==zynq_design_1_system_ila_0_0} -quiet] -quiet
 
 # IP: bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_auto_pc_0 || ORIG_REF_NAME==zynq_design_1_auto_pc_0} -quiet] -quiet

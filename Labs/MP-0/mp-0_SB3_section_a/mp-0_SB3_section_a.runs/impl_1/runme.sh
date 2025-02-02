@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log zynq_design_1_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source zynq_design_1_wrapper.tcl -notrace
 
 

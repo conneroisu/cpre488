@@ -193,17 +193,19 @@ proc create_root_design { parentCell } {
    CONFIG.USE_BOARD_FLOW {true} \
  ] $axi_gpio_2
 
-  # Create instance: axi_mem_intercon, and set properties
-  set axi_mem_intercon [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_mem_intercon ]
+  # Create instance: axi_interconnect_0, and set properties
+  set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
   set_property -dict [ list \
    CONFIG.NUM_MI {1} \
-   CONFIG.NUM_SI {2} \
- ] $axi_mem_intercon
+ ] $axi_interconnect_0
 
   # Create instance: axi_vdma_0, and set properties
   set axi_vdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_vdma:6.3 axi_vdma_0 ]
   set_property -dict [ list \
+   CONFIG.c_include_s2mm {0} \
    CONFIG.c_m_axis_mm2s_tdata_width {24} \
+   CONFIG.c_num_fstores {1} \
+   CONFIG.c_s2mm_genlock_mode {0} \
  ] $axi_vdma_0
 
   # Create instance: processing_system7_0, and set properties
@@ -598,8 +600,6 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_USB1_RESET_ENABLE {0} \
    CONFIG.PCW_USB_RESET_ENABLE {1} \
    CONFIG.PCW_USB_RESET_SELECT {Share reset pin} \
-   CONFIG.PCW_USE_DMA0 {0} \
-   CONFIG.PCW_USE_M_AXI_GP1 {1} \
    CONFIG.PCW_USE_S_AXI_GP0 {0} \
    CONFIG.PCW_USE_S_AXI_HP0 {1} \
    CONFIG.preset {ZedBoard} \
@@ -618,19 +618,22 @@ proc create_root_design { parentCell } {
   # Create instance: system_ila_0, and set properties
   set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
   set_property -dict [ list \
-   CONFIG.ALL_PROBE_SAME_MU_CNT {1} \
-   CONFIG.C_ADV_TRIGGER {false} \
-   CONFIG.C_BRAM_CNT {95} \
-   CONFIG.C_DATA_DEPTH {4096} \
-   CONFIG.C_EN_STRG_QUAL {0} \
    CONFIG.C_MON_TYPE {MIX} \
-   CONFIG.C_NUM_MONITOR_SLOTS {7} \
+   CONFIG.C_NUM_MONITOR_SLOTS {4} \
    CONFIG.C_NUM_OF_PROBES {1} \
-   CONFIG.C_PROBE0_MU_CNT {1} \
    CONFIG.C_PROBE0_TYPE {0} \
-   CONFIG.C_SLOT {0} \
-   CONFIG.C_SLOT_0_INTF_TYPE {xilinx.com:interface:gpio_rtl:1.0} \
-   CONFIG.C_SLOT_0_TYPE {0} \
+   CONFIG.C_SLOT_0_APC_EN {0} \
+   CONFIG.C_SLOT_0_AXI_AR_SEL_DATA {1} \
+   CONFIG.C_SLOT_0_AXI_AR_SEL_TRIG {1} \
+   CONFIG.C_SLOT_0_AXI_AW_SEL_DATA {1} \
+   CONFIG.C_SLOT_0_AXI_AW_SEL_TRIG {1} \
+   CONFIG.C_SLOT_0_AXI_B_SEL_DATA {1} \
+   CONFIG.C_SLOT_0_AXI_B_SEL_TRIG {1} \
+   CONFIG.C_SLOT_0_AXI_R_SEL_DATA {1} \
+   CONFIG.C_SLOT_0_AXI_R_SEL_TRIG {1} \
+   CONFIG.C_SLOT_0_AXI_W_SEL_DATA {1} \
+   CONFIG.C_SLOT_0_AXI_W_SEL_TRIG {1} \
+   CONFIG.C_SLOT_0_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
    CONFIG.C_SLOT_1_APC_EN {0} \
    CONFIG.C_SLOT_1_AXI_AR_SEL_DATA {1} \
    CONFIG.C_SLOT_1_AXI_AR_SEL_TRIG {1} \
@@ -667,43 +670,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_SLOT_3_AXI_W_SEL_DATA {1} \
    CONFIG.C_SLOT_3_AXI_W_SEL_TRIG {1} \
    CONFIG.C_SLOT_3_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
-   CONFIG.C_SLOT_4_APC_EN {0} \
-   CONFIG.C_SLOT_4_AXI_AR_SEL_DATA {1} \
-   CONFIG.C_SLOT_4_AXI_AR_SEL_TRIG {1} \
-   CONFIG.C_SLOT_4_AXI_AW_SEL_DATA {1} \
-   CONFIG.C_SLOT_4_AXI_AW_SEL_TRIG {1} \
-   CONFIG.C_SLOT_4_AXI_B_SEL_DATA {1} \
-   CONFIG.C_SLOT_4_AXI_B_SEL_TRIG {1} \
-   CONFIG.C_SLOT_4_AXI_R_SEL_DATA {1} \
-   CONFIG.C_SLOT_4_AXI_R_SEL_TRIG {1} \
-   CONFIG.C_SLOT_4_AXI_W_SEL_DATA {1} \
-   CONFIG.C_SLOT_4_AXI_W_SEL_TRIG {1} \
-   CONFIG.C_SLOT_4_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
-   CONFIG.C_SLOT_5_INTF_TYPE {xilinx.com:interface:video_timing_rtl:2.0} \
-   CONFIG.C_SLOT_5_TYPE {0} \
-   CONFIG.C_SLOT_6_APC_EN {0} \
-   CONFIG.C_SLOT_6_AXI_AR_SEL_DATA {1} \
-   CONFIG.C_SLOT_6_AXI_AR_SEL_TRIG {1} \
-   CONFIG.C_SLOT_6_AXI_AW_SEL_DATA {1} \
-   CONFIG.C_SLOT_6_AXI_AW_SEL_TRIG {1} \
-   CONFIG.C_SLOT_6_AXI_B_SEL_DATA {1} \
-   CONFIG.C_SLOT_6_AXI_B_SEL_TRIG {1} \
-   CONFIG.C_SLOT_6_AXI_R_SEL_DATA {1} \
-   CONFIG.C_SLOT_6_AXI_R_SEL_TRIG {1} \
-   CONFIG.C_SLOT_6_AXI_W_SEL_DATA {1} \
-   CONFIG.C_SLOT_6_AXI_W_SEL_TRIG {1} \
-   CONFIG.C_SLOT_6_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
  ] $system_ila_0
-
-  # Create instance: system_ila_1, and set properties
-  set system_ila_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_1 ]
-  set_property -dict [ list \
-   CONFIG.C_BRAM_CNT {0.5} \
-   CONFIG.C_DATA_DEPTH {4096} \
-   CONFIG.C_MON_TYPE {MIX} \
-   CONFIG.C_NUM_OF_PROBES {1} \
-   CONFIG.C_PROBE0_TYPE {0} \
- ] $system_ila_1
 
   # Create instance: v_axi4s_vid_out_0, and set properties
   set v_axi4s_vid_out_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_axi4s_vid_out:4.0 v_axi4s_vid_out_0 ]
@@ -739,61 +706,46 @@ proc create_root_design { parentCell } {
 
   # Create interface connections
   connect_bd_intf_net -intf_net axi_gpio_0_GPIO [get_bd_intf_ports leds_8bits] [get_bd_intf_pins axi_gpio_0/GPIO]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_gpio_0_GPIO] [get_bd_intf_ports leds_8bits] [get_bd_intf_pins system_ila_0/SLOT_0_GPIO]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets axi_gpio_0_GPIO]
   connect_bd_intf_net -intf_net axi_gpio_1_GPIO [get_bd_intf_ports btns_5bits] [get_bd_intf_pins axi_gpio_1/GPIO]
   connect_bd_intf_net -intf_net axi_gpio_2_GPIO [get_bd_intf_ports sws_8bits] [get_bd_intf_pins axi_gpio_2/GPIO]
-  connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins axi_mem_intercon/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_mem_intercon_M00_AXI] [get_bd_intf_pins axi_mem_intercon/M00_AXI] [get_bd_intf_pins system_ila_0/SLOT_6_AXI]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets axi_mem_intercon_M00_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
+connect_bd_intf_net -intf_net [get_bd_intf_nets axi_interconnect_0_M00_AXI] [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins system_ila_0/SLOT_0_AXI]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets axi_interconnect_0_M00_AXI]
   connect_bd_intf_net -intf_net axi_vdma_0_M_AXIS_MM2S [get_bd_intf_pins axi_vdma_0/M_AXIS_MM2S] [get_bd_intf_pins v_axi4s_vid_out_0/video_in]
-  connect_bd_intf_net -intf_net axi_vdma_0_M_AXI_MM2S [get_bd_intf_pins axi_mem_intercon/S00_AXI] [get_bd_intf_pins axi_vdma_0/M_AXI_MM2S]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_vdma_0_M_AXI_MM2S] [get_bd_intf_pins axi_vdma_0/M_AXI_MM2S] [get_bd_intf_pins system_ila_0/SLOT_2_AXI]
+  connect_bd_intf_net -intf_net axi_vdma_0_M_AXI_MM2S [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins axi_vdma_0/M_AXI_MM2S]
+connect_bd_intf_net -intf_net [get_bd_intf_nets axi_vdma_0_M_AXI_MM2S] [get_bd_intf_pins axi_vdma_0/M_AXI_MM2S] [get_bd_intf_pins system_ila_0/SLOT_1_AXI]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets axi_vdma_0_M_AXI_MM2S]
-  connect_bd_intf_net -intf_net axi_vdma_0_M_AXI_S2MM [get_bd_intf_pins axi_mem_intercon/S01_AXI] [get_bd_intf_pins axi_vdma_0/M_AXI_S2MM]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
-connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins system_ila_0/SLOT_1_AXI]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets ps7_0_axi_periph_M00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins axi_gpio_1/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins axi_gpio_2/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M03_AXI [get_bd_intf_pins axi_vdma_0/S_AXI_LITE] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI]
-connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M03_AXI] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI] [get_bd_intf_pins system_ila_0/SLOT_3_AXI]
+connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M03_AXI] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI] [get_bd_intf_pins system_ila_0/SLOT_2_AXI]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets ps7_0_axi_periph_M03_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M04_AXI [get_bd_intf_pins ps7_0_axi_periph/M04_AXI] [get_bd_intf_pins v_tc_0/ctrl]
-connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M04_AXI] [get_bd_intf_pins ps7_0_axi_periph/M04_AXI] [get_bd_intf_pins system_ila_0/SLOT_4_AXI]
+connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M04_AXI] [get_bd_intf_pins ps7_0_axi_periph/M04_AXI] [get_bd_intf_pins system_ila_0/SLOT_3_AXI]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets ps7_0_axi_periph_M04_AXI]
   connect_bd_intf_net -intf_net v_tc_0_vtiming_out [get_bd_intf_pins v_axi4s_vid_out_0/vtiming_in] [get_bd_intf_pins v_tc_0/vtiming_out]
-connect_bd_intf_net -intf_net [get_bd_intf_nets v_tc_0_vtiming_out] [get_bd_intf_pins system_ila_0/SLOT_5_VIDEO_TIMING] [get_bd_intf_pins v_axi4s_vid_out_0/vtiming_in]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets v_tc_0_vtiming_out]
 
   # Create port connections
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins axi_mem_intercon/S01_ACLK] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk] [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/M_AXI_GP1_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins system_ila_0/clk] [get_bd_pins system_ila_1/clk] [get_bd_pins v_axi4s_vid_out_0/aclk] [get_bd_pins v_tc_0/clk] [get_bd_pins v_tc_0/s_axi_aclk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins system_ila_0/clk] [get_bd_pins v_axi4s_vid_out_0/aclk] [get_bd_pins v_tc_0/clk] [get_bd_pins v_tc_0/s_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins axi_gpio_2/s_axi_aresetn] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins axi_mem_intercon/S01_ARESETN] [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins system_ila_0/resetn] [get_bd_pins v_tc_0/s_axi_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins axi_gpio_2/s_axi_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins system_ila_0/resetn] [get_bd_pins v_tc_0/s_axi_aresetn]
   connect_bd_net -net v_axi4s_vid_out_0_vid_data [get_bd_pins system_ila_0/probe0] [get_bd_pins v_axi4s_vid_out_0/vid_data] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din] [get_bd_pins xlslice_2/Din]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets v_axi4s_vid_out_0_vid_data]
-  connect_bd_net -net xlslice_0_Dout [get_bd_ports VGA_R] [get_bd_pins system_ila_1/probe0] [get_bd_pins xlslice_0/Dout]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets xlslice_0_Dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_ports VGA_R] [get_bd_pins xlslice_0/Dout]
   connect_bd_net -net xlslice_1_Dout [get_bd_ports VGA_B] [get_bd_pins xlslice_1/Dout]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets xlslice_1_Dout]
   connect_bd_net -net xlslice_2_Dout [get_bd_ports VGA_G] [get_bd_pins xlslice_2/Dout]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets xlslice_2_Dout]
 
   # Create address segments
   assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces axi_vdma_0/Data_MM2S] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] -force
-  assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces axi_vdma_0/Data_S2MM] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] -force
   assign_bd_address -offset 0x41200000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x41210000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_1/S_AXI/Reg] -force
   assign_bd_address -offset 0x41220000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_2/S_AXI/Reg] -force
   assign_bd_address -offset 0x43000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_vdma_0/S_AXI_LITE/Reg] -force
   assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs v_tc_0/ctrl/Reg] -force
-
-  # Exclude Address Segments
-  exclude_bd_addr_seg -offset 0x41200000 -range 0x00010000 -target_address_space [get_bd_addr_spaces axi_vdma_0/Data_MM2S] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg]
-  exclude_bd_addr_seg -offset 0x44A00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces axi_vdma_0/Data_MM2S] [get_bd_addr_segs axi_vdma_0/S_AXI_LITE/Reg]
 
 
   # Restore current instance

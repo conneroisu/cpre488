@@ -368,7 +368,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI_LITE.CLK_DOMAIN">zynq_design_1_processing_system7_0_0_FCLK_CLK0</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI_LITE.CLK_DOMAIN">zynq_design_1_processing_system7_0_1_FCLK_CLK0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1651,7 +1651,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_MM2S.NUM_WRITE_OUTSTANDING">2</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_MM2S.NUM_WRITE_OUTSTANDING">8</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1678,7 +1678,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_MM2S.CLK_DOMAIN">zynq_design_1_processing_system7_0_0_FCLK_CLK0</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_MM2S.CLK_DOMAIN">zynq_design_1_processing_system7_0_1_FCLK_CLK0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -2152,7 +2152,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.M_AXI_S2MM" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 1 and (spirit:decode(id(&apos;PARAM_VALUE.C_SINGLE_INTERFACE&apos;)) = 0))">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.M_AXI_S2MM" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 1 and (spirit:decode(id(&apos;PARAM_VALUE.C_SINGLE_INTERFACE&apos;)) = 0))">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -2305,7 +2305,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS_MM2S.CLK_DOMAIN">zynq_design_1_processing_system7_0_0_FCLK_CLK0</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS_MM2S.CLK_DOMAIN">zynq_design_1_processing_system7_0_1_FCLK_CLK0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -2516,7 +2516,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.S_AXIS_S2MM" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 1)">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.S_AXIS_S2MM" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 1)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -2592,7 +2592,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.S2MM_INTROUT" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 1)">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.S2MM_INTROUT" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 1)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -2647,7 +2647,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS_MM2S_ACLK.CLK_DOMAIN">zynq_design_1_processing_system7_0_0_FCLK_CLK0</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS_MM2S_ACLK.CLK_DOMAIN">zynq_design_1_processing_system7_0_1_FCLK_CLK0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -2805,7 +2805,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI_LITE_ACLK.CLK_DOMAIN">zynq_design_1_processing_system7_0_0_FCLK_CLK0</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI_LITE_ACLK.CLK_DOMAIN">zynq_design_1_processing_system7_0_1_FCLK_CLK0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -2873,7 +2873,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_MM2S_ACLK.CLK_DOMAIN">zynq_design_1_processing_system7_0_0_FCLK_CLK0</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_MM2S_ACLK.CLK_DOMAIN">zynq_design_1_processing_system7_0_1_FCLK_CLK0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -3231,7 +3231,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.S2MM_FRAME_PTR_OUT" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 1)">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.S2MM_FRAME_PTR_OUT" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 1)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -3260,7 +3260,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.MM2S_FRAME_PTR_IN_0" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_NUM_MASTERS&apos;))>1) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;))!=0)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=0)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=3)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 3) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=2)))">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.MM2S_FRAME_PTR_IN_0" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_NUM_MASTERS&apos;))>1) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;))!=0)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=0)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=3)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 3) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=2)))">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -4227,7 +4227,7 @@
       <spirit:vendorExtensions>
         <xilinx:addressSpaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="ADDRSPACE_ENABLEMENT.Data_S2MM" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 1 and spirit:decode(id(&apos;PARAM_VALUE.C_SINGLE_INTERFACE&apos;)) = 0)">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="ADDRSPACE_ENABLEMENT.Data_S2MM" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 1 and spirit:decode(id(&apos;PARAM_VALUE.C_SINGLE_INTERFACE&apos;)) = 0)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:addressSpaceInfo>
       </spirit:vendorExtensions>
@@ -6452,11 +6452,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 31 16:55:23 UTC 2025</spirit:value>
+            <spirit:value>Sun Feb 02 02:27:21 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8944156b</spirit:value>
+            <spirit:value>9:73465392</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6467,7 +6467,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8944156b</spirit:value>
+            <spirit:value>9:73465392</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6483,11 +6483,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 31 17:50:39 UTC 2025</spirit:value>
+            <spirit:value>Sun Feb 02 02:27:22 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8944156b</spirit:value>
+            <spirit:value>9:73465392</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6526,11 +6526,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 31 16:55:23 UTC 2025</spirit:value>
+            <spirit:value>Sun Feb 02 02:27:21 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c1a1d2c1</spirit:value>
+            <spirit:value>9:f101b2e9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6546,11 +6546,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 31 17:50:40 UTC 2025</spirit:value>
+            <spirit:value>Sun Feb 02 02:27:22 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c1a1d2c1</spirit:value>
+            <spirit:value>9:f101b2e9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6564,11 +6564,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 31 17:53:53 UTC 2025</spirit:value>
+            <spirit:value>Sun Feb 02 02:32:56 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8944156b</spirit:value>
+            <spirit:value>9:73465392</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6677,7 +6677,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_aclk" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_aclk" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -6700,7 +6700,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_aclk" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_aclk" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -7022,7 +7022,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.mm2s_frame_ptr_in" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_NUM_MASTERS&apos;))>1) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;))!=0)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=0)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=3)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 3) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=2)))">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.mm2s_frame_ptr_in" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_NUM_MASTERS&apos;))>1) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;)) = 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;))!=0)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=0)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=3)) or ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MM2S_GENLOCK_MODE&apos;)) = 3) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE&apos;))!=2)))">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -7120,7 +7120,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s2mm_frame_ptr_out" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s2mm_frame_ptr_out" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8073,7 +8073,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awaddr" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awaddr" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8097,7 +8097,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awlen" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awlen" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8121,7 +8121,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awsize" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awsize" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8145,7 +8145,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awburst" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awburst" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8169,7 +8169,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awprot" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awprot" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8193,7 +8193,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awcache" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awcache" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8213,7 +8213,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awvalid" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awvalid" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8236,7 +8236,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_awready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8260,7 +8260,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_wdata" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_wdata" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8284,7 +8284,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_wstrb" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_wstrb" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8304,7 +8304,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_wlast" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_wlast" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8324,7 +8324,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_wvalid" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_wvalid" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8347,7 +8347,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_wready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_wready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8374,7 +8374,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_bresp" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_bresp" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8397,7 +8397,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_bvalid" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_bvalid" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8417,7 +8417,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_bready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_s2mm_bready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8464,7 +8464,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tdata" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tdata" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8491,7 +8491,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tkeep" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tkeep" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8518,7 +8518,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tuser" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tuser" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8541,7 +8541,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tvalid" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tvalid" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8561,7 +8561,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tready" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8584,7 +8584,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tlast" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axis_s2mm_tlast" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8624,7 +8624,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s2mm_introut" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s2mm_introut" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_INCLUDE_S2MM&apos;))=1">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8681,7 +8681,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUM_FSTORES</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_FSTORES" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">3</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_FSTORES" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_USE_FSYNC</spirit:name>
@@ -8773,11 +8773,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_INCLUDE_S2MM</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_INCLUDE_S2MM" spirit:minimum="0" spirit:maximum="1" spirit:rangeType="long">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_INCLUDE_S2MM" spirit:minimum="0" spirit:maximum="1" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S2MM_GENLOCK_MODE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE" spirit:minimum="0" spirit:maximum="3" spirit:rangeType="long">2</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S2MM_GENLOCK_MODE" spirit:minimum="0" spirit:maximum="3" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S2MM_GENLOCK_NUM_MASTERS</spirit:name>
@@ -9010,17 +9010,6 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       <spirit:enumeration>1</spirit:enumeration>
       <spirit:enumeration>2</spirit:enumeration>
       <spirit:enumeration>3</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
-      <spirit:name>choice_list_884121e1</spirit:name>
-      <spirit:enumeration>2</spirit:enumeration>
-      <spirit:enumeration>4</spirit:enumeration>
-      <spirit:enumeration>8</spirit:enumeration>
-      <spirit:enumeration>16</spirit:enumeration>
-      <spirit:enumeration>32</spirit:enumeration>
-      <spirit:enumeration>64</spirit:enumeration>
-      <spirit:enumeration>128</spirit:enumeration>
-      <spirit:enumeration>256</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
       <spirit:name>choice_list_f012b454</spirit:name>
@@ -9558,18 +9547,6 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>zynq_design_1_axi_vdma_0_0_stub.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>zynq_design_1_axi_vdma_0_0_stub.vhdl</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>zynq_design_1_axi_vdma_0_0_sim_netlist.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
@@ -9581,6 +9558,18 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
         <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>zynq_design_1_axi_vdma_0_0_stub.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>zynq_design_1_axi_vdma_0_0_stub.vhdl</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
@@ -9641,7 +9630,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_m_axi_s2mm_data_width">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_m_axi_s2mm_data_width">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -9653,7 +9642,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_s_axis_s2mm_tdata_width">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_s_axis_s2mm_tdata_width">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -9665,7 +9654,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_include_s2mm_dre">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_include_s2mm_dre">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -9709,7 +9698,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
     <spirit:parameter>
       <spirit:name>c_num_fstores</spirit:name>
       <spirit:displayName>Frame Buffers</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_num_fstores" spirit:choiceRef="choice_list_157065e4" spirit:order="20" spirit:configGroups="0 NoDisplay">3</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_num_fstores" spirit:choiceRef="choice_list_157065e4" spirit:order="20" spirit:configGroups="0 NoDisplay">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -9749,7 +9738,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_use_s2mm_fsync">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_use_s2mm_fsync">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -9817,11 +9806,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
     <spirit:parameter>
       <spirit:name>c_s2mm_genlock_mode</spirit:name>
       <spirit:displayName>GenLock Mode</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_s2mm_genlock_mode" spirit:choiceRef="choice_pairs_40223f55" spirit:order="280" spirit:configGroups="0 NoDisplay">2</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_s2mm_genlock_mode" spirit:choiceRef="choice_pairs_40223f55" spirit:order="280" spirit:configGroups="0 NoDisplay">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_s2mm_genlock_mode">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_s2mm_genlock_mode">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -9833,7 +9822,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_s2mm_genlock_num_masters">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_s2mm_genlock_num_masters">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -9869,7 +9858,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_s2mm_linebuffer_depth">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_s2mm_linebuffer_depth">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -9961,11 +9950,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
     <spirit:parameter>
       <spirit:name>c_s2mm_max_burst_length</spirit:name>
       <spirit:displayName>Write Burst Size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_s2mm_max_burst_length" spirit:choiceRef="choice_list_884121e1" spirit:order="270" spirit:configGroups="0 NoDisplay">8</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_s2mm_max_burst_length" spirit:choiceRef="choice_list_425e29a6" spirit:order="270" spirit:configGroups="0 NoDisplay">8</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_s2mm_max_burst_length">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_s2mm_max_burst_length">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -9973,7 +9962,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
     <spirit:parameter>
       <spirit:name>c_include_s2mm</spirit:name>
       <spirit:displayName>Enable Channel</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_include_s2mm" spirit:choiceRef="choice_pairs_4873554b" spirit:order="119" spirit:configGroups="0 NoDisplay">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_include_s2mm" spirit:choiceRef="choice_pairs_4873554b" spirit:order="119" spirit:configGroups="0 NoDisplay">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -10259,7 +10248,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_single_interface">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_single_interface">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -10272,7 +10261,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_enable_vert_flip">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.c_enable_vert_flip">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -10329,7 +10318,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.MAX_BURST_LENGTH" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.NUM_READ_OUTSTANDING" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.NUM_READ_THREADS" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.NUM_WRITE_OUTSTANDING" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.NUM_WRITE_OUTSTANDING" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.NUM_WRITE_THREADS" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_MM2S.PROTOCOL" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
@@ -10437,9 +10426,12 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE_ACLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE_ACLK.FREQ_TOLERANCE_HZ" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE_ACLK.PHASE" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_include_s2mm" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_m_axi_s2mm_data_width" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_m_axis_mm2s_tdata_width" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_num_fstores" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_prmry_is_aclk_async" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_s2mm_genlock_mode" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_s_axis_s2mm_tdata_width" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_single_interface" xilinx:valuePermission="bd_and_user"/>
       </xilinx:configElementInfos>
