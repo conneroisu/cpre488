@@ -93,8 +93,8 @@ ENTITY zynq_design_1_axi_vdma_0_0 IS
     m_axi_mm2s_rlast : IN STD_LOGIC;
     m_axi_mm2s_rvalid : IN STD_LOGIC;
     m_axi_mm2s_rready : OUT STD_LOGIC;
-    m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
-    m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+    m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     m_axis_mm2s_tuser : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     m_axis_mm2s_tvalid : OUT STD_LOGIC;
     m_axis_mm2s_tready : IN STD_LOGIC;
@@ -238,8 +238,8 @@ ARCHITECTURE zynq_design_1_axi_vdma_0_0_arch OF zynq_design_1_axi_vdma_0_0 IS
       m_axi_mm2s_rvalid : IN STD_LOGIC;
       m_axi_mm2s_rready : OUT STD_LOGIC;
       mm2s_prmry_reset_out_n : OUT STD_LOGIC;
-      m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
-      m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+      m_axis_mm2s_tdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+      m_axis_mm2s_tkeep : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       m_axis_mm2s_tuser : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       m_axis_mm2s_tvalid : OUT STD_LOGIC;
       m_axis_mm2s_tready : IN STD_LOGIC;
@@ -281,7 +281,7 @@ ARCHITECTURE zynq_design_1_axi_vdma_0_0_arch OF zynq_design_1_axi_vdma_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF m_axis_mm2s_tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 M_AXIS_MM2S TVALID";
   ATTRIBUTE X_INTERFACE_INFO OF m_axis_mm2s_tuser: SIGNAL IS "xilinx.com:interface:axis:1.0 M_AXIS_MM2S TUSER";
   ATTRIBUTE X_INTERFACE_INFO OF m_axis_mm2s_tkeep: SIGNAL IS "xilinx.com:interface:axis:1.0 M_AXIS_MM2S TKEEP";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF m_axis_mm2s_tdata: SIGNAL IS "XIL_INTERFACENAME M_AXIS_MM2S, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF m_axis_mm2s_tdata: SIGNAL IS "XIL_INTERFACENAME M_AXIS_MM2S, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF m_axis_mm2s_tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 M_AXIS_MM2S TDATA";
   ATTRIBUTE X_INTERFACE_INFO OF m_axi_mm2s_rready: SIGNAL IS "xilinx.com:interface:aximm:1.0 M_AXI_MM2S RREADY";
   ATTRIBUTE X_INTERFACE_INFO OF m_axi_mm2s_rvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 M_AXI_MM2S RVALID";
@@ -356,7 +356,7 @@ BEGIN
       C_MM2S_MAX_BURST_LENGTH => 8,
       C_M_AXI_MM2S_ADDR_WIDTH => 32,
       C_M_AXI_MM2S_DATA_WIDTH => 64,
-      C_M_AXIS_MM2S_TDATA_WIDTH => 24,
+      C_M_AXIS_MM2S_TDATA_WIDTH => 16,
       C_M_AXIS_MM2S_TUSER_BITS => 1,
       C_INCLUDE_S2MM => 0,
       C_S2MM_GENLOCK_MODE => 0,

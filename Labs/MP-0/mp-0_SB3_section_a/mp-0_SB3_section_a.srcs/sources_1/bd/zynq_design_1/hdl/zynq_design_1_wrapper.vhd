@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Sat Feb  1 21:02:50 2025
+--Date        : Sun Feb  2 21:05:40 2025
 --Host        : CO2041-04 running 64-bit major release  (build 9200)
 --Command     : generate_target zynq_design_1_wrapper.bd
 --Design      : zynq_design_1_wrapper
@@ -36,7 +36,9 @@ entity zynq_design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
     VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_HSYNC : out STD_LOGIC;
     VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_VSYNC : out STD_LOGIC;
     btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
@@ -47,17 +49,11 @@ architecture STRUCTURE of zynq_design_1_wrapper is
   component zynq_design_1 is
   port (
     VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
     VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_HSYNC : out STD_LOGIC;
+    VGA_VSYNC : out STD_LOGIC;
     btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -72,7 +68,15 @@ architecture STRUCTURE of zynq_design_1_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component zynq_design_1;
 begin
@@ -101,7 +105,9 @@ zynq_design_1_i: component zynq_design_1
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       VGA_B(3 downto 0) => VGA_B(3 downto 0),
       VGA_G(3 downto 0) => VGA_G(3 downto 0),
+      VGA_HSYNC => VGA_HSYNC,
       VGA_R(3 downto 0) => VGA_R(3 downto 0),
+      VGA_VSYNC => VGA_VSYNC,
       btns_5bits_tri_i(4 downto 0) => btns_5bits_tri_i(4 downto 0),
       leds_8bits_tri_o(7 downto 0) => leds_8bits_tri_o(7 downto 0),
       sws_8bits_tri_i(7 downto 0) => sws_8bits_tri_i(7 downto 0)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1738465376">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1738552094">
   <File Type="PA-TCL" Name="zynq_design_1_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="zynq_design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="zynq_design_1_wrapper_reports.tcl"/>
@@ -54,4 +54,6 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_system_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_axi_vdma_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_v_axi4s_vid_out_0_0"/>
 </GenRun>

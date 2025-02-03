@@ -98,8 +98,21 @@ entity bd_c3fe_wrapper is
     SLOT_3_AXI_wready : in STD_LOGIC;
     SLOT_3_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     SLOT_3_AXI_wvalid : in STD_LOGIC;
+    SLOT_4_AXIS_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    SLOT_4_AXIS_tkeep : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    SLOT_4_AXIS_tlast : in STD_LOGIC;
+    SLOT_4_AXIS_tready : in STD_LOGIC;
+    SLOT_4_AXIS_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SLOT_4_AXIS_tvalid : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_active_video : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_hblank : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_hsync : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_vblank : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_vsync : in STD_LOGIC;
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
     resetn : in STD_LOGIC
   );
 end bd_c3fe_wrapper;
@@ -108,7 +121,9 @@ architecture STRUCTURE of bd_c3fe_wrapper is
   component bd_c3fe is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
     resetn : in STD_LOGIC;
     SLOT_0_AXI_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     SLOT_0_AXI_arcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -197,7 +212,18 @@ architecture STRUCTURE of bd_c3fe_wrapper is
     SLOT_3_AXI_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     SLOT_3_AXI_wready : in STD_LOGIC;
     SLOT_3_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    SLOT_3_AXI_wvalid : in STD_LOGIC
+    SLOT_3_AXI_wvalid : in STD_LOGIC;
+    SLOT_4_AXIS_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    SLOT_4_AXIS_tkeep : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    SLOT_4_AXIS_tlast : in STD_LOGIC;
+    SLOT_4_AXIS_tready : in STD_LOGIC;
+    SLOT_4_AXIS_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SLOT_4_AXIS_tvalid : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_active_video : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_hblank : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_hsync : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_vblank : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_vsync : in STD_LOGIC
   );
   end component bd_c3fe;
 begin
@@ -291,8 +317,21 @@ bd_c3fe_i: component bd_c3fe
       SLOT_3_AXI_wready => SLOT_3_AXI_wready,
       SLOT_3_AXI_wstrb(3 downto 0) => SLOT_3_AXI_wstrb(3 downto 0),
       SLOT_3_AXI_wvalid => SLOT_3_AXI_wvalid,
+      SLOT_4_AXIS_tdata(15 downto 0) => SLOT_4_AXIS_tdata(15 downto 0),
+      SLOT_4_AXIS_tkeep(1 downto 0) => SLOT_4_AXIS_tkeep(1 downto 0),
+      SLOT_4_AXIS_tlast => SLOT_4_AXIS_tlast,
+      SLOT_4_AXIS_tready => SLOT_4_AXIS_tready,
+      SLOT_4_AXIS_tuser(0) => SLOT_4_AXIS_tuser(0),
+      SLOT_4_AXIS_tvalid => SLOT_4_AXIS_tvalid,
+      SLOT_5_VIDEO_TIMING_active_video => SLOT_5_VIDEO_TIMING_active_video,
+      SLOT_5_VIDEO_TIMING_hblank => SLOT_5_VIDEO_TIMING_hblank,
+      SLOT_5_VIDEO_TIMING_hsync => SLOT_5_VIDEO_TIMING_hsync,
+      SLOT_5_VIDEO_TIMING_vblank => SLOT_5_VIDEO_TIMING_vblank,
+      SLOT_5_VIDEO_TIMING_vsync => SLOT_5_VIDEO_TIMING_vsync,
       clk => clk,
-      probe0(23 downto 0) => probe0(23 downto 0),
+      probe0(7 downto 0) => probe0(7 downto 0),
+      probe1(0) => probe1(0),
+      probe2(0) => probe2(0),
       resetn => resetn
     );
 end STRUCTURE;

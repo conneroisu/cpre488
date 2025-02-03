@@ -51,6 +51,15 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_a
 # IP: bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/zynq_design_1_system_ila_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_system_ila_0_0 || ORIG_REF_NAME==zynq_design_1_system_ila_0_0} -quiet] -quiet
 
+# IP: bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/zynq_design_1_system_ila_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_system_ila_1_0 || ORIG_REF_NAME==zynq_design_1_system_ila_1_0} -quiet] -quiet
+
+# IP: bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/zynq_design_1_system_ila_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_system_ila_2_0 || ORIG_REF_NAME==zynq_design_1_system_ila_2_0} -quiet] -quiet
+
+# IP: bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/zynq_design_1_system_ila_3_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_system_ila_3_0 || ORIG_REF_NAME==zynq_design_1_system_ila_3_0} -quiet] -quiet
+
 # IP: bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_auto_pc_0 || ORIG_REF_NAME==zynq_design_1_auto_pc_0} -quiet] -quiet
 

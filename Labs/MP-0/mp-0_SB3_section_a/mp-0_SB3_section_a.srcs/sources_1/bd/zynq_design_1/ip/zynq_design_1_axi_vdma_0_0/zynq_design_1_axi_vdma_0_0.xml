@@ -2215,7 +2215,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>TDATA_NUM_BYTES</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS_MM2S.TDATA_NUM_BYTES">3</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS_MM2S.TDATA_NUM_BYTES">2</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -6456,7 +6456,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:73465392</spirit:value>
+            <spirit:value>9:0cdcb5d9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6467,7 +6467,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:73465392</spirit:value>
+            <spirit:value>9:0cdcb5d9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6483,11 +6483,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Feb 02 02:27:22 UTC 2025</spirit:value>
+            <spirit:value>Mon Feb 03 02:56:22 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:73465392</spirit:value>
+            <spirit:value>9:0cdcb5d9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6530,7 +6530,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f101b2e9</spirit:value>
+            <spirit:value>9:ec896d8a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6546,11 +6546,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Feb 02 02:27:22 UTC 2025</spirit:value>
+            <spirit:value>Mon Feb 03 02:56:22 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f101b2e9</spirit:value>
+            <spirit:value>9:ec896d8a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6564,11 +6564,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Feb 02 02:32:56 UTC 2025</spirit:value>
+            <spirit:value>Mon Feb 03 02:57:21 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:73465392</spirit:value>
+            <spirit:value>9:0cdcb5d9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -7924,7 +7924,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXIS_MM2S_TDATA_WIDTH&apos;))-1">23</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXIS_MM2S_TDATA_WIDTH&apos;))-1">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -7948,7 +7948,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXIS_MM2S_TDATA_WIDTH&apos;)) div 8)-1">2</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXIS_MM2S_TDATA_WIDTH&apos;)) div 8)-1">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -8765,7 +8765,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXIS_MM2S_TDATA_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXIS_MM2S_TDATA_WIDTH" spirit:minimum="8" spirit:maximum="1024" spirit:rangeType="long">24</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXIS_MM2S_TDATA_WIDTH" spirit:minimum="8" spirit:maximum="1024" spirit:rangeType="long">16</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXIS_MM2S_TUSER_BITS</spirit:name>
@@ -8998,6 +8998,18 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       <spirit:enumeration>64</spirit:enumeration>
       <spirit:enumeration>128</spirit:enumeration>
       <spirit:enumeration>256</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_47f15fde</spirit:name>
+      <spirit:enumeration>128</spirit:enumeration>
+      <spirit:enumeration>256</spirit:enumeration>
+      <spirit:enumeration>512</spirit:enumeration>
+      <spirit:enumeration>1024</spirit:enumeration>
+      <spirit:enumeration>2048</spirit:enumeration>
+      <spirit:enumeration>4096</spirit:enumeration>
+      <spirit:enumeration>8192</spirit:enumeration>
+      <spirit:enumeration>16384</spirit:enumeration>
+      <spirit:enumeration>32768</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
       <spirit:name>choice_list_6727dfa6</spirit:name>
@@ -9547,6 +9559,18 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
+        <spirit:name>zynq_design_1_axi_vdma_0_0_stub.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>zynq_design_1_axi_vdma_0_0_stub.vhdl</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>zynq_design_1_axi_vdma_0_0_sim_netlist.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
@@ -9558,18 +9582,6 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
         <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>zynq_design_1_axi_vdma_0_0_stub.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>zynq_design_1_axi_vdma_0_0_stub.vhdl</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
@@ -9614,7 +9626,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
     <spirit:parameter>
       <spirit:name>c_m_axis_mm2s_tdata_width</spirit:name>
       <spirit:displayName>Stream Data Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_m_axis_mm2s_tdata_width" spirit:choiceRef="choice_list_f012b454" spirit:order="111" spirit:configGroups="0 NoDisplay">24</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_m_axis_mm2s_tdata_width" spirit:choiceRef="choice_list_f012b454" spirit:order="111" spirit:configGroups="0 NoDisplay">16</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -9830,7 +9842,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
     <spirit:parameter>
       <spirit:name>c_mm2s_linebuffer_depth</spirit:name>
       <spirit:displayName>Line Buffer Depth</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_mm2s_linebuffer_depth" spirit:choiceRef="choice_list_1f1af28c" spirit:order="150" spirit:configGroups="0 NoDisplay">512</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_mm2s_linebuffer_depth" spirit:choiceRef="choice_list_47f15fde" spirit:order="150" spirit:configGroups="0 NoDisplay">512</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -10434,6 +10446,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_s2mm_genlock_mode" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_s_axis_s2mm_tdata_width" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_single_interface" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_use_mm2s_fsync" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

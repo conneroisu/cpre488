@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Fri Jan 31 11:53:03 2025
+-- Date        : Sun Feb  2 18:09:02 2025
 -- Host        : CO2041-04 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top zynq_design_1_v_tc_0_0 -prefix
 --               zynq_design_1_v_tc_0_0_ zynq_design_1_v_tc_0_0_stub.vhdl
@@ -18,13 +18,7 @@ entity zynq_design_1_v_tc_0_0 is
     clken : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC;
     s_axi_aclken : in STD_LOGIC;
-    det_clken : in STD_LOGIC;
     gen_clken : in STD_LOGIC;
-    hsync_in : in STD_LOGIC;
-    hblank_in : in STD_LOGIC;
-    vsync_in : in STD_LOGIC;
-    vblank_in : in STD_LOGIC;
-    active_video_in : in STD_LOGIC;
     hsync_out : out STD_LOGIC;
     hblank_out : out STD_LOGIC;
     vsync_out : out STD_LOGIC;
@@ -60,7 +54,7 @@ architecture stub of zynq_design_1_v_tc_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,clken,s_axi_aclk,s_axi_aclken,det_clken,gen_clken,hsync_in,hblank_in,vsync_in,vblank_in,active_video_in,hsync_out,hblank_out,vsync_out,vblank_out,active_video_out,resetn,s_axi_aresetn,s_axi_awaddr[8:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[8:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid,s_axi_rready,irq,fsync_in,fsync_out[0:0]";
+attribute black_box_pad_pin of stub : architecture is "clk,clken,s_axi_aclk,s_axi_aclken,gen_clken,hsync_out,hblank_out,vsync_out,vblank_out,active_video_out,resetn,s_axi_aresetn,s_axi_awaddr[8:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[8:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid,s_axi_rready,irq,fsync_in,fsync_out[0:0]";
 attribute x_core_info : string;
 attribute x_core_info of stub : architecture is "v_tc,Vivado 2020.1";
 begin

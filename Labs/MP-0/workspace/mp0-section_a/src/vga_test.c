@@ -32,15 +32,27 @@
 
 u16 test_image[480][640];
 
-#define VTC_CR (*(volatile u32 *)(XPAR_V_TC_0_BASEADDR))
-#define ENABLE_VTC 0x00000001  // Enable bit for VTC
+//#define VTC_CR (*(volatile u32 *)(XPAR_V_TC_0_BASEADDR + 0x0000))
+//#define ENABLE_VTC 0x0000000D  // Enable bit for VTC
 
 int main() {
+	init_platform();
+
 	XVtc Vtc;
     XVtc_Config *VtcCfgPtr;
 
     int i, j;
+    /*
+    int x = 0;
+    UINTPTR ButtonIn = 0x41210000;
+    while (x == 0) {
+    	if ((Xil_In32(ButtonIn) & 0x00000001) == 0x00000001) {
+    		x = 1;
+    		print("Button 1 is on\n\r");
+    	}
+    }
 
+    print("While exit");*/
 
     // Enable VTC module: Using high-level functions provided by Vendor
     VtcCfgPtr = XVtc_LookupConfig(XPAR_AXI_VDMA_0_DEVICE_ID);
@@ -50,7 +62,7 @@ int main() {
     // Challenge: Can you rewrite the Enable VTC module code by directly accessing
     // the VTC registers using pointers?  (See VTC data sheet, and xparameters.h)
 
-    VTC_CR   |=  ENABLE_VTC;    // You: Declare VTC_CR and ENABLE_VTC appropriately (before main() )
+    //VTC_CR   |=  ENABLE_VTC;    // You: Declare VTC_CR and ENABLE_VTC appropriately (before main() )
 
 
 
@@ -79,14 +91,14 @@ int main() {
 
     // Simple function abstraction by Vendor for writing VDMA registers
     XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET,  0x00000003);  // Read Channel: VDMA MM2S Circular Mode and Start bits set, VDMA MM2S Control
-    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET, 0x0000001);  // Read Channel: VDMA MM2S Reg_Index
-    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, 0x00000003);  // Read Channel: VDMA MM2S Frame buffer Start Addr 1
-    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET, 0x01000500);  // Read Channel: VDMA MM2S FRM_Delay, and Stride
-    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET, 0x000001E0);  // Read Channel: VDMA MM2S HSIZE
-    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET, 0x00000280);  // Read Channel: VDMA MM2S VSIZE  (Note: Also Starts VDMA transaction)
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET, 0x00000001);  // Read Channel: VDMA MM2S Reg_Index
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, (UINTPTR)test_image);  // Read Channel: VDMA MM2S Frame buffer Start Addr 1
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET, 0x00000500);  // Read Channel: VDMA MM2S FRM_Delay, and Stride
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET, 0x00000500);  // Read Channel: VDMA MM2S HSIZE
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET, 0x000001E0);  // Read Channel: VDMA MM2S VSIZE  (Note: Also Starts VDMA transaction)
 
 
-    // Low-level register acess using pointers
+    // Low-level register access using pointers
     // Alternative approach for configuring VDMA registers: Instead of using the abstracted functions can you configure and start the VDMA using pointers to directly configure VDMA registers
     // YOU: Declare VDMA_MM2S_XXX (before main) and set values "CHANGE_ME" appropriately, before main()
 

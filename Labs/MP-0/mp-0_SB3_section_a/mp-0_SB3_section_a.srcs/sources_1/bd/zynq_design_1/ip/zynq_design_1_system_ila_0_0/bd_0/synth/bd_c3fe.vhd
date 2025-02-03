@@ -98,101 +98,127 @@ entity bd_c3fe is
     SLOT_3_AXI_wready : in STD_LOGIC;
     SLOT_3_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     SLOT_3_AXI_wvalid : in STD_LOGIC;
+    SLOT_4_AXIS_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    SLOT_4_AXIS_tkeep : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    SLOT_4_AXIS_tlast : in STD_LOGIC;
+    SLOT_4_AXIS_tready : in STD_LOGIC;
+    SLOT_4_AXIS_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SLOT_4_AXIS_tvalid : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_active_video : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_hblank : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_hsync : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_vblank : in STD_LOGIC;
+    SLOT_5_VIDEO_TIMING_vsync : in STD_LOGIC;
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
     resetn : in STD_LOGIC
   );
-  attribute core_generation_info : string;
-  attribute core_generation_info of bd_c3fe : entity is "bd_c3fe,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=bd_c3fe,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=22,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=SBD,synth_mode=Global}";
-  attribute hw_handoff : string;
-  attribute hw_handoff of bd_c3fe : entity is "zynq_design_1_system_ila_0_0.hwdef";
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of bd_c3fe : entity is "bd_c3fe,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=bd_c3fe,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=22,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=SBD,synth_mode=Global}";
+  attribute HW_HANDOFF : string;
+  attribute HW_HANDOFF of bd_c3fe : entity is "zynq_design_1_system_ila_0_0.hwdef";
 end bd_c3fe;
 
 architecture STRUCTURE of bd_c3fe is
   component bd_c3fe_ila_lib_0 is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe7 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe8 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe9 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    probe10 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    probe11 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe12 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe13 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe14 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe15 : in STD_LOGIC_VECTOR ( 63 downto 0 );
+    probe0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe4 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe5 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    probe6 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    probe7 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe8 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe9 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe10 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe11 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    probe12 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    probe13 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe14 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe15 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe16 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe17 : in STD_LOGIC_VECTOR ( 63 downto 0 );
     probe18 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe19 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe19 : in STD_LOGIC_VECTOR ( 63 downto 0 );
     probe20 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe21 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe22 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe21 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe22 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe23 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe24 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe25 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    probe26 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    probe27 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe28 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe29 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe30 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe31 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    probe32 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    probe33 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe34 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe35 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe36 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe37 : in STD_LOGIC_VECTOR ( 63 downto 0 );
+    probe24 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe25 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe26 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe27 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    probe28 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe29 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe30 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe31 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe32 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe33 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    probe34 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe35 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe36 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe37 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe38 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe39 : in STD_LOGIC_VECTOR ( 63 downto 0 );
     probe40 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe41 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe41 : in STD_LOGIC_VECTOR ( 63 downto 0 );
     probe42 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe43 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe44 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe43 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe44 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe45 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe46 : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    probe47 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe48 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe49 : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    probe50 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe51 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe52 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe46 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe47 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe48 : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    probe49 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe50 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe51 : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    probe52 : in STD_LOGIC_VECTOR ( 2 downto 0 );
     probe53 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe54 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe54 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe55 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe56 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe57 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    probe58 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe59 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe57 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe58 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe59 : in STD_LOGIC_VECTOR ( 3 downto 0 );
     probe60 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe61 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe62 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe63 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe64 : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    probe65 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe66 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe67 : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    probe68 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe69 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe70 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe64 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe65 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe66 : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    probe67 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe68 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe69 : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    probe70 : in STD_LOGIC_VECTOR ( 2 downto 0 );
     probe71 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe72 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe72 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe73 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe74 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe75 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    probe76 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe77 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe75 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe76 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe77 : in STD_LOGIC_VECTOR ( 3 downto 0 );
     probe78 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe79 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe80 : in STD_LOGIC_VECTOR ( 1 downto 0 )
+    probe80 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe81 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe82 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe83 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    probe84 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe85 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe86 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe87 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe88 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe89 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe90 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe91 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe92 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe93 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component bd_c3fe_ila_lib_0;
   component bd_c3fe_g_inst_0 is
@@ -303,6 +329,12 @@ architecture STRUCTURE of bd_c3fe is
     slot_3_axi_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     slot_3_axi_rvalid : in STD_LOGIC;
     slot_3_axi_rready : in STD_LOGIC;
+    slot_4_axis_tvalid : in STD_LOGIC;
+    slot_4_axis_tready : in STD_LOGIC;
+    slot_4_axis_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    slot_4_axis_tkeep : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    slot_4_axis_tlast : in STD_LOGIC;
+    slot_4_axis_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
     m_slot_0_axi_awaddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
     m_slot_0_axi_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
     m_slot_0_axi_awlen : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -390,7 +422,13 @@ architecture STRUCTURE of bd_c3fe is
     m_slot_3_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     m_slot_3_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     m_slot_3_axi_rvalid : out STD_LOGIC;
-    m_slot_3_axi_rready : out STD_LOGIC
+    m_slot_3_axi_rready : out STD_LOGIC;
+    m_slot_4_axis_tvalid : out STD_LOGIC;
+    m_slot_4_axis_tready : out STD_LOGIC;
+    m_slot_4_axis_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    m_slot_4_axis_tkeep : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_slot_4_axis_tlast : out STD_LOGIC;
+    m_slot_4_axis_tuser : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component bd_c3fe_g_inst_0;
   component bd_c3fe_slot_0_aw_0 is
@@ -600,6 +638,12 @@ architecture STRUCTURE of bd_c3fe is
   signal Conn3_WREADY : STD_LOGIC;
   signal Conn3_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal Conn3_WVALID : STD_LOGIC;
+  signal Conn4_TDATA : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal Conn4_TKEEP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal Conn4_TLAST : STD_LOGIC;
+  signal Conn4_TREADY : STD_LOGIC;
+  signal Conn4_TUSER : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal Conn4_TVALID : STD_LOGIC;
   signal Conn_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal Conn_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal Conn_ARLEN : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -625,6 +669,11 @@ architecture STRUCTURE of bd_c3fe is
   signal Conn_WLAST : STD_LOGIC;
   signal Conn_WREADY : STD_LOGIC;
   signal Conn_WVALID : STD_LOGIC;
+  signal SLOT_5_VIDEO_TIMING_active_video_1 : STD_LOGIC;
+  signal SLOT_5_VIDEO_TIMING_hblank_1 : STD_LOGIC;
+  signal SLOT_5_VIDEO_TIMING_hsync_1 : STD_LOGIC;
+  signal SLOT_5_VIDEO_TIMING_vblank_1 : STD_LOGIC;
+  signal SLOT_5_VIDEO_TIMING_vsync_1 : STD_LOGIC;
   signal clk_1 : STD_LOGIC;
   signal net_slot_0_axi_ar_cnt : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal net_slot_0_axi_ar_ctrl : STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -750,106 +799,126 @@ architecture STRUCTURE of bd_c3fe is
   signal net_slot_3_axi_wready : STD_LOGIC;
   signal net_slot_3_axi_wstrb : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal net_slot_3_axi_wvalid : STD_LOGIC;
-  signal probe0_1 : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal net_slot_4_axis_tdata : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal net_slot_4_axis_tkeep : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal net_slot_4_axis_tlast : STD_LOGIC;
+  signal net_slot_4_axis_tready : STD_LOGIC;
+  signal net_slot_4_axis_tuser : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal net_slot_4_axis_tvalid : STD_LOGIC;
+  signal probe0_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal probe1_1 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal probe2_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal resetn_1 : STD_LOGIC;
-  attribute x_interface_info : string;
-  attribute x_interface_info of SLOT_0_AXI_arready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARREADY";
-  attribute x_interface_info of SLOT_0_AXI_arvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARVALID";
-  attribute x_interface_info of SLOT_0_AXI_awready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWREADY";
-  attribute x_interface_info of SLOT_0_AXI_awvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWVALID";
-  attribute x_interface_info of SLOT_0_AXI_bready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI BREADY";
-  attribute x_interface_info of SLOT_0_AXI_bvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI BVALID";
-  attribute x_interface_info of SLOT_0_AXI_rlast : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI RLAST";
-  attribute x_interface_info of SLOT_0_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI RREADY";
-  attribute x_interface_info of SLOT_0_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI RVALID";
-  attribute x_interface_info of SLOT_0_AXI_wlast : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WLAST";
-  attribute x_interface_info of SLOT_0_AXI_wready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WREADY";
-  attribute x_interface_info of SLOT_0_AXI_wvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WVALID";
-  attribute x_interface_info of SLOT_1_AXI_arready : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARREADY";
-  attribute x_interface_info of SLOT_1_AXI_arvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARVALID";
-  attribute x_interface_info of SLOT_1_AXI_awready : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWREADY";
-  attribute x_interface_info of SLOT_1_AXI_awvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWVALID";
-  attribute x_interface_info of SLOT_1_AXI_bready : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI BREADY";
-  attribute x_interface_info of SLOT_1_AXI_bvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI BVALID";
-  attribute x_interface_info of SLOT_1_AXI_rlast : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI RLAST";
-  attribute x_interface_info of SLOT_1_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI RREADY";
-  attribute x_interface_info of SLOT_1_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI RVALID";
-  attribute x_interface_info of SLOT_1_AXI_wlast : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI WLAST";
-  attribute x_interface_info of SLOT_1_AXI_wready : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI WREADY";
-  attribute x_interface_info of SLOT_1_AXI_wvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI WVALID";
-  attribute x_interface_info of SLOT_2_AXI_arready : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI ARREADY";
-  attribute x_interface_info of SLOT_2_AXI_arvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI ARVALID";
-  attribute x_interface_info of SLOT_2_AXI_awready : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI AWREADY";
-  attribute x_interface_info of SLOT_2_AXI_awvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI AWVALID";
-  attribute x_interface_info of SLOT_2_AXI_bready : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI BREADY";
-  attribute x_interface_info of SLOT_2_AXI_bvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI BVALID";
-  attribute x_interface_info of SLOT_2_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI RREADY";
-  attribute x_interface_info of SLOT_2_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI RVALID";
-  attribute x_interface_info of SLOT_2_AXI_wready : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI WREADY";
-  attribute x_interface_info of SLOT_2_AXI_wvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI WVALID";
-  attribute x_interface_info of SLOT_3_AXI_arready : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI ARREADY";
-  attribute x_interface_info of SLOT_3_AXI_arvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI ARVALID";
-  attribute x_interface_info of SLOT_3_AXI_awready : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI AWREADY";
-  attribute x_interface_info of SLOT_3_AXI_awvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI AWVALID";
-  attribute x_interface_info of SLOT_3_AXI_bready : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI BREADY";
-  attribute x_interface_info of SLOT_3_AXI_bvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI BVALID";
-  attribute x_interface_info of SLOT_3_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI RREADY";
-  attribute x_interface_info of SLOT_3_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI RVALID";
-  attribute x_interface_info of SLOT_3_AXI_wready : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI WREADY";
-  attribute x_interface_info of SLOT_3_AXI_wvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI WVALID";
-  attribute x_interface_info of clk : signal is "xilinx.com:signal:clock:1.0 CLK.CLK CLK";
-  attribute x_interface_parameter : string;
-  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_BUSIF SLOT_0_AXI:SLOT_1_AXI:SLOT_2_AXI:SLOT_3_AXI, ASSOCIATED_RESET resetn, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.000";
-  attribute x_interface_info of resetn : signal is "xilinx.com:signal:reset:1.0 RST.RESETN RST";
-  attribute x_interface_parameter of resetn : signal is "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
-  attribute x_interface_info of SLOT_0_AXI_araddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARADDR";
-  attribute x_interface_parameter of SLOT_0_AXI_araddr : signal is "XIL_INTERFACENAME SLOT_0_AXI, ADDR_WIDTH 32, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, DATA_WIDTH 64, FREQ_HZ 100000000, HAS_BRESP 0, HAS_BURST 0, HAS_CACHE 1, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 0, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 16, NUM_READ_OUTSTANDING 2, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 8, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI3, READ_WRITE_MODE READ_ONLY, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0";
-  attribute x_interface_info of SLOT_0_AXI_arcache : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARCACHE";
-  attribute x_interface_info of SLOT_0_AXI_arlen : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARLEN";
-  attribute x_interface_info of SLOT_0_AXI_arprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARPROT";
-  attribute x_interface_info of SLOT_0_AXI_arsize : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARSIZE";
-  attribute x_interface_info of SLOT_0_AXI_awaddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWADDR";
-  attribute x_interface_info of SLOT_0_AXI_awcache : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWCACHE";
-  attribute x_interface_info of SLOT_0_AXI_awlen : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWLEN";
-  attribute x_interface_info of SLOT_0_AXI_awprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWPROT";
-  attribute x_interface_info of SLOT_0_AXI_awsize : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWSIZE";
-  attribute x_interface_info of SLOT_0_AXI_rdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI RDATA";
-  attribute x_interface_info of SLOT_0_AXI_rresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI RRESP";
-  attribute x_interface_info of SLOT_0_AXI_wdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WDATA";
-  attribute x_interface_info of SLOT_1_AXI_araddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARADDR";
-  attribute x_interface_parameter of SLOT_1_AXI_araddr : signal is "XIL_INTERFACENAME SLOT_1_AXI, ADDR_WIDTH 32, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, DATA_WIDTH 64, FREQ_HZ 100000000, HAS_BRESP 0, HAS_BURST 0, HAS_CACHE 1, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 0, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 8, NUM_READ_OUTSTANDING 2, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 8, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI4, READ_WRITE_MODE READ_ONLY, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0";
-  attribute x_interface_info of SLOT_1_AXI_arcache : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARCACHE";
-  attribute x_interface_info of SLOT_1_AXI_arlen : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARLEN";
-  attribute x_interface_info of SLOT_1_AXI_arprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARPROT";
-  attribute x_interface_info of SLOT_1_AXI_arsize : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARSIZE";
-  attribute x_interface_info of SLOT_1_AXI_awaddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWADDR";
-  attribute x_interface_info of SLOT_1_AXI_awcache : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWCACHE";
-  attribute x_interface_info of SLOT_1_AXI_awlen : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWLEN";
-  attribute x_interface_info of SLOT_1_AXI_awprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWPROT";
-  attribute x_interface_info of SLOT_1_AXI_awsize : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWSIZE";
-  attribute x_interface_info of SLOT_1_AXI_rdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI RDATA";
-  attribute x_interface_info of SLOT_1_AXI_rresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI RRESP";
-  attribute x_interface_info of SLOT_1_AXI_wdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI WDATA";
-  attribute x_interface_info of SLOT_2_AXI_araddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI ARADDR";
-  attribute x_interface_parameter of SLOT_2_AXI_araddr : signal is "XIL_INTERFACENAME SLOT_2_AXI, ADDR_WIDTH 9, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 1, NUM_READ_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 1, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0";
-  attribute x_interface_info of SLOT_2_AXI_arprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI ARPROT";
-  attribute x_interface_info of SLOT_2_AXI_awaddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI AWADDR";
-  attribute x_interface_info of SLOT_2_AXI_awprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI AWPROT";
-  attribute x_interface_info of SLOT_2_AXI_bresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI BRESP";
-  attribute x_interface_info of SLOT_2_AXI_rdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI RDATA";
-  attribute x_interface_info of SLOT_2_AXI_rresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI RRESP";
-  attribute x_interface_info of SLOT_2_AXI_wdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI WDATA";
-  attribute x_interface_info of SLOT_2_AXI_wstrb : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI WSTRB";
-  attribute x_interface_info of SLOT_3_AXI_araddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI ARADDR";
-  attribute x_interface_parameter of SLOT_3_AXI_araddr : signal is "XIL_INTERFACENAME SLOT_3_AXI, ADDR_WIDTH 9, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 1, NUM_READ_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 1, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0";
-  attribute x_interface_info of SLOT_3_AXI_arprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI ARPROT";
-  attribute x_interface_info of SLOT_3_AXI_awaddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI AWADDR";
-  attribute x_interface_info of SLOT_3_AXI_awprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI AWPROT";
-  attribute x_interface_info of SLOT_3_AXI_bresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI BRESP";
-  attribute x_interface_info of SLOT_3_AXI_rdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI RDATA";
-  attribute x_interface_info of SLOT_3_AXI_rresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI RRESP";
-  attribute x_interface_info of SLOT_3_AXI_wdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI WDATA";
-  attribute x_interface_info of SLOT_3_AXI_wstrb : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI WSTRB";
+  attribute X_INTERFACE_INFO : string;
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_arready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARREADY";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_arvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARVALID";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_awready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWREADY";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_awvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWVALID";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_bready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI BREADY";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_bvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI BVALID";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_rlast : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI RLAST";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI RREADY";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI RVALID";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_wlast : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WLAST";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_wready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WREADY";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_wvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WVALID";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_arready : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARREADY";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_arvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARVALID";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_awready : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWREADY";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_awvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWVALID";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_bready : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI BREADY";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_bvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI BVALID";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_rlast : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI RLAST";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI RREADY";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI RVALID";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_wlast : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI WLAST";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_wready : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI WREADY";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_wvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI WVALID";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_arready : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI ARREADY";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_arvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI ARVALID";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_awready : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI AWREADY";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_awvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI AWVALID";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_bready : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI BREADY";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_bvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI BVALID";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI RREADY";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI RVALID";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_wready : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI WREADY";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_wvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI WVALID";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_arready : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI ARREADY";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_arvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI ARVALID";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_awready : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI AWREADY";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_awvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI AWVALID";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_bready : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI BREADY";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_bvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI BVALID";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_rready : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI RREADY";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI RVALID";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_wready : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI WREADY";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_wvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI WVALID";
+  attribute X_INTERFACE_INFO of SLOT_4_AXIS_tlast : signal is "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TLAST";
+  attribute X_INTERFACE_INFO of SLOT_4_AXIS_tready : signal is "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TREADY";
+  attribute X_INTERFACE_INFO of SLOT_4_AXIS_tvalid : signal is "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TVALID";
+  attribute X_INTERFACE_INFO of SLOT_5_VIDEO_TIMING_active_video : signal is "xilinx.com:interface:video_timing:2.0 SLOT_5_VIDEO_TIMING ACTIVE_VIDEO";
+  attribute X_INTERFACE_INFO of SLOT_5_VIDEO_TIMING_hblank : signal is "xilinx.com:interface:video_timing:2.0 SLOT_5_VIDEO_TIMING HBLANK";
+  attribute X_INTERFACE_INFO of SLOT_5_VIDEO_TIMING_hsync : signal is "xilinx.com:interface:video_timing:2.0 SLOT_5_VIDEO_TIMING HSYNC";
+  attribute X_INTERFACE_INFO of SLOT_5_VIDEO_TIMING_vblank : signal is "xilinx.com:interface:video_timing:2.0 SLOT_5_VIDEO_TIMING VBLANK";
+  attribute X_INTERFACE_INFO of SLOT_5_VIDEO_TIMING_vsync : signal is "xilinx.com:interface:video_timing:2.0 SLOT_5_VIDEO_TIMING VSYNC";
+  attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 CLK.CLK CLK";
+  attribute X_INTERFACE_PARAMETER : string;
+  attribute X_INTERFACE_PARAMETER of clk : signal is "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_BUSIF SLOT_0_AXI:SLOT_1_AXI:SLOT_2_AXI:SLOT_3_AXI:SLOT_4_AXIS, ASSOCIATED_RESET resetn, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.000";
+  attribute X_INTERFACE_INFO of resetn : signal is "xilinx.com:signal:reset:1.0 RST.RESETN RST";
+  attribute X_INTERFACE_PARAMETER of resetn : signal is "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_araddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARADDR";
+  attribute X_INTERFACE_PARAMETER of SLOT_0_AXI_araddr : signal is "XIL_INTERFACENAME SLOT_0_AXI, ADDR_WIDTH 32, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, DATA_WIDTH 64, FREQ_HZ 100000000, HAS_BRESP 0, HAS_BURST 0, HAS_CACHE 1, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 0, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 16, NUM_READ_OUTSTANDING 2, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 8, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI3, READ_WRITE_MODE READ_ONLY, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_arcache : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARCACHE";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_arlen : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARLEN";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_arprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARPROT";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_arsize : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARSIZE";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_awaddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWADDR";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_awcache : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWCACHE";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_awlen : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWLEN";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_awprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWPROT";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_awsize : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWSIZE";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_rdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI RDATA";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_rresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI RRESP";
+  attribute X_INTERFACE_INFO of SLOT_0_AXI_wdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WDATA";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_araddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARADDR";
+  attribute X_INTERFACE_PARAMETER of SLOT_1_AXI_araddr : signal is "XIL_INTERFACENAME SLOT_1_AXI, ADDR_WIDTH 32, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, DATA_WIDTH 64, FREQ_HZ 100000000, HAS_BRESP 0, HAS_BURST 0, HAS_CACHE 1, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 0, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 8, NUM_READ_OUTSTANDING 2, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 8, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI4, READ_WRITE_MODE READ_ONLY, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_arcache : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARCACHE";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_arlen : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARLEN";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_arprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARPROT";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_arsize : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI ARSIZE";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_awaddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWADDR";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_awcache : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWCACHE";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_awlen : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWLEN";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_awprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWPROT";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_awsize : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI AWSIZE";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_rdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI RDATA";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_rresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI RRESP";
+  attribute X_INTERFACE_INFO of SLOT_1_AXI_wdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_1_AXI WDATA";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_araddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI ARADDR";
+  attribute X_INTERFACE_PARAMETER of SLOT_2_AXI_araddr : signal is "XIL_INTERFACENAME SLOT_2_AXI, ADDR_WIDTH 9, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 1, NUM_READ_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 1, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_arprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI ARPROT";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_awaddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI AWADDR";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_awprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI AWPROT";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_bresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI BRESP";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_rdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI RDATA";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_rresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI RRESP";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_wdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI WDATA";
+  attribute X_INTERFACE_INFO of SLOT_2_AXI_wstrb : signal is "xilinx.com:interface:aximm:1.0 SLOT_2_AXI WSTRB";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_araddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI ARADDR";
+  attribute X_INTERFACE_PARAMETER of SLOT_3_AXI_araddr : signal is "XIL_INTERFACENAME SLOT_3_AXI, ADDR_WIDTH 9, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 1, NUM_READ_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 1, NUM_WRITE_THREADS 1, PHASE 0.000, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_arprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI ARPROT";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_awaddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI AWADDR";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_awprot : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI AWPROT";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_bresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI BRESP";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_rdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI RDATA";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_rresp : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI RRESP";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_wdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI WDATA";
+  attribute X_INTERFACE_INFO of SLOT_3_AXI_wstrb : signal is "xilinx.com:interface:aximm:1.0 SLOT_3_AXI WSTRB";
+  attribute X_INTERFACE_INFO of SLOT_4_AXIS_tdata : signal is "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TDATA";
+  attribute X_INTERFACE_PARAMETER of SLOT_4_AXIS_tdata : signal is "XIL_INTERFACENAME SLOT_4_AXIS, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, FREQ_HZ 100000000, HAS_TKEEP 1, HAS_TLAST 1, HAS_TREADY 1, HAS_TSTRB 0, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.000, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1";
+  attribute X_INTERFACE_INFO of SLOT_4_AXIS_tkeep : signal is "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TKEEP";
+  attribute X_INTERFACE_INFO of SLOT_4_AXIS_tuser : signal is "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TUSER";
 begin
   Conn1_ARADDR(31 downto 0) <= SLOT_1_AXI_araddr(31 downto 0);
   Conn1_ARCACHE(3 downto 0) <= SLOT_1_AXI_arcache(3 downto 0);
@@ -914,6 +983,12 @@ begin
   Conn3_WREADY <= SLOT_3_AXI_wready;
   Conn3_WSTRB(3 downto 0) <= SLOT_3_AXI_wstrb(3 downto 0);
   Conn3_WVALID <= SLOT_3_AXI_wvalid;
+  Conn4_TDATA(15 downto 0) <= SLOT_4_AXIS_tdata(15 downto 0);
+  Conn4_TKEEP(1 downto 0) <= SLOT_4_AXIS_tkeep(1 downto 0);
+  Conn4_TLAST <= SLOT_4_AXIS_tlast;
+  Conn4_TREADY <= SLOT_4_AXIS_tready;
+  Conn4_TUSER(0) <= SLOT_4_AXIS_tuser(0);
+  Conn4_TVALID <= SLOT_4_AXIS_tvalid;
   Conn_ARADDR(31 downto 0) <= SLOT_0_AXI_araddr(31 downto 0);
   Conn_ARCACHE(3 downto 0) <= SLOT_0_AXI_arcache(3 downto 0);
   Conn_ARLEN(3 downto 0) <= SLOT_0_AXI_arlen(3 downto 0);
@@ -939,8 +1014,15 @@ begin
   Conn_WLAST <= SLOT_0_AXI_wlast;
   Conn_WREADY <= SLOT_0_AXI_wready;
   Conn_WVALID <= SLOT_0_AXI_wvalid;
+  SLOT_5_VIDEO_TIMING_active_video_1 <= SLOT_5_VIDEO_TIMING_active_video;
+  SLOT_5_VIDEO_TIMING_hblank_1 <= SLOT_5_VIDEO_TIMING_hblank;
+  SLOT_5_VIDEO_TIMING_hsync_1 <= SLOT_5_VIDEO_TIMING_hsync;
+  SLOT_5_VIDEO_TIMING_vblank_1 <= SLOT_5_VIDEO_TIMING_vblank;
+  SLOT_5_VIDEO_TIMING_vsync_1 <= SLOT_5_VIDEO_TIMING_vsync;
   clk_1 <= clk;
-  probe0_1(23 downto 0) <= probe0(23 downto 0);
+  probe0_1(7 downto 0) <= probe0(7 downto 0);
+  probe1_1(0) <= probe1(0);
+  probe2_1(0) <= probe2(0);
   resetn_1 <= resetn;
 g_inst: component bd_c3fe_g_inst_0
      port map (
@@ -1050,6 +1132,12 @@ g_inst: component bd_c3fe_g_inst_0
       m_slot_3_axi_wready => net_slot_3_axi_wready,
       m_slot_3_axi_wstrb(3 downto 0) => net_slot_3_axi_wstrb(3 downto 0),
       m_slot_3_axi_wvalid => net_slot_3_axi_wvalid,
+      m_slot_4_axis_tdata(15 downto 0) => net_slot_4_axis_tdata(15 downto 0),
+      m_slot_4_axis_tkeep(1 downto 0) => net_slot_4_axis_tkeep(1 downto 0),
+      m_slot_4_axis_tlast => net_slot_4_axis_tlast,
+      m_slot_4_axis_tready => net_slot_4_axis_tready,
+      m_slot_4_axis_tuser(0) => net_slot_4_axis_tuser(0),
+      m_slot_4_axis_tvalid => net_slot_4_axis_tvalid,
       slot_0_axi_araddr(31 downto 0) => Conn_ARADDR(31 downto 0),
       slot_0_axi_arcache(3 downto 0) => Conn_ARCACHE(3 downto 0),
       slot_0_axi_arlen(3 downto 0) => Conn_ARLEN(3 downto 0),
@@ -1137,92 +1225,111 @@ g_inst: component bd_c3fe_g_inst_0
       slot_3_axi_wdata(31 downto 0) => Conn3_WDATA(31 downto 0),
       slot_3_axi_wready => Conn3_WREADY,
       slot_3_axi_wstrb(3 downto 0) => Conn3_WSTRB(3 downto 0),
-      slot_3_axi_wvalid => Conn3_WVALID
+      slot_3_axi_wvalid => Conn3_WVALID,
+      slot_4_axis_tdata(15 downto 0) => Conn4_TDATA(15 downto 0),
+      slot_4_axis_tkeep(1 downto 0) => Conn4_TKEEP(1 downto 0),
+      slot_4_axis_tlast => Conn4_TLAST,
+      slot_4_axis_tready => Conn4_TREADY,
+      slot_4_axis_tuser(0) => Conn4_TUSER(0),
+      slot_4_axis_tvalid => Conn4_TVALID
     );
 ila_lib: component bd_c3fe_ila_lib_0
      port map (
       clk => clk_1,
-      probe0(23 downto 0) => probe0_1(23 downto 0),
-      probe1(1 downto 0) => net_slot_0_axi_ar_cnt(1 downto 0),
-      probe10(3 downto 0) => net_slot_0_axi_awlen(3 downto 0),
-      probe11(2 downto 0) => net_slot_0_axi_awprot(2 downto 0),
-      probe12(2 downto 0) => net_slot_0_axi_awsize(2 downto 0),
-      probe13(1 downto 0) => net_slot_0_axi_b_cnt(1 downto 0),
-      probe14(1 downto 0) => net_slot_0_axi_r_cnt(1 downto 0),
-      probe15(63 downto 0) => net_slot_0_axi_rdata(63 downto 0),
-      probe16(1 downto 0) => net_slot_0_axi_rresp(1 downto 0),
-      probe17(63 downto 0) => net_slot_0_axi_wdata(63 downto 0),
-      probe18(1 downto 0) => net_slot_0_axi_aw_ctrl(1 downto 0),
-      probe19(2 downto 0) => net_slot_0_axi_w_ctrl(2 downto 0),
-      probe2(31 downto 0) => net_slot_0_axi_araddr(31 downto 0),
-      probe20(1 downto 0) => net_slot_0_axi_b_ctrl(1 downto 0),
-      probe21(1 downto 0) => net_slot_0_axi_ar_ctrl(1 downto 0),
-      probe22(2 downto 0) => net_slot_0_axi_r_ctrl(2 downto 0),
-      probe23(1 downto 0) => net_slot_1_axi_ar_cnt(1 downto 0),
-      probe24(31 downto 0) => net_slot_1_axi_araddr(31 downto 0),
-      probe25(3 downto 0) => net_slot_1_axi_arcache(3 downto 0),
-      probe26(7 downto 0) => net_slot_1_axi_arlen(7 downto 0),
-      probe27(2 downto 0) => net_slot_1_axi_arprot(2 downto 0),
-      probe28(2 downto 0) => net_slot_1_axi_arsize(2 downto 0),
-      probe29(1 downto 0) => net_slot_1_axi_aw_cnt(1 downto 0),
-      probe3(3 downto 0) => net_slot_0_axi_arcache(3 downto 0),
-      probe30(31 downto 0) => net_slot_1_axi_awaddr(31 downto 0),
-      probe31(3 downto 0) => net_slot_1_axi_awcache(3 downto 0),
-      probe32(7 downto 0) => net_slot_1_axi_awlen(7 downto 0),
-      probe33(2 downto 0) => net_slot_1_axi_awprot(2 downto 0),
-      probe34(2 downto 0) => net_slot_1_axi_awsize(2 downto 0),
-      probe35(1 downto 0) => net_slot_1_axi_b_cnt(1 downto 0),
-      probe36(1 downto 0) => net_slot_1_axi_r_cnt(1 downto 0),
-      probe37(63 downto 0) => net_slot_1_axi_rdata(63 downto 0),
-      probe38(1 downto 0) => net_slot_1_axi_rresp(1 downto 0),
-      probe39(63 downto 0) => net_slot_1_axi_wdata(63 downto 0),
-      probe4(3 downto 0) => net_slot_0_axi_arlen(3 downto 0),
-      probe40(1 downto 0) => net_slot_1_axi_aw_ctrl(1 downto 0),
-      probe41(2 downto 0) => net_slot_1_axi_w_ctrl(2 downto 0),
-      probe42(1 downto 0) => net_slot_1_axi_b_ctrl(1 downto 0),
-      probe43(1 downto 0) => net_slot_1_axi_ar_ctrl(1 downto 0),
-      probe44(2 downto 0) => net_slot_1_axi_r_ctrl(2 downto 0),
-      probe45(1 downto 0) => net_slot_2_axi_ar_cnt(1 downto 0),
-      probe46(8 downto 0) => net_slot_2_axi_araddr(8 downto 0),
-      probe47(2 downto 0) => net_slot_2_axi_arprot(2 downto 0),
-      probe48(1 downto 0) => net_slot_2_axi_aw_cnt(1 downto 0),
-      probe49(8 downto 0) => net_slot_2_axi_awaddr(8 downto 0),
-      probe5(2 downto 0) => net_slot_0_axi_arprot(2 downto 0),
-      probe50(2 downto 0) => net_slot_2_axi_awprot(2 downto 0),
-      probe51(1 downto 0) => net_slot_2_axi_b_cnt(1 downto 0),
-      probe52(1 downto 0) => net_slot_2_axi_bresp(1 downto 0),
-      probe53(1 downto 0) => net_slot_2_axi_r_cnt(1 downto 0),
-      probe54(31 downto 0) => net_slot_2_axi_rdata(31 downto 0),
-      probe55(1 downto 0) => net_slot_2_axi_rresp(1 downto 0),
-      probe56(31 downto 0) => net_slot_2_axi_wdata(31 downto 0),
-      probe57(3 downto 0) => net_slot_2_axi_wstrb(3 downto 0),
-      probe58(1 downto 0) => net_slot_2_axi_aw_ctrl(1 downto 0),
-      probe59(1 downto 0) => net_slot_2_axi_w_ctrl(1 downto 0),
-      probe6(2 downto 0) => net_slot_0_axi_arsize(2 downto 0),
-      probe60(1 downto 0) => net_slot_2_axi_b_ctrl(1 downto 0),
-      probe61(1 downto 0) => net_slot_2_axi_ar_ctrl(1 downto 0),
-      probe62(1 downto 0) => net_slot_2_axi_r_ctrl(1 downto 0),
-      probe63(1 downto 0) => net_slot_3_axi_ar_cnt(1 downto 0),
-      probe64(8 downto 0) => net_slot_3_axi_araddr(8 downto 0),
-      probe65(2 downto 0) => net_slot_3_axi_arprot(2 downto 0),
-      probe66(1 downto 0) => net_slot_3_axi_aw_cnt(1 downto 0),
-      probe67(8 downto 0) => net_slot_3_axi_awaddr(8 downto 0),
-      probe68(2 downto 0) => net_slot_3_axi_awprot(2 downto 0),
-      probe69(1 downto 0) => net_slot_3_axi_b_cnt(1 downto 0),
-      probe7(1 downto 0) => net_slot_0_axi_aw_cnt(1 downto 0),
-      probe70(1 downto 0) => net_slot_3_axi_bresp(1 downto 0),
-      probe71(1 downto 0) => net_slot_3_axi_r_cnt(1 downto 0),
-      probe72(31 downto 0) => net_slot_3_axi_rdata(31 downto 0),
-      probe73(1 downto 0) => net_slot_3_axi_rresp(1 downto 0),
-      probe74(31 downto 0) => net_slot_3_axi_wdata(31 downto 0),
-      probe75(3 downto 0) => net_slot_3_axi_wstrb(3 downto 0),
-      probe76(1 downto 0) => net_slot_3_axi_aw_ctrl(1 downto 0),
-      probe77(1 downto 0) => net_slot_3_axi_w_ctrl(1 downto 0),
-      probe78(1 downto 0) => net_slot_3_axi_b_ctrl(1 downto 0),
-      probe79(1 downto 0) => net_slot_3_axi_ar_ctrl(1 downto 0),
-      probe8(31 downto 0) => net_slot_0_axi_awaddr(31 downto 0),
-      probe80(1 downto 0) => net_slot_3_axi_r_ctrl(1 downto 0),
-      probe9(3 downto 0) => net_slot_0_axi_awcache(3 downto 0)
+      probe0(7 downto 0) => probe0_1(7 downto 0),
+      probe1(0) => probe1_1(0),
+      probe10(31 downto 0) => net_slot_0_axi_awaddr(31 downto 0),
+      probe11(3 downto 0) => net_slot_0_axi_awcache(3 downto 0),
+      probe12(3 downto 0) => net_slot_0_axi_awlen(3 downto 0),
+      probe13(2 downto 0) => net_slot_0_axi_awprot(2 downto 0),
+      probe14(2 downto 0) => net_slot_0_axi_awsize(2 downto 0),
+      probe15(1 downto 0) => net_slot_0_axi_b_cnt(1 downto 0),
+      probe16(1 downto 0) => net_slot_0_axi_r_cnt(1 downto 0),
+      probe17(63 downto 0) => net_slot_0_axi_rdata(63 downto 0),
+      probe18(1 downto 0) => net_slot_0_axi_rresp(1 downto 0),
+      probe19(63 downto 0) => net_slot_0_axi_wdata(63 downto 0),
+      probe2(0) => probe2_1(0),
+      probe20(1 downto 0) => net_slot_0_axi_aw_ctrl(1 downto 0),
+      probe21(2 downto 0) => net_slot_0_axi_w_ctrl(2 downto 0),
+      probe22(1 downto 0) => net_slot_0_axi_b_ctrl(1 downto 0),
+      probe23(1 downto 0) => net_slot_0_axi_ar_ctrl(1 downto 0),
+      probe24(2 downto 0) => net_slot_0_axi_r_ctrl(2 downto 0),
+      probe25(1 downto 0) => net_slot_1_axi_ar_cnt(1 downto 0),
+      probe26(31 downto 0) => net_slot_1_axi_araddr(31 downto 0),
+      probe27(3 downto 0) => net_slot_1_axi_arcache(3 downto 0),
+      probe28(7 downto 0) => net_slot_1_axi_arlen(7 downto 0),
+      probe29(2 downto 0) => net_slot_1_axi_arprot(2 downto 0),
+      probe3(1 downto 0) => net_slot_0_axi_ar_cnt(1 downto 0),
+      probe30(2 downto 0) => net_slot_1_axi_arsize(2 downto 0),
+      probe31(1 downto 0) => net_slot_1_axi_aw_cnt(1 downto 0),
+      probe32(31 downto 0) => net_slot_1_axi_awaddr(31 downto 0),
+      probe33(3 downto 0) => net_slot_1_axi_awcache(3 downto 0),
+      probe34(7 downto 0) => net_slot_1_axi_awlen(7 downto 0),
+      probe35(2 downto 0) => net_slot_1_axi_awprot(2 downto 0),
+      probe36(2 downto 0) => net_slot_1_axi_awsize(2 downto 0),
+      probe37(1 downto 0) => net_slot_1_axi_b_cnt(1 downto 0),
+      probe38(1 downto 0) => net_slot_1_axi_r_cnt(1 downto 0),
+      probe39(63 downto 0) => net_slot_1_axi_rdata(63 downto 0),
+      probe4(31 downto 0) => net_slot_0_axi_araddr(31 downto 0),
+      probe40(1 downto 0) => net_slot_1_axi_rresp(1 downto 0),
+      probe41(63 downto 0) => net_slot_1_axi_wdata(63 downto 0),
+      probe42(1 downto 0) => net_slot_1_axi_aw_ctrl(1 downto 0),
+      probe43(2 downto 0) => net_slot_1_axi_w_ctrl(2 downto 0),
+      probe44(1 downto 0) => net_slot_1_axi_b_ctrl(1 downto 0),
+      probe45(1 downto 0) => net_slot_1_axi_ar_ctrl(1 downto 0),
+      probe46(2 downto 0) => net_slot_1_axi_r_ctrl(2 downto 0),
+      probe47(1 downto 0) => net_slot_2_axi_ar_cnt(1 downto 0),
+      probe48(8 downto 0) => net_slot_2_axi_araddr(8 downto 0),
+      probe49(2 downto 0) => net_slot_2_axi_arprot(2 downto 0),
+      probe5(3 downto 0) => net_slot_0_axi_arcache(3 downto 0),
+      probe50(1 downto 0) => net_slot_2_axi_aw_cnt(1 downto 0),
+      probe51(8 downto 0) => net_slot_2_axi_awaddr(8 downto 0),
+      probe52(2 downto 0) => net_slot_2_axi_awprot(2 downto 0),
+      probe53(1 downto 0) => net_slot_2_axi_b_cnt(1 downto 0),
+      probe54(1 downto 0) => net_slot_2_axi_bresp(1 downto 0),
+      probe55(1 downto 0) => net_slot_2_axi_r_cnt(1 downto 0),
+      probe56(31 downto 0) => net_slot_2_axi_rdata(31 downto 0),
+      probe57(1 downto 0) => net_slot_2_axi_rresp(1 downto 0),
+      probe58(31 downto 0) => net_slot_2_axi_wdata(31 downto 0),
+      probe59(3 downto 0) => net_slot_2_axi_wstrb(3 downto 0),
+      probe6(3 downto 0) => net_slot_0_axi_arlen(3 downto 0),
+      probe60(1 downto 0) => net_slot_2_axi_aw_ctrl(1 downto 0),
+      probe61(1 downto 0) => net_slot_2_axi_w_ctrl(1 downto 0),
+      probe62(1 downto 0) => net_slot_2_axi_b_ctrl(1 downto 0),
+      probe63(1 downto 0) => net_slot_2_axi_ar_ctrl(1 downto 0),
+      probe64(1 downto 0) => net_slot_2_axi_r_ctrl(1 downto 0),
+      probe65(1 downto 0) => net_slot_3_axi_ar_cnt(1 downto 0),
+      probe66(8 downto 0) => net_slot_3_axi_araddr(8 downto 0),
+      probe67(2 downto 0) => net_slot_3_axi_arprot(2 downto 0),
+      probe68(1 downto 0) => net_slot_3_axi_aw_cnt(1 downto 0),
+      probe69(8 downto 0) => net_slot_3_axi_awaddr(8 downto 0),
+      probe7(2 downto 0) => net_slot_0_axi_arprot(2 downto 0),
+      probe70(2 downto 0) => net_slot_3_axi_awprot(2 downto 0),
+      probe71(1 downto 0) => net_slot_3_axi_b_cnt(1 downto 0),
+      probe72(1 downto 0) => net_slot_3_axi_bresp(1 downto 0),
+      probe73(1 downto 0) => net_slot_3_axi_r_cnt(1 downto 0),
+      probe74(31 downto 0) => net_slot_3_axi_rdata(31 downto 0),
+      probe75(1 downto 0) => net_slot_3_axi_rresp(1 downto 0),
+      probe76(31 downto 0) => net_slot_3_axi_wdata(31 downto 0),
+      probe77(3 downto 0) => net_slot_3_axi_wstrb(3 downto 0),
+      probe78(1 downto 0) => net_slot_3_axi_aw_ctrl(1 downto 0),
+      probe79(1 downto 0) => net_slot_3_axi_w_ctrl(1 downto 0),
+      probe8(2 downto 0) => net_slot_0_axi_arsize(2 downto 0),
+      probe80(1 downto 0) => net_slot_3_axi_b_ctrl(1 downto 0),
+      probe81(1 downto 0) => net_slot_3_axi_ar_ctrl(1 downto 0),
+      probe82(1 downto 0) => net_slot_3_axi_r_ctrl(1 downto 0),
+      probe83(15 downto 0) => net_slot_4_axis_tdata(15 downto 0),
+      probe84(1 downto 0) => net_slot_4_axis_tkeep(1 downto 0),
+      probe85(0) => net_slot_4_axis_tuser(0),
+      probe86(0) => net_slot_4_axis_tvalid,
+      probe87(0) => net_slot_4_axis_tready,
+      probe88(0) => net_slot_4_axis_tlast,
+      probe89(0) => SLOT_5_VIDEO_TIMING_active_video_1,
+      probe9(1 downto 0) => net_slot_0_axi_aw_cnt(1 downto 0),
+      probe90(0) => SLOT_5_VIDEO_TIMING_hblank_1,
+      probe91(0) => SLOT_5_VIDEO_TIMING_hsync_1,
+      probe92(0) => SLOT_5_VIDEO_TIMING_vblank_1,
+      probe93(0) => SLOT_5_VIDEO_TIMING_vsync_1
     );
 slot_0_ar: component bd_c3fe_slot_0_ar_0
      port map (
