@@ -2,39 +2,39 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Sun Feb  2 21:08:53 2025
-# Process ID: 9116
-# Current directory: C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1
+# Start of session at: Mon Feb  3 02:58:50 2025
+# Process ID: 22696
+# Current directory: C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1
 # Command line: vivado.exe -log zynq_design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source zynq_design_1_wrapper.tcl -notrace
-# Log file: C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper.vdi
-# Journal file: C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1\vivado.jou
+# Log file: C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper.vdi
+# Journal file: C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source zynq_design_1_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
-add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1013.145 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1012.980 ; gain = 0.000
 Command: link_design -top zynq_design_1_wrapper -part xc7z020clg484-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Device 21-403] Loading part xc7z020clg484-1
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_0_0/zynq_design_1_axi_gpio_0_0.dcp' for cell 'zynq_design_1_i/axi_gpio_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_1_0/zynq_design_1_axi_gpio_1_0.dcp' for cell 'zynq_design_1_i/axi_gpio_1'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_2_0/zynq_design_1_axi_gpio_2_0.dcp' for cell 'zynq_design_1_i/axi_gpio_2'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.dcp' for cell 'zynq_design_1_i/axi_vdma_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1.dcp' for cell 'zynq_design_1_i/processing_system7_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0.dcp' for cell 'zynq_design_1_i/rst_ps7_0_100M'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/zynq_design_1_system_ila_0_0.dcp' for cell 'zynq_design_1_i/system_ila_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/zynq_design_1_system_ila_1_0.dcp' for cell 'zynq_design_1_i/system_ila_1'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/zynq_design_1_system_ila_2_0.dcp' for cell 'zynq_design_1_i/system_ila_2'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/zynq_design_1_system_ila_3_0.dcp' for cell 'zynq_design_1_i/system_ila_3'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0.dcp' for cell 'zynq_design_1_i/v_axi4s_vid_out_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/zynq_design_1_v_tc_0_0.dcp' for cell 'zynq_design_1_i/v_tc_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_1/zynq_design_1_auto_pc_1.dcp' for cell 'zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xbar_0/zynq_design_1_xbar_0.dcp' for cell 'zynq_design_1_i/ps7_0_axi_periph/xbar'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0.dcp' for cell 'zynq_design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.424 . Memory (MB): peak = 1013.145 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1742 Unisim elements for replacement
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_0_0/zynq_design_1_axi_gpio_0_0.dcp' for cell 'zynq_design_1_i/axi_gpio_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_1_0/zynq_design_1_axi_gpio_1_0.dcp' for cell 'zynq_design_1_i/axi_gpio_1'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_2_0/zynq_design_1_axi_gpio_2_0.dcp' for cell 'zynq_design_1_i/axi_gpio_2'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.dcp' for cell 'zynq_design_1_i/axi_vdma_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1.dcp' for cell 'zynq_design_1_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0.dcp' for cell 'zynq_design_1_i/rst_ps7_0_100M'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/zynq_design_1_system_ila_0_0.dcp' for cell 'zynq_design_1_i/system_ila_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/zynq_design_1_system_ila_1_0.dcp' for cell 'zynq_design_1_i/system_ila_1'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/zynq_design_1_system_ila_2_0.dcp' for cell 'zynq_design_1_i/system_ila_2'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/zynq_design_1_system_ila_3_0.dcp' for cell 'zynq_design_1_i/system_ila_3'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0.dcp' for cell 'zynq_design_1_i/v_axi4s_vid_out_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/zynq_design_1_v_tc_0_0.dcp' for cell 'zynq_design_1_i/v_tc_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_1/zynq_design_1_auto_pc_1.dcp' for cell 'zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xbar_0/zynq_design_1_xbar_0.dcp' for cell 'zynq_design_1_i/ps7_0_axi_periph/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0.dcp' for cell 'zynq_design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.433 . Memory (MB): peak = 1012.980 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1915 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2020.1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -42,101 +42,101 @@ INFO: [Chipscope 16-324] Core: zynq_design_1_i/system_ila_0/U0/ila_lib UUID: ffe
 INFO: [Chipscope 16-324] Core: zynq_design_1_i/system_ila_1/U0/ila_lib UUID: 479899ad-3975-5fab-aa8f-aa68b342b37e 
 INFO: [Chipscope 16-324] Core: zynq_design_1_i/system_ila_2/U0/ila_lib UUID: 4c0b8e71-1cb7-5956-8abd-dc145a0d442b 
 INFO: [Chipscope 16-324] Core: zynq_design_1_i/system_ila_3/U0/ila_lib UUID: 4a525143-fb2b-5cc6-8e82-31298e8a1ad6 
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_0_0/zynq_design_1_axi_gpio_0_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_0/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_0_0/zynq_design_1_axi_gpio_0_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_0/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_0_0/zynq_design_1_axi_gpio_0_0.xdc] for cell 'zynq_design_1_i/axi_gpio_0/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_0_0/zynq_design_1_axi_gpio_0_0.xdc] for cell 'zynq_design_1_i/axi_gpio_0/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_1_0/zynq_design_1_axi_gpio_1_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_1/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_1_0/zynq_design_1_axi_gpio_1_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_1/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_1_0/zynq_design_1_axi_gpio_1_0.xdc] for cell 'zynq_design_1_i/axi_gpio_1/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_1_0/zynq_design_1_axi_gpio_1_0.xdc] for cell 'zynq_design_1_i/axi_gpio_1/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_2_0/zynq_design_1_axi_gpio_2_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_2/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_2_0/zynq_design_1_axi_gpio_2_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_2/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_2_0/zynq_design_1_axi_gpio_2_0.xdc] for cell 'zynq_design_1_i/axi_gpio_2/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_2_0/zynq_design_1_axi_gpio_2_0.xdc] for cell 'zynq_design_1_i/axi_gpio_2/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0_board.xdc] for cell 'zynq_design_1_i/rst_ps7_0_100M/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0_board.xdc] for cell 'zynq_design_1_i/rst_ps7_0_100M/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0.xdc] for cell 'zynq_design_1_i/rst_ps7_0_100M/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0.xdc] for cell 'zynq_design_1_i/rst_ps7_0_100M/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc] for cell 'zynq_design_1_i/axi_vdma_0/U0'
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:60]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:64]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:88]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:92]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:96]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:100]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:104]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:108]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:116]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:120]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:124]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:136]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:140]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:144]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:148]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:152]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:156]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:160]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:164]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:168]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:172]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:176]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:180]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:184]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:192]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:196]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:200]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:204]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:208]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:212]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:216]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:220]
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc] for cell 'zynq_design_1_i/axi_vdma_0/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1.xdc] for cell 'zynq_design_1_i/processing_system7_0/inst'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1.xdc] for cell 'zynq_design_1_i/processing_system7_0/inst'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_0/U0/ila_lib/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_0/U0/ila_lib/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_0/U0/ila_lib/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_0/U0/ila_lib/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_1/U0/ila_lib/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_1/U0/ila_lib/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_1/U0/ila_lib/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_1/U0/ila_lib/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_2/U0/ila_lib/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_2/U0/ila_lib/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_2/U0/ila_lib/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_2/U0/ila_lib/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_3/U0/ila_lib/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_3/U0/ila_lib/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_3/U0/ila_lib/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_3/U0/ila_lib/U0'
-Parsing XDC File [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[0]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[1]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[2]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[3]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[4]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[5]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[6]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[7]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
-CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_AWPROT[0]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:34]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_AWPROT[1]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:34]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_AWPROT[2]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:34]
-CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:34]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_ARPROT[0]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:35]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_ARPROT[1]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:35]
-WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_ARPROT[2]'. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:35]
-CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:35]
-Finished Parsing XDC File [C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc]
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0_clocks.xdc] for cell 'zynq_design_1_i/axi_vdma_0/U0'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0_clocks.xdc] for cell 'zynq_design_1_i/axi_vdma_0/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/zynq_design_1_v_tc_0_0_clocks.xdc] for cell 'zynq_design_1_i/v_tc_0/U0'
-INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/zynq_design_1_v_tc_0_0_clocks.xdc:2]
-get_clocks: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1561.008 ; gain = 547.863
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/zynq_design_1_v_tc_0_0_clocks.xdc] for cell 'zynq_design_1_i/v_tc_0/U0'
-Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_clocks.xdc] for cell 'zynq_design_1_i/v_axi4s_vid_out_0/inst'
-Finished Parsing XDC File [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_clocks.xdc] for cell 'zynq_design_1_i/v_axi4s_vid_out_0/inst'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_0_0/zynq_design_1_axi_gpio_0_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_0_0/zynq_design_1_axi_gpio_0_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_0_0/zynq_design_1_axi_gpio_0_0.xdc] for cell 'zynq_design_1_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_0_0/zynq_design_1_axi_gpio_0_0.xdc] for cell 'zynq_design_1_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_1_0/zynq_design_1_axi_gpio_1_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_1/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_1_0/zynq_design_1_axi_gpio_1_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_1/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_1_0/zynq_design_1_axi_gpio_1_0.xdc] for cell 'zynq_design_1_i/axi_gpio_1/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_1_0/zynq_design_1_axi_gpio_1_0.xdc] for cell 'zynq_design_1_i/axi_gpio_1/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_2_0/zynq_design_1_axi_gpio_2_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_2/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_2_0/zynq_design_1_axi_gpio_2_0_board.xdc] for cell 'zynq_design_1_i/axi_gpio_2/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_2_0/zynq_design_1_axi_gpio_2_0.xdc] for cell 'zynq_design_1_i/axi_gpio_2/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_gpio_2_0/zynq_design_1_axi_gpio_2_0.xdc] for cell 'zynq_design_1_i/axi_gpio_2/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0_board.xdc] for cell 'zynq_design_1_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0_board.xdc] for cell 'zynq_design_1_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0.xdc] for cell 'zynq_design_1_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_100M_0/zynq_design_1_rst_ps7_0_100M_0.xdc] for cell 'zynq_design_1_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc] for cell 'zynq_design_1_i/axi_vdma_0/U0'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:60]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:64]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:88]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:92]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:96]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:100]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:104]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:108]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:116]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:120]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:124]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:136]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:140]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:144]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:148]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:152]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:156]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:160]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:164]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:168]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:172]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:176]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:180]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:184]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:192]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:196]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:200]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:204]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:208]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:212]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:216]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-6' -to list should not be empty. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc:220]
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0.xdc] for cell 'zynq_design_1_i/axi_vdma_0/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1.xdc] for cell 'zynq_design_1_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1.xdc] for cell 'zynq_design_1_i/processing_system7_0/inst'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_0/U0/ila_lib/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_0/U0/ila_lib/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_0/U0/ila_lib/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_0/U0/ila_lib/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_1/U0/ila_lib/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_1/U0/ila_lib/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_1/U0/ila_lib/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_1/U0/ila_lib/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_2/U0/ila_lib/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_2/U0/ila_lib/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_2/U0/ila_lib/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_2/U0/ila_lib/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_3/U0/ila_lib/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'zynq_design_1_i/system_ila_3/U0/ila_lib/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_3/U0/ila_lib/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc] for cell 'zynq_design_1_i/system_ila_3/U0/ila_lib/U0'
+Parsing XDC File [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[0]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[1]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[2]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[3]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[4]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[5]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[6]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[7]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:33]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_AWPROT[0]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:34]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_AWPROT[1]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:34]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_AWPROT[2]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:34]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:34]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_ARPROT[0]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:35]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_ARPROT[1]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:35]
+WARNING: [Vivado 12-507] No nets matched 'zynq_design_1_i/ps7_0_axi_periph_M00_AXI_ARPROT[2]'. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:35]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc:35]
+Finished Parsing XDC File [C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc]
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0_clocks.xdc] for cell 'zynq_design_1_i/axi_vdma_0/U0'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0_clocks.xdc] for cell 'zynq_design_1_i/axi_vdma_0/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/zynq_design_1_v_tc_0_0_clocks.xdc] for cell 'zynq_design_1_i/v_tc_0/U0'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/zynq_design_1_v_tc_0_0_clocks.xdc:2]
+get_clocks: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1572.809 ; gain = 559.828
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/zynq_design_1_v_tc_0_0_clocks.xdc] for cell 'zynq_design_1_i/v_tc_0/U0'
+Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_clocks.xdc] for cell 'zynq_design_1_i/v_axi4s_vid_out_0/inst'
+Finished Parsing XDC File [c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_clocks.xdc] for cell 'zynq_design_1_i/v_axi4s_vid_out_0/inst'
 Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
 Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
 Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'zynq_design_1_i/v_axi4s_vid_out_0/inst/CDC_SINGLE_LOCKED_INST/xpm_cdc_single_inst'
@@ -150,17 +150,15 @@ Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_fifo/tcl/xpm
 Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'zynq_design_1_i/v_axi4s_vid_out_0/inst/COUPLER_INST/generate_sync_fifo.FIFO_INST/XPM_FIFO_SYNC_INST'
 Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'zynq_design_1_i/v_axi4s_vid_out_0/inst/COUPLER_INST/generate_sync_fifo.FIFO_INST/XPM_FIFO_SYNC_INST'
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1561.008 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1572.809 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 773 instances were transformed.
-  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 772 instances
+  A total of 777 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 776 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
 
 30 Infos, 46 Warnings, 3 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 1561.008 ; gain = 547.863
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.collectionResultDisplayLimit
+link_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 1572.809 ; gain = 559.828
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
@@ -171,13 +169,13 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.677 . Memory (MB): peak = 1561.008 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.672 . Memory (MB): peak = 1572.809 ; gain = 0.000
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: dd6cbc1d
+Ending Cache Timing Information Task | Checksum: 6cc80056
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.624 . Memory (MB): peak = 1561.008 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.601 . Memory (MB): peak = 1572.809 ; gain = 0.000
 
 Starting Logic Optimization Task
 
@@ -185,52 +183,52 @@ Phase 1 Generate And Synthesize Debug Cores
 INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
 INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
 INFO: [Chipscope 16-469] Using cached IP synthesis design for IP xilinx.com:ip:xsdbm:3.0, cache-ID = 9715ec1478f45814.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1782.906 ; gain = 0.000
-Phase 1 Generate And Synthesize Debug Cores | Checksum: a1264c81
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1804.703 ; gain = 0.000
+Phase 1 Generate And Synthesize Debug Cores | Checksum: a0daff03
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 1782.906 ; gain = 49.852
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1804.703 ; gain = 57.777
 
 Phase 2 Retarget
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 4 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 2 Retarget | Checksum: 14ee09710
+Phase 2 Retarget | Checksum: e0b0f756
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1782.906 ; gain = 49.852
-INFO: [Opt 31-389] Phase Retarget created 265 cells and removed 551 cells
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1804.703 ; gain = 57.777
+INFO: [Opt 31-389] Phase Retarget created 265 cells and removed 550 cells
 INFO: [Opt 31-1021] In phase Retarget, 362 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 3 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 3 Constant propagation | Checksum: 17a742378
+Phase 3 Constant propagation | Checksum: d2c26767
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1782.906 ; gain = 49.852
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 1804.703 ; gain = 57.777
 INFO: [Opt 31-389] Phase Constant propagation created 17 cells and removed 610 cells
 INFO: [Opt 31-1021] In phase Constant propagation, 457 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 4 Sweep
-Phase 4 Sweep | Checksum: 145adb2e8
+Phase 4 Sweep | Checksum: 118516d91
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 1782.906 ; gain = 49.852
-INFO: [Opt 31-389] Phase Sweep created 8 cells and removed 1594 cells
-INFO: [Opt 31-1021] In phase Sweep, 3367 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1804.703 ; gain = 57.777
+INFO: [Opt 31-389] Phase Sweep created 8 cells and removed 1584 cells
+INFO: [Opt 31-1021] In phase Sweep, 3385 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 5 BUFG optimization
-Phase 5 BUFG optimization | Checksum: 145adb2e8
+Phase 5 BUFG optimization | Checksum: 118516d91
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1782.906 ; gain = 49.852
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1804.703 ; gain = 57.777
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 6 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 6 Shift Register Optimization | Checksum: 145adb2e8
+Phase 6 Shift Register Optimization | Checksum: 118516d91
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1782.906 ; gain = 49.852
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1804.703 ; gain = 57.777
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 7 Post Processing Netlist
-Phase 7 Post Processing Netlist | Checksum: 132ede7de
+Phase 7 Post Processing Netlist | Checksum: b85b73e6
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1782.906 ; gain = 49.852
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1804.703 ; gain = 57.777
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 INFO: [Opt 31-1021] In phase Post Processing Netlist, 77 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 Opt_design Change Summary
@@ -240,9 +238,9 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
 -------------------------------------------------------------------------------------------------------------------------
-|  Retarget                     |             265  |             551  |                                            362  |
+|  Retarget                     |             265  |             550  |                                            362  |
 |  Constant propagation         |              17  |             610  |                                            457  |
-|  Sweep                        |               8  |            1594  |                                           3367  |
+|  Sweep                        |               8  |            1584  |                                           3385  |
 |  BUFG optimization            |               0  |               0  |                                              0  |
 |  Shift Register Optimization  |               0  |               0  |                                              0  |
 |  Post Processing Netlist      |               0  |               0  |                                             77  |
@@ -252,62 +250,60 @@ Opt_design Change Summary
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1782.906 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: e4005c45
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1804.703 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: f259c2f8
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1782.906 ; gain = 49.852
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 1804.703 ; gain = 57.777
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-INFO: [Pwropt 34-9] Applying IDT optimizations ...
-INFO: [Pwropt 34-10] Applying ODC optimizations ...
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
 
 
 Starting PowerOpt Patch Enables Task
-INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 28 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 91 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
-Number of BRAM Ports augmented: 28 newly gated: 0 Total Ports: 56
-Ending PowerOpt Patch Enables Task | Checksum: 55b2dc6a
+Number of BRAM Ports augmented: 91 newly gated: 0 Total Ports: 182
+Ending PowerOpt Patch Enables Task | Checksum: 8ae954f5
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.139 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Ending Power Optimization Task | Checksum: 55b2dc6a
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.310 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 8ae954f5
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2023.402 ; gain = 240.496
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2177.863 ; gain = 373.160
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 55b2dc6a
+Ending Final Cleanup Task | Checksum: 8ae954f5
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Ending Netlist Obfuscation Task | Checksum: e0fd6cf6
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 8654c83d
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 2177.863 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-63 Infos, 46 Warnings, 3 Critical Warnings and 0 Errors encountered.
+62 Infos, 46 Warnings, 3 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 2023.402 ; gain = 462.395
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.collectionResultDisplayLimit
+opt_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:25 . Memory (MB): peak = 2177.863 ; gain = 605.055
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 2023.402 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_opt.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 2177.863 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2177.863 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_drc -file zynq_design_1_wrapper_drc_opted.rpt -pb zynq_design_1_wrapper_drc_opted.pb -rpx zynq_design_1_wrapper_drc_opted.rpx
 Command: report_drc -file zynq_design_1_wrapper_drc_opted.rpt -pb zynq_design_1_wrapper_drc_opted.pb -rpx zynq_design_1_wrapper_drc_opted.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_drc_opted.rpt.
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_drc_opted.rpt.
 report_drc completed successfully
 INFO: [Chipscope 16-240] Debug cores have already been implemented
 Command: place_design
@@ -335,43 +331,43 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 10d686af
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 18f2d00a
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 16c3b7d6c
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1136130c7
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 1e7957ca6
+Phase 1.3 Build Placer Netlist Model | Checksum: 163d2cae0
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 1e7957ca6
+Phase 1.4 Constrain Clocks/Macros | Checksum: 163d2cae0
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 1e7957ca6
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 163d2cae0
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 2116a8fed
+Phase 2.1 Floorplanning | Checksum: 234707ef3
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 2.2 Global Placement Core
 
 Phase 2.2.1 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 465 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 488 LUT instances to create LUTNM shape
 INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
-INFO: [Physopt 32-775] End 1 Pass. Optimized 185 nets or cells. Created 0 new cell, deleted 185 existing cells and moved 0 existing cell
+INFO: [Physopt 32-775] End 1 Pass. Optimized 187 nets or cells. Created 0 new cell, deleted 187 existing cells and moved 0 existing cell
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
@@ -382,7 +378,7 @@ INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was
 INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
 INFO: [Physopt 32-949] No candidate nets found for HD net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -391,7 +387,7 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |            0  |            185  |                   185  |           0  |           1  |  00:00:00  |
+|  LUT Combining                                    |            0  |            187  |                   187  |           0  |           1  |  00:00:00  |
 |  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
@@ -399,59 +395,59 @@ Summary of Physical Synthesis Optimizations
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |            0  |            185  |                   185  |           0  |           3  |  00:00:00  |
+|  Total                                            |            0  |            187  |                   187  |           0  |           3  |  00:00:00  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.2.1 Physical Synthesis In Placer | Checksum: 851681e5
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 1a6adc928
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Phase 2.2 Global Placement Core | Checksum: 821a621b
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Phase 2.2 Global Placement Core | Checksum: 177049f87
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Phase 2 Global Placement | Checksum: 821a621b
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 177049f87
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 10d094bc8
+Phase 3.1 Commit Multi Column Macros | Checksum: 183bc02ac
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 168e3635f
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: b1d0e47d
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 145a68e45
+Phase 3.3 Area Swap Optimization | Checksum: 11975391c
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 12321ad82
+Phase 3.4 Pipeline Register Optimization | Checksum: a9818ddd
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 3.5 Small Shape Detail Placement
-Phase 3.5 Small Shape Detail Placement | Checksum: 13abce12a
+Phase 3.5 Small Shape Detail Placement | Checksum: 1316b1fd6
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:24 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 3.6 Re-assign LUT pins
-Phase 3.6 Re-assign LUT pins | Checksum: 1075f9586
+Phase 3.6 Re-assign LUT pins | Checksum: 113dfb1c5
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:25 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 3.7 Pipeline Register Optimization
-Phase 3.7 Pipeline Register Optimization | Checksum: efb05ba7
+Phase 3.7 Pipeline Register Optimization | Checksum: 175517226
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: efb05ba7
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:25 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 175517226
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:25 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -459,7 +455,7 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: b4dd741a
+Post Placement Optimization Initialization | Checksum: 124b8b815
 
 Phase 4.1.1.1 BUFG Insertion
 
@@ -467,78 +463,78 @@ Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=1.216 | TNS=0.000 |
-Phase 1 Physical Synthesis Initialization | Checksum: 135f04f9a
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=12.460 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: b2f4ac2c
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.786 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.855 . Memory (MB): peak = 2177.863 ; gain = 0.000
 INFO: [Place 46-33] Processed net zynq_design_1_i/v_tc_0/U0/U_VIDEO_CTRL/GEN_HAS_IRQ.irq_i_1_n_0, BUFG insertion was skipped due to placement/routing conflicts.
 INFO: [Place 46-56] BUFG insertion identified 1 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 1, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
-Ending Physical Synthesis Task | Checksum: 130684754
+Ending Physical Synthesis Task | Checksum: 16e799783
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.896 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Phase 4.1.1.1 BUFG Insertion | Checksum: b4dd741a
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.967 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 124b8b815
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 2023.402 ; gain = 0.000
-INFO: [Place 30-746] Post Placement Timing Summary WNS=1.216. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: 1404891cb
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:29 . Memory (MB): peak = 2177.863 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=12.460. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 13608d948
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Phase 4.1 Post Commit Optimization | Checksum: 1404891cb
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:30 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 13608d948
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:30 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 1404891cb
+Phase 4.2 Post Placement Cleanup | Checksum: 13608d948
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:30 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: 1404891cb
+Phase 4.3 Placer Reporting | Checksum: 13608d948
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:30 . Memory (MB): peak = 2177.863 ; gain = 0.000
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Phase 4.4 Final Placement Cleanup | Checksum: 208c0a907
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 1d011a77e
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 208c0a907
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:30 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1d011a77e
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 2023.402 ; gain = 0.000
-Ending Placer Task | Checksum: 128b97849
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:30 . Memory (MB): peak = 2177.863 ; gain = 0.000
+Ending Placer Task | Checksum: 19b206d86
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 2023.402 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:30 . Memory (MB): peak = 2177.863 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-100 Infos, 54 Warnings, 3 Critical Warnings and 0 Errors encountered.
+98 Infos, 54 Warnings, 3 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 2023.402 ; gain = 0.000
+place_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:31 . Memory (MB): peak = 2177.863 ; gain = 0.000
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2023.402 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_placed.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2177.863 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_placed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_io -file zynq_design_1_wrapper_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 2023.402 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 2177.863 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file zynq_design_1_wrapper_utilization_placed.rpt -pb zynq_design_1_wrapper_utilization_placed.pb
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file zynq_design_1_wrapper_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 2023.402 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 2177.863 ; gain = 0.000
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
 INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
 INFO: [Common 17-83] Releasing license: Implementation
-109 Infos, 54 Warnings, 3 Critical Warnings and 0 Errors encountered.
+107 Infos, 54 Warnings, 3 Critical Warnings and 0 Errors encountered.
 phys_opt_design completed successfully
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2042.410 ; gain = 19.008
-INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_physopt.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2177.863 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_physopt.dcp' has been generated.
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
@@ -550,53 +546,53 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: 4f140ac7 ConstDB: 0 ShapeSum: d9a56d82 RouteDB: 0
+Checksum: PlaceDB: df26041c ConstDB: 0 ShapeSum: bbfa696a RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: 8a1dd73b
+Phase 1 Build RT Design | Checksum: 9d459ef2
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 2137.527 ; gain = 85.793
-Post Restoration Checksum: NetGraph: 1f3b4073 NumContArr: 6ae296c8 Constraints: 0 Timing: 0
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2196.203 ; gain = 18.340
+Post Restoration Checksum: NetGraph: 49f56e15 NumContArr: 535030dd Constraints: 0 Timing: 0
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 8a1dd73b
+Phase 2.1 Create Timer | Checksum: 9d459ef2
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 2137.527 ; gain = 85.793
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2196.203 ; gain = 18.340
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 8a1dd73b
+Phase 2.2 Fix Topology Constraints | Checksum: 9d459ef2
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 2140.520 ; gain = 88.785
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2199.227 ; gain = 21.363
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 8a1dd73b
+Phase 2.3 Pre Route Cleanup | Checksum: 9d459ef2
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 2140.520 ; gain = 88.785
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2199.227 ; gain = 21.363
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 1333ce9ee
+Phase 2.4 Update Timing | Checksum: 212f0598b
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 2165.965 ; gain = 114.230
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.428  | TNS=0.000  | WHS=-0.239 | THS=-495.391|
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 2220.238 ; gain = 42.375
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=12.822 | TNS=0.000  | WHS=-0.204 | THS=-475.710|
 
 
 Phase 2.5 Update Timing for Bus Skew
 
 Phase 2.5.1 Update Timing
-Phase 2.5.1 Update Timing | Checksum: 1a4e36a12
+Phase 2.5.1 Update Timing | Checksum: 230f7e69a
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 2187.473 ; gain = 135.738
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.428  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 2260.945 ; gain = 83.082
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=12.822 | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 2.5 Update Timing for Bus Skew | Checksum: 106cd9ad7
+Phase 2.5 Update Timing for Bus Skew | Checksum: 207a204a0
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 2195.562 ; gain = 143.828
-Phase 2 Router Initialization | Checksum: 19305ca9a
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 2265.523 ; gain = 87.660
+Phase 2 Router Initialization | Checksum: 2236a674b
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 2265.523 ; gain = 87.660
 
 Router Utilization Summary
   Global Vertical Routing Utilization    = 0 %
@@ -604,89 +600,87 @@ Router Utilization Summary
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 23630
+  Number of Failed Nets               = 23704
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 23630
+  Number of Unrouted Nets             = 23704
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 1c5cd77a2
+Phase 3 Initial Routing | Checksum: 22193e5ab
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 2265.523 ; gain = 87.660
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 2202
- Number of Nodes with overlaps = 250
- Number of Nodes with overlaps = 22
- Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1856
+ Number of Nodes with overlaps = 120
  Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.098  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.528  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 6e4c58d6
+Phase 4.1 Global Iteration 0 | Checksum: 169035f44
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 2265.523 ; gain = 87.660
 
 Phase 4.2 Global Iteration 1
- Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.098  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.528  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.2 Global Iteration 1 | Checksum: 15062f7d2
+Phase 4.2 Global Iteration 1 | Checksum: 1f36146aa
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 2195.562 ; gain = 143.828
-Phase 4 Rip-up And Reroute | Checksum: 15062f7d2
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 2265.523 ; gain = 87.660
+Phase 4 Rip-up And Reroute | Checksum: 1f36146aa
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 2265.523 ; gain = 87.660
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
 
 Phase 5.1.1 Update Timing
-Phase 5.1.1 Update Timing | Checksum: 18419807e
+Phase 5.1.1 Update Timing | Checksum: 219be04ce
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:29 . Memory (MB): peak = 2195.562 ; gain = 143.828
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.111  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 2265.523 ; gain = 87.660
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.643  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 5.1 Delay CleanUp | Checksum: 2277133a9
+Phase 5.1 Delay CleanUp | Checksum: 1efdde628
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:29 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 2265.523 ; gain = 87.660
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 2277133a9
+Phase 5.2 Clock Skew Optimization | Checksum: 1efdde628
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:29 . Memory (MB): peak = 2195.562 ; gain = 143.828
-Phase 5 Delay and Skew Optimization | Checksum: 2277133a9
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 2265.523 ; gain = 87.660
+Phase 5 Delay and Skew Optimization | Checksum: 1efdde628
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:29 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 2265.523 ; gain = 87.660
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 14303ab49
+Phase 6.1.1 Update Timing | Checksum: 19e315263
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:31 . Memory (MB): peak = 2195.562 ; gain = 143.828
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.111  | TNS=0.000  | WHS=0.016  | THS=0.000  |
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:31 . Memory (MB): peak = 2265.523 ; gain = 87.660
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.643  | TNS=0.000  | WHS=0.029  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 14a7b7249
+Phase 6.1 Hold Fix Iter | Checksum: 1f809d635
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:31 . Memory (MB): peak = 2195.562 ; gain = 143.828
-Phase 6 Post Hold Fix | Checksum: 14a7b7249
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:31 . Memory (MB): peak = 2265.523 ; gain = 87.660
+Phase 6 Post Hold Fix | Checksum: 1f809d635
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:31 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:31 . Memory (MB): peak = 2265.523 ; gain = 87.660
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 3.96091 %
-  Global Horizontal Routing Utilization  = 5.35962 %
+  Global Vertical Routing Utilization    = 4.76649 %
+  Global Horizontal Routing Utilization  = 5.97118 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -696,58 +690,59 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 1940d8d66
+Phase 7 Route finalize | Checksum: 1f35ce117
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:31 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:31 . Memory (MB): peak = 2265.523 ; gain = 87.660
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 1940d8d66
+Phase 8 Verifying routed nets | Checksum: 1f35ce117
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:31 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:31 . Memory (MB): peak = 2265.523 ; gain = 87.660
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 1de0e3471
+Phase 9 Depositing Routes | Checksum: 1d8434749
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:32 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:32 . Memory (MB): peak = 2265.523 ; gain = 87.660
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=1.111  | TNS=0.000  | WHS=0.016  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=4.643  | TNS=0.000  | WHS=0.029  | THS=0.000  |
 
 INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 1de0e3471
+Phase 10 Post Router Timing | Checksum: 1d8434749
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:32 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:32 . Memory (MB): peak = 2265.523 ; gain = 87.660
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:32 . Memory (MB): peak = 2195.562 ; gain = 143.828
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:32 . Memory (MB): peak = 2265.523 ; gain = 87.660
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-126 Infos, 54 Warnings, 3 Critical Warnings and 0 Errors encountered.
+124 Infos, 54 Warnings, 3 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:33 . Memory (MB): peak = 2195.562 ; gain = 153.152
+route_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 2265.523 ; gain = 87.660
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2195.562 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_routed.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2265.523 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2265.523 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_drc -file zynq_design_1_wrapper_drc_routed.rpt -pb zynq_design_1_wrapper_drc_routed.pb -rpx zynq_design_1_wrapper_drc_routed.rpx
 Command: report_drc -file zynq_design_1_wrapper_drc_routed.rpt -pb zynq_design_1_wrapper_drc_routed.pb -rpx zynq_design_1_wrapper_drc_routed.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_drc_routed.rpt.
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_drc_routed.rpt.
 report_drc completed successfully
 INFO: [runtcl-4] Executing : report_methodology -file zynq_design_1_wrapper_methodology_drc_routed.rpt -pb zynq_design_1_wrapper_methodology_drc_routed.pb -rpx zynq_design_1_wrapper_methodology_drc_routed.rpx
 Command: report_methodology -file zynq_design_1_wrapper_methodology_drc_routed.rpt -pb zynq_design_1_wrapper_methodology_drc_routed.pb -rpx zynq_design_1_wrapper_methodology_drc_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 2 threads
-INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_methodology_drc_routed.rpt.
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/impl_1/zynq_design_1_wrapper_methodology_drc_routed.rpt.
 report_methodology completed successfully
-report_methodology: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2295.180 ; gain = 94.867
+report_methodology: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 2366.633 ; gain = 98.035
 INFO: [runtcl-4] Executing : report_power -file zynq_design_1_wrapper_power_routed.rpt -pb zynq_design_1_wrapper_power_summary_routed.pb -rpx zynq_design_1_wrapper_power_routed.rpx
 Command: report_power -file zynq_design_1_wrapper_power_routed.rpt -pb zynq_design_1_wrapper_power_summary_routed.pb -rpx zynq_design_1_wrapper_power_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
@@ -756,7 +751,7 @@ Running Vector-less Activity Propagation...
 Finished Running Vector-less Activity Propagation
 WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
 Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
-138 Infos, 55 Warnings, 3 Critical Warnings and 0 Errors encountered.
+136 Infos, 55 Warnings, 3 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
 INFO: [runtcl-4] Executing : report_route_status -file zynq_design_1_wrapper_route_status.rpt -pb zynq_design_1_wrapper_route_status.pb
 INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file zynq_design_1_wrapper_timing_summary_routed.rpt -pb zynq_design_1_wrapper_timing_summary_routed.pb -rpx zynq_design_1_wrapper_timing_summary_routed.rpx -warn_on_violation 
@@ -786,7 +781,7 @@ WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 zynq_design_1_
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 zynq_design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin zynq_design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEBWE[5] (net: zynq_design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 zynq_design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin zynq_design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEBWE[6] (net: zynq_design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 zynq_design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin zynq_design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/WEBWE[7] (net: zynq_design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC RTSTAT-10] No routable loads: 54 net(s) have no routable loads. The problem bus(es) and/or net(s) are zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i... and (the first 15 of 48 listed).
+WARNING: [DRC RTSTAT-10] No routable loads: 54 net(s) have no routable loads. The problem bus(es) and/or net(s) are zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i... and (the first 15 of 48 listed).
 INFO: [DRC REQP-181] writefirst: Synchronous clocking is detected for BRAM (zynq_design_1_i/axi_vdma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
 INFO: [Vivado 12-3199] DRC finished with 0 Errors, 9 Warnings, 1 Advisories
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
@@ -800,7 +795,7 @@ Creating bitstream...
 Writing bitstream ./zynq_design_1_wrapper.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Common 17-83] Releasing license: Implementation
-160 Infos, 65 Warnings, 3 Critical Warnings and 0 Errors encountered.
+158 Infos, 65 Warnings, 3 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2756.652 ; gain = 452.340
-INFO: [Common 17-206] Exiting Vivado at Sun Feb  2 21:11:48 2025...
+write_bitstream: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2811.621 ; gain = 439.777
+INFO: [Common 17-206] Exiting Vivado at Mon Feb  3 03:01:57 2025...

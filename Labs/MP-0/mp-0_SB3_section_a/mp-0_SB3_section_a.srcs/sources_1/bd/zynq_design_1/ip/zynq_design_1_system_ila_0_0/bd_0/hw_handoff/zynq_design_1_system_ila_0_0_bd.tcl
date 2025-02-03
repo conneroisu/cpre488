@@ -175,7 +175,7 @@ proc create_root_design { parentCell } {
    CONFIG.ASSOCIATED_BUSIF {SLOT_0_AXI:SLOT_1_AXI:SLOT_2_AXI:SLOT_3_AXI:SLOT_4_AXIS} \
    CONFIG.ASSOCIATED_RESET {resetn} \
  ] $clk
-  set probe0 [ create_bd_port -dir I -from 7 -to 0 probe0 ]
+  set probe0 [ create_bd_port -dir I -from 11 -to 0 probe0 ]
   set probe1 [ create_bd_port -dir I -from 0 -to 0 probe1 ]
   set probe2 [ create_bd_port -dir I -from 0 -to 0 probe2 ]
   set resetn [ create_bd_port -dir I -type rst resetn ]
@@ -319,16 +319,16 @@ proc create_root_design { parentCell } {
    CONFIG.ALL_PROBE_SAME_MU {TRUE} \
    CONFIG.ALL_PROBE_SAME_MU_CNT {1} \
    CONFIG.C_ADV_TRIGGER {FALSE} \
-   CONFIG.C_DATA_DEPTH {1024} \
+   CONFIG.C_DATA_DEPTH {4096} \
    CONFIG.C_EN_STRG_QUAL {0} \
    CONFIG.C_EN_TIME_TAG {0} \
-   CONFIG.C_ILA_CLK_FREQ {100000000} \
+   CONFIG.C_ILA_CLK_FREQ {50000000} \
    CONFIG.C_INPUT_PIPE_STAGES {0} \
    CONFIG.C_MONITOR_TYPE {Native} \
    CONFIG.C_NUM_OF_PROBES {94} \
    CONFIG.C_PROBE0_MU_CNT {1} \
    CONFIG.C_PROBE0_TYPE {0} \
-   CONFIG.C_PROBE0_WIDTH {8} \
+   CONFIG.C_PROBE0_WIDTH {12} \
    CONFIG.C_PROBE10_TYPE {0} \
    CONFIG.C_PROBE10_WIDTH {32} \
    CONFIG.C_PROBE11_TYPE {0} \

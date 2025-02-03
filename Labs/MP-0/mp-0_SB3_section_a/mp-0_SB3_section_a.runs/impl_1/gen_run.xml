@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1738552094">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1738572956">
   <File Type="BITSTR-BMM" Name="zynq_design_1_wrapper_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="zynq_design_1_wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="zynq_design_1_wrapper_timing_summary_init.rpt"/>
@@ -128,6 +128,13 @@
     <Step Id="write_bitstream"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_system_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_system_ila_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_axi_vdma_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_processing_system7_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_v_axi4s_vid_out_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_system_ila_3_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_rst_ps7_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_system_ila_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_v_tc_0_0"/>
 </GenRun>

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xF5BD0FDACD81B984",
+      "boundary_crc": "0x6B2D43125B373D04",
       "design_src": "SBD",
       "device": "xc7z020clg484-1",
       "name": "bd_c3fe",
@@ -49,7 +49,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "50000000",
             "value_src": "default"
           },
           "ID_WIDTH": {
@@ -179,7 +179,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "50000000",
             "value_src": "default"
           },
           "ID_WIDTH": {
@@ -309,7 +309,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "50000000",
             "value_src": "default"
           },
           "ID_WIDTH": {
@@ -439,7 +439,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "50000000",
             "value_src": "default"
           },
           "ID_WIDTH": {
@@ -593,7 +593,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "50000000",
             "value_src": "default"
           },
           "PHASE": {
@@ -657,8 +657,8 @@
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
+            "value": "50000000",
+            "value_src": "default_prop"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -676,7 +676,7 @@
       },
       "probe0": {
         "direction": "I",
-        "left": "7",
+        "left": "11",
         "right": "0"
       },
       "probe1": {
@@ -743,7 +743,7 @@
             "value": "0"
           },
           "C_ILA_CLK_FREQ": {
-            "value": "100000000"
+            "value": "50000000"
           },
           "C_INPUT_PIPE_STAGES": {
             "value": "0"
@@ -761,7 +761,7 @@
             "value": "0"
           },
           "C_PROBE0_WIDTH": {
-            "value": "8"
+            "value": "12"
           },
           "C_PROBE10_TYPE": {
             "value": "0"
@@ -1853,10 +1853,16 @@
       }
     },
     "interface_nets": {
-      "Conn": {
+      "Conn4": {
         "interface_ports": [
-          "SLOT_0_AXI",
-          "g_inst/slot_0_axi"
+          "SLOT_4_AXIS",
+          "g_inst/slot_4_axis"
+        ]
+      },
+      "Conn3": {
+        "interface_ports": [
+          "SLOT_3_AXI",
+          "g_inst/slot_3_axi"
         ]
       },
       "Conn2": {
@@ -1871,16 +1877,10 @@
           "g_inst/slot_1_axi"
         ]
       },
-      "Conn4": {
+      "Conn": {
         "interface_ports": [
-          "SLOT_4_AXIS",
-          "g_inst/slot_4_axis"
-        ]
-      },
-      "Conn3": {
-        "interface_ports": [
-          "SLOT_3_AXI",
-          "g_inst/slot_3_axi"
+          "SLOT_0_AXI",
+          "g_inst/slot_0_axi"
         ]
       }
     },

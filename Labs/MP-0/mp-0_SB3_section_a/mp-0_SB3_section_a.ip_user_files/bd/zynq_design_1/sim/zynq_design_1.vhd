@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Sun Feb  2 21:05:40 2025
+--Date        : Mon Feb  3 02:38:46 2025
 --Host        : CO2041-04 running 64-bit major release  (build 9200)
 --Command     : generate_target zynq_design_1.bd
 --Design      : zynq_design_1
@@ -2358,7 +2358,7 @@ architecture STRUCTURE of zynq_design_1 is
     aclk : in STD_LOGIC;
     aclken : in STD_LOGIC;
     aresetn : in STD_LOGIC;
-    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
     s_axis_video_tvalid : in STD_LOGIC;
     s_axis_video_tready : out STD_LOGIC;
     s_axis_video_tuser : in STD_LOGIC;
@@ -2371,7 +2371,7 @@ architecture STRUCTURE of zynq_design_1 is
     vid_vblank : out STD_LOGIC;
     vid_hblank : out STD_LOGIC;
     vid_field_id : out STD_LOGIC;
-    vid_data : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    vid_data : out STD_LOGIC_VECTOR ( 11 downto 0 );
     vtg_vsync : in STD_LOGIC;
     vtg_hsync : in STD_LOGIC;
     vtg_vblank : in STD_LOGIC;
@@ -2388,19 +2388,19 @@ architecture STRUCTURE of zynq_design_1 is
   end component zynq_design_1_v_axi4s_vid_out_0_0;
   component zynq_design_1_xlslice_0_0 is
   port (
-    Din : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    Din : in STD_LOGIC_VECTOR ( 11 downto 0 );
     Dout : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component zynq_design_1_xlslice_0_0;
   component zynq_design_1_xlslice_0_1 is
   port (
-    Din : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    Din : in STD_LOGIC_VECTOR ( 11 downto 0 );
     Dout : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component zynq_design_1_xlslice_0_1;
   component zynq_design_1_xlslice_0_2 is
   port (
-    Din : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    Din : in STD_LOGIC_VECTOR ( 11 downto 0 );
     Dout : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component zynq_design_1_xlslice_0_2;
@@ -2524,7 +2524,7 @@ architecture STRUCTURE of zynq_design_1 is
   component zynq_design_1_system_ila_0_0 is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe0 : in STD_LOGIC_VECTOR ( 11 downto 0 );
     probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
     SLOT_0_AXI_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -3062,7 +3062,7 @@ architecture STRUCTURE of zynq_design_1 is
   attribute DEBUG of ps7_0_axi_periph_M04_AXI_WVALID : signal is "true";
   attribute MARK_DEBUG of ps7_0_axi_periph_M04_AXI_WVALID : signal is std.standard.true;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal v_axi4s_vid_out_0_vid_data : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal v_axi4s_vid_out_0_vid_data : STD_LOGIC_VECTOR ( 11 downto 0 );
   attribute DEBUG of v_axi4s_vid_out_0_vid_data : signal is "true";
   attribute MARK_DEBUG of v_axi4s_vid_out_0_vid_data : signal is std.standard.true;
   signal v_axi4s_vid_out_0_vid_hsync : STD_LOGIC;
@@ -3696,7 +3696,7 @@ system_ila_0: component zynq_design_1_system_ila_0_0
       SLOT_5_VIDEO_TIMING_vblank => v_tc_0_vtiming_out_VBLANK,
       SLOT_5_VIDEO_TIMING_vsync => v_tc_0_vtiming_out_VSYNC,
       clk => processing_system7_0_FCLK_CLK0,
-      probe0(7 downto 0) => v_axi4s_vid_out_0_vid_data(7 downto 0),
+      probe0(11 downto 0) => v_axi4s_vid_out_0_vid_data(11 downto 0),
       probe1(0) => v_axi4s_vid_out_0_vid_hsync,
       probe2(0) => v_axi4s_vid_out_0_vid_vsync,
       resetn => rst_ps7_0_100M_peripheral_aresetn(0)
@@ -3725,7 +3725,7 @@ v_axi4s_vid_out_0: component zynq_design_1_v_axi4s_vid_out_0_0
       fifo_read_level(10 downto 0) => NLW_v_axi4s_vid_out_0_fifo_read_level_UNCONNECTED(10 downto 0),
       locked => NLW_v_axi4s_vid_out_0_locked_UNCONNECTED,
       overflow => NLW_v_axi4s_vid_out_0_overflow_UNCONNECTED,
-      s_axis_video_tdata(7 downto 0) => axi_vdma_0_M_AXIS_MM2S_TDATA(7 downto 0),
+      s_axis_video_tdata(15 downto 0) => axi_vdma_0_M_AXIS_MM2S_TDATA(15 downto 0),
       s_axis_video_tlast => axi_vdma_0_M_AXIS_MM2S_TLAST,
       s_axis_video_tready => axi_vdma_0_M_AXIS_MM2S_TREADY,
       s_axis_video_tuser => axi_vdma_0_M_AXIS_MM2S_TUSER(0),
@@ -3733,7 +3733,7 @@ v_axi4s_vid_out_0: component zynq_design_1_v_axi4s_vid_out_0_0
       status(31 downto 0) => NLW_v_axi4s_vid_out_0_status_UNCONNECTED(31 downto 0),
       underflow => NLW_v_axi4s_vid_out_0_underflow_UNCONNECTED,
       vid_active_video => NLW_v_axi4s_vid_out_0_vid_active_video_UNCONNECTED,
-      vid_data(7 downto 0) => v_axi4s_vid_out_0_vid_data(7 downto 0),
+      vid_data(11 downto 0) => v_axi4s_vid_out_0_vid_data(11 downto 0),
       vid_field_id => NLW_v_axi4s_vid_out_0_vid_field_id_UNCONNECTED,
       vid_hblank => NLW_v_axi4s_vid_out_0_vid_hblank_UNCONNECTED,
       vid_hsync => v_axi4s_vid_out_0_vid_hsync,
@@ -3785,20 +3785,17 @@ v_tc_0: component zynq_design_1_v_tc_0_0
     );
 xlslice_0: component zynq_design_1_xlslice_0_0
      port map (
-      Din(15 downto 8) => B"00000000",
-      Din(7 downto 0) => v_axi4s_vid_out_0_vid_data(7 downto 0),
+      Din(11 downto 0) => v_axi4s_vid_out_0_vid_data(11 downto 0),
       Dout(3 downto 0) => xlslice_0_Dout(3 downto 0)
     );
 xlslice_1: component zynq_design_1_xlslice_0_1
      port map (
-      Din(15 downto 8) => B"00000000",
-      Din(7 downto 0) => v_axi4s_vid_out_0_vid_data(7 downto 0),
+      Din(11 downto 0) => v_axi4s_vid_out_0_vid_data(11 downto 0),
       Dout(3 downto 0) => xlslice_1_Dout(3 downto 0)
     );
 xlslice_2: component zynq_design_1_xlslice_0_2
      port map (
-      Din(15 downto 8) => B"00000000",
-      Din(7 downto 0) => v_axi4s_vid_out_0_vid_data(7 downto 0),
+      Din(11 downto 0) => v_axi4s_vid_out_0_vid_data(11 downto 0),
       Dout(3 downto 0) => xlslice_2_Dout(3 downto 0)
     );
 end STRUCTURE;

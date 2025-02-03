@@ -110,7 +110,7 @@ entity bd_c3fe_wrapper is
     SLOT_5_VIDEO_TIMING_vblank : in STD_LOGIC;
     SLOT_5_VIDEO_TIMING_vsync : in STD_LOGIC;
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe0 : in STD_LOGIC_VECTOR ( 11 downto 0 );
     probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
     resetn : in STD_LOGIC
@@ -121,7 +121,7 @@ architecture STRUCTURE of bd_c3fe_wrapper is
   component bd_c3fe is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe0 : in STD_LOGIC_VECTOR ( 11 downto 0 );
     probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
     resetn : in STD_LOGIC;
@@ -329,7 +329,7 @@ bd_c3fe_i: component bd_c3fe
       SLOT_5_VIDEO_TIMING_vblank => SLOT_5_VIDEO_TIMING_vblank,
       SLOT_5_VIDEO_TIMING_vsync => SLOT_5_VIDEO_TIMING_vsync,
       clk => clk,
-      probe0(7 downto 0) => probe0(7 downto 0),
+      probe0(11 downto 0) => probe0(11 downto 0),
       probe1(0) => probe1(0),
       probe2(0) => probe2(0),
       resetn => resetn

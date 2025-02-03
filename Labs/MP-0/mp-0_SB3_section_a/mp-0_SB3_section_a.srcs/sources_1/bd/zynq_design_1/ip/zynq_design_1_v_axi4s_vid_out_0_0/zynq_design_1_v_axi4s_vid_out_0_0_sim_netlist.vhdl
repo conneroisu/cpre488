@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Sun Feb  2 21:06:25 2025
+-- Date        : Mon Feb  3 02:39:50 2025
 -- Host        : CO2041-04 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top zynq_design_1_v_axi4s_vid_out_0_0 -prefix
+--               zynq_design_1_v_axi4s_vid_out_0_0_ zynq_design_1_v_axi4s_vid_out_0_0_sim_netlist.vhdl
 -- Design      : zynq_design_1_v_axi4s_vid_out_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -23,7 +23,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter is
     vid_hblank : out STD_LOGIC;
     vid_field_id : out STD_LOGIC;
     fivid_reset_full_frame : out STD_LOGIC;
-    vid_data : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    vid_data : out STD_LOGIC_VECTOR ( 11 downto 0 );
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     vid_io_out_ce : in STD_LOGIC;
     vtg_active_video : in STD_LOGIC;
@@ -36,10 +36,8 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter is
     src_in : in STD_LOGIC;
     aresetn : in STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
-    D : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    D : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter : entity is "v_axi4s_vid_out_v4_0_10_formatter";
 end zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter;
 
 architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter is
@@ -86,6 +84,28 @@ fivid_reset_full_frame_reg: unisim.vcomponents.FDRE
       CE => E(0),
       D => D(0),
       Q => vid_data(0),
+      R => SR(0)
+    );
+\in_data_mux_reg[10]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(10),
+      Q => vid_data(10),
+      R => SR(0)
+    );
+\in_data_mux_reg[11]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(11),
+      Q => vid_data(11),
       R => SR(0)
     );
 \in_data_mux_reg[1]\: unisim.vcomponents.FDRE
@@ -163,6 +183,28 @@ fivid_reset_full_frame_reg: unisim.vcomponents.FDRE
       CE => E(0),
       D => D(7),
       Q => vid_data(7),
+      R => SR(0)
+    );
+\in_data_mux_reg[8]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(8),
+      Q => vid_data(8),
+      R => SR(0)
+    );
+\in_data_mux_reg[9]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(9),
+      Q => vid_data(9),
       R => SR(0)
     );
 in_de_mux_reg: unisim.vcomponents.FDRE
@@ -303,8 +345,6 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_sync is
     vtg_field_id : in STD_LOGIC;
     fivid_reset_full_frame : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_sync : entity is "v_axi4s_vid_out_v4_0_10_sync";
 end zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_sync;
 
 architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_sync is
@@ -2536,7 +2576,7 @@ fifo_sof_dly_reg: unisim.vcomponents.FDRE
       Q => \^fifo_sof_dly\,
       R => \^sr\(0)
     );
-\in_data_mux[7]_i_1\: unisim.vcomponents.LUT6
+\in_data_mux[11]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"CCCDCDC500000000"
     )
@@ -4011,8 +4051,6 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_cdc_single is
   attribute DEST_SYNC_FF of zynq_design_1_v_axi4s_vid_out_0_0_xpm_cdc_single : entity is 4;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of zynq_design_1_v_axi4s_vid_out_0_0_xpm_cdc_single : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_xpm_cdc_single : entity is "xpm_cdc_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of zynq_design_1_v_axi4s_vid_out_0_0_xpm_cdc_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -4187,8 +4225,6 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_counter_updn is
     rd_en : in STD_LOGIC;
     wr_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_xpm_counter_updn : entity is "xpm_counter_updn";
 end zynq_design_1_v_axi4s_vid_out_0_0_xpm_counter_updn;
 
 architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_counter_updn is
@@ -6404,8 +6440,6 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_reg_bit is
     \gof.overflow_i_reg\ : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_reg_bit : entity is "xpm_fifo_reg_bit";
 end zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_reg_bit;
 
 architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_reg_bit is
@@ -6530,8 +6564,6 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_rst is
     \count_value_i_reg[3]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     wr_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_rst : entity is "xpm_fifo_rst";
 end zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_rst;
 
 architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_rst is
@@ -6713,10 +6745,10 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
     regcea : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 14 downto 0 );
     injectsbiterra : in STD_LOGIC;
     injectdbiterra : in STD_LOGIC;
-    douta : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    douta : out STD_LOGIC_VECTOR ( 14 downto 0 );
     sbiterra : out STD_LOGIC;
     dbiterra : out STD_LOGIC;
     clkb : in STD_LOGIC;
@@ -6725,10 +6757,10 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
     regceb : in STD_LOGIC;
     web : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    dinb : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    dinb : in STD_LOGIC_VECTOR ( 14 downto 0 );
     injectsbiterrb : in STD_LOGIC;
     injectdbiterrb : in STD_LOGIC;
-    doutb : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    doutb : out STD_LOGIC_VECTOR ( 14 downto 0 );
     sbiterrb : out STD_LOGIC;
     dbiterrb : out STD_LOGIC
   );
@@ -6739,9 +6771,9 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
   attribute AUTO_SLEEP_TIME : integer;
   attribute AUTO_SLEEP_TIME of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 0;
   attribute BYTE_WRITE_WIDTH_A : integer;
-  attribute BYTE_WRITE_WIDTH_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute BYTE_WRITE_WIDTH_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute BYTE_WRITE_WIDTH_B : integer;
-  attribute BYTE_WRITE_WIDTH_B of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute BYTE_WRITE_WIDTH_B of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute CASCADE_HEIGHT : integer;
   attribute CASCADE_HEIGHT of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 0;
   attribute CLOCKING_MODE : integer;
@@ -6759,15 +6791,13 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
   attribute MEMORY_PRIMITIVE : integer;
   attribute MEMORY_PRIMITIVE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 0;
   attribute MEMORY_SIZE : integer;
-  attribute MEMORY_SIZE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11264;
+  attribute MEMORY_SIZE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15360;
   attribute MEMORY_TYPE : integer;
   attribute MEMORY_TYPE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 1;
   attribute MESSAGE_CONTROL : integer;
   attribute MESSAGE_CONTROL of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 0;
   attribute NUM_CHAR_LOC : integer;
   attribute NUM_CHAR_LOC of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is "xpm_memory_base";
   attribute P_ECC_MODE : string;
   attribute P_ECC_MODE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is "no_ecc";
   attribute P_ENABLE_BYTE_WRITE_A : integer;
@@ -6781,17 +6811,17 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
   attribute P_MEMORY_PRIMITIVE : string;
   attribute P_MEMORY_PRIMITIVE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is "auto";
   attribute P_MIN_WIDTH_DATA : integer;
-  attribute P_MIN_WIDTH_DATA of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute P_MIN_WIDTH_DATA of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute P_MIN_WIDTH_DATA_A : integer;
-  attribute P_MIN_WIDTH_DATA_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute P_MIN_WIDTH_DATA_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute P_MIN_WIDTH_DATA_B : integer;
-  attribute P_MIN_WIDTH_DATA_B of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute P_MIN_WIDTH_DATA_B of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute P_MIN_WIDTH_DATA_ECC : integer;
-  attribute P_MIN_WIDTH_DATA_ECC of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute P_MIN_WIDTH_DATA_ECC of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute P_MIN_WIDTH_DATA_LDW : integer;
   attribute P_MIN_WIDTH_DATA_LDW of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 4;
   attribute P_MIN_WIDTH_DATA_SHFT : integer;
-  attribute P_MIN_WIDTH_DATA_SHFT of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute P_MIN_WIDTH_DATA_SHFT of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute P_NUM_COLS_WRITE_A : integer;
   attribute P_NUM_COLS_WRITE_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 1;
   attribute P_NUM_COLS_WRITE_B : integer;
@@ -6823,13 +6853,13 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
   attribute P_WIDTH_ADDR_WRITE_B : integer;
   attribute P_WIDTH_ADDR_WRITE_B of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 10;
   attribute P_WIDTH_COL_WRITE_A : integer;
-  attribute P_WIDTH_COL_WRITE_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute P_WIDTH_COL_WRITE_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute P_WIDTH_COL_WRITE_B : integer;
-  attribute P_WIDTH_COL_WRITE_B of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute P_WIDTH_COL_WRITE_B of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute READ_DATA_WIDTH_A : integer;
-  attribute READ_DATA_WIDTH_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute READ_DATA_WIDTH_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute READ_DATA_WIDTH_B : integer;
-  attribute READ_DATA_WIDTH_B of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute READ_DATA_WIDTH_B of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute READ_LATENCY_A : integer;
   attribute READ_LATENCY_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 2;
   attribute READ_LATENCY_B : integer;
@@ -6855,9 +6885,9 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
   attribute WAKEUP_TIME : integer;
   attribute WAKEUP_TIME of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 0;
   attribute WRITE_DATA_WIDTH_A : integer;
-  attribute WRITE_DATA_WIDTH_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute WRITE_DATA_WIDTH_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute WRITE_DATA_WIDTH_B : integer;
-  attribute WRITE_DATA_WIDTH_B of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 11;
+  attribute WRITE_DATA_WIDTH_B of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 15;
   attribute WRITE_MODE_A : integer;
   attribute WRITE_MODE_A of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 2;
   attribute WRITE_MODE_B : integer;
@@ -6869,15 +6899,15 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
   attribute keep_hierarchy : string;
   attribute keep_hierarchy of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is "soft";
   attribute rsta_loop_iter : integer;
-  attribute rsta_loop_iter of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 12;
+  attribute rsta_loop_iter of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 16;
   attribute rstb_loop_iter : integer;
-  attribute rstb_loop_iter of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 12;
+  attribute rstb_loop_iter of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 16;
 end zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base;
 
 architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
   signal \<const0>\ : STD_LOGIC;
   signal \NLW_gen_wr_a.gen_word_narrow.mem_reg_DOADO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 15 downto 0 );
-  signal \NLW_gen_wr_a.gen_word_narrow.mem_reg_DOBDO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 15 downto 11 );
+  signal \NLW_gen_wr_a.gen_word_narrow.mem_reg_DOBDO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 15 to 15 );
   signal \NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPADOP_UNCONNECTED\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPBDOP_UNCONNECTED\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   attribute \MEM.PORTA.ADDRESS_BEGIN\ : integer;
@@ -6885,25 +6915,25 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
   attribute \MEM.PORTA.ADDRESS_END\ : integer;
   attribute \MEM.PORTA.ADDRESS_END\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 1023;
   attribute \MEM.PORTA.DATA_BIT_LAYOUT\ : string;
-  attribute \MEM.PORTA.DATA_BIT_LAYOUT\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is "p0_d11";
+  attribute \MEM.PORTA.DATA_BIT_LAYOUT\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is "p0_d15";
   attribute \MEM.PORTA.DATA_LSB\ : integer;
   attribute \MEM.PORTA.DATA_LSB\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 0;
   attribute \MEM.PORTA.DATA_MSB\ : integer;
-  attribute \MEM.PORTA.DATA_MSB\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 10;
+  attribute \MEM.PORTA.DATA_MSB\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 14;
   attribute \MEM.PORTB.ADDRESS_BEGIN\ : integer;
   attribute \MEM.PORTB.ADDRESS_BEGIN\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 0;
   attribute \MEM.PORTB.ADDRESS_END\ : integer;
   attribute \MEM.PORTB.ADDRESS_END\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 1023;
   attribute \MEM.PORTB.DATA_BIT_LAYOUT\ : string;
-  attribute \MEM.PORTB.DATA_BIT_LAYOUT\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is "p0_d11";
+  attribute \MEM.PORTB.DATA_BIT_LAYOUT\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is "p0_d15";
   attribute \MEM.PORTB.DATA_LSB\ : integer;
   attribute \MEM.PORTB.DATA_LSB\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 0;
   attribute \MEM.PORTB.DATA_MSB\ : integer;
-  attribute \MEM.PORTB.DATA_MSB\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 10;
+  attribute \MEM.PORTB.DATA_MSB\ of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 14;
   attribute METHODOLOGY_DRC_VIOS : string;
   attribute METHODOLOGY_DRC_VIOS of \gen_wr_a.gen_word_narrow.mem_reg\ : label is "";
   attribute RTL_RAM_BITS : integer;
-  attribute RTL_RAM_BITS of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 11264;
+  attribute RTL_RAM_BITS of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 15360;
   attribute RTL_RAM_NAME : string;
   attribute RTL_RAM_NAME of \gen_wr_a.gen_word_narrow.mem_reg\ : label is "gen_wr_a.gen_word_narrow.mem";
   attribute RTL_RAM_TYPE : string;
@@ -6915,7 +6945,7 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
   attribute bram_slice_begin : integer;
   attribute bram_slice_begin of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 0;
   attribute bram_slice_end : integer;
-  attribute bram_slice_end of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 10;
+  attribute bram_slice_end of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 14;
   attribute ram_addr_begin : integer;
   attribute ram_addr_begin of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 0;
   attribute ram_addr_end : integer;
@@ -6925,10 +6955,14 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base is
   attribute ram_slice_begin : integer;
   attribute ram_slice_begin of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 0;
   attribute ram_slice_end : integer;
-  attribute ram_slice_end of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 10;
+  attribute ram_slice_end of \gen_wr_a.gen_word_narrow.mem_reg\ : label is 14;
 begin
   dbiterra <= \<const0>\;
   dbiterrb <= \<const0>\;
+  douta(14) <= \<const0>\;
+  douta(13) <= \<const0>\;
+  douta(12) <= \<const0>\;
+  douta(11) <= \<const0>\;
   douta(10) <= \<const0>\;
   douta(9) <= \<const0>\;
   douta(8) <= \<const0>\;
@@ -7046,14 +7080,14 @@ GND: unisim.vcomponents.GND
       ADDRBWRADDR(3 downto 0) => B"0000",
       CLKARDCLK => clka,
       CLKBWRCLK => clka,
-      DIADI(15 downto 11) => B"00000",
-      DIADI(10 downto 0) => dina(10 downto 0),
-      DIBDI(15 downto 0) => B"0000011111111111",
+      DIADI(15) => '0',
+      DIADI(14 downto 0) => dina(14 downto 0),
+      DIBDI(15 downto 0) => B"0111111111111111",
       DIPADIP(1 downto 0) => B"00",
       DIPBDIP(1 downto 0) => B"00",
       DOADO(15 downto 0) => \NLW_gen_wr_a.gen_word_narrow.mem_reg_DOADO_UNCONNECTED\(15 downto 0),
-      DOBDO(15 downto 11) => \NLW_gen_wr_a.gen_word_narrow.mem_reg_DOBDO_UNCONNECTED\(15 downto 11),
-      DOBDO(10 downto 0) => doutb(10 downto 0),
+      DOBDO(15) => \NLW_gen_wr_a.gen_word_narrow.mem_reg_DOBDO_UNCONNECTED\(15),
+      DOBDO(14 downto 0) => doutb(14 downto 0),
       DOPADOP(1 downto 0) => \NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPADOP_UNCONNECTED\(1 downto 0),
       DOPBDOP(1 downto 0) => \NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPBDOP_UNCONNECTED\(1 downto 0),
       ENARDEN => wea(0),
@@ -7077,8 +7111,6 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_cdc_single is
     src_in : in STD_LOGIC;
     aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_cdc_single : entity is "v_axi4s_vid_out_v4_0_10_cdc_single";
 end zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_cdc_single;
 
 architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_cdc_single is
@@ -7157,7 +7189,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
     rst : in STD_LOGIC;
     wr_clk : in STD_LOGIC;
     wr_en : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    din : in STD_LOGIC_VECTOR ( 14 downto 0 );
     full : out STD_LOGIC;
     full_n : out STD_LOGIC;
     prog_full : out STD_LOGIC;
@@ -7168,7 +7200,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
     wr_ack : out STD_LOGIC;
     rd_clk : in STD_LOGIC;
     rd_en : in STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 14 downto 0 );
     empty : out STD_LOGIC;
     prog_empty : out STD_LOGIC;
     rd_data_count : out STD_LOGIC_VECTOR ( 10 downto 0 );
@@ -7226,15 +7258,13 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
   attribute FIFO_READ_LATENCY : integer;
   attribute FIFO_READ_LATENCY of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 0;
   attribute FIFO_SIZE : integer;
-  attribute FIFO_SIZE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 11264;
+  attribute FIFO_SIZE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 15360;
   attribute FIFO_WRITE_DEPTH : integer;
   attribute FIFO_WRITE_DEPTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 1024;
   attribute FULL_RESET_VALUE : integer;
   attribute FULL_RESET_VALUE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 1;
   attribute FULL_RST_VAL : string;
   attribute FULL_RST_VAL of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is "1'b1";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is "xpm_fifo_base";
   attribute PE_THRESH_ADJ : integer;
   attribute PE_THRESH_ADJ of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 8;
   attribute PE_THRESH_MAX : integer;
@@ -7262,7 +7292,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
   attribute RD_PNTR_WIDTH : integer;
   attribute RD_PNTR_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 10;
   attribute READ_DATA_WIDTH : integer;
-  attribute READ_DATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 11;
+  attribute READ_DATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 15;
   attribute READ_MODE : integer;
   attribute READ_MODE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 1;
   attribute RELATED_CLOCKS : integer;
@@ -7280,7 +7310,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
   attribute WIDTH_RATIO : integer;
   attribute WIDTH_RATIO of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 1;
   attribute WRITE_DATA_WIDTH : integer;
-  attribute WRITE_DATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 11;
+  attribute WRITE_DATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 15;
   attribute WR_DATA_COUNT_WIDTH : integer;
   attribute WR_DATA_COUNT_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 11;
   attribute WR_DC_WIDTH_EXT : integer;
@@ -7391,7 +7421,7 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
   signal \NLW_gen_sdpram.xpm_memory_base_inst_dbiterrb_UNCONNECTED\ : STD_LOGIC;
   signal \NLW_gen_sdpram.xpm_memory_base_inst_sbiterra_UNCONNECTED\ : STD_LOGIC;
   signal \NLW_gen_sdpram.xpm_memory_base_inst_sbiterrb_UNCONNECTED\ : STD_LOGIC;
-  signal \NLW_gen_sdpram.xpm_memory_base_inst_douta_UNCONNECTED\ : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal \NLW_gen_sdpram.xpm_memory_base_inst_douta_UNCONNECTED\ : STD_LOGIC_VECTOR ( 14 downto 0 );
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \FSM_sequential_gen_fwft.curr_fwft_state[0]_i_1\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \FSM_sequential_gen_fwft.curr_fwft_state[1]_i_1\ : label is "soft_lutpair8";
@@ -7405,9 +7435,9 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
   attribute AUTO_SLEEP_TIME : integer;
   attribute AUTO_SLEEP_TIME of \gen_sdpram.xpm_memory_base_inst\ : label is 0;
   attribute BYTE_WRITE_WIDTH_A : integer;
-  attribute BYTE_WRITE_WIDTH_A of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute BYTE_WRITE_WIDTH_A of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute BYTE_WRITE_WIDTH_B : integer;
-  attribute BYTE_WRITE_WIDTH_B of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute BYTE_WRITE_WIDTH_B of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute CASCADE_HEIGHT of \gen_sdpram.xpm_memory_base_inst\ : label is 0;
   attribute CLOCKING_MODE : integer;
   attribute CLOCKING_MODE of \gen_sdpram.xpm_memory_base_inst\ : label is 0;
@@ -7422,11 +7452,11 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
   attribute \MEM.ADDRESS_SPACE_DATA_LSB\ : integer;
   attribute \MEM.ADDRESS_SPACE_DATA_LSB\ of \gen_sdpram.xpm_memory_base_inst\ : label is 0;
   attribute \MEM.ADDRESS_SPACE_DATA_MSB\ : integer;
-  attribute \MEM.ADDRESS_SPACE_DATA_MSB\ of \gen_sdpram.xpm_memory_base_inst\ : label is 10;
+  attribute \MEM.ADDRESS_SPACE_DATA_MSB\ of \gen_sdpram.xpm_memory_base_inst\ : label is 14;
   attribute \MEM.ADDRESS_SPACE_END\ : integer;
   attribute \MEM.ADDRESS_SPACE_END\ of \gen_sdpram.xpm_memory_base_inst\ : label is 1023;
   attribute \MEM.CORE_MEMORY_WIDTH\ : integer;
-  attribute \MEM.CORE_MEMORY_WIDTH\ of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute \MEM.CORE_MEMORY_WIDTH\ of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute MEMORY_INIT_FILE : string;
   attribute MEMORY_INIT_FILE of \gen_sdpram.xpm_memory_base_inst\ : label is "none";
   attribute MEMORY_INIT_PARAM : string;
@@ -7436,7 +7466,7 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
   attribute MEMORY_PRIMITIVE : integer;
   attribute MEMORY_PRIMITIVE of \gen_sdpram.xpm_memory_base_inst\ : label is 0;
   attribute MEMORY_SIZE : integer;
-  attribute MEMORY_SIZE of \gen_sdpram.xpm_memory_base_inst\ : label is 11264;
+  attribute MEMORY_SIZE of \gen_sdpram.xpm_memory_base_inst\ : label is 15360;
   attribute MEMORY_TYPE : integer;
   attribute MEMORY_TYPE of \gen_sdpram.xpm_memory_base_inst\ : label is 1;
   attribute MESSAGE_CONTROL : integer;
@@ -7456,17 +7486,17 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
   attribute P_MEMORY_PRIMITIVE : string;
   attribute P_MEMORY_PRIMITIVE of \gen_sdpram.xpm_memory_base_inst\ : label is "auto";
   attribute P_MIN_WIDTH_DATA : integer;
-  attribute P_MIN_WIDTH_DATA of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute P_MIN_WIDTH_DATA of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute P_MIN_WIDTH_DATA_A : integer;
-  attribute P_MIN_WIDTH_DATA_A of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute P_MIN_WIDTH_DATA_A of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute P_MIN_WIDTH_DATA_B : integer;
-  attribute P_MIN_WIDTH_DATA_B of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute P_MIN_WIDTH_DATA_B of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute P_MIN_WIDTH_DATA_ECC : integer;
-  attribute P_MIN_WIDTH_DATA_ECC of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute P_MIN_WIDTH_DATA_ECC of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute P_MIN_WIDTH_DATA_LDW : integer;
   attribute P_MIN_WIDTH_DATA_LDW of \gen_sdpram.xpm_memory_base_inst\ : label is 4;
   attribute P_MIN_WIDTH_DATA_SHFT : integer;
-  attribute P_MIN_WIDTH_DATA_SHFT of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute P_MIN_WIDTH_DATA_SHFT of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute P_NUM_COLS_WRITE_A : integer;
   attribute P_NUM_COLS_WRITE_A of \gen_sdpram.xpm_memory_base_inst\ : label is 1;
   attribute P_NUM_COLS_WRITE_B : integer;
@@ -7498,13 +7528,13 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
   attribute P_WIDTH_ADDR_WRITE_B : integer;
   attribute P_WIDTH_ADDR_WRITE_B of \gen_sdpram.xpm_memory_base_inst\ : label is 10;
   attribute P_WIDTH_COL_WRITE_A : integer;
-  attribute P_WIDTH_COL_WRITE_A of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute P_WIDTH_COL_WRITE_A of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute P_WIDTH_COL_WRITE_B : integer;
-  attribute P_WIDTH_COL_WRITE_B of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute P_WIDTH_COL_WRITE_B of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute READ_DATA_WIDTH_A : integer;
-  attribute READ_DATA_WIDTH_A of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute READ_DATA_WIDTH_A of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute READ_DATA_WIDTH_B : integer;
-  attribute READ_DATA_WIDTH_B of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute READ_DATA_WIDTH_B of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute READ_LATENCY_A : integer;
   attribute READ_LATENCY_A of \gen_sdpram.xpm_memory_base_inst\ : label is 2;
   attribute READ_LATENCY_B : integer;
@@ -7527,9 +7557,9 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
   attribute VERSION of \gen_sdpram.xpm_memory_base_inst\ : label is 0;
   attribute WAKEUP_TIME of \gen_sdpram.xpm_memory_base_inst\ : label is 0;
   attribute WRITE_DATA_WIDTH_A : integer;
-  attribute WRITE_DATA_WIDTH_A of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute WRITE_DATA_WIDTH_A of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute WRITE_DATA_WIDTH_B : integer;
-  attribute WRITE_DATA_WIDTH_B of \gen_sdpram.xpm_memory_base_inst\ : label is 11;
+  attribute WRITE_DATA_WIDTH_B of \gen_sdpram.xpm_memory_base_inst\ : label is 15;
   attribute WRITE_MODE_A : integer;
   attribute WRITE_MODE_A of \gen_sdpram.xpm_memory_base_inst\ : label is 2;
   attribute WRITE_MODE_B : integer;
@@ -7538,9 +7568,9 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base is
   attribute WRITE_PROTECT of \gen_sdpram.xpm_memory_base_inst\ : label is 1;
   attribute XPM_MODULE of \gen_sdpram.xpm_memory_base_inst\ : label is "TRUE";
   attribute rsta_loop_iter : integer;
-  attribute rsta_loop_iter of \gen_sdpram.xpm_memory_base_inst\ : label is 12;
+  attribute rsta_loop_iter of \gen_sdpram.xpm_memory_base_inst\ : label is 16;
   attribute rstb_loop_iter : integer;
-  attribute rstb_loop_iter of \gen_sdpram.xpm_memory_base_inst\ : label is 12;
+  attribute rstb_loop_iter of \gen_sdpram.xpm_memory_base_inst\ : label is 16;
 begin
   almost_empty <= \<const0>\;
   almost_full <= \<const0>\;
@@ -7997,10 +8027,10 @@ GND: unisim.vcomponents.GND
       clkb => '0',
       dbiterra => \NLW_gen_sdpram.xpm_memory_base_inst_dbiterra_UNCONNECTED\,
       dbiterrb => \NLW_gen_sdpram.xpm_memory_base_inst_dbiterrb_UNCONNECTED\,
-      dina(10 downto 0) => din(10 downto 0),
-      dinb(10 downto 0) => B"00000000000",
-      douta(10 downto 0) => \NLW_gen_sdpram.xpm_memory_base_inst_douta_UNCONNECTED\(10 downto 0),
-      doutb(10 downto 0) => dout(10 downto 0),
+      dina(14 downto 0) => din(14 downto 0),
+      dinb(14 downto 0) => B"000000000000000",
+      douta(14 downto 0) => \NLW_gen_sdpram.xpm_memory_base_inst_douta_UNCONNECTED\(14 downto 0),
+      doutb(14 downto 0) => dout(14 downto 0),
       ena => '0',
       enb => ram_rd_en_pf,
       injectdbiterra => '0',
@@ -8389,7 +8419,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync is
     rst : in STD_LOGIC;
     wr_clk : in STD_LOGIC;
     wr_en : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    din : in STD_LOGIC_VECTOR ( 14 downto 0 );
     full : out STD_LOGIC;
     prog_full : out STD_LOGIC;
     wr_data_count : out STD_LOGIC_VECTOR ( 10 downto 0 );
@@ -8398,7 +8428,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync is
     almost_full : out STD_LOGIC;
     wr_ack : out STD_LOGIC;
     rd_en : in STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 14 downto 0 );
     empty : out STD_LOGIC;
     prog_empty : out STD_LOGIC;
     rd_data_count : out STD_LOGIC_VECTOR ( 10 downto 0 );
@@ -8427,8 +8457,6 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync is
   attribute FIFO_WRITE_DEPTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 1024;
   attribute FULL_RESET_VALUE : integer;
   attribute FULL_RESET_VALUE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is "xpm_fifo_sync";
   attribute PROG_EMPTY_THRESH : integer;
   attribute PROG_EMPTY_THRESH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 10;
   attribute PROG_FULL_THRESH : integer;
@@ -8446,7 +8474,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync is
   attribute RD_DATA_COUNT_WIDTH : integer;
   attribute RD_DATA_COUNT_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 11;
   attribute READ_DATA_WIDTH : integer;
-  attribute READ_DATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 11;
+  attribute READ_DATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 15;
   attribute READ_MODE : string;
   attribute READ_MODE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is "fwft";
   attribute SIM_ASSERT_CHK : integer;
@@ -8456,7 +8484,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync is
   attribute WAKEUP_TIME : integer;
   attribute WAKEUP_TIME of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 0;
   attribute WRITE_DATA_WIDTH : integer;
-  attribute WRITE_DATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 11;
+  attribute WRITE_DATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 15;
   attribute WR_DATA_COUNT_WIDTH : integer;
   attribute WR_DATA_COUNT_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 11;
   attribute XPM_MODULE : string;
@@ -8518,7 +8546,7 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync is
   attribute FIFO_READ_DEPTH of xpm_fifo_base_inst : label is 1024;
   attribute FIFO_READ_LATENCY of xpm_fifo_base_inst : label is 0;
   attribute FIFO_SIZE : integer;
-  attribute FIFO_SIZE of xpm_fifo_base_inst : label is 11264;
+  attribute FIFO_SIZE of xpm_fifo_base_inst : label is 15360;
   attribute FIFO_WRITE_DEPTH of xpm_fifo_base_inst : label is 1024;
   attribute FULL_RESET_VALUE of xpm_fifo_base_inst : label is 1;
   attribute FULL_RST_VAL : string;
@@ -8547,7 +8575,7 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync is
   attribute RD_MODE of xpm_fifo_base_inst : label is 1;
   attribute RD_PNTR_WIDTH : integer;
   attribute RD_PNTR_WIDTH of xpm_fifo_base_inst : label is 10;
-  attribute READ_DATA_WIDTH of xpm_fifo_base_inst : label is 11;
+  attribute READ_DATA_WIDTH of xpm_fifo_base_inst : label is 15;
   attribute READ_MODE_integer : integer;
   attribute READ_MODE_integer of xpm_fifo_base_inst : label is 1;
   attribute RELATED_CLOCKS : integer;
@@ -8561,7 +8589,7 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync is
   attribute WAKEUP_TIME of xpm_fifo_base_inst : label is 0;
   attribute WIDTH_RATIO : integer;
   attribute WIDTH_RATIO of xpm_fifo_base_inst : label is 1;
-  attribute WRITE_DATA_WIDTH of xpm_fifo_base_inst : label is 11;
+  attribute WRITE_DATA_WIDTH of xpm_fifo_base_inst : label is 15;
   attribute WR_DATA_COUNT_WIDTH of xpm_fifo_base_inst : label is 11;
   attribute WR_DC_WIDTH_EXT : integer;
   attribute WR_DC_WIDTH_EXT of xpm_fifo_base_inst : label is 11;
@@ -8601,8 +8629,8 @@ xpm_fifo_base_inst: entity work.zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
       almost_full => NLW_xpm_fifo_base_inst_almost_full_UNCONNECTED,
       data_valid => NLW_xpm_fifo_base_inst_data_valid_UNCONNECTED,
       dbiterr => NLW_xpm_fifo_base_inst_dbiterr_UNCONNECTED,
-      din(10 downto 0) => din(10 downto 0),
-      dout(10 downto 0) => dout(10 downto 0),
+      din(14 downto 0) => din(14 downto 0),
+      dout(14 downto 0) => dout(14 downto 0),
       empty => empty,
       full => full,
       full_n => NLW_xpm_fifo_base_inst_full_n_UNCONNECTED,
@@ -8633,7 +8661,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_sync is
   port (
     overflow : out STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 14 downto 0 );
     fifo_read_level : out STD_LOGIC_VECTOR ( 10 downto 0 );
     underflow : out STD_LOGIC;
     fifo_pix_cnt : out STD_LOGIC;
@@ -8643,7 +8671,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_sync is
     fifo_eol_re : out STD_LOGIC;
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     aclk : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    din : in STD_LOGIC_VECTOR ( 14 downto 0 );
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     vid_io_out_ce : in STD_LOGIC;
     \fifo_pix_cnt_reg[12]\ : in STD_LOGIC;
@@ -8653,8 +8681,6 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_sync is
     aresetn : in STD_LOGIC;
     fifo_eol_dly : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_sync : entity is "v_axi4s_vid_out_v4_0_10_fifo_sync";
 end zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_sync;
 
 architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_sync is
@@ -8665,13 +8691,13 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0
   signal XPM_FIFO_SYNC_INST_n_2 : STD_LOGIC;
   signal XPM_FIFO_SYNC_INST_n_3 : STD_LOGIC;
   signal XPM_FIFO_SYNC_INST_n_4 : STD_LOGIC;
-  signal XPM_FIFO_SYNC_INST_n_42 : STD_LOGIC;
+  signal XPM_FIFO_SYNC_INST_n_46 : STD_LOGIC;
   signal XPM_FIFO_SYNC_INST_n_5 : STD_LOGIC;
   signal XPM_FIFO_SYNC_INST_n_6 : STD_LOGIC;
   signal XPM_FIFO_SYNC_INST_n_7 : STD_LOGIC;
   signal XPM_FIFO_SYNC_INST_n_8 : STD_LOGIC;
   signal XPM_FIFO_SYNC_INST_n_9 : STD_LOGIC;
-  signal \^dout\ : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal \^dout\ : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal fifo_empty : STD_LOGIC;
   signal \^fifo_read_level\ : STD_LOGIC_VECTOR ( 10 downto 0 );
   signal full_i : STD_LOGIC;
@@ -8720,7 +8746,7 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0
   attribute RD_DATA_COUNT_WIDTH : integer;
   attribute RD_DATA_COUNT_WIDTH of XPM_FIFO_SYNC_INST : label is 11;
   attribute READ_DATA_WIDTH : integer;
-  attribute READ_DATA_WIDTH of XPM_FIFO_SYNC_INST : label is 11;
+  attribute READ_DATA_WIDTH of XPM_FIFO_SYNC_INST : label is 15;
   attribute READ_MODE : string;
   attribute READ_MODE of XPM_FIFO_SYNC_INST : label is "fwft";
   attribute SIM_ASSERT_CHK : integer;
@@ -8730,7 +8756,7 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0
   attribute WAKEUP_TIME : integer;
   attribute WAKEUP_TIME of XPM_FIFO_SYNC_INST : label is 0;
   attribute WRITE_DATA_WIDTH : integer;
-  attribute WRITE_DATA_WIDTH of XPM_FIFO_SYNC_INST : label is 11;
+  attribute WRITE_DATA_WIDTH of XPM_FIFO_SYNC_INST : label is 15;
   attribute WR_DATA_COUNT_WIDTH : integer;
   attribute WR_DATA_COUNT_WIDTH of XPM_FIFO_SYNC_INST : label is 11;
   attribute XPM_MODULE : string;
@@ -8739,7 +8765,7 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0
   attribute SOFT_HLUTNM of XPM_FIFO_SYNC_INST_i_2 : label is "soft_lutpair9";
   attribute SOFT_HLUTNM of s_axis_video_tready_INST_0 : label is "soft_lutpair9";
 begin
-  dout(10 downto 0) <= \^dout\(10 downto 0);
+  dout(14 downto 0) <= \^dout\(14 downto 0);
   fifo_read_level(10 downto 0) <= \^fifo_read_level\(10 downto 0);
 \FSM_sequential_state[1]_i_3\: unisim.vcomponents.LUT5
     generic map(
@@ -8770,7 +8796,7 @@ begin
       INIT => X"B"
     )
         port map (
-      I0 => \^dout\(9),
+      I0 => \^dout\(13),
       I1 => fifo_sof_dly,
       O => \gen_wr_a.gen_word_narrow.mem_reg\
     );
@@ -8780,8 +8806,8 @@ XPM_FIFO_SYNC_INST: entity work.zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync
       almost_full => NLW_XPM_FIFO_SYNC_INST_almost_full_UNCONNECTED,
       data_valid => NLW_XPM_FIFO_SYNC_INST_data_valid_UNCONNECTED,
       dbiterr => NLW_XPM_FIFO_SYNC_INST_dbiterr_UNCONNECTED,
-      din(10 downto 0) => din(10 downto 0),
-      dout(10 downto 0) => \^dout\(10 downto 0),
+      din(14 downto 0) => din(14 downto 0),
+      dout(14 downto 0) => \^dout\(14 downto 0),
       empty => fifo_empty,
       full => full_i,
       injectdbiterr => '0',
@@ -8791,7 +8817,7 @@ XPM_FIFO_SYNC_INST: entity work.zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_sync
       prog_full => NLW_XPM_FIFO_SYNC_INST_prog_full_UNCONNECTED,
       rd_data_count(10 downto 0) => \^fifo_read_level\(10 downto 0),
       rd_en => E(0),
-      rd_rst_busy => XPM_FIFO_SYNC_INST_n_42,
+      rd_rst_busy => XPM_FIFO_SYNC_INST_n_46,
       rst => SR(0),
       sbiterr => NLW_XPM_FIFO_SYNC_INST_sbiterr_UNCONNECTED,
       sleep => '0',
@@ -8829,7 +8855,7 @@ fifo_eol_re_dly_i_1: unisim.vcomponents.LUT2
       INIT => X"2"
     )
         port map (
-      I0 => \^dout\(8),
+      I0 => \^dout\(12),
       I1 => fifo_eol_dly,
       O => fifo_eol_re
     );
@@ -8861,7 +8887,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_coupler is
   port (
     overflow : out STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 14 downto 0 );
     fifo_read_level : out STD_LOGIC_VECTOR ( 10 downto 0 );
     underflow : out STD_LOGIC;
     fifo_pix_cnt : out STD_LOGIC;
@@ -8871,7 +8897,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_coupler is
     fifo_eol_re : out STD_LOGIC;
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     aclk : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    din : in STD_LOGIC_VECTOR ( 14 downto 0 );
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     vid_io_out_ce : in STD_LOGIC;
     \fifo_pix_cnt_reg[12]\ : in STD_LOGIC;
@@ -8881,8 +8907,6 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_coupler is
     aresetn : in STD_LOGIC;
     fifo_eol_dly : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_coupler : entity is "v_axi4s_vid_out_v4_0_10_coupler";
 end zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_coupler;
 
 architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_coupler is
@@ -8894,8 +8918,8 @@ begin
       aclk => aclk,
       aclken => aclken,
       aresetn => aresetn,
-      din(10 downto 0) => din(10 downto 0),
-      dout(10 downto 0) => dout(10 downto 0),
+      din(14 downto 0) => din(14 downto 0),
+      dout(14 downto 0) => dout(14 downto 0),
       fifo_eol_dly => fifo_eol_dly,
       fifo_eol_re => fifo_eol_re,
       fifo_pix_cnt => fifo_pix_cnt,
@@ -8920,7 +8944,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 is
     aclk : in STD_LOGIC;
     aclken : in STD_LOGIC;
     aresetn : in STD_LOGIC;
-    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
     s_axis_video_tvalid : in STD_LOGIC;
     s_axis_video_tready : out STD_LOGIC;
     s_axis_video_tuser : in STD_LOGIC;
@@ -8935,7 +8959,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 is
     vid_vblank : out STD_LOGIC;
     vid_hblank : out STD_LOGIC;
     vid_field_id : out STD_LOGIC;
-    vid_data : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    vid_data : out STD_LOGIC_VECTOR ( 11 downto 0 );
     vtg_vsync : in STD_LOGIC;
     vtg_hsync : in STD_LOGIC;
     vtg_vblank : in STD_LOGIC;
@@ -8968,31 +8992,29 @@ entity zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 is
   attribute C_INCLUDE_PIXEL_REPEAT : integer;
   attribute C_INCLUDE_PIXEL_REPEAT of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 0;
   attribute C_NATIVE_COMPONENT_WIDTH : integer;
-  attribute C_NATIVE_COMPONENT_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 8;
+  attribute C_NATIVE_COMPONENT_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 12;
   attribute C_NATIVE_DATA_WIDTH : integer;
-  attribute C_NATIVE_DATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 8;
+  attribute C_NATIVE_DATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 12;
   attribute C_PIXELS_PER_CLOCK : integer;
   attribute C_PIXELS_PER_CLOCK of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 1;
   attribute C_SYNC_LOCK_THRESHOLD : integer;
   attribute C_SYNC_LOCK_THRESHOLD of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 4;
   attribute C_S_AXIS_COMPONENT_WIDTH : integer;
-  attribute C_S_AXIS_COMPONENT_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 8;
+  attribute C_S_AXIS_COMPONENT_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 16;
   attribute C_S_AXIS_TDATA_WIDTH : integer;
-  attribute C_S_AXIS_TDATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 8;
+  attribute C_S_AXIS_TDATA_WIDTH of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 16;
   attribute C_VTG_MASTER_SLAVE : integer;
   attribute C_VTG_MASTER_SLAVE of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is 0;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 : entity is "v_axi4s_vid_out_v4_0_10";
 end zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10;
 
 architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 is
   signal \<const0>\ : STD_LOGIC;
-  signal COUPLER_INST_n_25 : STD_LOGIC;
-  signal COUPLER_INST_n_27 : STD_LOGIC;
+  signal COUPLER_INST_n_29 : STD_LOGIC;
+  signal COUPLER_INST_n_31 : STD_LOGIC;
   signal SYNC_INST_n_6 : STD_LOGIC;
-  signal fifo_data : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal fifo_data : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal fifo_eol : STD_LOGIC;
   signal fifo_eol_dly : STD_LOGIC;
   signal fifo_eol_re : STD_LOGIC;
@@ -9033,22 +9055,22 @@ COUPLER_INST: entity work.zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0
       aclk => aclk,
       aclken => aclken,
       aresetn => aresetn,
-      din(10) => fid,
-      din(9) => s_axis_video_tuser,
-      din(8) => s_axis_video_tlast,
-      din(7 downto 0) => s_axis_video_tdata(7 downto 0),
-      dout(10) => fifo_fid,
-      dout(9) => fifo_sof,
-      dout(8) => fifo_eol,
-      dout(7 downto 0) => fifo_data(7 downto 0),
+      din(14) => fid,
+      din(13) => s_axis_video_tuser,
+      din(12) => s_axis_video_tlast,
+      din(11 downto 0) => s_axis_video_tdata(15 downto 4),
+      dout(14) => fifo_fid,
+      dout(13) => fifo_sof,
+      dout(12) => fifo_eol,
+      dout(11 downto 0) => fifo_data(11 downto 0),
       fifo_eol_dly => fifo_eol_dly,
       fifo_eol_re => fifo_eol_re,
       fifo_pix_cnt => fifo_pix_cnt,
       \fifo_pix_cnt_reg[12]\ => SYNC_INST_n_6,
       fifo_read_level(10 downto 0) => fifo_read_level(10 downto 0),
       fifo_sof_dly => fifo_sof_dly,
-      \gen_wr_a.gen_word_narrow.mem_reg\ => COUPLER_INST_n_25,
-      \grdc.rd_data_count_i_reg[9]\ => COUPLER_INST_n_27,
+      \gen_wr_a.gen_word_narrow.mem_reg\ => COUPLER_INST_n_29,
+      \grdc.rd_data_count_i_reg[9]\ => COUPLER_INST_n_31,
       overflow => overflow,
       s_axis_video_tready => s_axis_video_tready,
       s_axis_video_tvalid => s_axis_video_tvalid,
@@ -9057,7 +9079,7 @@ COUPLER_INST: entity work.zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0
     );
 FORMATTER_INST: entity work.zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter
      port map (
-      D(7 downto 0) => fifo_data(7 downto 0),
+      D(11 downto 0) => fifo_data(11 downto 0),
       E(0) => rd_en_i,
       SR(0) => in_de_mux0,
       aclk => aclk,
@@ -9065,7 +9087,7 @@ FORMATTER_INST: entity work.zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4
       fivid_reset_full_frame => fivid_reset_full_frame,
       src_in => \^locked\,
       vid_active_video => vid_active_video,
-      vid_data(7 downto 0) => vid_data(7 downto 0),
+      vid_data(11 downto 0) => vid_data(11 downto 0),
       vid_field_id => vid_field_id,
       vid_hblank => vid_hblank,
       vid_hsync => vid_hsync,
@@ -9087,8 +9109,8 @@ SYNC_INST: entity work.zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10
      port map (
       E(0) => rd_en_i,
       \FSM_sequential_state_reg[0]_0\ => SYNC_INST_n_6,
-      \FSM_sequential_state_reg[1]_0\ => COUPLER_INST_n_27,
-      \FSM_sequential_state_reg[2]_0\ => COUPLER_INST_n_25,
+      \FSM_sequential_state_reg[1]_0\ => COUPLER_INST_n_31,
+      \FSM_sequential_state_reg[2]_0\ => COUPLER_INST_n_29,
       SR(0) => vid_reset,
       aclk => aclk,
       aresetn => aresetn,
@@ -9120,7 +9142,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0 is
     aclk : in STD_LOGIC;
     aclken : in STD_LOGIC;
     aresetn : in STD_LOGIC;
-    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
     s_axis_video_tvalid : in STD_LOGIC;
     s_axis_video_tready : out STD_LOGIC;
     s_axis_video_tuser : in STD_LOGIC;
@@ -9133,7 +9155,7 @@ entity zynq_design_1_v_axi4s_vid_out_0_0 is
     vid_vblank : out STD_LOGIC;
     vid_hblank : out STD_LOGIC;
     vid_field_id : out STD_LOGIC;
-    vid_data : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    vid_data : out STD_LOGIC_VECTOR ( 11 downto 0 );
     vtg_vsync : in STD_LOGIC;
     vtg_hsync : in STD_LOGIC;
     vtg_vblank : in STD_LOGIC;
@@ -9175,30 +9197,30 @@ architecture STRUCTURE of zynq_design_1_v_axi4s_vid_out_0_0 is
   attribute C_INCLUDE_PIXEL_REPEAT : integer;
   attribute C_INCLUDE_PIXEL_REPEAT of inst : label is 0;
   attribute C_NATIVE_COMPONENT_WIDTH : integer;
-  attribute C_NATIVE_COMPONENT_WIDTH of inst : label is 8;
+  attribute C_NATIVE_COMPONENT_WIDTH of inst : label is 12;
   attribute C_NATIVE_DATA_WIDTH : integer;
-  attribute C_NATIVE_DATA_WIDTH of inst : label is 8;
+  attribute C_NATIVE_DATA_WIDTH of inst : label is 12;
   attribute C_PIXELS_PER_CLOCK : integer;
   attribute C_PIXELS_PER_CLOCK of inst : label is 1;
   attribute C_SYNC_LOCK_THRESHOLD : integer;
   attribute C_SYNC_LOCK_THRESHOLD of inst : label is 4;
   attribute C_S_AXIS_COMPONENT_WIDTH : integer;
-  attribute C_S_AXIS_COMPONENT_WIDTH of inst : label is 8;
+  attribute C_S_AXIS_COMPONENT_WIDTH of inst : label is 16;
   attribute C_S_AXIS_TDATA_WIDTH : integer;
-  attribute C_S_AXIS_TDATA_WIDTH of inst : label is 8;
+  attribute C_S_AXIS_TDATA_WIDTH of inst : label is 16;
   attribute C_VTG_MASTER_SLAVE : integer;
   attribute C_VTG_MASTER_SLAVE of inst : label is 0;
   attribute DowngradeIPIdentifiedWarnings of inst : label is "yes";
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of aclk : signal is "xilinx.com:signal:clock:1.0 aclk_intf CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of aclk : signal is "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF video_in, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of aclk : signal is "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF video_in, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of aclken : signal is "xilinx.com:signal:clockenable:1.0 aclken_intf CE";
   attribute X_INTERFACE_PARAMETER of aclken : signal is "XIL_INTERFACENAME aclken_intf, POLARITY ACTIVE_HIGH";
   attribute X_INTERFACE_INFO of aresetn : signal is "xilinx.com:signal:reset:1.0 aresetn_intf RST";
   attribute X_INTERFACE_PARAMETER of aresetn : signal is "XIL_INTERFACENAME aresetn_intf, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axis_video_tlast : signal is "xilinx.com:interface:axis:1.0 video_in TLAST";
-  attribute X_INTERFACE_PARAMETER of s_axis_video_tlast : signal is "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of s_axis_video_tlast : signal is "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axis_video_tready : signal is "xilinx.com:interface:axis:1.0 video_in TREADY";
   attribute X_INTERFACE_INFO of s_axis_video_tuser : signal is "xilinx.com:interface:axis:1.0 video_in TUSER";
   attribute X_INTERFACE_INFO of s_axis_video_tvalid : signal is "xilinx.com:interface:axis:1.0 video_in TVALID";
@@ -9230,7 +9252,7 @@ inst: entity work.zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10
       overflow => overflow,
       remap_420_en => '0',
       repeat_en => '0',
-      s_axis_video_tdata(7 downto 0) => s_axis_video_tdata(7 downto 0),
+      s_axis_video_tdata(15 downto 0) => s_axis_video_tdata(15 downto 0),
       s_axis_video_tlast => s_axis_video_tlast,
       s_axis_video_tready => s_axis_video_tready,
       s_axis_video_tuser => s_axis_video_tuser,
@@ -9238,7 +9260,7 @@ inst: entity work.zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10
       status(31 downto 0) => status(31 downto 0),
       underflow => underflow,
       vid_active_video => vid_active_video,
-      vid_data(7 downto 0) => vid_data(7 downto 0),
+      vid_data(11 downto 0) => vid_data(11 downto 0),
       vid_field_id => vid_field_id,
       vid_hblank => vid_hblank,
       vid_hsync => vid_hsync,

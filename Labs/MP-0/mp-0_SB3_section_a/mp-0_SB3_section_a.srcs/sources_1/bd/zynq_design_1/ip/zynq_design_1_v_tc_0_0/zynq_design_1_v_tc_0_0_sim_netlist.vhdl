@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Sun Feb  2 18:09:03 2025
+-- Date        : Mon Feb  3 02:56:40 2025
 -- Host        : CO2041-04 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top zynq_design_1_v_tc_0_0 -prefix
---               zynq_design_1_v_tc_0_0_ zynq_design_1_v_tc_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_tc_0_0/zynq_design_1_v_tc_0_0_sim_netlist.vhdl
 -- Design      : zynq_design_1_v_tc_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -29,6 +29,8 @@ entity zynq_design_1_v_tc_0_0_address_decoder is
     s_axi_awready : in STD_LOGIC;
     s_axi_awready_0 : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of zynq_design_1_v_tc_0_0_address_decoder : entity is "address_decoder";
 end zynq_design_1_v_tc_0_0_address_decoder;
 
 architecture STRUCTURE of zynq_design_1_v_tc_0_0_address_decoder is
@@ -781,6 +783,8 @@ entity zynq_design_1_v_tc_0_0_mux_tree is
     \GEN_TREE.GEN_BRANCH[31].GEN_MUX_REG.data_out_reg_reg[31][1]_0\ : in STD_LOGIC;
     \GEN_TREE.GEN_BRANCH[31].GEN_MUX_REG.data_out_reg_reg[31][0]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of zynq_design_1_v_tc_0_0_mux_tree : entity is "mux_tree";
 end zynq_design_1_v_tc_0_0_mux_tree;
 
 architecture STRUCTURE of zynq_design_1_v_tc_0_0_mux_tree is
@@ -14811,6 +14815,8 @@ entity zynq_design_1_v_tc_0_0_tc_generator is
     \time_control_regs[24]\ : in STD_LOGIC_VECTOR ( 23 downto 0 );
     \time_control_regs[23]\ : in STD_LOGIC_VECTOR ( 23 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of zynq_design_1_v_tc_0_0_tc_generator : entity is "tc_generator";
 end zynq_design_1_v_tc_0_0_tc_generator;
 
 architecture STRUCTURE of zynq_design_1_v_tc_0_0_tc_generator is
@@ -19360,6 +19366,8 @@ entity zynq_design_1_v_tc_0_0_video_clock_cross is
     \data_sync_reg[0][44]_0\ : in STD_LOGIC_VECTOR ( 44 downto 0 );
     vid_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of zynq_design_1_v_tc_0_0_video_clock_cross : entity is "video_clock_cross";
 end zynq_design_1_v_tc_0_0_video_clock_cross;
 
 architecture STRUCTURE of zynq_design_1_v_tc_0_0_video_clock_cross is
@@ -28929,6 +28937,8 @@ entity zynq_design_1_v_tc_0_0_slave_attachment is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of zynq_design_1_v_tc_0_0_slave_attachment : entity is "slave_attachment";
 end zynq_design_1_v_tc_0_0_slave_attachment;
 
 architecture STRUCTURE of zynq_design_1_v_tc_0_0_slave_attachment is
@@ -30112,6 +30122,8 @@ entity zynq_design_1_v_tc_0_0_tc_top is
     \time_control_regs[24]\ : in STD_LOGIC_VECTOR ( 23 downto 0 );
     \time_control_regs[23]\ : in STD_LOGIC_VECTOR ( 23 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of zynq_design_1_v_tc_0_0_tc_top : entity is "tc_top";
 end zynq_design_1_v_tc_0_0_tc_top;
 
 architecture STRUCTURE of zynq_design_1_v_tc_0_0_tc_top is
@@ -30473,6 +30485,8 @@ entity zynq_design_1_v_tc_0_0_axi_lite_ipif is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of zynq_design_1_v_tc_0_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end zynq_design_1_v_tc_0_0_axi_lite_ipif;
 
 architecture STRUCTURE of zynq_design_1_v_tc_0_0_axi_lite_ipif is
@@ -30691,7 +30705,7 @@ entity zynq_design_1_v_tc_0_0_video_ctrl is
   attribute C_TIME_DBUFFER : string;
   attribute C_TIME_DBUFFER of zynq_design_1_v_tc_0_0_video_ctrl : entity is "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111000111111111111100000000000000000000000000000000000000000000000000000011100000000000000000000000000000000011111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111";
   attribute C_TIME_DEFAULT : string;
-  attribute C_TIME_DEFAULT of zynq_design_1_v_tc_0_0_video_ctrl : entity is "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111100000000000101000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000111111100000000000000000000001100100000000000100000110100000010000011010000001011110000000000101001000000000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000001111000000000001010000000";
+  attribute C_TIME_DEFAULT of zynq_design_1_v_tc_0_0_video_ctrl : entity is "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111100000000000101000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000111001100000000000000000000001100100000000000100000110100000010000011010000001011110000000000101001000000000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000001111000000000001010000000";
   attribute C_TIME_NUM_REGS : integer;
   attribute C_TIME_NUM_REGS of zynq_design_1_v_tc_0_0_video_ctrl : entity is 30;
   attribute C_VERSION_MAJOR : integer;
@@ -30700,6 +30714,8 @@ entity zynq_design_1_v_tc_0_0_video_ctrl is
   attribute C_VERSION_MINOR of zynq_design_1_v_tc_0_0_video_ctrl : entity is 2;
   attribute C_VERSION_REVISION : integer;
   attribute C_VERSION_REVISION of zynq_design_1_v_tc_0_0_video_ctrl : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of zynq_design_1_v_tc_0_0_video_ctrl : entity is "video_ctrl";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of zynq_design_1_v_tc_0_0_video_ctrl : entity is "yes";
   attribute keep_hierarchy : string;
@@ -45143,27 +45159,27 @@ begin
       Q => \^time_control_regs[19]\(1),
       S => \GEN_HAS_IRQ.irq_i_1_n_0\
     );
-\AXI4_LITE_INTERFACE.time_control_regs2_int_reg[19][2]\: unisim.vcomponents.FDSE
+\AXI4_LITE_INTERFACE.time_control_regs2_int_reg[19][2]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => vid_aclk,
       CE => \time_control_regs2_int[16]\(28),
       D => p_8_out(2),
       Q => \^time_control_regs[19]\(2),
-      S => \GEN_HAS_IRQ.irq_i_1_n_0\
+      R => \GEN_HAS_IRQ.irq_i_1_n_0\
     );
-\AXI4_LITE_INTERFACE.time_control_regs2_int_reg[19][3]\: unisim.vcomponents.FDSE
+\AXI4_LITE_INTERFACE.time_control_regs2_int_reg[19][3]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => vid_aclk,
       CE => \time_control_regs2_int[16]\(28),
       D => p_8_out(3),
       Q => \^time_control_regs[19]\(3),
-      S => \GEN_HAS_IRQ.irq_i_1_n_0\
+      R => \GEN_HAS_IRQ.irq_i_1_n_0\
     );
 \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[19][4]\: unisim.vcomponents.FDSE
     generic map(
@@ -48443,27 +48459,27 @@ begin
       Q => p_8_out(1),
       S => \GEN_HAS_IRQ.irq_i_1_n_0\
     );
-\AXI4_LITE_INTERFACE.time_control_regs_int_reg[19][2]\: unisim.vcomponents.FDSE
+\AXI4_LITE_INTERFACE.time_control_regs_int_reg[19][2]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => vid_aclk,
       CE => p_2_out(6),
       D => \^ipif_data_out\(2),
       Q => p_8_out(2),
-      S => \GEN_HAS_IRQ.irq_i_1_n_0\
+      R => \GEN_HAS_IRQ.irq_i_1_n_0\
     );
-\AXI4_LITE_INTERFACE.time_control_regs_int_reg[19][3]\: unisim.vcomponents.FDSE
+\AXI4_LITE_INTERFACE.time_control_regs_int_reg[19][3]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => vid_aclk,
       CE => p_2_out(6),
       D => \^ipif_data_out\(3),
       Q => p_8_out(3),
-      S => \GEN_HAS_IRQ.irq_i_1_n_0\
+      R => \GEN_HAS_IRQ.irq_i_1_n_0\
     );
 \AXI4_LITE_INTERFACE.time_control_regs_int_reg[19][4]\: unisim.vcomponents.FDSE
     generic map(
@@ -54532,7 +54548,7 @@ entity zynq_design_1_v_tc_0_0_v_tc is
   attribute C_GEN_HSYNC_END : integer;
   attribute C_GEN_HSYNC_END of zynq_design_1_v_tc_0_0_v_tc : entity is 752;
   attribute C_GEN_HSYNC_POLARITY : integer;
-  attribute C_GEN_HSYNC_POLARITY of zynq_design_1_v_tc_0_0_v_tc : entity is 1;
+  attribute C_GEN_HSYNC_POLARITY of zynq_design_1_v_tc_0_0_v_tc : entity is 0;
   attribute C_GEN_HSYNC_START : integer;
   attribute C_GEN_HSYNC_START of zynq_design_1_v_tc_0_0_v_tc : entity is 656;
   attribute C_GEN_INTERLACED : integer;
@@ -54548,7 +54564,7 @@ entity zynq_design_1_v_tc_0_0_v_tc is
   attribute C_GEN_VSYNC_EN : integer;
   attribute C_GEN_VSYNC_EN of zynq_design_1_v_tc_0_0_v_tc : entity is 1;
   attribute C_GEN_VSYNC_POLARITY : integer;
-  attribute C_GEN_VSYNC_POLARITY of zynq_design_1_v_tc_0_0_v_tc : entity is 1;
+  attribute C_GEN_VSYNC_POLARITY of zynq_design_1_v_tc_0_0_v_tc : entity is 0;
   attribute C_HAS_AXI4_LITE : integer;
   attribute C_HAS_AXI4_LITE of zynq_design_1_v_tc_0_0_v_tc : entity is 1;
   attribute C_HAS_INTC_IF : integer;
@@ -54575,6 +54591,8 @@ entity zynq_design_1_v_tc_0_0_v_tc is
   attribute C_S_AXI_CLK_FREQ_HZ of zynq_design_1_v_tc_0_0_v_tc : entity is 100000000;
   attribute C_S_AXI_DATA_WIDTH : integer;
   attribute C_S_AXI_DATA_WIDTH of zynq_design_1_v_tc_0_0_v_tc : entity is 32;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of zynq_design_1_v_tc_0_0_v_tc : entity is "v_tc";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of zynq_design_1_v_tc_0_0_v_tc : entity is "yes";
 end zynq_design_1_v_tc_0_0_v_tc;
@@ -54764,7 +54782,7 @@ architecture STRUCTURE of zynq_design_1_v_tc_0_0_v_tc is
   attribute C_TIME_DBUFFER : string;
   attribute C_TIME_DBUFFER of U_VIDEO_CTRL : label is "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111000111111111111100000000000000000000000000000000000000000000000000000011100000000000000000000000000000000011111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111";
   attribute C_TIME_DEFAULT : string;
-  attribute C_TIME_DEFAULT of U_VIDEO_CTRL : label is "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111100000000000101000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000111111100000000000000000000001100100000000000100000110100000010000011010000001011110000000000101001000000000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000001111000000000001010000000";
+  attribute C_TIME_DEFAULT of U_VIDEO_CTRL : label is "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111100000000000101000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000111001100000000000000000000001100100000000000100000110100000010000011010000001011110000000000101001000000000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000001111000000000001010000000";
   attribute C_TIME_NUM_REGS : integer;
   attribute C_TIME_NUM_REGS of U_VIDEO_CTRL : label is 30;
   attribute C_VERSION_MAJOR : integer;
@@ -55313,7 +55331,7 @@ architecture STRUCTURE of zynq_design_1_v_tc_0_0 is
   attribute C_GEN_HSYNC_END : integer;
   attribute C_GEN_HSYNC_END of U0 : label is 752;
   attribute C_GEN_HSYNC_POLARITY : integer;
-  attribute C_GEN_HSYNC_POLARITY of U0 : label is 1;
+  attribute C_GEN_HSYNC_POLARITY of U0 : label is 0;
   attribute C_GEN_HSYNC_START : integer;
   attribute C_GEN_HSYNC_START of U0 : label is 656;
   attribute C_GEN_INTERLACED : integer;
@@ -55329,7 +55347,7 @@ architecture STRUCTURE of zynq_design_1_v_tc_0_0 is
   attribute C_GEN_VSYNC_EN : integer;
   attribute C_GEN_VSYNC_EN of U0 : label is 1;
   attribute C_GEN_VSYNC_POLARITY : integer;
-  attribute C_GEN_VSYNC_POLARITY of U0 : label is 1;
+  attribute C_GEN_VSYNC_POLARITY of U0 : label is 0;
   attribute C_HAS_AXI4_LITE : integer;
   attribute C_HAS_AXI4_LITE of U0 : label is 1;
   attribute C_HAS_INTC_IF : integer;
@@ -55363,7 +55381,7 @@ architecture STRUCTURE of zynq_design_1_v_tc_0_0 is
   attribute x_interface_info of active_video_out : signal is "xilinx.com:interface:video_timing:2.0 vtiming_out ACTIVE_VIDEO";
   attribute x_interface_info of clk : signal is "xilinx.com:signal:clock:1.0 clk_intf CLK";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF vtiming_in:vtiming_out, ASSOCIATED_RESET resetn, ASSOCIATED_CLKEN clken, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0";
+  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF vtiming_in:vtiming_out, ASSOCIATED_RESET resetn, ASSOCIATED_CLKEN clken, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0";
   attribute x_interface_info of clken : signal is "xilinx.com:signal:clockenable:1.0 clken_intf CE";
   attribute x_interface_parameter of clken : signal is "XIL_INTERFACENAME clken_intf, POLARITY ACTIVE_LOW";
   attribute x_interface_info of hblank_out : signal is "xilinx.com:interface:video_timing:2.0 vtiming_out HBLANK";
@@ -55373,7 +55391,7 @@ architecture STRUCTURE of zynq_design_1_v_tc_0_0 is
   attribute x_interface_info of resetn : signal is "xilinx.com:signal:reset:1.0 resetn_intf RST";
   attribute x_interface_parameter of resetn : signal is "XIL_INTERFACENAME resetn_intf, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of s_axi_aclk : signal is "xilinx.com:signal:clock:1.0 s_axi_aclk_intf CLK";
-  attribute x_interface_parameter of s_axi_aclk : signal is "XIL_INTERFACENAME s_axi_aclk_intf, ASSOCIATED_BUSIF ctrl, ASSOCIATED_RESET s_axi_aresetn, ASSOCIATED_CLKEN s_axi_aclken, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0";
+  attribute x_interface_parameter of s_axi_aclk : signal is "XIL_INTERFACENAME s_axi_aclk_intf, ASSOCIATED_BUSIF ctrl, ASSOCIATED_RESET s_axi_aresetn, ASSOCIATED_CLKEN s_axi_aclken, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0";
   attribute x_interface_info of s_axi_aclken : signal is "xilinx.com:signal:clockenable:1.0 s_axi_aclken_intf CE";
   attribute x_interface_parameter of s_axi_aclken : signal is "XIL_INTERFACENAME s_axi_aclken_intf, POLARITY ACTIVE_LOW";
   attribute x_interface_info of s_axi_aresetn : signal is "xilinx.com:signal:reset:1.0 s_axi_aresetn_intf RST";
@@ -55392,7 +55410,7 @@ architecture STRUCTURE of zynq_design_1_v_tc_0_0 is
   attribute x_interface_info of vsync_out : signal is "xilinx.com:interface:video_timing:2.0 vtiming_out VSYNC";
   attribute x_interface_info of s_axi_araddr : signal is "xilinx.com:interface:aximm:1.0 ctrl ARADDR";
   attribute x_interface_info of s_axi_awaddr : signal is "xilinx.com:interface:aximm:1.0 ctrl AWADDR";
-  attribute x_interface_parameter of s_axi_awaddr : signal is "XIL_INTERFACENAME ctrl, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute x_interface_parameter of s_axi_awaddr : signal is "XIL_INTERFACENAME ctrl, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute x_interface_info of s_axi_bresp : signal is "xilinx.com:interface:aximm:1.0 ctrl BRESP";
   attribute x_interface_info of s_axi_rdata : signal is "xilinx.com:interface:aximm:1.0 ctrl RDATA";
   attribute x_interface_info of s_axi_rresp : signal is "xilinx.com:interface:aximm:1.0 ctrl RRESP";

@@ -1,6 +1,6 @@
-2025-02-02T21:13:27.484175500255-21:13:27 **** Incremental Build of project zynq_design_1_wrapper ****
-000-buildplatform.bat 63354 zynq_design_1_wrapper no_domain_build 
-000-XSDB Server Channel: tcfchan#14
+2025-02-03T03:02:59.012358600255-03:02:59 **** Incremental Build of project zynq_design_1_wrapper ****
+000-buildplatform.bat 57057 zynq_design_1_wrapper no_domain_build 
+000-XSDB Server Channel: tcfchan#5
 00255-
-21:13:28 Build Finished (took 934ms)
+03:02:59 Build Finished (took 855ms)
 

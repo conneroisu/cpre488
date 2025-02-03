@@ -11,7 +11,7 @@
                         "type": "XSDB_V3",
                         "name": "dbg_hub",
                         "spec": "labtools_xsdbm_v3",
-                        "clk_input_freq_hz": "100000000"
+                        "clk_input_freq_hz": "50000000"
                     },
                     {
                         "type": "ILA_V3",
@@ -32,13 +32,25 @@
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 7,
+                                "rightIndex": 11,
                                 "portIndex": 0,
                                 "nets": [
                                     {
                                         "name": "zynq_design_1_i/system_ila_0/U0/probe0_1",
                                         "isBus": true,
                                         "subnets": [
+                                            {
+                                                "name": "zynq_design_1_i/system_ila_0/U0/probe0_1[11]"
+                                            },
+                                            {
+                                                "name": "zynq_design_1_i/system_ila_0/U0/probe0_1[10]"
+                                            },
+                                            {
+                                                "name": "zynq_design_1_i/system_ila_0/U0/probe0_1[9]"
+                                            },
+                                            {
+                                                "name": "zynq_design_1_i/system_ila_0/U0/probe0_1[8]"
+                                            },
                                             {
                                                 "name": "zynq_design_1_i/system_ila_0/U0/probe0_1[7]"
                                             },
@@ -510,12 +522,10 @@
                                                 "name": "zynq_design_1_i/system_ila_0/U0/net_slot_0_axi_awcache[2]"
                                             },
                                             {
-                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_0_axi_awcache[1]",
-                                                "parentNetId": 55
+                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_0_axi_awcache[1]"
                                             },
                                             {
-                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_0_axi_awcache[0]",
-                                                "parentNetId": 55
+                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_0_axi_awcache[0]"
                                             }
                                         ]
                                     }
@@ -596,12 +606,10 @@
                                                 "name": "zynq_design_1_i/system_ila_0/U0/net_slot_0_axi_awsize[2]"
                                             },
                                             {
-                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_0_axi_awsize[1]",
-                                                "parentNetId": 55
+                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_0_axi_awsize[1]"
                                             },
                                             {
-                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_0_axi_awsize[0]",
-                                                "parentNetId": 55
+                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_0_axi_awsize[0]"
                                             }
                                         ]
                                     }
@@ -1648,12 +1656,10 @@
                                                 "name": "zynq_design_1_i/system_ila_0/U0/net_slot_1_axi_awcache[2]"
                                             },
                                             {
-                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_1_axi_awcache[1]",
-                                                "parentNetId": 55
+                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_1_axi_awcache[1]"
                                             },
                                             {
-                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_1_axi_awcache[0]",
-                                                "parentNetId": 55
+                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_1_axi_awcache[0]"
                                             }
                                         ]
                                     }
@@ -1746,12 +1752,10 @@
                                                 "name": "zynq_design_1_i/system_ila_0/U0/net_slot_1_axi_awsize[2]"
                                             },
                                             {
-                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_1_axi_awsize[1]",
-                                                "parentNetId": 55
+                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_1_axi_awsize[1]"
                                             },
                                             {
-                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_1_axi_awsize[0]",
-                                                "parentNetId": 55
+                                                "name": "zynq_design_1_i/system_ila_0/U0/net_slot_1_axi_awsize[0]"
                                             }
                                         ]
                                     }
@@ -4893,7 +4897,7 @@
                                             "id": 0,
                                             "name": "probe0",
                                             "leftBit": 0,
-                                            "width": 8
+                                            "width": 12
                                         }
                                     }
                                 ]
@@ -5102,6 +5106,8 @@
                         "native_ports": [
                             {
                                 "name": "probe0",
+                                "connectedBus": "xlslice_2_Dout",
+                                "protocol": "PROBE",
                                 "port_maps": [
                                     {
                                         "logical_port": "probe0",
@@ -5111,72 +5117,6 @@
                                             "leftBit": 0,
                                             "width": 4
                                         }
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "parent_nets": [
-                    {
-                        "id": 55,
-                        "name": "zynq_design_1_i/<const1>",
-                        "const_load": "const",
-                        "state_reg": [
-                            {
-                                "name": "zynq_design_1_i/v_axi4s_vid_out_0/inst/SYNC_INST/FSM_sequential_state_reg[0]",
-                                "states": [
-                                    {
-                                        "name": "C_SYNC_FALN_EOL_LAGGING",
-                                        "val": "0011"
-                                    },
-                                    {
-                                        "name": "C_SYNC_FALN_EOL_LEADING",
-                                        "val": "0000"
-                                    },
-                                    {
-                                        "name": "C_SYNC_CALN_SOF_FIFO",
-                                        "val": "0100"
-                                    },
-                                    {
-                                        "name": "C_SYNC_LALN_SOF_LEADING",
-                                        "val": "0110"
-                                    },
-                                    {
-                                        "name": "C_SYNC_LALN_SOF_LAGGING",
-                                        "val": "0101"
-                                    },
-                                    {
-                                        "name": "C_SYNC_LALN_EOL_LAGGING",
-                                        "val": "0111"
-                                    },
-                                    {
-                                        "name": "C_SYNC_CALN_SOF_VTG",
-                                        "val": "1000"
-                                    },
-                                    {
-                                        "name": "C_SYNC_IDLE",
-                                        "val": "0001"
-                                    },
-                                    {
-                                        "name": "C_SYNC_LALN_EOL_LEADING",
-                                        "val": "1100"
-                                    },
-                                    {
-                                        "name": "C_SYNC_FALN_ACTIVE",
-                                        "val": "0010"
-                                    },
-                                    {
-                                        "name": "C_SYNC_FALN_LOCK",
-                                        "val": "1011"
-                                    },
-                                    {
-                                        "name": "C_SYNC_FALN_SOF_LAGGING",
-                                        "val": "1010"
-                                    },
-                                    {
-                                        "name": "C_SYNC_FALN_SOF_LEADING",
-                                        "val": "1001"
                                     }
                                 ]
                             }

@@ -1,3 +1,10 @@
-21:13:27 **** Incremental Build of project zynq_design_1_wrapper ****
-buildplatform.bat 63354 zynq_design_1_wrapper no_domain_build 
-XSDB Server Channel: tcfchan#14
+03:02:59 **** Incremental Build of project zynq_design_1_wrapper ****
+buildplatform.bat 57057 zynq_design_1_wrapper no_domain_build 
+XSDB Server Channel: tcfchan#5
+03:03:03 **** Incremental Build of configuration Debug for project utps ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.
