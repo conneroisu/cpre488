@@ -5,6 +5,7 @@
 RemoteSystemsTempFiles/**
 .analytics
 .metadata/**
+.sdk/**
 *.o
 **/export/**
 *.elf
