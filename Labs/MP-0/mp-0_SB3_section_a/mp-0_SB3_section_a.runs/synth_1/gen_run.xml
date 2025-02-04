@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1738572955">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1738624280">
   <File Type="PA-TCL" Name="zynq_design_1_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="zynq_design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="zynq_design_1_wrapper_reports.tcl"/>
@@ -53,7 +53,9 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_auto_pc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_system_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_auto_pc_1"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_system_ila_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_axi_vdma_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_processing_system7_0_1"/>

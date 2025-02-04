@@ -178,6 +178,12 @@
   "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/ip/ip_0/sim/bd_c30e_ila_lib_0.vhd" \
   "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/sim/zynq_design_1_system_ila_3_0.vhd" \
 -endlib
+-makelib ies_lib/xlconstant_v1_1_7 \
+  "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/zynq_design_1/ip/zynq_design_1_xlconstant_0_0/sim/zynq_design_1_xlconstant_0_0.v" \
+-endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_21 \
   "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/8dfa/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="zynq_design_1_system_ila_1_0_synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1738572954">
+<GenRun Id="zynq_design_1_system_ila_1_0_synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1738624124">
   <File Type="PA-TCL" Name="zynq_design_1_system_ila_1_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="zynq_design_1_system_ila_1_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="zynq_design_1_system_ila_1_0_reports.tcl"/>

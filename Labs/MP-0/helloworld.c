@@ -1,123 +1,118 @@
-/******************************************************************************
-*
-* Copyright (C) 2009 - 2014 Xilinx, Inc.  All rights reserved.
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in
-* all copies or substantial portions of the Software.
-*
-* Use of the Software is limited solely to applications:
-* (a) running on a Xilinx device, or
-* (b) that interact with a Xilinx device through a bus or interconnect.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-* XILINX  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
-* OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-* SOFTWARE.
-*
-* Except as contained in this notice, the name of the Xilinx shall not be used
-* in advertising or otherwise to promote the sale, use or other dealings in
-* this Software without prior written authorization from Xilinx.
-*
-******************************************************************************/
 
-/*
- * helloworld.c: simple test application
+/*****************************************************************************
+ * Joseph Zambreno
+ * Phillip Jones
+ * Department of Electrical and Computer Engineering
+ * Iowa State University
+ *****************************************************************************/
+
+/*****************************************************************************
+ * vga_test.c - example VGA out using a v_tc timing controller and vdma
+ * module.
  *
- * This application configures UART 16550 to baud rate 9600.
- * PS7 UART (Zynq) is not initialized by this application, since
- * bootrom/bsp configures it to baud rate 115200
  *
- * ------------------------------------------------
- * | UART TYPE   BAUD RATE                        |
- * ------------------------------------------------
- *   uartns550   9600
- *   uartlite    Configurable only in HW design
- *   ps7_uart    115200 (configured by bootrom/bsp)
- */
+ * NOTES:
+ * 10/11/13 by JAZ::Design created.
+ * 1/15/2018 by PHJ: Update XVtc_Enable, new function that take only one arg
+ * 1/16/2018 by PHJ: Upaded to provide students with an option for directly
+                     accessing registers via pointers.
+ *****************************************************************************/
+
+#include "platform.h"
+#include "xparameters.h"
+#include "xil_cache.h"
+#include "xvtc.h"
+#include "xaxivdma.h"
 
 #include <stdio.h>
-#include "platform.h"
 #include "xil_printf.h"
-#include "xparameters.h"
 #include "xil_io.h"
 #include "inttypes.h"
 
 
-int main()
-{
-    init_platform();
-    //print("NO World\n\r");
-    UINTPTR SWIn = 0x41220000;
-    UINTPTR LEDIn = 0x41200000;
+u16 test_image[480][640];
+
+//#define VTC_CR (*(volatile u32 *)(XPAR_V_TC_0_BASEADDR + 0x0000))
+//#define ENABLE_VTC 0x0000000D  // Enable bit for VTC
+
+int main() {
+	//init_platform();
+
+	XVtc Vtc;
+    XVtc_Config *VtcCfgPtr;
+
+    int i, j;
+    /*
+    int x = 0;
     UINTPTR ButtonIn = 0x41210000;
-    int32_t LEDOut = 0x00000000;
-
-    //char str[100];
-    //Xil_Out32(LEDOut, 0x00000001);
-    while (1) {
-
-    	if ((Xil_In32(SWIn) & 0x00000001) == 0x00000001) {
-    		LEDOut = LEDOut + 0x00000001;
-    	}
-
-    	if ((Xil_In32(SWIn) & 0x00000002) == 0x00000002) {
-			LEDOut = LEDOut + 0x00000002;
-		}
-
-    	if ((Xil_In32(SWIn) & 0x00000004) == 0x00000004) {
-			LEDOut = LEDOut + 0x00000004;
-		}
-
-    	if ((Xil_In32(SWIn) & 0x00000008) == 0x00000008) {
-    		LEDOut = LEDOut + 0x00000008;
-    	}
-    	if ((Xil_In32(SWIn) & 0x000000010) == 0x00000010) {
-			LEDOut = LEDOut + 0x00000010;
-		}
-    	if ((Xil_In32(SWIn) & 0x000000020) == 0x00000020) {
-			LEDOut = LEDOut + 0x00000020;
-		}
-    	if ((Xil_In32(SWIn) & 0x00000040) == 0x00000040) {
-    		LEDOut = LEDOut + 0x00000040;
-    	}
-
-    	if ((Xil_In32(SWIn) & 0x00000080) == 0x00000080) {
-			LEDOut = LEDOut + 0x00000080;
-		}
-
-
-    	if((Xil_In32(ButtonIn) & 0x00000001) == 0x00000001){
-    		//strcpy(str,", Button 1 is on");
+    while (x == 0) {
+    	if ((Xil_In32(ButtonIn) & 0x00000001) == 0x00000001) {
+    		x = 1;
     		print("Button 1 is on\n\r");
-    		LEDOut = LEDOut + 0x00000001;
     	}
-
-
-
-
-    	Xil_Out32(LEDIn, LEDOut);
-    	LEDOut = 0x00000000;
-    	//strcpy(str,"\n\r");
-    	//print(str);
-    	//str[0] = '\0';
-
     }
 
+    print("While exit");*/
+
+    // Enable VTC module: Using high-level functions provided by Vendor
+    VtcCfgPtr = XVtc_LookupConfig(XPAR_AXI_VDMA_0_DEVICE_ID);
+    XVtc_CfgInitialize(&Vtc, VtcCfgPtr, VtcCfgPtr->BaseAddress);
+    XVtc_EnableGenerator(&Vtc);
+
+    // Challenge: Can you rewrite the Enable VTC module code by directly accessing
+    // the VTC registers using pointers?  (See VTC data sheet, and xparameters.h)
+
+    //VTC_CR   |=  ENABLE_VTC;    // You: Declare VTC_CR and ENABLE_VTC appropriately (before main() )
 
 
 
+    // Initialize Test image for VDMA transfer to VGA monitor
+    for (i = 0; i < 480; i++) {
+      for (j = 0; j < 640; j++) {
+
+        if (j < 213) {
+          test_image[i][j] = 0x000F; // red pixels
+        }
+        else if(j < 426 ) {
+          test_image[i][j] = 0x00F0; // green pixels
+        }
+        else {
+          test_image[i][j] = 0x0F00; // blue pixels
+        }
+
+      }
+    }
+
+	// Make sure Display information gets flushed from cache to DDR Memory
+    Xil_DCacheFlush();
+
+    // Set up VDMA config registers
+	//#define CHANGE_ME 0
+
+    // Simple function abstraction by Vendor for writing VDMA registers
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET,  0x00000003);  // Read Channel: VDMA MM2S Circular Mode and Start bits set, VDMA MM2S Control
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET, 0x00000001);  // Read Channel: VDMA MM2S Reg_Index
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, (UINTPTR)test_image);  // Read Channel: VDMA MM2S Frame buffer Start Addr 1
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET, 0x00000500);  // Read Channel: VDMA MM2S FRM_Delay, and Stride
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET, 0x00000500);  // Read Channel: VDMA MM2S HSIZE
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET, 0x000001E0);  // Read Channel: VDMA MM2S VSIZE  (Note: Also Starts VDMA transaction)
 
 
+    // Low-level register access using pointers
+    // Alternative approach for configuring VDMA registers: Instead of using the abstracted functions can you configure and start the VDMA using pointers to directly configure VDMA registers
+    // YOU: Declare VDMA_MM2S_XXX (before main) and set values "CHANGE_ME" appropriately, before main()
+
+    // VDMA_MM2S_CR[0]             = CHANGE_ME; // Read Channel: VDMA MM2S Circular/Park Mode and enable the channel
+    // VDMA_MM2S_REG_INDEX[0]      = CHANGE_ME; // Read Channel: VDMA MM2S Reg_Index
+    // VDMA_MM2S_START_ADDRESS1[0] = CHANGE_ME; // Read channel: VDMA MM2S Frame buffer Start Add 1
+    // VDMA_MM2S_FRMDLY_STRIDE[0]  = CHANGE_ME; // Read channel: VDMA MM2S FRM_Delay, and Stride
+    // VDMA_MM2S_HSIZE[0]          = CHANGE_ME; // Read channel: VDMA MM2S HSIZE
+    // VDMA_MM2S_VSIZE[0]          = CHANGE_ME; // Read channel: VDMA MM2S VSIZE  (Note: Also Starts VDMA transaction)
+
+    ////////////////////////////////////////////////////////////////
+    // Xilinx clean up function
+    ////////////////////////////////////////////////////////////////
     cleanup_platform();
+
     return 0;
 }

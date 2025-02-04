@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="zynq_design_1" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1738572950"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1738572950"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1738572950"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1738572950"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1738624121"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1738624121"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1738624121"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1738624121"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\zynq_design_1_axi_gpio_0_0\zynq_design_1_axi_gpio_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_gpio_0"/>
@@ -48,7 +48,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\zynq_design_1_rst_ps7_0_100M_0\zynq_design_1_rst_ps7_0_100M_0.xci" Type="IP">
-        <Instance HierarchyPath="rst_ps7_0_100M"/>
+        <Instance HierarchyPath="rst_ps7_0_50M"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

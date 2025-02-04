@@ -31,6 +31,7 @@ vlib questa_lib/msim/axi_vip_v1_1_7
 vlib questa_lib/msim/processing_system7_vip_v1_0_9
 vlib questa_lib/msim/gigantic_mux
 vlib questa_lib/msim/xlconcat_v2_1_3
+vlib questa_lib/msim/xlconstant_v1_1_7
 vlib questa_lib/msim/axi_protocol_converter_v2_1_21
 
 vmap xilinx_vip questa_lib/msim/xilinx_vip
@@ -63,6 +64,7 @@ vmap axi_vip_v1_1_7 questa_lib/msim/axi_vip_v1_1_7
 vmap processing_system7_vip_v1_0_9 questa_lib/msim/processing_system7_vip_v1_0_9
 vmap gigantic_mux questa_lib/msim/gigantic_mux
 vmap xlconcat_v2_1_3 questa_lib/msim/xlconcat_v2_1_3
+vmap xlconstant_v1_1_7 questa_lib/msim/xlconstant_v1_1_7
 vmap axi_protocol_converter_v2_1_21 questa_lib/msim/axi_protocol_converter_v2_1_21
 
 vlog -work xilinx_vip  -sv -L axi_vip_v1_1_7 -L processing_system7_vip_v1_0_9 -L xilinx_vip "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
@@ -244,6 +246,12 @@ vcom -work xil_defaultlib  -93 \
 "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/sim/bd_c30e.vhd" \
 "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/ip/ip_0/sim/bd_c30e_ila_lib_0.vhd" \
 "../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/sim/zynq_design_1_system_ila_3_0.vhd" \
+
+vlog -work xlconstant_v1_1_7  "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
+"../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v" \
+
+vlog -work xil_defaultlib  "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_xlconstant_0_0/sim/zynq_design_1_xlconstant_0_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_21  "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
 "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/8dfa/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

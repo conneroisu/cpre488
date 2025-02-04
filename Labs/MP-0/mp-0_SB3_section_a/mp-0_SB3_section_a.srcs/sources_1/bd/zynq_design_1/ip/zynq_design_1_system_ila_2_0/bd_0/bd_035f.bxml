@@ -2,19 +2,11 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="bd_035f" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1738572949"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1738572949"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1738572949"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1738572949"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1738624120"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1738624120"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1738624120"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1738624120"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
-      <File Name="ip\ip_0\bd_035f_ila_lib_0.xci" Type="IP">
-        <Instance HierarchyPath="ila_lib"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="synth\bd_035f.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
@@ -23,6 +15,19 @@
       <File Name="sim\bd_035f.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="sim\bd_035f.protoinst">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\ip_0\bd_035f_ila_lib_0.xci" Type="IP">
+        <Instance HierarchyPath="ila_lib"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="bd_035f_ooc.xdc" Type="XDC">
@@ -46,11 +51,6 @@
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
-      </File>
-      <File Name="sim\bd_035f.protoinst">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
       </File>
     </FileCollection>
   </CompositeFile>

@@ -1,8 +1,8 @@
-set_property SRC_FILE_INFO {cfile:c:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1_in_context.xdc rfile:../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1_in_context.xdc id:1 order:EARLY scoped_inst:zynq_design_1_i/processing_system7_0} [current_design]
-set_property SRC_FILE_INFO {cfile:C:/Users/jaxie963/hold/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc rfile:../../../mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc id:2} [current_design]
+set_property SRC_FILE_INFO {cfile:c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1_in_context.xdc rfile:../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1/zynq_design_1_processing_system7_0_1_in_context.xdc id:1 order:EARLY scoped_inst:zynq_design_1_i/processing_system7_0} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc rfile:../../../mp-0_SB3_section_a.srcs/constrs_1/new/zynq_design_1_wrapper.xdc id:2} [current_design]
 current_instance zynq_design_1_i/processing_system7_0
 set_property src_info {type:SCOPED_XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
-create_clock -period 20.000 [get_ports {}]
+create_clock -period 40.000 [get_ports {}]
 current_instance
 set_property src_info {type:XDC file:2 line:1 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN AB20 [get_ports {VGA_B[2]}]
