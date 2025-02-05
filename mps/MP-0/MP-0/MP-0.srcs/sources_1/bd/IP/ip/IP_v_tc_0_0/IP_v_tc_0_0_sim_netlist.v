@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Tue Feb  4 17:26:48 2025
+// Date        : Tue Feb  4 19:33:04 2025
 // Host        : DESKTOP-EGO35HT running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               e:/ISU/cpre488/mps/MP-0/MP-0/MP-0.srcs/sources_1/bd/IP/ip/IP_v_tc_0_0/IP_v_tc_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top IP_v_tc_0_0 -prefix
+//               IP_v_tc_0_0_ IP_v_tc_0_0_sim_netlist.v
 // Design      : IP_v_tc_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -165,32 +165,32 @@ module IP_v_tc_0_0
   (* C_GEN_AVIDEO_EN = "1" *) 
   (* C_GEN_AVIDEO_POLARITY = "1" *) 
   (* C_GEN_CPARITY = "0" *) 
-  (* C_GEN_F0_VBLANK_HEND = "1280" *) 
-  (* C_GEN_F0_VBLANK_HSTART = "1280" *) 
-  (* C_GEN_F0_VFRAME_SIZE = "750" *) 
-  (* C_GEN_F0_VSYNC_HEND = "1280" *) 
-  (* C_GEN_F0_VSYNC_HSTART = "1280" *) 
-  (* C_GEN_F0_VSYNC_VEND = "729" *) 
-  (* C_GEN_F0_VSYNC_VSTART = "724" *) 
-  (* C_GEN_F1_VBLANK_HEND = "1280" *) 
-  (* C_GEN_F1_VBLANK_HSTART = "1280" *) 
-  (* C_GEN_F1_VFRAME_SIZE = "750" *) 
-  (* C_GEN_F1_VSYNC_HEND = "1280" *) 
-  (* C_GEN_F1_VSYNC_HSTART = "1280" *) 
-  (* C_GEN_F1_VSYNC_VEND = "729" *) 
-  (* C_GEN_F1_VSYNC_VSTART = "724" *) 
+  (* C_GEN_F0_VBLANK_HEND = "640" *) 
+  (* C_GEN_F0_VBLANK_HSTART = "640" *) 
+  (* C_GEN_F0_VFRAME_SIZE = "525" *) 
+  (* C_GEN_F0_VSYNC_HEND = "695" *) 
+  (* C_GEN_F0_VSYNC_HSTART = "695" *) 
+  (* C_GEN_F0_VSYNC_VEND = "491" *) 
+  (* C_GEN_F0_VSYNC_VSTART = "489" *) 
+  (* C_GEN_F1_VBLANK_HEND = "640" *) 
+  (* C_GEN_F1_VBLANK_HSTART = "640" *) 
+  (* C_GEN_F1_VFRAME_SIZE = "525" *) 
+  (* C_GEN_F1_VSYNC_HEND = "695" *) 
+  (* C_GEN_F1_VSYNC_HSTART = "695" *) 
+  (* C_GEN_F1_VSYNC_VEND = "491" *) 
+  (* C_GEN_F1_VSYNC_VSTART = "489" *) 
   (* C_GEN_FIELDID_EN = "0" *) 
   (* C_GEN_FIELDID_POLARITY = "1" *) 
-  (* C_GEN_HACTIVE_SIZE = "1280" *) 
+  (* C_GEN_HACTIVE_SIZE = "640" *) 
   (* C_GEN_HBLANK_EN = "1" *) 
   (* C_GEN_HBLANK_POLARITY = "1" *) 
-  (* C_GEN_HFRAME_SIZE = "1650" *) 
+  (* C_GEN_HFRAME_SIZE = "800" *) 
   (* C_GEN_HSYNC_EN = "1" *) 
-  (* C_GEN_HSYNC_END = "1430" *) 
+  (* C_GEN_HSYNC_END = "752" *) 
   (* C_GEN_HSYNC_POLARITY = "1" *) 
-  (* C_GEN_HSYNC_START = "1390" *) 
+  (* C_GEN_HSYNC_START = "656" *) 
   (* C_GEN_INTERLACED = "0" *) 
-  (* C_GEN_VACTIVE_SIZE = "720" *) 
+  (* C_GEN_VACTIVE_SIZE = "480" *) 
   (* C_GEN_VBLANK_EN = "1" *) 
   (* C_GEN_VBLANK_POLARITY = "1" *) 
   (* C_GEN_VIDEO_FORMAT = "2" *) 
@@ -257,7 +257,6 @@ module IP_v_tc_0_0
         .vsync_out(vsync_out));
 endmodule
 
-(* ORIG_REF_NAME = "address_decoder" *) 
 module IP_v_tc_0_0_address_decoder
    (ipif_proc_CS,
     \AXI4_LITE_INTERFACE.ipif_RdAck_reg ,
@@ -376,7 +375,6 @@ module IP_v_tc_0_0_address_decoder
         .O(s_axi_wready_INST_0_i_2_n_0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_lite_ipif" *) 
 module IP_v_tc_0_0_axi_lite_ipif
    (s_axi_aresetn,
     s_axi_rresp,
@@ -475,7 +473,6 @@ module IP_v_tc_0_0_axi_lite_ipif
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "slave_attachment" *) 
 module IP_v_tc_0_0_slave_attachment
    (s_axi_aresetn,
     s_axi_rresp,
@@ -1392,7 +1389,6 @@ module IP_v_tc_0_0_slave_attachment
         .R(rst));
 endmodule
 
-(* ORIG_REF_NAME = "mux_tree" *) 
 module IP_v_tc_0_0_mux_tree
    (\GEN_SEL_DELAY[4].sel_int_reg[4][0]_0 ,
     \data_sync_reg[2][34] ,
@@ -13958,7 +13954,6 @@ module IP_v_tc_0_0_mux_tree__parameterized0
         .R(\GEN_TREE.GEN_BRANCH[5].GEN_MUX_REG.data_out_reg_reg[5][0]_1 ));
 endmodule
 
-(* ORIG_REF_NAME = "tc_generator" *) 
 module IP_v_tc_0_0_tc_generator
    (fsync_out,
     hsync_out,
@@ -16842,7 +16837,6 @@ module IP_v_tc_0_0_tc_generator
         .R(p_3_in));
 endmodule
 
-(* ORIG_REF_NAME = "tc_top" *) 
 module IP_v_tc_0_0_tc_top
    (fsync_out,
     hsync_out,
@@ -17187,22 +17181,22 @@ endmodule
 (* C_FSYNC_VSTART7 = "0" *) (* C_FSYNC_VSTART8 = "0" *) (* C_FSYNC_VSTART9 = "0" *) 
 (* C_GENERATE_EN = "1" *) (* C_GEN_ACHROMA_EN = "0" *) (* C_GEN_ACHROMA_POLARITY = "1" *) 
 (* C_GEN_AUTO_SWITCH = "0" *) (* C_GEN_AVIDEO_EN = "1" *) (* C_GEN_AVIDEO_POLARITY = "1" *) 
-(* C_GEN_CPARITY = "0" *) (* C_GEN_F0_VBLANK_HEND = "1280" *) (* C_GEN_F0_VBLANK_HSTART = "1280" *) 
-(* C_GEN_F0_VFRAME_SIZE = "750" *) (* C_GEN_F0_VSYNC_HEND = "1280" *) (* C_GEN_F0_VSYNC_HSTART = "1280" *) 
-(* C_GEN_F0_VSYNC_VEND = "729" *) (* C_GEN_F0_VSYNC_VSTART = "724" *) (* C_GEN_F1_VBLANK_HEND = "1280" *) 
-(* C_GEN_F1_VBLANK_HSTART = "1280" *) (* C_GEN_F1_VFRAME_SIZE = "750" *) (* C_GEN_F1_VSYNC_HEND = "1280" *) 
-(* C_GEN_F1_VSYNC_HSTART = "1280" *) (* C_GEN_F1_VSYNC_VEND = "729" *) (* C_GEN_F1_VSYNC_VSTART = "724" *) 
-(* C_GEN_FIELDID_EN = "0" *) (* C_GEN_FIELDID_POLARITY = "1" *) (* C_GEN_HACTIVE_SIZE = "1280" *) 
-(* C_GEN_HBLANK_EN = "1" *) (* C_GEN_HBLANK_POLARITY = "1" *) (* C_GEN_HFRAME_SIZE = "1650" *) 
-(* C_GEN_HSYNC_EN = "1" *) (* C_GEN_HSYNC_END = "1430" *) (* C_GEN_HSYNC_POLARITY = "1" *) 
-(* C_GEN_HSYNC_START = "1390" *) (* C_GEN_INTERLACED = "0" *) (* C_GEN_VACTIVE_SIZE = "720" *) 
+(* C_GEN_CPARITY = "0" *) (* C_GEN_F0_VBLANK_HEND = "640" *) (* C_GEN_F0_VBLANK_HSTART = "640" *) 
+(* C_GEN_F0_VFRAME_SIZE = "525" *) (* C_GEN_F0_VSYNC_HEND = "695" *) (* C_GEN_F0_VSYNC_HSTART = "695" *) 
+(* C_GEN_F0_VSYNC_VEND = "491" *) (* C_GEN_F0_VSYNC_VSTART = "489" *) (* C_GEN_F1_VBLANK_HEND = "640" *) 
+(* C_GEN_F1_VBLANK_HSTART = "640" *) (* C_GEN_F1_VFRAME_SIZE = "525" *) (* C_GEN_F1_VSYNC_HEND = "695" *) 
+(* C_GEN_F1_VSYNC_HSTART = "695" *) (* C_GEN_F1_VSYNC_VEND = "491" *) (* C_GEN_F1_VSYNC_VSTART = "489" *) 
+(* C_GEN_FIELDID_EN = "0" *) (* C_GEN_FIELDID_POLARITY = "1" *) (* C_GEN_HACTIVE_SIZE = "640" *) 
+(* C_GEN_HBLANK_EN = "1" *) (* C_GEN_HBLANK_POLARITY = "1" *) (* C_GEN_HFRAME_SIZE = "800" *) 
+(* C_GEN_HSYNC_EN = "1" *) (* C_GEN_HSYNC_END = "752" *) (* C_GEN_HSYNC_POLARITY = "1" *) 
+(* C_GEN_HSYNC_START = "656" *) (* C_GEN_INTERLACED = "0" *) (* C_GEN_VACTIVE_SIZE = "480" *) 
 (* C_GEN_VBLANK_EN = "1" *) (* C_GEN_VBLANK_POLARITY = "1" *) (* C_GEN_VIDEO_FORMAT = "2" *) 
 (* C_GEN_VSYNC_EN = "1" *) (* C_GEN_VSYNC_POLARITY = "1" *) (* C_HAS_AXI4_LITE = "1" *) 
 (* C_HAS_INTC_IF = "0" *) (* C_INTERLACE_EN = "0" *) (* C_IRQEN = "0" *) 
 (* C_LINE_DELAY = "0" *) (* C_MAX_LINES = "4096" *) (* C_MAX_PIXELS = "4096" *) 
 (* C_NUM_FSYNCS = "1" *) (* C_PIXEL_DELAY = "0" *) (* C_SYNC_EN = "0" *) 
 (* C_S_AXI_ADDR_WIDTH = "9" *) (* C_S_AXI_CLK_FREQ_HZ = "100000000" *) (* C_S_AXI_DATA_WIDTH = "32" *) 
-(* ORIG_REF_NAME = "v_tc" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module IP_v_tc_0_0_v_tc
    (s_axi_aclk,
     s_axi_aclken,
@@ -17548,7 +17542,7 @@ module IP_v_tc_0_0_v_tc
   (* C_TIMEOUT_MINS = "0" *) 
   (* C_TIME_AXI_WRITE = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111000111111111111100000000000000000000000000000000000000000000000000000011110011110000000000000000000000000111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111" *) 
   (* C_TIME_DBUFFER = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111000111111111111100000000000000000000000000000000000000000000000000000011100000000000000000000000000000000011111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111" *) 
-  (* C_TIME_DEFAULT = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001011010000000001010000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000111111100000000000000000000011001110010000000101110111000000010111011100000010110010110000001010110111000000101000000000000010100000000000000101101100100000010110101000000010100000000000001010000000000000101000000000000010100000000000000101101100100000010110101000000010100000000000001010000000000000010110100000000010100000000" *) 
+  (* C_TIME_DEFAULT = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111100000000000101000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000111111100000000000000000000001100100000000000100000110100000010000011010000001011110000000000101001000000000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000001111000000000001010000000" *) 
   (* C_TIME_NUM_REGS = "30" *) 
   (* C_VERSION_MAJOR = "6" *) 
   (* C_VERSION_MINOR = "2" *) 
@@ -17709,7 +17703,6 @@ module IP_v_tc_0_0_v_tc
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "video_clock_cross" *) 
 module IP_v_tc_0_0_video_clock_cross
    (\data_sync_reg[2][41]_0 ,
     out_data,
@@ -26908,9 +26901,9 @@ endmodule
 (* C_HAS_IRQ = "1" *) (* C_IS_EVAL = "FALSE" *) (* C_REVISION_NUMBER = "11" *) 
 (* C_SRESET_LENGTH = "2" *) (* C_S_AXI_ADDR_WIDTH = "9" *) (* C_S_AXI_DATA_WIDTH = "32" *) 
 (* C_TIMEOUT_HOURS = "8" *) (* C_TIMEOUT_MINS = "0" *) (* C_TIME_AXI_WRITE = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111000111111111111100000000000000000000000000000000000000000000000000000011110011110000000000000000000000000111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111" *) 
-(* C_TIME_DBUFFER = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111000111111111111100000000000000000000000000000000000000000000000000000011100000000000000000000000000000000011111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111" *) (* C_TIME_DEFAULT = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001011010000000001010000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000111111100000000000000000000011001110010000000101110111000000010111011100000010110010110000001010110111000000101000000000000010100000000000000101101100100000010110101000000010100000000000001010000000000000101000000000000010100000000000000101101100100000010110101000000010100000000000001010000000000000010110100000000010100000000" *) (* C_TIME_NUM_REGS = "30" *) 
+(* C_TIME_DBUFFER = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111000111111111111100000000000000000000000000000000000000000000000000000011100000000000000000000000000000000011111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111" *) (* C_TIME_DEFAULT = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111100000000000101000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000111111100000000000000000000001100100000000000100000110100000010000011010000001011110000000000101001000000000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000001111000000000001010000000" *) (* C_TIME_NUM_REGS = "30" *) 
 (* C_VERSION_MAJOR = "6" *) (* C_VERSION_MINOR = "2" *) (* C_VERSION_REVISION = "0" *) 
-(* ORIG_REF_NAME = "video_ctrl" *) (* downgradeipidentifiedwarnings = "yes" *) (* keep_hierarchy = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) (* keep_hierarchy = "yes" *) 
 module IP_v_tc_0_0_video_ctrl
    (aclk,
     aclk_en,
@@ -38309,14 +38302,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[768]),
         .Q(\^time_control_regs[16] [0]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[16][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(p_10_in),
         .Q(\^time_control_regs[16] [10]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[16][11] 
@@ -38373,22 +38366,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(p_1_in),
         .Q(\^time_control_regs[16] [1]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[16][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(p_17_in),
         .Q(\^time_control_regs[16] [20]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[16][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(p_18_in),
         .Q(\^time_control_regs[16] [21]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[16][22] 
@@ -38405,22 +38398,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(p_20_in),
         .Q(\^time_control_regs[16] [23]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[16][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(p_21_in),
         .Q(\^time_control_regs[16] [24]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[16][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(p_22_in),
         .Q(\^time_control_regs[16] [25]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[16][26] 
@@ -38485,30 +38478,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(p_6_in),
         .Q(\^time_control_regs[16] [6]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[16][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(p_7_in),
         .Q(\^time_control_regs[16] [7]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[16][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(p_8_in),
         .Q(\^time_control_regs[16] [8]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[16][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(p_9_in),
         .Q(\^time_control_regs[16] [9]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[18][7] 
@@ -38589,14 +38582,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[896]),
         .Q(\^time_control_regs[20] [0]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[20][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[906]),
         .Q(\^time_control_regs[20] [10]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[20][11] 
@@ -38645,14 +38638,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[915]),
         .Q(\^time_control_regs[20] [19]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[20][1] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[897]),
         .Q(\^time_control_regs[20] [1]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[20][20] 
@@ -38741,14 +38734,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[899]),
         .Q(\^time_control_regs[20] [3]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[20][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[900]),
         .Q(\^time_control_regs[20] [4]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[20][5] 
@@ -38757,14 +38750,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[901]),
         .Q(\^time_control_regs[20] [5]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[20][6] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[902]),
         .Q(\^time_control_regs[20] [6]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[20][7] 
@@ -38773,14 +38766,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[903]),
         .Q(\^time_control_regs[20] [7]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[20][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[904]),
         .Q(\^time_control_regs[20] [8]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[20][9] 
@@ -38789,14 +38782,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[905]),
         .Q(\^time_control_regs[20] [9]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][0] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[928]),
         .Q(\^time_control_regs[21] [0]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][10] 
@@ -38821,22 +38814,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[940]),
         .Q(\^time_control_regs[21] [12]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][16] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[944]),
         .Q(\^time_control_regs[21] [16]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[945]),
         .Q(\^time_control_regs[21] [17]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][18] 
@@ -38853,14 +38846,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[947]),
         .Q(\^time_control_regs[21] [19]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][1] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[929]),
         .Q(\^time_control_regs[21] [1]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][20] 
@@ -38869,30 +38862,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[948]),
         .Q(\^time_control_regs[21] [20]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[949]),
         .Q(\^time_control_regs[21] [21]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][22] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[950]),
         .Q(\^time_control_regs[21] [22]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][23] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[951]),
         .Q(\^time_control_regs[21] [23]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][24] 
@@ -38957,30 +38950,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[932]),
         .Q(\^time_control_regs[21] [4]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[933]),
         .Q(\^time_control_regs[21] [5]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][6] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[934]),
         .Q(\^time_control_regs[21] [6]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[935]),
         .Q(\^time_control_regs[21] [7]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[21][8] 
@@ -39005,14 +38998,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[960]),
         .Q(\^time_control_regs[22] [0]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[970]),
         .Q(\^time_control_regs[22] [10]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][11] 
@@ -39037,22 +39030,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[976]),
         .Q(\^time_control_regs[22] [16]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[977]),
         .Q(\^time_control_regs[22] [17]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][18] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[978]),
         .Q(\^time_control_regs[22] [18]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][19] 
@@ -39061,14 +39054,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[979]),
         .Q(\^time_control_regs[22] [19]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][1] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[961]),
         .Q(\^time_control_regs[22] [1]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][20] 
@@ -39077,22 +39070,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[980]),
         .Q(\^time_control_regs[22] [20]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[981]),
         .Q(\^time_control_regs[22] [21]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][22] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[982]),
         .Q(\^time_control_regs[22] [22]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][23] 
@@ -39101,30 +39094,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[983]),
         .Q(\^time_control_regs[22] [23]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[984]),
         .Q(\^time_control_regs[22] [24]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[985]),
         .Q(\^time_control_regs[22] [25]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][26] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[986]),
         .Q(\^time_control_regs[22] [26]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][27] 
@@ -39141,70 +39134,70 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[988]),
         .Q(\^time_control_regs[22] [28]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][2] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[962]),
         .Q(\^time_control_regs[22] [2]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][3] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[963]),
         .Q(\^time_control_regs[22] [3]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[964]),
         .Q(\^time_control_regs[22] [4]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[965]),
         .Q(\^time_control_regs[22] [5]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][6] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[966]),
         .Q(\^time_control_regs[22] [6]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[967]),
         .Q(\^time_control_regs[22] [7]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[968]),
         .Q(\^time_control_regs[22] [8]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[22][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[969]),
         .Q(\^time_control_regs[22] [9]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[23][0] 
@@ -39213,14 +39206,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[992]),
         .Q(\^time_control_regs[23] [0]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[23][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1002]),
         .Q(\^time_control_regs[23] [10]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[23][11] 
@@ -39301,38 +39294,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1014]),
         .Q(\^time_control_regs[23] [22]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[23][23] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1015]),
         .Q(\^time_control_regs[23] [23]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[23][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1016]),
         .Q(\^time_control_regs[23] [24]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[23][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1017]),
         .Q(\^time_control_regs[23] [25]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[23][26] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1018]),
         .Q(\^time_control_regs[23] [26]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[23][27] 
@@ -39389,38 +39382,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[998]),
         .Q(\^time_control_regs[23] [6]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[23][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[999]),
         .Q(\^time_control_regs[23] [7]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[23][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1000]),
         .Q(\^time_control_regs[23] [8]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[23][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1001]),
         .Q(\^time_control_regs[23] [9]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][0] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1024]),
         .Q(\^time_control_regs[24] [0]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][10] 
@@ -39453,14 +39446,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1040]),
         .Q(\^time_control_regs[24] [16]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1041]),
         .Q(\^time_control_regs[24] [17]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][18] 
@@ -39485,22 +39478,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1025]),
         .Q(\^time_control_regs[24] [1]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1044]),
         .Q(\^time_control_regs[24] [20]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1045]),
         .Q(\^time_control_regs[24] [21]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][22] 
@@ -39517,22 +39510,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1047]),
         .Q(\^time_control_regs[24] [23]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1048]),
         .Q(\^time_control_regs[24] [24]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1049]),
         .Q(\^time_control_regs[24] [25]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][26] 
@@ -39557,38 +39550,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1052]),
         .Q(\^time_control_regs[24] [28]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][2] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1026]),
         .Q(\^time_control_regs[24] [2]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][3] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1027]),
         .Q(\^time_control_regs[24] [3]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1028]),
         .Q(\^time_control_regs[24] [4]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1029]),
         .Q(\^time_control_regs[24] [5]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][6] 
@@ -39605,38 +39598,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1031]),
         .Q(\^time_control_regs[24] [7]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1032]),
         .Q(\^time_control_regs[24] [8]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[24][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1033]),
         .Q(\^time_control_regs[24] [9]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][0] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1056]),
         .Q(\^time_control_regs[25] [0]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1066]),
         .Q(\^time_control_regs[25] [10]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][11] 
@@ -39653,30 +39646,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1068]),
         .Q(\^time_control_regs[25] [12]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][16] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1072]),
         .Q(\^time_control_regs[25] [16]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1073]),
         .Q(\^time_control_regs[25] [17]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][18] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1074]),
         .Q(\^time_control_regs[25] [18]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][19] 
@@ -39685,30 +39678,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1075]),
         .Q(\^time_control_regs[25] [19]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][1] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1057]),
         .Q(\^time_control_regs[25] [1]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1076]),
         .Q(\^time_control_regs[25] [20]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1077]),
         .Q(\^time_control_regs[25] [21]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][22] 
@@ -39717,38 +39710,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1078]),
         .Q(\^time_control_regs[25] [22]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][23] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1079]),
         .Q(\^time_control_regs[25] [23]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1080]),
         .Q(\^time_control_regs[25] [24]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1081]),
         .Q(\^time_control_regs[25] [25]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][26] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1082]),
         .Q(\^time_control_regs[25] [26]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][27] 
@@ -39765,14 +39758,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1084]),
         .Q(\^time_control_regs[25] [28]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][2] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1058]),
         .Q(\^time_control_regs[25] [2]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][3] 
@@ -39781,22 +39774,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1059]),
         .Q(\^time_control_regs[25] [3]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1060]),
         .Q(\^time_control_regs[25] [4]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1061]),
         .Q(\^time_control_regs[25] [5]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][6] 
@@ -39805,30 +39798,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1062]),
         .Q(\^time_control_regs[25] [6]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1063]),
         .Q(\^time_control_regs[25] [7]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1064]),
         .Q(\^time_control_regs[25] [8]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[25][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1065]),
         .Q(\^time_control_regs[25] [9]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[26][0] 
@@ -39837,14 +39830,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1088]),
         .Q(\^time_control_regs[26] [0]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[26][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1098]),
         .Q(\^time_control_regs[26] [10]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[26][11] 
@@ -39925,38 +39918,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1110]),
         .Q(\^time_control_regs[26] [22]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[26][23] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1111]),
         .Q(\^time_control_regs[26] [23]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[26][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1112]),
         .Q(\^time_control_regs[26] [24]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[26][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1113]),
         .Q(\^time_control_regs[26] [25]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[26][26] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1114]),
         .Q(\^time_control_regs[26] [26]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[26][27] 
@@ -40013,38 +40006,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1094]),
         .Q(\^time_control_regs[26] [6]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[26][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1095]),
         .Q(\^time_control_regs[26] [7]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[26][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1096]),
         .Q(\^time_control_regs[26] [8]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[26][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1097]),
         .Q(\^time_control_regs[26] [9]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][0] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1120]),
         .Q(\^time_control_regs[27] [0]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][10] 
@@ -40077,14 +40070,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1136]),
         .Q(\^time_control_regs[27] [16]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1137]),
         .Q(\^time_control_regs[27] [17]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][18] 
@@ -40109,22 +40102,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1121]),
         .Q(\^time_control_regs[27] [1]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1140]),
         .Q(\^time_control_regs[27] [20]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1141]),
         .Q(\^time_control_regs[27] [21]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][22] 
@@ -40141,22 +40134,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1143]),
         .Q(\^time_control_regs[27] [23]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1144]),
         .Q(\^time_control_regs[27] [24]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1145]),
         .Q(\^time_control_regs[27] [25]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][26] 
@@ -40181,38 +40174,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1148]),
         .Q(\^time_control_regs[27] [28]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][2] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1122]),
         .Q(\^time_control_regs[27] [2]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][3] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1123]),
         .Q(\^time_control_regs[27] [3]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1124]),
         .Q(\^time_control_regs[27] [4]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1125]),
         .Q(\^time_control_regs[27] [5]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][6] 
@@ -40229,38 +40222,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1127]),
         .Q(\^time_control_regs[27] [7]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1128]),
         .Q(\^time_control_regs[27] [8]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[27][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1129]),
         .Q(\^time_control_regs[27] [9]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][0] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1152]),
         .Q(\^time_control_regs[28] [0]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1162]),
         .Q(\^time_control_regs[28] [10]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][11] 
@@ -40277,30 +40270,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1164]),
         .Q(\^time_control_regs[28] [12]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][16] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1168]),
         .Q(\^time_control_regs[28] [16]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1169]),
         .Q(\^time_control_regs[28] [17]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][18] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1170]),
         .Q(\^time_control_regs[28] [18]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][19] 
@@ -40309,30 +40302,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1171]),
         .Q(\^time_control_regs[28] [19]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][1] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1153]),
         .Q(\^time_control_regs[28] [1]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1172]),
         .Q(\^time_control_regs[28] [20]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1173]),
         .Q(\^time_control_regs[28] [21]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][22] 
@@ -40341,38 +40334,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1174]),
         .Q(\^time_control_regs[28] [22]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][23] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1175]),
         .Q(\^time_control_regs[28] [23]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1176]),
         .Q(\^time_control_regs[28] [24]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1177]),
         .Q(\^time_control_regs[28] [25]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][26] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1178]),
         .Q(\^time_control_regs[28] [26]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][27] 
@@ -40389,14 +40382,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1180]),
         .Q(\^time_control_regs[28] [28]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][2] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1154]),
         .Q(\^time_control_regs[28] [2]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][3] 
@@ -40405,22 +40398,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1155]),
         .Q(\^time_control_regs[28] [3]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1156]),
         .Q(\^time_control_regs[28] [4]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1157]),
         .Q(\^time_control_regs[28] [5]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][6] 
@@ -40429,30 +40422,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1158]),
         .Q(\^time_control_regs[28] [6]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1159]),
         .Q(\^time_control_regs[28] [7]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1160]),
         .Q(\^time_control_regs[28] [8]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[28][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1161]),
         .Q(\^time_control_regs[28] [9]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][0] 
@@ -40461,14 +40454,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1184]),
         .Q(\^time_control_regs[29] [0]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1194]),
         .Q(\^time_control_regs[29] [10]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][11] 
@@ -40525,22 +40518,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1185]),
         .Q(\^time_control_regs[29] [1]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1204]),
         .Q(\^time_control_regs[29] [20]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1205]),
         .Q(\^time_control_regs[29] [21]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][22] 
@@ -40557,22 +40550,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1207]),
         .Q(\^time_control_regs[29] [23]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1208]),
         .Q(\^time_control_regs[29] [24]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1209]),
         .Q(\^time_control_regs[29] [25]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][26] 
@@ -40637,30 +40630,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(genr_regs[1190]),
         .Q(\^time_control_regs[29] [6]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1191]),
         .Q(\^time_control_regs[29] [7]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1192]),
         .Q(\^time_control_regs[29] [8]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs2_int_reg[29][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs2_int[16] ),
         .D(genr_regs[1193]),
         .Q(\^time_control_regs[29] [9]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][0] 
@@ -40669,14 +40662,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[0]),
         .Q(genr_regs[768]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[16] ),
         .D(ipif_data_out[10]),
         .Q(p_10_in),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][11] 
@@ -40733,22 +40726,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[1]),
         .Q(p_1_in),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[16] ),
         .D(ipif_data_out[20]),
         .Q(p_17_in),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[16] ),
         .D(ipif_data_out[21]),
         .Q(p_18_in),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][22] 
@@ -40765,22 +40758,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[23]),
         .Q(p_20_in),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[16] ),
         .D(ipif_data_out[24]),
         .Q(p_21_in),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[16] ),
         .D(ipif_data_out[25]),
         .Q(p_22_in),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][26] 
@@ -40845,30 +40838,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[6]),
         .Q(p_6_in),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[16] ),
         .D(ipif_data_out[7]),
         .Q(p_7_in),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[16] ),
         .D(ipif_data_out[8]),
         .Q(p_8_in),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[16][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[16] ),
         .D(ipif_data_out[9]),
         .Q(p_9_in),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[18][0] 
@@ -40997,14 +40990,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[0]),
         .Q(genr_regs[896]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[20][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[20] ),
         .D(ipif_data_out[10]),
         .Q(genr_regs[906]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[20][11] 
@@ -41053,14 +41046,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[19]),
         .Q(genr_regs[915]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[20][1] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[20] ),
         .D(ipif_data_out[1]),
         .Q(genr_regs[897]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[20][20] 
@@ -41149,14 +41142,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[3]),
         .Q(genr_regs[899]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[20][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[20] ),
         .D(ipif_data_out[4]),
         .Q(genr_regs[900]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[20][5] 
@@ -41165,14 +41158,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[5]),
         .Q(genr_regs[901]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[20][6] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[20] ),
         .D(ipif_data_out[6]),
         .Q(genr_regs[902]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[20][7] 
@@ -41181,14 +41174,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[7]),
         .Q(genr_regs[903]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[20][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[20] ),
         .D(ipif_data_out[8]),
         .Q(genr_regs[904]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[20][9] 
@@ -41197,14 +41190,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[9]),
         .Q(genr_regs[905]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][0] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[21] ),
         .D(ipif_data_out[0]),
         .Q(genr_regs[928]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][10] 
@@ -41229,22 +41222,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[12]),
         .Q(genr_regs[940]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][16] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[21] ),
         .D(ipif_data_out[16]),
         .Q(genr_regs[944]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[21] ),
         .D(ipif_data_out[17]),
         .Q(genr_regs[945]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][18] 
@@ -41261,14 +41254,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[19]),
         .Q(genr_regs[947]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][1] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[21] ),
         .D(ipif_data_out[1]),
         .Q(genr_regs[929]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][20] 
@@ -41277,30 +41270,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[20]),
         .Q(genr_regs[948]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[21] ),
         .D(ipif_data_out[21]),
         .Q(genr_regs[949]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][22] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[21] ),
         .D(ipif_data_out[22]),
         .Q(genr_regs[950]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][23] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[21] ),
         .D(ipif_data_out[23]),
         .Q(genr_regs[951]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][24] 
@@ -41365,30 +41358,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[4]),
         .Q(genr_regs[932]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[21] ),
         .D(ipif_data_out[5]),
         .Q(genr_regs[933]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][6] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[21] ),
         .D(ipif_data_out[6]),
         .Q(genr_regs[934]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[21] ),
         .D(ipif_data_out[7]),
         .Q(genr_regs[935]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[21][8] 
@@ -41413,14 +41406,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[0]),
         .Q(genr_regs[960]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[10]),
         .Q(genr_regs[970]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][11] 
@@ -41445,22 +41438,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[16]),
         .Q(genr_regs[976]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[17]),
         .Q(genr_regs[977]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][18] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[18]),
         .Q(genr_regs[978]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][19] 
@@ -41469,14 +41462,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[19]),
         .Q(genr_regs[979]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][1] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[1]),
         .Q(genr_regs[961]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][20] 
@@ -41485,22 +41478,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[20]),
         .Q(genr_regs[980]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[21]),
         .Q(genr_regs[981]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][22] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[22]),
         .Q(genr_regs[982]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][23] 
@@ -41509,30 +41502,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[23]),
         .Q(genr_regs[983]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[24]),
         .Q(genr_regs[984]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[25]),
         .Q(genr_regs[985]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][26] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[26]),
         .Q(genr_regs[986]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][27] 
@@ -41549,70 +41542,70 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[28]),
         .Q(genr_regs[988]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][2] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[2]),
         .Q(genr_regs[962]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][3] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[3]),
         .Q(genr_regs[963]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[4]),
         .Q(genr_regs[964]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[5]),
         .Q(genr_regs[965]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][6] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[6]),
         .Q(genr_regs[966]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[7]),
         .Q(genr_regs[967]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[8]),
         .Q(genr_regs[968]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[22][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[22] ),
         .D(ipif_data_out[9]),
         .Q(genr_regs[969]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[23][0] 
@@ -41621,14 +41614,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[0]),
         .Q(genr_regs[992]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[23][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[23] ),
         .D(ipif_data_out[10]),
         .Q(genr_regs[1002]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[23][11] 
@@ -41709,38 +41702,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[22]),
         .Q(genr_regs[1014]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[23][23] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[23] ),
         .D(ipif_data_out[23]),
         .Q(genr_regs[1015]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[23][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[23] ),
         .D(ipif_data_out[24]),
         .Q(genr_regs[1016]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[23][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[23] ),
         .D(ipif_data_out[25]),
         .Q(genr_regs[1017]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[23][26] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[23] ),
         .D(ipif_data_out[26]),
         .Q(genr_regs[1018]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[23][27] 
@@ -41797,38 +41790,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[6]),
         .Q(genr_regs[998]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[23][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[23] ),
         .D(ipif_data_out[7]),
         .Q(genr_regs[999]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[23][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[23] ),
         .D(ipif_data_out[8]),
         .Q(genr_regs[1000]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[23][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[23] ),
         .D(ipif_data_out[9]),
         .Q(genr_regs[1001]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][0] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[0]),
         .Q(genr_regs[1024]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][10] 
@@ -41861,14 +41854,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[16]),
         .Q(genr_regs[1040]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[17]),
         .Q(genr_regs[1041]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][18] 
@@ -41893,22 +41886,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[1]),
         .Q(genr_regs[1025]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[20]),
         .Q(genr_regs[1044]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[21]),
         .Q(genr_regs[1045]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][22] 
@@ -41925,22 +41918,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[23]),
         .Q(genr_regs[1047]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[24]),
         .Q(genr_regs[1048]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[25]),
         .Q(genr_regs[1049]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][26] 
@@ -41965,38 +41958,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[28]),
         .Q(genr_regs[1052]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][2] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[2]),
         .Q(genr_regs[1026]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][3] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[3]),
         .Q(genr_regs[1027]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[4]),
         .Q(genr_regs[1028]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[5]),
         .Q(genr_regs[1029]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][6] 
@@ -42013,38 +42006,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[7]),
         .Q(genr_regs[1031]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[8]),
         .Q(genr_regs[1032]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[24][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[24] ),
         .D(ipif_data_out[9]),
         .Q(genr_regs[1033]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][0] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[0]),
         .Q(genr_regs[1056]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[10]),
         .Q(genr_regs[1066]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][11] 
@@ -42061,30 +42054,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[12]),
         .Q(genr_regs[1068]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][16] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[16]),
         .Q(genr_regs[1072]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[17]),
         .Q(genr_regs[1073]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][18] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[18]),
         .Q(genr_regs[1074]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][19] 
@@ -42093,30 +42086,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[19]),
         .Q(genr_regs[1075]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][1] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[1]),
         .Q(genr_regs[1057]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[20]),
         .Q(genr_regs[1076]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[21]),
         .Q(genr_regs[1077]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][22] 
@@ -42125,38 +42118,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[22]),
         .Q(genr_regs[1078]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][23] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[23]),
         .Q(genr_regs[1079]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[24]),
         .Q(genr_regs[1080]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[25]),
         .Q(genr_regs[1081]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][26] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[26]),
         .Q(genr_regs[1082]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][27] 
@@ -42173,14 +42166,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[28]),
         .Q(genr_regs[1084]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][2] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[2]),
         .Q(genr_regs[1058]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][3] 
@@ -42189,22 +42182,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[3]),
         .Q(genr_regs[1059]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[4]),
         .Q(genr_regs[1060]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[5]),
         .Q(genr_regs[1061]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][6] 
@@ -42213,30 +42206,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[6]),
         .Q(genr_regs[1062]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[7]),
         .Q(genr_regs[1063]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[8]),
         .Q(genr_regs[1064]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[25][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[25] ),
         .D(ipif_data_out[9]),
         .Q(genr_regs[1065]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[26][0] 
@@ -42245,14 +42238,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[0]),
         .Q(genr_regs[1088]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[26][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[26] ),
         .D(ipif_data_out[10]),
         .Q(genr_regs[1098]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[26][11] 
@@ -42333,38 +42326,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[22]),
         .Q(genr_regs[1110]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[26][23] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[26] ),
         .D(ipif_data_out[23]),
         .Q(genr_regs[1111]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[26][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[26] ),
         .D(ipif_data_out[24]),
         .Q(genr_regs[1112]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[26][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[26] ),
         .D(ipif_data_out[25]),
         .Q(genr_regs[1113]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[26][26] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[26] ),
         .D(ipif_data_out[26]),
         .Q(genr_regs[1114]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[26][27] 
@@ -42421,38 +42414,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[6]),
         .Q(genr_regs[1094]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[26][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[26] ),
         .D(ipif_data_out[7]),
         .Q(genr_regs[1095]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[26][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[26] ),
         .D(ipif_data_out[8]),
         .Q(genr_regs[1096]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[26][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[26] ),
         .D(ipif_data_out[9]),
         .Q(genr_regs[1097]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][0] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[0]),
         .Q(genr_regs[1120]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][10] 
@@ -42485,14 +42478,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[16]),
         .Q(genr_regs[1136]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[17]),
         .Q(genr_regs[1137]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][18] 
@@ -42517,22 +42510,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[1]),
         .Q(genr_regs[1121]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[20]),
         .Q(genr_regs[1140]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[21]),
         .Q(genr_regs[1141]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][22] 
@@ -42549,22 +42542,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[23]),
         .Q(genr_regs[1143]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[24]),
         .Q(genr_regs[1144]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[25]),
         .Q(genr_regs[1145]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][26] 
@@ -42589,38 +42582,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[28]),
         .Q(genr_regs[1148]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][2] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[2]),
         .Q(genr_regs[1122]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][3] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[3]),
         .Q(genr_regs[1123]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[4]),
         .Q(genr_regs[1124]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[5]),
         .Q(genr_regs[1125]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][6] 
@@ -42637,38 +42630,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[7]),
         .Q(genr_regs[1127]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[8]),
         .Q(genr_regs[1128]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[27][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[27] ),
         .D(ipif_data_out[9]),
         .Q(genr_regs[1129]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][0] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[0]),
         .Q(genr_regs[1152]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[10]),
         .Q(genr_regs[1162]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][11] 
@@ -42685,30 +42678,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[12]),
         .Q(genr_regs[1164]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][16] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[16]),
         .Q(genr_regs[1168]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][17] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[17]),
         .Q(genr_regs[1169]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][18] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[18]),
         .Q(genr_regs[1170]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][19] 
@@ -42717,30 +42710,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[19]),
         .Q(genr_regs[1171]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][1] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[1]),
         .Q(genr_regs[1153]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[20]),
         .Q(genr_regs[1172]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[21]),
         .Q(genr_regs[1173]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][22] 
@@ -42749,38 +42742,38 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[22]),
         .Q(genr_regs[1174]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][23] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[23]),
         .Q(genr_regs[1175]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[24]),
         .Q(genr_regs[1176]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[25]),
         .Q(genr_regs[1177]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][26] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[26]),
         .Q(genr_regs[1178]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][27] 
@@ -42797,14 +42790,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[28]),
         .Q(genr_regs[1180]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][2] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[2]),
         .Q(genr_regs[1154]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][3] 
@@ -42813,22 +42806,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[3]),
         .Q(genr_regs[1155]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][4] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[4]),
         .Q(genr_regs[1156]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][5] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[5]),
         .Q(genr_regs[1157]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][6] 
@@ -42837,30 +42830,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[6]),
         .Q(genr_regs[1158]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[7]),
         .Q(genr_regs[1159]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[8]),
         .Q(genr_regs[1160]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[28][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[28] ),
         .D(ipif_data_out[9]),
         .Q(genr_regs[1161]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][0] 
@@ -42869,14 +42862,14 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[0]),
         .Q(genr_regs[1184]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][10] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[29] ),
         .D(ipif_data_out[10]),
         .Q(genr_regs[1194]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][11] 
@@ -42933,22 +42926,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[1]),
         .Q(genr_regs[1185]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][20] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[29] ),
         .D(ipif_data_out[20]),
         .Q(genr_regs[1204]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][21] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[29] ),
         .D(ipif_data_out[21]),
         .Q(genr_regs[1205]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][22] 
@@ -42965,22 +42958,22 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[23]),
         .Q(genr_regs[1207]),
         .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][24] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[29] ),
         .D(ipif_data_out[24]),
         .Q(genr_regs[1208]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][25] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[29] ),
         .D(ipif_data_out[25]),
         .Q(genr_regs[1209]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][26] 
@@ -43045,30 +43038,30 @@ module IP_v_tc_0_0_video_ctrl
         .D(ipif_data_out[6]),
         .Q(genr_regs[1190]),
         .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][7] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[29] ),
         .D(ipif_data_out[7]),
         .Q(genr_regs[1191]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][8] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[29] ),
         .D(ipif_data_out[8]),
         .Q(genr_regs[1192]),
-        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
+        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \AXI4_LITE_INTERFACE.time_control_regs_int_reg[29][9] 
        (.C(vid_aclk),
         .CE(\time_control_regs_int[29] ),
         .D(ipif_data_out[9]),
         .Q(genr_regs[1193]),
-        .R(\GEN_HAS_IRQ.irq_i_1_n_0 ));
+        .S(\GEN_HAS_IRQ.irq_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \AXI4_LITE_INTERFACE.write_ack_d1_reg 

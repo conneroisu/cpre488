@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Tue Feb  4 17:50:13 2025
+-- Date        : Tue Feb  4 20:35:25 2025
 -- Host        : DESKTOP-EGO35HT running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               e:/ISU/cpre488/mps/MP-0/MP-0/MP-0.srcs/sources_1/bd/IP/ip/IP_v_axi4s_vid_out_0_1/IP_v_axi4s_vid_out_0_1_sim_netlist.vhdl
@@ -77,205 +77,7 @@ fivid_reset_full_frame_reg: unisim.vcomponents.FDRE
       Q => \^fivid_reset_full_frame\,
       R => '0'
     );
-\in_data_mux_reg[10]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(6),
-      Q => vid_data(6),
-      R => SR(0)
-    );
-\in_data_mux_reg[11]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(7),
-      Q => vid_data(7),
-      R => SR(0)
-    );
-\in_data_mux_reg[16]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(8),
-      Q => vid_data(8),
-      R => SR(0)
-    );
-\in_data_mux_reg[17]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(9),
-      Q => vid_data(9),
-      R => SR(0)
-    );
-\in_data_mux_reg[18]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(10),
-      Q => vid_data(10),
-      R => SR(0)
-    );
-\in_data_mux_reg[19]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(11),
-      Q => vid_data(11),
-      R => SR(0)
-    );
-\in_data_mux_reg[20]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(12),
-      Q => vid_data(12),
-      R => SR(0)
-    );
-\in_data_mux_reg[21]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(13),
-      Q => vid_data(13),
-      R => SR(0)
-    );
-\in_data_mux_reg[22]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(14),
-      Q => vid_data(14),
-      R => SR(0)
-    );
-\in_data_mux_reg[23]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(15),
-      Q => vid_data(15),
-      R => SR(0)
-    );
-\in_data_mux_reg[28]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(16),
-      Q => vid_data(16),
-      R => SR(0)
-    );
-\in_data_mux_reg[29]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(17),
-      Q => vid_data(17),
-      R => SR(0)
-    );
-\in_data_mux_reg[30]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(18),
-      Q => vid_data(18),
-      R => SR(0)
-    );
-\in_data_mux_reg[31]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(19),
-      Q => vid_data(19),
-      R => SR(0)
-    );
-\in_data_mux_reg[32]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(20),
-      Q => vid_data(20),
-      R => SR(0)
-    );
-\in_data_mux_reg[33]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(21),
-      Q => vid_data(21),
-      R => SR(0)
-    );
-\in_data_mux_reg[34]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(22),
-      Q => vid_data(22),
-      R => SR(0)
-    );
-\in_data_mux_reg[35]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => E(0),
-      D => D(23),
-      Q => vid_data(23),
-      R => SR(0)
-    );
-\in_data_mux_reg[4]\: unisim.vcomponents.FDRE
+\in_data_mux_reg[0]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -286,7 +88,117 @@ fivid_reset_full_frame_reg: unisim.vcomponents.FDRE
       Q => vid_data(0),
       R => SR(0)
     );
-\in_data_mux_reg[5]\: unisim.vcomponents.FDRE
+\in_data_mux_reg[10]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(10),
+      Q => vid_data(10),
+      R => SR(0)
+    );
+\in_data_mux_reg[11]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(11),
+      Q => vid_data(11),
+      R => SR(0)
+    );
+\in_data_mux_reg[12]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(12),
+      Q => vid_data(12),
+      R => SR(0)
+    );
+\in_data_mux_reg[13]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(13),
+      Q => vid_data(13),
+      R => SR(0)
+    );
+\in_data_mux_reg[14]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(14),
+      Q => vid_data(14),
+      R => SR(0)
+    );
+\in_data_mux_reg[15]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(15),
+      Q => vid_data(15),
+      R => SR(0)
+    );
+\in_data_mux_reg[16]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(16),
+      Q => vid_data(16),
+      R => SR(0)
+    );
+\in_data_mux_reg[17]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(17),
+      Q => vid_data(17),
+      R => SR(0)
+    );
+\in_data_mux_reg[18]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(18),
+      Q => vid_data(18),
+      R => SR(0)
+    );
+\in_data_mux_reg[19]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(19),
+      Q => vid_data(19),
+      R => SR(0)
+    );
+\in_data_mux_reg[1]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -297,7 +209,51 @@ fivid_reset_full_frame_reg: unisim.vcomponents.FDRE
       Q => vid_data(1),
       R => SR(0)
     );
-\in_data_mux_reg[6]\: unisim.vcomponents.FDRE
+\in_data_mux_reg[20]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(20),
+      Q => vid_data(20),
+      R => SR(0)
+    );
+\in_data_mux_reg[21]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(21),
+      Q => vid_data(21),
+      R => SR(0)
+    );
+\in_data_mux_reg[22]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(22),
+      Q => vid_data(22),
+      R => SR(0)
+    );
+\in_data_mux_reg[23]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(23),
+      Q => vid_data(23),
+      R => SR(0)
+    );
+\in_data_mux_reg[2]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -308,7 +264,7 @@ fivid_reset_full_frame_reg: unisim.vcomponents.FDRE
       Q => vid_data(2),
       R => SR(0)
     );
-\in_data_mux_reg[7]\: unisim.vcomponents.FDRE
+\in_data_mux_reg[3]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -319,7 +275,7 @@ fivid_reset_full_frame_reg: unisim.vcomponents.FDRE
       Q => vid_data(3),
       R => SR(0)
     );
-\in_data_mux_reg[8]\: unisim.vcomponents.FDRE
+\in_data_mux_reg[4]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -330,7 +286,7 @@ fivid_reset_full_frame_reg: unisim.vcomponents.FDRE
       Q => vid_data(4),
       R => SR(0)
     );
-\in_data_mux_reg[9]\: unisim.vcomponents.FDRE
+\in_data_mux_reg[5]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -339,6 +295,50 @@ fivid_reset_full_frame_reg: unisim.vcomponents.FDRE
       CE => E(0),
       D => D(5),
       Q => vid_data(5),
+      R => SR(0)
+    );
+\in_data_mux_reg[6]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(6),
+      Q => vid_data(6),
+      R => SR(0)
+    );
+\in_data_mux_reg[7]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(7),
+      Q => vid_data(7),
+      R => SR(0)
+    );
+\in_data_mux_reg[8]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(8),
+      Q => vid_data(8),
+      R => SR(0)
+    );
+\in_data_mux_reg[9]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => aclk,
+      CE => E(0),
+      D => D(9),
+      Q => vid_data(9),
       R => SR(0)
     );
 in_de_mux_reg: unisim.vcomponents.FDRE
@@ -2712,7 +2712,7 @@ fifo_sof_dly_reg: unisim.vcomponents.FDRE
       Q => \^fifo_sof_dly\,
       R => \^sr\(0)
     );
-\in_data_mux[35]_i_1\: unisim.vcomponents.LUT6
+\in_data_mux[23]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"CCCDCDC500000000"
     )
@@ -9208,7 +9208,7 @@ entity IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 is
     aclk : in STD_LOGIC;
     aclken : in STD_LOGIC;
     aresetn : in STD_LOGIC;
-    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 47 downto 0 );
     s_axis_video_tvalid : in STD_LOGIC;
     s_axis_video_tready : out STD_LOGIC;
     s_axis_video_tuser : in STD_LOGIC;
@@ -9223,7 +9223,7 @@ entity IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 is
     vid_vblank : out STD_LOGIC;
     vid_hblank : out STD_LOGIC;
     vid_field_id : out STD_LOGIC;
-    vid_data : out STD_LOGIC_VECTOR ( 35 downto 0 );
+    vid_data : out STD_LOGIC_VECTOR ( 23 downto 0 );
     vtg_vsync : in STD_LOGIC;
     vtg_hsync : in STD_LOGIC;
     vtg_vblank : in STD_LOGIC;
@@ -9256,17 +9256,17 @@ entity IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 is
   attribute C_INCLUDE_PIXEL_REPEAT : integer;
   attribute C_INCLUDE_PIXEL_REPEAT of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 0;
   attribute C_NATIVE_COMPONENT_WIDTH : integer;
-  attribute C_NATIVE_COMPONENT_WIDTH of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 12;
+  attribute C_NATIVE_COMPONENT_WIDTH of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 8;
   attribute C_NATIVE_DATA_WIDTH : integer;
-  attribute C_NATIVE_DATA_WIDTH of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 36;
+  attribute C_NATIVE_DATA_WIDTH of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 24;
   attribute C_PIXELS_PER_CLOCK : integer;
   attribute C_PIXELS_PER_CLOCK of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 1;
   attribute C_SYNC_LOCK_THRESHOLD : integer;
   attribute C_SYNC_LOCK_THRESHOLD of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 4;
   attribute C_S_AXIS_COMPONENT_WIDTH : integer;
-  attribute C_S_AXIS_COMPONENT_WIDTH of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 8;
+  attribute C_S_AXIS_COMPONENT_WIDTH of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 16;
   attribute C_S_AXIS_TDATA_WIDTH : integer;
-  attribute C_S_AXIS_TDATA_WIDTH of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 24;
+  attribute C_S_AXIS_TDATA_WIDTH of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 48;
   attribute C_VTG_MASTER_SLAVE : integer;
   attribute C_VTG_MASTER_SLAVE of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 : entity is 0;
   attribute DowngradeIPIdentifiedWarnings : string;
@@ -9280,7 +9280,7 @@ architecture STRUCTURE of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 is
   signal COUPLER_INST_n_41 : STD_LOGIC;
   signal COUPLER_INST_n_43 : STD_LOGIC;
   signal SYNC_INST_n_6 : STD_LOGIC;
-  signal fifo_data : STD_LOGIC_VECTOR ( 35 downto 4 );
+  signal fifo_data : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal fifo_eol : STD_LOGIC;
   signal fifo_eol_dly : STD_LOGIC;
   signal fifo_eol_re : STD_LOGIC;
@@ -9293,7 +9293,6 @@ architecture STRUCTURE of IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 is
   signal \^locked\ : STD_LOGIC;
   signal rd_en_i : STD_LOGIC;
   signal \^status\ : STD_LOGIC_VECTOR ( 25 downto 0 );
-  signal \^vid_data\ : STD_LOGIC_VECTOR ( 35 downto 4 );
   signal vid_reset : STD_LOGIC;
 begin
   locked <= \^locked\;
@@ -9306,21 +9305,6 @@ begin
   status(25 downto 16) <= \^status\(25 downto 16);
   status(15) <= \<const0>\;
   status(14 downto 0) <= \^status\(14 downto 0);
-  vid_data(35 downto 28) <= \^vid_data\(35 downto 28);
-  vid_data(27) <= \<const0>\;
-  vid_data(26) <= \<const0>\;
-  vid_data(25) <= \<const0>\;
-  vid_data(24) <= \<const0>\;
-  vid_data(23 downto 16) <= \^vid_data\(23 downto 16);
-  vid_data(15) <= \<const0>\;
-  vid_data(14) <= \<const0>\;
-  vid_data(13) <= \<const0>\;
-  vid_data(12) <= \<const0>\;
-  vid_data(11 downto 4) <= \^vid_data\(11 downto 4);
-  vid_data(3) <= \<const0>\;
-  vid_data(2) <= \<const0>\;
-  vid_data(1) <= \<const0>\;
-  vid_data(0) <= \<const0>\;
 CDC_SINGLE_LOCKED_INST: entity work.IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_cdc_single
      port map (
       aclk => aclk,
@@ -9340,13 +9324,13 @@ COUPLER_INST: entity work.IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_coupler
       din(26) => fid,
       din(25) => s_axis_video_tuser,
       din(24) => s_axis_video_tlast,
-      din(23 downto 0) => s_axis_video_tdata(23 downto 0),
+      din(23 downto 16) => s_axis_video_tdata(47 downto 40),
+      din(15 downto 8) => s_axis_video_tdata(31 downto 24),
+      din(7 downto 0) => s_axis_video_tdata(15 downto 8),
       dout(26) => fifo_fid,
       dout(25) => fifo_sof,
       dout(24) => fifo_eol,
-      dout(23 downto 16) => fifo_data(35 downto 28),
-      dout(15 downto 8) => fifo_data(23 downto 16),
-      dout(7 downto 0) => fifo_data(11 downto 4),
+      dout(23 downto 0) => fifo_data(23 downto 0),
       fifo_eol_dly => fifo_eol_dly,
       fifo_eol_re => fifo_eol_re,
       fifo_pix_cnt => fifo_pix_cnt,
@@ -9363,9 +9347,7 @@ COUPLER_INST: entity work.IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_coupler
     );
 FORMATTER_INST: entity work.IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_formatter
      port map (
-      D(23 downto 16) => fifo_data(35 downto 28),
-      D(15 downto 8) => fifo_data(23 downto 16),
-      D(7 downto 0) => fifo_data(11 downto 4),
+      D(23 downto 0) => fifo_data(23 downto 0),
       E(0) => rd_en_i,
       SR(0) => in_de_mux0,
       aclk => aclk,
@@ -9373,9 +9355,7 @@ FORMATTER_INST: entity work.IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_forma
       fivid_reset_full_frame => fivid_reset_full_frame,
       src_in => \^locked\,
       vid_active_video => vid_active_video,
-      vid_data(23 downto 16) => \^vid_data\(35 downto 28),
-      vid_data(15 downto 8) => \^vid_data\(23 downto 16),
-      vid_data(7 downto 0) => \^vid_data\(11 downto 4),
+      vid_data(23 downto 0) => vid_data(23 downto 0),
       vid_field_id => vid_field_id,
       vid_hblank => vid_hblank,
       vid_hsync => vid_hsync,
@@ -9430,7 +9410,7 @@ entity IP_v_axi4s_vid_out_0_1 is
     aclk : in STD_LOGIC;
     aclken : in STD_LOGIC;
     aresetn : in STD_LOGIC;
-    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 47 downto 0 );
     s_axis_video_tvalid : in STD_LOGIC;
     s_axis_video_tready : out STD_LOGIC;
     s_axis_video_tuser : in STD_LOGIC;
@@ -9443,7 +9423,7 @@ entity IP_v_axi4s_vid_out_0_1 is
     vid_vblank : out STD_LOGIC;
     vid_hblank : out STD_LOGIC;
     vid_field_id : out STD_LOGIC;
-    vid_data : out STD_LOGIC_VECTOR ( 35 downto 0 );
+    vid_data : out STD_LOGIC_VECTOR ( 23 downto 0 );
     vtg_vsync : in STD_LOGIC;
     vtg_hsync : in STD_LOGIC;
     vtg_vblank : in STD_LOGIC;
@@ -9485,17 +9465,17 @@ architecture STRUCTURE of IP_v_axi4s_vid_out_0_1 is
   attribute C_INCLUDE_PIXEL_REPEAT : integer;
   attribute C_INCLUDE_PIXEL_REPEAT of inst : label is 0;
   attribute C_NATIVE_COMPONENT_WIDTH : integer;
-  attribute C_NATIVE_COMPONENT_WIDTH of inst : label is 12;
+  attribute C_NATIVE_COMPONENT_WIDTH of inst : label is 8;
   attribute C_NATIVE_DATA_WIDTH : integer;
-  attribute C_NATIVE_DATA_WIDTH of inst : label is 36;
+  attribute C_NATIVE_DATA_WIDTH of inst : label is 24;
   attribute C_PIXELS_PER_CLOCK : integer;
   attribute C_PIXELS_PER_CLOCK of inst : label is 1;
   attribute C_SYNC_LOCK_THRESHOLD : integer;
   attribute C_SYNC_LOCK_THRESHOLD of inst : label is 4;
   attribute C_S_AXIS_COMPONENT_WIDTH : integer;
-  attribute C_S_AXIS_COMPONENT_WIDTH of inst : label is 8;
+  attribute C_S_AXIS_COMPONENT_WIDTH of inst : label is 16;
   attribute C_S_AXIS_TDATA_WIDTH : integer;
-  attribute C_S_AXIS_TDATA_WIDTH of inst : label is 24;
+  attribute C_S_AXIS_TDATA_WIDTH of inst : label is 48;
   attribute C_VTG_MASTER_SLAVE : integer;
   attribute C_VTG_MASTER_SLAVE of inst : label is 0;
   attribute DowngradeIPIdentifiedWarnings of inst : label is "yes";
@@ -9508,7 +9488,7 @@ architecture STRUCTURE of IP_v_axi4s_vid_out_0_1 is
   attribute X_INTERFACE_INFO of aresetn : signal is "xilinx.com:signal:reset:1.0 aresetn_intf RST";
   attribute X_INTERFACE_PARAMETER of aresetn : signal is "XIL_INTERFACENAME aresetn_intf, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axis_video_tlast : signal is "xilinx.com:interface:axis:1.0 video_in TLAST";
-  attribute X_INTERFACE_PARAMETER of s_axis_video_tlast : signal is "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of s_axis_video_tlast : signal is "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 6, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axis_video_tready : signal is "xilinx.com:interface:axis:1.0 video_in TREADY";
   attribute X_INTERFACE_INFO of s_axis_video_tuser : signal is "xilinx.com:interface:axis:1.0 video_in TUSER";
   attribute X_INTERFACE_INFO of s_axis_video_tvalid : signal is "xilinx.com:interface:axis:1.0 video_in TVALID";
@@ -9540,7 +9520,7 @@ inst: entity work.IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
       overflow => overflow,
       remap_420_en => '0',
       repeat_en => '0',
-      s_axis_video_tdata(23 downto 0) => s_axis_video_tdata(23 downto 0),
+      s_axis_video_tdata(47 downto 0) => s_axis_video_tdata(47 downto 0),
       s_axis_video_tlast => s_axis_video_tlast,
       s_axis_video_tready => s_axis_video_tready,
       s_axis_video_tuser => s_axis_video_tuser,
@@ -9548,7 +9528,7 @@ inst: entity work.IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
       status(31 downto 0) => status(31 downto 0),
       underflow => underflow,
       vid_active_video => vid_active_video,
-      vid_data(35 downto 0) => vid_data(35 downto 0),
+      vid_data(23 downto 0) => vid_data(23 downto 0),
       vid_field_id => vid_field_id,
       vid_hblank => vid_hblank,
       vid_hsync => vid_hsync,

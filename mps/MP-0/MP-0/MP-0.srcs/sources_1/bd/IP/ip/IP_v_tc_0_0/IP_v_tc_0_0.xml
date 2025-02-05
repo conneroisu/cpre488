@@ -911,7 +911,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9ed972c7</spirit:value>
+            <spirit:value>9:c64f2aca</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -925,11 +925,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Feb 04 23:23:49 UTC 2025</spirit:value>
+            <spirit:value>Wed Feb 05 01:32:06 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9ed972c7</spirit:value>
+            <spirit:value>9:c64f2aca</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -945,11 +945,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Feb 04 23:23:49 UTC 2025</spirit:value>
+            <spirit:value>Wed Feb 05 01:32:06 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9ed972c7</spirit:value>
+            <spirit:value>9:c64f2aca</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -972,7 +972,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8f85443e</spirit:value>
+            <spirit:value>9:3741caec</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -988,11 +988,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Feb 04 23:23:49 UTC 2025</spirit:value>
+            <spirit:value>Wed Feb 05 01:32:06 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8f85443e</spirit:value>
+            <spirit:value>9:3741caec</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1006,11 +1006,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Feb 04 23:26:48 UTC 2025</spirit:value>
+            <spirit:value>Wed Feb 05 01:51:41 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9ed972c7</spirit:value>
+            <spirit:value>9:c64f2aca</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1976,11 +1976,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_HACTIVE_SIZE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_HACTIVE_SIZE">1280</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_HACTIVE_SIZE">640</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_VACTIVE_SIZE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_VACTIVE_SIZE">720</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_VACTIVE_SIZE">480</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_CPARITY</spirit:name>
@@ -2020,71 +2020,71 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_HFRAME_SIZE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_HFRAME_SIZE">1650</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_HFRAME_SIZE">800</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F0_VFRAME_SIZE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VFRAME_SIZE">750</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VFRAME_SIZE">525</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F1_VFRAME_SIZE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VFRAME_SIZE">750</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VFRAME_SIZE">525</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_HSYNC_START</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_HSYNC_START">1390</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_HSYNC_START">656</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_HSYNC_END</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_HSYNC_END">1430</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_HSYNC_END">752</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F0_VBLANK_HSTART</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VBLANK_HSTART">1280</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VBLANK_HSTART">640</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F0_VBLANK_HEND</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VBLANK_HEND">1280</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VBLANK_HEND">640</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F0_VSYNC_VSTART</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VSYNC_VSTART">724</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VSYNC_VSTART">489</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F0_VSYNC_VEND</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VSYNC_VEND">729</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VSYNC_VEND">491</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F0_VSYNC_HSTART</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VSYNC_HSTART">1280</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VSYNC_HSTART">695</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F0_VSYNC_HEND</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VSYNC_HEND">1280</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F0_VSYNC_HEND">695</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F1_VBLANK_HSTART</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VBLANK_HSTART">1280</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VBLANK_HSTART">640</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F1_VBLANK_HEND</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VBLANK_HEND">1280</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VBLANK_HEND">640</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F1_VSYNC_VSTART</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VSYNC_VSTART">724</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VSYNC_VSTART">489</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F1_VSYNC_VEND</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VSYNC_VEND">729</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VSYNC_VEND">491</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F1_VSYNC_HSTART</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VSYNC_HSTART">1280</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VSYNC_HSTART">695</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_GEN_F1_VSYNC_HEND</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VSYNC_HEND">1280</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_GEN_F1_VSYNC_HEND">695</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_FSYNC_HSTART0</spirit:name>
@@ -2564,7 +2564,7 @@
     <spirit:parameter>
       <spirit:name>VIDEO_MODE</spirit:name>
       <spirit:displayName>Generator Video Format</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.VIDEO_MODE" spirit:choiceRef="choice_list_73c0408a" spirit:order="7">720p</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.VIDEO_MODE" spirit:choiceRef="choice_list_73c0408a" spirit:order="7">480p</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -2960,7 +2960,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F0_VSYNC_VSTART</spirit:name>
       <spirit:displayName>Generator Vsync Vertical Start</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VSYNC_VSTART" spirit:order="55" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">724</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VSYNC_VSTART" spirit:order="55" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">489</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -2972,7 +2972,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F1_VSYNC_VSTART</spirit:name>
       <spirit:displayName>Generator Field 1 Vsync Vertical Start</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VSYNC_VSTART" spirit:order="100" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">724</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VSYNC_VSTART" spirit:order="100" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">489</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -2984,7 +2984,7 @@
     <spirit:parameter>
       <spirit:name>GEN_HACTIVE_SIZE</spirit:name>
       <spirit:displayName>Generator Horizontal Active Size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_HACTIVE_SIZE" spirit:order="56" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">1280</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_HACTIVE_SIZE" spirit:order="56" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">640</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -2996,7 +2996,7 @@
     <spirit:parameter>
       <spirit:name>GEN_HSYNC_END</spirit:name>
       <spirit:displayName>Generator Horizontal Sync End</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_HSYNC_END" spirit:order="57" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">1430</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_HSYNC_END" spirit:order="57" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">752</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3008,7 +3008,7 @@
     <spirit:parameter>
       <spirit:name>GEN_HFRAME_SIZE</spirit:name>
       <spirit:displayName>Generaotr Horizontal Frame Size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_HFRAME_SIZE" spirit:order="58" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">1650</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_HFRAME_SIZE" spirit:order="58" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">800</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3020,7 +3020,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F0_VSYNC_HSTART</spirit:name>
       <spirit:displayName>Generator Vsync Horizotnal Start</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VSYNC_HSTART" spirit:order="59" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">640</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VSYNC_HSTART" spirit:order="59" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">695</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3032,7 +3032,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F1_VSYNC_HSTART</spirit:name>
       <spirit:displayName>Generator Field 1 Vsync Horizotnal Start</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VSYNC_HSTART" spirit:order="101" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">695</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VSYNC_HSTART" spirit:order="101" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">695</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3044,7 +3044,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F0_VSYNC_HEND</spirit:name>
       <spirit:displayName>Generator Vsync Horizontal End</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VSYNC_HEND" spirit:order="60" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">695</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VSYNC_HEND" spirit:order="60" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">695</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3056,7 +3056,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F1_VSYNC_HEND</spirit:name>
       <spirit:displayName>Generator Field 1 Vsync Horizontal End</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VSYNC_HEND" spirit:order="102" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">695</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VSYNC_HEND" spirit:order="102" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">695</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3068,7 +3068,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F0_VFRAME_SIZE</spirit:name>
       <spirit:displayName>Generator Vertical Frame Size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VFRAME_SIZE" spirit:order="61" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">750</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VFRAME_SIZE" spirit:order="61" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">525</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3080,7 +3080,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F1_VFRAME_SIZE</spirit:name>
       <spirit:displayName>Generator Field 1 Vertical Frame Size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VFRAME_SIZE" spirit:order="103" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">750</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VFRAME_SIZE" spirit:order="103" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">525</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3092,7 +3092,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F0_VSYNC_VEND</spirit:name>
       <spirit:displayName>Generator Vsync Veritical End</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VSYNC_VEND" spirit:order="62" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">729</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VSYNC_VEND" spirit:order="62" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">491</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3104,7 +3104,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F1_VSYNC_VEND</spirit:name>
       <spirit:displayName>Generator Field 1 Vsync Veritical End</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VSYNC_VEND" spirit:order="104" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">729</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VSYNC_VEND" spirit:order="104" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">491</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3116,7 +3116,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F0_VBLANK_HEND</spirit:name>
       <spirit:displayName>Generator Vblank Horizontal End</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VBLANK_HEND" spirit:order="63" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">640</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VBLANK_HEND" spirit:order="63" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">640</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3128,7 +3128,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F1_VBLANK_HEND</spirit:name>
       <spirit:displayName>Generator Field 1 Vblank Horizontal End</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VBLANK_HEND" spirit:order="105" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">640</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VBLANK_HEND" spirit:order="105" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">640</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3140,7 +3140,7 @@
     <spirit:parameter>
       <spirit:name>GEN_HSYNC_START</spirit:name>
       <spirit:displayName>Generator Hsync Start</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_HSYNC_START" spirit:order="64" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">1390</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_HSYNC_START" spirit:order="64" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">656</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3152,7 +3152,7 @@
     <spirit:parameter>
       <spirit:name>GEN_VACTIVE_SIZE</spirit:name>
       <spirit:displayName>Generator Vertical Active Size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_VACTIVE_SIZE" spirit:order="65" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">720</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_VACTIVE_SIZE" spirit:order="65" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">480</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3164,7 +3164,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F0_VBLANK_HSTART</spirit:name>
       <spirit:displayName>Generator Vblank Horizontal Start</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VBLANK_HSTART" spirit:order="66" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">640</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F0_VBLANK_HSTART" spirit:order="66" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">640</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3176,7 +3176,7 @@
     <spirit:parameter>
       <spirit:name>GEN_F1_VBLANK_HSTART</spirit:name>
       <spirit:displayName>Generator Field 1 Vblank Horizontal Start</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VBLANK_HSTART" spirit:order="106" spirit:minimum="0" spirit:maximum="8191" spirit:rangeType="long">640</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.GEN_F1_VBLANK_HSTART" spirit:order="106" spirit:minimum="0" spirit:maximum="4095" spirit:rangeType="long">640</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3570,6 +3570,19 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_ACLK_INTF.FREQ_TOLERANCE_HZ" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_ACLK_INTF.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_ARESETN_INTF.POLARITY" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_F0_VFRAME_SIZE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_F0_VSYNC_HSTART" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_F0_VSYNC_VEND" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_F0_VSYNC_VSTART" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_F1_VFRAME_SIZE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_F1_VSYNC_VEND" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_F1_VSYNC_VSTART" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_HACTIVE_SIZE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_HFRAME_SIZE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_HSYNC_END" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_HSYNC_START" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.GEN_VACTIVE_SIZE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.VIDEO_MODE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.active_video_detection" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.enable_detection" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.horizontal_blank_detection" xilinx:valueSource="user"/>

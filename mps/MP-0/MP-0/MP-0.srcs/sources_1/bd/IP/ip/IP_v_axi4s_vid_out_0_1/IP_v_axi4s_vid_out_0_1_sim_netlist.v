@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Tue Feb  4 17:50:13 2025
+// Date        : Tue Feb  4 20:35:25 2025
 // Host        : DESKTOP-EGO35HT running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               e:/ISU/cpre488/mps/MP-0/MP-0/MP-0.srcs/sources_1/bd/IP/ip/IP_v_axi4s_vid_out_0_1/IP_v_axi4s_vid_out_0_1_sim_netlist.v
@@ -47,11 +47,11 @@ module IP_v_axi4s_vid_out_0_1
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aclk_intf CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF video_in, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clockenable:1.0 aclken_intf CE" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclken_intf, POLARITY ACTIVE_HIGH" *) input aclken;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 aresetn_intf RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aresetn_intf, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input aresetn;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TDATA" *) input [23:0]s_axis_video_tdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TDATA" *) input [47:0]s_axis_video_tdata;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TVALID" *) input s_axis_video_tvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TREADY" *) output s_axis_video_tready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TUSER" *) input s_axis_video_tuser;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TLAST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) input s_axis_video_tlast;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TLAST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 6, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) input s_axis_video_tlast;
   input fid;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clockenable:1.0 vid_io_out_ce_intf CE" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME vid_io_out_ce_intf, POLARITY ACTIVE_HIGH" *) input vid_io_out_ce;
   (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out ACTIVE_VIDEO" *) output vid_active_video;
@@ -60,7 +60,7 @@ module IP_v_axi4s_vid_out_0_1
   (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out VBLANK" *) output vid_vblank;
   (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out HBLANK" *) output vid_hblank;
   (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out FIELD" *) output vid_field_id;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out DATA" *) output [35:0]vid_data;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out DATA" *) output [23:0]vid_data;
   (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in VSYNC" *) input vtg_vsync;
   (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in HSYNC" *) input vtg_hsync;
   (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in VBLANK" *) input vtg_vblank;
@@ -81,7 +81,7 @@ module IP_v_axi4s_vid_out_0_1
   wire [10:0]fifo_read_level;
   wire locked;
   wire overflow;
-  wire [23:0]s_axis_video_tdata;
+  wire [47:0]s_axis_video_tdata;
   wire s_axis_video_tlast;
   wire s_axis_video_tready;
   wire s_axis_video_tuser;
@@ -89,7 +89,7 @@ module IP_v_axi4s_vid_out_0_1
   wire [31:0]status;
   wire underflow;
   wire vid_active_video;
-  wire [35:0]vid_data;
+  wire [23:0]vid_data;
   wire vid_field_id;
   wire vid_hblank;
   wire vid_hsync;
@@ -112,12 +112,12 @@ module IP_v_axi4s_vid_out_0_1
   (* C_HYSTERESIS_LEVEL = "12" *) 
   (* C_INCLUDE_PIXEL_REMAP_420 = "0" *) 
   (* C_INCLUDE_PIXEL_REPEAT = "0" *) 
-  (* C_NATIVE_COMPONENT_WIDTH = "12" *) 
-  (* C_NATIVE_DATA_WIDTH = "36" *) 
+  (* C_NATIVE_COMPONENT_WIDTH = "8" *) 
+  (* C_NATIVE_DATA_WIDTH = "24" *) 
   (* C_PIXELS_PER_CLOCK = "1" *) 
   (* C_SYNC_LOCK_THRESHOLD = "4" *) 
-  (* C_S_AXIS_COMPONENT_WIDTH = "8" *) 
-  (* C_S_AXIS_TDATA_WIDTH = "24" *) 
+  (* C_S_AXIS_COMPONENT_WIDTH = "16" *) 
+  (* C_S_AXIS_TDATA_WIDTH = "48" *) 
   (* C_VTG_MASTER_SLAVE = "0" *) 
   (* DowngradeIPIdentifiedWarnings = "yes" *) 
   IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10 inst
@@ -158,9 +158,9 @@ endmodule
 
 (* C_ADDR_WIDTH = "10" *) (* C_ADDR_WIDTH_PIXEL_REMAP_420 = "10" *) (* C_COMPONENTS_PER_PIXEL = "3" *) 
 (* C_FAMILY = "zynq" *) (* C_HAS_ASYNC_CLK = "0" *) (* C_HYSTERESIS_LEVEL = "12" *) 
-(* C_INCLUDE_PIXEL_REMAP_420 = "0" *) (* C_INCLUDE_PIXEL_REPEAT = "0" *) (* C_NATIVE_COMPONENT_WIDTH = "12" *) 
-(* C_NATIVE_DATA_WIDTH = "36" *) (* C_PIXELS_PER_CLOCK = "1" *) (* C_SYNC_LOCK_THRESHOLD = "4" *) 
-(* C_S_AXIS_COMPONENT_WIDTH = "8" *) (* C_S_AXIS_TDATA_WIDTH = "24" *) (* C_VTG_MASTER_SLAVE = "0" *) 
+(* C_INCLUDE_PIXEL_REMAP_420 = "0" *) (* C_INCLUDE_PIXEL_REPEAT = "0" *) (* C_NATIVE_COMPONENT_WIDTH = "8" *) 
+(* C_NATIVE_DATA_WIDTH = "24" *) (* C_PIXELS_PER_CLOCK = "1" *) (* C_SYNC_LOCK_THRESHOLD = "4" *) 
+(* C_S_AXIS_COMPONENT_WIDTH = "16" *) (* C_S_AXIS_TDATA_WIDTH = "48" *) (* C_VTG_MASTER_SLAVE = "0" *) 
 (* DowngradeIPIdentifiedWarnings = "yes" *) (* ORIG_REF_NAME = "v_axi4s_vid_out_v4_0_10" *) 
 module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
    (aclk,
@@ -199,7 +199,7 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
   input aclk;
   input aclken;
   input aresetn;
-  input [23:0]s_axis_video_tdata;
+  input [47:0]s_axis_video_tdata;
   input s_axis_video_tvalid;
   output s_axis_video_tready;
   input s_axis_video_tuser;
@@ -214,7 +214,7 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
   output vid_vblank;
   output vid_hblank;
   output vid_field_id;
-  output [35:0]vid_data;
+  output [23:0]vid_data;
   input vtg_vsync;
   input vtg_hsync;
   input vtg_vblank;
@@ -238,7 +238,7 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
   wire aclken;
   wire aresetn;
   wire fid;
-  wire [35:4]fifo_data;
+  wire [23:0]fifo_data;
   wire fifo_eol;
   wire fifo_eol_dly;
   wire fifo_eol_re;
@@ -252,7 +252,7 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
   wire locked;
   wire overflow;
   wire rd_en_i;
-  wire [23:0]s_axis_video_tdata;
+  wire [47:0]s_axis_video_tdata;
   wire s_axis_video_tlast;
   wire s_axis_video_tready;
   wire s_axis_video_tuser;
@@ -260,7 +260,7 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
   wire [25:0]\^status ;
   wire underflow;
   wire vid_active_video;
-  wire [35:4]\^vid_data ;
+  wire [23:0]vid_data;
   wire vid_field_id;
   wire vid_hblank;
   wire vid_hsync;
@@ -285,21 +285,6 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
   assign status[25:16] = \^status [25:16];
   assign status[15] = \<const0> ;
   assign status[14:0] = \^status [14:0];
-  assign vid_data[35:28] = \^vid_data [35:28];
-  assign vid_data[27] = \<const0> ;
-  assign vid_data[26] = \<const0> ;
-  assign vid_data[25] = \<const0> ;
-  assign vid_data[24] = \<const0> ;
-  assign vid_data[23:16] = \^vid_data [23:16];
-  assign vid_data[15] = \<const0> ;
-  assign vid_data[14] = \<const0> ;
-  assign vid_data[13] = \<const0> ;
-  assign vid_data[12] = \<const0> ;
-  assign vid_data[11:4] = \^vid_data [11:4];
-  assign vid_data[3] = \<const0> ;
-  assign vid_data[2] = \<const0> ;
-  assign vid_data[1] = \<const0> ;
-  assign vid_data[0] = \<const0> ;
   IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_cdc_single CDC_SINGLE_LOCKED_INST
        (.aclk(aclk),
         .src_in(locked));
@@ -311,8 +296,8 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
         .aclk(aclk),
         .aclken(aclken),
         .aresetn(aresetn),
-        .din({fid,s_axis_video_tuser,s_axis_video_tlast,s_axis_video_tdata}),
-        .dout({fifo_fid,fifo_sof,fifo_eol,fifo_data[35:28],fifo_data[23:16],fifo_data[11:4]}),
+        .din({fid,s_axis_video_tuser,s_axis_video_tlast,s_axis_video_tdata[47:40],s_axis_video_tdata[31:24],s_axis_video_tdata[15:8]}),
+        .dout({fifo_fid,fifo_sof,fifo_eol,fifo_data}),
         .fifo_eol_dly(fifo_eol_dly),
         .fifo_eol_re(fifo_eol_re),
         .fifo_pix_cnt(fifo_pix_cnt),
@@ -327,7 +312,7 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
         .underflow(underflow),
         .vid_io_out_ce(vid_io_out_ce));
   IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_formatter FORMATTER_INST
-       (.D({fifo_data[35:28],fifo_data[23:16],fifo_data[11:4]}),
+       (.D(fifo_data),
         .E(rd_en_i),
         .SR(in_de_mux0),
         .aclk(aclk),
@@ -335,7 +320,7 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10
         .fivid_reset_full_frame(fivid_reset_full_frame),
         .src_in(locked),
         .vid_active_video(vid_active_video),
-        .vid_data({\^vid_data [35:28],\^vid_data [23:16],\^vid_data [11:4]}),
+        .vid_data(vid_data),
         .vid_field_id(vid_field_id),
         .vid_hblank(vid_hblank),
         .vid_hsync(vid_hsync),
@@ -798,151 +783,7 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_formatter
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \in_data_mux_reg[10] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[6]),
-        .Q(vid_data[6]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[11] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[7]),
-        .Q(vid_data[7]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[16] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[8]),
-        .Q(vid_data[8]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[17] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[9]),
-        .Q(vid_data[9]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[18] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[10]),
-        .Q(vid_data[10]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[19] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[11]),
-        .Q(vid_data[11]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[20] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[12]),
-        .Q(vid_data[12]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[21] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[13]),
-        .Q(vid_data[13]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[22] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[14]),
-        .Q(vid_data[14]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[23] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[15]),
-        .Q(vid_data[15]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[28] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[16]),
-        .Q(vid_data[16]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[29] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[17]),
-        .Q(vid_data[17]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[30] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[18]),
-        .Q(vid_data[18]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[31] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[19]),
-        .Q(vid_data[19]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[32] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[20]),
-        .Q(vid_data[20]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[33] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[21]),
-        .Q(vid_data[21]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[34] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[22]),
-        .Q(vid_data[22]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[35] 
-       (.C(aclk),
-        .CE(E),
-        .D(D[23]),
-        .Q(vid_data[23]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \in_data_mux_reg[4] 
+    \in_data_mux_reg[0] 
        (.C(aclk),
         .CE(E),
         .D(D[0]),
@@ -950,7 +791,87 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_formatter
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
-    \in_data_mux_reg[5] 
+    \in_data_mux_reg[10] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[10]),
+        .Q(vid_data[10]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[11] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[11]),
+        .Q(vid_data[11]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[12] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[12]),
+        .Q(vid_data[12]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[13] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[13]),
+        .Q(vid_data[13]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[14] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[14]),
+        .Q(vid_data[14]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[15] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[15]),
+        .Q(vid_data[15]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[16] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[16]),
+        .Q(vid_data[16]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[17] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[17]),
+        .Q(vid_data[17]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[18] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[18]),
+        .Q(vid_data[18]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[19] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[19]),
+        .Q(vid_data[19]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[1] 
        (.C(aclk),
         .CE(E),
         .D(D[1]),
@@ -958,7 +879,39 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_formatter
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
-    \in_data_mux_reg[6] 
+    \in_data_mux_reg[20] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[20]),
+        .Q(vid_data[20]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[21] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[21]),
+        .Q(vid_data[21]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[22] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[22]),
+        .Q(vid_data[22]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[23] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[23]),
+        .Q(vid_data[23]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[2] 
        (.C(aclk),
         .CE(E),
         .D(D[2]),
@@ -966,7 +919,7 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_formatter
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
-    \in_data_mux_reg[7] 
+    \in_data_mux_reg[3] 
        (.C(aclk),
         .CE(E),
         .D(D[3]),
@@ -974,7 +927,7 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_formatter
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
-    \in_data_mux_reg[8] 
+    \in_data_mux_reg[4] 
        (.C(aclk),
         .CE(E),
         .D(D[4]),
@@ -982,11 +935,43 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_formatter
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
-    \in_data_mux_reg[9] 
+    \in_data_mux_reg[5] 
        (.C(aclk),
         .CE(E),
         .D(D[5]),
         .Q(vid_data[5]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[6] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[6]),
+        .Q(vid_data[6]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[7] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[7]),
+        .Q(vid_data[7]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[8] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[8]),
+        .Q(vid_data[8]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[9] 
+       (.C(aclk),
+        .CE(E),
+        .D(D[9]),
+        .Q(vid_data[9]),
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
@@ -2791,7 +2776,7 @@ module IP_v_axi4s_vid_out_0_1_v_axi4s_vid_out_v4_0_10_sync
         .R(SR));
   LUT6 #(
     .INIT(64'hCCCDCDC500000000)) 
-    \in_data_mux[35]_i_1 
+    \in_data_mux[23]_i_1 
        (.I0(state[2]),
         .I1(vtg_active_video),
         .I2(state[1]),

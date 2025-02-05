@@ -67,7 +67,7 @@ ENTITY IP_rst_ps7_0_100M_2 IS
     bus_struct_reset : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     peripheral_reset : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     interconnect_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    peripheral_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+    peripheral_aresetn : OUT STD_LOGIC_VECTOR(0 TO 5)
   );
 END IP_rst_ps7_0_100M_2;
 
@@ -96,7 +96,7 @@ ARCHITECTURE IP_rst_ps7_0_100M_2_arch OF IP_rst_ps7_0_100M_2 IS
       bus_struct_reset : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       peripheral_reset : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       interconnect_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-      peripheral_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+      peripheral_aresetn : OUT STD_LOGIC_VECTOR(0 TO 5)
     );
   END COMPONENT proc_sys_reset;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -130,7 +130,7 @@ BEGIN
       C_NUM_BUS_RST => 1,
       C_NUM_PERP_RST => 1,
       C_NUM_INTERCONNECT_ARESETN => 1,
-      C_NUM_PERP_ARESETN => 1
+      C_NUM_PERP_ARESETN => 6
     )
     PORT MAP (
       slowest_sync_clk => slowest_sync_clk,

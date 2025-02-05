@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Tue Feb  4 17:26:29 2025
+-- Date        : Tue Feb  4 20:26:53 2025
 -- Host        : DESKTOP-EGO35HT running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               e:/ISU/cpre488/mps/MP-0/MP-0/MP-0.srcs/sources_1/bd/IP/ip/IP_rst_ps7_0_100M_2/IP_rst_ps7_0_100M_2_sim_netlist.vhdl
@@ -911,7 +911,7 @@ entity IP_rst_ps7_0_100M_2_proc_sys_reset is
     bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
+    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 5 )
   );
   attribute C_AUX_RESET_HIGH : string;
   attribute C_AUX_RESET_HIGH of IP_rst_ps7_0_100M_2_proc_sys_reset : entity is "1'b0";
@@ -928,7 +928,7 @@ entity IP_rst_ps7_0_100M_2_proc_sys_reset is
   attribute C_NUM_INTERCONNECT_ARESETN : integer;
   attribute C_NUM_INTERCONNECT_ARESETN of IP_rst_ps7_0_100M_2_proc_sys_reset : entity is 1;
   attribute C_NUM_PERP_ARESETN : integer;
-  attribute C_NUM_PERP_ARESETN of IP_rst_ps7_0_100M_2_proc_sys_reset : entity is 1;
+  attribute C_NUM_PERP_ARESETN of IP_rst_ps7_0_100M_2_proc_sys_reset : entity is 6;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of IP_rst_ps7_0_100M_2_proc_sys_reset : entity is 1;
   attribute ORIG_REF_NAME : string;
@@ -945,6 +945,11 @@ architecture STRUCTURE of IP_rst_ps7_0_100M_2_proc_sys_reset is
   attribute box_type : string;
   attribute box_type of \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N\ : label is "PRIMITIVE";
   attribute box_type of \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N\ : label is "PRIMITIVE";
+  attribute box_type of \ACTIVE_LOW_PR_OUT_DFF[1].FDRE_PER_N\ : label is "PRIMITIVE";
+  attribute box_type of \ACTIVE_LOW_PR_OUT_DFF[2].FDRE_PER_N\ : label is "PRIMITIVE";
+  attribute box_type of \ACTIVE_LOW_PR_OUT_DFF[3].FDRE_PER_N\ : label is "PRIMITIVE";
+  attribute box_type of \ACTIVE_LOW_PR_OUT_DFF[4].FDRE_PER_N\ : label is "PRIMITIVE";
+  attribute box_type of \ACTIVE_LOW_PR_OUT_DFF[5].FDRE_PER_N\ : label is "PRIMITIVE";
   attribute box_type of \BSR_OUT_DFF[0].FDRE_BSR\ : label is "PRIMITIVE";
   attribute box_type of FDRE_inst : label is "PRIMITIVE";
   attribute box_type of \PR_OUT_DFF[0].FDRE_PER\ : label is "PRIMITIVE";
@@ -975,6 +980,76 @@ begin
       CE => '1',
       D => SEQ_n_4,
       Q => peripheral_aresetn(0),
+      R => '0'
+    );
+\ACTIVE_LOW_PR_OUT_DFF[1].FDRE_PER_N\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0',
+      IS_C_INVERTED => '0',
+      IS_D_INVERTED => '0',
+      IS_R_INVERTED => '0'
+    )
+        port map (
+      C => slowest_sync_clk,
+      CE => '1',
+      D => SEQ_n_4,
+      Q => peripheral_aresetn(1),
+      R => '0'
+    );
+\ACTIVE_LOW_PR_OUT_DFF[2].FDRE_PER_N\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0',
+      IS_C_INVERTED => '0',
+      IS_D_INVERTED => '0',
+      IS_R_INVERTED => '0'
+    )
+        port map (
+      C => slowest_sync_clk,
+      CE => '1',
+      D => SEQ_n_4,
+      Q => peripheral_aresetn(2),
+      R => '0'
+    );
+\ACTIVE_LOW_PR_OUT_DFF[3].FDRE_PER_N\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0',
+      IS_C_INVERTED => '0',
+      IS_D_INVERTED => '0',
+      IS_R_INVERTED => '0'
+    )
+        port map (
+      C => slowest_sync_clk,
+      CE => '1',
+      D => SEQ_n_4,
+      Q => peripheral_aresetn(3),
+      R => '0'
+    );
+\ACTIVE_LOW_PR_OUT_DFF[4].FDRE_PER_N\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0',
+      IS_C_INVERTED => '0',
+      IS_D_INVERTED => '0',
+      IS_R_INVERTED => '0'
+    )
+        port map (
+      C => slowest_sync_clk,
+      CE => '1',
+      D => SEQ_n_4,
+      Q => peripheral_aresetn(4),
+      R => '0'
+    );
+\ACTIVE_LOW_PR_OUT_DFF[5].FDRE_PER_N\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0',
+      IS_C_INVERTED => '0',
+      IS_D_INVERTED => '0',
+      IS_R_INVERTED => '0'
+    )
+        port map (
+      C => slowest_sync_clk,
+      CE => '1',
+      D => SEQ_n_4,
+      Q => peripheral_aresetn(5),
       R => '0'
     );
 \BSR_OUT_DFF[0].FDRE_BSR\: unisim.vcomponents.FDRE
@@ -1054,7 +1129,7 @@ entity IP_rst_ps7_0_100M_2 is
     bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
+    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 5 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of IP_rst_ps7_0_100M_2 : entity is true;
@@ -1082,7 +1157,7 @@ architecture STRUCTURE of IP_rst_ps7_0_100M_2 is
   attribute C_NUM_INTERCONNECT_ARESETN : integer;
   attribute C_NUM_INTERCONNECT_ARESETN of U0 : label is 1;
   attribute C_NUM_PERP_ARESETN : integer;
-  attribute C_NUM_PERP_ARESETN of U0 : label is 1;
+  attribute C_NUM_PERP_ARESETN of U0 : label is 6;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of U0 : label is 1;
   attribute x_interface_info : string;
@@ -1115,7 +1190,7 @@ U0: entity work.IP_rst_ps7_0_100M_2_proc_sys_reset
       interconnect_aresetn(0) => interconnect_aresetn(0),
       mb_debug_sys_rst => mb_debug_sys_rst,
       mb_reset => mb_reset,
-      peripheral_aresetn(0) => peripheral_aresetn(0),
+      peripheral_aresetn(0 to 5) => peripheral_aresetn(0 to 5),
       peripheral_reset(0) => peripheral_reset(0),
       slowest_sync_clk => slowest_sync_clk
     );
