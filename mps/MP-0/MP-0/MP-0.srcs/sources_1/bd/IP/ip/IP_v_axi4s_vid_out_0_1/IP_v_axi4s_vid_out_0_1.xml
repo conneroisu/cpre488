@@ -57,7 +57,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>TDATA_NUM_BYTES</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.VIDEO_IN.TDATA_NUM_BYTES">6</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.VIDEO_IN.TDATA_NUM_BYTES">2</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -580,11 +580,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Feb 04 23:23:49 UTC 2025</spirit:value>
+            <spirit:value>Wed Feb 05 21:40:32 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:bdf300d3</spirit:value>
+            <spirit:value>9:6d87da0f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -598,11 +598,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Feb 05 02:34:38 UTC 2025</spirit:value>
+            <spirit:value>Thu Feb 06 01:43:37 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:bdf300d3</spirit:value>
+            <spirit:value>9:6d87da0f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -618,11 +618,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Feb 05 02:34:38 UTC 2025</spirit:value>
+            <spirit:value>Thu Feb 06 01:43:37 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:bdf300d3</spirit:value>
+            <spirit:value>9:6d87da0f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -647,11 +647,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Feb 04 23:23:49 UTC 2025</spirit:value>
+            <spirit:value>Wed Feb 05 21:40:32 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:91d2ca08</spirit:value>
+            <spirit:value>9:8e113571</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -667,11 +667,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Feb 05 02:34:38 UTC 2025</spirit:value>
+            <spirit:value>Thu Feb 06 01:43:37 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:91d2ca08</spirit:value>
+            <spirit:value>9:8e113571</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -685,11 +685,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Feb 05 02:35:25 UTC 2025</spirit:value>
+            <spirit:value>Thu Feb 06 01:44:17 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:bdf300d3</spirit:value>
+            <spirit:value>9:6d87da0f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -745,7 +745,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXIS_TDATA_WIDTH&apos;)) - 1)">47</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXIS_TDATA_WIDTH&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -967,7 +967,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_NATIVE_DATA_WIDTH&apos;)) - 1)">23</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_NATIVE_DATA_WIDTH&apos;)) - 1)">11</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1206,7 +1206,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_COMPONENTS_PER_PIXEL</spirit:name>
         <spirit:displayName>Components Per pixel</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COMPONENTS_PER_PIXEL" spirit:choiceRef="choice_list_aa031417">3</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COMPONENTS_PER_PIXEL" spirit:choiceRef="choice_list_aa031417">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S_AXIS_COMPONENT_WIDTH</spirit:name>
@@ -1216,17 +1216,17 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NATIVE_COMPONENT_WIDTH</spirit:name>
         <spirit:displayName>Output Component Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NATIVE_COMPONENT_WIDTH" spirit:choiceRef="choice_list_f1407c6a">8</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NATIVE_COMPONENT_WIDTH" spirit:choiceRef="choice_list_f1407c6a">12</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NATIVE_DATA_WIDTH</spirit:name>
         <spirit:displayName>Native Video Output Data Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NATIVE_DATA_WIDTH">24</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NATIVE_DATA_WIDTH">12</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S_AXIS_TDATA_WIDTH</spirit:name>
         <spirit:displayName>AXI4S Video Input Data Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXIS_TDATA_WIDTH">48</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXIS_TDATA_WIDTH">16</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_ASYNC_CLK</spirit:name>
@@ -1501,7 +1501,7 @@
     <spirit:parameter>
       <spirit:name>C_S_AXIS_VIDEO_FORMAT</spirit:name>
       <spirit:displayName>Video Format</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXIS_VIDEO_FORMAT" spirit:choiceRef="choice_pairs_702fcbbd" spirit:order="4" spirit:configGroups="1 NoDisplay">2</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXIS_VIDEO_FORMAT" spirit:choiceRef="choice_pairs_702fcbbd" spirit:order="4" spirit:configGroups="1 NoDisplay">12</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -1525,7 +1525,7 @@
     <spirit:parameter>
       <spirit:name>C_NATIVE_COMPONENT_WIDTH</spirit:name>
       <spirit:displayName>Output Component Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NATIVE_COMPONENT_WIDTH" spirit:choiceRef="choice_list_f1407c6a" spirit:order="6" spirit:configGroups="1 NoDisplay">8</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NATIVE_COMPONENT_WIDTH" spirit:choiceRef="choice_list_f1407c6a" spirit:order="6" spirit:configGroups="1 NoDisplay">12</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -1656,7 +1656,7 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.VIDEO_IN.HAS_TSTRB" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.VIDEO_IN.LAYERED_METADATA" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.VIDEO_IN.PHASE" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.VIDEO_IN.TDATA_NUM_BYTES" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.VIDEO_IN.TDATA_NUM_BYTES" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.VIDEO_IN.TDEST_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.VIDEO_IN.TID_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.VIDEO_IN.TUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>

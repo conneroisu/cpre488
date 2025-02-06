@@ -1,8 +1,8 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Tue Feb  4 19:33:04 2025
--- Host        : DESKTOP-EGO35HT running 64-bit major release  (build 9200)
+-- Date        : Wed Feb  5 18:16:37 2025
+-- Host        : CO2041-14 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top IP_v_tc_0_0 -prefix
 --               IP_v_tc_0_0_ IP_v_tc_0_0_sim_netlist.vhdl
 -- Design      : IP_v_tc_0_0
@@ -55363,7 +55363,7 @@ architecture STRUCTURE of IP_v_tc_0_0 is
   attribute x_interface_info of active_video_out : signal is "xilinx.com:interface:video_timing:2.0 vtiming_out ACTIVE_VIDEO";
   attribute x_interface_info of clk : signal is "xilinx.com:signal:clock:1.0 clk_intf CLK";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF vtiming_in:vtiming_out, ASSOCIATED_RESET resetn, ASSOCIATED_CLKEN clken, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF vtiming_in:vtiming_out, ASSOCIATED_RESET resetn, ASSOCIATED_CLKEN clken, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
   attribute x_interface_info of clken : signal is "xilinx.com:signal:clockenable:1.0 clken_intf CE";
   attribute x_interface_parameter of clken : signal is "XIL_INTERFACENAME clken_intf, POLARITY ACTIVE_LOW";
   attribute x_interface_info of hblank_out : signal is "xilinx.com:interface:video_timing:2.0 vtiming_out HBLANK";

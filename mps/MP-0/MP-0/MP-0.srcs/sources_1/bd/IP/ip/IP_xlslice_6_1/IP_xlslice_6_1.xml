@@ -18,11 +18,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Feb 05 02:26:14 UTC 2025</spirit:value>
+            <spirit:value>Wed Feb 05 21:40:32 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8aa7f238</spirit:value>
+            <spirit:value>9:989ef6ce</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -33,7 +33,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8aa7f238</spirit:value>
+            <spirit:value>9:989ef6ce</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -49,11 +49,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Feb 05 04:07:02 UTC 2025</spirit:value>
+            <spirit:value>Thu Feb 06 01:46:35 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8aa7f238</spirit:value>
+            <spirit:value>9:989ef6ce</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -69,11 +69,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Feb 05 02:26:14 UTC 2025</spirit:value>
+            <spirit:value>Wed Feb 05 21:40:32 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5df452d7</spirit:value>
+            <spirit:value>9:4c053129</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -89,11 +89,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Feb 05 04:07:02 UTC 2025</spirit:value>
+            <spirit:value>Thu Feb 06 01:46:35 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5df452d7</spirit:value>
+            <spirit:value>9:4c053129</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -104,7 +104,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DIN_WIDTH&apos;)) - 1)">23</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DIN_WIDTH&apos;)) - 1)">11</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -138,17 +138,17 @@
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
         <spirit:name>DIN_WIDTH</spirit:name>
         <spirit:displayName>Din Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DIN_WIDTH">24</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DIN_WIDTH">12</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DIN_FROM</spirit:name>
         <spirit:displayName>Din From</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DIN_FROM">3</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DIN_FROM">7</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DIN_TO</spirit:name>
         <spirit:displayName>Din Down To</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DIN_TO">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DIN_TO">4</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -196,17 +196,17 @@
     <spirit:parameter>
       <spirit:name>DIN_TO</spirit:name>
       <spirit:displayName>Din Down To</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DIN_TO" spirit:order="3" spirit:minimum="0" spirit:maximum="23" spirit:rangeType="long">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DIN_TO" spirit:order="3" spirit:minimum="0" spirit:maximum="11" spirit:rangeType="long">4</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DIN_FROM</spirit:name>
       <spirit:displayName>Din From</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DIN_FROM" spirit:order="4" spirit:minimum="0" spirit:maximum="23" spirit:rangeType="long">3</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DIN_FROM" spirit:order="4" spirit:minimum="4" spirit:maximum="11" spirit:rangeType="long">7</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DIN_WIDTH</spirit:name>
       <spirit:displayName>Din Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DIN_WIDTH" spirit:order="5" spirit:minimum="2" spirit:maximum="4096" spirit:rangeType="long">24</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DIN_WIDTH" spirit:order="5" spirit:minimum="2" spirit:maximum="4096" spirit:rangeType="long">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DOUT_WIDTH</spirit:name>
@@ -220,6 +220,7 @@
       <xilinx:coreRevision>2</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.DIN_FROM" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.DIN_TO" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.DIN_WIDTH" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.DOUT_WIDTH" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>

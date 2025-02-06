@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Tue Feb  4 22:07:02 2025
---Host        : DESKTOP-EGO35HT running 64-bit major release  (build 9200)
+--Date        : Wed Feb  5 21:03:38 2025
+--Host        : CO2041-14 running 64-bit major release  (build 9200)
 --Command     : generate_target IP_wrapper.bd
 --Design      : IP_wrapper
 --Purpose     : IP block netlist
@@ -50,7 +50,10 @@ architecture STRUCTURE of IP_wrapper is
   port (
     VGA_HSYNC : out STD_LOGIC;
     VGA_VSYNC : out STD_LOGIC;
-    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
@@ -58,6 +61,7 @@ architecture STRUCTURE of IP_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -72,11 +76,7 @@ architecture STRUCTURE of IP_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 )
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component IP;
 begin

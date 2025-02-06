@@ -58,13 +58,13 @@ module IP_xlslice_6_2 (
   Dout
 );
 
-input wire [23 : 0] Din;
+input wire [11 : 0] Din;
 output wire [3 : 0] Dout;
 
   xlslice_v1_0_2_xlslice #(
-    .DIN_WIDTH(24),
-    .DIN_FROM(23),
-    .DIN_TO(20)
+    .DIN_WIDTH(12),
+    .DIN_FROM(11),
+    .DIN_TO(8)
   ) inst (
     .Din(Din),
     .Dout(Dout)
