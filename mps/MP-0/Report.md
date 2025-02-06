@@ -80,6 +80,7 @@ Depends on the `xilinx-sdk` implementation.
 3. **Display**:
    - VDMA **should** stream the framebuffer to the display.
 
+![[diagram-export-2-6-2025-3_17_20-PM.png]]
 <!-- TODO: add Systems Level Diagram. -->
 
 ## [TASK] How does NESCore_Callback_OutputFrame() get called?
