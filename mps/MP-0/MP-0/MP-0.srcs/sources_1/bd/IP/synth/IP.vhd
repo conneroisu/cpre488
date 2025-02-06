@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Wed Feb  5 21:03:38 2025
---Host        : CO2041-14 running 64-bit major release  (build 9200)
+--Date        : Thu Feb  6 14:54:34 2025
+--Host        : DESKTOP-EGO35HT running 64-bit major release  (build 9200)
 --Command     : generate_target IP.bd
 --Design      : IP
 --Purpose     : IP block netlist
@@ -2130,7 +2130,7 @@ entity IP is
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of IP : entity is "IP,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=IP,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=32,numReposBlks=23,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,""""""""""""""da_axi4_cnt""""""""""""""=11,""""""""""""""da_board_cnt""""""""""""""=9,""""""""""""""da_clkrst_cnt""""""""""""""=4,""""""""""""""da_ps7_cnt""""""""""""""=2,""""""""""da_clkrst_cnt""""""""""=5,""""da_board_cnt""""=1,""""da_clkrst_cnt""""=8,""da_clkrst_cnt""=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of IP : entity is "IP,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=IP,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=32,numReposBlks=23,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,""""""""""""""""da_axi4_cnt""""""""""""""""=11,""""""""""""""""da_board_cnt""""""""""""""""=9,""""""""""""""""da_clkrst_cnt""""""""""""""""=4,""""""""""""""""da_ps7_cnt""""""""""""""""=2,""""""""""""da_clkrst_cnt""""""""""""=5,""""""da_board_cnt""""""=1,""""""da_clkrst_cnt""""""=8,""""da_clkrst_cnt""""=1,da_clkrst_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of IP : entity is "IP.hwdef";
 end IP;
@@ -2408,7 +2408,9 @@ architecture STRUCTURE of IP is
     s_axis_video_tuser : in STD_LOGIC;
     s_axis_video_tlast : in STD_LOGIC;
     fid : in STD_LOGIC;
+    vid_io_out_clk : in STD_LOGIC;
     vid_io_out_ce : in STD_LOGIC;
+    vid_io_out_reset : in STD_LOGIC;
     vid_active_video : out STD_LOGIC;
     vid_vsync : out STD_LOGIC;
     vid_hsync : out STD_LOGIC;
@@ -2560,7 +2562,6 @@ architecture STRUCTURE of IP is
     SLOT_1_AXI_rlast : in STD_LOGIC;
     SLOT_1_AXI_rvalid : in STD_LOGIC;
     SLOT_1_AXI_rready : in STD_LOGIC;
-    resetn : in STD_LOGIC;
     SLOT_2_VID_IO_data : in STD_LOGIC_VECTOR ( 11 downto 0 );
     SLOT_2_VID_IO_active_video : in STD_LOGIC;
     SLOT_2_VID_IO_hblank : in STD_LOGIC;
@@ -2573,7 +2574,8 @@ architecture STRUCTURE of IP is
     SLOT_3_AXIS_tlast : in STD_LOGIC;
     SLOT_3_AXIS_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
     SLOT_3_AXIS_tvalid : in STD_LOGIC;
-    SLOT_3_AXIS_tready : in STD_LOGIC
+    SLOT_3_AXIS_tready : in STD_LOGIC;
+    resetn : in STD_LOGIC
   );
   end component IP_system_ila_0_0;
   signal axi_gpio_0_GPIO_TRI_O : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -2652,6 +2654,7 @@ architecture STRUCTURE of IP is
   attribute CONN_BUS_INFO of axi_vdma_0_M_AXI_MM2S_RVALID : signal is "axi_vdma_0_M_AXI_MM2S xilinx.com:interface:aximm:1.0 AXI4 RVALID";
   attribute DONT_TOUCH of axi_vdma_0_M_AXI_MM2S_RVALID : signal is std.standard.true;
   signal proc_sys_reset_0_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal proc_sys_reset_0_peripheral_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -2853,7 +2856,6 @@ architecture STRUCTURE of IP is
   signal NLW_proc_sys_reset_0_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_proc_sys_reset_0_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_proc_sys_reset_0_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_proc_sys_reset_0_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_processing_system7_0_S_AXI_HP0_AWREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_S_AXI_HP0_BVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_S_AXI_HP0_WREADY_UNCONNECTED : STD_LOGIC;
@@ -3076,7 +3078,7 @@ proc_sys_reset_0: component IP_proc_sys_reset_0_0
       mb_debug_sys_rst => '0',
       mb_reset => NLW_proc_sys_reset_0_mb_reset_UNCONNECTED,
       peripheral_aresetn(0) => proc_sys_reset_0_peripheral_aresetn(0),
-      peripheral_reset(0) => NLW_proc_sys_reset_0_peripheral_reset_UNCONNECTED(0),
+      peripheral_reset(0) => proc_sys_reset_0_peripheral_reset(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK1
     );
 processing_system7_0: component IP_processing_system7_0_0
@@ -3418,6 +3420,8 @@ v_axi4s_vid_out_0: component IP_v_axi4s_vid_out_0_1
       vid_hblank => v_axi4s_vid_out_0_vid_io_out_HBLANK,
       vid_hsync => v_axi4s_vid_out_0_vid_hsync,
       vid_io_out_ce => xlconstant_0_dout(0),
+      vid_io_out_clk => processing_system7_0_FCLK_CLK1,
+      vid_io_out_reset => proc_sys_reset_0_peripheral_reset(0),
       vid_vblank => v_axi4s_vid_out_0_vid_io_out_VBLANK,
       vid_vsync => v_axi4s_vid_out_0_vid_vsync,
       vtg_active_video => v_tc_0_vtiming_out_ACTIVE_VIDEO,
