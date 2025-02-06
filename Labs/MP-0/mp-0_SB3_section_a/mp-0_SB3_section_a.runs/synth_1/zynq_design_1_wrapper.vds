@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Mon Feb  3 17:11:22 2025
-# Process ID: 7656
+# Start of session at: Wed Feb  5 19:39:14 2025
+# Process ID: 14020
 # Current directory: C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1
 # Command line: vivado.exe -log zynq_design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_design_1_wrapper.tcl
 # Log file: C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/zynq_design_1_wrapper.vds
@@ -13,7 +13,7 @@ source zynq_design_1_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
-add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1013.676 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1013.188 ; gain = 0.000
 Command: synth_design -top zynq_design_1_wrapper -part xc7z020clg484-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
@@ -21,9 +21,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10108
+INFO: [Synth 8-7075] Helper process launched with PID 11772
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1013.676 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'zynq_design_1_wrapper' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/hdl/zynq_design_1_wrapper.vhd:48]
 INFO: [Synth 8-3491] module 'zynq_design_1' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:2149' bound to instance 'zynq_design_1_i' of component 'zynq_design_1' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/hdl/zynq_design_1_wrapper.vhd:83]
@@ -35,22 +35,22 @@ INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_7_xlconstant' [c:/User
 	Parameter CONST_WIDTH bound to: 1 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_7_xlconstant' (1#1) [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'zynq_design_1_xlconstant_0_0' (2#1) [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xlconstant_0_0/synth/zynq_design_1_xlconstant_0_0.v:57]
-INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_0_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'zynq_design_1_axi_gpio_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3180]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_axi_gpio_0_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_1_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'zynq_design_1_axi_gpio_1_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3203]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_1_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_axi_gpio_1_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_2_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_axi_gpio_2_0_stub.vhdl:5' bound to instance 'axi_gpio_2' of component 'zynq_design_1_axi_gpio_2_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3226]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_2_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_axi_gpio_2_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_0_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'zynq_design_1_axi_gpio_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3180]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_axi_gpio_0_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_1_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'zynq_design_1_axi_gpio_1_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3203]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_1_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_axi_gpio_1_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'zynq_design_1_axi_gpio_2_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_axi_gpio_2_0_stub.vhdl:5' bound to instance 'axi_gpio_2' of component 'zynq_design_1_axi_gpio_2_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3226]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_gpio_2_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_axi_gpio_2_0_stub.vhdl:31]
 INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_interconnect_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1077]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_T94GI6' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:579]
-INFO: [Synth 8-3491] module 'zynq_design_1_auto_pc_1' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'zynq_design_1_auto_pc_1' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:678]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_auto_pc_1' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_auto_pc_1_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'zynq_design_1_auto_pc_1' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'zynq_design_1_auto_pc_1' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:678]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_auto_pc_1' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_auto_pc_1_stub.vhdl:44]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_T94GI6' (3#1) [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:579]
 INFO: [Synth 8-256] done synthesizing module 'zynq_design_1_axi_interconnect_0_0' (4#1) [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1077]
-INFO: [Synth 8-3491] module 'zynq_design_1_axi_vdma_0_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_axi_vdma_0_0_stub.vhdl:5' bound to instance 'axi_vdma_0' of component 'zynq_design_1_axi_vdma_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3289]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_vdma_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_axi_vdma_0_0_stub.vhdl:53]
-INFO: [Synth 8-3491] module 'zynq_design_1_processing_system7_0_1' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_processing_system7_0_1_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'zynq_design_1_processing_system7_0_1' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3334]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_processing_system7_0_1' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_processing_system7_0_1_stub.vhdl:124]
+INFO: [Synth 8-3491] module 'zynq_design_1_axi_vdma_0_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_axi_vdma_0_0_stub.vhdl:5' bound to instance 'axi_vdma_0' of component 'zynq_design_1_axi_vdma_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3289]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_axi_vdma_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_axi_vdma_0_0_stub.vhdl:53]
+INFO: [Synth 8-3491] module 'zynq_design_1_processing_system7_0_1' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_processing_system7_0_1_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'zynq_design_1_processing_system7_0_1' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3334]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_processing_system7_0_1' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_processing_system7_0_1_stub.vhdl:124]
 INFO: [Synth 8-638] synthesizing module 'zynq_design_1_ps7_0_axi_periph_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1338]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_18AWEIM' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_18AWEIM' (5#1) [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:57]
@@ -63,26 +63,26 @@ INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_1SQFXOJ' (8#1) [C
 INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_18DUMLP' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:475]
 INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_18DUMLP' (9#1) [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:475]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_ZMS6PT' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:785]
-INFO: [Synth 8-3491] module 'zynq_design_1_auto_pc_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'zynq_design_1_auto_pc_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:968]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_auto_pc_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_auto_pc_0_stub.vhdl:70]
+INFO: [Synth 8-3491] module 'zynq_design_1_auto_pc_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'zynq_design_1_auto_pc_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:968]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_auto_pc_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_auto_pc_0_stub.vhdl:70]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_ZMS6PT' (10#1) [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:785]
-INFO: [Synth 8-3491] module 'zynq_design_1_xbar_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'zynq_design_1_xbar_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:2029]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_xbar_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'zynq_design_1_xbar_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'zynq_design_1_xbar_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:2029]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_xbar_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_xbar_0_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 'zynq_design_1_ps7_0_axi_periph_0' (11#1) [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:1338]
-INFO: [Synth 8-3491] module 'zynq_design_1_rst_ps7_0_100M_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_50M' of component 'zynq_design_1_rst_ps7_0_100M_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3594]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_rst_ps7_0_100M_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_rst_ps7_0_100M_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'zynq_design_1_system_ila_0_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_system_ila_0_0_stub.vhdl:5' bound to instance 'system_ila_0' of component 'zynq_design_1_system_ila_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3607]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_system_ila_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_system_ila_0_0_stub.vhdl:115]
-INFO: [Synth 8-3491] module 'zynq_design_1_system_ila_1_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_system_ila_1_0_stub.vhdl:5' bound to instance 'system_ila_1' of component 'zynq_design_1_system_ila_1_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3714]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_system_ila_1_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_system_ila_1_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'zynq_design_1_system_ila_2_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_system_ila_2_0_stub.vhdl:5' bound to instance 'system_ila_2' of component 'zynq_design_1_system_ila_2_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3719]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_system_ila_2_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_system_ila_2_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'zynq_design_1_system_ila_3_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_system_ila_3_0_stub.vhdl:5' bound to instance 'system_ila_3' of component 'zynq_design_1_system_ila_3_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3724]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_system_ila_3_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_system_ila_3_0_stub.vhdl:13]
-INFO: [Synth 8-3491] module 'zynq_design_1_v_axi4s_vid_out_0_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_v_axi4s_vid_out_0_0_stub.vhdl:5' bound to instance 'v_axi4s_vid_out_0' of component 'zynq_design_1_v_axi4s_vid_out_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3729]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_v_axi4s_vid_out_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_v_axi4s_vid_out_0_0_stub.vhdl:40]
-INFO: [Synth 8-3491] module 'zynq_design_1_v_tc_0_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_v_tc_0_0_stub.vhdl:5' bound to instance 'v_tc_0' of component 'zynq_design_1_v_tc_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3761]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_1_v_tc_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-7656-CO2041-05/realtime/zynq_design_1_v_tc_0_0_stub.vhdl:43]
+INFO: [Synth 8-3491] module 'zynq_design_1_rst_ps7_0_100M_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_50M' of component 'zynq_design_1_rst_ps7_0_100M_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3594]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_rst_ps7_0_100M_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_rst_ps7_0_100M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'zynq_design_1_system_ila_0_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_system_ila_0_0_stub.vhdl:5' bound to instance 'system_ila_0' of component 'zynq_design_1_system_ila_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3607]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_system_ila_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_system_ila_0_0_stub.vhdl:115]
+INFO: [Synth 8-3491] module 'zynq_design_1_system_ila_1_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_system_ila_1_0_stub.vhdl:5' bound to instance 'system_ila_1' of component 'zynq_design_1_system_ila_1_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3714]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_system_ila_1_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_system_ila_1_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'zynq_design_1_system_ila_2_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_system_ila_2_0_stub.vhdl:5' bound to instance 'system_ila_2' of component 'zynq_design_1_system_ila_2_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3719]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_system_ila_2_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_system_ila_2_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'zynq_design_1_system_ila_3_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_system_ila_3_0_stub.vhdl:5' bound to instance 'system_ila_3' of component 'zynq_design_1_system_ila_3_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3724]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_system_ila_3_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_system_ila_3_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'zynq_design_1_v_axi4s_vid_out_0_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_v_axi4s_vid_out_0_0_stub.vhdl:5' bound to instance 'v_axi4s_vid_out_0' of component 'zynq_design_1_v_axi4s_vid_out_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3729]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_v_axi4s_vid_out_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_v_axi4s_vid_out_0_0_stub.vhdl:40]
+INFO: [Synth 8-3491] module 'zynq_design_1_v_tc_0_0' declared at 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_v_tc_0_0_stub.vhdl:5' bound to instance 'v_tc_0' of component 'zynq_design_1_v_tc_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3761]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_1_v_tc_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/.Xil/Vivado-14020-CO2041-16/realtime/zynq_design_1_v_tc_0_0_stub.vhdl:43]
 INFO: [Synth 8-3491] module 'zynq_design_1_xlslice_0_0' declared at 'c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xlslice_0_0/synth/zynq_design_1_xlslice_0_0.v:57' bound to instance 'xlslice_0' of component 'zynq_design_1_xlslice_0_0' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3796]
 INFO: [Synth 8-6157] synthesizing module 'zynq_design_1_xlslice_0_0' [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xlslice_0_0/synth/zynq_design_1_xlslice_0_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
@@ -95,16 +95,16 @@ INFO: [Synth 8-3491] module 'zynq_design_1_xlslice_0_1' declared at 'c:/Users/op
 INFO: [Synth 8-6157] synthesizing module 'zynq_design_1_xlslice_0_1' [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xlslice_0_1/synth/zynq_design_1_xlslice_0_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 12 - type: integer 
-	Parameter DIN_FROM bound to: 7 - type: integer 
-	Parameter DIN_TO bound to: 4 - type: integer 
+	Parameter DIN_FROM bound to: 11 - type: integer 
+	Parameter DIN_TO bound to: 8 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (13#1) [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'zynq_design_1_xlslice_0_1' (14#1) [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xlslice_0_1/synth/zynq_design_1_xlslice_0_1.v:57]
 INFO: [Synth 8-3491] module 'zynq_design_1_xlslice_0_2' declared at 'c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xlslice_0_2/synth/zynq_design_1_xlslice_0_2.v:57' bound to instance 'xlslice_2' of component 'zynq_design_1_xlslice_0_2' [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3806]
 INFO: [Synth 8-6157] synthesizing module 'zynq_design_1_xlslice_0_2' [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xlslice_0_2/synth/zynq_design_1_xlslice_0_2.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 	Parameter DIN_WIDTH bound to: 12 - type: integer 
-	Parameter DIN_FROM bound to: 11 - type: integer 
-	Parameter DIN_TO bound to: 8 - type: integer 
+	Parameter DIN_FROM bound to: 7 - type: integer 
+	Parameter DIN_TO bound to: 4 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' (14#1) [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'zynq_design_1_xlslice_0_2' (15#1) [c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_xlslice_0_2/synth/zynq_design_1_xlslice_0_2.v:57]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'axi_interconnect_0'. This will prevent further optimization [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:3249]
@@ -115,18 +115,18 @@ INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance '
 INFO: [Synth 8-256] done synthesizing module 'zynq_design_1' (16#1) [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/synth/zynq_design_1.vhd:2187]
 INFO: [Synth 8-256] done synthesizing module 'zynq_design_1_wrapper' (17#1) [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/hdl/zynq_design_1_wrapper.vhd:48]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.676 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.676 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.676 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1013.676 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1013.188 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -170,20 +170,20 @@ Parsing XDC File [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3
 Finished Parsing XDC File [C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1067.594 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1086.621 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1067.594 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1086.621 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1067.594 ; gain = 53.918
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1086.621 ; gain = 73.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1067.594 ; gain = 53.918
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1086.621 ; gain = 73.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -471,10 +471,10 @@ Applied set_property DONT_TOUCH = true for zynq_design_1_i/High. (constraint fil
 Applied set_property DONT_TOUCH = true for zynq_design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for zynq_design_1_i/axi_interconnect_0/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1067.594 ; gain = 53.918
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1086.621 ; gain = 73.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1067.594 ; gain = 53.918
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1086.621 ; gain = 73.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -496,25 +496,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1067.594 ; gain = 53.918
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1086.621 ; gain = 73.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 1071.762 ; gain = 58.086
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1086.621 ; gain = 73.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 1072.059 ; gain = 58.383
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1086.621 ; gain = 73.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 1092.180 ; gain = 78.504
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1092.859 ; gain = 79.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -532,37 +532,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 1098.926 ; gain = 85.250
+Finished IO Insertion : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 1099.582 ; gain = 86.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 1098.926 ; gain = 85.250
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 1099.582 ; gain = 86.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 1098.926 ; gain = 85.250
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 1099.582 ; gain = 86.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 1098.926 ; gain = 85.250
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 1099.582 ; gain = 86.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 1098.926 ; gain = 85.250
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 1099.582 ; gain = 86.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 1098.926 ; gain = 85.250
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 1099.582 ; gain = 86.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -612,23 +612,23 @@ Report Cell Usage:
 |17    |OBUF                                      |    22|
 +------+------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 1098.926 ; gain = 85.250
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 1099.582 ; gain = 86.395
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 1098.926 ; gain = 31.332
-Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 1098.926 ; gain = 85.250
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 1099.582 ; gain = 12.961
+Synthesis Optimization Complete : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 1099.582 ; gain = 86.395
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1098.926 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1107.301 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1107.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1115.641 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 94 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:22 . Memory (MB): peak = 1107.113 ; gain = 93.438
+synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:23 . Memory (MB): peak = 1115.641 ; gain = 102.453
 INFO: [Common 17-1381] The checkpoint 'C:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/synth_1/zynq_design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file zynq_design_1_wrapper_utilization_synth.rpt -pb zynq_design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Feb  3 17:11:54 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Feb  5 19:39:47 2025...

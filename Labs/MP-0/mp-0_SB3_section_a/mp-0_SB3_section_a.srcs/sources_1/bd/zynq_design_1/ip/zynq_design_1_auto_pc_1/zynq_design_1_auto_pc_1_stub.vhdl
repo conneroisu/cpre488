@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 -- Date        : Mon Feb  3 17:09:57 2025
 -- Host        : CO2041-05 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/oparker/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_auto_pc_1/zynq_design_1_auto_pc_1_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top zynq_design_1_auto_pc_1 -prefix
+--               zynq_design_1_auto_pc_1_ zynq_design_1_auto_pc_1_stub.vhdl
 -- Design      : zynq_design_1_auto_pc_1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

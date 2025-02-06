@@ -1,27 +1,62 @@
-timestamp=[2025-02-03 16:31:10], mode=WORKBENCH_START, duration=0:00:03.144, duration_ms=3144, data={}
-timestamp=[2025-02-03 16:31:10], mode=WORKBENCH_UI_INIT, duration=0:00:00.234, duration_ms=234, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
-timestamp=[2025-02-03 16:31:12], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.595, duration_ms=1595, data={}
-timestamp=[2025-02-03 16:45:14], mode=APP_CREATION, duration=0:00:18.560, duration_ms=18560, data={name=yua, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=zynq_design_1_wrapper, application_type=application}
-timestamp=[2025-02-03 16:46:28], mode=PLATFORM_GENERATION, duration=0:00:26.757, duration_ms=26757, data={name=zynq_design_1_wrapper}
-timestamp=[2025-02-03 16:46:29], mode=BUILD, duration=0:00:00.804, duration_ms=804, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 17:18:03], mode=PLATFORM_GENERATION, duration=0:00:00.973, duration_ms=973, data={name=zynq_design_1_wrapper}
-timestamp=[2025-02-03 17:18:07], mode=BUILD, duration=0:00:00.151, duration_ms=151, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 17:30:39], mode=BUILD, duration=0:00:00.666, duration_ms=666, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 17:37:02], mode=BUILD, duration=0:00:00.543, duration_ms=543, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 17:41:01], mode=BUILD, duration=0:00:00.592, duration_ms=592, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 17:42:07], mode=BUILD, duration=0:00:00.534, duration_ms=534, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 17:49:45], mode=BUILD, duration=0:00:00.596, duration_ms=596, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 17:52:54], mode=BUILD, duration=0:00:00.603, duration_ms=603, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 17:55:35], mode=BUILD, duration=0:00:00.541, duration_ms=541, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 17:56:28], mode=BUILD, duration=0:00:00.525, duration_ms=525, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 17:59:38], mode=BUILD, duration=0:00:00.600, duration_ms=600, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 18:00:22], mode=BUILD, duration=0:00:00.536, duration_ms=536, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 18:01:29], mode=BUILD, duration=0:00:00.545, duration_ms=545, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 18:04:37], mode=BUILD, duration=0:00:00.597, duration_ms=597, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 18:06:16], mode=BUILD, duration=0:00:00.539, duration_ms=539, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 18:07:31], mode=BUILD, duration=0:00:00.528, duration_ms=528, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 18:08:20], mode=BUILD, duration=0:00:00.163, duration_ms=163, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 18:11:06], mode=BUILD, duration=0:00:00.601, duration_ms=601, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 18:12:22], mode=BUILD, duration=0:00:00.530, duration_ms=530, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 18:14:29], mode=BUILD, duration=0:00:00.603, duration_ms=603, data={name=yua, configuration=Debug, clean_build=false}
-timestamp=[2025-02-03 18:15:29], mode=BUILD, duration=0:00:00.537, duration_ms=537, data={name=yua, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:14:15], mode=WORKBENCH_START, duration=0:00:02.939, duration_ms=2939, data={}
+timestamp=[2025-02-05 18:14:16], mode=WORKBENCH_UI_INIT, duration=0:00:00.194, duration_ms=194, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2025-02-05 18:14:17], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.515, duration_ms=1515, data={}
+timestamp=[2025-02-05 18:15:17], mode=APP_CREATION, duration=0:00:19.828, duration_ms=19828, data={name=aagh, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=zynq_design_1_wrapper, application_type=application}
+timestamp=[2025-02-05 18:16:21], mode=PLATFORM_GENERATION, duration=0:00:27.956, duration_ms=27956, data={name=zynq_design_1_wrapper}
+timestamp=[2025-02-05 18:16:22], mode=BUILD, duration=0:00:00.849, duration_ms=849, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:44:58], mode=BUILD, duration=0:00:21.528, duration_ms=21528, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:47:00], mode=BUILD, duration=0:00:19.765, duration_ms=19765, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:50:40], mode=BUILD, duration=0:00:00.187, duration_ms=187, data={name=aagh, configuration=Debug, clean_build=true}
+timestamp=[2025-02-05 18:51:02], mode=BUILD, duration=0:00:21.810, duration_ms=21810, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:51:19], mode=BUILD, duration=0:00:00.177, duration_ms=177, data={name=aagh, configuration=Debug, clean_build=true}
+timestamp=[2025-02-05 18:51:22], mode=BUILD, duration=0:00:03.439, duration_ms=3439, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:53:05], mode=BUILD, duration=0:00:00.793, duration_ms=793, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:55:20], mode=BUILD, duration=0:00:00.493, duration_ms=493, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:55:36], mode=BUILD, duration=0:00:00.725, duration_ms=725, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:56:01], mode=BUILD, duration=0:00:00.353, duration_ms=353, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:56:05], mode=BUILD, duration=0:00:03.251, duration_ms=3251, data={name=aagh_system, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:56:50], mode=BUILD, duration=0:00:00.477, duration_ms=477, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 18:59:18], mode=BUILD, duration=0:00:00.933, duration_ms=933, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:00:53], mode=BUILD, duration=0:00:00.473, duration_ms=473, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:01:21], mode=BUILD, duration=0:00:00.481, duration_ms=481, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:03:13], mode=BUILD, duration=0:00:00.475, duration_ms=475, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:03:21], mode=BUILD, duration=0:00:00.427, duration_ms=427, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:03:28], mode=BUILD, duration=0:00:00.474, duration_ms=474, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:04:20], mode=BUILD, duration=0:00:00.751, duration_ms=751, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:05:52], mode=BUILD, duration=0:00:00.737, duration_ms=737, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:07:51], mode=BUILD, duration=0:00:00.470, duration_ms=470, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:07:58], mode=BUILD, duration=0:00:00.424, duration_ms=424, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:08:05], mode=BUILD, duration=0:00:00.737, duration_ms=737, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:08:09], mode=BUILD, duration=0:00:00.741, duration_ms=741, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:14:43], mode=BUILD, duration=0:00:00.927, duration_ms=927, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:25:45], mode=BUILD, duration=0:00:00.475, duration_ms=475, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:26:48], mode=BUILD, duration=0:00:00.477, duration_ms=477, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:26:54], mode=BUILD, duration=0:00:00.421, duration_ms=421, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:27:03], mode=BUILD, duration=0:00:00.424, duration_ms=424, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:29:02], mode=BUILD, duration=0:00:00.469, duration_ms=469, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:30:15], mode=BUILD, duration=0:00:00.420, duration_ms=420, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:30:22], mode=BUILD, duration=0:00:00.728, duration_ms=728, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:30:44], mode=BUILD, duration=0:00:00.724, duration_ms=724, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:32:08], mode=BUILD, duration=0:00:00.729, duration_ms=729, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:33:08], mode=BUILD, duration=0:00:00.732, duration_ms=732, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:33:41], mode=BUILD, duration=0:00:00.724, duration_ms=724, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:34:33], mode=BUILD, duration=0:00:00.671, duration_ms=671, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:35:11], mode=BUILD, duration=0:00:00.795, duration_ms=795, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:36:02], mode=BUILD, duration=0:00:00.790, duration_ms=790, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:44:41], mode=BUILD, duration=0:00:00.806, duration_ms=806, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:48:29], mode=PLATFORM_GENERATION, duration=0:00:00.966, duration_ms=966, data={name=zynq_design_1_wrapper}
+timestamp=[2025-02-05 19:48:32], mode=BUILD, duration=0:00:00.300, duration_ms=300, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:50:36], mode=BUILD, duration=0:00:01.063, duration_ms=1063, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:52:29], mode=BUILD, duration=0:00:00.292, duration_ms=292, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:55:04], mode=PLATFORM_GENERATION, duration=0:00:00.962, duration_ms=962, data={name=zynq_design_1_wrapper}
+timestamp=[2025-02-05 19:55:04], mode=BUILD, duration=0:00:00.293, duration_ms=293, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 19:59:18], mode=BUILD, duration=0:00:00.809, duration_ms=809, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 20:02:24], mode=BUILD, duration=0:00:00.720, duration_ms=720, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 20:08:06], mode=BUILD, duration=0:00:00.856, duration_ms=856, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 20:09:37], mode=BUILD, duration=0:00:00.726, duration_ms=726, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 20:10:27], mode=BUILD, duration=0:00:00.740, duration_ms=740, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 20:16:41], mode=BUILD, duration=0:00:00.738, duration_ms=738, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 20:17:35], mode=BUILD, duration=0:00:00.727, duration_ms=727, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 20:17:45], mode=BUILD, duration=0:00:00.295, duration_ms=295, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 20:19:12], mode=BUILD, duration=0:00:00.730, duration_ms=730, data={name=aagh, configuration=Debug, clean_build=false}
+timestamp=[2025-02-05 20:20:46], mode=BUILD, duration=0:00:00.351, duration_ms=351, data={name=aagh, configuration=Debug, clean_build=false}
