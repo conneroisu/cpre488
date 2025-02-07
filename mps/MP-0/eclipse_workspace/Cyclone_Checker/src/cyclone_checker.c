@@ -13,6 +13,7 @@
 #define BLACK_REF_BAR_WIDTH 1
 #define VIDEO_WIDTH 640
 #define VIDEO_HEIGHT 480
+#define CHECKER_DIMENSION 8
 
 // Colors
 #define CYCLONE_GOLD 0xF1BE48
@@ -39,13 +40,29 @@ int main()
   XVtc_CfgInitialize(&Vtc, VtcCfgPtr, VtcCfgPtr->BaseAddress);
   XVtc_EnableGenerator(&Vtc);
 
+  // Create the checker-board
+
+  // 0 -> RED
+  // 1 -> GOLD
+  char color_sel = 0;
+
   for(int i = 0; i < VIDEO_HEIGHT; ++i)
   {
+	  // Every (VIDEO_WIDTH / CHECKER_DIMENSION) horizontal pixels, switch colors
 	  for(int j = 0; j < VIDEO_WIDTH; ++j)
 	  {
-		  // Should draw cyclone gold.
-		  test_image[i][j] = correct_color(convert_color_24_16(CYCLONE_RED));
-		  //test_image[i][j] = 0xF0;
+		  if(!((j + 1) % (VIDEO_WIDTH / CHECKER_DIMENSION)))
+		  {
+			  color_sel = color_sel ? 0 : 1;
+		  }
+
+		  test_image[i][j] = correct_color(convert_color_24_16(color_sel ? CYCLONE_GOLD : CYCLONE_RED));
+	  }
+
+	  // Switch color every (VIDEO_HEIGHT / CHECKER_DIMENSION) vertical pixels.
+	  if(!((i + 1) % (VIDEO_HEIGHT / CHECKER_DIMENSION)))
+	  {
+		  color_sel = color_sel ? 0 : 1;
 	  }
   }
 
