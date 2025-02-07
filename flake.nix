@@ -32,8 +32,8 @@
         then pkgs.pkgsx86_64Darwin
         else pkgs;
 
-      inherit (pkgs.stdenv) isLinux isDarwin isAarch64;
-      inherit (pkgs) lib;
+      inherit (pkgs) lib stdenv;
+      inherit (stdenv) isLinux isDarwin isAarch64;
     in {
       packages = {
         devenv-up = self.devShells.${system}.default.config.procfileScript;
@@ -165,7 +165,7 @@
 
               export REPO_ROOT=$(git rev-parse --show-toplevel)
               export C_INCLUDE_PATH=${
-                pkgs.lib.makeSearchPathOutput "dev" "include" (
+                lib.makeSearchPathOutput "dev" "include" (
                   (with pkgs; [
                     glibc.dev
                     gcc
@@ -174,12 +174,12 @@
                     tbb
                     llvmPackages.openmp
                   ])
-                  ++ (pkgs.lib.optionals pkgs.stdenv.isLinux (
+                  ++ (lib.optionals pkgs.stdenv.isLinux (
                     with pkgs; [
                       # Linux-specific includes here
                     ]
                   ))
-                  ++ (pkgs.lib.optionals pkgs.stdenv.isDarwin (
+                  ++ (lib.optionals pkgs.stdenv.isDarwin (
                     with pkgs; [
                       # Darwin-specific includes here
                     ]
