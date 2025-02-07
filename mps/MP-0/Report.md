@@ -145,6 +145,24 @@ LED PHOTO GOES HERE
 25 ns pulse duration is shown in the image above.
 
 In your writeup, use this feature and describe what print() does, and how.
+=======
+## [TASK] Step 5: Are these buttons, LEDs, and switches connected via the PS subsystem or the PL subsystem? Briefly defend your answer. Note also that all three peripherals appear to be the same exact IP type (axi_gpio) – how can this be possible?
+ 
+The LEDS, buttons and switches are connected to the PS subsystem as they are connected/controlled through gpio pins.
+
+## [TASK] Step 5: Based on the datasheet and the address map shown in the “Address Editor” (mentioned in instruction 7 of Step 2: Use Designer Assistance), how would you (in software) read the current state of the switches? Be specific
+
+## [TASK] Step 7: modifications: Create a Software Application A nice feature is the ability to right-click on any function to view its declaration – do this for the print() function. In your writeup, use this feature and describe what print() does, and how. Why do you believe this function is used by Xilinx for their Hello World application, as opposed to the more conventional printf() function?
+
+<!-- TODO: In your writeup, use this feature and describe what print() does, and how. -->
+<!-- TODO: Why do you believe this function is used by Xilinx for their Hello World application, as opposed to the more conventional printf() function? -->
+
+## [TASK] Step 9: Connect to the Vivado Logic Analyzer: i) Take a screen capture of an LED wire turning on? Can you turn the LED on and off fast enough to get a screen capture of the Logic Analyzer displaying this pulse? If so, then provide this screen capture as well. For how long does the pulse stay high?
+
+i) instruction 11: In the Template page, select "Hello World", not "Peripheral Test" template
+In your writeup, use this feature and describe what print() does, and how.
+
+Why do you believe this function is used by Xilinx for their Hello World application, as opposed to the more conventional printf() function?
 
 Modify the nes_bootloader code such that the NES games are reasonably playable. In your report, describe your general approach to implementing both of the NESCore_Callback functions.
 
