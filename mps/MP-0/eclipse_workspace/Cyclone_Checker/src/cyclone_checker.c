@@ -9,6 +9,7 @@
 #include "xparameters.h"
 #include "xvtc.h"
 #include "xil_printf.h"
+#include "sleep.h"
 
 #define BLACK_REF_BAR_WIDTH 1
 #define VIDEO_WIDTH 640
@@ -19,7 +20,8 @@
 #define CYCLONE_GOLD 0xF1BE48
 #define CYCLONE_RED 0xC8103E
 
-u16 test_image[VIDEO_HEIGHT][VIDEO_WIDTH];
+u16 front_buffer[VIDEO_HEIGHT][VIDEO_WIDTH];
+u16 back_buffer[VIDEO_HEIGHT][VIDEO_WIDTH];
 
 // Our color format:
 // 15   14   13   12   11   10   9    8    7    6    5    4    3 2 1 0
@@ -29,6 +31,8 @@ u16 correct_color(u32 color);
 u16 convert_color_24_16(u32 color);
 
 void insert_black_ref_bars(int num_bars, int image_height, int image_width, u16 image[image_height][image_width]);
+
+void create_checker_board(int checker_dimension, int image_height, int image_width, u32 color_a, u32 color_b, u16 image[image_height][image_width]);
 
 int main()
 {
@@ -41,32 +45,12 @@ int main()
   XVtc_EnableGenerator(&Vtc);
 
   // Create the checker-board
+  create_checker_board(CHECKER_DIMENSION, VIDEO_HEIGHT, VIDEO_WIDTH, CYCLONE_GOLD, CYCLONE_RED, front_buffer);
+  create_checker_board(CHECKER_DIMENSION, VIDEO_HEIGHT, VIDEO_WIDTH, CYCLONE_RED, CYCLONE_GOLD, back_buffer);
 
-  // 0 -> RED
-  // 1 -> GOLD
-  char color_sel = 0;
 
-  for(int i = 0; i < VIDEO_HEIGHT; ++i)
-  {
-	  // Every (VIDEO_WIDTH / CHECKER_DIMENSION) horizontal pixels, switch colors
-	  for(int j = 0; j < VIDEO_WIDTH; ++j)
-	  {
-		  if(!((j + 1) % (VIDEO_WIDTH / CHECKER_DIMENSION)))
-		  {
-			  color_sel = color_sel ? 0 : 1;
-		  }
-
-		  test_image[i][j] = correct_color(convert_color_24_16(color_sel ? CYCLONE_GOLD : CYCLONE_RED));
-	  }
-
-	  // Switch color every (VIDEO_HEIGHT / CHECKER_DIMENSION) vertical pixels.
-	  if(!((i + 1) % (VIDEO_HEIGHT / CHECKER_DIMENSION)))
-	  {
-		  color_sel = color_sel ? 0 : 1;
-	  }
-  }
-
-  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, VIDEO_HEIGHT, VIDEO_WIDTH, test_image);
+  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, VIDEO_HEIGHT, VIDEO_WIDTH, front_buffer);
+  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, VIDEO_HEIGHT, VIDEO_WIDTH, back_buffer);
 
   Xil_DCacheFlush();
 
@@ -80,10 +64,8 @@ int main()
   XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET,
                     0x0); // Read Channel: VDMA MM2S Reg_Index
 
-  XAxiVdma_WriteReg(
-      XPAR_AXI_VDMA_0_BASEADDR,
-      XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET,
-      test_image); // Read Channel: VDMA MM2S Frame buffer Start Addr 1
+  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, front_buffer);
+
 
   XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
                     XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET,
@@ -96,6 +78,24 @@ int main()
                     XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET,
                     480); // Read Channel: VDMA MM2S VSIZE  (Note: Also
                                 // Starts VDMA transaction)
+
+//  // Swap front and back buffers
+//  while(1)
+//  {
+//	  sleep(1);
+//	  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, back_buffer);
+//	  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
+//	                    XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET,
+//	                    480); // Read Channel: VDMA MM2S VSIZE  (Note: Also
+//	                                // Starts VDMA transaction)
+//	  sleep(1);
+//	  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, front_buffer);
+//	  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
+//	                    XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET,
+//	                    480); // Read Channel: VDMA MM2S VSIZE  (Note: Also
+//	                                // Starts VDMA transaction)
+//  }
+
 
 
   cleanup_platform();
@@ -149,6 +149,34 @@ void insert_black_ref_bars(int num_bars, int image_height, int image_width, u16 
 	  for(int j = image_width - 1 - num_bars; j < image_width; j++)
 	  {
 		  (image[i])[j] = 0x0;
+	  }
+  }
+}
+
+void create_checker_board(int checker_dimension, int image_height, int image_width, u32 color_a, u32 color_b, u16 image[image_height][image_width])
+{
+
+  // 0 -> color_a
+  // 1 -> color_b
+  char color_sel = 0;
+
+  for(int i = 0; i < image_height; ++i)
+  {
+	  // Every (image_width / checker_dimension) horizontal pixels, switch colors
+	  for(int j = 0; j < image_width; ++j)
+	  {
+		  if(!((j + 1) % (image_width / checker_dimension)))
+		  {
+			  color_sel = color_sel ? 0 : 1;
+		  }
+
+		  image[i][j] = correct_color(convert_color_24_16(color_sel ? color_b : color_a));
+	  }
+
+	  // Switch color every (image_height / checker_dimension) vertical pixels.
+	  if(!((i + 1) % (image_height / checker_dimension)))
+	  {
+		  color_sel = color_sel ? 0 : 1;
 	  }
   }
 }
