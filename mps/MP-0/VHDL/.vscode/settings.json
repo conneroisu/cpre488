@@ -1,0 +1,11 @@
+{
+    "emeraldwalk.runonsave": {
+      "commands": [
+        {
+            // Include verilog files but not testbenches.
+          "match": "(\\.vhd)$",
+          "cmd": "ghdl -i --workdir=work work/${fileBasename}"
+        }
+      ]
+    }
+  }
