@@ -9,6 +9,8 @@
 #define MENU_TITLE "Xtendo Game Menu"
 #define MENU_WIDTH 250
 
+#define COVER_SCALE 0.5f
+
 #define VIDEO_WIDTH 640
 #define VIDEO_HEIGHT 480
 
@@ -35,9 +37,21 @@ typedef struct {
 
 // Game names use underscores instead of spaces.
 Game games[] = {
+    {"Paperboy", 1985, "Action/Simulation"},
+    {"Mega_Man", 1987, "Action-Platformer"},
+    {"The_Legend_of_Zelda", 1986, "Action-Adventure"},
+    {"The_Legend_of_Zelda_II", 1987, "Action-Adventure/RPG"},
     {"Adventure_Island_II", 1991, "Platformer/Action"},
-    {"Bad_Dudes", 1988, "Beat_‘em_up"},
+    {"Super_Mario_Bros", 1985, "Platformer"},
+    {"Super_Mario_Bros_2", 1988, "Platformer"},
+    {"Super_Mario_Bros_3", 1990, "Platformer"},
+    {"Donkey_Kong", 1981, "Arcade/Platform"},
+    {"Donkey_Kong_Jr", 1982, "Arcade/Platform"},
+    {"Excitebike", 1984, "Racing"},
+    {"Ice_Climber", 1985, "Platformer"},
     {"Balloon_Fight", 1984, "Arcade/Action"},
+    {"Indiana_Jones", 1989, "Action-Adventure"},
+    {"RBI_Baseball", 1988, "Sports"},
     {"Batman_-_The_Video_Game", 1989, "Action/Platformer"},
     {"Battle_of_Olympus", 1988, "Action/Platformer"},
     {"Battletoads_-_Double_Dragon", 1993, "Beat_‘em_up"},
@@ -45,8 +59,11 @@ Game games[] = {
     {"Blades_of_Steel", 1988, "Sports_(Ice_Hockey)"},
     {"Bomberman", 1983, "Maze/Action"},
     {"Bombermen", 1990, "Action/Puzzle"},
+    {"Bad_Dudes", 1988, "Beat_‘em_up"},
     {"Bubble_Bobble", 1986, "Platform/Puzzle"},
     {"Bucky_O'Hare", 1992, "Platformer"},
+    {"Tetris", 1984, "Puzzle"},
+    {"Tetris_2", 1990, "Puzzle"},
     {"BurgerTime", 1982, "Arcade/Action"},
     {"Cabal", 1988, "Run_and_Gun"},
     {"Captain_Skyhawk", 1990, "Shooter_(Horizontal_scrolling)"},
@@ -58,33 +75,28 @@ Game games[] = {
     {"Commando", 1985, "Run_and_Gun"},
     {"Contra", 1987, "Run_and_Gun"},
     {"Contra_Force", 1992, "Run_and_Gun"},
-    {"Coop-Super_Mario_Bros", 1991, "Platformer_(Cooperative_play)"},
+    {"Coop-Super_Mario_Bros", 1991, "Platformer_(Coop)"},
     {"Crystalis", 1990, "Action_RPG"},
     {"Darkwing_Duck", 1992, "Platformer"},
     {"Die_Hard", 1989, "Action"},
-    {"Donkey_Kong", 1981, "Arcade/Platform"},
-    {"Donkey_Kong_Jr", 1982, "Arcade/Platform"},
     {"Double_Dragon", 1987, "Beat_‘em_up"},
     {"Double_Dragon_II", 1988, "Beat_‘em_up"},
     {"Double_Dribble", 1986, "Sports_(Basketball)"},
     {"Dragon_Spirit", 1989, "Shooter"},
     {"DuckTales", 1989, "Platformer"},
     {"Elevator_Action", 1983, "Stealth/Action"},
-    {"Excitebike", 1984, "Racing"},
     {"Faxanadu", 1987, "Action_RPG/Platformer"},
     {"Felix_the_Cat", 1992, "Platformer"},
     {"Fire_'n_Ice", 1992, "Action/Platformer"},
-    {"G.I._Joe_-_A_Real_American_Hero", 1985, "Action/Run_and_Gun"},
-    {"Galaxy_5000_-_Racing_in_the_51st_Century", 1988, "Racing"},
+    {"G.I._Joe", 1985, "Action/Run_and_Gun"},
+    {"Galaxy_5000", 1988, "Racing"},
     {"Gargoyle's_Quest_II", 1992, "Action-Adventure/RPG"},
     {"Ghosts'n_Goblins", 1985, "Platformer"},
     {"Guerrilla_War", 1987, "Beat_‘em_up"},
     {"Gun.Smoke", 1985, "Run_and_Gun"},
     {"Gun_Nac", 1990, "Shoot_‘em_up"},
     {"Hogan's_Alley", 1984, "Light_Gun_Shooter"},
-    {"Ice_Climber", 1985, "Platformer"},
     {"Ice_Hockey", 1991, "Sports"},
-    {"Indiana_Jones_and_the_Last_Crusade", 1989, "Action-Adventure"},
     {"Jackal", 1986, "Run_and_Gun"},
     {"Journey_to_Silius", 1990, "Run_and_Gun"},
     {"KickMaster", 1990, "Platformer/Fighting"},
@@ -92,12 +104,9 @@ Game games[] = {
     {"Kirby's_Adventure", 1993, "Platformer"},
     {"Lemmings", 1991, "Puzzle"},
     {"Life_Force", 1986, "Shooter"},
-    {"Little_Nemo_-_The_Dream_Master", 1990, "Platformer"},
+    {"Little_Nemo", 1990, "Platformer"},
     {"Little_Samson", 1992, "Platformer"},
     {"Lode_Runner", 1983, "Puzzle/Platform"},
-    {"Maniac_Mansion", 1987, "Graphic_Adventure"},
-    {"Marble_Madness", 1984, "Puzzle/Arcade"},
-    {"Mega_Man", 1987, "Action-Platformer"},
     {"Mega_Man_2", 1988, "Action-Platformer"},
     {"Mega_Man_3", 1990, "Action-Platformer"},
     {"Mega_Man_4", 1991, "Action-Platformer"},
@@ -108,50 +117,46 @@ Game games[] = {
     {"Ms._Pac-Man", 1982, "Arcade"},
     {"Ninja_Crusaders", 1992, "Action/Beat_‘em_up"},
     {"North_and_South", 1989, "Strategy"},
-    {"Paperboy", 1985, "Action/Simulation"},
+    {"Maniac_Mansion", 1987, "Graphic_Adventure"},
+    {"Marble_Madness", 1984, "Puzzle/Arcade"},
     {"Popeye", 1982, "Action/Arcade"},
     {"Power_Blade", 1990, "Action/Platform"},
     {"Prince_of_Persia", 1989, "Action-Adventure/Platformer"},
-    {"Princess_Tomato_in_the_Salad_Kingdom", 1989, "Platformer"},
     {"Pro_Wrestling", 1986, "Sports/Fighting"},
     {"R.C._Pro-Am", 1988, "Racing"},
-    {"RBI_Baseball", 1988, "Sports"},
     {"Rad_Racer", 1987, "Racing"},
     {"Rampage", 1986, "Action"},
     {"River_City_Ransom", 1989, "Beat_‘em_up_with_RPG_elements"},
     {"Robin_Hood_-_Prince_of_Thieves", 1991, "Action/Platformer"},
     {"Rollergames", 1991, "Sports"},
     {"Rygar", 1986, "Action-Adventure"},
-    {"S.C.A.T._-_Special_Cybernetic_Attack_Team", 1992, "Run_and_Gun"},
+    {"S.C.A.T", 1992, "Run_and_Gun"},
     {"Shadow_of_the_Ninja", 1990, "Beat_‘em_up"},
+    {"Track_&_Field", 1983, "Sports"},
     {"Shadowgate", 1987, "Adventure/Puzzle"},
     {"Shatterhand", 1991, "Beat_‘em_up/Platformer"},
     {"Strider", 1989, "Action/Platformer"},
     {"Super_Dodge_Ball", 1991, "Sports"},
-    {"Super_Mario_Bros", 1985, "Platformer"},
-    {"Super_Mario_Bros_2", 1988, "Platformer"},
-    {"Super_Mario_Bros_3", 1990, "Platformer"},
-    {"Super_Pitfall", 1992, "Platformer"},
+    {"Tecmo_World_Wrestling", 1991, "Sports/Fighting"},
     {"Super_Spike_V_Ball", 1990, "Sports"},
     {"Tecmo_Super_Bowl", 1991, "Sports"},
-    {"Tecmo_World_Wrestling", 1991, "Sports/Fighting"},
-    {"Teenage_Mutant_Ninja_Turtles_-_Tournament_Fighters", 1993, "Fighting"},
-    {"Teenage_Mutant_Ninja_Turtles_II", 1991, "Beat_‘em_up"},
-    {"Teenage_Mutant_Ninja_Turtles_III", 1992, "Beat_‘em_up"},
-    {"Tetris", 1984, "Puzzle"},
-    {"Tetris_2", 1990, "Puzzle"},
-    {"The_Flintstones_-_The_Rescue_of_Dino_&_Hoppy", 1991, "Platformer"},
-    {"The_Guardian_Legend", 1988, "Action-Adventure/Shooter"},
     {"The_Legend_of_Kage", 1985, "Action/Stealth"},
-    {"The_Legend_of_Zelda", 1986, "Action-Adventure"},
+    {"Teenage_Mutant_Ninja_Turtles_I", 1993, "Fighting"},
+    {"Teenage_Mutant_Ninja_Turtles_II", 1991, "Beat_‘em_up"},
+    {"The_Flintstones", 1991, "Platformer"},
+    {"Super_Pitfall", 1992, "Platformer"},
+    {"The_Guardian_Legend", 1988, "Action-Adventure/Shooter"},
+    {"Top_Gun", 1987, "Flight_Simulator/Action"},
     {"The_Little_Mermaid", 1991, "Platformer"},
     {"The_Magic_of_Scheherazade", 1992, "Puzzle/Adventure"},
     {"Tiny_Toon_Adventures", 1992, "Platformer"},
-    {"Top_Gun", 1987, "Flight_Simulator/Action"},
-    {"Track_&_Field", 1983, "Sports"},
     {"Vice_-_Project_Doom", 1991, "Action/Platformer"},
     {"Wizards_&_Warriors", 1987, "Action-Adventure"},
-    {"Zelda_II_-_The_Adventure_of_Link", 1987, "Action-Adventure/RPG"}};
+};
+
+/*#define NUM_ROMS (sizeof(roms) / sizeof(roms[0]))*/
+/*int NUM_ROMS = sizeof(games) / sizeof(games[0]);*/
+#define NUM_ROMS (sizeof(games) / sizeof(games[0]))
 
 /*
  * Complete 8x8 font table for the first 128 ASCII characters.
@@ -402,6 +407,18 @@ void fill_rect(int x, int y, int width, int height, u16 color) {
 }
 
 /*
+ * Skip whitespace in the file.
+ */
+static void skip_whitespace(FILE *fp) {
+  int ch;
+  while ((ch = fgetc(fp)) != EOF && isspace(ch)) {
+  }
+  if (ch != EOF) {
+    ungetc(ch, fp);
+  }
+}
+
+/*
  * Construct a cover image filename.
  * The filename is built as "./covers/<title>.ppm" using the stored title (with
  * underscores).
@@ -409,95 +426,6 @@ void fill_rect(int x, int y, int width, int height, u16 color) {
 void get_cover_filename(const char *title, char *out, size_t out_size) {
   snprintf(out, out_size, "./covers/%s.ppm", title);
 }
-
-/*
- * Draw the game menu.
- * The menu displays at most GAME_MENU_ROWS items starting at menu_offset.
- * The currently selected game is highlighted.
- * Titles are stored with underscores but displayed with spaces.
- */
-void draw_game_menu(int selected_index,
-                    int menu_offset // offset of the first item to show
-) {
-  int menu_x = 20;
-  int menu_y = 20;
-
-  int total_games = sizeof(games) / sizeof(games[0]);
-  int visible_items = GAME_MENU_ROWS;
-  if (menu_offset + visible_items > total_games) {
-    visible_items = total_games - menu_offset;
-  }
-
-  char buffer[128];
-  char display_title[128];
-
-  // games list background
-  /*fill_rect(menu_x - 5, menu_y - 5, 270, visible_items * ITEM_SPACING + 10,*/
-  /*          0x28aa);*/
-  draw_rounded_rect(menu_x - 5, menu_y - 5, 270,
-                    visible_items * ITEM_SPACING + 10, 5, 0x28aa);
-
-  for (int i = 0; i < visible_items; i++) {
-    int game_index = menu_offset + i;
-    int item_y = menu_y + i * ITEM_SPACING;
-    snprintf(buffer, sizeof(buffer), "%s", games[game_index].title);
-    strncpy(display_title, buffer, sizeof(display_title));
-    display_title[sizeof(display_title) - 1] = '\0';
-    for (int j = 0; display_title[j] != '\0'; j++) {
-      if (display_title[j] == '_') {
-        display_title[j] = ' ';
-      }
-    }
-    if (game_index == selected_index) {
-      fill_rect(menu_x - 2,      // x
-                item_y - 2,      // y
-                MENU_WIDTH,      // width
-                FONT_HEIGHT + 4, // height
-                0xC618           // color
-      );
-      draw_text(menu_x, item_y, display_title, 0xFFFF);
-    } else {
-      draw_text(menu_x, item_y, display_title, 0x0000);
-    }
-  }
-
-  // if at the end of list, show "END"
-  if (116 == selected_index) {
-    draw_text(20,
-              GAME_MENU_ROWS * (ITEM_SPACING), //
-              "END OF LIST",
-              0x0000 // black
-    );
-  } else {
-    fill_rect(20,
-              GAME_MENU_ROWS * (ITEM_SPACING), //
-              MENU_WIDTH, FONT_HEIGHT,
-              0xFFFF // white
-    );
-  }
-
-  // title
-  draw_text(
-      // at the length of number of shown games
-      20,
-      GAME_MENU_ROWS * (FONT_HEIGHT + ITEM_SPACING), //
-      MENU_TITLE,
-      0x0000 // black
-  );
-}
-
-/*
- * Skip whitespace in the file.
- */
-static void skip_whitespace(FILE *fp) {
-  int ch;
-  while ((ch = fgetc(fp)) != EOF && isspace(ch))
-    ;
-  if (ch != EOF) {
-    ungetc(ch, fp);
-  }
-}
-
 /*
  * Load a binary PPM (P6) image into a static buffer.
  */
@@ -647,6 +575,123 @@ void clear_framebuffer() {
 }
 
 /*
+ * Draw the game menu.
+ * The menu displays at most GAME_MENU_ROWS items starting at menu_offset.
+ * The currently selected game is highlighted.
+ * Titles are stored with underscores but displayed with spaces.
+ */
+void draw_game_menu(int selected_index,
+                    int menu_offset // offset of the first item to show
+) {
+  int menu_x = 20;
+  int menu_y = 20;
+  char cover_filename[256];
+  char buffer[128];
+  char display_title[128];
+
+  int visible_items = GAME_MENU_ROWS;
+  if (menu_offset + visible_items > NUM_ROMS) {
+    visible_items = NUM_ROMS - menu_offset;
+  }
+
+  // games list background
+  draw_rounded_rect(menu_x - 5, menu_y - 5, 270,
+                    visible_items * ITEM_SPACING + 10, 5, 0x28aa);
+
+  for (int i = 0; i < visible_items; i++) {
+    int game_index = menu_offset + i;
+    int item_y = menu_y + i * ITEM_SPACING;
+    snprintf(buffer, sizeof(buffer), "%s", games[game_index].title);
+    strncpy(display_title, buffer, sizeof(display_title));
+    display_title[sizeof(display_title) - 1] = '\0';
+    for (int j = 0; display_title[j] != '\0'; j++) {
+      if (display_title[j] == '_') {
+        display_title[j] = ' ';
+      }
+    }
+    if (game_index == selected_index) {
+      fill_rect(menu_x - 2,      // x
+                item_y - 2,      // y
+                MENU_WIDTH,      // width
+                FONT_HEIGHT + 4, // height
+                0xC618           // color
+      );
+      draw_text(menu_x, item_y, display_title, 0xFFFF);
+    } else {
+      draw_text(menu_x, item_y, display_title, 0x0000);
+    }
+  }
+
+  // if at the end of list, show "END"
+  if (selected_index == NUM_ROMS - 1) {
+    draw_text(20,
+              GAME_MENU_ROWS * (ITEM_SPACING), //
+              "END OF LIST",
+              0x0000 // black
+    );
+  } else {
+    fill_rect(20,
+              GAME_MENU_ROWS * (ITEM_SPACING), //
+              MENU_WIDTH, FONT_HEIGHT,
+              0xFFFF // white
+    );
+  }
+
+  // title
+  draw_text(
+      // at the length of number of shown games
+      20,
+      GAME_MENU_ROWS * (FONT_HEIGHT + ITEM_SPACING), //
+      MENU_TITLE,
+      0x0000 // black
+  );
+
+  get_cover_filename(games[selected_index].title, cover_filename,
+                     sizeof(cover_filename));
+
+  // Try to load the cover to determine its dimensions.
+  int cover_width = 560, cover_height = 800;
+  int scaled_cover_height = 0;
+
+  if (cover_filename[0] != '\0') {
+    scaled_cover_height = (int)(cover_height * COVER_SCALE);
+    // Render the cover at position (350, 20)
+    if (render_ppm_scaled(cover_filename, 345, 15, COVER_SCALE) != 0) {
+      draw_text(350, 20, "Cover not found", 0x0000);
+    }
+  } else {
+    // If cover not found, display placeholder text and use default offset.
+    draw_text(350, 20, "Cover not found", 0x0000);
+    scaled_cover_height = 100;
+  }
+
+  // Prepare game info text.
+  // Convert the stored title (with underscores) to a display title.
+  char disp_title[128];
+  char info_line1[128];
+  char info_line2[128];
+  char info_line3[128];
+  strncpy(disp_title, games[selected_index].title, sizeof(disp_title));
+  disp_title[sizeof(disp_title) - 1] = '\0';
+  for (int i = 0; disp_title[i] != '\0'; i++) {
+    if (disp_title[i] == '_') {
+      disp_title[i] = ' ';
+    }
+  }
+  snprintf(info_line1, sizeof(info_line1), "%s", disp_title);
+  snprintf(info_line2, sizeof(info_line2), "Genre: %s",
+           games[selected_index].genre);
+  snprintf(info_line3, sizeof(info_line3), "Year: %d",
+           games[selected_index].year_released);
+
+  // Display game info below the cover.
+  int info_y = 20 + scaled_cover_height + 10;
+  draw_text(350, info_y, info_line1, 0x0000);
+  draw_text(350, info_y + FONT_HEIGHT, info_line2, 0x0000);
+  draw_text(350, info_y + FONT_HEIGHT * 2, info_line3, 0x0000);
+}
+
+/*
  * Main interactive loop.
  *
  * Uses 'w' to move up, 's' to move down, and 'q' to quit.
@@ -659,9 +704,7 @@ int main(void) {
   int total_games = sizeof(games) / sizeof(games[0]);
   int selected_index = 0;
   int menu_offset = 0;
-  char cover_filename[256];
   char input = '\0';
-  const float cover_scale = 0.5f;
 
   printf("Game Menu Navigation\n");
   printf("Press 'w' to move up, 's' to move down, 'q' to quit.\n");
@@ -675,54 +718,11 @@ int main(void) {
     clear_framebuffer();
     draw_game_menu(selected_index, menu_offset);
 
-    get_cover_filename(games[selected_index].title, cover_filename,
-                       sizeof(cover_filename));
-
-    // Try to load the cover to determine its dimensions.
-    int cover_width = 0, cover_height = 0;
-    u8 *cover_data = load_ppm(cover_filename, &cover_width, &cover_height);
-    int scaled_cover_height = 0;
-    if (cover_data) {
-      scaled_cover_height = (int)(cover_height * cover_scale);
-      // Render the cover at position (350, 20)
-      if (render_ppm_scaled(cover_filename, 350, 20, cover_scale) != 0) {
-        draw_text(350, 20, "Cover not found", 0x0000);
-      }
-    } else {
-      // If cover not found, display placeholder text and use default offset.
-      draw_text(350, 20, "Cover not found", 0x0000);
-      scaled_cover_height = 100;
-    }
-
-    // Prepare game info text.
-    // Convert the stored title (with underscores) to a display title.
-    char disp_title[128];
-    strncpy(disp_title, games[selected_index].title, sizeof(disp_title));
-    disp_title[sizeof(disp_title) - 1] = '\0';
-    for (int i = 0; disp_title[i] != '\0'; i++) {
-      if (disp_title[i] == '_') {
-        disp_title[i] = ' ';
-      }
-    }
-    char info_line1[128];
-    char info_line2[128];
-    char info_line3[128];
-    snprintf(info_line1, sizeof(info_line1), "%s", disp_title);
-    snprintf(info_line2, sizeof(info_line2), "Genre: %s",
-             games[selected_index].genre);
-    snprintf(info_line3, sizeof(info_line3), "Year: %d",
-             games[selected_index].year_released);
-
-    // Display game info below the cover.
-    int info_y = 20 + scaled_cover_height + 10;
-    draw_text(350, info_y, info_line1, 0x0000);
-    draw_text(350, info_y + FONT_HEIGHT, info_line2, 0x0000);
-    draw_text(350, info_y + FONT_HEIGHT * 2, info_line3, 0x0000);
-
     write_framebuffer_to_ppm("output.ppm");
 
     printf("Selected: %s\n", games[selected_index].title);
     printf("Enter command (w/s/q): ");
+    printf("EOL is : %ld\n", NUM_ROMS);
     input = getchar();
     while (getchar() != '\n')
       ;
