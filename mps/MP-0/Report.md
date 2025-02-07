@@ -171,7 +171,6 @@ Modify the nes_bootloader code such that the NES games are reasonably playable. 
 - Interfacing with an original NES controller (15 bonus points)
 - The ability to emulate sound using the appropriate callback function (25 bonus points).
 
-
 ## [x] [TASK] In your writeup, explain how you converted these color values valid values for the 16-bit framebuffer.
 
 We worked through calculating the RGB values manually using python and then implemented the necessary conversion functions in the nes_bootloader.c file.

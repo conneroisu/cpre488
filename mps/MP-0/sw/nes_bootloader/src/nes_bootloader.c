@@ -1,9 +1,3 @@
-/*****************************************************************************
- * nes_bootloader.c - main nes_bootloader application code. The bootloader
- * reads a .nes file from the SD card, and uses this information to
- * load and emulate the NES rom.
- *****************************************************************************/
-
 #include "nes_bootloader.h"
 #include "NESCore.h"
 #include <unistd.h> // for usleep
@@ -78,14 +72,16 @@ void nes_load() {
   return;
 }
 
-// Initializes bootloader state, the Xilinx peripherals, and the front buffer
+// Initializes
+// - bootloader state
+// - Xilinx peripherals
+// - front buffer
 void xil_init() {
 
   XStatus Status = XST_SUCCESS;
   uint32_t i;
   uint16_t *ptr;
 
-  // Setup the bootloader state variables.
   bootstate.nes_playing = 0;
   bootstate.activeBuffer = (uint32_t *)FBUFFER_BASEADDR;
 
@@ -94,19 +90,20 @@ void xil_init() {
   // For now, we disable the DCache as it causes problems with xilsd and vdma
   Xil_DCacheDisable();
 
-  // Initialize the VTC module
-  if (bootstate.debug_level >= 1)
+  if (bootstate.debug_level >= 1) {
     print("xil_init(): Initializing v_tc module\r\n");
+  }
 
-  VtcCfgPtr = XVtc_LookupConfig(XPAR_V_TC_0_DEVICE_ID);
+  VtcCfgPtr = XVtc_LookupConfig(XPAR_VTC_0_DEVICE_ID);
   XVtc_CfgInitialize(&Vtc, VtcCfgPtr, VtcCfgPtr->BaseAddress);
   XVtc_EnableGenerator(&Vtc);
 
-  // Initialize the front buffer
-  if (bootstate.debug_level >= 1)
+  if (bootstate.debug_level >= 1) {
     print("xil_init(): Initializing front buffer\r\n");
+  }
 
-  // Initialize the framebuffer. We can overwrite the edges with 0s.
+  // Initialize the framebuffer.
+  // We can overwrite the edges with 0s.
   ptr = (uint16_t *)FBUFFER_BASEADDR;
   for (i = 0; i < WIDTH * HEIGHT; i++) {
     ptr[i] = INIT_COLOR;
@@ -114,9 +111,9 @@ void xil_init() {
       ptr[i] = 0;
   }
 
-  // Initialize the back buffer
-  if (bootstate.debug_level >= 1)
+  if (bootstate.debug_level >= 1) {
     print("xil_init(): Initializing back buffer\r\n");
+  }
 
   ptr = (uint16_t *)BBUFFER_BASEADDR;
   for (i = 0; i < WIDTH * HEIGHT; i++) {
@@ -125,34 +122,46 @@ void xil_init() {
       ptr[i] = 0;
   }
 
-  // Initialize the VDMA module
-  if (bootstate.debug_level >= 1)
+  if (bootstate.debug_level >= 1) {
     print("xil_init(): Initializing vdma module\r\n");
+  }
 
-  // Set up VDMA config registers. Copy-paste solution from vga_test.c (but note
-  // difference in framebuffer start address)
-#define CHANGE_ME 0
+  XAxiVdma_WriteReg(           //
+      XPAR_AXIVDMA_0_BASEADDR, // VDMA Base Address
+      XAXIVDMA_CR_OFFSET,      // Control
+      0x03                     // Circular Mode
+  );
 
-  XAxiVdma_WriteReg(
-      XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET,
-      CHANGE_ME); // Circular Mode and Start bits set, VDMA MM2S Control
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET,
-                    CHANGE_ME); // VDMA MM2S Reg_Index
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_FRMSTORE_OFFSET,
-                    CHANGE_ME); // VDMA MM2S Number FRM_Stores
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
-                    XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET,
-                    CHANGE_ME); // VDMA MM2S Start Addr 1
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
-                    XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET,
-                    CHANGE_ME); // 1280 bytes, VDMA MM2S FRM_Delay, and Stride
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
-                    XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET,
-                    CHANGE_ME); // 1280 bytes, VDMA MM2S HSIZE
-  XAxiVdma_WriteReg(
-      XPAR_AXI_VDMA_0_BASEADDR,
-      XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET,
-      CHANGE_ME); // 480 lines, VDMA MM2S VSIZE  (Note: Starts VDMA transaction
+  XAxiVdma_WriteReg(             //
+      XPAR_AXIVDMA_0_BASEADDR,   // VDMA Base Address
+      XAXIVDMA_HI_FRMBUF_OFFSET, // VDMA MM2S Reg_Index
+      0x00                       // ROOT
+  );
+
+  XAxiVdma_WriteReg(           // VDMA MM2S Frame Buffer
+      XPAR_AXIVDMA_0_BASEADDR, // VDMA Base Addr
+      XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, // Index into MM2S
+      FBUFFER_BASEADDR                                        //
+  );
+
+  XAxiVdma_WriteReg(                   // Read Ch: VDMA MM2S FRM_Delay, & Stride
+      XPAR_AXIVDMA_0_BASEADDR,         // VDMA Base Address
+      XAXIVDMA_MM2S_ADDR_OFFSET +      //
+          XAXIVDMA_STRD_FRMDLY_OFFSET, // Index into MM2S
+      0x0500                           //
+  );
+
+  XAxiVdma_WriteReg(           // Read Ch: VDMA MM2S HSIZE
+      XPAR_AXIVDMA_0_BASEADDR, // VDMA Base Address
+      XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET, //
+      0x0500                                             //
+  );
+
+  XAxiVdma_WriteReg( // Read Ch: VDMA MM2S VSIZE & Starts VDMA transaction
+      XPAR_AXIVDMA_0_BASEADDR,                           //
+      XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET, //
+      0x01E0                                             //
+  );
 
   return;
 }
