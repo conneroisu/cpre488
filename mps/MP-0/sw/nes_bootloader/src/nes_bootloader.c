@@ -2,39 +2,17 @@
 #include "NESCore.h"
 #include <unistd.h> // for usleep
 
-// Main function. Performs Xilinx-specific initialization, and then goes into
-// the main polling loop
-int main() {
-
-  // Initialize all memory space
-  xil_init();
-
-  // Initialize the NESCore
-  NESCore_Init();
-
-  // Enable the cache
-  Xil_DCacheEnable();
-
-  // Main polling loop. For now, you can hard-code the .nes ROM you would like
-  // to load. Later, improve the code to have user-specified entry and exit
-  // options
-  while (1) {
-    nes_load();
-  }
-}
-
-// Runs the main NES emulation
-void nes_load() {
-
+void nes_load(uint8_t *rom_name) {
   int32_t result = 0, i;
   uint8_t nes_fname[17];
 
-  nes_strncpy(nes_fname, "zelda.nes", 10);
+  nes_strncpy(nes_fname, 10);
 
   usleep(100000);
 
-  if (bootstate.debug_level >= 1)
+  if (bootstate.debug_level >= 1) {
     xil_printf("nes_load(): loading %s\r\n", nes_fname);
+  }
 
   // Disable the cache so it will play nice with xilsd (needed here)
   Xil_DCacheDisable();
@@ -77,7 +55,6 @@ void nes_load() {
 // - Xilinx peripherals
 // - front buffer
 void xil_init() {
-
   XStatus Status = XST_SUCCESS;
   uint32_t i;
   uint16_t *ptr;
@@ -164,4 +141,19 @@ void xil_init() {
   );
 
   return;
+}
+
+int main() {
+  // Initialize all memory space
+  xil_init();
+
+  // Initialize the NESCore
+  NESCore_Init();
+
+  // Enable the cache
+  Xil_DCacheEnable();
+
+  while (1) {
+    nes_load("zelda.nes");
+  }
 }
