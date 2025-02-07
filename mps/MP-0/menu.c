@@ -4,12 +4,21 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define GAME_MENU_ROWS 25
+#define ROWS_GAME_MENU 25
+#define NUM_GAMES (sizeof(games) / sizeof(games[0]))
 
 #define MENU_TITLE "Xtendo Game Menu"
+#define MENU_EOL "END OF LIST"
 #define MENU_WIDTH 250
+#define MENU_X 20
+#define MENU_Y 20
 
 #define COVER_SCALE 0.5f
+#define COVER_SCALED_HEIGHT (COVER_HEIGHT * COVER_SCALE)
+#define COVER_INFO_Y (30 + COVER_SCALED_HEIGHT)
+#define COVER_INFO_X 350
+#define COVER_HEIGHT 800
+#define COVER_WIDTH 560
 
 #define VIDEO_WIDTH 640
 #define VIDEO_HEIGHT 480
@@ -153,10 +162,6 @@ Game games[] = {
     {"Vice_-_Project_Doom", 1991, "Action/Platformer"},
     {"Wizards_&_Warriors", 1987, "Action-Adventure"},
 };
-
-/*#define NUM_ROMS (sizeof(roms) / sizeof(roms[0]))*/
-/*int NUM_ROMS = sizeof(games) / sizeof(games[0]);*/
-#define NUM_ROMS (sizeof(games) / sizeof(games[0]))
 
 /*
  * Complete 8x8 font table for the first 128 ASCII characters.
@@ -331,10 +336,12 @@ void draw_text(int x, int y, const char *text, u16 color) {
   }
 }
 
-// Draws a rounded rectangle border (outline only) into the global framebuffer.
-// (rect_x, rect_y) specifies the top‐left corner, rect_width and rect_height
-// are the overall dimensions, and radius is the radius of the rounded corners.
-// The border is drawn with a thickness of one pixel.
+/*
+ * Draws a rounded rectangle border (outline only) into the global framebuffer.
+ * (rect_x, rect_y) specifies the top‐left corner, rect_width and rect_height
+ * are the overall dimensions, and radius is the radius of the rounded corners.
+ * The border is drawn with a thickness of one pixel.
+ */
 void draw_rounded_rect(int rect_x, int rect_y, int rect_width, int rect_height,
                        int radius, u16 color) {
 // Helper macro to set a pixel (if within bounds)
@@ -362,28 +369,24 @@ void draw_rounded_rect(int rect_x, int rect_y, int rect_width, int rect_height,
   int y = r;
   int d = 1 - r;
   while (x <= y) {
-    // Top-left corner (arc from 180° to 270°): plot points relative to center =
-    // (rect_x + r, rect_y + r)
+    // Top-left corner (arc from 180° to 270°):
+    // plot points relative to center = (rect_x + r, rect_y + r)
     SET_PIXEL(rect_x + r - x, rect_y + r - y);
     SET_PIXEL(rect_x + r - y, rect_y + r - x);
-
-    // Top-right corner (arc from 270° to 360°): center = (rect_x + rect_width -
-    // r - 1, rect_y + r)
+    // Top-right corner (arc from 270° to 360°):
+    // center = (rect_x + rect_width - r - 1, rect_y + r)
     SET_PIXEL(rect_x + rect_width - r - 1 + x, rect_y + r - y);
     SET_PIXEL(rect_x + rect_width - r - 1 + y, rect_y + r - x);
-
-    // Bottom-left corner (arc from 90° to 180°): center = (rect_x + r, rect_y +
-    // rect_height - r - 1)
+    // Bottom-left corner (arc from 90° to 180°):
+    // center = (rect_x + r, rect_y + rect_height - r - 1)
     SET_PIXEL(rect_x + r - x, rect_y + rect_height - r - 1 + y);
     SET_PIXEL(rect_x + r - y, rect_y + rect_height - r - 1 + x);
-
-    // Bottom-right corner (arc from 0° to 90°): center = (rect_x + rect_width -
-    // r - 1, rect_y + rect_height - r - 1)
+    // Bottom-right corner (arc from 0° to 90°):
+    // center = (rect_x + rect_width - r - 1, rect_y + rect_height - r - 1)
     SET_PIXEL(rect_x + rect_width - r - 1 + x,
               rect_y + rect_height - r - 1 + y);
     SET_PIXEL(rect_x + rect_width - r - 1 + y,
               rect_y + rect_height - r - 1 + x);
-
     x++;
     if (d < 0) {
       d += 4 * x + 2;
@@ -539,7 +542,7 @@ int render_ppm_scaled(
 
 /*
  * Write the framebuffer to a binary PPM (P6) file.
- * **Not** used in FPGA version.
+ * Not used in FPGA version.
  */
 void write_framebuffer_to_ppm(const char *filename) {
   FILE *fp = fopen(filename, "wb");
@@ -575,32 +578,39 @@ void clear_framebuffer() {
 }
 
 /*
- * Draw the game menu.
+ * Draws the game menu.
+ *
  * The menu displays at most GAME_MENU_ROWS items starting at menu_offset.
+ *
  * The currently selected game is highlighted.
+ *
  * Titles are stored with underscores but displayed with spaces.
  */
 void draw_game_menu(int selected_index,
                     int menu_offset // offset of the first item to show
 ) {
-  int menu_x = 20;
-  int menu_y = 20;
   char cover_filename[256];
   char buffer[128];
   char display_title[128];
+  char line_info[128];
 
-  int visible_items = GAME_MENU_ROWS;
-  if (menu_offset + visible_items > NUM_ROMS) {
-    visible_items = NUM_ROMS - menu_offset;
+  int visible_items = ROWS_GAME_MENU;
+  if (menu_offset + visible_items > NUM_GAMES) {
+    visible_items = NUM_GAMES - menu_offset;
   }
 
-  // games list background
-  draw_rounded_rect(menu_x - 5, menu_y - 5, 270,
-                    visible_items * ITEM_SPACING + 10, 5, 0x28aa);
+  draw_rounded_rect(                     // games list background
+      MENU_X - 5,                        // x
+      MENU_Y - 5,                        // y
+      270,                               // width
+      visible_items * ITEM_SPACING + 10, // height
+      5,                                 // radius
+      0x28aa                             // border color
+  );
 
   for (int i = 0; i < visible_items; i++) {
     int game_index = menu_offset + i;
-    int item_y = menu_y + i * ITEM_SPACING;
+    int item_y = MENU_Y + i * ITEM_SPACING;
     snprintf(buffer, sizeof(buffer), "%s", games[game_index].title);
     strncpy(display_title, buffer, sizeof(display_title));
     display_title[sizeof(display_title) - 1] = '\0';
@@ -610,85 +620,70 @@ void draw_game_menu(int selected_index,
       }
     }
     if (game_index == selected_index) {
-      fill_rect(menu_x - 2,      // x
+      fill_rect(MENU_X - 2,      // x
                 item_y - 2,      // y
                 MENU_WIDTH,      // width
                 FONT_HEIGHT + 4, // height
                 0xC618           // color
       );
-      draw_text(menu_x, item_y, display_title, 0xFFFF);
+      draw_text(MENU_X, item_y, display_title, 0xFFFF);
     } else {
-      draw_text(menu_x, item_y, display_title, 0x0000);
+      draw_text(MENU_X, item_y, display_title, 0x0000);
     }
   }
 
-  // if at the end of list, show "END"
-  if (selected_index == NUM_ROMS - 1) {
-    draw_text(20,
-              GAME_MENU_ROWS * (ITEM_SPACING), //
-              "END OF LIST",
-              0x0000 // black
+  if (selected_index == NUM_GAMES - 1) {
+    draw_text(                           // if at the end of list, show "END"
+        20,                              // x
+        ROWS_GAME_MENU * (ITEM_SPACING), // y
+        MENU_EOL,                        // text
+        0x0000                           // black
     );
   } else {
-    fill_rect(20,
-              GAME_MENU_ROWS * (ITEM_SPACING), //
-              MENU_WIDTH, FONT_HEIGHT,
-              0xFFFF // white
+    fill_rect(                           // white background (replaces MENU_EOL)
+        20,                              // x
+        ROWS_GAME_MENU * (ITEM_SPACING), // y
+        MENU_WIDTH,                      // width
+        FONT_HEIGHT,                     // height
+        0xFFFF                           // white
     );
   }
 
-  // title
-  draw_text(
-      // at the length of number of shown games
-      20,
-      GAME_MENU_ROWS * (FONT_HEIGHT + ITEM_SPACING), //
-      MENU_TITLE,
-      0x0000 // black
+  draw_text(                                         // title
+      20,                                            // x
+      ROWS_GAME_MENU * (FONT_HEIGHT + ITEM_SPACING), // y
+      MENU_TITLE,                                    // text
+      0x0000                                         // black
   );
 
   get_cover_filename(games[selected_index].title, cover_filename,
                      sizeof(cover_filename));
 
-  // Try to load the cover to determine its dimensions.
-  int cover_width = 560, cover_height = 800;
-  int scaled_cover_height = 0;
-
   if (cover_filename[0] != '\0') {
-    scaled_cover_height = (int)(cover_height * COVER_SCALE);
     // Render the cover at position (350, 20)
     if (render_ppm_scaled(cover_filename, 345, 15, COVER_SCALE) != 0) {
-      draw_text(350, 20, "Cover not found", 0x0000);
+      draw_text(350, 20, "Cover NA", 0x0000);
     }
   } else {
     // If cover not found, display placeholder text and use default offset.
     draw_text(350, 20, "Cover not found", 0x0000);
-    scaled_cover_height = 100;
   }
 
-  // Prepare game info text.
-  // Convert the stored title (with underscores) to a display title.
-  char disp_title[128];
-  char info_line1[128];
-  char info_line2[128];
-  char info_line3[128];
-  strncpy(disp_title, games[selected_index].title, sizeof(disp_title));
-  disp_title[sizeof(disp_title) - 1] = '\0';
-  for (int i = 0; disp_title[i] != '\0'; i++) {
-    if (disp_title[i] == '_') {
-      disp_title[i] = ' ';
+  strncpy(display_title, games[selected_index].title, sizeof(display_title));
+  display_title[sizeof(display_title) - 1] = '\0';
+  for (int i = 0; display_title[i] != '\0'; i++) {
+    if (display_title[i] == '_') {
+      display_title[i] = ' ';
     }
   }
-  snprintf(info_line1, sizeof(info_line1), " %s", disp_title);
-  snprintf(info_line2, sizeof(info_line2), "Genre: %s",
+  snprintf(line_info, sizeof(line_info), "%s", display_title);
+  draw_text(COVER_INFO_X, COVER_INFO_Y, line_info, 0x0000);
+  snprintf(line_info, sizeof(line_info), " Genre: %s",
            games[selected_index].genre);
-  snprintf(info_line3, sizeof(info_line3), "Year: %d",
+  draw_text(COVER_INFO_X, COVER_INFO_Y + FONT_HEIGHT, line_info, 0x0000);
+  snprintf(line_info, sizeof(line_info), " Year: %d",
            games[selected_index].year_released);
-
-  // Display game info below the cover.
-  int info_y = 20 + scaled_cover_height + 10;
-  draw_text(350, info_y, info_line1, 0x0000);
-  draw_text(350, info_y + FONT_HEIGHT, info_line2, 0x0000);
-  draw_text(350, info_y + FONT_HEIGHT * 2, info_line3, 0x0000);
+  draw_text(COVER_INFO_X, COVER_INFO_Y + FONT_HEIGHT * 2, line_info, 0x0000);
 }
 
 /*
@@ -710,10 +705,11 @@ int main(void) {
   printf("Press 'w' to move up, 's' to move down, 'q' to quit.\n");
 
   while (1) {
-    if (selected_index < menu_offset)
+    if (selected_index < menu_offset) {
       menu_offset = selected_index;
-    else if (selected_index >= menu_offset + GAME_MENU_ROWS)
-      menu_offset = selected_index - GAME_MENU_ROWS + 1;
+    } else if (selected_index >= menu_offset + ROWS_GAME_MENU) {
+      menu_offset = selected_index - ROWS_GAME_MENU + 1;
+    }
 
     clear_framebuffer();
     draw_game_menu(selected_index, menu_offset);
