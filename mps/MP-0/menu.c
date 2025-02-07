@@ -7,6 +7,7 @@
 #define GAME_MENU_ROWS 25
 
 #define MENU_TITLE "Xtendo Game Menu"
+#define MENU_WIDTH 250
 
 #define VIDEO_WIDTH 640
 #define VIDEO_HEIGHT 480
@@ -325,9 +326,71 @@ void draw_text(int x, int y, const char *text, u16 color) {
   }
 }
 
-/*
- * Fill a rectangle in the framebuffer with a solid 16-bit color.
- */
+// Draws a rounded rectangle border (outline only) into the global framebuffer.
+// (rect_x, rect_y) specifies the top‐left corner, rect_width and rect_height
+// are the overall dimensions, and radius is the radius of the rounded corners.
+// The border is drawn with a thickness of one pixel.
+void draw_rounded_rect(int rect_x, int rect_y, int rect_width, int rect_height,
+                       int radius, u16 color) {
+// Helper macro to set a pixel (if within bounds)
+#define SET_PIXEL(x, y)                                                        \
+  do {                                                                         \
+    if ((x) >= 0 && (x) < VIDEO_WIDTH && (y) >= 0 && (y) < VIDEO_HEIGHT) {     \
+      framebuffer[(y)][(x)] = (color);                                         \
+    }                                                                          \
+  } while (0)
+
+  // Draw horizontal lines (top and bottom) excluding rounded corners.
+  for (int x = rect_x + radius; x < rect_x + rect_width - radius; x++) {
+    SET_PIXEL(x, rect_y);                   // Top edge
+    SET_PIXEL(x, rect_y + rect_height - 1); // Bottom edge
+  }
+  // Draw vertical lines (left and right) excluding rounded corners.
+  for (int y = rect_y + radius; y < rect_y + rect_height - radius; y++) {
+    SET_PIXEL(rect_x, y);                  // Left edge
+    SET_PIXEL(rect_x + rect_width - 1, y); // Right edge
+  }
+
+  // Midpoint circle algorithm for the corner arcs.
+  int r = radius;
+  int x = 0;
+  int y = r;
+  int d = 1 - r;
+  while (x <= y) {
+    // Top-left corner (arc from 180° to 270°): plot points relative to center =
+    // (rect_x + r, rect_y + r)
+    SET_PIXEL(rect_x + r - x, rect_y + r - y);
+    SET_PIXEL(rect_x + r - y, rect_y + r - x);
+
+    // Top-right corner (arc from 270° to 360°): center = (rect_x + rect_width -
+    // r - 1, rect_y + r)
+    SET_PIXEL(rect_x + rect_width - r - 1 + x, rect_y + r - y);
+    SET_PIXEL(rect_x + rect_width - r - 1 + y, rect_y + r - x);
+
+    // Bottom-left corner (arc from 90° to 180°): center = (rect_x + r, rect_y +
+    // rect_height - r - 1)
+    SET_PIXEL(rect_x + r - x, rect_y + rect_height - r - 1 + y);
+    SET_PIXEL(rect_x + r - y, rect_y + rect_height - r - 1 + x);
+
+    // Bottom-right corner (arc from 0° to 90°): center = (rect_x + rect_width -
+    // r - 1, rect_y + rect_height - r - 1)
+    SET_PIXEL(rect_x + rect_width - r - 1 + x,
+              rect_y + rect_height - r - 1 + y);
+    SET_PIXEL(rect_x + rect_width - r - 1 + y,
+              rect_y + rect_height - r - 1 + x);
+
+    x++;
+    if (d < 0) {
+      d += 4 * x + 2;
+    } else {
+      y--;
+      d += 4 * (x - y) + 2;
+    }
+  }
+
+#undef SET_PIXEL
+}
+
 void fill_rect(int x, int y, int width, int height, u16 color) {
   for (int j = y; j < y + height; j++) {
     for (int i = x; i < x + width; i++) {
@@ -353,7 +416,9 @@ void get_cover_filename(const char *title, char *out, size_t out_size) {
  * The currently selected game is highlighted.
  * Titles are stored with underscores but displayed with spaces.
  */
-void draw_game_menu(int selected_index, int menu_offset) {
+void draw_game_menu(int selected_index,
+                    int menu_offset // offset of the first item to show
+) {
   int menu_x = 20;
   int menu_y = 20;
 
@@ -366,6 +431,12 @@ void draw_game_menu(int selected_index, int menu_offset) {
   char buffer[128];
   char display_title[128];
 
+  // games list background
+  /*fill_rect(menu_x - 5, menu_y - 5, 270, visible_items * ITEM_SPACING + 10,*/
+  /*          0x28aa);*/
+  draw_rounded_rect(menu_x - 5, menu_y - 5, 270,
+                    visible_items * ITEM_SPACING + 10, 5, 0x28aa);
+
   for (int i = 0; i < visible_items; i++) {
     int game_index = menu_offset + i;
     int item_y = menu_y + i * ITEM_SPACING;
@@ -373,21 +444,46 @@ void draw_game_menu(int selected_index, int menu_offset) {
     strncpy(display_title, buffer, sizeof(display_title));
     display_title[sizeof(display_title) - 1] = '\0';
     for (int j = 0; display_title[j] != '\0'; j++) {
-      if (display_title[j] == '_')
+      if (display_title[j] == '_') {
         display_title[j] = ' ';
+      }
     }
     if (game_index == selected_index) {
-      fill_rect(menu_x - 2, item_y - 2, 220, FONT_HEIGHT + 4, 0xC618);
+      fill_rect(menu_x - 2,      // x
+                item_y - 2,      // y
+                MENU_WIDTH,      // width
+                FONT_HEIGHT + 4, // height
+                0xC618           // color
+      );
       draw_text(menu_x, item_y, display_title, 0xFFFF);
     } else {
       draw_text(menu_x, item_y, display_title, 0x0000);
     }
   }
 
-  // Draw title.
+  // if at the end of list, show "END"
+  if (116 == selected_index) {
+    draw_text(20,
+              GAME_MENU_ROWS * (ITEM_SPACING), //
+              "END OF LIST",
+              0x0000 // black
+    );
+  } else {
+    fill_rect(20,
+              GAME_MENU_ROWS * (ITEM_SPACING), //
+              MENU_WIDTH, FONT_HEIGHT,
+              0xFFFF // white
+    );
+  }
+
+  // title
   draw_text(
       // at the length of number of shown games
-      20, GAME_MENU_ROWS * (FONT_HEIGHT + ITEM_SPACING), MENU_TITLE, 0x0000);
+      20,
+      GAME_MENU_ROWS * (FONT_HEIGHT + ITEM_SPACING), //
+      MENU_TITLE,
+      0x0000 // black
+  );
 }
 
 /*
@@ -397,14 +493,18 @@ static void skip_whitespace(FILE *fp) {
   int ch;
   while ((ch = fgetc(fp)) != EOF && isspace(ch))
     ;
-  if (ch != EOF)
+  if (ch != EOF) {
     ungetc(ch, fp);
+  }
 }
 
 /*
  * Load a binary PPM (P6) image into a static buffer.
  */
-u8 *load_ppm(const char *filename, int *width, int *height) {
+u8 *load_ppm(const char *filename, // ppm file path
+             int *width,           // load width
+             int *height           // load height
+) {
   FILE *fp = fopen(filename, "rb");
   if (!fp) {
     fprintf(stderr, "Error: Could not open PPM file %s\n", filename);
@@ -419,8 +519,8 @@ u8 *load_ppm(const char *filename, int *width, int *height) {
   skip_whitespace(fp);
   int ch = fgetc(fp);
   while (ch == '#') {
-    while ((ch = fgetc(fp)) != '\n' && ch != EOF)
-      ;
+    while ((ch = fgetc(fp)) != '\n' && ch != EOF) {
+    }
     skip_whitespace(fp);
     ch = fgetc(fp);
   }
@@ -465,28 +565,37 @@ u8 *load_ppm(const char *filename, int *width, int *height) {
 /*
  * Render a PPM image into the framebuffer at (dest_x, dest_y) with scaling.
  */
-int render_ppm_scaled(const char *filename, int dest_x, int dest_y,
-                      float scale) {
+int render_ppm_scaled(
+    const char *filename, // ppm file path
+    int dest_x,           // x coordinate of the top left corner of the image
+    int dest_y,           // y coordinate of the top left corner of the image
+    float scale           // scale factor
+) {
   int img_width, img_height;
   u8 *img_data = load_ppm(filename, &img_width, &img_height);
-  if (!img_data)
+  if (!img_data) {
     return -1;
+  }
   int scaled_width = (int)(img_width * scale);
   int scaled_height = (int)(img_height * scale);
   for (int sy = 0; sy < scaled_height; sy++) {
     int fb_y = dest_y + sy;
-    if (fb_y < 0 || fb_y >= VIDEO_HEIGHT)
+    if (fb_y < 0 || fb_y >= VIDEO_HEIGHT) {
       continue;
+    }
     int orig_y = (int)(sy / scale);
-    if (orig_y >= img_height)
+    if (orig_y >= img_height) {
       orig_y = img_height - 1;
+    }
     for (int sx = 0; sx < scaled_width; sx++) {
       int fb_x = dest_x + sx;
-      if (fb_x < 0 || fb_x >= VIDEO_WIDTH)
+      if (fb_x < 0 || fb_x >= VIDEO_WIDTH) {
         continue;
+      }
       int orig_x = (int)(sx / scale);
-      if (orig_x >= img_width)
+      if (orig_x >= img_width) {
         orig_x = img_width - 1;
+      }
       u8 r = img_data[(orig_y * img_width + orig_x) * 3 + 0];
       u8 g = img_data[(orig_y * img_width + orig_x) * 3 + 1];
       u8 b = img_data[(orig_y * img_width + orig_x) * 3 + 2];
@@ -502,6 +611,7 @@ int render_ppm_scaled(const char *filename, int dest_x, int dest_y,
 
 /*
  * Write the framebuffer to a binary PPM (P6) file.
+ * **Not** used in FPGA version.
  */
 void write_framebuffer_to_ppm(const char *filename) {
   FILE *fp = fopen(filename, "wb");
@@ -590,8 +700,9 @@ int main(void) {
     strncpy(disp_title, games[selected_index].title, sizeof(disp_title));
     disp_title[sizeof(disp_title) - 1] = '\0';
     for (int i = 0; disp_title[i] != '\0'; i++) {
-      if (disp_title[i] == '_')
+      if (disp_title[i] == '_') {
         disp_title[i] = ' ';
+      }
     }
     char info_line1[128];
     char info_line2[128];
@@ -612,8 +723,6 @@ int main(void) {
 
     printf("Selected: %s\n", games[selected_index].title);
     printf("Enter command (w/s/q): ");
-    int tmpval = GAME_MENU_ROWS * (FONT_HEIGHT + ITEM_SPACING);
-    printf("tmpval: %d\n", tmpval);
     input = getchar();
     while (getchar() != '\n')
       ;
