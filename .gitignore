@@ -40,11 +40,9 @@ Debug/
 Release/
 Flash/
 RAM/
-makefile
 *.mk
 *.opt
 *.pp
-*.xml
 .config/
 .launches/
 .xdchelp
@@ -114,7 +112,6 @@ vsim.dbg
 *_stub.vhdl
 *_funcsim.v
 *_funcsim.vhdl
-.project
 *.cache
 .metadata
 *.data
@@ -200,7 +197,6 @@ share/python-wheels/
 *.egg
 MANIFEST
 *.manifest
-*.spec
 pip-log.txt
 pip-delete-this-directory.txt
 htmlcov/
@@ -264,3 +260,4 @@ pyrightconfig.json
 .devenv
 .obsidian.vimrc
 .ccls-cache
+*.zip_
