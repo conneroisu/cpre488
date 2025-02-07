@@ -85,10 +85,22 @@
                 stdenv.cc
                 libclang
 
+                (python312.withPackages (ps: [
+                  ps.numpy
+                  ps.pandas
+                  ps.matplotlib
+                  ps.pillow
+                ]))
+
                 tbb # Intel Threading Building Blocks
                 llvmPackages.openmp # OpenMP support
                 binutils
                 alejandra
+              ]
+              ++ (lib.optionals isLinux (with pkgs; [
+                xorg.libX11
+                ghdl
+                nvc
                 (pkgs.buildFHSEnv {
                   name = "xilinx-env";
                   targetPkgs = pkgs:
@@ -123,8 +135,6 @@
                       gtk2
                       gtk3
                       libxcrypt-legacy # required for Vivado
-                      python3
-
                       (libidn.overrideAttrs (_old: {
                         # we need libidn.so.11 but nixpkgs has libidn.so.12
                         src = fetchurl {
@@ -150,11 +160,6 @@
                     source /opt/xilinx/Vitis/*/settings64.sh
                   '';
                 })
-              ]
-              ++ (lib.optionals isLinux (with pkgs; [
-                xorg.libX11
-                ghdl
-                nvc
               ]))
               ++ (lib.optionals isDarwin (with pkgs; [
                 rosettaPkgs.ghdl
