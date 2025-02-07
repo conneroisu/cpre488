@@ -678,7 +678,7 @@ void draw_game_menu(int selected_index,
       disp_title[i] = ' ';
     }
   }
-  snprintf(info_line1, sizeof(info_line1), "%s", disp_title);
+  snprintf(info_line1, sizeof(info_line1), " %s", disp_title);
   snprintf(info_line2, sizeof(info_line2), "Genre: %s",
            games[selected_index].genre);
   snprintf(info_line3, sizeof(info_line3), "Year: %d",
@@ -722,7 +722,6 @@ int main(void) {
 
     printf("Selected: %s\n", games[selected_index].title);
     printf("Enter command (w/s/q): ");
-    printf("EOL is : %ld\n", NUM_ROMS);
     input = getchar();
     while (getchar() != '\n')
       ;
