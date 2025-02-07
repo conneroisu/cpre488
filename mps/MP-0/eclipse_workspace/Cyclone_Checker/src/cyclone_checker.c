@@ -14,6 +14,10 @@
 #define VIDEO_WIDTH 640
 #define VIDEO_HEIGHT 480
 
+// Colors
+#define CYCLONE_GOLD 0xF1BE48
+#define CYCLONE_RED 0xC8103E
+
 u16 test_image[VIDEO_HEIGHT][VIDEO_WIDTH];
 
 // Our color format:
@@ -23,43 +27,29 @@ u16 correct_color(u32 color);
 
 u16 convert_color_24_16(u32 color);
 
+void insert_black_ref_bars(int num_bars, int image_height, int image_width, u16 image[image_height][image_width]);
+
 int main()
 {
 
   XVtc Vtc;
   XVtc_Config *VtcCfgPtr;
 
-  int i, j;
-
   VtcCfgPtr = XVtc_LookupConfig(XPAR_AXI_VDMA_0_DEVICE_ID);
   XVtc_CfgInitialize(&Vtc, VtcCfgPtr, VtcCfgPtr->BaseAddress);
   XVtc_EnableGenerator(&Vtc);
 
-  for(i = 0; i < VIDEO_HEIGHT; ++i)
+  for(int i = 0; i < VIDEO_HEIGHT; ++i)
   {
-	  for(j = 0; j < VIDEO_WIDTH; ++j)
+	  for(int j = 0; j < VIDEO_WIDTH; ++j)
 	  {
-		  test_image[i][j] = correct_color(convert_color_24_16(0xF1BE48));
+		  // Should draw cyclone gold.
+		  test_image[i][j] = correct_color(convert_color_24_16(CYCLONE_RED));
 		  //test_image[i][j] = 0xF0;
 	  }
   }
 
-  // Black bars to define black reference in blanking period
-  for(i = 0; i < VIDEO_HEIGHT; i++)
-  {
-	  for(j = 0; j < BLACK_REF_BAR_WIDTH; j++)
-	  {
-		  test_image[i][j] = 0x0;
-	  }
-  }
-
-  for(i = 0; i < VIDEO_HEIGHT; i++)
-  {
-	  for(j = VIDEO_WIDTH - 1 - BLACK_REF_BAR_WIDTH; j < VIDEO_WIDTH; j++)
-	  {
-		  test_image[i][j] = 0x0;
-	  }
-  }
+  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, VIDEO_HEIGHT, VIDEO_WIDTH, test_image);
 
   Xil_DCacheFlush();
 
@@ -90,10 +80,6 @@ int main()
                     480); // Read Channel: VDMA MM2S VSIZE  (Note: Also
                                 // Starts VDMA transaction)
 
-  while(1)
-  {
-	  xil_printf("Frame buffer addr: %x\n\r", (unsigned int *) test_image);
-  }
 
   cleanup_platform();
 
@@ -106,9 +92,47 @@ u16 correct_color(u32 color)
 }
 
 // Example: 0xC8103E
-// 0x3E -> Red | 0x10 -> Green | 0xC8 -> Blue
+// 0xC8 -> Red | 0x10 -> Green | 0x3E -> Blue
 u16 convert_color_24_16(u32 color)
 {
-	return ((((color & 0xFF) >> 4)) << 8) | (((color & 0xFF00) >> 8) & 0xF0) | (((color & 0xFF0000) >> 12) & 0xF00);
+	u16 r, g, b = 0;
+
+	// Red: 0xFF0000 -> 0xF
+	// Shift right 2 bytes (16 bits) to get the two bytes in the LSB position.
+	// Then to get the left byte, shift 4 more.
+	r = color >> 20;
+
+	// Green: 0xFF00 -> 0xF0
+	//Shift right one byte (8 bits) to get the two bytes in the LSB position.
+	// Then mask with 0xF0 to only take the left byte. It is already positioned
+	// where it needs to be.
+	g = (color >> 8) & 0xF0;
+
+	// Blue:  0xFF -> 0xF00
+	// Shift left 4 bits to get the left-most byte in the correct position.
+	// Then mask with 0xF00 to only use the left-most byte.
+	b = (color << 4) & 0xF00;
+
+	return r | g | b;
+}
+
+void insert_black_ref_bars(int num_bars, int image_height, int image_width, u16 image[image_height][image_width])
+{
+  // Black bars to define black reference in blanking period
+  for(int i = 0; i < image_height; i++)
+  {
+	  for(int j = 0; j < num_bars; j++)
+	  {
+		  (image[i])[j] = 0x0;
+	  }
+  }
+
+  for(int i = 0; i < image_height; i++)
+  {
+	  for(int j = image_width - 1 - num_bars; j < image_width; j++)
+	  {
+		  (image[i])[j] = 0x0;
+	  }
+  }
 }
 
