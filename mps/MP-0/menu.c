@@ -656,8 +656,10 @@ void draw_game_menu(int selected_index,
       0x0000                                         // black
   );
 
-  get_cover_filename(games[selected_index].title, cover_filename,
-                     sizeof(cover_filename));
+  get_cover_filename(games[selected_index].title, // input
+                     cover_filename,              // output
+                     sizeof(cover_filename)       // output size
+  );
 
   if (cover_filename[0] != '\0') {
     // Render the cover at position (350, 20)
