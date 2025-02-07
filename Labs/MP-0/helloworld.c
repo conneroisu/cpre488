@@ -35,6 +35,8 @@ u16 test_image[480][640];
 //#define VTC_CR (*(volatile u32 *)(XPAR_V_TC_0_BASEADDR + 0x0000))
 //#define ENABLE_VTC 0x0000000D  // Enable bit for VTC
 
+
+
 int main() {
 	//init_platform();
 
@@ -42,17 +44,8 @@ int main() {
     XVtc_Config *VtcCfgPtr;
 
     int i, j;
-    /*
-    int x = 0;
-    UINTPTR ButtonIn = 0x41210000;
-    while (x == 0) {
-    	if ((Xil_In32(ButtonIn) & 0x00000001) == 0x00000001) {
-    		x = 1;
-    		print("Button 1 is on\n\r");
-    	}
-    }
 
-    print("While exit");*/
+
 
     // Enable VTC module: Using high-level functions provided by Vendor
     VtcCfgPtr = XVtc_LookupConfig(XPAR_AXI_VDMA_0_DEVICE_ID);
@@ -67,14 +60,17 @@ int main() {
 
 
     // Initialize Test image for VDMA transfer to VGA monitor
-    for (i = 0; i < 480; i++) {
+   for (i = 0; i < 480; i++) {
       for (j = 0; j < 640; j++) {
 
-        if (j < 213) {
-          test_image[i][j] = 0x000F; // red pixels
-        }
-        else if(j < 426 ) {
-          test_image[i][j] = 0x00F0; // green pixels
+		if (j == 0 || j == 639) {
+		  test_image[i][j] = 0x0000; // black pixels
+		}
+		  else if (j < 213) {
+		  test_image[i][j] = 0x00F0; // red pixels
+		}
+		else if(j < 426 ) {
+          test_image[i][j] = 0xF000; // green pixels
         }
         else {
           test_image[i][j] = 0x0F00; // blue pixels
@@ -82,6 +78,26 @@ int main() {
 
       }
     }
+
+
+/*
+	for (i = 0; i < 480; i++) {
+	  for (j = 0; j < 640; j++) {
+
+		if (j == 0 || j == 639) {
+		  test_image[i][j] = 0x0000; // black pixels
+		}
+		  else if (((j/80)%2 == 0 && (i/60)%2==0) || ((j/80)%2 == 1 && (i/60)%2==1)) {
+		  test_image[i][j] = 0x14E0; // Cyclone Red
+		}
+		else {
+		  test_image[i][j] = 0xB3E0; // Cyclone Gold
+		}
+
+	  }
+
+	}*/
+
 
 	// Make sure Display information gets flushed from cache to DDR Memory
     Xil_DCacheFlush();

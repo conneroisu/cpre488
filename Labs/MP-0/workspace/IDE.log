@@ -1,877 +1,1389 @@
-17:42:41 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\temp_xsdb_launch_script.tcl
-17:42:41 INFO  : Registering command handlers for Vitis TCF services
-17:42:42 INFO  : Platform repository initialization has completed.
-17:42:43 INFO  : XSCT server has started successfully.
-17:42:43 INFO  : plnx-install-location is set to ''
-17:42:45 INFO  : Successfully done setting XSCT server connection channel  
-17:42:45 INFO  : Successfully done query RDI_DATADIR 
-17:42:45 INFO  : Successfully done setting workspace for the tool. 
-17:43:24 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-17:43:24 INFO  : Result from executing command 'getPlatforms': 
-17:43:24 INFO  : Platform 'zynq_design_1_wrapper' is added to custom repositories.
-17:43:33 INFO  : Platform 'zynq_design_1_wrapper' is added to custom repositories.
-17:44:48 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-17:44:48 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-17:44:48 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-17:45:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-17:45:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-17:45:04 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-17:45:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-17:45:10 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-17:45:10 INFO  : 'jtag frequency' command is executed.
-17:45:10 INFO  : Context for 'APU' is selected.
-17:45:10 INFO  : System reset is completed.
-17:45:13 INFO  : 'after 3000' command is executed.
-17:45:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-17:45:16 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-17:45:16 INFO  : Context for 'APU' is selected.
-17:45:16 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-17:45:16 INFO  : 'configparams force-mem-access 1' command is executed.
-17:45:16 INFO  : Context for 'APU' is selected.
-17:45:16 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-17:45:16 INFO  : 'ps7_init' command is executed.
-17:45:16 INFO  : 'ps7_post_config' command is executed.
-17:45:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-17:45:16 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-17:45:16 INFO  : 'configparams force-mem-access 0' command is executed.
-17:45:16 INFO  : ----------------XSDB Script----------------
+09:50:00 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\oparker\cpre488\Labs\MP-0\workspace\temp_xsdb_launch_script.tcl
+09:50:00 INFO  : Registering command handlers for Vitis TCF services
+09:50:01 INFO  : XSCT server has started successfully.
+09:50:01 INFO  : Successfully done setting XSCT server connection channel  
+09:50:01 INFO  : Successfully done query RDI_DATADIR 
+09:50:01 INFO  : Successfully done setting workspace for the tool. 
+09:50:01 INFO  : Platform repository initialization has completed.
+09:50:01 INFO  : plnx-install-location is set to ''
+09:51:04 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
+09:51:04 INFO  : Result from executing command 'getPlatforms': 
+09:51:04 INFO  : Platform 'zynq_design_1_wrapper' is added to custom repositories.
+09:51:13 INFO  : Platform 'zynq_design_1_wrapper' is added to custom repositories.
+09:53:46 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
+09:53:46 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
+09:53:46 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+09:56:03 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+09:57:25 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+09:58:27 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:00:01 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:00:49 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:01:10 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:01:22 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:01:33 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:01:48 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:02:08 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:02:24 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:03:02 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:03:17 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:03:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:03:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:03:25 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:03:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:03:30 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:03:30 INFO  : 'jtag frequency' command is executed.
+10:03:30 INFO  : Context for 'APU' is selected.
+10:03:30 INFO  : System reset is completed.
+10:03:33 INFO  : 'after 3000' command is executed.
+10:03:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:03:35 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:03:35 INFO  : Context for 'APU' is selected.
+10:03:35 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:03:35 INFO  : 'configparams force-mem-access 1' command is executed.
+10:03:35 INFO  : Context for 'APU' is selected.
+10:03:35 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:03:36 INFO  : 'ps7_init' command is executed.
+10:03:36 INFO  : 'ps7_post_config' command is executed.
+10:03:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:03:37 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:03:37 INFO  : 'configparams force-mem-access 0' command is executed.
+10:03:37 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-17:45:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-17:45:16 INFO  : 'con' command is executed.
-17:45:16 INFO  : ----------------XSDB Script (After Launch)----------------
+10:03:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:03:37 INFO  : 'con' command is executed.
+10:03:37 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-17:45:16 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-18:06:07 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-18:06:12 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-18:06:12 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-18:06:12 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-18:06:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-18:06:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-18:06:23 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-18:06:29 INFO  : Disconnected from the channel tcfchan#2.
-18:06:29 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-18:06:29 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-18:06:30 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-18:06:30 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-18:06:33 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
-18:06:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-18:06:33 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-18:06:33 INFO  : 'jtag frequency' command is executed.
-18:06:33 INFO  : Context for 'APU' is selected.
-18:06:33 INFO  : System reset is completed.
-18:06:36 INFO  : 'after 3000' command is executed.
-18:06:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-18:06:39 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-18:06:39 INFO  : Context for 'APU' is selected.
-18:06:39 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-18:06:39 INFO  : 'configparams force-mem-access 1' command is executed.
-18:06:39 INFO  : Context for 'APU' is selected.
-18:06:39 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-18:06:39 INFO  : 'ps7_init' command is executed.
-18:06:39 INFO  : 'ps7_post_config' command is executed.
-18:06:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-18:06:39 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-18:06:39 INFO  : 'configparams force-mem-access 0' command is executed.
-18:06:39 INFO  : ----------------XSDB Script----------------
+10:03:37 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:23:25 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:23:36 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:24:31 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:24:45 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:24:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:24:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:24:54 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:25:04 INFO  : Disconnected from the channel tcfchan#2.
+10:25:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:25:04 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:25:04 INFO  : 'jtag frequency' command is executed.
+10:25:04 INFO  : Context for 'APU' is selected.
+10:25:04 INFO  : System reset is completed.
+10:25:07 INFO  : 'after 3000' command is executed.
+10:25:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:25:10 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:25:10 INFO  : Context for 'APU' is selected.
+10:25:10 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:25:10 INFO  : 'configparams force-mem-access 1' command is executed.
+10:25:10 INFO  : Context for 'APU' is selected.
+10:25:10 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:25:10 INFO  : 'ps7_init' command is executed.
+10:25:10 INFO  : 'ps7_post_config' command is executed.
+10:25:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:25:11 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:25:11 INFO  : 'configparams force-mem-access 0' command is executed.
+10:25:11 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-18:06:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-18:06:39 INFO  : 'con' command is executed.
-18:06:39 INFO  : ----------------XSDB Script (After Launch)----------------
+10:25:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:25:11 INFO  : 'con' command is executed.
+10:25:11 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-18:06:39 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-18:34:23 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-18:34:30 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-18:34:30 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-18:34:30 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-18:34:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-18:34:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-18:34:48 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-18:34:51 INFO  : Disconnected from the channel tcfchan#4.
-18:34:51 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-18:34:51 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-18:34:51 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-18:34:51 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-18:34:54 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
-18:34:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-18:34:55 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-18:34:55 INFO  : 'jtag frequency' command is executed.
-18:34:55 INFO  : Context for 'APU' is selected.
-18:34:55 INFO  : System reset is completed.
-18:34:58 INFO  : 'after 3000' command is executed.
-18:34:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-18:35:04 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-18:35:05 INFO  : Context for 'APU' is selected.
-18:35:05 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-18:35:05 INFO  : 'configparams force-mem-access 1' command is executed.
-18:35:05 INFO  : Context for 'APU' is selected.
-18:35:05 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-18:35:05 INFO  : 'ps7_init' command is executed.
-18:35:05 INFO  : 'ps7_post_config' command is executed.
-18:35:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-18:35:05 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-18:35:05 INFO  : 'configparams force-mem-access 0' command is executed.
-18:35:05 INFO  : ----------------XSDB Script----------------
+10:25:11 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:25:30 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:25:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:25:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:25:41 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:25:48 INFO  : Disconnected from the channel tcfchan#3.
+10:25:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:25:48 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:25:48 INFO  : 'jtag frequency' command is executed.
+10:25:48 INFO  : Context for 'APU' is selected.
+10:25:48 INFO  : System reset is completed.
+10:25:51 INFO  : 'after 3000' command is executed.
+10:25:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:25:54 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:25:54 INFO  : Context for 'APU' is selected.
+10:25:54 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:25:54 INFO  : 'configparams force-mem-access 1' command is executed.
+10:25:54 INFO  : Context for 'APU' is selected.
+10:25:54 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:25:54 INFO  : 'ps7_init' command is executed.
+10:25:54 INFO  : 'ps7_post_config' command is executed.
+10:25:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:25:55 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:25:55 INFO  : 'configparams force-mem-access 0' command is executed.
+10:25:55 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-18:35:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-18:35:05 INFO  : 'con' command is executed.
-18:35:05 INFO  : ----------------XSDB Script (After Launch)----------------
+10:25:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:25:55 INFO  : 'con' command is executed.
+10:25:55 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-18:35:05 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-18:48:45 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-18:48:45 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-18:48:45 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-18:48:51 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-18:48:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-18:48:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-18:49:03 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-18:49:07 INFO  : Disconnected from the channel tcfchan#6.
-18:49:07 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-18:49:07 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-18:49:07 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-18:49:07 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-18:49:11 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
-18:49:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-18:49:11 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-18:49:11 INFO  : 'jtag frequency' command is executed.
-18:49:11 INFO  : Context for 'APU' is selected.
-18:49:11 INFO  : System reset is completed.
-18:49:14 INFO  : 'after 3000' command is executed.
-18:49:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-18:49:21 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-18:49:21 INFO  : Context for 'APU' is selected.
-18:49:21 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-18:49:21 INFO  : 'configparams force-mem-access 1' command is executed.
-18:49:21 INFO  : Context for 'APU' is selected.
-18:49:21 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-18:49:21 INFO  : 'ps7_init' command is executed.
-18:49:21 INFO  : 'ps7_post_config' command is executed.
-18:49:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-18:49:21 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-18:49:21 INFO  : 'configparams force-mem-access 0' command is executed.
-18:49:21 INFO  : ----------------XSDB Script----------------
+10:25:55 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:26:37 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:26:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:26:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:26:43 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:26:56 INFO  : Disconnected from the channel tcfchan#5.
+10:26:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:26:56 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:26:56 INFO  : 'jtag frequency' command is executed.
+10:26:56 INFO  : Context for 'APU' is selected.
+10:26:56 INFO  : System reset is completed.
+10:26:59 INFO  : 'after 3000' command is executed.
+10:26:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:27:02 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:27:02 INFO  : Context for 'APU' is selected.
+10:27:02 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:27:02 INFO  : 'configparams force-mem-access 1' command is executed.
+10:27:02 INFO  : Context for 'APU' is selected.
+10:27:02 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:27:02 INFO  : 'ps7_init' command is executed.
+10:27:02 INFO  : 'ps7_post_config' command is executed.
+10:27:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:27:03 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:27:03 INFO  : 'configparams force-mem-access 0' command is executed.
+10:27:03 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-18:49:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-18:49:21 INFO  : 'con' command is executed.
-18:49:21 INFO  : ----------------XSDB Script (After Launch)----------------
+10:27:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:27:03 INFO  : 'con' command is executed.
+10:27:03 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-18:49:21 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-19:16:35 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-19:16:35 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-19:16:35 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-19:16:50 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-19:16:54 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-19:16:54 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-19:16:54 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-19:17:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:17:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-19:17:09 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-19:17:13 INFO  : Disconnected from the channel tcfchan#8.
-19:17:13 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-19:17:13 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-19:17:13 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-19:17:13 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-19:17:17 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
-19:17:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:17:17 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-19:17:17 INFO  : 'jtag frequency' command is executed.
-19:17:17 INFO  : Context for 'APU' is selected.
-19:17:17 INFO  : System reset is completed.
-19:17:20 INFO  : 'after 3000' command is executed.
-19:17:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-19:17:27 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-19:17:27 INFO  : Context for 'APU' is selected.
-19:17:27 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-19:17:27 INFO  : 'configparams force-mem-access 1' command is executed.
-19:17:27 INFO  : Context for 'APU' is selected.
-19:17:27 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-19:17:28 INFO  : 'ps7_init' command is executed.
-19:17:28 INFO  : 'ps7_post_config' command is executed.
-19:17:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:17:28 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:17:28 INFO  : 'configparams force-mem-access 0' command is executed.
-19:17:28 INFO  : ----------------XSDB Script----------------
+10:27:03 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:27:33 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:27:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:27:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:27:42 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:27:51 INFO  : Disconnected from the channel tcfchan#6.
+10:27:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:27:51 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:27:51 INFO  : 'jtag frequency' command is executed.
+10:27:51 INFO  : Context for 'APU' is selected.
+10:27:51 INFO  : System reset is completed.
+10:27:55 INFO  : 'after 3000' command is executed.
+10:27:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:27:57 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:27:57 INFO  : Context for 'APU' is selected.
+10:27:57 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:27:57 INFO  : 'configparams force-mem-access 1' command is executed.
+10:27:57 INFO  : Context for 'APU' is selected.
+10:27:57 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:27:57 INFO  : 'ps7_init' command is executed.
+10:27:57 INFO  : 'ps7_post_config' command is executed.
+10:27:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:27:58 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:27:58 INFO  : 'configparams force-mem-access 0' command is executed.
+10:27:58 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-19:17:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:17:28 INFO  : 'con' command is executed.
-19:17:28 INFO  : ----------------XSDB Script (After Launch)----------------
+10:27:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:27:58 INFO  : 'con' command is executed.
+10:27:58 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-19:17:28 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-19:50:46 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-19:50:51 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-19:50:51 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-19:50:51 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-19:50:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:50:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-19:51:06 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-19:51:09 INFO  : Disconnected from the channel tcfchan#11.
-19:51:09 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-19:51:09 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-19:51:09 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-19:51:09 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-19:51:13 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
-19:51:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:51:13 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-19:51:13 INFO  : 'jtag frequency' command is executed.
-19:51:13 INFO  : Context for 'APU' is selected.
-19:51:13 INFO  : System reset is completed.
-19:51:16 INFO  : 'after 3000' command is executed.
-19:51:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-19:51:23 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-19:51:23 INFO  : Context for 'APU' is selected.
-19:51:23 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-19:51:23 INFO  : 'configparams force-mem-access 1' command is executed.
-19:51:23 INFO  : Context for 'APU' is selected.
-19:51:23 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-19:51:23 INFO  : 'ps7_init' command is executed.
-19:51:23 INFO  : 'ps7_post_config' command is executed.
-19:51:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:51:24 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:51:24 INFO  : 'configparams force-mem-access 0' command is executed.
-19:51:24 INFO  : ----------------XSDB Script----------------
+10:27:58 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:29:20 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:29:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:29:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:29:26 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:31:55 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:31:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:31:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:32:01 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:32:40 INFO  : Disconnected from the channel tcfchan#7.
+10:32:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:32:40 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:32:40 INFO  : 'jtag frequency' command is executed.
+10:32:40 INFO  : Context for 'APU' is selected.
+10:32:40 INFO  : System reset is completed.
+10:32:43 INFO  : 'after 3000' command is executed.
+10:32:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:32:45 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:32:45 INFO  : Context for 'APU' is selected.
+10:32:45 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:32:45 INFO  : 'configparams force-mem-access 1' command is executed.
+10:32:45 INFO  : Context for 'APU' is selected.
+10:32:45 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:32:45 INFO  : 'ps7_init' command is executed.
+10:32:45 INFO  : 'ps7_post_config' command is executed.
+10:32:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:32:47 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:32:47 INFO  : 'configparams force-mem-access 0' command is executed.
+10:32:47 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-19:51:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:51:24 INFO  : 'con' command is executed.
-19:51:24 INFO  : ----------------XSDB Script (After Launch)----------------
+10:32:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:32:47 INFO  : 'con' command is executed.
+10:32:47 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-19:51:24 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-20:04:32 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-20:04:36 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-20:04:36 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-20:04:36 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-20:04:51 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-20:04:51 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-20:04:51 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-20:04:51 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-20:04:55 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
-20:04:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-20:04:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-20:05:02 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-20:05:06 INFO  : Disconnected from the channel tcfchan#13.
-20:05:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-20:05:06 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-20:05:06 INFO  : 'jtag frequency' command is executed.
-20:05:06 INFO  : Context for 'APU' is selected.
-20:05:06 INFO  : System reset is completed.
-20:05:09 INFO  : 'after 3000' command is executed.
-20:05:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-20:05:16 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-20:05:16 INFO  : Context for 'APU' is selected.
-20:05:16 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-20:05:16 INFO  : 'configparams force-mem-access 1' command is executed.
-20:05:16 INFO  : Context for 'APU' is selected.
-20:05:16 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-20:05:16 INFO  : 'ps7_init' command is executed.
-20:05:16 INFO  : 'ps7_post_config' command is executed.
-20:05:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-20:05:16 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-20:05:16 INFO  : 'configparams force-mem-access 0' command is executed.
-20:05:16 INFO  : ----------------XSDB Script----------------
+10:32:47 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:35:55 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:35:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:35:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:36:01 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:36:07 INFO  : Disconnected from the channel tcfchan#8.
+10:36:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:36:08 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:36:08 INFO  : 'jtag frequency' command is executed.
+10:36:08 INFO  : Context for 'APU' is selected.
+10:36:08 INFO  : System reset is completed.
+10:36:11 INFO  : 'after 3000' command is executed.
+10:36:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:36:13 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:36:13 INFO  : Context for 'APU' is selected.
+10:36:13 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:36:13 INFO  : 'configparams force-mem-access 1' command is executed.
+10:36:13 INFO  : Context for 'APU' is selected.
+10:36:13 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:36:13 INFO  : 'ps7_init' command is executed.
+10:36:13 INFO  : 'ps7_post_config' command is executed.
+10:36:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:36:14 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:36:15 INFO  : 'configparams force-mem-access 0' command is executed.
+10:36:15 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-20:05:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-20:05:16 INFO  : 'con' command is executed.
-20:05:16 INFO  : ----------------XSDB Script (After Launch)----------------
+10:36:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:36:15 INFO  : 'con' command is executed.
+10:36:15 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-20:05:16 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-20:21:45 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-20:21:50 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-20:21:50 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-20:21:50 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-20:22:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-20:22:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-20:22:07 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-20:22:12 INFO  : Disconnected from the channel tcfchan#15.
-20:22:12 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-20:22:12 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-20:22:12 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-20:22:12 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-20:22:16 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
-20:22:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-20:22:16 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-20:22:16 INFO  : 'jtag frequency' command is executed.
-20:22:16 INFO  : Context for 'APU' is selected.
-20:22:16 INFO  : System reset is completed.
-20:22:19 INFO  : 'after 3000' command is executed.
-20:22:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-20:22:26 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-20:22:26 INFO  : Context for 'APU' is selected.
-20:22:26 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-20:22:26 INFO  : 'configparams force-mem-access 1' command is executed.
-20:22:26 INFO  : Context for 'APU' is selected.
-20:22:26 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-20:22:26 INFO  : 'ps7_init' command is executed.
-20:22:26 INFO  : 'ps7_post_config' command is executed.
-20:22:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-20:22:27 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-20:22:27 INFO  : 'configparams force-mem-access 0' command is executed.
-20:22:27 INFO  : ----------------XSDB Script----------------
+10:36:15 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:38:46 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:38:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:38:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:38:51 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:38:58 INFO  : Disconnected from the channel tcfchan#9.
+10:38:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:38:58 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:38:58 INFO  : 'jtag frequency' command is executed.
+10:38:58 INFO  : Context for 'APU' is selected.
+10:38:59 INFO  : System reset is completed.
+10:39:02 INFO  : 'after 3000' command is executed.
+10:39:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:39:04 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:39:04 INFO  : Context for 'APU' is selected.
+10:39:04 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:39:04 INFO  : 'configparams force-mem-access 1' command is executed.
+10:39:04 INFO  : Context for 'APU' is selected.
+10:39:04 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:39:04 INFO  : 'ps7_init' command is executed.
+10:39:04 INFO  : 'ps7_post_config' command is executed.
+10:39:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:39:05 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:39:05 INFO  : 'configparams force-mem-access 0' command is executed.
+10:39:05 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-20:22:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-20:22:27 INFO  : 'con' command is executed.
-20:22:27 INFO  : ----------------XSDB Script (After Launch)----------------
+10:39:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:39:06 INFO  : 'con' command is executed.
+10:39:06 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-20:22:27 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-20:25:51 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-20:25:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-20:25:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-20:26:04 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-20:26:08 INFO  : Disconnected from the channel tcfchan#17.
-20:26:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-20:26:08 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-20:26:08 INFO  : 'jtag frequency' command is executed.
-20:26:08 INFO  : Context for 'APU' is selected.
-20:26:08 INFO  : System reset is completed.
-20:26:11 INFO  : 'after 3000' command is executed.
-20:26:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-20:26:18 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-20:26:18 INFO  : Context for 'APU' is selected.
-20:26:18 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-20:26:18 INFO  : 'configparams force-mem-access 1' command is executed.
-20:26:18 INFO  : Context for 'APU' is selected.
-20:26:18 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-20:26:18 INFO  : 'ps7_init' command is executed.
-20:26:18 INFO  : 'ps7_post_config' command is executed.
-20:26:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-20:26:18 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-20:26:18 INFO  : 'configparams force-mem-access 0' command is executed.
-20:26:18 INFO  : ----------------XSDB Script----------------
+10:39:06 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:39:39 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:39:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:39:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:39:47 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:39:53 INFO  : Disconnected from the channel tcfchan#10.
+10:39:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:39:53 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:39:53 INFO  : 'jtag frequency' command is executed.
+10:39:53 INFO  : Context for 'APU' is selected.
+10:39:53 INFO  : System reset is completed.
+10:39:56 INFO  : 'after 3000' command is executed.
+10:39:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:39:58 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:39:58 INFO  : Context for 'APU' is selected.
+10:39:58 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:39:58 INFO  : 'configparams force-mem-access 1' command is executed.
+10:39:58 INFO  : Context for 'APU' is selected.
+10:39:58 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:39:59 INFO  : 'ps7_init' command is executed.
+10:39:59 INFO  : 'ps7_post_config' command is executed.
+10:39:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:40:00 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:40:00 INFO  : 'configparams force-mem-access 0' command is executed.
+10:40:00 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-20:26:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-20:26:18 INFO  : 'con' command is executed.
-20:26:18 INFO  : ----------------XSDB Script (After Launch)----------------
+10:40:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:40:00 INFO  : 'con' command is executed.
+10:40:00 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-20:26:18 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-21:09:21 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-21:09:27 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-21:09:27 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-21:09:27 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-21:09:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-21:09:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-21:09:50 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-21:09:56 INFO  : Disconnected from the channel tcfchan#18.
-21:09:56 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-21:09:56 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-21:09:56 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-21:09:56 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-21:09:59 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
-21:09:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-21:10:00 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-21:10:00 INFO  : 'jtag frequency' command is executed.
-21:10:00 INFO  : Context for 'APU' is selected.
-21:10:00 INFO  : System reset is completed.
-21:10:03 INFO  : 'after 3000' command is executed.
-21:10:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-21:10:09 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-21:10:09 INFO  : Context for 'APU' is selected.
-21:10:09 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-21:10:09 INFO  : 'configparams force-mem-access 1' command is executed.
-21:10:09 INFO  : Context for 'APU' is selected.
-21:10:09 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-21:10:10 INFO  : 'ps7_init' command is executed.
-21:10:10 INFO  : 'ps7_post_config' command is executed.
-21:10:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-21:10:10 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-21:10:10 INFO  : 'configparams force-mem-access 0' command is executed.
-21:10:10 INFO  : ----------------XSDB Script----------------
+10:40:00 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:40:06 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:40:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:40:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:40:12 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:40:17 INFO  : Disconnected from the channel tcfchan#11.
+10:40:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:40:17 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:40:17 INFO  : 'jtag frequency' command is executed.
+10:40:17 INFO  : Context for 'APU' is selected.
+10:40:18 INFO  : System reset is completed.
+10:40:21 INFO  : 'after 3000' command is executed.
+10:40:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:40:23 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:40:23 INFO  : Context for 'APU' is selected.
+10:40:23 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:40:23 INFO  : 'configparams force-mem-access 1' command is executed.
+10:40:23 INFO  : Context for 'APU' is selected.
+10:40:23 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:40:23 INFO  : 'ps7_init' command is executed.
+10:40:23 INFO  : 'ps7_post_config' command is executed.
+10:40:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:40:24 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:40:24 INFO  : 'configparams force-mem-access 0' command is executed.
+10:40:24 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-21:10:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-21:10:10 INFO  : 'con' command is executed.
-21:10:10 INFO  : ----------------XSDB Script (After Launch)----------------
+10:40:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:40:24 INFO  : 'con' command is executed.
+10:40:24 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-21:10:10 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-21:33:29 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-21:33:46 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-21:33:46 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-21:33:46 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-21:35:13 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-21:35:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-21:35:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-21:35:25 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-21:35:28 INFO  : Disconnected from the channel tcfchan#20.
-21:35:28 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-21:35:28 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-21:35:29 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-21:35:29 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-21:35:32 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
-21:35:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-21:35:32 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-21:35:32 INFO  : 'jtag frequency' command is executed.
-21:35:32 INFO  : Context for 'APU' is selected.
-21:35:32 INFO  : System reset is completed.
-21:35:35 INFO  : 'after 3000' command is executed.
-21:35:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-21:35:42 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-21:35:42 INFO  : Context for 'APU' is selected.
-21:35:42 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-21:35:42 INFO  : 'configparams force-mem-access 1' command is executed.
-21:35:42 INFO  : Context for 'APU' is selected.
-21:35:42 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-21:35:43 INFO  : 'ps7_init' command is executed.
-21:35:43 INFO  : 'ps7_post_config' command is executed.
-21:35:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-21:35:43 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-21:35:43 INFO  : 'configparams force-mem-access 0' command is executed.
-21:35:43 INFO  : ----------------XSDB Script----------------
+10:40:24 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:40:41 INFO  : Disconnected from the channel tcfchan#12.
+10:40:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:40:41 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:40:41 INFO  : 'jtag frequency' command is executed.
+10:40:41 INFO  : Context for 'APU' is selected.
+10:40:41 INFO  : System reset is completed.
+10:40:44 INFO  : 'after 3000' command is executed.
+10:40:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:40:46 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:40:46 INFO  : Context for 'APU' is selected.
+10:40:46 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:40:46 INFO  : 'configparams force-mem-access 1' command is executed.
+10:40:46 INFO  : Context for 'APU' is selected.
+10:40:46 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:40:47 INFO  : 'ps7_init' command is executed.
+10:40:47 INFO  : 'ps7_post_config' command is executed.
+10:40:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:40:48 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:40:48 INFO  : 'configparams force-mem-access 0' command is executed.
+10:40:48 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-21:35:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-21:35:43 INFO  : 'con' command is executed.
-21:35:43 INFO  : ----------------XSDB Script (After Launch)----------------
+10:40:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:40:48 INFO  : 'con' command is executed.
+10:40:48 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-21:35:43 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-22:18:49 ERROR : Failed to read platform from project 'yui_system'.
-Reason: Failed to execute command 'platform read {C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui_system/platform.spr}'. Click on details for more information.
-22:20:31 ERROR : Failed to read platform from project 'yui_system'.
-Reason: Failed to execute command 'platform read {C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui_system/platform.spr}'. Click on details for more information.
-22:20:45 INFO  : Disconnected from the channel tcfchan#22.
-22:21:20 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\temp_xsdb_launch_script.tcl
-22:21:21 INFO  : XSCT server has started successfully.
-22:21:21 INFO  : Successfully done setting XSCT server connection channel  
-22:21:21 INFO  : plnx-install-location is set to ''
-22:21:21 INFO  : Successfully done setting workspace for the tool. 
-22:21:24 INFO  : Platform repository initialization has completed.
-22:21:24 INFO  : Registering command handlers for Vitis TCF services
-22:21:27 INFO  : Successfully done query RDI_DATADIR 
-22:21:48 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-22:21:55 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-22:21:55 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-22:21:55 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-22:22:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-22:22:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-22:22:13 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-22:22:34 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-22:22:34 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-22:22:34 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-22:22:34 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-22:22:38 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
-22:22:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-22:22:38 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-22:22:38 INFO  : 'jtag frequency' command is executed.
-22:22:38 INFO  : Context for 'APU' is selected.
-22:22:38 INFO  : System reset is completed.
-22:22:41 INFO  : 'after 3000' command is executed.
-22:22:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-22:22:48 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-22:22:48 INFO  : Context for 'APU' is selected.
-22:22:48 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-22:22:48 INFO  : 'configparams force-mem-access 1' command is executed.
-22:22:48 INFO  : Context for 'APU' is selected.
-22:22:48 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-22:22:48 INFO  : 'ps7_init' command is executed.
-22:22:48 INFO  : 'ps7_post_config' command is executed.
-22:22:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-22:22:49 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-22:22:49 INFO  : 'configparams force-mem-access 0' command is executed.
-22:22:49 INFO  : ----------------XSDB Script----------------
+10:40:48 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:42:27 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:42:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:42:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:42:32 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:42:36 INFO  : Disconnected from the channel tcfchan#13.
+10:42:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:42:36 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:42:36 INFO  : 'jtag frequency' command is executed.
+10:42:36 INFO  : Context for 'APU' is selected.
+10:42:36 INFO  : System reset is completed.
+10:42:39 INFO  : 'after 3000' command is executed.
+10:42:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:42:41 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:42:41 INFO  : Context for 'APU' is selected.
+10:42:41 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:42:41 INFO  : 'configparams force-mem-access 1' command is executed.
+10:42:41 INFO  : Context for 'APU' is selected.
+10:42:41 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:42:41 INFO  : 'ps7_init' command is executed.
+10:42:41 INFO  : 'ps7_post_config' command is executed.
+10:42:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:42:43 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:42:43 INFO  : 'configparams force-mem-access 0' command is executed.
+10:42:43 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-22:22:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-22:22:49 INFO  : 'con' command is executed.
-22:22:49 INFO  : ----------------XSDB Script (After Launch)----------------
+10:42:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:42:43 INFO  : 'con' command is executed.
+10:42:43 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-22:22:49 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-22:46:21 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-22:46:28 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-22:46:28 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-22:46:28 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-22:46:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-22:46:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-22:46:42 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-22:46:44 INFO  : Disconnected from the channel tcfchan#2.
-22:46:45 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-22:46:45 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-22:46:45 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-22:46:45 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-22:46:48 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
-22:46:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-22:46:48 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-22:46:48 INFO  : 'jtag frequency' command is executed.
-22:46:48 INFO  : Context for 'APU' is selected.
-22:46:49 INFO  : System reset is completed.
-22:46:52 INFO  : 'after 3000' command is executed.
-22:46:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-22:46:58 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-22:46:58 INFO  : Context for 'APU' is selected.
-22:46:58 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-22:46:58 INFO  : 'configparams force-mem-access 1' command is executed.
-22:46:58 INFO  : Context for 'APU' is selected.
-22:46:58 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-22:46:59 INFO  : 'ps7_init' command is executed.
-22:46:59 INFO  : 'ps7_post_config' command is executed.
-22:46:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-22:46:59 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-22:46:59 INFO  : 'configparams force-mem-access 0' command is executed.
-22:46:59 INFO  : ----------------XSDB Script----------------
+10:42:43 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:45:50 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:45:57 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:46:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:46:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:46:04 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:46:10 INFO  : Disconnected from the channel tcfchan#14.
+10:46:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:46:10 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:46:10 INFO  : 'jtag frequency' command is executed.
+10:46:10 INFO  : Context for 'APU' is selected.
+10:46:10 INFO  : System reset is completed.
+10:46:13 INFO  : 'after 3000' command is executed.
+10:46:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:46:15 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:46:15 INFO  : Context for 'APU' is selected.
+10:46:15 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:46:15 INFO  : 'configparams force-mem-access 1' command is executed.
+10:46:15 INFO  : Context for 'APU' is selected.
+10:46:15 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:46:15 INFO  : 'ps7_init' command is executed.
+10:46:15 INFO  : 'ps7_post_config' command is executed.
+10:46:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:46:17 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:46:17 INFO  : 'configparams force-mem-access 0' command is executed.
+10:46:17 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-22:46:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-22:46:59 INFO  : 'con' command is executed.
-22:46:59 INFO  : ----------------XSDB Script (After Launch)----------------
+10:46:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:46:17 INFO  : 'con' command is executed.
+10:46:17 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-22:46:59 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-22:47:52 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-22:48:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-22:48:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-22:48:07 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-22:48:15 INFO  : Disconnected from the channel tcfchan#4.
-22:48:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-22:48:15 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-22:48:15 INFO  : 'jtag frequency' command is executed.
-22:48:15 INFO  : Context for 'APU' is selected.
-22:48:15 INFO  : System reset is completed.
-22:48:18 INFO  : 'after 3000' command is executed.
-22:48:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-22:48:25 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-22:48:25 INFO  : Context for 'APU' is selected.
-22:48:25 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-22:48:25 INFO  : 'configparams force-mem-access 1' command is executed.
-22:48:25 INFO  : Context for 'APU' is selected.
-22:48:25 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-22:48:25 INFO  : 'ps7_init' command is executed.
-22:48:25 INFO  : 'ps7_post_config' command is executed.
-22:48:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-22:48:26 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-22:48:26 INFO  : 'configparams force-mem-access 0' command is executed.
-22:48:26 INFO  : ----------------XSDB Script----------------
+10:46:17 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+10:47:51 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+10:47:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:47:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:47:57 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:48:00 INFO  : Disconnected from the channel tcfchan#15.
+10:48:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:48:00 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:48:00 INFO  : 'jtag frequency' command is executed.
+10:48:00 INFO  : Context for 'APU' is selected.
+10:48:01 INFO  : System reset is completed.
+10:48:04 INFO  : 'after 3000' command is executed.
+10:48:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:48:06 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+10:48:06 INFO  : Context for 'APU' is selected.
+10:48:06 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+10:48:06 INFO  : 'configparams force-mem-access 1' command is executed.
+10:48:06 INFO  : Context for 'APU' is selected.
+10:48:06 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+10:48:06 INFO  : 'ps7_init' command is executed.
+10:48:06 INFO  : 'ps7_post_config' command is executed.
+10:48:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:48:07 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:48:07 INFO  : 'configparams force-mem-access 0' command is executed.
+10:48:07 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-22:48:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-22:48:26 INFO  : 'con' command is executed.
-22:48:26 INFO  : ----------------XSDB Script (After Launch)----------------
+10:48:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:48:08 INFO  : 'con' command is executed.
+10:48:08 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-22:48:26 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-22:53:29 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-22:53:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-22:53:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-22:53:40 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-22:53:45 INFO  : Disconnected from the channel tcfchan#5.
-22:53:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-22:53:45 INFO  : Jtag cable 'Digilent Zed 210248B18B23' is selected.
-22:53:45 INFO  : 'jtag frequency' command is executed.
-22:53:45 INFO  : Context for 'APU' is selected.
-22:53:45 INFO  : System reset is completed.
-22:53:48 INFO  : 'after 3000' command is executed.
-22:53:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}' command is executed.
-22:53:55 INFO  : FPGA configured successfully with bitstream "C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit"
-22:53:55 INFO  : Context for 'APU' is selected.
-22:53:55 INFO  : Hardware design and registers information is loaded from 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
-22:53:55 INFO  : 'configparams force-mem-access 1' command is executed.
-22:53:55 INFO  : Context for 'APU' is selected.
-22:53:55 INFO  : Sourcing of 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl' is done.
-22:53:55 INFO  : 'ps7_init' command is executed.
-22:53:55 INFO  : 'ps7_post_config' command is executed.
-22:53:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-22:53:55 INFO  : The application 'C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf' is downloaded to processor 'ps7_cortexa9_0'.
-22:53:55 INFO  : 'configparams force-mem-access 0' command is executed.
-22:53:55 INFO  : ----------------XSDB Script----------------
+10:48:08 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:05:56 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:06:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:06:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:06:02 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:06:08 INFO  : Disconnected from the channel tcfchan#16.
+11:06:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:06:08 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:06:08 INFO  : 'jtag frequency' command is executed.
+11:06:08 INFO  : Context for 'APU' is selected.
+11:06:08 INFO  : System reset is completed.
+11:06:11 INFO  : 'after 3000' command is executed.
+11:06:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:06:14 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:06:14 INFO  : Context for 'APU' is selected.
+11:06:14 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:06:14 INFO  : 'configparams force-mem-access 1' command is executed.
+11:06:14 INFO  : Context for 'APU' is selected.
+11:06:14 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:06:14 INFO  : 'ps7_init' command is executed.
+11:06:14 INFO  : 'ps7_post_config' command is executed.
+11:06:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:06:15 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:06:15 INFO  : 'configparams force-mem-access 0' command is executed.
+11:06:15 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
 targets -set -nocase -filter {name =~"APU*"}
 rst -system
 after 3000
-targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B18B23" && level==0 && jtag_device_ctx=="jsn-Zed-210248B18B23-23727093-0"}
-fpga -file C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
 targets -set -nocase -filter {name =~"APU*"}
-loadhw -hw C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
 configparams force-mem-access 1
 targets -set -nocase -filter {name =~"APU*"}
-source C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/_ide/psinit/ps7_init.tcl
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
 ps7_init
 ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
-dow C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/yui/Debug/yui.elf
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-22:53:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-22:53:56 INFO  : 'con' command is executed.
-22:53:56 INFO  : ----------------XSDB Script (After Launch)----------------
+11:06:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:06:15 INFO  : 'con' command is executed.
+11:06:15 INFO  : ----------------XSDB Script (After Launch)----------------
 targets -set -nocase -filter {name =~ "*A9*#0"}
 con
 ----------------End of Script----------------
 
-22:53:56 INFO  : Launch script is exported to file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_yui_system_standalone.tcl'
-23:44:14 INFO  : Hardware specification for platform project 'zynq_design_1_wrapper' is updated.
-23:44:21 INFO  : Result from executing command 'getProjects': zynq_design_1_wrapper
-23:44:21 INFO  : Result from executing command 'getPlatforms': zynq_design_1_wrapper|C:/Users/Jaxie963/test/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
-23:44:21 INFO  : Checking for BSP changes to sync application flags for project 'yui'...
-23:44:35 INFO  : Disconnected from the channel tcfchan#6.
-23:44:35 INFO  : The hardware specfication used by project 'yui' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
-23:44:35 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream\zynq_design_1_wrapper.bit' stored in project is removed.
-23:44:35 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\bitstream' in project 'yui'.
-23:44:35 INFO  : The file 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit\ps7_init.tcl' stored in project is removed.
-23:44:39 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Jaxie963\test\cpre488\Labs\MP-0\workspace\yui\_ide\psinit' in project 'yui'.
+11:06:15 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:07:57 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:08:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:08:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:08:03 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:08:13 INFO  : Disconnected from the channel tcfchan#17.
+11:08:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:08:13 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:08:13 INFO  : 'jtag frequency' command is executed.
+11:08:13 INFO  : Context for 'APU' is selected.
+11:08:13 INFO  : System reset is completed.
+11:08:16 INFO  : 'after 3000' command is executed.
+11:08:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:08:19 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:08:19 INFO  : Context for 'APU' is selected.
+11:08:19 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:08:19 INFO  : 'configparams force-mem-access 1' command is executed.
+11:08:19 INFO  : Context for 'APU' is selected.
+11:08:19 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:08:19 INFO  : 'ps7_init' command is executed.
+11:08:19 INFO  : 'ps7_post_config' command is executed.
+11:08:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:08:20 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:08:20 INFO  : 'configparams force-mem-access 0' command is executed.
+11:08:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:08:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:08:21 INFO  : 'con' command is executed.
+11:08:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:08:21 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:09:40 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:09:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:09:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:09:46 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:09:50 INFO  : Disconnected from the channel tcfchan#18.
+11:09:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:09:50 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:09:50 INFO  : 'jtag frequency' command is executed.
+11:09:50 INFO  : Context for 'APU' is selected.
+11:09:50 INFO  : System reset is completed.
+11:09:53 INFO  : 'after 3000' command is executed.
+11:09:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:09:56 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:09:56 INFO  : Context for 'APU' is selected.
+11:09:56 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:09:56 INFO  : 'configparams force-mem-access 1' command is executed.
+11:09:56 INFO  : Context for 'APU' is selected.
+11:09:56 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:09:56 INFO  : 'ps7_init' command is executed.
+11:09:56 INFO  : 'ps7_post_config' command is executed.
+11:09:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:09:57 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:09:57 INFO  : 'configparams force-mem-access 0' command is executed.
+11:09:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:09:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:09:57 INFO  : 'con' command is executed.
+11:09:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:09:57 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:13:09 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:13:29 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:14:46 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:15:00 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:15:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:15:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:15:11 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:15:18 INFO  : Disconnected from the channel tcfchan#19.
+11:15:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:15:18 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:15:18 INFO  : 'jtag frequency' command is executed.
+11:15:18 INFO  : Context for 'APU' is selected.
+11:15:18 INFO  : System reset is completed.
+11:15:21 INFO  : 'after 3000' command is executed.
+11:15:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:15:24 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:15:24 INFO  : Context for 'APU' is selected.
+11:15:24 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:15:24 INFO  : 'configparams force-mem-access 1' command is executed.
+11:15:24 INFO  : Context for 'APU' is selected.
+11:15:24 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:15:24 INFO  : 'ps7_init' command is executed.
+11:15:24 INFO  : 'ps7_post_config' command is executed.
+11:15:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:15:25 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:15:25 INFO  : 'configparams force-mem-access 0' command is executed.
+11:15:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:15:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:15:25 INFO  : 'con' command is executed.
+11:15:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:15:25 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:16:25 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:16:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:16:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:16:30 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:16:39 INFO  : Disconnected from the channel tcfchan#20.
+11:16:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:16:39 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:16:39 INFO  : 'jtag frequency' command is executed.
+11:16:39 INFO  : Context for 'APU' is selected.
+11:16:40 INFO  : System reset is completed.
+11:16:43 INFO  : 'after 3000' command is executed.
+11:16:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:16:45 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:16:45 INFO  : Context for 'APU' is selected.
+11:16:45 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:16:45 INFO  : 'configparams force-mem-access 1' command is executed.
+11:16:45 INFO  : Context for 'APU' is selected.
+11:16:45 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:16:45 INFO  : 'ps7_init' command is executed.
+11:16:45 INFO  : 'ps7_post_config' command is executed.
+11:16:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:16:46 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:16:46 INFO  : 'configparams force-mem-access 0' command is executed.
+11:16:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:16:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:16:46 INFO  : 'con' command is executed.
+11:16:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:16:46 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:18:12 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:18:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:18:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:18:17 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:18:21 INFO  : Disconnected from the channel tcfchan#21.
+11:18:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:18:21 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:18:21 INFO  : 'jtag frequency' command is executed.
+11:18:21 INFO  : Context for 'APU' is selected.
+11:18:21 INFO  : System reset is completed.
+11:18:24 INFO  : 'after 3000' command is executed.
+11:18:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:18:27 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:18:27 INFO  : Context for 'APU' is selected.
+11:18:27 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:18:27 INFO  : 'configparams force-mem-access 1' command is executed.
+11:18:27 INFO  : Context for 'APU' is selected.
+11:18:27 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:18:27 INFO  : 'ps7_init' command is executed.
+11:18:27 INFO  : 'ps7_post_config' command is executed.
+11:18:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:18:28 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:18:28 INFO  : 'configparams force-mem-access 0' command is executed.
+11:18:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:18:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:18:28 INFO  : 'con' command is executed.
+11:18:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:18:28 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:19:53 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:19:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:19:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:20:02 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:20:06 INFO  : Disconnected from the channel tcfchan#22.
+11:20:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:20:06 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:20:06 INFO  : 'jtag frequency' command is executed.
+11:20:06 INFO  : Context for 'APU' is selected.
+11:20:07 INFO  : System reset is completed.
+11:20:10 INFO  : 'after 3000' command is executed.
+11:20:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:20:12 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:20:12 INFO  : Context for 'APU' is selected.
+11:20:12 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:20:12 INFO  : 'configparams force-mem-access 1' command is executed.
+11:20:12 INFO  : Context for 'APU' is selected.
+11:20:12 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:20:12 INFO  : 'ps7_init' command is executed.
+11:20:12 INFO  : 'ps7_post_config' command is executed.
+11:20:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:20:13 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:20:13 INFO  : 'configparams force-mem-access 0' command is executed.
+11:20:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:20:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:20:14 INFO  : 'con' command is executed.
+11:20:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:20:14 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:21:57 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:23:18 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:23:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:23:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:23:25 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:23:33 INFO  : Disconnected from the channel tcfchan#23.
+11:23:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:23:34 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:23:34 INFO  : 'jtag frequency' command is executed.
+11:23:34 INFO  : Context for 'APU' is selected.
+11:23:34 INFO  : System reset is completed.
+11:23:37 INFO  : 'after 3000' command is executed.
+11:23:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:23:39 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:23:39 INFO  : Context for 'APU' is selected.
+11:23:39 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:23:39 INFO  : 'configparams force-mem-access 1' command is executed.
+11:23:39 INFO  : Context for 'APU' is selected.
+11:23:39 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:23:39 INFO  : 'ps7_init' command is executed.
+11:23:39 INFO  : 'ps7_post_config' command is executed.
+11:23:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:23:40 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:23:41 INFO  : 'configparams force-mem-access 0' command is executed.
+11:23:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:23:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:23:41 INFO  : 'con' command is executed.
+11:23:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:23:41 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:24:53 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:25:00 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:25:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:25:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:25:10 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:25:14 INFO  : Disconnected from the channel tcfchan#24.
+11:25:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:25:14 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:25:14 INFO  : 'jtag frequency' command is executed.
+11:25:14 INFO  : Context for 'APU' is selected.
+11:25:14 INFO  : System reset is completed.
+11:25:17 INFO  : 'after 3000' command is executed.
+11:25:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:25:20 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:25:20 INFO  : Context for 'APU' is selected.
+11:25:20 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:25:20 INFO  : 'configparams force-mem-access 1' command is executed.
+11:25:20 INFO  : Context for 'APU' is selected.
+11:25:20 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:25:20 INFO  : 'ps7_init' command is executed.
+11:25:20 INFO  : 'ps7_post_config' command is executed.
+11:25:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:25:21 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:25:21 INFO  : 'configparams force-mem-access 0' command is executed.
+11:25:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:25:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:25:21 INFO  : 'con' command is executed.
+11:25:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:25:21 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:26:21 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:26:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:26:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:26:29 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:26:32 INFO  : Disconnected from the channel tcfchan#25.
+11:26:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:26:32 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:26:32 INFO  : 'jtag frequency' command is executed.
+11:26:32 INFO  : Context for 'APU' is selected.
+11:26:33 INFO  : System reset is completed.
+11:26:36 INFO  : 'after 3000' command is executed.
+11:26:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:26:38 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:26:38 INFO  : Context for 'APU' is selected.
+11:26:38 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:26:38 INFO  : 'configparams force-mem-access 1' command is executed.
+11:26:38 INFO  : Context for 'APU' is selected.
+11:26:38 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:26:38 INFO  : 'ps7_init' command is executed.
+11:26:38 INFO  : 'ps7_post_config' command is executed.
+11:26:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:26:39 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:26:39 INFO  : 'configparams force-mem-access 0' command is executed.
+11:26:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:26:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:26:39 INFO  : 'con' command is executed.
+11:26:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:26:39 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:31:42 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:33:05 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:33:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:33:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:33:13 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:33:20 INFO  : Disconnected from the channel tcfchan#26.
+11:33:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:33:20 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:33:20 INFO  : 'jtag frequency' command is executed.
+11:33:20 INFO  : Context for 'APU' is selected.
+11:33:20 INFO  : System reset is completed.
+11:33:23 INFO  : 'after 3000' command is executed.
+11:33:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:33:25 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:33:25 INFO  : Context for 'APU' is selected.
+11:33:26 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:33:26 INFO  : 'configparams force-mem-access 1' command is executed.
+11:33:26 INFO  : Context for 'APU' is selected.
+11:33:26 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:33:26 INFO  : 'ps7_init' command is executed.
+11:33:26 INFO  : 'ps7_post_config' command is executed.
+11:33:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:33:27 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:33:27 INFO  : 'configparams force-mem-access 0' command is executed.
+11:33:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:33:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:33:27 INFO  : 'con' command is executed.
+11:33:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:33:27 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:37:36 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:38:05 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:38:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:38:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:38:11 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:38:21 INFO  : Disconnected from the channel tcfchan#27.
+11:38:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:38:21 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:38:21 INFO  : 'jtag frequency' command is executed.
+11:38:21 INFO  : Context for 'APU' is selected.
+11:38:21 INFO  : System reset is completed.
+11:38:24 INFO  : 'after 3000' command is executed.
+11:38:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:38:27 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:38:27 INFO  : Context for 'APU' is selected.
+11:38:27 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:38:27 INFO  : 'configparams force-mem-access 1' command is executed.
+11:38:27 INFO  : Context for 'APU' is selected.
+11:38:27 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:38:27 INFO  : 'ps7_init' command is executed.
+11:38:27 INFO  : 'ps7_post_config' command is executed.
+11:38:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:38:28 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:38:28 INFO  : 'configparams force-mem-access 0' command is executed.
+11:38:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:38:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:38:28 INFO  : 'con' command is executed.
+11:38:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:38:28 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
+11:41:01 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:41:07 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:41:14 INFO  : Checking for BSP changes to sync application flags for project 'NES_PROJECT'...
+11:41:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:41:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:41:24 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:42:10 INFO  : Disconnected from the channel tcfchan#28.
+11:42:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:42:11 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:42:11 INFO  : 'jtag frequency' command is executed.
+11:42:11 INFO  : Context for 'APU' is selected.
+11:42:11 INFO  : System reset is completed.
+11:42:14 INFO  : 'after 3000' command is executed.
+11:42:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:42:16 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit"
+11:42:16 INFO  : Context for 'APU' is selected.
+11:42:16 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa'.
+11:42:16 INFO  : 'configparams force-mem-access 1' command is executed.
+11:42:16 INFO  : Context for 'APU' is selected.
+11:42:16 INFO  : Sourcing of 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl' is done.
+11:42:17 INFO  : 'ps7_init' command is executed.
+11:42:17 INFO  : 'ps7_post_config' command is executed.
+11:42:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:42:18 INFO  : The application 'C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:42:18 INFO  : 'configparams force-mem-access 0' command is executed.
+11:42:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/bitstream/zynq_design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/hw/zynq_design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/Labs/MP-0/workspace/NES_PROJECT/Debug/NES_PROJECT.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:42:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:42:18 INFO  : 'con' command is executed.
+11:42:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:42:18 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_project_system_standalone.tcl'
