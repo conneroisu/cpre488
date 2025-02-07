@@ -2,15 +2,22 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define GAME_MENU_POS 1
-#define GAME_MENU_ROWS 10
+#define GAME_MENU_ROWS 25
+
+#define MENU_TITLE "Xtendo Game Menu"
 
 #define VIDEO_WIDTH 640
 #define VIDEO_HEIGHT 480
 
 #define FONT_WIDTH 8
 #define FONT_HEIGHT 8
+#define ITEM_SPACING FONT_HEIGHT + 2
+
+// Maximum dimensions for PPM images we expect to load.
+#define MAX_PPM_WIDTH 1024
+#define MAX_PPM_HEIGHT 1024
 
 typedef uint16_t u16;
 typedef uint8_t u8;
@@ -25,128 +32,129 @@ typedef struct {
   const char *genre;
 } Game;
 
+// Game names use underscores instead of spaces.
 Game games[] = {
-    {"Adventure Island II", 1991, "Platformer/Action"},
-    {"Bad Dudes", 1988, "Beat ‘em up"},
-    {"Balloon Fight", 1984, "Arcade/Action"},
-    {"Batman - The Video Game", 1989, "Action/Platformer"},
-    {"Battle of Olympus", 1988, "Action/Platformer"},
-    {"Battletoads - Double Dragon", 1993, "Beat ‘em up"},
-    {"Bionic Commando", 1988, "Action/Platformer"},
-    {"Blades of Steel", 1988, "Sports (Ice Hockey)"},
+    {"Adventure_Island_II", 1991, "Platformer/Action"},
+    {"Bad_Dudes", 1988, "Beat_‘em_up"},
+    {"Balloon_Fight", 1984, "Arcade/Action"},
+    {"Batman_-_The_Video_Game", 1989, "Action/Platformer"},
+    {"Battle_of_Olympus", 1988, "Action/Platformer"},
+    {"Battletoads_-_Double_Dragon", 1993, "Beat_‘em_up"},
+    {"Bionic_Commando", 1988, "Action/Platformer"},
+    {"Blades_of_Steel", 1988, "Sports_(Ice_Hockey)"},
     {"Bomberman", 1983, "Maze/Action"},
     {"Bombermen", 1990, "Action/Puzzle"},
-    {"Bubble Bobble", 1986, "Platform/Puzzle"},
-    {"Bucky O'Hare", 1992, "Platformer"},
+    {"Bubble_Bobble", 1986, "Platform/Puzzle"},
+    {"Bucky_O'Hare", 1992, "Platformer"},
     {"BurgerTime", 1982, "Arcade/Action"},
-    {"Cabal", 1988, "Run and Gun"},
-    {"Captain Skyhawk", 1990, "Shooter (Horizontal scrolling)"},
+    {"Cabal", 1988, "Run_and_Gun"},
+    {"Captain_Skyhawk", 1990, "Shooter_(Horizontal_scrolling)"},
     {"Castlevania", 1986, "Action-Adventure/Platformer"},
-    {"Castlevania II - Simon's Quest", 1987, "Action-Adventure"},
-    {"Circus Caper", 1988, "Platformer"},
-    {"Clash at Demonhead", 1989, "Platformer"},
-    {"Cobra Triangle", 1989, "Action/Arcade"},
-    {"Commando", 1985, "Run and Gun"},
-    {"Contra", 1987, "Run and Gun"},
-    {"Contra Force", 1992, "Run and Gun"},
-    {"Coop-Super Mario Bros", 1991, "Platformer (Cooperative play)"},
-    {"Crystalis", 1990, "Action RPG"},
-    {"Darkwing Duck", 1992, "Platformer"},
-    {"Die Hard", 1989, "Action"},
-    {"Donkey Kong", 1981, "Arcade/Platform"},
-    {"Donkey Kong Jr", 1982, "Arcade/Platform"},
-    {"Double Dragon", 1987, "Beat ‘em up"},
-    {"Double Dragon II", 1988, "Beat ‘em up"},
-    {"Double Dribble", 1986, "Sports (Basketball)"},
-    {"Dragon Spirit", 1989, "Shooter"},
+    {"Castlevania_II_-_Simon's_Quest", 1987, "Action-Adventure"},
+    {"Circus_Caper", 1988, "Platformer"},
+    {"Clash_at_Demonhead", 1989, "Platformer"},
+    {"Cobra_Triangle", 1989, "Action/Arcade"},
+    {"Commando", 1985, "Run_and_Gun"},
+    {"Contra", 1987, "Run_and_Gun"},
+    {"Contra_Force", 1992, "Run_and_Gun"},
+    {"Coop-Super_Mario_Bros", 1991, "Platformer_(Cooperative_play)"},
+    {"Crystalis", 1990, "Action_RPG"},
+    {"Darkwing_Duck", 1992, "Platformer"},
+    {"Die_Hard", 1989, "Action"},
+    {"Donkey_Kong", 1981, "Arcade/Platform"},
+    {"Donkey_Kong_Jr", 1982, "Arcade/Platform"},
+    {"Double_Dragon", 1987, "Beat_‘em_up"},
+    {"Double_Dragon_II", 1988, "Beat_‘em_up"},
+    {"Double_Dribble", 1986, "Sports_(Basketball)"},
+    {"Dragon_Spirit", 1989, "Shooter"},
     {"DuckTales", 1989, "Platformer"},
-    {"Elevator Action", 1983, "Stealth/Action"},
+    {"Elevator_Action", 1983, "Stealth/Action"},
     {"Excitebike", 1984, "Racing"},
-    {"Faxanadu", 1987, "Action RPG/Platformer"},
-    {"Felix the Cat", 1992, "Platformer"},
-    {"Fire 'n Ice", 1992, "Action/Platformer"},
-    {"G.I. Joe - A Real American Hero", 1985, "Action/Run and Gun"},
-    {"Galaxy 5000 - Racing in the 51st Century", 1988, "Racing"},
-    {"Gargoyle's Quest II", 1992, "Action-Adventure/RPG"},
-    {"Ghosts 'n Goblins", 1985, "Platformer"},
-    {"Guerrilla War", 1987, "Beat ‘em up"},
-    {"Gun.Smoke", 1985, "Run and Gun"},
-    {"Gun Nac", 1990, "Shoot ‘em up"},
-    {"Hogan's Alley", 1984, "Light Gun Shooter"},
-    {"Ice Climber", 1985, "Platformer"},
-    {"Ice Hockey", 1991, "Sports"},
-    {"Indiana Jones and the Last Crusade", 1989, "Action-Adventure"},
-    {"Jackal", 1986, "Run and Gun"},
-    {"Journey to Silius", 1990, "Run and Gun"},
+    {"Faxanadu", 1987, "Action_RPG/Platformer"},
+    {"Felix_the_Cat", 1992, "Platformer"},
+    {"Fire_'n_Ice", 1992, "Action/Platformer"},
+    {"G.I._Joe_-_A_Real_American_Hero", 1985, "Action/Run_and_Gun"},
+    {"Galaxy_5000_-_Racing_in_the_51st_Century", 1988, "Racing"},
+    {"Gargoyle's_Quest_II", 1992, "Action-Adventure/RPG"},
+    {"Ghosts'n_Goblins", 1985, "Platformer"},
+    {"Guerrilla_War", 1987, "Beat_‘em_up"},
+    {"Gun.Smoke", 1985, "Run_and_Gun"},
+    {"Gun_Nac", 1990, "Shoot_‘em_up"},
+    {"Hogan's_Alley", 1984, "Light_Gun_Shooter"},
+    {"Ice_Climber", 1985, "Platformer"},
+    {"Ice_Hockey", 1991, "Sports"},
+    {"Indiana_Jones_and_the_Last_Crusade", 1989, "Action-Adventure"},
+    {"Jackal", 1986, "Run_and_Gun"},
+    {"Journey_to_Silius", 1990, "Run_and_Gun"},
     {"KickMaster", 1990, "Platformer/Fighting"},
-    {"Kid Icarus", 1986, "Action-Platformer"},
-    {"Kirby's Adventure", 1993, "Platformer"},
+    {"Kid_Icarus", 1986, "Action-Platformer"},
+    {"Kirby's_Adventure", 1993, "Platformer"},
     {"Lemmings", 1991, "Puzzle"},
-    {"Life Force", 1986, "Shooter"},
-    {"Little Nemo - The Dream Master", 1990, "Platformer"},
-    {"Little Samson", 1992, "Platformer"},
-    {"Lode Runner", 1983, "Puzzle/Platform"},
-    {"Maniac Mansion", 1987, "Graphic Adventure"},
-    {"Marble Madness", 1984, "Puzzle/Arcade"},
-    {"Mega Man", 1987, "Action-Platformer"},
-    {"Mega Man 2", 1988, "Action-Platformer"},
-    {"Mega Man 3", 1990, "Action-Platformer"},
-    {"Mega Man 4", 1991, "Action-Platformer"},
-    {"Mega Man 5", 1992, "Action-Platformer"},
-    {"Mega Man 6", 1993, "Action-Platformer"},
+    {"Life_Force", 1986, "Shooter"},
+    {"Little_Nemo_-_The_Dream_Master", 1990, "Platformer"},
+    {"Little_Samson", 1992, "Platformer"},
+    {"Lode_Runner", 1983, "Puzzle/Platform"},
+    {"Maniac_Mansion", 1987, "Graphic_Adventure"},
+    {"Marble_Madness", 1984, "Puzzle/Arcade"},
+    {"Mega_Man", 1987, "Action-Platformer"},
+    {"Mega_Man_2", 1988, "Action-Platformer"},
+    {"Mega_Man_3", 1990, "Action-Platformer"},
+    {"Mega_Man_4", 1991, "Action-Platformer"},
+    {"Mega_Man_5", 1992, "Action-Platformer"},
+    {"Mega_Man_6", 1993, "Action-Platformer"},
     {"Metroid", 1986, "Action-Adventure"},
-    {"Mighty Final Fight", 1993, "Beat ‘em up"},
-    {"Ms. Pac-Man", 1982, "Arcade"},
-    {"Ninja Crusaders", 1992, "Action/Beat ‘em up"},
-    {"North and South", 1989, "Strategy"},
+    {"Mighty_Final_Fight", 1993, "Beat_‘em_up"},
+    {"Ms._Pac-Man", 1982, "Arcade"},
+    {"Ninja_Crusaders", 1992, "Action/Beat_‘em_up"},
+    {"North_and_South", 1989, "Strategy"},
     {"Paperboy", 1985, "Action/Simulation"},
     {"Popeye", 1982, "Action/Arcade"},
-    {"Power Blade", 1990, "Action/Platform"},
-    {"Prince of Persia", 1989, "Action-Adventure/Platformer"},
-    {"Princess Tomato in the Salad Kingdom", 1989, "Platformer"},
-    {"Pro Wrestling", 1986, "Sports/Fighting"},
-    {"R.C. Pro-Am", 1988, "Racing"},
-    {"RBI Baseball", 1988, "Sports"},
-    {"Rad Racer", 1987, "Racing"},
+    {"Power_Blade", 1990, "Action/Platform"},
+    {"Prince_of_Persia", 1989, "Action-Adventure/Platformer"},
+    {"Princess_Tomato_in_the_Salad_Kingdom", 1989, "Platformer"},
+    {"Pro_Wrestling", 1986, "Sports/Fighting"},
+    {"R.C._Pro-Am", 1988, "Racing"},
+    {"RBI_Baseball", 1988, "Sports"},
+    {"Rad_Racer", 1987, "Racing"},
     {"Rampage", 1986, "Action"},
-    {"River City Ransom", 1989, "Beat ‘em up with RPG elements"},
-    {"Robin Hood - Prince of Thieves", 1991, "Action/Platformer"},
+    {"River_City_Ransom", 1989, "Beat_‘em_up_with_RPG_elements"},
+    {"Robin_Hood_-_Prince_of_Thieves", 1991, "Action/Platformer"},
     {"Rollergames", 1991, "Sports"},
     {"Rygar", 1986, "Action-Adventure"},
-    {"S.C.A.T. - Special Cybernetic Attack Team", 1992, "Run and Gun"},
-    {"Shadow of the Ninja", 1990, "Beat ‘em up"},
+    {"S.C.A.T._-_Special_Cybernetic_Attack_Team", 1992, "Run_and_Gun"},
+    {"Shadow_of_the_Ninja", 1990, "Beat_‘em_up"},
     {"Shadowgate", 1987, "Adventure/Puzzle"},
-    {"Shatterhand", 1991, "Beat ‘em up/Platformer"},
+    {"Shatterhand", 1991, "Beat_‘em_up/Platformer"},
     {"Strider", 1989, "Action/Platformer"},
-    {"Super Dodge Ball", 1991, "Sports"},
-    {"Super Mario Bros", 1985, "Platformer"},
-    {"Super Mario Bros 2", 1988, "Platformer"},
-    {"Super Mario Bros 3", 1990, "Platformer"},
-    {"Super Pitfall", 1992, "Platformer"},
-    {"Super Spike V Ball", 1990, "Sports"},
-    {"Tecmo Super Bowl", 1991, "Sports"},
-    {"Tecmo World Wrestling", 1991, "Sports/Fighting"},
-    {"Teenage Mutant Ninja Turtles - Tournament Fighters", 1993, "Fighting"},
-    {"Teenage Mutant Ninja Turtles II", 1991, "Beat ‘em up"},
-    {"Teenage Mutant Ninja Turtles III", 1992, "Beat ‘em up"},
+    {"Super_Dodge_Ball", 1991, "Sports"},
+    {"Super_Mario_Bros", 1985, "Platformer"},
+    {"Super_Mario_Bros_2", 1988, "Platformer"},
+    {"Super_Mario_Bros_3", 1990, "Platformer"},
+    {"Super_Pitfall", 1992, "Platformer"},
+    {"Super_Spike_V_Ball", 1990, "Sports"},
+    {"Tecmo_Super_Bowl", 1991, "Sports"},
+    {"Tecmo_World_Wrestling", 1991, "Sports/Fighting"},
+    {"Teenage_Mutant_Ninja_Turtles_-_Tournament_Fighters", 1993, "Fighting"},
+    {"Teenage_Mutant_Ninja_Turtles_II", 1991, "Beat_‘em_up"},
+    {"Teenage_Mutant_Ninja_Turtles_III", 1992, "Beat_‘em_up"},
     {"Tetris", 1984, "Puzzle"},
-    {"Tetris 2", 1990, "Puzzle"},
-    {"The Flintstones - The Rescue of Dino & Hoppy", 1991, "Platformer"},
-    {"The Guardian Legend", 1988, "Action-Adventure/Shooter"},
-    {"The Legend of Kage", 1985, "Action/Stealth"},
-    {"The Legend of Zelda", 1986, "Action-Adventure"},
-    {"The Little Mermaid", 1991, "Platformer"},
-    {"The Magic of Scheherazade", 1992, "Puzzle/Adventure"},
-    {"Tiny Toon Adventures", 1992, "Platformer"},
-    {"Top Gun", 1987, "Flight Simulator/Action"},
-    {"Track & Field", 1983, "Sports"},
-    {"Vice - Project Doom", 1991, "Action/Platformer"},
-    {"Wizards & Warriors", 1987, "Action-Adventure"},
-    {"Zelda II - The Adventure of Link", 1987, "Action-Adventure/RPG"}};
+    {"Tetris_2", 1990, "Puzzle"},
+    {"The_Flintstones_-_The_Rescue_of_Dino_&_Hoppy", 1991, "Platformer"},
+    {"The_Guardian_Legend", 1988, "Action-Adventure/Shooter"},
+    {"The_Legend_of_Kage", 1985, "Action/Stealth"},
+    {"The_Legend_of_Zelda", 1986, "Action-Adventure"},
+    {"The_Little_Mermaid", 1991, "Platformer"},
+    {"The_Magic_of_Scheherazade", 1992, "Puzzle/Adventure"},
+    {"Tiny_Toon_Adventures", 1992, "Platformer"},
+    {"Top_Gun", 1987, "Flight_Simulator/Action"},
+    {"Track_&_Field", 1983, "Sports"},
+    {"Vice_-_Project_Doom", 1991, "Action/Platformer"},
+    {"Wizards_&_Warriors", 1987, "Action-Adventure"},
+    {"Zelda_II_-_The_Adventure_of_Link", 1987, "Action-Adventure/RPG"}};
 
 /*
  * Complete 8x8 font table for the first 128 ASCII characters.
- * Data derived from the public domain font8x8_basic.
+ * (Data derived from the public domain font8x8_basic)
  */
 static const u8 font8x8_basic[128][8] = {
     [0x00] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},
@@ -282,7 +290,6 @@ static const u8 font8x8_basic[128][8] = {
 
 /*
  * Draw a single character at (x, y) using the given 16-bit color.
- * The character is rendered using the 8x8 font defined above.
  */
 void draw_char(int x, int y, char c, u16 color) {
   if ((unsigned char)c > 127)
@@ -302,9 +309,7 @@ void draw_char(int x, int y, char c, u16 color) {
 }
 
 /*
- * Draw a null-terminated string starting at (x, y) using the given 16-bit
- * color. The newline character ('\n') moves the cursor to the beginning of the
- * next line.
+ * Draw a null-terminated string starting at (x, y) with the given 16-bit color.
  */
 void draw_text(int x, int y, const char *text, u16 color) {
   int cursor_x = x;
@@ -321,7 +326,72 @@ void draw_text(int x, int y, const char *text, u16 color) {
 }
 
 /*
- * Helper: Skip whitespace in the file.
+ * Fill a rectangle in the framebuffer with a solid 16-bit color.
+ */
+void fill_rect(int x, int y, int width, int height, u16 color) {
+  for (int j = y; j < y + height; j++) {
+    for (int i = x; i < x + width; i++) {
+      if (i >= 0 && i < VIDEO_WIDTH && j >= 0 && j < VIDEO_HEIGHT) {
+        framebuffer[j][i] = color;
+      }
+    }
+  }
+}
+
+/*
+ * Construct a cover image filename.
+ * The filename is built as "./covers/<title>.ppm" using the stored title (with
+ * underscores).
+ */
+void get_cover_filename(const char *title, char *out, size_t out_size) {
+  snprintf(out, out_size, "./covers/%s.ppm", title);
+}
+
+/*
+ * Draw the game menu.
+ * The menu displays at most GAME_MENU_ROWS items starting at menu_offset.
+ * The currently selected game is highlighted.
+ * Titles are stored with underscores but displayed with spaces.
+ */
+void draw_game_menu(int selected_index, int menu_offset) {
+  int menu_x = 20;
+  int menu_y = 20;
+
+  int total_games = sizeof(games) / sizeof(games[0]);
+  int visible_items = GAME_MENU_ROWS;
+  if (menu_offset + visible_items > total_games) {
+    visible_items = total_games - menu_offset;
+  }
+
+  char buffer[128];
+  char display_title[128];
+
+  for (int i = 0; i < visible_items; i++) {
+    int game_index = menu_offset + i;
+    int item_y = menu_y + i * ITEM_SPACING;
+    snprintf(buffer, sizeof(buffer), "%s", games[game_index].title);
+    strncpy(display_title, buffer, sizeof(display_title));
+    display_title[sizeof(display_title) - 1] = '\0';
+    for (int j = 0; display_title[j] != '\0'; j++) {
+      if (display_title[j] == '_')
+        display_title[j] = ' ';
+    }
+    if (game_index == selected_index) {
+      fill_rect(menu_x - 2, item_y - 2, 220, FONT_HEIGHT + 4, 0xC618);
+      draw_text(menu_x, item_y, display_title, 0xFFFF);
+    } else {
+      draw_text(menu_x, item_y, display_title, 0x0000);
+    }
+  }
+
+  // Draw title.
+  draw_text(
+      // at the length of number of shown games
+      20, GAME_MENU_ROWS * (FONT_HEIGHT + ITEM_SPACING), MENU_TITLE, 0x0000);
+}
+
+/*
+ * Skip whitespace in the file.
  */
 static void skip_whitespace(FILE *fp) {
   int ch;
@@ -332,10 +402,7 @@ static void skip_whitespace(FILE *fp) {
 }
 
 /*
- * Load a binary PPM (P6) image.
- * The function reads the header to determine image dimensions,
- * and returns a dynamically allocated buffer with RGB pixel data.
- * Returns NULL on failure.
+ * Load a binary PPM (P6) image into a static buffer.
  */
 u8 *load_ppm(const char *filename, int *width, int *height) {
   FILE *fp = fopen(filename, "rb");
@@ -343,17 +410,15 @@ u8 *load_ppm(const char *filename, int *width, int *height) {
     fprintf(stderr, "Error: Could not open PPM file %s\n", filename);
     return NULL;
   }
-
   char magic[3] = {0};
   if (fscanf(fp, "%2s", magic) != 1 || magic[0] != 'P' || magic[1] != '6') {
     fprintf(stderr, "Error: Not a valid P6 PPM file: %s\n", filename);
     fclose(fp);
     return NULL;
   }
-
   skip_whitespace(fp);
   int ch = fgetc(fp);
-  while (ch == '#') { // skip comment lines
+  while (ch == '#') {
     while ((ch = fgetc(fp)) != '\n' && ch != EOF)
       ;
     skip_whitespace(fp);
@@ -361,14 +426,20 @@ u8 *load_ppm(const char *filename, int *width, int *height) {
   }
   if (ch != EOF)
     ungetc(ch, fp);
-
   if (fscanf(fp, "%d %d", width, height) != 2) {
     fprintf(stderr, "Error: Failed to read image dimensions from %s\n",
             filename);
     fclose(fp);
     return NULL;
   }
-
+  if (*width > MAX_PPM_WIDTH || *height > MAX_PPM_HEIGHT) {
+    fprintf(
+        stderr,
+        "Error: Image dimensions (%d x %d) exceed maximum allowed (%d x %d)\n",
+        *width, *height, MAX_PPM_WIDTH, MAX_PPM_HEIGHT);
+    fclose(fp);
+    return NULL;
+  }
   int max_val;
   if (fscanf(fp, "%d", &max_val) != 1) {
     fprintf(stderr, "Error: Failed to read max color value from %s\n",
@@ -377,40 +448,22 @@ u8 *load_ppm(const char *filename, int *width, int *height) {
     return NULL;
   }
   if (max_val != 255) {
-    fprintf(
-        stderr,
-        "Warning: max color value is not 255 (%d). Conversion may be off.\n",
-        max_val);
+    fprintf(stderr, "Warning: max color value is not 255 (%d).\n", max_val);
   }
   fgetc(fp); // consume single whitespace after header
-
   size_t data_size = 3 * (*width) * (*height);
-  u8 *data = malloc(data_size);
-  if (!data) {
-    fprintf(stderr, "Error: Could not allocate memory for image.\n");
-    fclose(fp);
-    return NULL;
-  }
-  if (fread(data, 1, data_size, fp) != data_size) {
+  static u8 image_data[MAX_PPM_WIDTH * MAX_PPM_HEIGHT * 3];
+  if (fread(image_data, 1, data_size, fp) != data_size) {
     fprintf(stderr, "Error: Could not read image data from %s\n", filename);
-    free(data);
     fclose(fp);
     return NULL;
   }
   fclose(fp);
-  return data;
+  return image_data;
 }
 
 /*
- * Render a PPM image (converted from PNG externally) into the framebuffer
- * at position (dest_x, dest_y) with scaling.
- *
- * 'scale' is a floating-point factor. For example, scale = 0.5 will reduce
- * the image dimensions by half; scale = 2.0 will double them.
- *
- * A simple nearest-neighbor algorithm is used.
- *
- * Returns 0 on success, non-zero on failure.
+ * Render a PPM image into the framebuffer at (dest_x, dest_y) with scaling.
  */
 int render_ppm_scaled(const char *filename, int dest_x, int dest_y,
                       float scale) {
@@ -418,10 +471,8 @@ int render_ppm_scaled(const char *filename, int dest_x, int dest_y,
   u8 *img_data = load_ppm(filename, &img_width, &img_height);
   if (!img_data)
     return -1;
-
   int scaled_width = (int)(img_width * scale);
   int scaled_height = (int)(img_height * scale);
-
   for (int sy = 0; sy < scaled_height; sy++) {
     int fb_y = dest_y + sy;
     if (fb_y < 0 || fb_y >= VIDEO_HEIGHT)
@@ -436,29 +487,21 @@ int render_ppm_scaled(const char *filename, int dest_x, int dest_y,
       int orig_x = (int)(sx / scale);
       if (orig_x >= img_width)
         orig_x = img_width - 1;
-
-      // Get the original pixel (RGB, 8 bits each)
       u8 r = img_data[(orig_y * img_width + orig_x) * 3 + 0];
       u8 g = img_data[(orig_y * img_width + orig_x) * 3 + 1];
       u8 b = img_data[(orig_y * img_width + orig_x) * 3 + 2];
-      // Convert 8-bit channels to 4-bit (nearest neighbor)
       u8 r4 = r >> 4;
       u8 g4 = g >> 4;
       u8 b4 = b >> 4;
-      // Pack into 16-bit pixel: blue in [15:12], green in [11:8], red in [7:4]
       u16 pixel = (b4 << 12) | (g4 << 8) | (r4 << 4);
       framebuffer[fb_y][fb_x] = pixel;
     }
   }
-  free(img_data);
   return 0;
 }
 
 /*
  * Write the framebuffer to a binary PPM (P6) file.
- * The 16-bit pixel format is converted to 24-bit RGB by scaling each 4-bit
- * channel. Each 4-bit channel is multiplied by 17 to map the 0–15 range to
- * 0–255.
  */
 void write_framebuffer_to_ppm(const char *filename) {
   FILE *fp = fopen(filename, "wb");
@@ -466,9 +509,7 @@ void write_framebuffer_to_ppm(const char *filename) {
     fprintf(stderr, "Error: Could not open %s for writing.\n", filename);
     exit(EXIT_FAILURE);
   }
-
   fprintf(fp, "P6\n%d %d\n255\n", VIDEO_WIDTH, VIDEO_HEIGHT);
-
   for (int i = 0; i < VIDEO_HEIGHT; i++) {
     for (int j = 0; j < VIDEO_WIDTH; j++) {
       u16 pixel = framebuffer[i][j];
@@ -484,33 +525,105 @@ void write_framebuffer_to_ppm(const char *filename) {
   printf("Framebuffer written to %s\n", filename);
 }
 
-int main(void) {
-  // Clear the framebuffer to white.
-  // In our format, 0xFFFF sets each 4-bit color channel to maximum.
+/*
+ * Clear the framebuffer to white.
+ */
+void clear_framebuffer() {
   for (int i = 0; i < VIDEO_HEIGHT; i++) {
     for (int j = 0; j < VIDEO_WIDTH; j++) {
       framebuffer[i][j] = 0xFFFF;
     }
   }
+}
 
-  // Draw some sample text in black.
-  draw_text(50, 50,
-            "Hello, World!\n"
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ\n"
-            "abcdefghijklmnopqrstuvwxyz\n"
-            "0123456789 !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
-            0x0000); // 0x0000 is black in our 16-bit format.
+/*
+ * Main interactive loop.
+ *
+ * Uses 'w' to move up, 's' to move down, and 'q' to quit.
+ * The menu scrolls so that all games can be selected.
+ * For the selected game, the cover image is rendered on the right, and below
+ * the cover the game title (with spaces), genre, and released date are
+ * displayed.
+ */
+int main(void) {
+  int total_games = sizeof(games) / sizeof(games[0]);
+  int selected_index = 0;
+  int menu_offset = 0;
+  char cover_filename[256];
+  char input = '\0';
+  const float cover_scale = 0.5f;
 
-  // Render a PPM image (converted from PNG externally) at position (50, 150)
-  // with scaling. Adjust the scale factor as needed (e.g., 0.5 to reduce the
-  // size).
-  if (render_ppm_scaled("./Indiana_Jones_and_the_Last_Crusade.ppm", 50, 150,
-                        0.4f) != 0) {
-    fprintf(stderr, "Failed to render PPM image.\n");
+  printf("Game Menu Navigation\n");
+  printf("Press 'w' to move up, 's' to move down, 'q' to quit.\n");
+
+  while (1) {
+    if (selected_index < menu_offset)
+      menu_offset = selected_index;
+    else if (selected_index >= menu_offset + GAME_MENU_ROWS)
+      menu_offset = selected_index - GAME_MENU_ROWS + 1;
+
+    clear_framebuffer();
+    draw_game_menu(selected_index, menu_offset);
+
+    get_cover_filename(games[selected_index].title, cover_filename,
+                       sizeof(cover_filename));
+
+    // Try to load the cover to determine its dimensions.
+    int cover_width = 0, cover_height = 0;
+    u8 *cover_data = load_ppm(cover_filename, &cover_width, &cover_height);
+    int scaled_cover_height = 0;
+    if (cover_data) {
+      scaled_cover_height = (int)(cover_height * cover_scale);
+      // Render the cover at position (350, 20)
+      if (render_ppm_scaled(cover_filename, 350, 20, cover_scale) != 0) {
+        draw_text(350, 20, "Cover not found", 0x0000);
+      }
+    } else {
+      // If cover not found, display placeholder text and use default offset.
+      draw_text(350, 20, "Cover not found", 0x0000);
+      scaled_cover_height = 100;
+    }
+
+    // Prepare game info text.
+    // Convert the stored title (with underscores) to a display title.
+    char disp_title[128];
+    strncpy(disp_title, games[selected_index].title, sizeof(disp_title));
+    disp_title[sizeof(disp_title) - 1] = '\0';
+    for (int i = 0; disp_title[i] != '\0'; i++) {
+      if (disp_title[i] == '_')
+        disp_title[i] = ' ';
+    }
+    char info_line1[128];
+    char info_line2[128];
+    char info_line3[128];
+    snprintf(info_line1, sizeof(info_line1), "%s", disp_title);
+    snprintf(info_line2, sizeof(info_line2), "Genre: %s",
+             games[selected_index].genre);
+    snprintf(info_line3, sizeof(info_line3), "Year: %d",
+             games[selected_index].year_released);
+
+    // Display game info below the cover.
+    int info_y = 20 + scaled_cover_height + 10;
+    draw_text(350, info_y, info_line1, 0x0000);
+    draw_text(350, info_y + FONT_HEIGHT, info_line2, 0x0000);
+    draw_text(350, info_y + FONT_HEIGHT * 2, info_line3, 0x0000);
+
+    write_framebuffer_to_ppm("output.ppm");
+
+    printf("Selected: %s\n", games[selected_index].title);
+    printf("Enter command (w/s/q): ");
+    int tmpval = GAME_MENU_ROWS * (FONT_HEIGHT + ITEM_SPACING);
+    printf("tmpval: %d\n", tmpval);
+    input = getchar();
+    while (getchar() != '\n')
+      ;
+
+    if (input == 'q')
+      break;
+    else if (input == 'w' && selected_index > 0)
+      selected_index--;
+    else if (input == 's' && selected_index < total_games - 1)
+      selected_index++;
   }
-
-  // Write the final framebuffer to an output file.
-  write_framebuffer_to_ppm("output.ppm");
-
   return 0;
 }
