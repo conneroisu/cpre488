@@ -78,7 +78,7 @@ module IP_auto_pc_1 (
   input bit [3 : 0] s_axi_arqos,
   input bit_as_bool s_axi_arvalid,
   output bit_as_bool s_axi_arready,
-  output bit [63 : 0] s_axi_rdata,
+  output bit [31 : 0] s_axi_rdata,
   output bit [1 : 0] s_axi_rresp,
   output bit_as_bool s_axi_rlast,
   output bit_as_bool s_axi_rvalid,
@@ -93,7 +93,7 @@ module IP_auto_pc_1 (
   output bit [3 : 0] m_axi_arqos,
   output bit_as_bool m_axi_arvalid,
   input bit_as_bool m_axi_arready,
-  input bit [63 : 0] m_axi_rdata,
+  input bit [31 : 0] m_axi_rdata,
   input bit [1 : 0] m_axi_rresp,
   input bit_as_bool m_axi_rlast,
   input bit_as_bool m_axi_rvalid,
@@ -120,7 +120,7 @@ module IP_auto_pc_1 (aclk,aresetn,s_axi_araddr,s_axi_arlen,s_axi_arsize,s_axi_ar
   input bit [3 : 0] s_axi_arqos;
   input bit s_axi_arvalid;
   output wire s_axi_arready;
-  output wire [63 : 0] s_axi_rdata;
+  output wire [31 : 0] s_axi_rdata;
   output wire [1 : 0] s_axi_rresp;
   output wire s_axi_rlast;
   output wire s_axi_rvalid;
@@ -135,7 +135,7 @@ module IP_auto_pc_1 (aclk,aresetn,s_axi_araddr,s_axi_arlen,s_axi_arsize,s_axi_ar
   output wire [3 : 0] m_axi_arqos;
   output wire m_axi_arvalid;
   input bit m_axi_arready;
-  input bit [63 : 0] m_axi_rdata;
+  input bit [31 : 0] m_axi_rdata;
   input bit [1 : 0] m_axi_rresp;
   input bit m_axi_rlast;
   input bit m_axi_rvalid;
@@ -159,7 +159,7 @@ module IP_auto_pc_1 (aclk,aresetn,s_axi_araddr,s_axi_arlen,s_axi_arsize,s_axi_ar
   input bit [3 : 0] s_axi_arqos;
   input bit s_axi_arvalid;
   output wire s_axi_arready;
-  output wire [63 : 0] s_axi_rdata;
+  output wire [31 : 0] s_axi_rdata;
   output wire [1 : 0] s_axi_rresp;
   output wire s_axi_rlast;
   output wire s_axi_rvalid;
@@ -174,7 +174,7 @@ module IP_auto_pc_1 (aclk,aresetn,s_axi_araddr,s_axi_arlen,s_axi_arsize,s_axi_ar
   output wire [3 : 0] m_axi_arqos;
   output wire m_axi_arvalid;
   input bit m_axi_arready;
-  input bit [63 : 0] m_axi_rdata;
+  input bit [31 : 0] m_axi_rdata;
   input bit [1 : 0] m_axi_rresp;
   input bit m_axi_rlast;
   input bit m_axi_rvalid;
