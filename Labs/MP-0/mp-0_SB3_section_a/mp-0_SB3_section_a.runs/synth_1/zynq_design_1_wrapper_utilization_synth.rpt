@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Wed Feb  5 19:39:47 2025
-| Host         : CO2041-16 running 64-bit major release  (build 9200)
+| Date         : Thu Feb  6 21:52:54 2025
+| Host         : CO2041-08 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file zynq_design_1_wrapper_utilization_synth.rpt -pb zynq_design_1_wrapper_utilization_synth.pb
 | Design       : zynq_design_1_wrapper
 | Device       : 7z020clg484-1
@@ -160,10 +160,13 @@ Table of Contents
 | zynq_design_1_xbar_0                 |    1 |
 | zynq_design_1_v_tc_0_0               |    1 |
 | zynq_design_1_v_axi4s_vid_out_0_0    |    1 |
-| zynq_design_1_system_ila_3_0         |    1 |
-| zynq_design_1_system_ila_2_0         |    1 |
+| zynq_design_1_system_ila_6_0         |    1 |
+| zynq_design_1_system_ila_5_0         |    1 |
+| zynq_design_1_system_ila_4_1         |    1 |
+| zynq_design_1_system_ila_3_1         |    1 |
+| zynq_design_1_system_ila_2_2         |    1 |
 | zynq_design_1_system_ila_1_0         |    1 |
-| zynq_design_1_system_ila_0_0         |    1 |
+| zynq_design_1_rst_ps7_0_50M_0        |    1 |
 | zynq_design_1_rst_ps7_0_100M_0       |    1 |
 | zynq_design_1_processing_system7_0_1 |    1 |
 | zynq_design_1_axi_vdma_0_0           |    1 |

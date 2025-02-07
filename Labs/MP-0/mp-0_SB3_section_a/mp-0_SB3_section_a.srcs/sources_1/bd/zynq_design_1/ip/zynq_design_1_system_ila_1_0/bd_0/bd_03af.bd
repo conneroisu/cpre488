@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x73FBEC54C7A60D0A",
+      "boundary_crc": "0xDBA8E89846369FFA",
       "design_src": "SBD",
       "device": "xc7z020clg484-1",
       "name": "bd_03af",
@@ -24,8 +24,8 @@
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
-            "value": "2.5e+07",
-            "value_src": "default_prop"
+            "value": "100000000",
+            "value_src": "default"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -43,7 +43,7 @@
       },
       "probe0": {
         "direction": "I",
-        "left": "3",
+        "left": "11",
         "right": "0"
       }
     },
@@ -62,7 +62,7 @@
             "value": "FALSE"
           },
           "C_DATA_DEPTH": {
-            "value": "2048"
+            "value": "1024"
           },
           "C_EN_STRG_QUAL": {
             "value": "0"
@@ -71,7 +71,7 @@
             "value": "0"
           },
           "C_ILA_CLK_FREQ": {
-            "value": "25000000"
+            "value": "100000000"
           },
           "C_INPUT_PIPE_STAGES": {
             "value": "0"
@@ -89,7 +89,7 @@
             "value": "0"
           },
           "C_PROBE0_WIDTH": {
-            "value": "4"
+            "value": "12"
           },
           "C_TIME_TAG_WIDTH": {
             "value": "32"

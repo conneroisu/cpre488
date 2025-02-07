@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Feb  5 19:38:53 2025" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Feb  6 21:52:02 2025" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.4" DEVICE="7z020" NAME="bd_03af" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT CLKFREQUENCY="2.5e+07" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ila_lib" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="3" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe0">
+    <PORT DIR="I" LEFT="11" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ila_lib" PORT="probe0"/>
       </CONNECTIONS>
@@ -40,7 +40,7 @@
         <PARAMETER NAME="C_NUM_MONITOR_SLOTS" VALUE="1"/>
         <PARAMETER NAME="C_ENABLE_ILA_AXI_MON" VALUE="0"/>
         <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="1"/>
-        <PARAMETER NAME="C_DATA_DEPTH" VALUE="2048"/>
+        <PARAMETER NAME="C_DATA_DEPTH" VALUE="1024"/>
         <PARAMETER NAME="C_MAJOR_VERSION" VALUE="2020"/>
         <PARAMETER NAME="C_MINOR_VERSION" VALUE="1"/>
         <PARAMETER NAME="C_BUILD_REVISION" VALUE="0"/>
@@ -63,7 +63,7 @@
         <PARAMETER NAME="C_SLOT_0_AXI_AWUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_WUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_BUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE0_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_PROBE0_WIDTH" VALUE="12"/>
         <PARAMETER NAME="C_PROBE1_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE2_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE3_WIDTH" VALUE="1"/>
@@ -3159,12 +3159,12 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="2.5e+07" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe0">
+        <PORT DIR="I" LEFT="11" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="probe0"/>
           </CONNECTIONS>

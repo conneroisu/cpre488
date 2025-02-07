@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Wed Feb  5 19:38:49 2025
---Host        : CO2041-16 running 64-bit major release  (build 9200)
+--Date        : Thu Feb  6 21:51:56 2025
+--Host        : CO2041-08 running 64-bit major release  (build 9200)
 --Command     : generate_target zynq_design_1.bd
 --Design      : zynq_design_1
 --Purpose     : IP block netlist
@@ -2179,7 +2179,7 @@ entity zynq_design_1 is
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of zynq_design_1 : entity is "zynq_design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=zynq_design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=28,numReposBlks=19,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=15,da_board_cnt=5,da_clkrst_cnt=18,da_ps7_cnt=2,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of zynq_design_1 : entity is "zynq_design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=zynq_design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=31,numReposBlks=22,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=15,da_board_cnt=7,da_clkrst_cnt=70,da_ps7_cnt=2,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of zynq_design_1 : entity is "zynq_design_1.hwdef";
 end zynq_design_1;
@@ -2364,7 +2364,9 @@ architecture STRUCTURE of zynq_design_1 is
     s_axis_video_tuser : in STD_LOGIC;
     s_axis_video_tlast : in STD_LOGIC;
     fid : in STD_LOGIC;
+    vid_io_out_clk : in STD_LOGIC;
     vid_io_out_ce : in STD_LOGIC;
+    vid_io_out_reset : in STD_LOGIC;
     vid_active_video : out STD_LOGIC;
     vid_vsync : out STD_LOGIC;
     vid_hsync : out STD_LOGIC;
@@ -2497,6 +2499,7 @@ architecture STRUCTURE of zynq_design_1 is
     S_AXI_HP0_WDATA : in STD_LOGIC_VECTOR ( 63 downto 0 );
     S_AXI_HP0_WSTRB : in STD_LOGIC_VECTOR ( 7 downto 0 );
     FCLK_CLK0 : out STD_LOGIC;
+    FCLK_CLK1 : out STD_LOGIC;
     FCLK_RESET0_N : out STD_LOGIC;
     MIO : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     DDR_CAS_n : inout STD_LOGIC;
@@ -2521,12 +2524,29 @@ architecture STRUCTURE of zynq_design_1 is
     PS_PORB : inout STD_LOGIC
   );
   end component zynq_design_1_processing_system7_0_1;
-  component zynq_design_1_system_ila_0_0 is
+  component zynq_design_1_xlconstant_0_0 is
+  port (
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component zynq_design_1_xlconstant_0_0;
+  component zynq_design_1_rst_ps7_0_50M_0 is
+  port (
+    slowest_sync_clk : in STD_LOGIC;
+    ext_reset_in : in STD_LOGIC;
+    aux_reset_in : in STD_LOGIC;
+    mb_debug_sys_rst : in STD_LOGIC;
+    dcm_locked : in STD_LOGIC;
+    mb_reset : out STD_LOGIC;
+    bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
+    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component zynq_design_1_rst_ps7_0_50M_0;
+  component zynq_design_1_system_ila_3_1 is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     SLOT_0_AXI_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     SLOT_0_AXI_awlen : in STD_LOGIC_VECTOR ( 3 downto 0 );
     SLOT_0_AXI_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -2615,43 +2635,50 @@ architecture STRUCTURE of zynq_design_1 is
     SLOT_3_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     SLOT_3_AXI_rvalid : in STD_LOGIC;
     SLOT_3_AXI_rready : in STD_LOGIC;
+    resetn : in STD_LOGIC;
     SLOT_4_AXIS_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
     SLOT_4_AXIS_tkeep : in STD_LOGIC_VECTOR ( 1 downto 0 );
     SLOT_4_AXIS_tlast : in STD_LOGIC;
     SLOT_4_AXIS_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
     SLOT_4_AXIS_tvalid : in STD_LOGIC;
-    SLOT_4_AXIS_tready : in STD_LOGIC;
-    SLOT_5_VIDEO_TIMING_active_video : in STD_LOGIC;
-    SLOT_5_VIDEO_TIMING_hblank : in STD_LOGIC;
-    SLOT_5_VIDEO_TIMING_vblank : in STD_LOGIC;
-    SLOT_5_VIDEO_TIMING_hsync : in STD_LOGIC;
-    SLOT_5_VIDEO_TIMING_vsync : in STD_LOGIC;
-    resetn : in STD_LOGIC
+    SLOT_4_AXIS_tready : in STD_LOGIC
   );
-  end component zynq_design_1_system_ila_0_0;
+  end component zynq_design_1_system_ila_3_1;
+  component zynq_design_1_system_ila_4_1 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 3 downto 0 )
+  );
+  end component zynq_design_1_system_ila_4_1;
+  component zynq_design_1_system_ila_5_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 3 downto 0 )
+  );
+  end component zynq_design_1_system_ila_5_0;
+  component zynq_design_1_system_ila_6_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 3 downto 0 )
+  );
+  end component zynq_design_1_system_ila_6_0;
   component zynq_design_1_system_ila_1_0 is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 3 downto 0 )
+    probe0 : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   end component zynq_design_1_system_ila_1_0;
-  component zynq_design_1_system_ila_2_0 is
+  component zynq_design_1_system_ila_2_2 is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 3 downto 0 )
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SLOT_0_VIDEO_TIMING_active_video : in STD_LOGIC;
+    SLOT_0_VIDEO_TIMING_hblank : in STD_LOGIC;
+    SLOT_0_VIDEO_TIMING_vblank : in STD_LOGIC;
+    SLOT_0_VIDEO_TIMING_hsync : in STD_LOGIC;
+    SLOT_0_VIDEO_TIMING_vsync : in STD_LOGIC
   );
-  end component zynq_design_1_system_ila_2_0;
-  component zynq_design_1_system_ila_3_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component zynq_design_1_system_ila_3_0;
-  component zynq_design_1_xlconstant_0_0 is
-  port (
-    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component zynq_design_1_xlconstant_0_0;
+  end component zynq_design_1_system_ila_2_2;
   signal High_dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_gpio_0_GPIO_TRI_O : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal axi_gpio_1_GPIO_TRI_I : STD_LOGIC_VECTOR ( 4 downto 0 );
@@ -2819,6 +2846,7 @@ architecture STRUCTURE of zynq_design_1 is
   signal processing_system7_0_DDR_RESET_N : STD_LOGIC;
   signal processing_system7_0_DDR_WE_N : STD_LOGIC;
   signal processing_system7_0_FCLK_CLK0 : STD_LOGIC;
+  signal processing_system7_0_FCLK_CLK1 : STD_LOGIC;
   signal processing_system7_0_FCLK_RESET0_N : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_DDR_VRN : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_DDR_VRP : STD_LOGIC;
@@ -3121,10 +3149,15 @@ architecture STRUCTURE of zynq_design_1 is
   signal NLW_processing_system7_0_S_AXI_HP0_WACOUNT_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal NLW_processing_system7_0_S_AXI_HP0_WCOUNT_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal NLW_rst_ps7_0_50M_mb_reset_UNCONNECTED : STD_LOGIC;
-  signal NLW_rst_ps7_0_50M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_rst_ps7_0_50M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_rst_ps7_0_50M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_rst_ps7_0_100M_mb_reset_UNCONNECTED : STD_LOGIC;
+  signal NLW_rst_ps7_0_100M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_rst_ps7_0_100M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_rst_ps7_0_25M_mb_reset_UNCONNECTED : STD_LOGIC;
+  signal NLW_rst_ps7_0_25M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_rst_ps7_0_25M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_rst_ps7_0_25M_peripheral_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_rst_ps7_0_25M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_v_axi4s_vid_out_0_locked_UNCONNECTED : STD_LOGIC;
   signal NLW_v_axi4s_vid_out_0_overflow_UNCONNECTED : STD_LOGIC;
   signal NLW_v_axi4s_vid_out_0_underflow_UNCONNECTED : STD_LOGIC;
@@ -3351,6 +3384,7 @@ processing_system7_0: component zynq_design_1_processing_system7_0_1
       DDR_VRP => FIXED_IO_ddr_vrp,
       DDR_WEB => DDR_we_n,
       FCLK_CLK0 => processing_system7_0_FCLK_CLK0,
+      FCLK_CLK1 => processing_system7_0_FCLK_CLK1,
       FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
       MIO(53 downto 0) => FIXED_IO_mio(53 downto 0),
       M_AXI_GP0_ACLK => processing_system7_0_FCLK_CLK0,
@@ -3591,20 +3625,48 @@ ps7_0_axi_periph: entity work.zynq_design_1_ps7_0_axi_periph_0
       S00_AXI_wstrb(3 downto 0) => processing_system7_0_M_AXI_GP0_WSTRB(3 downto 0),
       S00_AXI_wvalid => processing_system7_0_M_AXI_GP0_WVALID
     );
-rst_ps7_0_50M: component zynq_design_1_rst_ps7_0_100M_0
+rst_ps7_0_100M: component zynq_design_1_rst_ps7_0_100M_0
      port map (
       aux_reset_in => '1',
-      bus_struct_reset(0) => NLW_rst_ps7_0_50M_bus_struct_reset_UNCONNECTED(0),
+      bus_struct_reset(0) => NLW_rst_ps7_0_100M_bus_struct_reset_UNCONNECTED(0),
       dcm_locked => '1',
       ext_reset_in => processing_system7_0_FCLK_RESET0_N,
-      interconnect_aresetn(0) => NLW_rst_ps7_0_50M_interconnect_aresetn_UNCONNECTED(0),
+      interconnect_aresetn(0) => NLW_rst_ps7_0_100M_interconnect_aresetn_UNCONNECTED(0),
       mb_debug_sys_rst => '0',
-      mb_reset => NLW_rst_ps7_0_50M_mb_reset_UNCONNECTED,
+      mb_reset => NLW_rst_ps7_0_100M_mb_reset_UNCONNECTED,
       peripheral_aresetn(0) => rst_ps7_0_100M_peripheral_aresetn(0),
-      peripheral_reset(0) => NLW_rst_ps7_0_50M_peripheral_reset_UNCONNECTED(0),
+      peripheral_reset(0) => NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
     );
-system_ila_0: component zynq_design_1_system_ila_0_0
+rst_ps7_0_25M: component zynq_design_1_rst_ps7_0_50M_0
+     port map (
+      aux_reset_in => '1',
+      bus_struct_reset(0) => NLW_rst_ps7_0_25M_bus_struct_reset_UNCONNECTED(0),
+      dcm_locked => '1',
+      ext_reset_in => processing_system7_0_FCLK_RESET0_N,
+      interconnect_aresetn(0) => NLW_rst_ps7_0_25M_interconnect_aresetn_UNCONNECTED(0),
+      mb_debug_sys_rst => '0',
+      mb_reset => NLW_rst_ps7_0_25M_mb_reset_UNCONNECTED,
+      peripheral_aresetn(0) => NLW_rst_ps7_0_25M_peripheral_aresetn_UNCONNECTED(0),
+      peripheral_reset(0) => NLW_rst_ps7_0_25M_peripheral_reset_UNCONNECTED(0),
+      slowest_sync_clk => processing_system7_0_FCLK_CLK1
+    );
+system_ila_1: component zynq_design_1_system_ila_1_0
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      probe0(11 downto 0) => v_axi4s_vid_out_0_vid_data(11 downto 0)
+    );
+system_ila_2: component zynq_design_1_system_ila_2_2
+     port map (
+      SLOT_0_VIDEO_TIMING_active_video => v_tc_0_vtiming_out_ACTIVE_VIDEO,
+      SLOT_0_VIDEO_TIMING_hblank => v_tc_0_vtiming_out_HBLANK,
+      SLOT_0_VIDEO_TIMING_hsync => v_tc_0_vtiming_out_HSYNC,
+      SLOT_0_VIDEO_TIMING_vblank => v_tc_0_vtiming_out_VBLANK,
+      SLOT_0_VIDEO_TIMING_vsync => v_tc_0_vtiming_out_VSYNC,
+      clk => processing_system7_0_FCLK_CLK1,
+      probe0(0) => v_axi4s_vid_out_0_vid_hsync
+    );
+system_ila_3: component zynq_design_1_system_ila_3_1
      port map (
       SLOT_0_AXI_araddr(31 downto 0) => axi_interconnect_0_M00_AXI_ARADDR(31 downto 0),
       SLOT_0_AXI_arcache(3 downto 0) => axi_interconnect_0_M00_AXI_ARCACHE(3 downto 0),
@@ -3700,28 +3762,21 @@ system_ila_0: component zynq_design_1_system_ila_0_0
       SLOT_4_AXIS_tready => axi_vdma_0_M_AXIS_MM2S_TREADY,
       SLOT_4_AXIS_tuser(0) => axi_vdma_0_M_AXIS_MM2S_TUSER(0),
       SLOT_4_AXIS_tvalid => axi_vdma_0_M_AXIS_MM2S_TVALID,
-      SLOT_5_VIDEO_TIMING_active_video => v_tc_0_vtiming_out_ACTIVE_VIDEO,
-      SLOT_5_VIDEO_TIMING_hblank => v_tc_0_vtiming_out_HBLANK,
-      SLOT_5_VIDEO_TIMING_hsync => v_tc_0_vtiming_out_HSYNC,
-      SLOT_5_VIDEO_TIMING_vblank => v_tc_0_vtiming_out_VBLANK,
-      SLOT_5_VIDEO_TIMING_vsync => v_tc_0_vtiming_out_VSYNC,
       clk => processing_system7_0_FCLK_CLK0,
-      probe0(11 downto 0) => v_axi4s_vid_out_0_vid_data(11 downto 0),
-      probe1(0) => v_axi4s_vid_out_0_vid_hsync,
-      probe2(0) => v_axi4s_vid_out_0_vid_vsync,
+      probe0(0) => v_axi4s_vid_out_0_vid_vsync,
       resetn => rst_ps7_0_100M_peripheral_aresetn(0)
     );
-system_ila_1: component zynq_design_1_system_ila_1_0
+system_ila_4: component zynq_design_1_system_ila_4_1
      port map (
       clk => processing_system7_0_FCLK_CLK0,
       probe0(3 downto 0) => xlslice_0_Dout(3 downto 0)
     );
-system_ila_2: component zynq_design_1_system_ila_2_0
+system_ila_5: component zynq_design_1_system_ila_5_0
      port map (
       clk => processing_system7_0_FCLK_CLK0,
       probe0(3 downto 0) => xlslice_1_Dout(3 downto 0)
     );
-system_ila_3: component zynq_design_1_system_ila_3_0
+system_ila_6: component zynq_design_1_system_ila_6_0
      port map (
       clk => processing_system7_0_FCLK_CLK0,
       probe0(3 downto 0) => xlslice_2_Dout(3 downto 0)
@@ -3748,6 +3803,8 @@ v_axi4s_vid_out_0: component zynq_design_1_v_axi4s_vid_out_0_0
       vid_hblank => NLW_v_axi4s_vid_out_0_vid_hblank_UNCONNECTED,
       vid_hsync => v_axi4s_vid_out_0_vid_hsync,
       vid_io_out_ce => High_dout(0),
+      vid_io_out_clk => processing_system7_0_FCLK_CLK1,
+      vid_io_out_reset => '0',
       vid_vblank => NLW_v_axi4s_vid_out_0_vid_vblank_UNCONNECTED,
       vid_vsync => v_axi4s_vid_out_0_vid_vsync,
       vtg_active_video => v_tc_0_vtiming_out_ACTIVE_VIDEO,
@@ -3761,7 +3818,7 @@ v_axi4s_vid_out_0: component zynq_design_1_v_axi4s_vid_out_0_0
 v_tc_0: component zynq_design_1_v_tc_0_0
      port map (
       active_video_out => v_tc_0_vtiming_out_ACTIVE_VIDEO,
-      clk => processing_system7_0_FCLK_CLK0,
+      clk => processing_system7_0_FCLK_CLK1,
       clken => High_dout(0),
       fsync_in => '0',
       fsync_out(0) => NLW_v_tc_0_fsync_out_UNCONNECTED(0),

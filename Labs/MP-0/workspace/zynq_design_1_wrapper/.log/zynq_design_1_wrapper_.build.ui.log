@@ -1,2 +1,6 @@
-2025-02-05T20:20:45.6169404000-Nothing to build in platform 'zynq_design_1_wrapper'
+2025-02-06T23:44:20.526336800255-23:44:20 **** Incremental Build of project zynq_design_1_wrapper ****
+000-buildplatform.bat 58364 zynq_design_1_wrapper no_domain_build 
+000-XSDB Server Channel: tcfchan#7
+00255-
+23:44:21 Build Finished (took 917ms)
 

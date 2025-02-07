@@ -1,6 +1,7 @@
-Nothing to build in platform 'zynq_design_1_wrapper'
-
-20:20:45 **** Incremental Build of configuration Debug for project aagh ****
+23:44:20 **** Incremental Build of project zynq_design_1_wrapper ****
+buildplatform.bat 58364 zynq_design_1_wrapper no_domain_build 
+XSDB Server Channel: tcfchan#7
+23:44:26 **** Incremental Build of configuration Debug for project yui ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step

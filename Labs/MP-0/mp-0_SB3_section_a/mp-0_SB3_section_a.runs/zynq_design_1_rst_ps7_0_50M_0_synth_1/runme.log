@@ -1,0 +1,4 @@
+
+*** Running vivado
+    with args -log zynq_design_1_rst_ps7_0_50M_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_design_1_rst_ps7_0_50M_0.tcl
+

@@ -55,7 +55,7 @@ PORT (
 clk : IN STD_LOGIC;
 
 
-probe0 : IN STD_LOGIC_VECTOR(3 DOWNTO 0)
+probe0 : IN STD_LOGIC_VECTOR(11 DOWNTO 0)
 );
 END bd_03af_ila_lib_0;
 
