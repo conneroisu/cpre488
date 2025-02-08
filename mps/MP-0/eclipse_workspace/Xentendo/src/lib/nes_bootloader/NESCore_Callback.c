@@ -9,32 +9,6 @@
 #include "../../lib/nes_bootloader/nes_bootloader.h"
 #include "../../lib/nes_bootloader/NESCore/NESCore.h"
 
-
-// Example: 0xC8103E
-// 0xC8 -> Red | 0x10 -> Green | 0x3E -> Blue
-u16 convert_color_24_16(u32 color)
-{
-	u16 r, g, b = 0;
-
-	// Red: 0xFF0000 -> 0xF
-	// Shift right 2 bytes (16 bits) to get the two bytes in the LSB position.
-	// Then to get the left byte, shift 4 more.
-	r = color >> 20;
-
-	// Green: 0xFF00 -> 0xF0
-	//Shift right one byte (8 bits) to get the two bytes in the LSB position.
-	// Then mask with 0xF0 to only take the left byte. It is already positioned
-	// where it needs to be.
-	g = (color >> 8) & 0xF0;
-
-	// Blue:  0xFF -> 0xF00
-	// Shift left 4 bits to get the left-most byte in the correct position.
-	// Then mask with 0xF00 to only use the left-most byte.
-	b = (color << 4) & 0xF00;
-
-	return r | g | b;
-}
-
 // The main output frame callback. Copy the results into the front-buffer.
 // Note that the NES (and the emulator) outputs essentially a 256x240 image.
 // Your challenge is to figure out how to map that to your 640x480 framebuffer.
@@ -62,11 +36,11 @@ void NESCore_Callback_OutputFrame(word *WorkFrame) {
 		for (j = 0; j < NES_DISP_WIDTH; j++) {
 			// Grab a temporary pixel using the color palette lookup table.
 			tpixel = NesPalette3[WorkFrame[NES_DISP_WIDTH*i+j]];
-			tcol = tpixel;
-			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64))] = tcol;
-			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64))] = tcol;
-			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64 + 1))] = tcol;
-			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64 + 1))] = tcol;
+
+			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64))] = tpixel;
+			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64))] = tpixel;
+			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64 + 1))] = tpixel;
+			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64 + 1))] = tpixel;
 			j_ptr += 2;
 		}
 		i_ptr += 2;
@@ -143,7 +117,7 @@ uint32_t NesPalette2[65] = {
     0xffefa6, 0xfff79c, 0xd7e895, 0xa6edaf, 0xa2f2da, 0x99fffc, 0xdddddd,
     0x111111, 0x111111};
 
-// 16-bit version of the improved NES Palette
+// 16-bit version of the improved NES Pale`tte
 uint16_t NesPalette3[65] = {
     0x0000, 0x0888, 0x0A30, 0x0B10, 0x0904, 0x050A, 0x020C, 0x000B, 0x0018,
     0x0025, 0x0041, 0x0040, 0x0240, 0x0640, 0x0000, 0x0000, 0x0000, 0x0CCC,

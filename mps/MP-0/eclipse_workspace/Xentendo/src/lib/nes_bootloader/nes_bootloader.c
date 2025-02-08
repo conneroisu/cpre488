@@ -99,21 +99,18 @@ void xil_init() {
   return;
 }
 
-void nes_load(uint8_t *rom_name) {
-  int32_t result = 0, i;
-  uint8_t nes_fname[17];
-
-  nes_strncpy(nes_fname, rom_name, 18);
+void nes_load(const char* *rom_name) {
+	  int32_t result = 0, i;
 
   usleep(100000);
 
   if (bootstate.debug_level >= 1) {
-    xil_printf("nes_load(): loading %s\r\n", nes_fname);
+    xil_printf("nes_load(): loading %s\r\n", rom_name);
   }
 
   // Disable the cache so it will play nice with xilsd (needed here)
   Xil_DCacheDisable();
-  result = NESCore_LoadROM(nes_fname);
+  result = NESCore_LoadROM(rom_name);
   if (result != 0) {
     xil_printf("nes_load(): invalid ROM load. Returning\r\n");
   }
@@ -125,8 +122,9 @@ void nes_load(uint8_t *rom_name) {
     xil_printf("nes_load(): invalid reset. Returning\r\n");
   }
 
-  if (bootstate.debug_level >= 1)
-    xil_printf("nes_load(): beginning emulation of %s\r\n", nes_fname);
+  if (bootstate.debug_level >= 1) {
+	    xil_printf("nes_load(): beginning emulation of %s\r\n", rom_name);
+  }
 
   bootstate.nes_playing = 1;
   usleep(100000);

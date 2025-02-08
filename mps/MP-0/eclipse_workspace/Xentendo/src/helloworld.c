@@ -8,14 +8,13 @@
 #include "xil_cache.h"
 #include "xparameters.h"
 #include "xvtc.h"
+#include "menu.h"
 
 #define IMAGE_WIDTH 640
 #define IMAGE_HEIGHT 480
 #define STRIDE IMAGE_WIDTH * 2
+
 extern uint16_t NesPalette3[65];
-
-
-
 
 int main()
 {
@@ -31,7 +30,7 @@ int main()
     Xil_DCacheEnable();
 
     while (1) {
-      nes_load("zelda.nes");
+      nes_load("roms/Indiana_Jones_and_the_Last_Crusade.nes");
     }
     cleanup_platform();
 
