@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Sat Feb  8 13:30:43 2025
+--Date        : Sat Feb  8 13:58:59 2025
 --Host        : CO2041-05 running 64-bit major release  (build 9200)
 --Command     : generate_target IP_wrapper.bd
 --Design      : IP_wrapper
@@ -75,8 +75,8 @@ architecture STRUCTURE of IP_wrapper is
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
+    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component IP;
 begin

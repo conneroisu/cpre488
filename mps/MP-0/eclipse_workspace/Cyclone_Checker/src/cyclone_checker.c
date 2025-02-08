@@ -20,6 +20,14 @@
 #define CYCLONE_GOLD 0xF1BE48
 #define CYCLONE_RED 0xC8103E
 
+// VDMA Register Defines
+#define VDMA_MMS2_CR *((volatile u32*) (XPAR_AXI_VDMA_0_BASEADDR + XAXIVDMA_CR_OFFSET))
+#define VDMA_MM2S_REG_INDEX *((volatile u32*) (XPAR_AXI_VDMA_0_BASEADDR + XAXIVDMA_HI_FRMBUF_OFFSET))
+#define VDMA_MM2S_START_ADDRESS1 *((volatile u32*) (XPAR_AXI_VDMA_0_BASEADDR + XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET))
+#define VDMA_MM2S_FRMDLY_STRIDE *((volatile u32*) (XPAR_AXI_VDMA_0_BASEADDR + XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET))
+#define VDMA_MM2S_HSIZE *((volatile u32*) (XPAR_AXI_VDMA_0_BASEADDR + XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET))
+#define VDMA_MM2S_VSIZE *((volatile u32*) (XPAR_AXI_VDMA_0_BASEADDR + XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET))
+
 u16 front_buffer[IMAGE_HEIGHT][IMAGE_WIDTH];
 u16 back_buffer[IMAGE_HEIGHT][IMAGE_WIDTH];
 
@@ -51,27 +59,25 @@ int main()
 
   u16 stride = IMAGE_WIDTH * 2;
 
+  // VDMA Register Setup
+
   // Set VDMA to circular mode (which technically doesn't matter since there is 1 frame buffer) and start VDMA.
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET, 0x3);
+  VDMA_MMS2_CR = 0x3;
 
   // Only allow access to the first 16 frame buffers since we only use the first one.
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET,0x0);
+  VDMA_MM2S_REG_INDEX = 0x0;
 
   // Provide the start address of the front buffer in memory.
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, front_buffer);
+  VDMA_MM2S_START_ADDRESS1 = ((u32) front_buffer);
 
+  // Set the stride
+  VDMA_MM2S_FRMDLY_STRIDE = stride | VDMA_MM2S_FRMDLY_STRIDE;
 
-  //Set the stride
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
-                    XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET,
-					stride | XAxiVdma_ReadReg(XPAR_AXI_VDMA_0_BASEADDR,
-							XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET));
+  // Set the horizontal size.
+  VDMA_MM2S_HSIZE = stride;
 
-  // Set the horizontal size
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET, stride);
-
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET, IMAGE_HEIGHT);
-
+  // Set the vertical size.
+  VDMA_MM2S_VSIZE = IMAGE_HEIGHT;
 
   cleanup_platform();
 
