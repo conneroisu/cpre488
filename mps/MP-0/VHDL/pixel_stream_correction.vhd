@@ -12,5 +12,5 @@ end pixel_stream_correction;
 
 architecture rtl of pixel_stream_correction is
 begin
-    o_corrected_data_stream <= (B"00" & i_data_stream(i_data_stream'high downto 2));
+    o_corrected_data_stream <= (B"0000" & i_data_stream(i_data_stream'high downto 4));
 end architecture;

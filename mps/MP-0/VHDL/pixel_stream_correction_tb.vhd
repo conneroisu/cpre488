@@ -1,6 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use work.user_types.all;
+use IEEE.numeric_std.all;
 
 entity pixel_stream_correction_tb is
 end pixel_stream_correction_tb;
@@ -22,7 +23,7 @@ begin
         wait for 10 ns;
 
         -- Run test
-        assert s_out_corrected_data_stream /= X"0ABC" report "Test Failed!" severity failure;
+        assert s_out_corrected_data_stream = X"0ABC" report "Test Failed: Output was not equal to 0ABC." severity failure;
         report "Test Passed!";
         wait;
     end process;
