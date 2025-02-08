@@ -121,3 +121,154 @@ int main()
     cleanup_platform();
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2) {
+
+	// Currently hard-coded so that player 1 is pressing A and B, and player 2 is pressing nothing.
+	//pdwPad1 = 0;
+	//pdwPad2 = NCTL_START;
+
+    UINTPTR SWIn = 0x41220000;
+    UINTPTR LEDIn = 0x41200000;
+    UINTPTR ButtonIn = 0x41210000;
+    int32_t LEDOut = 0x00000000;
+    double input = 0;
+
+    dword result = 0;
+
+    char str[50];
+    switch(Xil_In32(ButtonIn)){
+    	case 0x00000001:
+    		*pdwPad1 = NCTL_LEFT;
+    		LEDOut = LEDOut + 0x00000080;
+    		input = 1;
+    		break;
+    	case 0x00000002:
+    		*pdwPad1 = NCTL_DOWN;
+    		LEDOut = LEDOut + 0x00000020;
+    		input = 1;
+    		break;
+    	case 0x00000004:
+    		*pdwPad1 = NCTL_RIGHT;
+    		LEDOut = LEDOut + 0x00000010;
+    		input = 1;
+    		break;
+    	case 0x00000008:
+			*pdwPad1 = NCTL_UP;
+			LEDOut = LEDOut + 0x00000008;
+			input = 1;
+			break;
+    	case 0x00000010:
+			*pdwPad1 = NCTL_A;
+			LEDOut = LEDOut + 0x00000010;
+			input = 1;
+			break;
+    	default:
+    		print("BUTTON");
+    }
+
+    switch(Xil_In32(SWIn)){
+    	case 0x00000001:
+    		*pdwPad1 = NCTL_START;
+    		LEDOut = LEDOut + 0x00000001;
+    		print("Testtttt");
+    		input = 1;
+    		break;
+    	case 0x00000002:
+    		*pdwPad1 =  NCTL_SELECT;
+    		LEDOut = LEDOut + 0x00000002;
+    		input = 1;
+    		break;
+    	default:
+    		print("SWITCH");
+    }
+
+
+    if(input){
+    	*pdwPad1 = 0x00000000;
+    }
+
+	*pdwPad2 = 0x00000000;
+
+
+	return;
+}
