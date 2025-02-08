@@ -10,6 +10,8 @@
 #include "xvtc.h"
 #include "xil_printf.h"
 #include "sleep.h"
+#include "controls.h"
+#include <stdlib.h>
 
 #define BLACK_REF_BAR_WIDTH 1
 #define IMAGE_WIDTH 640
@@ -88,6 +90,43 @@ int main()
 
   // Set the vertical size.
   VDMA_MM2S_VSIZE = IMAGE_HEIGHT;
+
+  t_dpad_state s;
+
+  s.state = malloc(sizeof(t_dpad_buttons*) * 5);
+  s.len = 0;
+
+  configure_control_interface();
+
+  while(1)
+  {
+	  get_dpad_state(&s);
+
+	  xil_printf("Current DPAD State:\n\r");
+	  for(int i = 0; i < s.len; ++i)
+	  {
+		switch(s.state[i])
+		{
+		case UP:
+			xil_printf("UP ");
+			break;
+		case DOWN:
+			xil_printf("DOWN ");
+			break;
+		case LEFT:
+			xil_printf("LEFT ");
+			break;
+		case RIGHT:
+			xil_printf("RIGHT ");
+			break;
+		default:
+			break;
+		}
+	  }
+
+	  xil_printf("\n\r");
+	  usleep(500000);
+  }
 
   // Zoom
   while(1)
