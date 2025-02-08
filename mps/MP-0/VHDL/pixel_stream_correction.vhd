@@ -6,7 +6,7 @@ use work.user_types.all;
 entity pixel_stream_correction is
     port(
             i_data_stream : in STD_LOGIC_VECTOR(STREAM_SIZE - 1 downto 0);
-            o_corrected_data_stream : out STD_LOGIC_VECTOR(15 downto 0)
+            o_corrected_data_stream : out STD_LOGIC_VECTOR(STREAM_SIZE - 1 downto 0)
         );
 end pixel_stream_correction;
 
