@@ -26,6 +26,8 @@ void NESCore_Callback_OutputFrame(word *WorkFrame) {
 
       // Grab a temporary pixel using the color palette lookup table.
       tpixel = NesPalette3[WorkFrame[NES_DISP_WIDTH * i + j]];
+
+      // Casting to 640 x 480
     }
   }
 
