@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "v_axi4s_vid_out_v4_0_10,Vivado 2020.1" *)
 (* CHECK_LICENSE_TYPE = "zynq_design_1_v_axi4s_vid_out_0_0,v_axi4s_vid_out_v4_0_10,{}" *)
-(* CORE_GENERATION_INFO = "zynq_design_1_v_axi4s_vid_out_0_0,v_axi4s_vid_out_v4_0_10,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=v_axi4s_vid_out,x_ipVersion=4.0,x_ipCoreRevision=10,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_PIXELS_PER_CLOCK=1,C_COMPONENTS_PER_PIXEL=1,C_S_AXIS_COMPONENT_WIDTH=16,C_NATIVE_COMPONENT_WIDTH=12,C_NATIVE_DATA_WIDTH=12,C_S_AXIS_TDATA_WIDTH=16,C_HAS_ASYNC_CLK=1,C_ADDR_WIDTH=10,C_VTG_MASTER_SLAVE=0,C_HYSTERESIS_LEVEL=12,C_SYNC_LOCK_THRESHOLD=4,C_INCLUDE_PIX\
+(* CORE_GENERATION_INFO = "zynq_design_1_v_axi4s_vid_out_0_0,v_axi4s_vid_out_v4_0_10,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=v_axi4s_vid_out,x_ipVersion=4.0,x_ipCoreRevision=10,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_PIXELS_PER_CLOCK=1,C_COMPONENTS_PER_PIXEL=1,C_S_AXIS_COMPONENT_WIDTH=16,C_NATIVE_COMPONENT_WIDTH=16,C_NATIVE_DATA_WIDTH=16,C_S_AXIS_TDATA_WIDTH=16,C_HAS_ASYNC_CLK=1,C_ADDR_WIDTH=10,C_VTG_MASTER_SLAVE=0,C_HYSTERESIS_LEVEL=12,C_SYNC_LOCK_THRESHOLD=4,C_INCLUDE_PIX\
 EL_REPEAT=0,C_INCLUDE_PIXEL_REMAP_420=0,C_ADDR_WIDTH_PIXEL_REMAP_420=10}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module zynq_design_1_v_axi4s_vid_out_0_0 (
@@ -132,7 +132,7 @@ output wire vid_hblank;
 (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out FIELD" *)
 output wire vid_field_id;
 (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out DATA" *)
-output wire [11 : 0] vid_data;
+output wire [15 : 0] vid_data;
 (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in VSYNC" *)
 input wire vtg_vsync;
 (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in HSYNC" *)
@@ -157,8 +157,8 @@ output wire [31 : 0] status;
     .C_PIXELS_PER_CLOCK(1),
     .C_COMPONENTS_PER_PIXEL(1),
     .C_S_AXIS_COMPONENT_WIDTH(16),
-    .C_NATIVE_COMPONENT_WIDTH(12),
-    .C_NATIVE_DATA_WIDTH(12),
+    .C_NATIVE_COMPONENT_WIDTH(16),
+    .C_NATIVE_DATA_WIDTH(16),
     .C_S_AXIS_TDATA_WIDTH(16),
     .C_HAS_ASYNC_CLK(1),
     .C_ADDR_WIDTH(10),

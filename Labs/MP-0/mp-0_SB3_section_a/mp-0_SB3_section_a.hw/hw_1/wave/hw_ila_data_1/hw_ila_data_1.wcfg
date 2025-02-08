@@ -3,134 +3,29 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/Users/Jaxie963/test/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+      <db_ref path="C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1025fs"></ZoomEndTime>
+      <ZoomEndTime time="1024fs"></ZoomEndTime>
       <Cursor1Time time="192fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="326"></NameColumnWidth>
-      <ValueColumnWidth column_width="79"></ValueColumnWidth>
+      <ValueColumnWidth column_width="75"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
+   <WVObjectSize size="1" />
    <wave_markers>
    </wave_markers>
-   <wvobject fp_name="group2" type="group">
-      <obj_property name="label">slot_0 : axi_vdma_0_M_AXIS_MM2S : Interface</obj_property>
+   <wvobject fp_name="zynq_design_1_i/system_ila_1/U0/probe0_1" type="array">
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="Detail_Data">Interface_(i1:s0)_(axi_vdma_0_M_AXIS_MM2S)_tooltip</obj_property>
-      <obj_property name="Render_Data">Interface_(i1:s0)_(axi_vdma_0_M_AXIS_MM2S)</obj_property>
-      <obj_property name="EnumTransactionColorTable">0=blank</obj_property>
-      <obj_property name="CustomSignalColor">OliveDrab</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
-      <wvobject fp_name="group3" type="group">
-         <obj_property name="label">slot_0 : axi_vdma_0_M_AXIS_MM2S : T Channel</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="Detail_Data">T_Channel_(i1:s0)_(axi_vdma_0_M_AXIS_MM2S)_tooltip</obj_property>
-         <obj_property name="Render_Data">T_Channel_(i1:s0)_(axi_vdma_0_M_AXIS_MM2S)</obj_property>
-         <obj_property name="EnumTransactionColorTable">0=blank</obj_property>
-         <obj_property name="CustomSignalColor">Purple</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-         <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
-         <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tvalid" type="logic">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tvalid</obj_property>
-            <obj_property name="ObjectShortName">net_slot_0_axis_tvalid</obj_property>
-            <obj_property name="label">slot_0 : axi_vdma_0_M_AXIS_MM2S : TVALID</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-         <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tready" type="logic">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tready</obj_property>
-            <obj_property name="ObjectShortName">net_slot_0_axis_tready</obj_property>
-            <obj_property name="label">slot_0 : axi_vdma_0_M_AXIS_MM2S : TREADY</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-         <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tlast" type="logic">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tlast</obj_property>
-            <obj_property name="ObjectShortName">net_slot_0_axis_tlast</obj_property>
-            <obj_property name="label">slot_0 : axi_vdma_0_M_AXIS_MM2S : TLAST</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-         <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tdata" type="array">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tdata[15:0]</obj_property>
-            <obj_property name="ObjectShortName">net_slot_0_axis_tdata[15:0]</obj_property>
-            <obj_property name="label">slot_0 : axi_vdma_0_M_AXIS_MM2S : TDATA</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-         <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tkeep" type="array">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tkeep[1:0]</obj_property>
-            <obj_property name="ObjectShortName">net_slot_0_axis_tkeep[1:0]</obj_property>
-            <obj_property name="label">slot_0 : axi_vdma_0_M_AXIS_MM2S : TKEEP</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-         <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tuser" type="logic">
-            <obj_property name="DisplayName">label</obj_property>
-            <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tuser</obj_property>
-            <obj_property name="ObjectShortName">net_slot_0_axis_tuser</obj_property>
-            <obj_property name="label">slot_0 : axi_vdma_0_M_AXIS_MM2S : TUSER</obj_property>
-            <obj_property name="LABELRADIX">true</obj_property>
-            <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-         </wvobject>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/SLOT_1_VIDEO_TIMING_active_video_1" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/SLOT_1_VIDEO_TIMING_active_video_1</obj_property>
-      <obj_property name="ObjectShortName">SLOT_1_VIDEO_TIMING_active_video_1</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/SLOT_1_VIDEO_TIMING_hblank_1" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/SLOT_1_VIDEO_TIMING_hblank_1</obj_property>
-      <obj_property name="ObjectShortName">SLOT_1_VIDEO_TIMING_hblank_1</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/SLOT_1_VIDEO_TIMING_hsync_1" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/SLOT_1_VIDEO_TIMING_hsync_1</obj_property>
-      <obj_property name="ObjectShortName">SLOT_1_VIDEO_TIMING_hsync_1</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/SLOT_1_VIDEO_TIMING_vblank_1" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/SLOT_1_VIDEO_TIMING_vblank_1</obj_property>
-      <obj_property name="ObjectShortName">SLOT_1_VIDEO_TIMING_vblank_1</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/SLOT_1_VIDEO_TIMING_vsync_1" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/SLOT_1_VIDEO_TIMING_vsync_1</obj_property>
-      <obj_property name="ObjectShortName">SLOT_1_VIDEO_TIMING_vsync_1</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tdata" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_0/U0/net_slot_0_axis_tdata[15:0]</obj_property>
-      <obj_property name="ObjectShortName">net_slot_0_axis_tdata[15:0]</obj_property>
+      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_1/U0/probe0_1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">probe0_1[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="label">slot_0 : axi_vdma_0_M_AXIS_MM2S : TDATA</obj_property>
+      <obj_property name="label">v_axi4s_vid_out_0_vid_data</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

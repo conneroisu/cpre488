@@ -44,8 +44,8 @@
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HYSTERESIS_LEVEL">12</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_INCLUDE_PIXEL_REMAP_420">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_INCLUDE_PIXEL_REPEAT">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_NATIVE_COMPONENT_WIDTH">12</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_NATIVE_DATA_WIDTH">12</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_NATIVE_COMPONENT_WIDTH">16</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_NATIVE_DATA_WIDTH">16</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PIXELS_PER_CLOCK">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_SYNC_LOCK_THRESHOLD">4</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_S_AXIS_COMPONENT_WIDTH">16</spirit:configurableElementValue>
@@ -57,7 +57,7 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_HYSTERESIS_LEVEL">12</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_INCLUDE_PIXEL_REMAP_420">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_INCLUDE_PIXEL_REPEAT">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_NATIVE_COMPONENT_WIDTH">12</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_NATIVE_COMPONENT_WIDTH">16</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_PIXELS_PER_CLOCK">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_SYNC_LOCK_THRESHOLD">4</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.C_S_AXIS_VIDEO_DATA_WIDTH">16</spirit:configurableElementValue>

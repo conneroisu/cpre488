@@ -11,7 +11,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity bd_03af_wrapper is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 11 downto 0 )
+    probe0 : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
 end bd_03af_wrapper;
 
@@ -19,13 +19,13 @@ architecture STRUCTURE of bd_03af_wrapper is
   component bd_03af is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 11 downto 0 )
+    probe0 : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component bd_03af;
 begin
 bd_03af_i: component bd_03af
      port map (
       clk => clk,
-      probe0(11 downto 0) => probe0(11 downto 0)
+      probe0(15 downto 0) => probe0(15 downto 0)
     );
 end STRUCTURE;

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Feb  6 21:52:02 2025" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Feb  7 20:29:28 2025" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.4" DEVICE="7z020" NAME="bd_03af" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -9,7 +9,7 @@
         <CONNECTION INSTANCE="ila_lib" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="11" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe0">
+    <PORT DIR="I" LEFT="15" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ila_lib" PORT="probe0"/>
       </CONNECTIONS>
@@ -63,7 +63,7 @@
         <PARAMETER NAME="C_SLOT_0_AXI_AWUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_WUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_BUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE0_WIDTH" VALUE="12"/>
+        <PARAMETER NAME="C_PROBE0_WIDTH" VALUE="16"/>
         <PARAMETER NAME="C_PROBE1_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE2_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE3_WIDTH" VALUE="1"/>
@@ -3164,7 +3164,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="11" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe0">
+        <PORT DIR="I" LEFT="15" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="probe0"/>
           </CONNECTIONS>

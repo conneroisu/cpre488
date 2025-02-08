@@ -37,6 +37,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source zynq_design_1_script.tcl
 
+
+# The design that will be created by this Tcl script contains the following 
+# module references:
+# MUX2_1, MUX2_1, MUX2_1
+
+# Please add the sources of those modules before sourcing this Tcl script.
+
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -177,6 +184,46 @@ proc create_root_design { parentCell } {
   # Create instance: High, and set properties
   set High [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 High ]
 
+  # Create instance: LOW, and set properties
+  set LOW [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 LOW ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0000} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $LOW
+
+  # Create instance: MUX2_1_0, and set properties
+  set block_name MUX2_1
+  set block_cell_name MUX2_1_0
+  if { [catch {set MUX2_1_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $MUX2_1_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: MUX2_1_1, and set properties
+  set block_name MUX2_1
+  set block_cell_name MUX2_1_1
+  if { [catch {set MUX2_1_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $MUX2_1_1 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: MUX2_1_2, and set properties
+  set block_name MUX2_1
+  set block_cell_name MUX2_1_2
+  if { [catch {set MUX2_1_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $MUX2_1_2 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
   set_property -dict [ list \
@@ -734,7 +781,7 @@ proc create_root_design { parentCell } {
   set v_axi4s_vid_out_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_axi4s_vid_out:4.0 v_axi4s_vid_out_0 ]
   set_property -dict [ list \
    CONFIG.C_HAS_ASYNC_CLK {1} \
-   CONFIG.C_NATIVE_COMPONENT_WIDTH {12} \
+   CONFIG.C_NATIVE_COMPONENT_WIDTH {16} \
    CONFIG.C_S_AXIS_VIDEO_DATA_WIDTH {16} \
    CONFIG.C_S_AXIS_VIDEO_FORMAT {12} \
  ] $v_axi4s_vid_out_0
@@ -767,7 +814,8 @@ proc create_root_design { parentCell } {
   set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
   set_property -dict [ list \
    CONFIG.DIN_FROM {3} \
-   CONFIG.DIN_WIDTH {12} \
+   CONFIG.DIN_TO {0} \
+   CONFIG.DIN_WIDTH {16} \
    CONFIG.DOUT_WIDTH {4} \
  ] $xlslice_0
 
@@ -776,7 +824,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.DIN_FROM {11} \
    CONFIG.DIN_TO {8} \
-   CONFIG.DIN_WIDTH {12} \
+   CONFIG.DIN_WIDTH {16} \
    CONFIG.DOUT_WIDTH {4} \
  ] $xlslice_1
 
@@ -785,7 +833,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.DIN_FROM {7} \
    CONFIG.DIN_TO {4} \
-   CONFIG.DIN_WIDTH {12} \
+   CONFIG.DIN_WIDTH {16} \
    CONFIG.DOUT_WIDTH {4} \
  ] $xlslice_2
 
@@ -820,10 +868,15 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets v_tc_0_vtiming_out] [get_bd_intf
 
   # Create port connections
   connect_bd_net -net High_dout [get_bd_pins High/dout] [get_bd_pins v_axi4s_vid_out_0/aclken] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_ce] [get_bd_pins v_tc_0/clken]
+  connect_bd_net -net LOW_dout [get_bd_pins LOW/dout] [get_bd_pins MUX2_1_0/in_0] [get_bd_pins MUX2_1_1/in_0] [get_bd_pins MUX2_1_2/in_0]
+  connect_bd_net -net MUX2_1_0_out_0 [get_bd_ports VGA_R] [get_bd_pins MUX2_1_0/out_0] [get_bd_pins system_ila_4/probe0]
+  connect_bd_net -net MUX2_1_1_out_0 [get_bd_ports VGA_G] [get_bd_pins MUX2_1_1/out_0] [get_bd_pins system_ila_6/probe0]
+  connect_bd_net -net MUX2_1_2_out_0 [get_bd_ports VGA_B] [get_bd_pins MUX2_1_2/out_0] [get_bd_pins system_ila_5/probe0]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins system_ila_1/clk] [get_bd_pins system_ila_3/clk] [get_bd_pins system_ila_4/clk] [get_bd_pins system_ila_5/clk] [get_bd_pins system_ila_6/clk] [get_bd_pins v_axi4s_vid_out_0/aclk] [get_bd_pins v_tc_0/s_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins rst_ps7_0_25M/slowest_sync_clk] [get_bd_pins system_ila_2/clk] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_clk] [get_bd_pins v_tc_0/clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in] [get_bd_pins rst_ps7_0_25M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins axi_gpio_2/s_axi_aresetn] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins system_ila_3/resetn] [get_bd_pins v_axi4s_vid_out_0/aresetn] [get_bd_pins v_tc_0/resetn] [get_bd_pins v_tc_0/s_axi_aresetn]
+  connect_bd_net -net v_axi4s_vid_out_0_vid_active_video [get_bd_pins MUX2_1_0/S] [get_bd_pins MUX2_1_1/S] [get_bd_pins MUX2_1_2/S] [get_bd_pins v_axi4s_vid_out_0/vid_active_video]
   connect_bd_net -net v_axi4s_vid_out_0_vid_data [get_bd_pins system_ila_1/probe0] [get_bd_pins v_axi4s_vid_out_0/vid_data] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din] [get_bd_pins xlslice_2/Din]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets v_axi4s_vid_out_0_vid_data]
   connect_bd_net -net v_axi4s_vid_out_0_vid_hsync [get_bd_ports VGA_HSYNC] [get_bd_pins system_ila_2/probe0] [get_bd_pins v_axi4s_vid_out_0/vid_hsync]
@@ -831,12 +884,9 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets v_tc_0_vtiming_out] [get_bd_intf
   connect_bd_net -net v_axi4s_vid_out_0_vid_vsync [get_bd_ports VGA_VSYNC] [get_bd_pins system_ila_3/probe0] [get_bd_pins v_axi4s_vid_out_0/vid_vsync]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets v_axi4s_vid_out_0_vid_vsync]
   connect_bd_net -net v_axi4s_vid_out_0_vtg_ce [get_bd_pins v_axi4s_vid_out_0/vtg_ce] [get_bd_pins v_tc_0/gen_clken]
-  connect_bd_net -net xlslice_0_Dout [get_bd_ports VGA_R] [get_bd_pins system_ila_4/probe0] [get_bd_pins xlslice_0/Dout]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets xlslice_0_Dout]
-  connect_bd_net -net xlslice_1_Dout [get_bd_ports VGA_B] [get_bd_pins system_ila_5/probe0] [get_bd_pins xlslice_1/Dout]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets xlslice_1_Dout]
-  connect_bd_net -net xlslice_2_Dout [get_bd_ports VGA_G] [get_bd_pins system_ila_6/probe0] [get_bd_pins xlslice_2/Dout]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets xlslice_2_Dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins MUX2_1_0/in_1] [get_bd_pins xlslice_0/Dout]
+  connect_bd_net -net xlslice_1_Dout [get_bd_pins MUX2_1_2/in_1] [get_bd_pins xlslice_1/Dout]
+  connect_bd_net -net xlslice_2_Dout [get_bd_pins MUX2_1_1/in_1] [get_bd_pins xlslice_2/Dout]
 
   # Create address segments
   assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces axi_vdma_0/Data_MM2S] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] -force

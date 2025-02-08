@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1738900340">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1738981789">
   <File Type="PA-TCL" Name="zynq_design_1_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="zynq_design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="zynq_design_1_wrapper_reports.tcl"/>
@@ -11,6 +11,12 @@
   <File Type="VDS-TIMING-PB" Name="zynq_design_1_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/MUX2_1.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/zynq_design_1/zynq_design_1.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -54,10 +60,14 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_MUX2_1_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_v_axi4s_vid_out_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_axi_gpio_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_v_tc_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_rst_ps7_0_100M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_axi_gpio_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_rst_ps7_0_50M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_MUX2_1_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_MUX2_1_0_2"/>
 </GenRun>

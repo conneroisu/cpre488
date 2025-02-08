@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu Feb  6 18:43:12 2025
-// Host        : CO2041-08 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top zynq_design_1_v_axi4s_vid_out_0_0 -prefix
-//               zynq_design_1_v_axi4s_vid_out_0_0_ zynq_design_1_v_axi4s_vid_out_0_0_sim_netlist.v
+// Date        : Fri Feb  7 19:11:17 2025
+// Host        : CO2041-06 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_sim_netlist.v
 // Design      : zynq_design_1_v_axi4s_vid_out_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,12 +12,162 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
+(* CHECK_LICENSE_TYPE = "zynq_design_1_v_axi4s_vid_out_0_0,v_axi4s_vid_out_v4_0_10,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "v_axi4s_vid_out_v4_0_10,Vivado 2020.1" *) 
+(* NotValidForBitStream *)
+module zynq_design_1_v_axi4s_vid_out_0_0
+   (aclk,
+    aclken,
+    aresetn,
+    s_axis_video_tdata,
+    s_axis_video_tvalid,
+    s_axis_video_tready,
+    s_axis_video_tuser,
+    s_axis_video_tlast,
+    fid,
+    vid_io_out_clk,
+    vid_io_out_ce,
+    vid_io_out_reset,
+    vid_active_video,
+    vid_vsync,
+    vid_hsync,
+    vid_vblank,
+    vid_hblank,
+    vid_field_id,
+    vid_data,
+    vtg_vsync,
+    vtg_hsync,
+    vtg_vblank,
+    vtg_hblank,
+    vtg_active_video,
+    vtg_field_id,
+    vtg_ce,
+    locked,
+    overflow,
+    underflow,
+    fifo_read_level,
+    status);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aclk_intf CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF video_in, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0" *) input aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clockenable:1.0 aclken_intf CE" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclken_intf, POLARITY ACTIVE_HIGH" *) input aclken;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 aresetn_intf RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aresetn_intf, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input aresetn;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TDATA" *) input [15:0]s_axis_video_tdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TVALID" *) input s_axis_video_tvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TREADY" *) output s_axis_video_tready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TUSER" *) input s_axis_video_tuser;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TLAST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) input s_axis_video_tlast;
+  input fid;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 vid_io_out_clk_intf CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME vid_io_out_clk_intf, ASSOCIATED_BUSIF vid_io_out, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK1, INSERT_VIP 0" *) input vid_io_out_clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clockenable:1.0 vid_io_out_ce_intf CE" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME vid_io_out_ce_intf, POLARITY ACTIVE_HIGH" *) input vid_io_out_ce;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 vid_io_out_reset_intf RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME vid_io_out_reset_intf, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input vid_io_out_reset;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out ACTIVE_VIDEO" *) output vid_active_video;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out VSYNC" *) output vid_vsync;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out HSYNC" *) output vid_hsync;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out VBLANK" *) output vid_vblank;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out HBLANK" *) output vid_hblank;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out FIELD" *) output vid_field_id;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out DATA" *) output [15:0]vid_data;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in VSYNC" *) input vtg_vsync;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in HSYNC" *) input vtg_hsync;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in VBLANK" *) input vtg_vblank;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in HBLANK" *) input vtg_hblank;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in ACTIVE_VIDEO" *) input vtg_active_video;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in FIELD" *) input vtg_field_id;
+  output vtg_ce;
+  output locked;
+  output overflow;
+  output underflow;
+  output [10:0]fifo_read_level;
+  output [31:0]status;
+
+  wire aclk;
+  wire aclken;
+  wire aresetn;
+  wire fid;
+  wire [10:0]fifo_read_level;
+  wire locked;
+  wire overflow;
+  wire [15:0]s_axis_video_tdata;
+  wire s_axis_video_tlast;
+  wire s_axis_video_tready;
+  wire s_axis_video_tuser;
+  wire s_axis_video_tvalid;
+  wire [31:0]status;
+  wire underflow;
+  wire vid_active_video;
+  wire [15:0]vid_data;
+  wire vid_field_id;
+  wire vid_hblank;
+  wire vid_hsync;
+  wire vid_io_out_ce;
+  wire vid_io_out_clk;
+  wire vid_io_out_reset;
+  wire vid_vblank;
+  wire vid_vsync;
+  wire vtg_active_video;
+  wire vtg_ce;
+  wire vtg_field_id;
+  wire vtg_hblank;
+  wire vtg_hsync;
+  wire vtg_vblank;
+  wire vtg_vsync;
+
+  (* C_ADDR_WIDTH = "10" *) 
+  (* C_ADDR_WIDTH_PIXEL_REMAP_420 = "10" *) 
+  (* C_COMPONENTS_PER_PIXEL = "1" *) 
+  (* C_FAMILY = "zynq" *) 
+  (* C_HAS_ASYNC_CLK = "1" *) 
+  (* C_HYSTERESIS_LEVEL = "12" *) 
+  (* C_INCLUDE_PIXEL_REMAP_420 = "0" *) 
+  (* C_INCLUDE_PIXEL_REPEAT = "0" *) 
+  (* C_NATIVE_COMPONENT_WIDTH = "16" *) 
+  (* C_NATIVE_DATA_WIDTH = "16" *) 
+  (* C_PIXELS_PER_CLOCK = "1" *) 
+  (* C_SYNC_LOCK_THRESHOLD = "4" *) 
+  (* C_S_AXIS_COMPONENT_WIDTH = "16" *) 
+  (* C_S_AXIS_TDATA_WIDTH = "16" *) 
+  (* C_VTG_MASTER_SLAVE = "0" *) 
+  (* DowngradeIPIdentifiedWarnings = "yes" *) 
+  zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 inst
+       (.aclk(aclk),
+        .aclken(aclken),
+        .aresetn(aresetn),
+        .fid(fid),
+        .fifo_read_level(fifo_read_level),
+        .locked(locked),
+        .overflow(overflow),
+        .remap_420_en(1'b0),
+        .repeat_en(1'b0),
+        .s_axis_video_tdata(s_axis_video_tdata),
+        .s_axis_video_tlast(s_axis_video_tlast),
+        .s_axis_video_tready(s_axis_video_tready),
+        .s_axis_video_tuser(s_axis_video_tuser),
+        .s_axis_video_tvalid(s_axis_video_tvalid),
+        .status(status),
+        .underflow(underflow),
+        .vid_active_video(vid_active_video),
+        .vid_data(vid_data),
+        .vid_field_id(vid_field_id),
+        .vid_hblank(vid_hblank),
+        .vid_hsync(vid_hsync),
+        .vid_io_out_ce(vid_io_out_ce),
+        .vid_io_out_clk(vid_io_out_clk),
+        .vid_io_out_reset(vid_io_out_reset),
+        .vid_vblank(vid_vblank),
+        .vid_vsync(vid_vsync),
+        .vtg_active_video(vtg_active_video),
+        .vtg_ce(vtg_ce),
+        .vtg_field_id(vtg_field_id),
+        .vtg_hblank(vtg_hblank),
+        .vtg_hsync(vtg_hsync),
+        .vtg_vblank(vtg_vblank),
+        .vtg_vsync(vtg_vsync));
+endmodule
+
 (* C_ADDR_WIDTH = "10" *) (* C_ADDR_WIDTH_PIXEL_REMAP_420 = "10" *) (* C_COMPONENTS_PER_PIXEL = "1" *) 
 (* C_FAMILY = "zynq" *) (* C_HAS_ASYNC_CLK = "1" *) (* C_HYSTERESIS_LEVEL = "12" *) 
-(* C_INCLUDE_PIXEL_REMAP_420 = "0" *) (* C_INCLUDE_PIXEL_REPEAT = "0" *) (* C_NATIVE_COMPONENT_WIDTH = "12" *) 
-(* C_NATIVE_DATA_WIDTH = "12" *) (* C_PIXELS_PER_CLOCK = "1" *) (* C_SYNC_LOCK_THRESHOLD = "4" *) 
+(* C_INCLUDE_PIXEL_REMAP_420 = "0" *) (* C_INCLUDE_PIXEL_REPEAT = "0" *) (* C_NATIVE_COMPONENT_WIDTH = "16" *) 
+(* C_NATIVE_DATA_WIDTH = "16" *) (* C_PIXELS_PER_CLOCK = "1" *) (* C_SYNC_LOCK_THRESHOLD = "4" *) 
 (* C_S_AXIS_COMPONENT_WIDTH = "16" *) (* C_S_AXIS_TDATA_WIDTH = "16" *) (* C_VTG_MASTER_SLAVE = "0" *) 
-(* DowngradeIPIdentifiedWarnings = "yes" *) 
+(* DowngradeIPIdentifiedWarnings = "yes" *) (* ORIG_REF_NAME = "v_axi4s_vid_out_v4_0_10" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10
    (aclk,
     aclken,
@@ -70,7 +220,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10
   output vid_vblank;
   output vid_hblank;
   output vid_field_id;
-  output [11:0]vid_data;
+  output [15:0]vid_data;
   input vtg_vsync;
   input vtg_hsync;
   input vtg_vblank;
@@ -87,14 +237,14 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10
   input remap_420_en;
 
   wire \<const0> ;
-  wire COUPLER_INST_n_29;
-  wire COUPLER_INST_n_30;
+  wire COUPLER_INST_n_33;
+  wire COUPLER_INST_n_34;
   wire SYNC_INST_n_5;
   wire aclk;
   wire aclken;
   wire aresetn;
   wire fid;
-  wire [11:0]fifo_data;
+  wire [15:0]fifo_data;
   wire fifo_eol;
   wire fifo_eol_dly;
   wire fifo_eol_re;
@@ -116,7 +266,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10
   wire [25:0]\^status ;
   wire underflow;
   wire vid_active_video;
-  wire [11:0]vid_data;
+  wire [15:0]vid_data;
   wire vid_field_id;
   wire vid_hblank;
   wire vid_hsync;
@@ -152,7 +302,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10
         .aclk(aclk),
         .aclken(aclken),
         .aresetn(aresetn),
-        .din({fid,s_axis_video_tuser,s_axis_video_tlast,s_axis_video_tdata[15:4]}),
+        .din({fid,s_axis_video_tuser,s_axis_video_tlast,s_axis_video_tdata}),
         .dout({fifo_fid,fifo_sof,fifo_eol,fifo_data}),
         .fifo_eol_dly(fifo_eol_dly),
         .fifo_eol_re(fifo_eol_re),
@@ -160,8 +310,8 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10
         .\fifo_pix_cnt_reg[12] (SYNC_INST_n_5),
         .fifo_read_level(fifo_read_level),
         .fifo_sof_dly(fifo_sof_dly),
-        .\gen_wr_a.gen_word_narrow.mem_reg (COUPLER_INST_n_29),
-        .\grdc.rd_data_count_i_reg[9] (COUPLER_INST_n_30),
+        .\gen_wr_a.gen_word_narrow.mem_reg (COUPLER_INST_n_33),
+        .\grdc.rd_data_count_i_reg[9] (COUPLER_INST_n_34),
         .overflow(overflow),
         .s_axis_video_tready(s_axis_video_tready),
         .s_axis_video_tvalid(s_axis_video_tvalid),
@@ -195,8 +345,8 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10
   zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_sync SYNC_INST
        (.E(rd_en_i),
         .\FSM_sequential_state_reg[0]_0 (SYNC_INST_n_5),
-        .\FSM_sequential_state_reg[1]_0 (COUPLER_INST_n_30),
-        .\FSM_sequential_state_reg[2]_0 (COUPLER_INST_n_29),
+        .\FSM_sequential_state_reg[1]_0 (COUPLER_INST_n_34),
+        .\FSM_sequential_state_reg[2]_0 (COUPLER_INST_n_33),
         .SR(in_de_mux0),
         .dout({fifo_fid,fifo_sof,fifo_eol}),
         .fifo_eol_dly(fifo_eol_dly),
@@ -215,6 +365,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10
         .vtg_vsync(vtg_vsync));
 endmodule
 
+(* ORIG_REF_NAME = "v_axi4s_vid_out_v4_0_10_cdc_single" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_cdc_single
    (src_in,
     aclk);
@@ -263,6 +414,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_cdc_single__xdc
         .src_in(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "v_axi4s_vid_out_v4_0_10_coupler" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_coupler
    (overflow,
     dout,
@@ -285,7 +437,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_coupler
     s_axis_video_tvalid,
     aclken);
   output overflow;
-  output [14:0]dout;
+  output [18:0]dout;
   output [10:0]fifo_read_level;
   output underflow;
   output fifo_pix_cnt;
@@ -294,7 +446,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_coupler
   output fifo_eol_re;
   output s_axis_video_tready;
   input aclk;
-  input [14:0]din;
+  input [18:0]din;
   input vid_io_out_clk;
   input [0:0]E;
   input vid_io_out_ce;
@@ -309,8 +461,8 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_coupler
   wire aclk;
   wire aclken;
   wire aresetn;
-  wire [14:0]din;
-  wire [14:0]dout;
+  wire [18:0]din;
+  wire [18:0]dout;
   wire fifo_eol_dly;
   wire fifo_eol_re;
   wire fifo_pix_cnt;
@@ -370,6 +522,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_coupler
         .O(wr_en_i__0));
 endmodule
 
+(* ORIG_REF_NAME = "v_axi4s_vid_out_v4_0_10_fifo_async" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_async
    (full,
     overflow,
@@ -394,7 +547,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_async
   output full;
   output overflow;
   output wr_rst_busy;
-  output [14:0]dout;
+  output [18:0]dout;
   output [10:0]fifo_read_level;
   output underflow;
   output fifo_pix_cnt;
@@ -403,7 +556,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_async
   output fifo_eol_re;
   input aclk;
   input wr_en;
-  input [14:0]din;
+  input [18:0]din;
   input vid_io_out_clk;
   input [0:0]E;
   input vid_io_out_ce;
@@ -421,16 +574,16 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_async
   wire XPM_FIFO_ASYNC_INST_n_2;
   wire XPM_FIFO_ASYNC_INST_n_3;
   wire XPM_FIFO_ASYNC_INST_n_4;
-  wire XPM_FIFO_ASYNC_INST_n_46;
   wire XPM_FIFO_ASYNC_INST_n_5;
+  wire XPM_FIFO_ASYNC_INST_n_50;
   wire XPM_FIFO_ASYNC_INST_n_6;
   wire XPM_FIFO_ASYNC_INST_n_7;
   wire XPM_FIFO_ASYNC_INST_n_8;
   wire XPM_FIFO_ASYNC_INST_n_9;
   wire aclk;
   wire aresetn;
-  wire [14:0]din;
-  wire [14:0]dout;
+  wire [18:0]din;
+  wire [18:0]dout;
   wire fifo_empty;
   wire fifo_eol_dly;
   wire fifo_eol_re;
@@ -477,7 +630,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_async
   LUT2 #(
     .INIT(4'hB)) 
     \FSM_sequential_state[2]_i_5 
-       (.I0(dout[13]),
+       (.I0(dout[17]),
         .I1(fifo_sof_dly),
         .O(\gen_wr_a.gen_word_narrow.mem_reg ));
   (* CASCADE_HEIGHT = "0" *) 
@@ -497,13 +650,13 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_async
   (* P_READ_MODE = "1" *) 
   (* P_WAKEUP_TIME = "2" *) 
   (* RD_DATA_COUNT_WIDTH = "11" *) 
-  (* READ_DATA_WIDTH = "15" *) 
+  (* READ_DATA_WIDTH = "19" *) 
   (* READ_MODE = "fwft" *) 
   (* RELATED_CLOCKS = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* USE_ADV_FEATURES = "0707" *) 
   (* WAKEUP_TIME = "0" *) 
-  (* WRITE_DATA_WIDTH = "15" *) 
+  (* WRITE_DATA_WIDTH = "19" *) 
   (* WR_DATA_COUNT_WIDTH = "11" *) 
   (* XPM_MODULE = "TRUE" *) 
   zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_async XPM_FIFO_ASYNC_INST
@@ -523,7 +676,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_async
         .rd_clk(vid_io_out_clk),
         .rd_data_count(fifo_read_level),
         .rd_en(E),
-        .rd_rst_busy(XPM_FIFO_ASYNC_INST_n_46),
+        .rd_rst_busy(XPM_FIFO_ASYNC_INST_n_50),
         .rst(XPM_FIFO_ASYNC_INST_i_1_n_0),
         .sbiterr(NLW_XPM_FIFO_ASYNC_INST_sbiterr_UNCONNECTED),
         .sleep(1'b0),
@@ -541,7 +694,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_async
   LUT2 #(
     .INIT(4'h2)) 
     fifo_eol_re_dly_i_1
-       (.I0(dout[12]),
+       (.I0(dout[16]),
         .I1(fifo_eol_dly),
         .O(fifo_eol_re));
   LUT3 #(
@@ -553,6 +706,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_fifo_async
         .O(fifo_pix_cnt));
 endmodule
 
+(* ORIG_REF_NAME = "v_axi4s_vid_out_v4_0_10_formatter" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter
    (vid_active_video,
     vid_vsync,
@@ -582,7 +736,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter
   output vid_hblank;
   output vid_field_id;
   output fivid_reset_full_frame;
-  output [11:0]vid_data;
+  output [15:0]vid_data;
   input [0:0]SR;
   input vid_io_out_ce;
   input vtg_active_video;
@@ -595,9 +749,9 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter
   input src_in;
   input vid_io_out_reset;
   input [0:0]E;
-  input [11:0]D;
+  input [15:0]D;
 
-  wire [11:0]D;
+  wire [15:0]D;
   wire [0:0]E;
   wire [0:0]SR;
   wire fivid_reset_full_frame;
@@ -606,7 +760,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter
   wire vblank_rising;
   wire vblank_rising_i_1_n_0;
   wire vid_active_video;
-  wire [11:0]vid_data;
+  wire [15:0]vid_data;
   wire vid_field_id;
   wire vid_hblank;
   wire vid_hsync;
@@ -664,6 +818,38 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter
         .CE(E),
         .D(D[11]),
         .Q(vid_data[11]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[12] 
+       (.C(vid_io_out_clk),
+        .CE(E),
+        .D(D[12]),
+        .Q(vid_data[12]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[13] 
+       (.C(vid_io_out_clk),
+        .CE(E),
+        .D(D[13]),
+        .Q(vid_data[13]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[14] 
+       (.C(vid_io_out_clk),
+        .CE(E),
+        .D(D[14]),
+        .Q(vid_data[14]),
+        .R(SR));
+  FDRE #(
+    .INIT(1'b0)) 
+    \in_data_mux_reg[15] 
+       (.C(vid_io_out_clk),
+        .CE(E),
+        .D(D[15]),
+        .Q(vid_data[15]),
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
@@ -820,6 +1006,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_formatter
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "v_axi4s_vid_out_v4_0_10_sync" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_sync
    (fifo_eol_dly,
     fifo_sof_dly,
@@ -2531,7 +2718,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_sync
         .R(vid_io_out_reset));
   LUT6 #(
     .INIT(64'hCCCDCDC500000000)) 
-    \in_data_mux[11]_i_1 
+    \in_data_mux[15]_i_1 
        (.I0(state[2]),
         .I1(vtg_active_video),
         .I2(state[1]),
@@ -3589,10 +3776,10 @@ module zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10_sync
         .R(vid_io_out_reset));
 endmodule
 
-(* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "1" *) (* REG_OUTPUT = "0" *) 
-(* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) (* VERSION = "0" *) 
-(* WIDTH = "10" *) (* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) 
-(* xpm_cdc = "GRAY" *) 
+(* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "1" *) (* ORIG_REF_NAME = "xpm_cdc_gray" *) 
+(* REG_OUTPUT = "0" *) (* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
+(* VERSION = "0" *) (* WIDTH = "10" *) (* XPM_MODULE = "TRUE" *) 
+(* keep_hierarchy = "true" *) (* xpm_cdc = "GRAY" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_xpm_cdc_gray
    (src_clk,
     src_in_bin,
@@ -6233,9 +6420,9 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_cdc_gray__parameterized1
         .R(1'b0));
 endmodule
 
-(* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* SIM_ASSERT_CHK = "0" *) 
-(* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) 
-(* keep_hierarchy = "true" *) (* xpm_cdc = "SINGLE" *) 
+(* DEST_SYNC_FF = "4" *) (* INIT_SYNC_FF = "0" *) (* ORIG_REF_NAME = "xpm_cdc_single" *) 
+(* SIM_ASSERT_CHK = "0" *) (* SRC_INPUT_REG = "0" *) (* VERSION = "0" *) 
+(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) (* xpm_cdc = "SINGLE" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_xpm_cdc_single
    (src_clk,
     src_in,
@@ -6346,8 +6533,9 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_cdc_single__2
 endmodule
 
 (* DEF_VAL = "1'b0" *) (* DEST_SYNC_FF = "4" *) (* INIT = "0" *) 
-(* INIT_SYNC_FF = "1" *) (* SIM_ASSERT_CHK = "0" *) (* VERSION = "0" *) 
-(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) (* xpm_cdc = "SYNC_RST" *) 
+(* INIT_SYNC_FF = "1" *) (* ORIG_REF_NAME = "xpm_cdc_sync_rst" *) (* SIM_ASSERT_CHK = "0" *) 
+(* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) 
+(* xpm_cdc = "SYNC_RST" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_xpm_cdc_sync_rst
    (src_rst,
     dest_clk,
@@ -6470,6 +6658,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_cdc_sync_rst__2
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_counter_updn" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_xpm_counter_updn
    (S,
     DI,
@@ -8151,12 +8340,13 @@ endmodule
 (* CASCADE_HEIGHT = "0" *) (* CDC_SYNC_STAGES = "4" *) (* DOUT_RESET_VALUE = "0" *) 
 (* ECC_MODE = "no_ecc" *) (* EN_ADV_FEATURE_ASYNC = "16'b0000011100000111" *) (* FIFO_MEMORY_TYPE = "auto" *) 
 (* FIFO_READ_LATENCY = "0" *) (* FIFO_WRITE_DEPTH = "1024" *) (* FULL_RESET_VALUE = "1" *) 
-(* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) (* P_COMMON_CLOCK = "0" *) 
-(* P_ECC_MODE = "0" *) (* P_FIFO_MEMORY_TYPE = "0" *) (* P_READ_MODE = "1" *) 
-(* P_WAKEUP_TIME = "2" *) (* RD_DATA_COUNT_WIDTH = "11" *) (* READ_DATA_WIDTH = "15" *) 
-(* READ_MODE = "fwft" *) (* RELATED_CLOCKS = "0" *) (* SIM_ASSERT_CHK = "0" *) 
-(* USE_ADV_FEATURES = "0707" *) (* WAKEUP_TIME = "0" *) (* WRITE_DATA_WIDTH = "15" *) 
-(* WR_DATA_COUNT_WIDTH = "11" *) (* XPM_MODULE = "TRUE" *) (* dont_touch = "true" *) 
+(* ORIG_REF_NAME = "xpm_fifo_async" *) (* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) 
+(* P_COMMON_CLOCK = "0" *) (* P_ECC_MODE = "0" *) (* P_FIFO_MEMORY_TYPE = "0" *) 
+(* P_READ_MODE = "1" *) (* P_WAKEUP_TIME = "2" *) (* RD_DATA_COUNT_WIDTH = "11" *) 
+(* READ_DATA_WIDTH = "19" *) (* READ_MODE = "fwft" *) (* RELATED_CLOCKS = "0" *) 
+(* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "0707" *) (* WAKEUP_TIME = "0" *) 
+(* WRITE_DATA_WIDTH = "19" *) (* WR_DATA_COUNT_WIDTH = "11" *) (* XPM_MODULE = "TRUE" *) 
+(* dont_touch = "true" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_async
    (sleep,
     rst,
@@ -8188,7 +8378,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_async
   input rst;
   input wr_clk;
   input wr_en;
-  input [14:0]din;
+  input [18:0]din;
   output full;
   output prog_full;
   output [10:0]wr_data_count;
@@ -8198,7 +8388,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_async
   output wr_ack;
   input rd_clk;
   input rd_en;
-  output [14:0]dout;
+  output [18:0]dout;
   output empty;
   output prog_empty;
   output [10:0]rd_data_count;
@@ -8212,8 +8402,8 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_async
   output dbiterr;
 
   wire \<const0> ;
-  wire [14:0]din;
-  wire [14:0]dout;
+  wire [18:0]din;
+  wire [18:0]dout;
   wire empty;
   wire full;
   wire overflow;
@@ -8268,7 +8458,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_async
   (* FIFO_MEM_TYPE = "0" *) 
   (* FIFO_READ_DEPTH = "1024" *) 
   (* FIFO_READ_LATENCY = "0" *) 
-  (* FIFO_SIZE = "15360" *) 
+  (* FIFO_SIZE = "19456" *) 
   (* FIFO_WRITE_DEPTH = "1024" *) 
   (* FULL_RESET_VALUE = "1" *) 
   (* FULL_RST_VAL = "1'b1" *) 
@@ -8286,7 +8476,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_async
   (* RD_LATENCY = "2" *) 
   (* RD_MODE = "1" *) 
   (* RD_PNTR_WIDTH = "10" *) 
-  (* READ_DATA_WIDTH = "15" *) 
+  (* READ_DATA_WIDTH = "19" *) 
   (* READ_MODE = "1" *) 
   (* RELATED_CLOCKS = "0" *) 
   (* REMOVE_WR_RD_PROT_LOGIC = "0" *) 
@@ -8295,13 +8485,13 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_async
   (* VERSION = "0" *) 
   (* WAKEUP_TIME = "0" *) 
   (* WIDTH_RATIO = "1" *) 
-  (* WRITE_DATA_WIDTH = "15" *) 
+  (* WRITE_DATA_WIDTH = "19" *) 
   (* WR_DATA_COUNT_WIDTH = "11" *) 
   (* WR_DC_WIDTH_EXT = "11" *) 
   (* WR_DEPTH_LOG = "10" *) 
   (* WR_PNTR_WIDTH = "10" *) 
   (* WR_RD_RATIO = "0" *) 
-  (* WR_WIDTH_LOG = "4" *) 
+  (* WR_WIDTH_LOG = "5" *) 
   (* XPM_MODULE = "TRUE" *) 
   (* both_stages_valid = "3" *) 
   (* invalid = "0" *) 
@@ -8344,20 +8534,20 @@ endmodule
 (* EN_PF = "1'b1" *) (* EN_RDC = "1'b1" *) (* EN_UF = "1'b1" *) 
 (* EN_WACK = "1'b0" *) (* EN_WDC = "1'b1" *) (* FG_EQ_ASYM_DOUT = "1'b0" *) 
 (* FIFO_MEMORY_TYPE = "0" *) (* FIFO_MEM_TYPE = "0" *) (* FIFO_READ_DEPTH = "1024" *) 
-(* FIFO_READ_LATENCY = "0" *) (* FIFO_SIZE = "15360" *) (* FIFO_WRITE_DEPTH = "1024" *) 
-(* FULL_RESET_VALUE = "1" *) (* FULL_RST_VAL = "1'b1" *) (* PE_THRESH_ADJ = "8" *) 
-(* PE_THRESH_MAX = "1019" *) (* PE_THRESH_MIN = "5" *) (* PF_THRESH_ADJ = "8" *) 
-(* PF_THRESH_MAX = "1019" *) (* PF_THRESH_MIN = "9" *) (* PROG_EMPTY_THRESH = "10" *) 
-(* PROG_FULL_THRESH = "10" *) (* RD_DATA_COUNT_WIDTH = "11" *) (* RD_DC_WIDTH_EXT = "11" *) 
-(* RD_LATENCY = "2" *) (* RD_MODE = "1" *) (* RD_PNTR_WIDTH = "10" *) 
-(* READ_DATA_WIDTH = "15" *) (* READ_MODE = "1" *) (* RELATED_CLOCKS = "0" *) 
-(* REMOVE_WR_RD_PROT_LOGIC = "0" *) (* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "0707" *) 
-(* VERSION = "0" *) (* WAKEUP_TIME = "0" *) (* WIDTH_RATIO = "1" *) 
-(* WRITE_DATA_WIDTH = "15" *) (* WR_DATA_COUNT_WIDTH = "11" *) (* WR_DC_WIDTH_EXT = "11" *) 
-(* WR_DEPTH_LOG = "10" *) (* WR_PNTR_WIDTH = "10" *) (* WR_RD_RATIO = "0" *) 
-(* WR_WIDTH_LOG = "4" *) (* XPM_MODULE = "TRUE" *) (* both_stages_valid = "3" *) 
-(* invalid = "0" *) (* keep_hierarchy = "soft" *) (* stage1_valid = "2" *) 
-(* stage2_valid = "1" *) 
+(* FIFO_READ_LATENCY = "0" *) (* FIFO_SIZE = "19456" *) (* FIFO_WRITE_DEPTH = "1024" *) 
+(* FULL_RESET_VALUE = "1" *) (* FULL_RST_VAL = "1'b1" *) (* ORIG_REF_NAME = "xpm_fifo_base" *) 
+(* PE_THRESH_ADJ = "8" *) (* PE_THRESH_MAX = "1019" *) (* PE_THRESH_MIN = "5" *) 
+(* PF_THRESH_ADJ = "8" *) (* PF_THRESH_MAX = "1019" *) (* PF_THRESH_MIN = "9" *) 
+(* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) (* RD_DATA_COUNT_WIDTH = "11" *) 
+(* RD_DC_WIDTH_EXT = "11" *) (* RD_LATENCY = "2" *) (* RD_MODE = "1" *) 
+(* RD_PNTR_WIDTH = "10" *) (* READ_DATA_WIDTH = "19" *) (* READ_MODE = "1" *) 
+(* RELATED_CLOCKS = "0" *) (* REMOVE_WR_RD_PROT_LOGIC = "0" *) (* SIM_ASSERT_CHK = "0" *) 
+(* USE_ADV_FEATURES = "0707" *) (* VERSION = "0" *) (* WAKEUP_TIME = "0" *) 
+(* WIDTH_RATIO = "1" *) (* WRITE_DATA_WIDTH = "19" *) (* WR_DATA_COUNT_WIDTH = "11" *) 
+(* WR_DC_WIDTH_EXT = "11" *) (* WR_DEPTH_LOG = "10" *) (* WR_PNTR_WIDTH = "10" *) 
+(* WR_RD_RATIO = "0" *) (* WR_WIDTH_LOG = "5" *) (* XPM_MODULE = "TRUE" *) 
+(* both_stages_valid = "3" *) (* invalid = "0" *) (* keep_hierarchy = "soft" *) 
+(* stage1_valid = "2" *) (* stage2_valid = "1" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
    (sleep,
     rst,
@@ -8390,7 +8580,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
   input rst;
   input wr_clk;
   input wr_en;
-  input [14:0]din;
+  input [18:0]din;
   output full;
   output full_n;
   output prog_full;
@@ -8401,7 +8591,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
   output wr_ack;
   input rd_clk;
   input rd_en;
-  output [14:0]dout;
+  output [18:0]dout;
   output empty;
   output prog_empty;
   output [10:0]rd_data_count;
@@ -8420,8 +8610,8 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
   wire [9:0]diff_pntr_pe;
   wire [10:4]diff_pntr_pf_q;
   wire [10:4]diff_pntr_pf_q0;
-  wire [14:0]din;
-  wire [14:0]dout;
+  wire [18:0]din;
+  wire [18:0]dout;
   wire empty;
   wire empty_fwft_i0;
   wire full;
@@ -8560,7 +8750,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
   wire \NLW_gen_sdpram.xpm_memory_base_inst_dbiterrb_UNCONNECTED ;
   wire \NLW_gen_sdpram.xpm_memory_base_inst_sbiterra_UNCONNECTED ;
   wire \NLW_gen_sdpram.xpm_memory_base_inst_sbiterrb_UNCONNECTED ;
-  wire [14:0]\NLW_gen_sdpram.xpm_memory_base_inst_douta_UNCONNECTED ;
+  wire [18:0]\NLW_gen_sdpram.xpm_memory_base_inst_douta_UNCONNECTED ;
 
   assign almost_empty = \<const0> ;
   assign almost_full = \<const0> ;
@@ -8962,8 +9152,8 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
   (* ADDR_WIDTH_A = "10" *) 
   (* ADDR_WIDTH_B = "10" *) 
   (* AUTO_SLEEP_TIME = "0" *) 
-  (* BYTE_WRITE_WIDTH_A = "15" *) 
-  (* BYTE_WRITE_WIDTH_B = "15" *) 
+  (* BYTE_WRITE_WIDTH_A = "19" *) 
+  (* BYTE_WRITE_WIDTH_B = "19" *) 
   (* CASCADE_HEIGHT = "0" *) 
   (* CLOCKING_MODE = "1" *) 
   (* ECC_MODE = "0" *) 
@@ -8972,14 +9162,14 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
   (* \MEM.ADDRESS_SPACE  *) 
   (* \MEM.ADDRESS_SPACE_BEGIN  = "0" *) 
   (* \MEM.ADDRESS_SPACE_DATA_LSB  = "0" *) 
-  (* \MEM.ADDRESS_SPACE_DATA_MSB  = "14" *) 
+  (* \MEM.ADDRESS_SPACE_DATA_MSB  = "18" *) 
   (* \MEM.ADDRESS_SPACE_END  = "1023" *) 
-  (* \MEM.CORE_MEMORY_WIDTH  = "15" *) 
+  (* \MEM.CORE_MEMORY_WIDTH  = "19" *) 
   (* MEMORY_INIT_FILE = "none" *) 
   (* MEMORY_INIT_PARAM = "" *) 
   (* MEMORY_OPTIMIZATION = "true" *) 
   (* MEMORY_PRIMITIVE = "0" *) 
-  (* MEMORY_SIZE = "15360" *) 
+  (* MEMORY_SIZE = "19456" *) 
   (* MEMORY_TYPE = "1" *) 
   (* MESSAGE_CONTROL = "0" *) 
   (* NUM_CHAR_LOC = "0" *) 
@@ -8989,12 +9179,12 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
   (* P_MAX_DEPTH_DATA = "1024" *) 
   (* P_MEMORY_OPT = "yes" *) 
   (* P_MEMORY_PRIMITIVE = "auto" *) 
-  (* P_MIN_WIDTH_DATA = "15" *) 
-  (* P_MIN_WIDTH_DATA_A = "15" *) 
-  (* P_MIN_WIDTH_DATA_B = "15" *) 
-  (* P_MIN_WIDTH_DATA_ECC = "15" *) 
+  (* P_MIN_WIDTH_DATA = "19" *) 
+  (* P_MIN_WIDTH_DATA_A = "19" *) 
+  (* P_MIN_WIDTH_DATA_B = "19" *) 
+  (* P_MIN_WIDTH_DATA_ECC = "19" *) 
   (* P_MIN_WIDTH_DATA_LDW = "4" *) 
-  (* P_MIN_WIDTH_DATA_SHFT = "15" *) 
+  (* P_MIN_WIDTH_DATA_SHFT = "19" *) 
   (* P_NUM_COLS_WRITE_A = "1" *) 
   (* P_NUM_COLS_WRITE_B = "1" *) 
   (* P_NUM_ROWS_READ_A = "1" *) 
@@ -9010,10 +9200,10 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
   (* P_WIDTH_ADDR_READ_B = "10" *) 
   (* P_WIDTH_ADDR_WRITE_A = "10" *) 
   (* P_WIDTH_ADDR_WRITE_B = "10" *) 
-  (* P_WIDTH_COL_WRITE_A = "15" *) 
-  (* P_WIDTH_COL_WRITE_B = "15" *) 
-  (* READ_DATA_WIDTH_A = "15" *) 
-  (* READ_DATA_WIDTH_B = "15" *) 
+  (* P_WIDTH_COL_WRITE_A = "19" *) 
+  (* P_WIDTH_COL_WRITE_B = "19" *) 
+  (* READ_DATA_WIDTH_A = "19" *) 
+  (* READ_DATA_WIDTH_B = "19" *) 
   (* READ_LATENCY_A = "2" *) 
   (* READ_LATENCY_B = "2" *) 
   (* READ_RESET_VALUE_A = "0" *) 
@@ -9026,14 +9216,14 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
   (* USE_MEM_INIT_MMI = "0" *) 
   (* VERSION = "0" *) 
   (* WAKEUP_TIME = "0" *) 
-  (* WRITE_DATA_WIDTH_A = "15" *) 
-  (* WRITE_DATA_WIDTH_B = "15" *) 
+  (* WRITE_DATA_WIDTH_A = "19" *) 
+  (* WRITE_DATA_WIDTH_B = "19" *) 
   (* WRITE_MODE_A = "2" *) 
   (* WRITE_MODE_B = "2" *) 
   (* WRITE_PROTECT = "1" *) 
   (* XPM_MODULE = "TRUE" *) 
-  (* rsta_loop_iter = "16" *) 
-  (* rstb_loop_iter = "16" *) 
+  (* rsta_loop_iter = "20" *) 
+  (* rstb_loop_iter = "20" *) 
   zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base \gen_sdpram.xpm_memory_base_inst 
        (.addra(wr_pntr_ext[9:0]),
         .addrb(rd_pntr_ext),
@@ -9042,8 +9232,8 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
         .dbiterra(\NLW_gen_sdpram.xpm_memory_base_inst_dbiterra_UNCONNECTED ),
         .dbiterrb(\NLW_gen_sdpram.xpm_memory_base_inst_dbiterrb_UNCONNECTED ),
         .dina(din),
-        .dinb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .douta(\NLW_gen_sdpram.xpm_memory_base_inst_douta_UNCONNECTED [14:0]),
+        .dinb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .douta(\NLW_gen_sdpram.xpm_memory_base_inst_douta_UNCONNECTED [18:0]),
         .doutb(dout),
         .ena(1'b0),
         .enb(rdpp1_inst_n_9),
@@ -9307,6 +9497,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_base
         .wrst_busy(wrst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_reg_bit" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_reg_bit
    (rst_d1,
     d_out_reg_0,
@@ -9382,6 +9573,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_reg_bit
         .O(overflow_i0));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_reg_vec" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_reg_vec
    (Q,
     d_out_reg,
@@ -10209,6 +10401,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_reg_vec__parameterized0_1
         .R(\reg_out_i_reg[10]_0 ));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_rst" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_rst
    (\gen_rst_ic.fifo_rd_rst_ic_reg_0 ,
     wrst_busy,
@@ -10625,28 +10818,29 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_fifo_rst
 endmodule
 
 (* ADDR_WIDTH_A = "10" *) (* ADDR_WIDTH_B = "10" *) (* AUTO_SLEEP_TIME = "0" *) 
-(* BYTE_WRITE_WIDTH_A = "15" *) (* BYTE_WRITE_WIDTH_B = "15" *) (* CASCADE_HEIGHT = "0" *) 
+(* BYTE_WRITE_WIDTH_A = "19" *) (* BYTE_WRITE_WIDTH_B = "19" *) (* CASCADE_HEIGHT = "0" *) 
 (* CLOCKING_MODE = "1" *) (* ECC_MODE = "0" *) (* MAX_NUM_CHAR = "0" *) 
 (* MEMORY_INIT_FILE = "none" *) (* MEMORY_INIT_PARAM = "" *) (* MEMORY_OPTIMIZATION = "true" *) 
-(* MEMORY_PRIMITIVE = "0" *) (* MEMORY_SIZE = "15360" *) (* MEMORY_TYPE = "1" *) 
-(* MESSAGE_CONTROL = "0" *) (* NUM_CHAR_LOC = "0" *) (* P_ECC_MODE = "no_ecc" *) 
-(* P_ENABLE_BYTE_WRITE_A = "0" *) (* P_ENABLE_BYTE_WRITE_B = "0" *) (* P_MAX_DEPTH_DATA = "1024" *) 
-(* P_MEMORY_OPT = "yes" *) (* P_MEMORY_PRIMITIVE = "auto" *) (* P_MIN_WIDTH_DATA = "15" *) 
-(* P_MIN_WIDTH_DATA_A = "15" *) (* P_MIN_WIDTH_DATA_B = "15" *) (* P_MIN_WIDTH_DATA_ECC = "15" *) 
-(* P_MIN_WIDTH_DATA_LDW = "4" *) (* P_MIN_WIDTH_DATA_SHFT = "15" *) (* P_NUM_COLS_WRITE_A = "1" *) 
-(* P_NUM_COLS_WRITE_B = "1" *) (* P_NUM_ROWS_READ_A = "1" *) (* P_NUM_ROWS_READ_B = "1" *) 
-(* P_NUM_ROWS_WRITE_A = "1" *) (* P_NUM_ROWS_WRITE_B = "1" *) (* P_SDP_WRITE_MODE = "yes" *) 
-(* P_WIDTH_ADDR_LSB_READ_A = "0" *) (* P_WIDTH_ADDR_LSB_READ_B = "0" *) (* P_WIDTH_ADDR_LSB_WRITE_A = "0" *) 
-(* P_WIDTH_ADDR_LSB_WRITE_B = "0" *) (* P_WIDTH_ADDR_READ_A = "10" *) (* P_WIDTH_ADDR_READ_B = "10" *) 
-(* P_WIDTH_ADDR_WRITE_A = "10" *) (* P_WIDTH_ADDR_WRITE_B = "10" *) (* P_WIDTH_COL_WRITE_A = "15" *) 
-(* P_WIDTH_COL_WRITE_B = "15" *) (* READ_DATA_WIDTH_A = "15" *) (* READ_DATA_WIDTH_B = "15" *) 
-(* READ_LATENCY_A = "2" *) (* READ_LATENCY_B = "2" *) (* READ_RESET_VALUE_A = "0" *) 
-(* READ_RESET_VALUE_B = "0" *) (* RST_MODE_A = "SYNC" *) (* RST_MODE_B = "SYNC" *) 
-(* SIM_ASSERT_CHK = "0" *) (* USE_EMBEDDED_CONSTRAINT = "0" *) (* USE_MEM_INIT = "0" *) 
-(* USE_MEM_INIT_MMI = "0" *) (* VERSION = "0" *) (* WAKEUP_TIME = "0" *) 
-(* WRITE_DATA_WIDTH_A = "15" *) (* WRITE_DATA_WIDTH_B = "15" *) (* WRITE_MODE_A = "2" *) 
-(* WRITE_MODE_B = "2" *) (* WRITE_PROTECT = "1" *) (* XPM_MODULE = "TRUE" *) 
-(* keep_hierarchy = "soft" *) (* rsta_loop_iter = "16" *) (* rstb_loop_iter = "16" *) 
+(* MEMORY_PRIMITIVE = "0" *) (* MEMORY_SIZE = "19456" *) (* MEMORY_TYPE = "1" *) 
+(* MESSAGE_CONTROL = "0" *) (* NUM_CHAR_LOC = "0" *) (* ORIG_REF_NAME = "xpm_memory_base" *) 
+(* P_ECC_MODE = "no_ecc" *) (* P_ENABLE_BYTE_WRITE_A = "0" *) (* P_ENABLE_BYTE_WRITE_B = "0" *) 
+(* P_MAX_DEPTH_DATA = "1024" *) (* P_MEMORY_OPT = "yes" *) (* P_MEMORY_PRIMITIVE = "auto" *) 
+(* P_MIN_WIDTH_DATA = "19" *) (* P_MIN_WIDTH_DATA_A = "19" *) (* P_MIN_WIDTH_DATA_B = "19" *) 
+(* P_MIN_WIDTH_DATA_ECC = "19" *) (* P_MIN_WIDTH_DATA_LDW = "4" *) (* P_MIN_WIDTH_DATA_SHFT = "19" *) 
+(* P_NUM_COLS_WRITE_A = "1" *) (* P_NUM_COLS_WRITE_B = "1" *) (* P_NUM_ROWS_READ_A = "1" *) 
+(* P_NUM_ROWS_READ_B = "1" *) (* P_NUM_ROWS_WRITE_A = "1" *) (* P_NUM_ROWS_WRITE_B = "1" *) 
+(* P_SDP_WRITE_MODE = "yes" *) (* P_WIDTH_ADDR_LSB_READ_A = "0" *) (* P_WIDTH_ADDR_LSB_READ_B = "0" *) 
+(* P_WIDTH_ADDR_LSB_WRITE_A = "0" *) (* P_WIDTH_ADDR_LSB_WRITE_B = "0" *) (* P_WIDTH_ADDR_READ_A = "10" *) 
+(* P_WIDTH_ADDR_READ_B = "10" *) (* P_WIDTH_ADDR_WRITE_A = "10" *) (* P_WIDTH_ADDR_WRITE_B = "10" *) 
+(* P_WIDTH_COL_WRITE_A = "19" *) (* P_WIDTH_COL_WRITE_B = "19" *) (* READ_DATA_WIDTH_A = "19" *) 
+(* READ_DATA_WIDTH_B = "19" *) (* READ_LATENCY_A = "2" *) (* READ_LATENCY_B = "2" *) 
+(* READ_RESET_VALUE_A = "0" *) (* READ_RESET_VALUE_B = "0" *) (* RST_MODE_A = "SYNC" *) 
+(* RST_MODE_B = "SYNC" *) (* SIM_ASSERT_CHK = "0" *) (* USE_EMBEDDED_CONSTRAINT = "0" *) 
+(* USE_MEM_INIT = "0" *) (* USE_MEM_INIT_MMI = "0" *) (* VERSION = "0" *) 
+(* WAKEUP_TIME = "0" *) (* WRITE_DATA_WIDTH_A = "19" *) (* WRITE_DATA_WIDTH_B = "19" *) 
+(* WRITE_MODE_A = "2" *) (* WRITE_MODE_B = "2" *) (* WRITE_PROTECT = "1" *) 
+(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "soft" *) (* rsta_loop_iter = "20" *) 
+(* rstb_loop_iter = "20" *) 
 module zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base
    (sleep,
     clka,
@@ -10680,10 +10874,10 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base
   input regcea;
   input [0:0]wea;
   input [9:0]addra;
-  input [14:0]dina;
+  input [18:0]dina;
   input injectsbiterra;
   input injectdbiterra;
-  output [14:0]douta;
+  output [18:0]douta;
   output sbiterra;
   output dbiterra;
   input clkb;
@@ -10692,10 +10886,10 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base
   input regceb;
   input [0:0]web;
   input [9:0]addrb;
-  input [14:0]dinb;
+  input [18:0]dinb;
   input injectsbiterrb;
   input injectdbiterrb;
-  output [14:0]doutb;
+  output [18:0]doutb;
   output sbiterrb;
   output dbiterrb;
 
@@ -10704,20 +10898,32 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base
   wire [9:0]addrb;
   wire clka;
   wire clkb;
-  wire [14:0]dina;
-  wire [14:0]doutb;
+  wire [18:0]dina;
+  wire [18:0]doutb;
   wire enb;
   wire regceb;
   wire rstb;
   wire sleep;
   wire [0:0]wea;
-  wire [15:0]\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOADO_UNCONNECTED ;
-  wire [15:15]\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOBDO_UNCONNECTED ;
-  wire [1:0]\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPADOP_UNCONNECTED ;
-  wire [1:0]\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPBDOP_UNCONNECTED ;
+  wire \NLW_gen_wr_a.gen_word_narrow.mem_reg_CASCADEOUTA_UNCONNECTED ;
+  wire \NLW_gen_wr_a.gen_word_narrow.mem_reg_CASCADEOUTB_UNCONNECTED ;
+  wire \NLW_gen_wr_a.gen_word_narrow.mem_reg_DBITERR_UNCONNECTED ;
+  wire \NLW_gen_wr_a.gen_word_narrow.mem_reg_INJECTDBITERR_UNCONNECTED ;
+  wire \NLW_gen_wr_a.gen_word_narrow.mem_reg_INJECTSBITERR_UNCONNECTED ;
+  wire \NLW_gen_wr_a.gen_word_narrow.mem_reg_SBITERR_UNCONNECTED ;
+  wire [31:0]\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOADO_UNCONNECTED ;
+  wire [31:19]\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOBDO_UNCONNECTED ;
+  wire [3:0]\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPADOP_UNCONNECTED ;
+  wire [3:0]\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPBDOP_UNCONNECTED ;
+  wire [7:0]\NLW_gen_wr_a.gen_word_narrow.mem_reg_ECCPARITY_UNCONNECTED ;
+  wire [8:0]\NLW_gen_wr_a.gen_word_narrow.mem_reg_RDADDRECC_UNCONNECTED ;
 
   assign dbiterra = \<const0> ;
   assign dbiterrb = \<const0> ;
+  assign douta[18] = \<const0> ;
+  assign douta[17] = \<const0> ;
+  assign douta[16] = \<const0> ;
+  assign douta[15] = \<const0> ;
   assign douta[14] = \<const0> ;
   assign douta[13] = \<const0> ;
   assign douta[12] = \<const0> ;
@@ -10739,30 +10945,32 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base
        (.G(\<const0> ));
   (* \MEM.PORTA.ADDRESS_BEGIN  = "0" *) 
   (* \MEM.PORTA.ADDRESS_END  = "1023" *) 
-  (* \MEM.PORTA.DATA_BIT_LAYOUT  = "p0_d15" *) 
+  (* \MEM.PORTA.DATA_BIT_LAYOUT  = "p0_d19" *) 
   (* \MEM.PORTA.DATA_LSB  = "0" *) 
-  (* \MEM.PORTA.DATA_MSB  = "14" *) 
+  (* \MEM.PORTA.DATA_MSB  = "18" *) 
   (* \MEM.PORTB.ADDRESS_BEGIN  = "0" *) 
   (* \MEM.PORTB.ADDRESS_END  = "1023" *) 
-  (* \MEM.PORTB.DATA_BIT_LAYOUT  = "p0_d15" *) 
+  (* \MEM.PORTB.DATA_BIT_LAYOUT  = "p0_d19" *) 
   (* \MEM.PORTB.DATA_LSB  = "0" *) 
-  (* \MEM.PORTB.DATA_MSB  = "14" *) 
+  (* \MEM.PORTB.DATA_MSB  = "18" *) 
   (* METHODOLOGY_DRC_VIOS = "" *) 
-  (* RTL_RAM_BITS = "15360" *) 
+  (* RTL_RAM_BITS = "19456" *) 
   (* RTL_RAM_NAME = "gen_wr_a.gen_word_narrow.mem" *) 
-  (* RTL_RAM_TYPE = "RAM_TDP" *) 
+  (* RTL_RAM_TYPE = "RAM_SDP" *) 
   (* bram_addr_begin = "0" *) 
   (* bram_addr_end = "1023" *) 
   (* bram_slice_begin = "0" *) 
-  (* bram_slice_end = "14" *) 
+  (* bram_slice_end = "18" *) 
   (* ram_addr_begin = "0" *) 
   (* ram_addr_end = "1023" *) 
   (* ram_offset = "0" *) 
   (* ram_slice_begin = "0" *) 
-  (* ram_slice_end = "14" *) 
-  RAMB18E1 #(
+  (* ram_slice_end = "18" *) 
+  RAMB36E1 #(
     .DOA_REG(0),
     .DOB_REG(1),
+    .EN_ECC_READ("FALSE"),
+    .EN_ECC_WRITE("FALSE"),
     .INITP_00(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_01(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_02(256'h0000000000000000000000000000000000000000000000000000000000000000),
@@ -10771,6 +10979,14 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base
     .INITP_05(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_06(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_07(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INITP_08(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INITP_09(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INITP_0A(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INITP_0B(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INITP_0C(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INITP_0D(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INITP_0E(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INITP_0F(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_00(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_01(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_02(256'h0000000000000000000000000000000000000000000000000000000000000000),
@@ -10835,195 +11051,121 @@ module zynq_design_1_v_axi4s_vid_out_0_0_xpm_memory_base
     .INIT_3D(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_3E(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_3F(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_A(18'h00000),
-    .INIT_B(18'h00000),
+    .INIT_40(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_41(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_42(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_43(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_44(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_45(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_46(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_47(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_48(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_49(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_4A(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_4B(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_4C(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_4D(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_4E(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_4F(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_50(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_51(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_52(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_53(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_54(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_55(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_56(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_57(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_58(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_59(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_5A(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_5B(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_5C(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_5D(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_5E(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_5F(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_60(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_61(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_62(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_63(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_64(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_65(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_66(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_67(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_68(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_69(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_6A(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_6B(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_6C(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_6D(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_6E(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_6F(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_70(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_71(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_72(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_73(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_74(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_75(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_76(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_77(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_78(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_79(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_7A(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_7B(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_7C(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_7D(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_7E(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_7F(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_A(36'h000000000),
+    .INIT_B(36'h000000000),
+    .RAM_EXTENSION_A("NONE"),
+    .RAM_EXTENSION_B("NONE"),
     .RAM_MODE("TDP"),
     .RDADDR_COLLISION_HWCONFIG("DELAYED_WRITE"),
-    .READ_WIDTH_A(18),
-    .READ_WIDTH_B(18),
+    .READ_WIDTH_A(36),
+    .READ_WIDTH_B(36),
     .RSTREG_PRIORITY_A("RSTREG"),
     .RSTREG_PRIORITY_B("RSTREG"),
     .SIM_COLLISION_CHECK("ALL"),
     .SIM_DEVICE("7SERIES"),
-    .SRVAL_A(18'h00000),
-    .SRVAL_B(18'h00000),
+    .SRVAL_A(36'h000000000),
+    .SRVAL_B(36'h000000000),
     .WRITE_MODE_A("NO_CHANGE"),
     .WRITE_MODE_B("WRITE_FIRST"),
-    .WRITE_WIDTH_A(18),
-    .WRITE_WIDTH_B(18)) 
+    .WRITE_WIDTH_A(36),
+    .WRITE_WIDTH_B(36)) 
     \gen_wr_a.gen_word_narrow.mem_reg 
-       (.ADDRARDADDR({addra,1'b0,1'b0,1'b0,1'b0}),
-        .ADDRBWRADDR({addrb,1'b0,1'b0,1'b0,1'b0}),
+       (.ADDRARDADDR({1'b1,addra,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .ADDRBWRADDR({1'b1,addrb,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .CASCADEINA(1'b1),
+        .CASCADEINB(1'b1),
+        .CASCADEOUTA(\NLW_gen_wr_a.gen_word_narrow.mem_reg_CASCADEOUTA_UNCONNECTED ),
+        .CASCADEOUTB(\NLW_gen_wr_a.gen_word_narrow.mem_reg_CASCADEOUTB_UNCONNECTED ),
         .CLKARDCLK(clka),
         .CLKBWRCLK(clkb),
-        .DIADI({1'b0,dina}),
-        .DIBDI({1'b0,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
-        .DIPADIP({1'b0,1'b0}),
-        .DIPBDIP({1'b0,1'b0}),
-        .DOADO(\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOADO_UNCONNECTED [15:0]),
-        .DOBDO({\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOBDO_UNCONNECTED [15],doutb}),
-        .DOPADOP(\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPADOP_UNCONNECTED [1:0]),
-        .DOPBDOP(\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPBDOP_UNCONNECTED [1:0]),
+        .DBITERR(\NLW_gen_wr_a.gen_word_narrow.mem_reg_DBITERR_UNCONNECTED ),
+        .DIADI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,dina}),
+        .DIBDI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
+        .DIPADIP({1'b0,1'b0,1'b0,1'b0}),
+        .DIPBDIP({1'b0,1'b0,1'b0,1'b0}),
+        .DOADO(\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOADO_UNCONNECTED [31:0]),
+        .DOBDO({\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOBDO_UNCONNECTED [31:19],doutb}),
+        .DOPADOP(\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPADOP_UNCONNECTED [3:0]),
+        .DOPBDOP(\NLW_gen_wr_a.gen_word_narrow.mem_reg_DOPBDOP_UNCONNECTED [3:0]),
+        .ECCPARITY(\NLW_gen_wr_a.gen_word_narrow.mem_reg_ECCPARITY_UNCONNECTED [7:0]),
         .ENARDEN(wea),
         .ENBWREN(enb),
+        .INJECTDBITERR(\NLW_gen_wr_a.gen_word_narrow.mem_reg_INJECTDBITERR_UNCONNECTED ),
+        .INJECTSBITERR(\NLW_gen_wr_a.gen_word_narrow.mem_reg_INJECTSBITERR_UNCONNECTED ),
+        .RDADDRECC(\NLW_gen_wr_a.gen_word_narrow.mem_reg_RDADDRECC_UNCONNECTED [8:0]),
         .REGCEAREGCE(1'b0),
         .REGCEB(regceb),
         .RSTRAMARSTRAM(1'b0),
         .RSTRAMB(1'b0),
         .RSTREGARSTREG(1'b0),
         .RSTREGB(rstb),
-        .WEA({1'b1,1'b1}),
-        .WEBWE({1'b0,1'b0,1'b0,1'b0}));
-endmodule
-
-(* CHECK_LICENSE_TYPE = "zynq_design_1_v_axi4s_vid_out_0_0,v_axi4s_vid_out_v4_0_10,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "v_axi4s_vid_out_v4_0_10,Vivado 2020.1" *) 
-(* NotValidForBitStream *)
-module zynq_design_1_v_axi4s_vid_out_0_0
-   (aclk,
-    aclken,
-    aresetn,
-    s_axis_video_tdata,
-    s_axis_video_tvalid,
-    s_axis_video_tready,
-    s_axis_video_tuser,
-    s_axis_video_tlast,
-    fid,
-    vid_io_out_clk,
-    vid_io_out_ce,
-    vid_io_out_reset,
-    vid_active_video,
-    vid_vsync,
-    vid_hsync,
-    vid_vblank,
-    vid_hblank,
-    vid_field_id,
-    vid_data,
-    vtg_vsync,
-    vtg_hsync,
-    vtg_vblank,
-    vtg_hblank,
-    vtg_active_video,
-    vtg_field_id,
-    vtg_ce,
-    locked,
-    overflow,
-    underflow,
-    fifo_read_level,
-    status);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aclk_intf CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF video_in, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0" *) input aclk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clockenable:1.0 aclken_intf CE" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclken_intf, POLARITY ACTIVE_HIGH" *) input aclken;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 aresetn_intf RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aresetn_intf, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input aresetn;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TDATA" *) input [15:0]s_axis_video_tdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TVALID" *) input s_axis_video_tvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TREADY" *) output s_axis_video_tready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TUSER" *) input s_axis_video_tuser;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 video_in TLAST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME video_in, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) input s_axis_video_tlast;
-  input fid;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 vid_io_out_clk_intf CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME vid_io_out_clk_intf, ASSOCIATED_BUSIF vid_io_out, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN zynq_design_1_processing_system7_0_1_FCLK_CLK1, INSERT_VIP 0" *) input vid_io_out_clk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clockenable:1.0 vid_io_out_ce_intf CE" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME vid_io_out_ce_intf, POLARITY ACTIVE_HIGH" *) input vid_io_out_ce;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 vid_io_out_reset_intf RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME vid_io_out_reset_intf, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input vid_io_out_reset;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out ACTIVE_VIDEO" *) output vid_active_video;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out VSYNC" *) output vid_vsync;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out HSYNC" *) output vid_hsync;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out VBLANK" *) output vid_vblank;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out HBLANK" *) output vid_hblank;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out FIELD" *) output vid_field_id;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out DATA" *) output [11:0]vid_data;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in VSYNC" *) input vtg_vsync;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in HSYNC" *) input vtg_hsync;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in VBLANK" *) input vtg_vblank;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in HBLANK" *) input vtg_hblank;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in ACTIVE_VIDEO" *) input vtg_active_video;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in FIELD" *) input vtg_field_id;
-  output vtg_ce;
-  output locked;
-  output overflow;
-  output underflow;
-  output [10:0]fifo_read_level;
-  output [31:0]status;
-
-  wire aclk;
-  wire aclken;
-  wire aresetn;
-  wire fid;
-  wire [10:0]fifo_read_level;
-  wire locked;
-  wire overflow;
-  wire [15:0]s_axis_video_tdata;
-  wire s_axis_video_tlast;
-  wire s_axis_video_tready;
-  wire s_axis_video_tuser;
-  wire s_axis_video_tvalid;
-  wire [31:0]status;
-  wire underflow;
-  wire vid_active_video;
-  wire [11:0]vid_data;
-  wire vid_field_id;
-  wire vid_hblank;
-  wire vid_hsync;
-  wire vid_io_out_ce;
-  wire vid_io_out_clk;
-  wire vid_io_out_reset;
-  wire vid_vblank;
-  wire vid_vsync;
-  wire vtg_active_video;
-  wire vtg_ce;
-  wire vtg_field_id;
-  wire vtg_hblank;
-  wire vtg_hsync;
-  wire vtg_vblank;
-  wire vtg_vsync;
-
-  (* C_ADDR_WIDTH = "10" *) 
-  (* C_ADDR_WIDTH_PIXEL_REMAP_420 = "10" *) 
-  (* C_COMPONENTS_PER_PIXEL = "1" *) 
-  (* C_FAMILY = "zynq" *) 
-  (* C_HAS_ASYNC_CLK = "1" *) 
-  (* C_HYSTERESIS_LEVEL = "12" *) 
-  (* C_INCLUDE_PIXEL_REMAP_420 = "0" *) 
-  (* C_INCLUDE_PIXEL_REPEAT = "0" *) 
-  (* C_NATIVE_COMPONENT_WIDTH = "12" *) 
-  (* C_NATIVE_DATA_WIDTH = "12" *) 
-  (* C_PIXELS_PER_CLOCK = "1" *) 
-  (* C_SYNC_LOCK_THRESHOLD = "4" *) 
-  (* C_S_AXIS_COMPONENT_WIDTH = "16" *) 
-  (* C_S_AXIS_TDATA_WIDTH = "16" *) 
-  (* C_VTG_MASTER_SLAVE = "0" *) 
-  (* DowngradeIPIdentifiedWarnings = "yes" *) 
-  zynq_design_1_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_10 inst
-       (.aclk(aclk),
-        .aclken(aclken),
-        .aresetn(aresetn),
-        .fid(fid),
-        .fifo_read_level(fifo_read_level),
-        .locked(locked),
-        .overflow(overflow),
-        .remap_420_en(1'b0),
-        .repeat_en(1'b0),
-        .s_axis_video_tdata(s_axis_video_tdata),
-        .s_axis_video_tlast(s_axis_video_tlast),
-        .s_axis_video_tready(s_axis_video_tready),
-        .s_axis_video_tuser(s_axis_video_tuser),
-        .s_axis_video_tvalid(s_axis_video_tvalid),
-        .status(status),
-        .underflow(underflow),
-        .vid_active_video(vid_active_video),
-        .vid_data(vid_data),
-        .vid_field_id(vid_field_id),
-        .vid_hblank(vid_hblank),
-        .vid_hsync(vid_hsync),
-        .vid_io_out_ce(vid_io_out_ce),
-        .vid_io_out_clk(vid_io_out_clk),
-        .vid_io_out_reset(vid_io_out_reset),
-        .vid_vblank(vid_vblank),
-        .vid_vsync(vid_vsync),
-        .vtg_active_video(vtg_active_video),
-        .vtg_ce(vtg_ce),
-        .vtg_field_id(vtg_field_id),
-        .vtg_hblank(vtg_hblank),
-        .vtg_hsync(vtg_hsync),
-        .vtg_vblank(vtg_vblank),
-        .vtg_vsync(vtg_vsync));
+        .SBITERR(\NLW_gen_wr_a.gen_word_narrow.mem_reg_SBITERR_UNCONNECTED ),
+        .WEA({1'b1,1'b1,1'b1,1'b1}),
+        .WEBWE({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}));
 endmodule
 `ifndef GLBL
 `define GLBL

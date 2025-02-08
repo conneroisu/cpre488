@@ -1,8 +1,8 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu Feb  6 19:44:51 2025
-// Host        : CO2041-08 running 64-bit major release  (build 9200)
+// Date        : Fri Feb  7 19:11:48 2025
+// Host        : CO2041-06 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top zynq_design_1_system_ila_1_0 -prefix
 //               zynq_design_1_system_ila_1_0_ zynq_design_1_system_ila_1_0_stub.v
 // Design      : zynq_design_1_system_ila_1_0
@@ -15,7 +15,7 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "bd_03af,Vivado 2020.1" *)
 module zynq_design_1_system_ila_1_0(clk, probe0)
-/* synthesis syn_black_box black_box_pad_pin="clk,probe0[11:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="clk,probe0[15:0]" */;
   input clk;
-  input [11:0]probe0;
+  input [15:0]probe0;
 endmodule

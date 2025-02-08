@@ -130,7 +130,7 @@ output wire vid_hblank;
 (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out FIELD" *)
 output wire vid_field_id;
 (* X_INTERFACE_INFO = "xilinx.com:interface:vid_io:1.0 vid_io_out DATA" *)
-output wire [11 : 0] vid_data;
+output wire [15 : 0] vid_data;
 (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in VSYNC" *)
 input wire vtg_vsync;
 (* X_INTERFACE_INFO = "xilinx.com:interface:video_timing:2.0 vtiming_in HSYNC" *)
@@ -155,8 +155,8 @@ output wire [31 : 0] status;
     .C_PIXELS_PER_CLOCK(1),
     .C_COMPONENTS_PER_PIXEL(1),
     .C_S_AXIS_COMPONENT_WIDTH(16),
-    .C_NATIVE_COMPONENT_WIDTH(12),
-    .C_NATIVE_DATA_WIDTH(12),
+    .C_NATIVE_COMPONENT_WIDTH(16),
+    .C_NATIVE_DATA_WIDTH(16),
     .C_S_AXIS_TDATA_WIDTH(16),
     .C_HAS_ASYNC_CLK(1),
     .C_ADDR_WIDTH(10),

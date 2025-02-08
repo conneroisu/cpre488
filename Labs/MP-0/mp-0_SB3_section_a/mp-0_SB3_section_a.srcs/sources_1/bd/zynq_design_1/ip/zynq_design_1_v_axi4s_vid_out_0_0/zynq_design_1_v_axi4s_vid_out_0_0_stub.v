@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu Feb  6 18:43:12 2025
-// Host        : CO2041-08 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top zynq_design_1_v_axi4s_vid_out_0_0 -prefix
-//               zynq_design_1_v_axi4s_vid_out_0_0_ zynq_design_1_v_axi4s_vid_out_0_0_stub.v
+// Date        : Fri Feb  7 19:11:17 2025
+// Host        : CO2041-06 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_stub.v
 // Design      : zynq_design_1_v_axi4s_vid_out_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1
@@ -19,7 +19,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0(aclk, aclken, aresetn, s_axis_video_tda
   vid_io_out_clk, vid_io_out_ce, vid_io_out_reset, vid_active_video, vid_vsync, vid_hsync, 
   vid_vblank, vid_hblank, vid_field_id, vid_data, vtg_vsync, vtg_hsync, vtg_vblank, vtg_hblank, 
   vtg_active_video, vtg_field_id, vtg_ce, locked, overflow, underflow, fifo_read_level, status)
-/* synthesis syn_black_box black_box_pad_pin="aclk,aclken,aresetn,s_axis_video_tdata[15:0],s_axis_video_tvalid,s_axis_video_tready,s_axis_video_tuser,s_axis_video_tlast,fid,vid_io_out_clk,vid_io_out_ce,vid_io_out_reset,vid_active_video,vid_vsync,vid_hsync,vid_vblank,vid_hblank,vid_field_id,vid_data[11:0],vtg_vsync,vtg_hsync,vtg_vblank,vtg_hblank,vtg_active_video,vtg_field_id,vtg_ce,locked,overflow,underflow,fifo_read_level[10:0],status[31:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="aclk,aclken,aresetn,s_axis_video_tdata[15:0],s_axis_video_tvalid,s_axis_video_tready,s_axis_video_tuser,s_axis_video_tlast,fid,vid_io_out_clk,vid_io_out_ce,vid_io_out_reset,vid_active_video,vid_vsync,vid_hsync,vid_vblank,vid_hblank,vid_field_id,vid_data[15:0],vtg_vsync,vtg_hsync,vtg_vblank,vtg_hblank,vtg_active_video,vtg_field_id,vtg_ce,locked,overflow,underflow,fifo_read_level[10:0],status[31:0]" */;
   input aclk;
   input aclken;
   input aresetn;
@@ -38,7 +38,7 @@ module zynq_design_1_v_axi4s_vid_out_0_0(aclk, aclken, aresetn, s_axis_video_tda
   output vid_vblank;
   output vid_hblank;
   output vid_field_id;
-  output [11:0]vid_data;
+  output [15:0]vid_data;
   input vtg_vsync;
   input vtg_hsync;
   input vtg_vblank;

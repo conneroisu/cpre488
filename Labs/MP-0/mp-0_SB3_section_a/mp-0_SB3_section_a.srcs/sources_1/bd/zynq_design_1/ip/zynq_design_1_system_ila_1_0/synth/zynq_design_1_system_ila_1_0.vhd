@@ -56,7 +56,7 @@ USE ieee.numeric_std.ALL;
 ENTITY zynq_design_1_system_ila_1_0 IS
   PORT (
     clk : IN STD_LOGIC;
-    probe0 : IN STD_LOGIC_VECTOR(11 DOWNTO 0)
+    probe0 : IN STD_LOGIC_VECTOR(15 DOWNTO 0)
   );
 END zynq_design_1_system_ila_1_0;
 
@@ -66,7 +66,7 @@ ARCHITECTURE zynq_design_1_system_ila_1_0_arch OF zynq_design_1_system_ila_1_0 I
   COMPONENT bd_03af IS
     PORT (
       clk : IN STD_LOGIC;
-      probe0 : IN STD_LOGIC_VECTOR(11 DOWNTO 0)
+      probe0 : IN STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
   END COMPONENT bd_03af;
   ATTRIBUTE X_CORE_INFO : STRING;

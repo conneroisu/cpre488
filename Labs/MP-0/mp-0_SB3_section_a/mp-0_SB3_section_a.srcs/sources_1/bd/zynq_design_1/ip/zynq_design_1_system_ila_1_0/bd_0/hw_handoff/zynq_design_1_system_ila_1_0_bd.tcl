@@ -159,7 +159,7 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set clk [ create_bd_port -dir I -type clk clk ]
-  set probe0 [ create_bd_port -dir I -from 11 -to 0 probe0 ]
+  set probe0 [ create_bd_port -dir I -from 15 -to 0 probe0 ]
 
   # Create instance: ila_lib, and set properties
   set ila_lib [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_lib ]
@@ -176,7 +176,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_NUM_OF_PROBES {1} \
    CONFIG.C_PROBE0_MU_CNT {1} \
    CONFIG.C_PROBE0_TYPE {0} \
-   CONFIG.C_PROBE0_WIDTH {12} \
+   CONFIG.C_PROBE0_WIDTH {16} \
    CONFIG.C_TIME_TAG_WIDTH {32} \
    CONFIG.C_TRIGIN_EN {false} \
    CONFIG.C_TRIGOUT_EN {false} \
