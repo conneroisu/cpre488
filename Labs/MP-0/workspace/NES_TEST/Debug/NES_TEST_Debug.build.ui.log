@@ -1,0 +1,33 @@
+2025-02-07T22:48:13.630061100255-22:48:13 **** Incremental Build of configuration Debug for project NES_TEST ****
+000-make all 
+000-make --no-print-directory pre-build
+000-a9-linaro-pre-build-step
+000-' '
+000-make --no-print-directory main-build
+000-'Building file: ../src/NESCore_Callback.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/jaxie963/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\jaxie963\workspace\NES_TEST\src\NESCore" -I"C:\Users\jaxie963\workspace\NES_TEST\src\xilsd" -I"C:\Users\jaxie963\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/NESCore_Callback.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/NESCore_Callback.d" -MT"src/NESCore_Callback.o" -o "src/NESCore_Callback.o" "../src/NESCore_Callback.c"
+000-../src/NESCore_Callback.c: In function 'NESCore_Callback_OutputFrame':
+000/NES_TEST/src/NESCore_Callback.c36-1-1unused variable 'str' [-Wunused-variable]1-../src/NESCore_Callback.c:36:10: warning: unused variable 'str' [-Wunused-variable]
+000-   36 |     char str[50];
+000-      |          ^~~
+000-../src/NESCore_Callback.c: In function 'NESCore_Callback_InputPadState':
+000/NES_TEST/src/NESCore_Callback.c87-1-1unused variable 'LEDIn' [-Wunused-variable]1-../src/NESCore_Callback.c:87:13: warning: unused variable 'LEDIn' [-Wunused-variable]
+000-   87 |     UINTPTR LEDIn = 0x41200000;
+000-      |             ^~~~~
+000-'Finished building: ../src/NESCore_Callback.c'
+000-' '
+000-'Building target: NES_TEST.elf'
+000-'Invoking: ARM v7 gcc linker'
+000-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/jaxie963/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "NES_TEST.elf"  ./src/xilsd/ff.o ./src/xilsd/mmc.o ./src/xilsd/xilsd.o  ./src/NESCore/M6502.o ./src/NESCore/NESCore.o ./src/NESCore/NESCore_Mapper.o ./src/NESCore/NESCore_pAPU.o  ./src/NESCore_Callback.o ./src/VGA_TEST.o ./src/bmp_misc.o ./src/nes_bootloader.o ./src/platform.o ./src/utils.o ./src/wav_misc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+000-'Finished building target: NES_TEST.elf'
+000-' '
+000-'Invoking: ARM v7 Print Size'
+000-arm-none-eabi-size NES_TEST.elf  |tee "NES_TEST.elf.size"
+000-   text	   data	    bss	    dec	    hex	filename
+000- 481051	   4676	5561264	6046991	 5c450f	NES_TEST.elf
+000-'Finished building: NES_TEST.elf.size'
+000-' '
+00255-
+22:48:14 Build Finished (took 770ms)
+

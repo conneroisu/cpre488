@@ -1,0 +1,27 @@
+TRACE::2025-02-07.21:21:16::SCWBifWriter::Found the complete platform C:/Users/jaxie963/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
+TRACE::2025-02-07.21:21:16::SCWBifWriter::hardware databse : zynq_design_1_wrapper_16
+TRACE::2025-02-07.21:21:16::SCWBifWriter::bitstream found in the design
+TRACE::2025-02-07.21:21:16::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2025-02-07.21:21:16::SCWBifWriter::proc type : 
+TRACE::2025-02-07.21:21:16::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2025-02-07.21:21:16::SCWBifWriter::Device type is : zynq
+TRACE::2025-02-07.21:21:16::SCWBifWriter::Writing BIF to file : C:/Users/jaxie963/workspace/NES_TEST_system/Debug/system.bif
+TRACE::2025-02-07.21:21:16::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2025-02-07.21:24:52::SCWBifWriter::Found the complete platform C:/Users/jaxie963/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
+TRACE::2025-02-07.21:24:52::SCWBifWriter::hardware databse : zynq_design_1_wrapper_16
+TRACE::2025-02-07.21:24:52::SCWBifWriter::bitstream found in the design
+TRACE::2025-02-07.21:24:52::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2025-02-07.21:24:52::SCWBifWriter::proc type : 
+TRACE::2025-02-07.21:24:52::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2025-02-07.21:24:52::SCWBifWriter::Device type is : zynq
+TRACE::2025-02-07.21:24:52::SCWBifWriter::Writing BIF to file : C:/Users/jaxie963/workspace/NES_TEST_system/Debug/system.bif
+TRACE::2025-02-07.21:24:52::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2025-02-07.21:25:45::SCWBifWriter::Found the complete platform C:/Users/jaxie963/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/zynq_design_1_wrapper.xpfm
+TRACE::2025-02-07.21:25:45::SCWBifWriter::hardware databse : zynq_design_1_wrapper_16
+TRACE::2025-02-07.21:25:45::SCWBifWriter::bitstream found in the design
+TRACE::2025-02-07.21:25:45::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2025-02-07.21:25:45::SCWBifWriter::proc type : 
+TRACE::2025-02-07.21:25:45::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2025-02-07.21:25:45::SCWBifWriter::Device type is : zynq
+TRACE::2025-02-07.21:25:45::SCWBifWriter::Writing BIF to file : C:/Users/jaxie963/workspace/NES_TEST_system/Debug/system.bif
+TRACE::2025-02-07.21:25:45::SCWBifWriter::Writing the Zynq Baremetal bif 

@@ -1,0 +1,7 @@
+/*zynq_design_1_wrapper*/
+the_ROM_image:
+{
+ [bootloader] <zynq_design_1_wrapper/boot/fsbl.elf>
+ <bitstream>
+ <elf,ps7_cortexa9_0>
+}
