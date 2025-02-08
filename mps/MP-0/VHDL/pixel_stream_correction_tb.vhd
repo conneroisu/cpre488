@@ -19,11 +19,11 @@ begin
     process
     begin
         -- Create data
-        s_in_data_stream <= X"ABC0";
+        s_in_data_stream <= X"0ABC";
         wait for 10 ns;
 
         -- Run test
-        assert s_out_corrected_data_stream = X"0ABC" report "Test Failed: Output was not equal to 0ABC." severity failure;
+        assert s_out_corrected_data_stream = X"ABC0" report "Test Failed: Output was not equal to ABC0." severity failure;
         report "Test Passed!";
         wait;
     end process;
