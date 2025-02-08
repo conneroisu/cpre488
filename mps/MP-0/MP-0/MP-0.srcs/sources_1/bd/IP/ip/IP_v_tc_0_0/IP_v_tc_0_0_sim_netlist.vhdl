@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Thu Feb  6 15:41:18 2025
--- Host        : CO2041-01 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top IP_v_tc_0_0 -prefix
---               IP_v_tc_0_0_ IP_v_tc_0_0_sim_netlist.vhdl
+-- Date        : Sat Feb  8 00:50:06 2025
+-- Host        : DESKTOP-EGO35HT running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               e:/ISU/cpre488/mps/MP-0/MP-0/MP-0.srcs/sources_1/bd/IP/ip/IP_v_tc_0_0/IP_v_tc_0_0_sim_netlist.vhdl
 -- Design      : IP_v_tc_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -29,6 +29,8 @@ entity IP_v_tc_0_0_address_decoder is
     s_axi_awready : in STD_LOGIC;
     s_axi_awready_0 : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of IP_v_tc_0_0_address_decoder : entity is "address_decoder";
 end IP_v_tc_0_0_address_decoder;
 
 architecture STRUCTURE of IP_v_tc_0_0_address_decoder is
@@ -781,6 +783,8 @@ entity IP_v_tc_0_0_mux_tree is
     \GEN_TREE.GEN_BRANCH[31].GEN_MUX_REG.data_out_reg_reg[31][1]_0\ : in STD_LOGIC;
     \GEN_TREE.GEN_BRANCH[31].GEN_MUX_REG.data_out_reg_reg[31][0]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of IP_v_tc_0_0_mux_tree : entity is "mux_tree";
 end IP_v_tc_0_0_mux_tree;
 
 architecture STRUCTURE of IP_v_tc_0_0_mux_tree is
@@ -14811,6 +14815,8 @@ entity IP_v_tc_0_0_tc_generator is
     \time_control_regs[24]\ : in STD_LOGIC_VECTOR ( 23 downto 0 );
     \time_control_regs[23]\ : in STD_LOGIC_VECTOR ( 23 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of IP_v_tc_0_0_tc_generator : entity is "tc_generator";
 end IP_v_tc_0_0_tc_generator;
 
 architecture STRUCTURE of IP_v_tc_0_0_tc_generator is
@@ -19360,6 +19366,8 @@ entity IP_v_tc_0_0_video_clock_cross is
     \data_sync_reg[0][44]_0\ : in STD_LOGIC_VECTOR ( 44 downto 0 );
     vid_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of IP_v_tc_0_0_video_clock_cross : entity is "video_clock_cross";
 end IP_v_tc_0_0_video_clock_cross;
 
 architecture STRUCTURE of IP_v_tc_0_0_video_clock_cross is
@@ -28929,6 +28937,8 @@ entity IP_v_tc_0_0_slave_attachment is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of IP_v_tc_0_0_slave_attachment : entity is "slave_attachment";
 end IP_v_tc_0_0_slave_attachment;
 
 architecture STRUCTURE of IP_v_tc_0_0_slave_attachment is
@@ -30112,6 +30122,8 @@ entity IP_v_tc_0_0_tc_top is
     \time_control_regs[24]\ : in STD_LOGIC_VECTOR ( 23 downto 0 );
     \time_control_regs[23]\ : in STD_LOGIC_VECTOR ( 23 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of IP_v_tc_0_0_tc_top : entity is "tc_top";
 end IP_v_tc_0_0_tc_top;
 
 architecture STRUCTURE of IP_v_tc_0_0_tc_top is
@@ -30473,6 +30485,8 @@ entity IP_v_tc_0_0_axi_lite_ipif is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of IP_v_tc_0_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end IP_v_tc_0_0_axi_lite_ipif;
 
 architecture STRUCTURE of IP_v_tc_0_0_axi_lite_ipif is
@@ -30700,6 +30714,8 @@ entity IP_v_tc_0_0_video_ctrl is
   attribute C_VERSION_MINOR of IP_v_tc_0_0_video_ctrl : entity is 2;
   attribute C_VERSION_REVISION : integer;
   attribute C_VERSION_REVISION of IP_v_tc_0_0_video_ctrl : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of IP_v_tc_0_0_video_ctrl : entity is "video_ctrl";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of IP_v_tc_0_0_video_ctrl : entity is "yes";
   attribute keep_hierarchy : string;
@@ -54575,6 +54591,8 @@ entity IP_v_tc_0_0_v_tc is
   attribute C_S_AXI_CLK_FREQ_HZ of IP_v_tc_0_0_v_tc : entity is 100000000;
   attribute C_S_AXI_DATA_WIDTH : integer;
   attribute C_S_AXI_DATA_WIDTH of IP_v_tc_0_0_v_tc : entity is 32;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of IP_v_tc_0_0_v_tc : entity is "v_tc";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of IP_v_tc_0_0_v_tc : entity is "yes";
 end IP_v_tc_0_0_v_tc;
