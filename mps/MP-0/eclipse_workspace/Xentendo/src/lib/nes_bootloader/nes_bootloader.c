@@ -72,7 +72,7 @@ void xil_init() {
       XPAR_AXIVDMA_0_BASEADDR,          // VDMA Base Addr
       XAXIVDMA_MM2S_ADDR_OFFSET         // MM2S Addr Offset
           + XAXIVDMA_START_ADDR_OFFSET, // Start Addr Offset
-      FBUFFER_BASEADDR                  //
+      FBUFFER_BASEADDR//
   );
 
   XAxiVdma_WriteReg(                   //
