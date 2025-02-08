@@ -3,10 +3,9 @@
  * e.g. for polling controller input, displaying out, playing sound. Implement
  * the main emulation interfacing here.
  *****************************************************************************/
+#include <stdlib.h>
 
 #include "../../lib/nes_bootloader/NESCore/NESCore_Callback.h"
-
-#include <stdlib.h>
 #include "../../lib/nes_bootloader/nes_bootloader.h"
 #include "../../lib/nes_bootloader/NESCore/NESCore.h"
 
@@ -15,26 +14,40 @@
 // Your challenge is to figure out how to map that to your 640x480 framebuffer.
 void NESCore_Callback_OutputFrame(word *WorkFrame) {
 
-  extern uint16_t NesPalette3[];
-  uint32_t i, j;
-  uint16_t *ptr = (uint16_t *)FBUFFER_BASEADDR;
-  uint16_t tpixel;
+	extern uint16_t NesPalette3[];
+	uint32_t i, j, i_ptr, j_ptr;
+	uint16_t *ptr = (uint16_t *)FBUFFER_BASEADDR;
+	uint16_t tpixel;
 
-  for (i = 0; i < NES_DISP_HEIGHT; i++) {
+	// blank unused part of screen
+	for (i = 0 ; i < 480; i++) {
+		for (j = 0; j < 640; j++) {
+			// top, bottom, left, right blanking conditions
+			if(i <= 2 || j <= 2 || j >= 637 || i >= 477) {
+				ptr[(i * 640) + j] = 0x0000;
+			}
+		}
+	}
+	// write raw resolution to middle of screen (no scaling)
+	i_ptr = 0;
+	for (i = 0 ; i < NES_DISP_HEIGHT; i ++) {
+		j_ptr = 0;
+		for (j = 0; j < NES_DISP_WIDTH; j++) {
+			// Grab a temporary pixel using the color palette lookup table.
+			tpixel = NesPalette3[WorkFrame[NES_DISP_WIDTH*i+j]];
+			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64))] = tpixel << 4;
+			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64))] = tpixel << 4;
+			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64 + 1))] = tpixel << 4;
+			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64 + 1))] = tpixel << 4;
+			j_ptr += 2;
+		}
+		i_ptr += 2;
+	}
 
-    for (j = 0; j < NES_DISP_WIDTH; j++) {
+	// Flush the cache since VDMA does not play nicely with the cache
+	Xil_DCacheFlush();
 
-      // Grab a temporary pixel using the color palette lookup table.
-      tpixel = NesPalette3[WorkFrame[NES_DISP_WIDTH * i + j]];
-
-      // Casting to 640 x 480
-    }
-  }
-
-  // Flush the cache since VDMA does not play nicely with the cache
-  Xil_DCacheFlush();
-
-  return;
+	return;
 }
 
 // Main input callback. Overwite the passed-by references pad1 and pad2
