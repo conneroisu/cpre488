@@ -28,8 +28,18 @@
 #define VDMA_MM2S_HSIZE *((volatile u32*) (XPAR_AXI_VDMA_0_BASEADDR + XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET))
 #define VDMA_MM2S_VSIZE *((volatile u32*) (XPAR_AXI_VDMA_0_BASEADDR + XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET))
 
-u16 front_buffer[IMAGE_HEIGHT][IMAGE_WIDTH];
-u16 back_buffer[IMAGE_HEIGHT][IMAGE_WIDTH];
+#define MAX_ZOOM 2
+#define MIN_ZOOM 128
+
+// In us
+#define ZOOM_DELTA 10000
+
+typedef u16 t_image_type[IMAGE_HEIGHT][IMAGE_WIDTH];
+
+t_image_type front_buffer;
+t_image_type back_buffer;
+
+t_image_type* draw_buffer = &back_buffer;
 
 u16 convert_color_24_16(u32 color);
 
@@ -78,6 +88,40 @@ int main()
 
   // Set the vertical size.
   VDMA_MM2S_VSIZE = IMAGE_HEIGHT;
+
+  // Zoom
+  while(1)
+  {
+	  // Zoom out
+	  for(int i = MAX_ZOOM; i <= MIN_ZOOM; i*=2)
+	  {
+		  create_checker_board(i, IMAGE_HEIGHT, IMAGE_WIDTH, CYCLONE_GOLD, CYCLONE_RED, *draw_buffer);
+		  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, *draw_buffer);
+		  Xil_DCacheFlush();
+		  usleep(ZOOM_DELTA);
+		  // Swap buffers
+		  VDMA_MM2S_START_ADDRESS1 = (u32) *draw_buffer;
+		  VDMA_MM2S_VSIZE = VDMA_MM2S_VSIZE;
+		  draw_buffer = (draw_buffer == &front_buffer ? &back_buffer : &front_buffer);
+	  }
+
+	  usleep(8 * ZOOM_DELTA);
+
+	  // Zoom back in
+	  for(int i = MIN_ZOOM; i >= MAX_ZOOM; i/=2)
+	  {
+		  create_checker_board(i, IMAGE_HEIGHT, IMAGE_WIDTH, CYCLONE_GOLD, CYCLONE_RED, *draw_buffer);
+		  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, *draw_buffer);
+		  Xil_DCacheFlush();
+		  usleep(ZOOM_DELTA);
+		  // Swap buffers
+		  VDMA_MM2S_START_ADDRESS1 = (u32) *draw_buffer;
+		  VDMA_MM2S_VSIZE = VDMA_MM2S_VSIZE;
+		  draw_buffer = (draw_buffer == &front_buffer ? &back_buffer : &front_buffer);
+	  }
+
+	  usleep(8 * ZOOM_DELTA);
+  }
 
   cleanup_platform();
 
