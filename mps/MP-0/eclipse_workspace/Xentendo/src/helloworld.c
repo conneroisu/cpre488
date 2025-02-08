@@ -13,13 +13,7 @@
 #define IMAGE_HEIGHT 480
 #define STRIDE IMAGE_WIDTH * 2
 extern uint16_t NesPalette3[65];
-void fix_colors(uint16_t *palette, unsigned int size) {
-	for (int i = 0; i < size; i++)
-	{
-		uint16_t num = palette[i];
-		palette[i] = ((num >> 4) & 0x0ff) | ((num & 0x0f) << 8);
-	}
-}
+
 
 
 int main()
