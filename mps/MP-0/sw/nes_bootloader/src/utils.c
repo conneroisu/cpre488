@@ -145,7 +145,7 @@ void nes_pixelblend(uint32_t *srcPtr, uint32_t srcWidth, uint32_t srcHeight,
 }
 
 // Simple strncpy. The string pointed to by src (including the terminating '\0'
-// character) is copied to the array pointed to by dest. Not more than n bytes
+// character) is copied to the array pointed to by dest. No more than n bytes
 // of src are copied. Adds a null byte at the end if needed.
 uint8_t *nes_strncpy(uint8_t *dest, uint8_t *src, uint8_t n) {
 

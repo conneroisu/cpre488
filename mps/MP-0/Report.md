@@ -81,7 +81,6 @@ Depends on the `xilinx-sdk` implementation.
    - VDMA **should** stream the framebuffer to the display.
 
 ![[diagram-export-2-6-2025-3_17_20-PM.png]]
-<!-- TODO: add Systems Level Diagram. -->
 
 ## [TASK] How does NESCore_Callback_OutputFrame() get called?
 
@@ -145,7 +144,7 @@ LED PHOTO GOES HERE
 25 ns pulse duration is shown in the image above.
 
 In your writeup, use this feature and describe what print() does, and how.
-=======
+
 ## [TASK] Step 5: Are these buttons, LEDs, and switches connected via the PS subsystem or the PL subsystem? Briefly defend your answer. Note also that all three peripherals appear to be the same exact IP type (axi_gpio) – how can this be possible?
  
 The LEDS, buttons and switches are connected to the PS subsystem as they are connected/controlled through gpio pins.
@@ -156,8 +155,6 @@ The LEDS, buttons and switches are connected to the PS subsystem as they are con
 
 <!-- TODO: In your writeup, use this feature and describe what print() does, and how. -->
 <!-- TODO: Why do you believe this function is used by Xilinx for their Hello World application, as opposed to the more conventional printf() function? -->
-
-## [TASK] Step 9: Connect to the Vivado Logic Analyzer: i) Take a screen capture of an LED wire turning on? Can you turn the LED on and off fast enough to get a screen capture of the Logic Analyzer displaying this pulse? If so, then provide this screen capture as well. For how long does the pulse stay high?
 
 i) instruction 11: In the Template page, select "Hello World", not "Peripheral Test" template
 In your writeup, use this feature and describe what print() does, and how.
@@ -174,3 +171,59 @@ Modify the nes_bootloader code such that the NES games are reasonably playable. 
 - Interfacing with an original NES controller (15 bonus points)
 - The ability to emulate sound using the appropriate callback function (25 bonus points).
 
+## [x] [TASK] In your writeup, explain how you converted these color values valid values for the 16-bit framebuffer.
+
+We worked through calculating the RGB values manually using python and then implemented the necessary conversion functions in the nes_bootloader.c file.
+
+First, we shift the given color value to the right by 2 bytes to get the red value.
+Second, we shift the given color value to the right by 1 byte to get the green value.
+Third, we shift the given color value to the right by 4 bits to get the blue value.
+
+Here is our function:
+```c
+// Example: 0xC8103E
+// 0xC8 -> Red | 0x10 -> Green | 0x3E -> Blue
+u16 convert_color_24_16(u32 color)
+{
+	u16 r, g, b = 0;
+
+	// Red: 0xFF0000 -> 0xF
+	// Shift right 2 bytes (16 bits) to get the two bytes in the LSB position.
+	// Then to get the left byte, shift 4 more.
+	r = color >> 20;
+
+	// Green: 0xFF00 -> 0xF0
+	//Shift right one byte (8 bits) to get the two bytes in the LSB position.
+	// Then mask with 0xF0 to only take the left byte. It is already positioned
+	// where it needs to be.
+	g = (color >> 8) & 0xF0;
+
+	// Blue:  0xFF -> 0xF00
+	// Shift left 4 bits to get the left-most byte in the correct position.
+	// Then mask with 0xF00 to only use the left-most byte.
+	b = (color << 4) & 0xF00;
+
+	return r | g | b;
+}
+
+void insert_black_ref_bars(int num_bars, int image_height, int image_width, u16 image[image_height][image_width])
+{
+  // Black bars to define black reference in blanking period
+  for(int i = 0; i < image_height; i++)
+  {
+	  for(int j = 0; j < num_bars; j++)
+	  {
+		  (image[i])[j] = 0x0;
+	  }
+  }
+
+  for(int i = 0; i < image_height; i++)
+  {
+	  for(int j = image_width - 1 - num_bars; j < image_width; j++)
+	  {
+		  (image[i])[j] = 0x0;
+	  }
+  }
+}
+
+```
