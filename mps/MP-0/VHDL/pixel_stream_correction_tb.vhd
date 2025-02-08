@@ -20,7 +20,10 @@ begin
         -- Create data
         s_in_data_stream <= X"ABC0";
         wait for 10 ns;
-        report "Finished!";
+
+        -- Run test
+        assert s_out_corrected_data_stream /= X"0ABC" report "Test Failed!" severity failure;
+        report "Test Passed!";
         wait;
     end process;
 

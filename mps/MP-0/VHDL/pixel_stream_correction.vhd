@@ -1,5 +1,4 @@
 library IEEE;
-library work;
 
 use IEEE.std_logic_1164.all;
 use work.user_types.all;
