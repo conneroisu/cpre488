@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Thu Feb  6 17:50:32 2025
---Host        : CO2041-01 running 64-bit major release  (build 9200)
+--Date        : Sat Feb  8 13:30:43 2025
+--Host        : CO2041-05 running 64-bit major release  (build 9200)
 --Command     : generate_target IP.bd
 --Design      : IP
 --Purpose     : IP block netlist
@@ -2216,7 +2216,7 @@ entity IP is
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of IP : entity is "IP,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=IP,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=32,numReposBlks=23,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,""""""""""""""""""da_axi4_cnt""""""""""""""""""=11,""""""""""""""""""da_board_cnt""""""""""""""""""=9,""""""""""""""""""da_clkrst_cnt""""""""""""""""""=4,""""""""""""""""""da_ps7_cnt""""""""""""""""""=2,""""""""""""""da_clkrst_cnt""""""""""""""=5,""""""""da_board_cnt""""""""=1,""""""""da_clkrst_cnt""""""""=8,""""""da_clkrst_cnt""""""=1,""da_clkrst_cnt""=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of IP : entity is "IP,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=IP,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=33,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,""""""""""""""""""""""""""""da_axi4_cnt""""""""""""""""""""""""""""=11,""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""=9,""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""=4,""""""""""""""""""""""""""""da_ps7_cnt""""""""""""""""""""""""""""=2,""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""=5,""""""""""""""""""da_board_cnt""""""""""""""""""=1,""""""""""""""""""da_clkrst_cnt""""""""""""""""""=8,""""""""""""""""da_clkrst_cnt""""""""""""""""=1,""""""""""""da_clkrst_cnt""""""""""""=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of IP : entity is "IP.hwdef";
 end IP;
@@ -2615,6 +2615,12 @@ architecture STRUCTURE of IP is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component IP_proc_sys_reset_0_0;
+  component IP_pixel_stream_correct_0_0 is
+  port (
+    i_data_stream : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    o_corrected_data_stream : out STD_LOGIC_VECTOR ( 15 downto 0 )
+  );
+  end component IP_pixel_stream_correct_0_0;
   signal axi_gpio_0_GPIO_TRI_O : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal axi_gpio_1_GPIO_TRI_I : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal axi_gpio_2_GPIO_TRI_I : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -2633,11 +2639,6 @@ architecture STRUCTURE of IP is
   signal axi_interconnect_0_M00_AXI_RREADY : STD_LOGIC;
   signal axi_interconnect_0_M00_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal axi_interconnect_0_M00_AXI_RVALID : STD_LOGIC;
-  signal axi_vdma_0_M_AXIS_MM2S_TDATA : STD_LOGIC_VECTOR ( 15 downto 0 );
-  signal axi_vdma_0_M_AXIS_MM2S_TLAST : STD_LOGIC;
-  signal axi_vdma_0_M_AXIS_MM2S_TREADY : STD_LOGIC;
-  signal axi_vdma_0_M_AXIS_MM2S_TUSER : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal axi_vdma_0_M_AXIS_MM2S_TVALID : STD_LOGIC;
   signal axi_vdma_0_M_AXI_MM2S_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_vdma_0_M_AXI_MM2S_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal axi_vdma_0_M_AXI_MM2S_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -2651,6 +2652,11 @@ architecture STRUCTURE of IP is
   signal axi_vdma_0_M_AXI_MM2S_RREADY : STD_LOGIC;
   signal axi_vdma_0_M_AXI_MM2S_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal axi_vdma_0_M_AXI_MM2S_RVALID : STD_LOGIC;
+  signal axi_vdma_0_m_axis_mm2s_tdata : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal axi_vdma_0_m_axis_mm2s_tlast : STD_LOGIC;
+  signal axi_vdma_0_m_axis_mm2s_tuser : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal axi_vdma_0_m_axis_mm2s_tvalid : STD_LOGIC;
+  signal pixel_stream_correct_0_o_corrected_data_stream : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal proc_sys_reset_0_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal proc_sys_reset_0_peripheral_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
@@ -2801,6 +2807,7 @@ architecture STRUCTURE of IP is
   signal ps7_0_axi_periph_M04_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 5 );
+  signal v_axi4s_vid_out_0_s_axis_video_tready : STD_LOGIC;
   signal v_axi4s_vid_out_0_vid_data : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal v_axi4s_vid_out_0_vid_hsync : STD_LOGIC;
   signal v_axi4s_vid_out_0_vid_vsync : STD_LOGIC;
@@ -3016,12 +3023,12 @@ axi_vdma_0: component IP_axi_vdma_0_0
       m_axi_mm2s_rresp(1 downto 0) => axi_vdma_0_M_AXI_MM2S_RRESP(1 downto 0),
       m_axi_mm2s_rvalid => axi_vdma_0_M_AXI_MM2S_RVALID,
       m_axis_mm2s_aclk => processing_system7_0_FCLK_CLK0,
-      m_axis_mm2s_tdata(15 downto 0) => axi_vdma_0_M_AXIS_MM2S_TDATA(15 downto 0),
+      m_axis_mm2s_tdata(15 downto 0) => axi_vdma_0_m_axis_mm2s_tdata(15 downto 0),
       m_axis_mm2s_tkeep(1 downto 0) => NLW_axi_vdma_0_m_axis_mm2s_tkeep_UNCONNECTED(1 downto 0),
-      m_axis_mm2s_tlast => axi_vdma_0_M_AXIS_MM2S_TLAST,
-      m_axis_mm2s_tready => axi_vdma_0_M_AXIS_MM2S_TREADY,
-      m_axis_mm2s_tuser(0) => axi_vdma_0_M_AXIS_MM2S_TUSER(0),
-      m_axis_mm2s_tvalid => axi_vdma_0_M_AXIS_MM2S_TVALID,
+      m_axis_mm2s_tlast => axi_vdma_0_m_axis_mm2s_tlast,
+      m_axis_mm2s_tready => v_axi4s_vid_out_0_s_axis_video_tready,
+      m_axis_mm2s_tuser(0) => axi_vdma_0_m_axis_mm2s_tuser(0),
+      m_axis_mm2s_tvalid => axi_vdma_0_m_axis_mm2s_tvalid,
       mm2s_frame_ptr_out(5 downto 0) => NLW_axi_vdma_0_mm2s_frame_ptr_out_UNCONNECTED(5 downto 0),
       mm2s_introut => NLW_axi_vdma_0_mm2s_introut_UNCONNECTED,
       s_axi_lite_aclk => processing_system7_0_FCLK_CLK0,
@@ -3041,6 +3048,11 @@ axi_vdma_0: component IP_axi_vdma_0_0
       s_axi_lite_wdata(31 downto 0) => ps7_0_axi_periph_M04_AXI_WDATA(31 downto 0),
       s_axi_lite_wready => ps7_0_axi_periph_M04_AXI_WREADY,
       s_axi_lite_wvalid => ps7_0_axi_periph_M04_AXI_WVALID
+    );
+pixel_stream_correct_0: component IP_pixel_stream_correct_0_0
+     port map (
+      i_data_stream(15 downto 0) => axi_vdma_0_m_axis_mm2s_tdata(15 downto 0),
+      o_corrected_data_stream(15 downto 0) => pixel_stream_correct_0_o_corrected_data_stream(15 downto 0)
     );
 proc_sys_reset_0: component IP_proc_sys_reset_0_0
      port map (
@@ -3333,11 +3345,11 @@ v_axi4s_vid_out_0: component IP_v_axi4s_vid_out_0_1
       fifo_read_level(10 downto 0) => NLW_v_axi4s_vid_out_0_fifo_read_level_UNCONNECTED(10 downto 0),
       locked => NLW_v_axi4s_vid_out_0_locked_UNCONNECTED,
       overflow => NLW_v_axi4s_vid_out_0_overflow_UNCONNECTED,
-      s_axis_video_tdata(15 downto 0) => axi_vdma_0_M_AXIS_MM2S_TDATA(15 downto 0),
-      s_axis_video_tlast => axi_vdma_0_M_AXIS_MM2S_TLAST,
-      s_axis_video_tready => axi_vdma_0_M_AXIS_MM2S_TREADY,
-      s_axis_video_tuser => axi_vdma_0_M_AXIS_MM2S_TUSER(0),
-      s_axis_video_tvalid => axi_vdma_0_M_AXIS_MM2S_TVALID,
+      s_axis_video_tdata(15 downto 0) => pixel_stream_correct_0_o_corrected_data_stream(15 downto 0),
+      s_axis_video_tlast => axi_vdma_0_m_axis_mm2s_tlast,
+      s_axis_video_tready => v_axi4s_vid_out_0_s_axis_video_tready,
+      s_axis_video_tuser => axi_vdma_0_m_axis_mm2s_tuser(0),
+      s_axis_video_tvalid => axi_vdma_0_m_axis_mm2s_tvalid,
       status(31 downto 0) => NLW_v_axi4s_vid_out_0_status_UNCONNECTED(31 downto 0),
       underflow => NLW_v_axi4s_vid_out_0_underflow_UNCONNECTED,
       vid_active_video => NLW_v_axi4s_vid_out_0_vid_active_video_UNCONNECTED,

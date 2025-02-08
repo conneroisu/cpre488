@@ -14,7 +14,7 @@
 #define VIDEO_WIDTH 640
 #define VIDEO_HEIGHT 480
 
-u16 test_image[VIDEO_HEIGHT][VIDEO_WIDTH];
+u16 front_buffer[VIDEO_HEIGHT][VIDEO_WIDTH];
 
 // Our color format:
 // 15   14   13   12   11   10   9    8    7    6    5    4    3 2 1 0
@@ -38,7 +38,7 @@ int main() {
   {
 	  for(j = 0; j < VIDEO_WIDTH; ++j)
 	  {
-		  test_image[i][j] = convert_color(convert_color_24_16(0xC8103E));
+		  front_buffer[i][j] = convert_color(convert_color_24_16(0xC8103E));
 	  }
   }
 
@@ -47,7 +47,7 @@ int main() {
   {
 	  for(j = 0; j < BLACK_REF_BAR_WIDTH; j++)
 	  {
-		  test_image[i][j] = 0x0;
+		  front_buffer[i][j] = 0x0;
 	  }
   }
 
@@ -55,7 +55,7 @@ int main() {
   {
 	  for(j = VIDEO_WIDTH - 1 - BLACK_REF_BAR_WIDTH; j < VIDEO_WIDTH; j++)
 	  {
-		  test_image[i][j] = 0x0;
+		  front_buffer[i][j] = 0x0;
 	  }
   }
 
@@ -74,7 +74,7 @@ int main() {
   XAxiVdma_WriteReg(
       XPAR_AXI_VDMA_0_BASEADDR,
       XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET,
-      test_image); // Read Channel: VDMA MM2S Frame buffer Start Addr 1
+      front_buffer); // Read Channel: VDMA MM2S Frame buffer Start Addr 1
 
   XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
                     XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET,
@@ -90,7 +90,7 @@ int main() {
 
   while(1)
   {
-	  xil_printf("Frame buffer addr: %x\n\r", (unsigned int *) test_image);
+	  xil_printf("Frame buffer addr: %x\n\r", (unsigned int *) front_buffer);
   }
 
   cleanup_platform();
