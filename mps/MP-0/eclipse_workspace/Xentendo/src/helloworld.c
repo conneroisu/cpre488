@@ -13,8 +13,6 @@
 #define IMAGE_HEIGHT 480
 #define STRIDE IMAGE_WIDTH * 2
 
-u16 front_buffer[IMAGE_HEIGHT][IMAGE_WIDTH];
-u16 back_buffer[IMAGE_HEIGHT][IMAGE_WIDTH];
 
 int main()
 {
@@ -33,5 +31,6 @@ int main()
       nes_load("zelda.nes");
     }
     cleanup_platform();
+
     return 0;
 }

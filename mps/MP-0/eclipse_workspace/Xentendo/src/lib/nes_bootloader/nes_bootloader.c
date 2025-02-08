@@ -88,6 +88,7 @@ void xil_init() {
           + XAXIVDMA_HSIZE_OFFSET, // HSize Offset
       0x0500                       //
   );
+  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_FRMSTORE_OFFSET, 1);  // VDMA MM2S Number FRM_Stores
 
   XAxiVdma_WriteReg( // Read Ch: VDMA MM2S VSIZE & Start VDMA transaction
       XPAR_AXIVDMA_0_BASEADDR,                           //
