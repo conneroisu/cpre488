@@ -102,7 +102,7 @@ void nes_load(uint8_t *rom_name) {
   int32_t result = 0, i;
   uint8_t nes_fname[17];
 
-  nes_strncpy(nes_fname, 10, 17);
+  nes_strncpy(nes_fname, rom_name, 18);
 
   usleep(100000);
 
