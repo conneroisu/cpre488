@@ -16,6 +16,7 @@ extern uint16_t NesPalette3[65];
 
 
 
+
 int main()
 {
     init_platform();
@@ -25,7 +26,6 @@ int main()
 
     // Initialize the NESCore
     NESCore_Init();
-	fix_colors(NesPalette3, 65);
 
     // Enable the cache
     Xil_DCacheEnable();

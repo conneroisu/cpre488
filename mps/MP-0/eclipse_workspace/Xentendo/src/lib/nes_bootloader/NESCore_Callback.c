@@ -9,6 +9,32 @@
 #include "../../lib/nes_bootloader/nes_bootloader.h"
 #include "../../lib/nes_bootloader/NESCore/NESCore.h"
 
+
+// Example: 0xC8103E
+// 0xC8 -> Red | 0x10 -> Green | 0x3E -> Blue
+u16 convert_color_24_16(u32 color)
+{
+	u16 r, g, b = 0;
+
+	// Red: 0xFF0000 -> 0xF
+	// Shift right 2 bytes (16 bits) to get the two bytes in the LSB position.
+	// Then to get the left byte, shift 4 more.
+	r = color >> 20;
+
+	// Green: 0xFF00 -> 0xF0
+	//Shift right one byte (8 bits) to get the two bytes in the LSB position.
+	// Then mask with 0xF0 to only take the left byte. It is already positioned
+	// where it needs to be.
+	g = (color >> 8) & 0xF0;
+
+	// Blue:  0xFF -> 0xF00
+	// Shift left 4 bits to get the left-most byte in the correct position.
+	// Then mask with 0xF00 to only use the left-most byte.
+	b = (color << 4) & 0xF00;
+
+	return r | g | b;
+}
+
 // The main output frame callback. Copy the results into the front-buffer.
 // Note that the NES (and the emulator) outputs essentially a 256x240 image.
 // Your challenge is to figure out how to map that to your 640x480 framebuffer.
@@ -18,6 +44,7 @@ void NESCore_Callback_OutputFrame(word *WorkFrame) {
 	uint32_t i, j, i_ptr, j_ptr;
 	uint16_t *ptr = (uint16_t *)FBUFFER_BASEADDR;
 	uint16_t tpixel;
+	uint16_t tcol;
 
 	// blank unused part of screen
 	for (i = 0 ; i < 480; i++) {
@@ -35,10 +62,11 @@ void NESCore_Callback_OutputFrame(word *WorkFrame) {
 		for (j = 0; j < NES_DISP_WIDTH; j++) {
 			// Grab a temporary pixel using the color palette lookup table.
 			tpixel = NesPalette3[WorkFrame[NES_DISP_WIDTH*i+j]];
-			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64))] = tpixel << 4;
-			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64))] = tpixel << 4;
-			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64 + 1))] = tpixel << 4;
-			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64 + 1))] = tpixel << 4;
+			tcol = tpixel;
+			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64))] = tcol;
+			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64))] = tcol;
+			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64 + 1))] = tcol;
+			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64 + 1))] = tcol;
 			j_ptr += 2;
 		}
 		i_ptr += 2;
