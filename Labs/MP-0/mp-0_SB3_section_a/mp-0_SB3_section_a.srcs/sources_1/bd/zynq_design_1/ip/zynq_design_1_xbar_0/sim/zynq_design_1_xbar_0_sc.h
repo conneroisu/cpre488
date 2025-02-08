@@ -88,6 +88,12 @@ public: // module socket-to-socket TLM interface
   xtlm::xtlm_aximm_initiator_socket* initiator_3_wr_socket;
   xtlm::xtlm_aximm_initiator_socket* initiator_4_rd_socket;
   xtlm::xtlm_aximm_initiator_socket* initiator_4_wr_socket;
+  xtlm::xtlm_aximm_initiator_socket* initiator_5_rd_socket;
+  xtlm::xtlm_aximm_initiator_socket* initiator_5_wr_socket;
+  xtlm::xtlm_aximm_initiator_socket* initiator_6_rd_socket;
+  xtlm::xtlm_aximm_initiator_socket* initiator_6_wr_socket;
+  xtlm::xtlm_aximm_initiator_socket* initiator_7_rd_socket;
+  xtlm::xtlm_aximm_initiator_socket* initiator_7_wr_socket;
 
 protected:
 

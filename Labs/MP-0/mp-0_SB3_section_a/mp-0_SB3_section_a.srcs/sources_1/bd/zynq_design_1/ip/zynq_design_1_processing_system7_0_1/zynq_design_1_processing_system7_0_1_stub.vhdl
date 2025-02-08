@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Thu Feb  6 18:27:02 2025
+-- Date        : Thu Feb  6 19:59:09 2025
 -- Host        : CO2041-08 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top zynq_design_1_processing_system7_0_1 -prefix
 --               zynq_design_1_processing_system7_0_1_ zynq_design_1_processing_system7_0_1_stub.vhdl

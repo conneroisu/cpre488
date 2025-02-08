@@ -10,7 +10,7 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1024fs"></ZoomEndTime>
+      <ZoomEndTime time="1855fs"></ZoomEndTime>
       <Cursor1Time time="192fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
@@ -28,5 +28,6 @@
       <obj_property name="label">v_axi4s_vid_out_0_vid_data</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

@@ -11,8 +11,8 @@ set_property PACKAGE_PIN AA22 [get_ports {VGA_G[1]}]
 set_property PACKAGE_PIN AB22 [get_ports {VGA_G[0]}]
 set_property PACKAGE_PIN V20 [get_ports {VGA_R[0]}]
 
-set_property PACKAGE_PIN Y19  [get_ports {VGA_VSYNC}]
-set_property PACKAGE_PIN AA19 [get_ports {VGA_HSYNC}]
+set_property PACKAGE_PIN Y19 [get_ports VGA_VSYNC]
+set_property PACKAGE_PIN AA19 [get_ports VGA_HSYNC]
 
 set_property IOSTANDARD LVCMOS33 [get_ports {VGA_R[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {VGA_R[2]}]
@@ -27,8 +27,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports {VGA_B[2]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {VGA_B[1]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {VGA_B[0]}]
 
-set_property IOSTANDARD LVCMOS33 [get_ports {VGA_VSYNC}]
-set_property IOSTANDARD LVCMOS33 [get_ports {VGA_HSYNC}]
+set_property IOSTANDARD LVCMOS33 [get_ports VGA_VSYNC]
+set_property IOSTANDARD LVCMOS33 [get_ports VGA_HSYNC]
 
 connect_debug_port u_ila_0/probe0 [get_nets [list {zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[0]} {zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[1]} {zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[2]} {zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[3]} {zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[4]} {zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[5]} {zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[6]} {zynq_design_1_i/axi_gpio_0_GPIO_TRI_O[7]}]]
 connect_debug_port u_ila_0/probe19 [get_nets [list {zynq_design_1_i/ps7_0_axi_periph_M00_AXI_AWPROT[0]} {zynq_design_1_i/ps7_0_axi_periph_M00_AXI_AWPROT[1]} {zynq_design_1_i/ps7_0_axi_periph_M00_AXI_AWPROT[2]}]]
@@ -36,3 +36,7 @@ connect_debug_port u_ila_0/probe29 [get_nets [list {zynq_design_1_i/ps7_0_axi_pe
 
 connect_debug_port dbg_hub/clk [get_nets clk]
 
+
+set_property PACKAGE_PIN W12 [get_ports {SNES_DATA_tri_io[0]}]
+set_property PACKAGE_PIN W11 [get_ports {SNES_LATCH_tri_io[0]}]
+set_property PACKAGE_PIN V10 [get_ports {SNES_CLCK_tri_io[0]}]

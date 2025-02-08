@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Fri Feb  7 20:29:23 2025
+--Date        : Sat Feb  8 00:12:23 2025
 --Host        : CO2041-06 running 64-bit major release  (build 9200)
 --Command     : generate_target zynq_design_1_wrapper.bd
 --Design      : zynq_design_1_wrapper
@@ -34,6 +34,9 @@ entity zynq_design_1_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    SNES_CLCK_tri_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
+    SNES_DATA_tri_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
+    SNES_LATCH_tri_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
     VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
     VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 );
     VGA_HSYNC : out STD_LOGIC;
@@ -76,10 +79,60 @@ architecture STRUCTURE of zynq_design_1_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    SNES_CLCK_tri_i : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SNES_CLCK_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
+    SNES_CLCK_tri_t : out STD_LOGIC_VECTOR ( 0 to 0 );
+    SNES_LATCH_tri_i : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SNES_LATCH_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
+    SNES_LATCH_tri_t : out STD_LOGIC_VECTOR ( 0 to 0 );
+    SNES_DATA_tri_i : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SNES_DATA_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
+    SNES_DATA_tri_t : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component zynq_design_1;
+  component IOBUF is
+  port (
+    I : in STD_LOGIC;
+    O : out STD_LOGIC;
+    T : in STD_LOGIC;
+    IO : inout STD_LOGIC
+  );
+  end component IOBUF;
+  signal SNES_CLCK_tri_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SNES_CLCK_tri_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SNES_CLCK_tri_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SNES_CLCK_tri_t_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SNES_DATA_tri_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SNES_DATA_tri_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SNES_DATA_tri_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SNES_DATA_tri_t_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SNES_LATCH_tri_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SNES_LATCH_tri_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SNES_LATCH_tri_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SNES_LATCH_tri_t_0 : STD_LOGIC_VECTOR ( 0 to 0 );
 begin
+SNES_CLCK_tri_iobuf_0: component IOBUF
+     port map (
+      I => SNES_CLCK_tri_o_0(0),
+      IO => SNES_CLCK_tri_io(0),
+      O => SNES_CLCK_tri_i_0(0),
+      T => SNES_CLCK_tri_t_0(0)
+    );
+SNES_DATA_tri_iobuf_0: component IOBUF
+     port map (
+      I => SNES_DATA_tri_o_0(0),
+      IO => SNES_DATA_tri_io(0),
+      O => SNES_DATA_tri_i_0(0),
+      T => SNES_DATA_tri_t_0(0)
+    );
+SNES_LATCH_tri_iobuf_0: component IOBUF
+     port map (
+      I => SNES_LATCH_tri_o_0(0),
+      IO => SNES_LATCH_tri_io(0),
+      O => SNES_LATCH_tri_i_0(0),
+      T => SNES_LATCH_tri_t_0(0)
+    );
 zynq_design_1_i: component zynq_design_1
      port map (
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
@@ -103,6 +156,15 @@ zynq_design_1_i: component zynq_design_1
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      SNES_CLCK_tri_i(0) => SNES_CLCK_tri_i_0(0),
+      SNES_CLCK_tri_o(0) => SNES_CLCK_tri_o_0(0),
+      SNES_CLCK_tri_t(0) => SNES_CLCK_tri_t_0(0),
+      SNES_DATA_tri_i(0) => SNES_DATA_tri_i_0(0),
+      SNES_DATA_tri_o(0) => SNES_DATA_tri_o_0(0),
+      SNES_DATA_tri_t(0) => SNES_DATA_tri_t_0(0),
+      SNES_LATCH_tri_i(0) => SNES_LATCH_tri_i_0(0),
+      SNES_LATCH_tri_o(0) => SNES_LATCH_tri_o_0(0),
+      SNES_LATCH_tri_t(0) => SNES_LATCH_tri_t_0(0),
       VGA_B(3 downto 0) => VGA_B(3 downto 0),
       VGA_G(3 downto 0) => VGA_G(3 downto 0),
       VGA_HSYNC => VGA_HSYNC,
