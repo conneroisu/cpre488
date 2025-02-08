@@ -30,7 +30,7 @@ int main()
     Xil_DCacheEnable();
 
     while (1) {
-      nes_load("roms/Indiana_Jones_and_the_Last_Crusade.nes");
+      nes_load("Paperboy.nes");
     }
     cleanup_platform();
 
