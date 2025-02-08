@@ -12,21 +12,16 @@
 #include "sleep.h"
 
 #define BLACK_REF_BAR_WIDTH 1
-#define VIDEO_WIDTH 640
-#define VIDEO_HEIGHT 480
+#define IMAGE_WIDTH 640
+#define IMAGE_HEIGHT 480
 #define CHECKER_DIMENSION 8
 
 // Colors
 #define CYCLONE_GOLD 0xF1BE48
 #define CYCLONE_RED 0xC8103E
 
-u16 front_buffer[VIDEO_HEIGHT][VIDEO_WIDTH];
-u16 back_buffer[VIDEO_HEIGHT][VIDEO_WIDTH];
-
-// Our color format:
-// 15   14   13   12   11   10   9    8    7    6    5    4    3 2 1 0
-// B[3] B[2] B[1] B[0] G[3] G[2] G[1] G[0] R[3] R[2] R[1] R[0] X X X X
-u16 correct_color(u32 color);
+u16 front_buffer[IMAGE_HEIGHT][IMAGE_WIDTH];
+u16 back_buffer[IMAGE_HEIGHT][IMAGE_WIDTH];
 
 u16 convert_color_24_16(u32 color);
 
@@ -45,57 +40,37 @@ int main()
   XVtc_EnableGenerator(&Vtc);
 
   // Create the checker-board
-  create_checker_board(CHECKER_DIMENSION, VIDEO_HEIGHT, VIDEO_WIDTH, CYCLONE_GOLD, CYCLONE_RED, front_buffer);
-  create_checker_board(CHECKER_DIMENSION, VIDEO_HEIGHT, VIDEO_WIDTH, CYCLONE_RED, CYCLONE_GOLD, back_buffer);
+  create_checker_board(CHECKER_DIMENSION, IMAGE_HEIGHT, IMAGE_WIDTH, CYCLONE_GOLD, CYCLONE_RED, front_buffer);
+  create_checker_board(CHECKER_DIMENSION, IMAGE_HEIGHT, IMAGE_WIDTH, CYCLONE_RED, CYCLONE_GOLD, back_buffer);
 
 
-  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, VIDEO_HEIGHT, VIDEO_WIDTH, front_buffer);
-  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, VIDEO_HEIGHT, VIDEO_WIDTH, back_buffer);
+  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, front_buffer);
+  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, back_buffer);
 
   Xil_DCacheFlush();
 
-  u16 stride = 0x500; // dec 1280
+  u16 stride = IMAGE_WIDTH * 2;
 
+  // Set VDMA to circular mode (which technically doesn't matter since there is 1 frame buffer) and start VDMA.
+  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET, 0x3);
 
-  // Simple function abstraction by Vendor for writing VDMA registers
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET,
-                    0x3); // Read Channel: VDMA MM2S Circular Mode and
-                                // Start bits set, VDMA MM2S Control
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET,
-                    0x0); // Read Channel: VDMA MM2S Reg_Index
+  // Only allow access to the first 16 frame buffers since we only use the first one.
+  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET,0x0);
 
+  // Provide the start address of the front buffer in memory.
   XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, front_buffer);
 
 
+  //Set the stride
   XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
                     XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET,
-                    stride | XAxiVdma_ReadReg(XPAR_AXI_VDMA_0_BASEADDR,
-          XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET)); // Read Channel: VDMA MM2S FRM_Delay, and Stride
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
-                    XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET,
-                    stride); // Read Channel: VDMA MM2S HSIZE
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
-                    XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET,
-                    480); // Read Channel: VDMA MM2S VSIZE  (Note: Also
-                                // Starts VDMA transaction)
+					stride | XAxiVdma_ReadReg(XPAR_AXI_VDMA_0_BASEADDR,
+							XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET));
 
-//  // Swap front and back buffers
-//  while(1)
-//  {
-//	  sleep(1);
-//	  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, back_buffer);
-//	  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
-//	                    XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET,
-//	                    480); // Read Channel: VDMA MM2S VSIZE  (Note: Also
-//	                                // Starts VDMA transaction)
-//	  sleep(1);
-//	  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, front_buffer);
-//	  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR,
-//	                    XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET,
-//	                    480); // Read Channel: VDMA MM2S VSIZE  (Note: Also
-//	                                // Starts VDMA transaction)
-//  }
+  // Set the horizontal size
+  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET, stride);
 
+  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET, IMAGE_HEIGHT);
 
 
   cleanup_platform();
@@ -103,10 +78,6 @@ int main()
   return 0;
 }
 
-u16 correct_color(u32 color)
-{
-	return color << 4;
-}
 
 // Example: 0xC8103E
 // 0xC8 -> Red | 0x10 -> Green | 0x3E -> Blue
@@ -170,7 +141,7 @@ void create_checker_board(int checker_dimension, int image_height, int image_wid
 			  color_sel = color_sel ? 0 : 1;
 		  }
 
-		  image[i][j] = correct_color(convert_color_24_16(color_sel ? color_b : color_a));
+		  image[i][j] = convert_color_24_16(color_sel ? color_b : color_a);
 	  }
 
 	  // Switch color every (image_height / checker_dimension) vertical pixels.
