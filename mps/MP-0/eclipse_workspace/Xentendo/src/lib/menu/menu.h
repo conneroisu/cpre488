@@ -83,6 +83,7 @@ void draw_char(u16 (*fb)[VIDEO_WIDTH], int x, int y, char c, u16 color);
  */
 void draw_text(u16 (*fb)[VIDEO_WIDTH], int x, int y, const char *text, u16 color);
 
+
 /**
  * @brief Draw a rounded rectangle border (outline only) into the framebuffer.
  *
@@ -172,6 +173,22 @@ void clear_framebuffer(u16 (*fb)[VIDEO_WIDTH]);
  * @param menu_offset    The offset for scrolling the menu.
  */
 void draw_game_menu(u16 (*fb)[VIDEO_WIDTH], int selected_index, int menu_offset);
+
+/**
+ * @brief Convert the game name to the nes rom name.
+ * 
+ * @param original_name is the originl name of the game.
+ */
+char* convert_game_name(const char* original_name);
+
+/**
+ * @brief Get the file name on the sd card for the cover of the game with title given.
+ * 
+ * @param title is the title of the game to get the cover file name for.
+ * @param out is the response of the function's work.
+ * @param out_size is the expected max size of the output.
+ */
+void get_cover_filename(const char *title, char *out, size_t out_size);
 
 #ifdef __cplusplus
 }
