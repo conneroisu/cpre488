@@ -97,7 +97,7 @@ void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2)
 				*pdwPad1 |= NCTL_UP;
 				break;
 			case DOWN:
-				*pdwPad1 |= NCTL_SELECT;
+				*pdwPad1 |= NCTL_DOWN;
 				break;
 			case LEFT:
 				*pdwPad1 |= NCTL_LEFT;
@@ -124,6 +124,8 @@ void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2)
 			case START:
 				*pdwPad1 |= NCTL_START;
 				break;
+			case SELECT:
+				*pdwPad1 |= NCTL_SELECT;
 			default:
 				break;
 		}

@@ -4,8 +4,9 @@
 #include "xgpiops.h"
 #include "xil_printf.h"
 
-#define DPAD_BUTTON_DATA *((volatile u32*) XPAR_AXI_GPIO_1_BASEADDR)
+#define QUINT_BUTTON_MATRIX_DATA *((volatile u32*) XPAR_AXI_GPIO_1_BASEADDR)
 #define GPIO_1_MODE *((volatile u32*) (XPAR_AXI_GPIO_1_BASEADDR + 0x4))
+#define SWITCH_DATA *((volatile u32*) XPAR_AXI_GPIO_2_BASEADDR)
 
 #define A_BUTTON_PIN 50
 #define B_BUTTON_PIN 51
@@ -35,7 +36,7 @@ void configure_control_interface()
 
 void get_dpad_state(t_dpad_state* state)
 {
-	u32 button_states = DPAD_BUTTON_DATA;
+	u32 button_states = QUINT_BUTTON_MATRIX_DATA;
 
 	// Clear previous data
 	for (int i = 0; i < DPAD_BUTTON_COUNT; ++i)
@@ -68,7 +69,9 @@ void get_general_buttons_state(t_general_button_states* state)
 			& 0x1)
 			| ((XGpioPs_ReadPin(&extra_buttons_gpio, B_BUTTON_PIN) & 0x1) << 1);
 
-	u32 center_dpad_state = DPAD_BUTTON_DATA & 0x1;
+	u32 center_dpad_state = QUINT_BUTTON_MATRIX_DATA & 0x1;
+
+	u32 switch_state = SWITCH_DATA & 0x1;
 
 	// Clear previous data
 	for (int i = 0; i < GENERAL_BUTTON_COUNT; ++i)
@@ -100,7 +103,12 @@ void get_general_buttons_state(t_general_button_states* state)
 		write_index++;
 	}
 
-	// TODO: Process switch.
+	// Process the right most switch, which will act as SELECT
+	if(switch_state)
+	{
+		state->active_buttons[write_index] = SELECT;
+		state->len += 1;
+	}
 
 
 }
