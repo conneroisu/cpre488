@@ -181,6 +181,15 @@ void draw_game_menu(u16 (*fb)[VIDEO_WIDTH], int selected_index, int menu_offset)
  */
 char* convert_game_name(const char* original_name);
 
+/**
+ * @brief Get the file name on the sd card for the cover of the game with title given.
+ * 
+ * @param title is the title of the game to get the cover file name for.
+ * @param out is the response of the function's work.
+ * @param out_size is the expected max size of the output.
+ */
+void get_cover_filename(const char *title, char *out, size_t out_size);
+
 #ifdef __cplusplus
 }
 #endif

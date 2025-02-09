@@ -93,6 +93,62 @@ char* convert_game_name(const char* original_name) {
     
     return new_name;
 }
+char* convert_game_name_ppm(const char* original_name) {
+    if (!original_name) return NULL;
+    
+    // Count how many replacements we'll need to determine buffer size
+    int underscores = 0;
+    int hyphens = 0;
+    int len = strlen(original_name);
+    
+    for (int i = 0; i < len; i++) {
+        if (original_name[i] == '_') underscores++;
+        if (original_name[i] == '-') hyphens++;
+    }
+    
+    // Calculate new string length:
+    // original length 
+    // + 1 extra char for each underscore (ZZ is 2, original was 1)
+    // + 1 extra char for each hyphen (YY is 2, original was 1)
+    // + 4 for ".ppm"
+    // + 1 for null terminator
+    int new_len = len + underscores + hyphens + 4 + 1;
+    
+    char* new_name = (char*)malloc(new_len);
+    if (!new_name) return NULL;
+    
+    int j = 0;
+    // Copy characters with replacements
+    for (int i = 0; i < len; i++) {
+        if (original_name[i] == '_') {
+            new_name[j++] = 'Z';
+            new_name[j++] = 'Z';
+        }
+        else if (original_name[i] == '-') {
+            new_name[j++] = 'Y';
+            new_name[j++] = 'Y';
+        }
+        else {
+            new_name[j++] = original_name[i];
+        }
+    }
+    
+    // Add .ppm extension
+    strcpy(&new_name[j], ".ppm");
+    
+    return new_name;
+}
+
+// // Example usage:
+// void example_usage_ppm() {
+//     Game game = {"Mega_Man", 1987, "Action-Platformer"};
+//     char* converted = convert_game_name_ppm(game.title);
+//     if (converted) {
+//         printf("Original: %s\n", game.title);
+//         printf("Converted: %s\n", converted);
+//         free(converted);  // Don't forget to free the allocated memory
+//     }
+// }
 
 Game games[] = {
     {"Paperboy", 1985, "Action/Simulation"},
@@ -469,7 +525,8 @@ static void skip_whitespace(FILE *fp) {
  * Construct a cover image filename.
  */
 void get_cover_filename(const char *title, char *out, size_t out_size) {
-  snprintf(out, out_size, "./covers/%s.ppm", title);
+  char* cover_name = convert_game_name_ppm(title);
+  snprintf(out, out_size, "./covers/%s", cover_name);
 }
 
 /*
@@ -755,6 +812,8 @@ void draw_game_menu(u16 (*fb)[VIDEO_WIDTH], int selected_index,
             line_info,                      // text: year info
             0x0000);                        // color: black
 }
+
+
 
 ///*
 // * Main interactive loop.

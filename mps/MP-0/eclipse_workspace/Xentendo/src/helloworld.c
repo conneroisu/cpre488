@@ -9,12 +9,13 @@
 #include "xparameters.h"
 #include "xvtc.h"
 #include "menu.h"
+#include "controls.h"
+
 
 #define IMAGE_WIDTH 640
 #define IMAGE_HEIGHT 480
 #define STRIDE IMAGE_WIDTH * 2
 
-extern uint16_t NesPalette3[65];
 typedef u16 t_image_type[IMAGE_HEIGHT][IMAGE_WIDTH];
 
 t_image_type front_buffer;
@@ -45,7 +46,7 @@ int main()
 
   char *selected_game = game_menu();
 
-      while (1)
+  while (1)
   {
     nes_load(selected_game);
   }
