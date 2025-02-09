@@ -7,6 +7,9 @@
 #define ROWS_GAME_MENU 25
 #define NUM_GAMES (sizeof(games) / sizeof(games[0]))
 
+#define TEXT_UNDERSCORE_REPLACEMENT "ZZ"
+#define TEXT_DASH_REPLACEMENT "YY"
+
 #define MENU_TITLE "Xtendo Game Menu"
 #define MENU_EOL "END OF LIST"
 #define MENU_WIDTH 250
@@ -43,124 +46,6 @@ typedef struct {
   int year_released;
   const char *genre;
 } Game;
-
-Game games[] = {
-    {"Paperboy", 1985, "Action/Simulation"},
-    {"Mega_Man", 1987, "Action-Platformer"},
-    {"The_Legend_of_Zelda", 1986, "Action-Adventure"},
-    {"The_Legend_of_Zelda_II", 1987, "Action-Adventure/RPG"},
-    {"Adventure_Island_II", 1991, "Platformer/Action"},
-    {"Super_Mario_Bros", 1985, "Platformer"},
-    {"Super_Mario_Bros_2", 1988, "Platformer"},
-    {"Super_Mario_Bros_3", 1990, "Platformer"},
-    {"Donkey_Kong", 1981, "Arcade/Platform"},
-    {"Donkey_Kong_Jr", 1982, "Arcade/Platform"},
-    {"Excitebike", 1984, "Racing"},
-    {"Ice_Climber", 1985, "Platformer"},
-    {"Balloon_Fight", 1984, "Arcade/Action"},
-    {"Indiana_Jones", 1989, "Action-Adventure"},
-    {"RBI_Baseball", 1988, "Sports"},
-    {"Batman_-_The_Video_Game", 1989, "Action/Platformer"},
-    {"Battle_of_Olympus", 1988, "Action/Platformer"},
-    {"Battletoads_-_Double_Dragon", 1993, "Beat_‘em_up"},
-    {"Bionic_Commando", 1988, "Action/Platformer"},
-    {"Blades_of_Steel", 1988, "Sports_(Ice_Hockey)"},
-    {"Bomberman", 1983, "Maze/Action"},
-    {"Bombermen", 1990, "Action/Puzzle"},
-    {"Bad_Dudes", 1988, "Beat_‘em_up"},
-    {"Bubble_Bobble", 1986, "Platform/Puzzle"},
-    {"Bucky_O'Hare", 1992, "Platformer"},
-    {"Tetris", 1984, "Puzzle"},
-    {"Tetris_2", 1990, "Puzzle"},
-    {"BurgerTime", 1982, "Arcade/Action"},
-    {"Cabal", 1988, "Run_and_Gun"},
-    {"Captain_Skyhawk", 1990, "Shooter_(Horizontal_scrolling)"},
-    {"Castlevania", 1986, "Action-Adventure/Platformer"},
-    {"Castlevania_II_-_Simon's_Quest", 1987, "Action-Adventure"},
-    {"Circus_Caper", 1988, "Platformer"},
-    {"Clash_at_Demonhead", 1989, "Platformer"},
-    {"Cobra_Triangle", 1989, "Action/Arcade"},
-    {"Commando", 1985, "Run_and_Gun"},
-    {"Contra", 1987, "Run_and_Gun"},
-    {"Contra_Force", 1992, "Run_and_Gun"},
-    {"Coop-Super_Mario_Bros", 1991, "Platformer_(Coop)"},
-    {"Crystalis", 1990, "Action_RPG"},
-    {"Darkwing_Duck", 1992, "Platformer"},
-    {"Die_Hard", 1989, "Action"},
-    {"Double_Dragon", 1987, "Beat_‘em_up"},
-    {"Double_Dragon_II", 1988, "Beat_‘em_up"},
-    {"Double_Dribble", 1986, "Sports_(Basketball)"},
-    {"Dragon_Spirit", 1989, "Shooter"},
-    {"DuckTales", 1989, "Platformer"},
-    {"Elevator_Action", 1983, "Stealth/Action"},
-    {"Faxanadu", 1987, "Action_RPG/Platformer"},
-    {"Felix_the_Cat", 1992, "Platformer"},
-    {"Fire_'n_Ice", 1992, "Action/Platformer"},
-    {"G.I._Joe", 1985, "Action/Run_and_Gun"},
-    {"Galaxy_5000", 1988, "Racing"},
-    {"Gargoyle's_Quest_II", 1992, "Action-Adventure/RPG"},
-    {"Ghosts'n_Goblins", 1985, "Platformer"},
-    {"Guerrilla_War", 1987, "Beat_‘em_up"},
-    {"Gun.Smoke", 1985, "Run_and_Gun"},
-    {"Gun_Nac", 1990, "Shoot_‘em_up"},
-    {"Hogan's_Alley", 1984, "Light_Gun_Shooter"},
-    {"Ice_Hockey", 1991, "Sports"},
-    {"Jackal", 1986, "Run_and_Gun"},
-    {"Journey_to_Silius", 1990, "Run_and_Gun"},
-    {"KickMaster", 1990, "Platformer/Fighting"},
-    {"Kid_Icarus", 1986, "Action-Platformer"},
-    {"Kirby's_Adventure", 1993, "Platformer"},
-    {"Lemmings", 1991, "Puzzle"},
-    {"Life_Force", 1986, "Shooter"},
-    {"Little_Nemo", 1990, "Platformer"},
-    {"Little_Samson", 1992, "Platformer"},
-    {"Lode_Runner", 1983, "Puzzle/Platform"},
-    {"Mega_Man_2", 1988, "Action-Platformer"},
-    {"Mega_Man_3", 1990, "Action-Platformer"},
-    {"Mega_Man_4", 1991, "Action-Platformer"},
-    {"Mega_Man_5", 1992, "Action-Platformer"},
-    {"Mega_Man_6", 1993, "Action-Platformer"},
-    {"Metroid", 1986, "Action-Adventure"},
-    {"Mighty_Final_Fight", 1993, "Beat_‘em_up"},
-    {"Ms._Pac-Man", 1982, "Arcade"},
-    {"Ninja_Crusaders", 1992, "Action/Beat_‘em_up"},
-    {"North_and_South", 1989, "Strategy"},
-    {"Maniac_Mansion", 1987, "Graphic_Adventure"},
-    {"Marble_Madness", 1984, "Puzzle/Arcade"},
-    {"Popeye", 1982, "Action/Arcade"},
-    {"Power_Blade", 1990, "Action/Platform"},
-    {"Prince_of_Persia", 1989, "Action-Adventure/Platformer"},
-    {"Pro_Wrestling", 1986, "Sports/Fighting"},
-    {"R.C._Pro-Am", 1988, "Racing"},
-    {"Rad_Racer", 1987, "Racing"},
-    {"Rampage", 1986, "Action"},
-    {"River_City_Ransom", 1989, "Beat_‘em_up_with_RPG_elements"},
-    {"Robin_Hood_-_Prince_of_Thieves", 1991, "Action/Platformer"},
-    {"Rollergames", 1991, "Sports"},
-    {"Rygar", 1986, "Action-Adventure"},
-    {"S.C.A.T", 1992, "Run_and_Gun"},
-    {"Shadow_of_the_Ninja", 1990, "Beat_‘em_up"},
-    {"Track_&_Field", 1983, "Sports"},
-    {"Shadowgate", 1987, "Adventure/Puzzle"},
-    {"Shatterhand", 1991, "Beat_‘em_up/Platformer"},
-    {"Strider", 1989, "Action/Platformer"},
-    {"Super_Dodge_Ball", 1991, "Sports"},
-    {"Tecmo_World_Wrestling", 1991, "Sports/Fighting"},
-    {"Super_Spike_V_Ball", 1990, "Sports"},
-    {"Tecmo_Super_Bowl", 1991, "Sports"},
-    {"The_Legend_of_Kage", 1985, "Action/Stealth"},
-    {"Teenage_Mutant_Ninja_Turtles_I", 1993, "Fighting"},
-    {"Teenage_Mutant_Ninja_Turtles_II", 1991, "Beat_‘em_up"},
-    {"The_Flintstones", 1991, "Platformer"},
-    {"Super_Pitfall", 1992, "Platformer"},
-    {"The_Guardian_Legend", 1988, "Action-Adventure/Shooter"},
-    {"Top_Gun", 1987, "Flight_Simulator/Action"},
-    {"The_Little_Mermaid", 1991, "Platformer"},
-    {"The_Magic_of_Scheherazade", 1992, "Puzzle/Adventure"},
-    {"Tiny_Toon_Adventures", 1992, "Platformer"},
-    {"Vice_-_Project_Doom", 1991, "Action/Platformer"},
-    {"Wizards_&_Warriors", 1987, "Action-Adventure"},
-};
 
 /*
  * Complete 8x8 font table for the first 128 ASCII characters.
@@ -710,7 +595,7 @@ void draw_game_menu(u16 (*fb)[VIDEO_WIDTH], int selected_index,
 ///*
 // * Main interactive loop.
 // */
-//int main(void) {
+// int main(void) {
 //  int total_games = sizeof(games) / sizeof(games[0]);
 //  int selected_index = 0;
 //  int menu_offset = 0;

@@ -18,6 +18,7 @@ void NESCore_Callback_OutputFrame(word *WorkFrame) {
 	uint32_t i, j, i_ptr, j_ptr;
 	uint16_t *ptr = (uint16_t *)FBUFFER_BASEADDR;
 	uint16_t tpixel;
+	uint16_t tcol;
 
 	// blank unused part of screen
 	for (i = 0 ; i < 480; i++) {
@@ -35,10 +36,11 @@ void NESCore_Callback_OutputFrame(word *WorkFrame) {
 		for (j = 0; j < NES_DISP_WIDTH; j++) {
 			// Grab a temporary pixel using the color palette lookup table.
 			tpixel = NesPalette3[WorkFrame[NES_DISP_WIDTH*i+j]];
-			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64))] = tpixel << 4;
-			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64))] = tpixel << 4;
-			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64 + 1))] = tpixel << 4;
-			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64 + 1))] = tpixel << 4;
+
+			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64))] = tpixel;
+			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64))] = tpixel;
+			ptr[((640 * (i_ptr + 3)) + (j_ptr + 64 + 1))] = tpixel;
+			ptr[((640 * (i_ptr + 4)) + (j_ptr + 64 + 1))] = tpixel;
 			j_ptr += 2;
 		}
 		i_ptr += 2;
@@ -115,7 +117,7 @@ uint32_t NesPalette2[65] = {
     0xffefa6, 0xfff79c, 0xd7e895, 0xa6edaf, 0xa2f2da, 0x99fffc, 0xdddddd,
     0x111111, 0x111111};
 
-// 16-bit version of the improved NES Palette
+// 16-bit version of the improved NES Pale`tte
 uint16_t NesPalette3[65] = {
     0x0000, 0x0888, 0x0A30, 0x0B10, 0x0904, 0x050A, 0x020C, 0x000B, 0x0018,
     0x0025, 0x0041, 0x0040, 0x0240, 0x0640, 0x0000, 0x0000, 0x0000, 0x0CCC,
