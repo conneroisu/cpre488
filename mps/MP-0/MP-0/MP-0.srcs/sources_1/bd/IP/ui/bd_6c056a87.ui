@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.655153",
-   "Default View_TopLeft":"417,23",
+   "Default View_ScaleFactor":"1.0643",
+   "Default View_TopLeft":"-287,240",
    "ExpandedHierarchyInLayout":"",
    "PinnedPorts":"DDR|",
    "comment_0":"VDD",
@@ -28,7 +28,7 @@ preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -x 780 -y 360 -defaultsOSRD
 preplace inst rst_ps7_0_100M -pg 1 -lvl 2 -x 420 -y 460 -defaultsOSRD
 preplace inst axi_vdma_0 -pg 1 -lvl 4 -x 1200 -y 900 -defaultsOSRD
 preplace inst v_tc_0 -pg 1 -lvl 5 -x 1760 -y 860 -defaultsOSRD
-preplace inst v_axi4s_vid_out_0 -pg 1 -lvl 6 -x 2250 -y 630 -defaultsOSRD
+preplace inst v_axi4s_vid_out_0 -pg 1 -lvl 6 -x 2280 -y 630 -defaultsOSRD
 preplace inst xlslice_0 -pg 1 -lvl 4 -x 1200 -y 510 -defaultsOSRD
 preplace inst xlslice_1 -pg 1 -lvl 4 -x 1200 -y 610 -defaultsOSRD
 preplace inst xlslice_2 -pg 1 -lvl 4 -x 1200 -y 710 -defaultsOSRD
@@ -36,9 +36,9 @@ preplace inst xlslice_3 -pg 1 -lvl 3 -x 780 -y 100 -defaultsOSRD
 preplace inst xlslice_4 -pg 1 -lvl 4 -x 1200 -y 1090 -defaultsOSRD
 preplace inst xlslice_5 -pg 1 -lvl 4 -x 1200 -y 1370 -defaultsOSRD
 preplace inst xlconstant_0 -pg 1 -lvl 4 -x 1200 -y 1470 -defaultsOSRD
-preplace inst xlslice_6 -pg 1 -lvl 7 -x 2580 -y 850 -defaultsOSRD
-preplace inst xlslice_7 -pg 1 -lvl 7 -x 2580 -y 750 -defaultsOSRD
-preplace inst xlslice_8 -pg 1 -lvl 7 -x 2580 -y 650 -defaultsOSRD
+preplace inst xlslice_6 -pg 1 -lvl 7 -x 2610 -y 850 -defaultsOSRD
+preplace inst xlslice_7 -pg 1 -lvl 7 -x 2610 -y 750 -defaultsOSRD
+preplace inst xlslice_8 -pg 1 -lvl 7 -x 2610 -y 650 -defaultsOSRD
 preplace inst axi_gpio_1 -pg 1 -lvl 5 -x 1760 -y 180 -defaultsOSRD
 preplace inst axi_interconnect_0 -pg 1 -lvl 1 -x -40 -y 360 -defaultsOSRD
 preplace inst proc_sys_reset_0 -pg 1 -lvl 4 -x 1200 -y 1230 -defaultsOSRD
@@ -53,13 +53,13 @@ preplace netloc xlslice_3_Dout 1 3 1 960 100n
 preplace netloc xlslice_4_Dout 1 4 1 1540 920n
 preplace netloc xlslice_5_Dout 1 4 2 1520J 260 2000
 preplace netloc xlconstant_0_dout 1 4 2 1510 100 1990
-preplace netloc v_axi4s_vid_out_0_vid_hsync 1 6 2 N 580 2690
-preplace netloc v_axi4s_vid_out_0_vid_vsync 1 6 2 2450 590 2680
-preplace netloc v_axi4s_vid_out_0_vid_data 1 6 1 2440 560n
+preplace netloc v_axi4s_vid_out_0_vid_hsync 1 6 2 N 580 2720
+preplace netloc v_axi4s_vid_out_0_vid_vsync 1 6 2 2480 590 2710
+preplace netloc v_axi4s_vid_out_0_vid_data 1 6 1 2470 560n
 preplace netloc xlslice_8_Dout 1 7 1 N 650
-preplace netloc xlslice_7_Dout 1 7 1 2700 670n
-preplace netloc xlslice_6_Dout 1 7 1 2710 710n
-preplace netloc v_axi4s_vid_out_0_vtg_ce 1 4 3 1550 60 N 60 2430
+preplace netloc xlslice_7_Dout 1 7 1 2730 670n
+preplace netloc xlslice_6_Dout 1 7 1 2740 710n
+preplace netloc v_axi4s_vid_out_0_vtg_ce 1 4 3 1550 60 N 60 2460
 preplace netloc xlslice_1_Dout 1 4 1 1400 200n
 preplace netloc processing_system7_0_FCLK_CLK1 1 1 5 N 700 N 700 980 450 1490J 450 1970
 preplace netloc proc_sys_reset_0_peripheral_aresetn 1 4 1 1550 900n
@@ -70,22 +70,22 @@ preplace netloc axi_vdma_0_m_axis_mm2s_tlast 1 4 2 1450J 440 2020J
 preplace netloc v_axi4s_vid_out_0_s_axis_video_tready 1 4 2 1420J 90 2060J
 preplace netloc axi_vdma_0_m_axis_mm2s_tuser 1 4 2 1500J 460 1980J
 preplace netloc axi_vdma_0_m_axis_mm2s_tvalid 1 4 2 1530J 720 1960J
-preplace netloc axi_vdma_0_M_AXI_MM2S 1 0 5 -290 160 NJ 160 NJ 160 940J 170 1380
-preplace netloc axi_gpio_2_GPIO 1 5 3 2050 420 N 420 N
-preplace netloc axi_interconnect_0_M00_AXI 1 0 2 -280 480 190
+preplace netloc processing_system7_0_DDR 1 1 7 230 560 N 560 940 420 N 420 2040 430 N 430 2720
+preplace netloc processing_system7_0_FIXED_IO 1 1 7 210 570 N 570 970 430 N 430 2030 440 N 440 2710
 preplace netloc ps7_0_axi_periph_M02_AXI 1 3 2 N 360 1390
-preplace netloc ps7_0_axi_periph_M03_AXI 1 3 2 N 380 1460
-preplace netloc ps7_0_axi_periph_M01_AXI 1 3 1 950 400n
-preplace netloc processing_system7_0_DDR 1 1 7 230 560 N 560 940 420 N 420 2040 430 N 430 2690
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 200 220 N
-preplace netloc processing_system7_0_FIXED_IO 1 1 7 210 570 N 570 970 430 N 430 2030 440 N 440 2680
-preplace netloc v_tc_0_vtiming_out 1 5 1 2060 620n
+preplace netloc axi_vdma_0_M_AXI_MM2S 1 0 5 -290 160 NJ 160 NJ 160 940J 170 1380
 preplace netloc ps7_0_axi_periph_M00_AXI 1 3 2 N 320 N
 preplace netloc axi_gpio_1_GPIO 1 5 3 N 180 N 180 N
+preplace netloc axi_interconnect_0_M00_AXI 1 0 2 -280 480 190
+preplace netloc ps7_0_axi_periph_M03_AXI 1 3 2 N 380 1460
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 200 220 N
+preplace netloc v_tc_0_vtiming_out 1 5 1 2060 620n
+preplace netloc axi_gpio_2_GPIO 1 5 3 2050 420 N 420 N
+preplace netloc ps7_0_axi_periph_M01_AXI 1 3 1 950 400n
 preplace netloc axi_gpio_0_GPIO1 1 5 3 1970J 320 NJ 320 NJ
 preplace netloc ps7_0_axi_periph_M01_AXI1 1 3 2 950 160 NJ
 preplace cgraphic comment_0 place top -8 32 textcolor 4 linecolor 3 linewidth 2
-levelinfo -pg 1 -310 -40 420 780 1200 1760 2250 2580 3240
+levelinfo -pg 1 -310 -40 420 780 1200 1760 2280 2610 3240
 pagesize -pg 1 -db -bbox -sgen -310 -140 3380 1810
 ",
    "linecolor_comment_0":"",
@@ -94,18 +94,18 @@ pagesize -pg 1 -db -bbox -sgen -310 -140 3380 1810
    "textcolor_comment_0":""
 }
 {
-   """""""""""""""""""da_axi4_cnt""""""""""""""""""":"11",
-   """""""""""""""""""da_board_cnt""""""""""""""""""":"9",
-   """""""""""""""""""da_clkrst_cnt""""""""""""""""""":"4",
-   """""""""""""""""""da_ps7_cnt""""""""""""""""""":"2",
-   """""""""""""""""da_clkrst_cnt""""""""""""""""":"5",
-   """"""""""""""da_board_cnt"""""""""""""":"1",
-   """"""""""""""da_clkrst_cnt"""""""""""""":"8",
-   """""""""""""da_clkrst_cnt""""""""""""":"1",
-   """""""""""da_clkrst_cnt""""""""""":"1",
+   """"""""""""""""""""da_axi4_cnt"""""""""""""""""""":"11",
+   """"""""""""""""""""da_board_cnt"""""""""""""""""""":"9",
+   """"""""""""""""""""da_clkrst_cnt"""""""""""""""""""":"4",
+   """"""""""""""""""""da_ps7_cnt"""""""""""""""""""":"2",
+   """"""""""""""""""da_clkrst_cnt"""""""""""""""""":"5",
+   """""""""""""""da_board_cnt""""""""""""""":"1",
+   """""""""""""""da_clkrst_cnt""""""""""""""":"8",
+   """"""""""""""da_clkrst_cnt"""""""""""""":"1",
+   """"""""""""da_clkrst_cnt"""""""""""":"1",
+   """da_axi4_cnt""":"1",
    ""da_axi4_cnt"":"1",
-   "da_axi4_cnt":"1",
-   "da_board_cnt":"1"
+   ""da_board_cnt"":"1"
 }
 {
    "/xlconstant_0/comment_0":"comment_0"

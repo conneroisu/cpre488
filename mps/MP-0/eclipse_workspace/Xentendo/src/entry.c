@@ -11,6 +11,7 @@
 #include "xvtc.h"
 #include "menu.h"
 #include "controls.h"
+#include "xgpiops.h"
 
 
 #define IMAGE_WIDTH 640
@@ -22,6 +23,7 @@ typedef u16 t_image_type[IMAGE_HEIGHT][IMAGE_WIDTH];
 t_image_type front_buffer;
 
 t_dpad_state dpad_state;
+t_general_button_states general_button_states;
 
 char *game_menu()
 {
@@ -45,8 +47,12 @@ int main()
   configure_control_interface();
 
   // Allocate space for the dpad data.
-  dpad_state.active_buttons = malloc(sizeof(t_dpad_buttons) * BUTTON_COUNT);
+  dpad_state.active_buttons = malloc(sizeof(t_dpad_buttons) * DPAD_BUTTON_COUNT);
   dpad_state.len = 0;
+
+  // Allocate space for the general button data.
+  general_button_states.active_buttons = malloc(sizeof(t_general_button_states) * GENERAL_BUTTON_COUNT);
+  general_button_states.len = 0;
 
   // Initialize the NESCore
   NESCore_Init();

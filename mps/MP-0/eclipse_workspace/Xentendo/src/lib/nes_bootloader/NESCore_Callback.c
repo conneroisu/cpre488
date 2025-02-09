@@ -79,10 +79,16 @@ void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2)
 	// This object has the space allocated for it already.
 	extern t_dpad_state dpad_state;
 
+	extern t_general_button_states general_button_states;
+
 	// Get input
 	get_dpad_state(&dpad_state);
+	get_general_buttons_state(&general_button_states);
 
-	// Process input
+	// Clear old input
+	*pdwPad1 = 0;
+
+	// Process dpad inputs
 	for(int i = 0; i < dpad_state.len; ++i)
 	{
 		switch(dpad_state.active_buttons[i])
@@ -91,7 +97,7 @@ void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2)
 				*pdwPad1 |= NCTL_UP;
 				break;
 			case DOWN:
-				*pdwPad1 |= NCTL_DOWN;
+				*pdwPad1 |= NCTL_SELECT;
 				break;
 			case LEFT:
 				*pdwPad1 |= NCTL_LEFT;
@@ -99,8 +105,25 @@ void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2)
 			case RIGHT:
 				*pdwPad1 |= NCTL_RIGHT;
 				break;
-			case CENTER:
+			default:
+				break;
+		}
+	}
+
+	// Process general button inputs
+	for(int i = 0; i < general_button_states.len; ++i)
+	{
+		switch(general_button_states.active_buttons[i])
+		{
+			case A:
+				*pdwPad1 |= NCTL_A;
+				break;
+			case B:
+				*pdwPad1 |= NCTL_B;
+				break;
+			case START:
 				*pdwPad1 |= NCTL_START;
+				break;
 			default:
 				break;
 		}

@@ -4,7 +4,7 @@
 	// Types
 	enum dpad_buttons
 	{
-		NONE = 0,
+		NO_DPAD = 0,
 		UP = 0b10000,
 		DOWN = 0b10,
 		LEFT = 0b100,

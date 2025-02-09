@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Sat Feb  8 19:51:25 2025
+--Date        : Sat Feb  8 21:29:31 2025
 --Host        : CO2041-16 running 64-bit major release  (build 9200)
 --Command     : generate_target IP_wrapper.bd
 --Design      : IP_wrapper
@@ -53,7 +53,6 @@ architecture STRUCTURE of IP_wrapper is
     VGA_B : out STD_LOGIC_VECTOR ( 3 downto 0 );
     VGA_G : out STD_LOGIC_VECTOR ( 3 downto 0 );
     VGA_R : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -76,6 +75,7 @@ architecture STRUCTURE of IP_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     leds_8bits_0_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component IP;
