@@ -7,18 +7,18 @@
 
 void configure_control_interface()
 {
-	// Configure for input
-	GPIO_1_MODE = 0x1;
+  // Configure for input
+  GPIO_1_MODE = 0x1;
 }
 
 void get_dpad_state(t_dpad_state* state)
 {
-	u32 button_states = BUTTON_DATA;
+  u32 button_states = BUTTON_DATA;
 
-	for(int i = 0; i < 6; ++i)
-	{
-		(state->state)[i] = (button_states & (0x1 << i));
-	}
+  for (int i = 0; i < 6; ++i)
+  {
+    (state->state)[i] = (button_states & (0x1 << i));
+  }
 
-	state->len = 5;
+  state->len = 5;
 }

@@ -3,7 +3,6 @@
 	<name>Xentendo</name>
 	<comment>Created by Vitis v2020.1</comment>
 	<projects>
-		<project>NES_HW_Platform_1</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
