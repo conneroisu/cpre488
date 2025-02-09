@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Sat Feb  8 13:56:21 2025
---Host        : CO2041-04 running 64-bit major release  (build 9200)
+--Date        : Sat Feb  8 18:52:45 2025
+--Host        : CO2041-16 running 64-bit major release  (build 9200)
 --Command     : generate_target IP.bd
 --Design      : IP
 --Purpose     : IP block netlist
@@ -2216,7 +2216,7 @@ entity IP is
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of IP : entity is "IP,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=IP,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=33,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,""""""""""""""""""""""""""""""da_axi4_cnt""""""""""""""""""""""""""""""=11,""""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""""=9,""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""=4,""""""""""""""""""""""""""""""da_ps7_cnt""""""""""""""""""""""""""""""=2,""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""=5,""""""""""""""""""""da_board_cnt""""""""""""""""""""=1,""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""=8,""""""""""""""""""da_clkrst_cnt""""""""""""""""""=1,""""""""""""""da_clkrst_cnt""""""""""""""=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of IP : entity is "IP,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=IP,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=33,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,""""""""""""""""""""""""""""""""da_axi4_cnt""""""""""""""""""""""""""""""""=11,""""""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""""""=9,""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""=4,""""""""""""""""""""""""""""""""da_ps7_cnt""""""""""""""""""""""""""""""""=2,""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""=5,""""""""""""""""""""""da_board_cnt""""""""""""""""""""""=1,""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""=8,""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""=1,""""""""""""""""da_clkrst_cnt""""""""""""""""=1,da_axi4_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of IP : entity is "IP.hwdef";
 end IP;

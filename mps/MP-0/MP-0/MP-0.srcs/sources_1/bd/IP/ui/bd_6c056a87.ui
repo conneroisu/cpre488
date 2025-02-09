@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.72896",
-   "Default View_TopLeft":"1440,338",
+   "Default View_ScaleFactor":"0.403294",
+   "Default View_TopLeft":"650,-32",
    "ExpandedHierarchyInLayout":"",
    "PinnedPorts":"DDR|",
    "comment_0":"VDD",
@@ -69,20 +69,20 @@ preplace netloc axi_vdma_0_m_axis_mm2s_tlast 1 4 2 1450J 440 1960J
 preplace netloc v_axi4s_vid_out_0_s_axis_video_tready 1 4 2 1420J 90 2030J
 preplace netloc axi_vdma_0_m_axis_mm2s_tuser 1 4 2 1500J 460 1980J
 preplace netloc axi_vdma_0_m_axis_mm2s_tvalid 1 4 2 1530J 720 1960J
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 200 220 N
-preplace netloc axi_interconnect_0_M00_AXI 1 0 2 -280 480 190
-preplace netloc processing_system7_0_FIXED_IO 1 1 7 210 570 N 570 970 430 N 430 1970 440 N 440 2680
-preplace netloc ps7_0_axi_periph_M04_AXI 1 3 1 950 400n
-preplace netloc ps7_0_axi_periph_M02_AXI 1 3 2 N 360 1390
-preplace netloc ps7_0_axi_periph_M00_AXI 1 3 2 N 320 N
-preplace netloc axi_vdma_0_M_AXI_MM2S 1 0 5 -290 160 N 160 N 160 940 170 1380
-preplace netloc axi_gpio_1_GPIO 1 5 3 N 180 N 180 N
-preplace netloc v_tc_0_vtiming_out 1 5 1 2030 620n
-preplace netloc ps7_0_axi_periph_M03_AXI 1 3 2 N 380 1460
-preplace netloc processing_system7_0_DDR 1 1 7 230 560 N 560 940 420 N 420 1980 430 N 430 2690
-preplace netloc ps7_0_axi_periph_M01_AXI 1 3 2 950 160 N
-preplace netloc axi_gpio_2_GPIO 1 5 3 2000 420 N 420 N
 preplace netloc axi_gpio_0_GPIO 1 5 3 N 340 N 340 N
+preplace netloc ps7_0_axi_periph_M01_AXI 1 3 2 950 160 N
+preplace netloc axi_interconnect_0_M00_AXI 1 0 2 -280 480 190
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 200 220 N
+preplace netloc ps7_0_axi_periph_M02_AXI 1 3 2 N 360 1390
+preplace netloc processing_system7_0_DDR 1 1 7 230 560 N 560 940 420 N 420 1980 430 N 430 2690
+preplace netloc ps7_0_axi_periph_M04_AXI 1 3 1 950 400n
+preplace netloc axi_gpio_2_GPIO 1 5 3 2000 420 N 420 N
+preplace netloc v_tc_0_vtiming_out 1 5 1 2030 620n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 3 2 N 320 N
+preplace netloc processing_system7_0_FIXED_IO 1 1 7 210 570 N 570 970 430 N 430 1970 440 N 440 2680
+preplace netloc axi_gpio_1_GPIO 1 5 3 N 180 N 180 N
+preplace netloc ps7_0_axi_periph_M03_AXI 1 3 2 N 380 1460
+preplace netloc axi_vdma_0_M_AXI_MM2S 1 0 5 -290 160 NJ 160 NJ 160 940J 170 1380
 preplace cgraphic comment_0 place top -8 32 textcolor 4 linecolor 3 linewidth 2
 levelinfo -pg 1 -310 -40 420 780 1200 1760 2250 2580 3240
 pagesize -pg 1 -db -bbox -sgen -310 -140 3380 1810
@@ -93,15 +93,16 @@ pagesize -pg 1 -db -bbox -sgen -310 -140 3380 1810
    "textcolor_comment_0":""
 }
 {
-   """"""""""""""""da_axi4_cnt"""""""""""""""":"11",
-   """"""""""""""""da_board_cnt"""""""""""""""":"9",
-   """"""""""""""""da_clkrst_cnt"""""""""""""""":"4",
-   """"""""""""""""da_ps7_cnt"""""""""""""""":"2",
-   """"""""""""""da_clkrst_cnt"""""""""""""":"5",
-   """""""""""da_board_cnt""""""""""":"1",
-   """""""""""da_clkrst_cnt""""""""""":"8",
-   """"""""""da_clkrst_cnt"""""""""":"1",
-   """"""""da_clkrst_cnt"""""""":"1"
+   """""""""""""""""da_axi4_cnt""""""""""""""""":"11",
+   """""""""""""""""da_board_cnt""""""""""""""""":"9",
+   """""""""""""""""da_clkrst_cnt""""""""""""""""":"4",
+   """""""""""""""""da_ps7_cnt""""""""""""""""":"2",
+   """""""""""""""da_clkrst_cnt""""""""""""""":"5",
+   """"""""""""da_board_cnt"""""""""""":"1",
+   """"""""""""da_clkrst_cnt"""""""""""":"8",
+   """""""""""da_clkrst_cnt""""""""""":"1",
+   """""""""da_clkrst_cnt""""""""":"1",
+   "da_axi4_cnt":"1"
 }
 {
    "/xlconstant_0/comment_0":"comment_0"
