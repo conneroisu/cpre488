@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "platform.h"
 #include "xil_printf.h"
 #include "nes_bootloader.h"
@@ -20,6 +21,8 @@ typedef u16 t_image_type[IMAGE_HEIGHT][IMAGE_WIDTH];
 
 t_image_type front_buffer;
 
+t_dpad_state dpad_state;
+
 char *game_menu()
 {
   int selected_index = 0;
@@ -37,6 +40,13 @@ int main()
 
   // Initialize all memory space
   xil_init();
+
+  // Init GPIO for controls
+  configure_control_interface();
+
+  // Allocate space for the dpad data.
+  dpad_state.active_buttons = malloc(sizeof(t_dpad_buttons) * BUTTON_COUNT);
+  dpad_state.len = 0;
 
   // Initialize the NESCore
   NESCore_Init();

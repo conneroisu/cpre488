@@ -15,10 +15,26 @@ void get_dpad_state(t_dpad_state* state)
 {
 	u32 button_states = BUTTON_DATA;
 
-	for(int i = 0; i < 6; ++i)
+	// Clear previous data
+	for(int i = 0; i < BUTTON_COUNT; ++i)
 	{
-		(state->state)[i] = (button_states & (0x1 << i));
+		state->active_buttons[i] = 0;
+	}
+	state->len = 0;
+
+	int write_index = 0;
+
+	for (int i = 0; i < 6; ++i)
+	{
+		t_dpad_buttons button = (button_states & (0x1 << i));
+
+		if (button != NONE)
+		{
+			state->active_buttons[write_index] = button;
+			state->len += 1;
+			write_index++;
+		}
+
 	}
 
-	state->len = 5;
 }
