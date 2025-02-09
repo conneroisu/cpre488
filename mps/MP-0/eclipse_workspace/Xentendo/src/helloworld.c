@@ -15,24 +15,41 @@
 #define STRIDE IMAGE_WIDTH * 2
 
 extern uint16_t NesPalette3[65];
+typedef u16 t_image_type[IMAGE_HEIGHT][IMAGE_WIDTH];
+
+t_image_type front_buffer;
+
+char *game_menu()
+{
+  int selected_index = 0;
+  int menu_offset = 0;
+
+  draw_game_menu(front_buffer, selected_index, menu_offset);
+
+  return "roms/Paperboy.nes";
+}
 
 int main()
 {
-    init_platform();
 
-    // Initialize all memory space
-    xil_init();
+  init_platform();
 
-    // Initialize the NESCore
-    NESCore_Init();
+  // Initialize all memory space
+  xil_init();
 
-    // Enable the cache
-    Xil_DCacheEnable();
+  // Initialize the NESCore
+  NESCore_Init();
 
-    while (1) {
-      nes_load("Paperboy.nes");
-    }
-    cleanup_platform();
+  // Enable the cache
+  Xil_DCacheEnable();
 
-    return 0;
+  char *selected_game = game_menu();
+
+      while (1)
+  {
+    nes_load(selected_game);
+  }
+  cleanup_platform();
+
+  return 0;
 }

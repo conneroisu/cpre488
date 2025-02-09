@@ -88,26 +88,8 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_auto_pc_0/IP_auto_pc_0.xci">
-          <Proxy FileSetName="IP_auto_pc_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_auto_pc_1/IP_auto_pc_1.xci">
-          <Proxy FileSetName="IP_auto_pc_1"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_pixel_stream_correct_0_0/IP_pixel_stream_correct_0_0.xci">
           <Proxy FileSetName="IP_pixel_stream_correct_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_xbar_0/IP_xbar_0.xci">
-          <Proxy FileSetName="IP_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_processing_system7_0_0/IP_processing_system7_0_0.xci">
-          <Proxy FileSetName="IP_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_vdma_0_0/IP_axi_vdma_0_0.xci">
-          <Proxy FileSetName="IP_axi_vdma_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_rst_ps7_0_100M_2/IP_rst_ps7_0_100M_2.xci">
-          <Proxy FileSetName="IP_rst_ps7_0_100M_2"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_proc_sys_reset_0_0/IP_proc_sys_reset_0_0.xci">
           <Proxy FileSetName="IP_proc_sys_reset_0_0"/>
@@ -115,8 +97,23 @@
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_v_axi4s_vid_out_0_1/IP_v_axi4s_vid_out_0_1.xci">
           <Proxy FileSetName="IP_v_axi4s_vid_out_0_1"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_xbar_0/IP_xbar_0.xci">
+          <Proxy FileSetName="IP_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_vdma_0_0/IP_axi_vdma_0_0.xci">
+          <Proxy FileSetName="IP_axi_vdma_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_v_tc_0_0/IP_v_tc_0_0.xci">
+          <Proxy FileSetName="IP_v_tc_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_rst_ps7_0_100M_2/IP_rst_ps7_0_100M_2.xci">
+          <Proxy FileSetName="IP_rst_ps7_0_100M_2"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_gpio_0_5/IP_axi_gpio_0_5.xci">
           <Proxy FileSetName="IP_axi_gpio_0_5"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_processing_system7_0_0/IP_processing_system7_0_0.xci">
+          <Proxy FileSetName="IP_processing_system7_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_gpio_0_3/IP_axi_gpio_0_3.xci">
           <Proxy FileSetName="IP_axi_gpio_0_3"/>
@@ -124,8 +121,11 @@
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_gpio_0_4/IP_axi_gpio_0_4.xci">
           <Proxy FileSetName="IP_axi_gpio_0_4"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_v_tc_0_0/IP_v_tc_0_0.xci">
-          <Proxy FileSetName="IP_v_tc_0_0"/>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_auto_pc_0/IP_auto_pc_0.xci">
+          <Proxy FileSetName="IP_auto_pc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_auto_pc_1/IP_auto_pc_1.xci">
+          <Proxy FileSetName="IP_auto_pc_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_auto_us_0/IP_auto_us_0.xci">
           <Proxy FileSetName="IP_auto_us_0"/>
