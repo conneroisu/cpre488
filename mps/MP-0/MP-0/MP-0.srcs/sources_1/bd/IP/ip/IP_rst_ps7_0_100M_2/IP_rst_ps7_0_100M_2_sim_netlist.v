@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Sat Feb  8 21:31:56 2025
+// Date        : Sun Feb  9 14:34:02 2025
 // Host        : CO2041-16 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/neastbur/cpre488/mps/MP-0/MP-0/MP-0.srcs/sources_1/bd/IP/ip/IP_rst_ps7_0_100M_2/IP_rst_ps7_0_100M_2_sim_netlist.v
@@ -25,7 +25,7 @@ module IP_rst_ps7_0_100M_2
     peripheral_reset,
     interconnect_aresetn,
     peripheral_aresetn);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input slowest_sync_clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input slowest_sync_clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 ext_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME ext_reset, BOARD.ASSOCIATED_PARAM RESET_BOARD_INTERFACE, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input ext_reset_in;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 aux_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME aux_reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input aux_reset_in;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 dbg_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME dbg_reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input mb_debug_sys_rst;
@@ -34,7 +34,7 @@ module IP_rst_ps7_0_100M_2
   (* x_interface_info = "xilinx.com:signal:reset:1.0 bus_struct_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME bus_struct_reset, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0" *) output [0:0]bus_struct_reset;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 peripheral_high_rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME peripheral_high_rst, POLARITY ACTIVE_HIGH, TYPE PERIPHERAL, INSERT_VIP 0" *) output [0:0]peripheral_reset;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 interconnect_low_rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME interconnect_low_rst, POLARITY ACTIVE_LOW, TYPE INTERCONNECT, INSERT_VIP 0" *) output [0:0]interconnect_aresetn;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 peripheral_low_rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME peripheral_low_rst, POLARITY ACTIVE_LOW, TYPE PERIPHERAL, INSERT_VIP 0" *) output [0:5]peripheral_aresetn;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 peripheral_low_rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME peripheral_low_rst, POLARITY ACTIVE_LOW, TYPE PERIPHERAL, INSERT_VIP 0" *) output [0:6]peripheral_aresetn;
 
   wire aux_reset_in;
   wire [0:0]bus_struct_reset;
@@ -43,7 +43,7 @@ module IP_rst_ps7_0_100M_2
   wire [0:0]interconnect_aresetn;
   wire mb_debug_sys_rst;
   wire mb_reset;
-  wire [0:5]peripheral_aresetn;
+  wire [0:6]peripheral_aresetn;
   wire [0:0]peripheral_reset;
   wire slowest_sync_clk;
 
@@ -54,7 +54,7 @@ module IP_rst_ps7_0_100M_2
   (* C_FAMILY = "zynq" *) 
   (* C_NUM_BUS_RST = "1" *) 
   (* C_NUM_INTERCONNECT_ARESETN = "1" *) 
-  (* C_NUM_PERP_ARESETN = "6" *) 
+  (* C_NUM_PERP_ARESETN = "7" *) 
   (* C_NUM_PERP_RST = "1" *) 
   IP_rst_ps7_0_100M_2_proc_sys_reset U0
        (.aux_reset_in(aux_reset_in),
@@ -410,7 +410,7 @@ endmodule
 
 (* C_AUX_RESET_HIGH = "1'b0" *) (* C_AUX_RST_WIDTH = "4" *) (* C_EXT_RESET_HIGH = "1'b0" *) 
 (* C_EXT_RST_WIDTH = "4" *) (* C_FAMILY = "zynq" *) (* C_NUM_BUS_RST = "1" *) 
-(* C_NUM_INTERCONNECT_ARESETN = "1" *) (* C_NUM_PERP_ARESETN = "6" *) (* C_NUM_PERP_RST = "1" *) 
+(* C_NUM_INTERCONNECT_ARESETN = "1" *) (* C_NUM_PERP_ARESETN = "7" *) (* C_NUM_PERP_RST = "1" *) 
 (* ORIG_REF_NAME = "proc_sys_reset" *) 
 module IP_rst_ps7_0_100M_2_proc_sys_reset
    (slowest_sync_clk,
@@ -432,7 +432,7 @@ module IP_rst_ps7_0_100M_2_proc_sys_reset
   output [0:0]bus_struct_reset;
   output [0:0]peripheral_reset;
   output [0:0]interconnect_aresetn;
-  output [0:5]peripheral_aresetn;
+  output [0:6]peripheral_aresetn;
 
   wire Bsr_out;
   wire MB_out;
@@ -447,7 +447,7 @@ module IP_rst_ps7_0_100M_2_proc_sys_reset
   wire lpf_int;
   wire mb_debug_sys_rst;
   wire mb_reset;
-  wire [0:5]peripheral_aresetn;
+  wire [0:6]peripheral_aresetn;
   wire [0:0]peripheral_reset;
   wire slowest_sync_clk;
 
@@ -534,6 +534,18 @@ module IP_rst_ps7_0_100M_2_proc_sys_reset
         .CE(1'b1),
         .D(SEQ_n_4),
         .Q(peripheral_aresetn[5]),
+        .R(1'b0));
+  (* box_type = "PRIMITIVE" *) 
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b0),
+    .IS_D_INVERTED(1'b0),
+    .IS_R_INVERTED(1'b0)) 
+    \ACTIVE_LOW_PR_OUT_DFF[6].FDRE_PER_N 
+       (.C(slowest_sync_clk),
+        .CE(1'b1),
+        .D(SEQ_n_4),
+        .Q(peripheral_aresetn[6]),
         .R(1'b0));
   (* box_type = "PRIMITIVE" *) 
   FDRE #(
