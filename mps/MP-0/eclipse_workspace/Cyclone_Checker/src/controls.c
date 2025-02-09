@@ -2,7 +2,7 @@
 #include "xparameters.h"
 #include "xil_types.h"
 
-#define BUTTON_DATA *((volatile u32*) XPAR_AXI_GPIO_1_BASEADDR)
+#define QUINT_BUTTON_MATRIX_DATA *((volatile u32*) XPAR_AXI_GPIO_1_BASEADDR)
 #define GPIO_1_MODE *((volatile u32*) (XPAR_AXI_GPIO_1_BASEADDR + 0x4))
 
 void configure_control_interface()
@@ -13,11 +13,11 @@ void configure_control_interface()
 
 void get_dpad_state(t_dpad_state* state)
 {
-	u32 button_states = BUTTON_DATA;
+	u32 button_states = QUINT_BUTTON_MATRIX_DATA;
 
 	for(int i = 0; i < 6; ++i)
 	{
-		(state->state)[i] = (button_states & (0x1 << i));
+		(state->active_buttons)[i] = (button_states & (0x1 << i));
 	}
 
 	state->len = 5;

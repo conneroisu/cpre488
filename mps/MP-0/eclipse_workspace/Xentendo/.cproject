@@ -51,7 +51,7 @@
                                 								
                                 <option id="xilinx.gnu.compiler.option.debugging.level.431158142" name="Debug Level" superClass="xilinx.gnu.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
                                 								
-                                <option id="xilinx.gnu.compiler.inferred.swplatform.includes.776065701" name="Software Platform Include Path" superClass="xilinx.gnu.compiler.inferred.swplatform.includes" valueType="includePath"/>
+                                <option id="xilinx.gnu.compiler.inferred.swplatform.includes.776065701" name="Software Platform Include Path" superClass="xilinx.gnu.compiler.inferred.swplatform.includes"/>
                                 								
                                 <option id="xilinx.gnu.compiler.misc.other.1217414612" name="Other flags" superClass="xilinx.gnu.compiler.misc.other" value="-c -fmessage-length=0 -MT&quot;$@&quot; -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard" valueType="string"/>
                                 								
@@ -66,6 +66,8 @@
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Xentendo/src/lib/nes_bootloader/xilsd}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Xentendo/src/lib/menu}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/Xentendo/src/lib/controls}&quot;"/>
                                     								
                                 </option>
                                 								
@@ -356,5 +358,7 @@
         </configuration>
         	
     </storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
     
 </cproject>

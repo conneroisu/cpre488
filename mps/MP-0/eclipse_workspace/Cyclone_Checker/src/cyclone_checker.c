@@ -36,6 +36,10 @@
 // In us
 #define ZOOM_DELTA 10000
 
+// Optional modes, should not be activated at the same time.
+#define DPAD_TEST 0
+#define ENABLE_ZOOM 0
+
 typedef u16 t_image_type[IMAGE_HEIGHT][IMAGE_WIDTH];
 
 t_image_type front_buffer;
@@ -45,9 +49,12 @@ t_image_type* draw_buffer = &back_buffer;
 
 u16 convert_color_24_16(u32 color);
 
-void insert_black_ref_bars(int num_bars, int image_height, int image_width, u16 image[image_height][image_width]);
+void insert_black_ref_bars(int num_bars, int image_height, int image_width,
+    u16 image[image_height][image_width]);
 
-void create_checker_board(int checker_dimension, int image_height, int image_width, u32 color_a, u32 color_b, u16 image[image_height][image_width]);
+void create_checker_board(int checker_dimension, int image_height,
+    int image_width, u32 color_a, u32 color_b,
+    u16 image[image_height][image_width]);
 
 int main()
 {
@@ -60,12 +67,17 @@ int main()
   XVtc_EnableGenerator(&Vtc);
 
   // Create the checker-board
-  create_checker_board(CHECKER_DIMENSION, IMAGE_HEIGHT, IMAGE_WIDTH, CYCLONE_GOLD, CYCLONE_RED, front_buffer);
-  create_checker_board(CHECKER_DIMENSION, IMAGE_HEIGHT, IMAGE_WIDTH, CYCLONE_RED, CYCLONE_GOLD, back_buffer);
+  create_checker_board(CHECKER_DIMENSION, IMAGE_HEIGHT, IMAGE_WIDTH,
+  CYCLONE_GOLD,
+  CYCLONE_RED, front_buffer);
+  create_checker_board(CHECKER_DIMENSION, IMAGE_HEIGHT, IMAGE_WIDTH,
+  CYCLONE_RED,
+  CYCLONE_GOLD, back_buffer);
 
-
-  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, front_buffer);
-  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, back_buffer);
+  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH,
+      front_buffer);
+  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH,
+      back_buffer);
 
   Xil_DCacheFlush();
 
@@ -91,6 +103,7 @@ int main()
   // Set the vertical size.
   VDMA_MM2S_VSIZE = IMAGE_HEIGHT;
 
+#if DPAD_TEST
   t_dpad_state s;
 
   s.state = malloc(sizeof(t_dpad_buttons*) * 5);
@@ -98,146 +111,157 @@ int main()
 
   configure_control_interface();
 
-  while(1)
+  while (1)
   {
-	  get_dpad_state(&s);
+    get_dpad_state(&s);
 
-	  xil_printf("Current DPAD State:\n\r");
-	  for(int i = 0; i < s.len; ++i)
-	  {
-		switch(s.state[i])
-		{
-		case UP:
-			xil_printf("UP ");
-			break;
-		case DOWN:
-			xil_printf("DOWN ");
-			break;
-		case LEFT:
-			xil_printf("LEFT ");
-			break;
-		case RIGHT:
-			xil_printf("RIGHT ");
-			break;
-		default:
-			break;
-		}
-	  }
+    xil_printf("Current DPAD State:\n\r");
+    for (int i = 0; i < s.len; ++i)
+    {
+      switch (s.state[i])
+      {
+        case UP:
+        xil_printf("UP ");
+        break;
+        case DOWN:
+        xil_printf("DOWN ");
+        break;
+        case LEFT:
+        xil_printf("LEFT ");
+        break;
+        case RIGHT:
+        xil_printf("RIGHT ");
+        break;
+        default:
+        break;
+      }
+    }
 
-	  xil_printf("\n\r");
-	  usleep(500000);
+    xil_printf("\n\r");
+    usleep(500000);
   }
+#endif
 
+#if ENABLE_ZOOM
   // Zoom
-  while(1)
+  while (1)
   {
-	  // Zoom out
-	  for(int i = MAX_ZOOM; i <= MIN_ZOOM; i*=2)
-	  {
-		  create_checker_board(i, IMAGE_HEIGHT, IMAGE_WIDTH, CYCLONE_GOLD, CYCLONE_RED, *draw_buffer);
-		  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, *draw_buffer);
-		  Xil_DCacheFlush();
-		  usleep(ZOOM_DELTA);
-		  // Swap buffers
-		  VDMA_MM2S_START_ADDRESS1 = (u32) *draw_buffer;
-		  VDMA_MM2S_VSIZE = VDMA_MM2S_VSIZE;
-		  draw_buffer = (draw_buffer == &front_buffer ? &back_buffer : &front_buffer);
-	  }
+    // Zoom out
+    for (int i = MAX_ZOOM; i <= MIN_ZOOM; i *= 2)
+    {
+      create_checker_board(i, IMAGE_HEIGHT, IMAGE_WIDTH, CYCLONE_GOLD,
+      CYCLONE_RED, *draw_buffer);
+      insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT,
+      IMAGE_WIDTH, *draw_buffer);
+      Xil_DCacheFlush();
+      usleep(ZOOM_DELTA);
+      // Swap buffers
+      VDMA_MM2S_START_ADDRESS1 = (u32) *draw_buffer;
+      VDMA_MM2S_VSIZE = VDMA_MM2S_VSIZE;
+      draw_buffer =
+          (draw_buffer == &front_buffer ? &back_buffer : &front_buffer);
+    }
 
-	  usleep(8 * ZOOM_DELTA);
+    usleep(8 * ZOOM_DELTA);
 
-	  // Zoom back in
-	  for(int i = MIN_ZOOM; i >= MAX_ZOOM; i/=2)
-	  {
-		  create_checker_board(i, IMAGE_HEIGHT, IMAGE_WIDTH, CYCLONE_GOLD, CYCLONE_RED, *draw_buffer);
-		  insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, *draw_buffer);
-		  Xil_DCacheFlush();
-		  usleep(ZOOM_DELTA);
-		  // Swap buffers
-		  VDMA_MM2S_START_ADDRESS1 = (u32) *draw_buffer;
-		  VDMA_MM2S_VSIZE = VDMA_MM2S_VSIZE;
-		  draw_buffer = (draw_buffer == &front_buffer ? &back_buffer : &front_buffer);
-	  }
+    // Zoom back in
+    for (int i = MIN_ZOOM; i >= MAX_ZOOM; i /= 2)
+    {
+      create_checker_board(i, IMAGE_HEIGHT, IMAGE_WIDTH, CYCLONE_GOLD,
+      CYCLONE_RED, *draw_buffer);
+      insert_black_ref_bars(BLACK_REF_BAR_WIDTH, IMAGE_HEIGHT,
+      IMAGE_WIDTH, *draw_buffer);
+      Xil_DCacheFlush();
+      usleep(ZOOM_DELTA);
+      // Swap buffers
+      VDMA_MM2S_START_ADDRESS1 = (u32) *draw_buffer;
+      VDMA_MM2S_VSIZE = VDMA_MM2S_VSIZE;
+      draw_buffer =
+          (draw_buffer == &front_buffer ? &back_buffer : &front_buffer);
+    }
 
-	  usleep(8 * ZOOM_DELTA);
+    usleep(8 * ZOOM_DELTA);
   }
+#endif
 
   cleanup_platform();
 
   return 0;
 }
 
-
 // Example: 0xC8103E
 // 0xC8 -> Red | 0x10 -> Green | 0x3E -> Blue
 u16 convert_color_24_16(u32 color)
 {
-	u16 r, g, b = 0;
+  u16 r, g, b = 0;
 
-	// Red: 0xFF0000 -> 0xF
-	// Shift right 2 bytes (16 bits) to get the two bytes in the LSB position.
-	// Then to get the left byte, shift 4 more.
-	r = color >> 20;
+  // Red: 0xFF0000 -> 0xF
+  // Shift right 2 bytes (16 bits) to get the two bytes in the LSB position.
+  // Then to get the left byte, shift 4 more.
+  r = color >> 20;
 
-	// Green: 0xFF00 -> 0xF0
-	//Shift right one byte (8 bits) to get the two bytes in the LSB position.
-	// Then mask with 0xF0 to only take the left byte. It is already positioned
-	// where it needs to be.
-	g = (color >> 8) & 0xF0;
+  // Green: 0xFF00 -> 0xF0
+  //Shift right one byte (8 bits) to get the two bytes in the LSB position.
+  // Then mask with 0xF0 to only take the left byte. It is already positioned
+  // where it needs to be.
+  g = (color >> 8) & 0xF0;
 
-	// Blue:  0xFF -> 0xF00
-	// Shift left 4 bits to get the left-most byte in the correct position.
-	// Then mask with 0xF00 to only use the left-most byte.
-	b = (color << 4) & 0xF00;
+  // Blue:  0xFF -> 0xF00
+  // Shift left 4 bits to get the left-most byte in the correct position.
+  // Then mask with 0xF00 to only use the left-most byte.
+  b = (color << 4) & 0xF00;
 
-	return r | g | b;
+  return r | g | b;
 }
 
-void insert_black_ref_bars(int num_bars, int image_height, int image_width, u16 image[image_height][image_width])
+void insert_black_ref_bars(int num_bars, int image_height, int image_width,
+    u16 image[image_height][image_width])
 {
   // Black bars to define black reference in blanking period
-  for(int i = 0; i < image_height; i++)
+  for (int i = 0; i < image_height; i++)
   {
-	  for(int j = 0; j < num_bars; j++)
-	  {
-		  (image[i])[j] = 0x0;
-	  }
+    for (int j = 0; j < num_bars; j++)
+    {
+      (image[i])[j] = 0x0;
+    }
   }
 
-  for(int i = 0; i < image_height; i++)
+  for (int i = 0; i < image_height; i++)
   {
-	  for(int j = image_width - 1 - num_bars; j < image_width; j++)
-	  {
-		  (image[i])[j] = 0x0;
-	  }
+    for (int j = image_width - 1 - num_bars; j < image_width; j++)
+    {
+      (image[i])[j] = 0x0;
+    }
   }
 }
 
-void create_checker_board(int checker_dimension, int image_height, int image_width, u32 color_a, u32 color_b, u16 image[image_height][image_width])
+void create_checker_board(int checker_dimension, int image_height,
+    int image_width, u32 color_a, u32 color_b,
+    u16 image[image_height][image_width])
 {
 
   // 0 -> color_a
   // 1 -> color_b
   char color_sel = 0;
 
-  for(int i = 0; i < image_height; ++i)
+  for (int i = 0; i < image_height; ++i)
   {
-	  // Every (image_width / checker_dimension) horizontal pixels, switch colors
-	  for(int j = 0; j < image_width; ++j)
-	  {
-		  if(!((j + 1) % (image_width / checker_dimension)))
-		  {
-			  color_sel = color_sel ? 0 : 1;
-		  }
+    // Every (image_width / checker_dimension) horizontal pixels, switch colors
+    for (int j = 0; j < image_width; ++j)
+    {
+      if (!((j + 1) % (image_width / checker_dimension)))
+      {
+        color_sel = color_sel ? 0 : 1;
+      }
 
-		  image[i][j] = convert_color_24_16(color_sel ? color_b : color_a);
-	  }
+      image[i][j] = convert_color_24_16(color_sel ? color_b : color_a);
+    }
 
-	  // Switch color every (image_height / checker_dimension) vertical pixels.
-	  if(!((i + 1) % (image_height / checker_dimension)))
-	  {
-		  color_sel = color_sel ? 0 : 1;
-	  }
+    // Switch color every (image_height / checker_dimension) vertical pixels.
+    if (!((i + 1) % (image_height / checker_dimension)))
+    {
+      color_sel = color_sel ? 0 : 1;
+    }
   }
 }
 

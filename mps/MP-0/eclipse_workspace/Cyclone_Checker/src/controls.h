@@ -4,7 +4,7 @@
 	// Types
 	enum dpad_buttons
 	{
-		NONE = 0,
+		NO_DPAD = 0,
 		UP = 0b10000,
 		DOWN = 0b10,
 		LEFT = 0b100,
@@ -12,12 +12,12 @@
 	};
 	typedef enum dpad_buttons t_dpad_buttons;
 
-	struct dpad_state
+	struct dpad_button_states
 	{
-		t_dpad_buttons* state;
+		t_dpad_buttons* active_buttons;
 		int len;
 	};
-	typedef struct dpad_state t_dpad_state;
+	typedef struct dpad_button_states t_dpad_state;
 
 	// Functions
 	void get_dpad_state(t_dpad_state* state);
