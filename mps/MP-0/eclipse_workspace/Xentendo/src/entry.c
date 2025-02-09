@@ -27,7 +27,7 @@ char *game_menu()
 
   draw_game_menu(front_buffer, selected_index, menu_offset);
 
-  return "roms/Paperboy.nes";
+  return "zelda.nes";
 }
 
 int main()
