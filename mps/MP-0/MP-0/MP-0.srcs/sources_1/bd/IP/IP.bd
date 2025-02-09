@@ -1568,7 +1568,7 @@
               "m00_couplers/S_AXI"
             ]
           },
-          "xbar_to_m04_couplers": {
+          "ps7_0_axi_periph_to_s00_couplers": {
             "interface_ports": [
               "xbar/M04_AXI",
               "m04_couplers/S_AXI"
@@ -2343,10 +2343,10 @@
           "axi_gpio_1/GPIO"
         ]
       },
-      "axi_vdma_0_M_AXI_MM2S": {
+      "ps7_0_axi_periph_M04_AXI": {
         "interface_ports": [
-          "axi_vdma_0/M_AXI_MM2S",
-          "axi_interconnect_0/S00_AXI"
+          "ps7_0_axi_periph/M04_AXI",
+          "axi_vdma_0/S_AXI_LITE"
         ]
       },
       "ps7_0_axi_periph_M03_AXI": {
