@@ -58,11 +58,11 @@ module IP_xlslice_0_4 (
   Dout
 );
 
-input wire [5 : 0] Din;
+input wire [6 : 0] Din;
 output wire [0 : 0] Dout;
 
   xlslice_v1_0_2_xlslice #(
-    .DIN_WIDTH(6),
+    .DIN_WIDTH(7),
     .DIN_FROM(1),
     .DIN_TO(1)
   ) inst (

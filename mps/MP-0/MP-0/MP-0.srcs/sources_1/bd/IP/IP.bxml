@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="IP" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1739071799"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1739071799"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1739071799"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1739071799"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1739133359"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1739133359"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1739133359"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1739133359"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\IP_processing_system7_0_0\IP_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -199,6 +199,22 @@
       <File Name="sim\IP.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\IP_snes_controller_read_0_0\IP_snes_controller_read_0_0.xci" Type="IP">
+        <Instance HierarchyPath="snes_controller_read_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\IP_xlslice_9_0\IP_xlslice_9_0.xci" Type="IP">
+        <Instance HierarchyPath="xlslice_9"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\IP_auto_pc_0\IP_auto_pc_0.xci" Type="IP">
