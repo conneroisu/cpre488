@@ -49,7 +49,13 @@ begin
             wait for CLOCK_WIDTH;
 
             -- Wait 16 clock cycles
-            wait for 16 * CLOCK_PERIOD;
+            for i in 0 to 14 loop
+                wait for CLOCK_PERIOD;
+                assert s_done = '0' report "Failure: s_done was high before 16 clock cycles!" severity failure;
+            end loop;
+
+            -- Run last clock cycle.
+            wait for CLOCK_PERIOD;
 
             -- Verify that it finished.
             assert s_done = '1' report "Failure: s_done was low after 16 clock cycles!" severity failure;

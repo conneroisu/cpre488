@@ -53,17 +53,17 @@ begin
 
             assert s_pulse = '1' report "Failure: s_pulse was low after a pulse was commanded!" severity failure;
 
-            -- Wait for falling edge of clock.
-            wait for CLOCK_WIDTH;
+            -- Wait for next rising edge.
+            wait for CLOCK_PERIOD;
 
-            assert s_pulse = '0' report "Failure: s_pulse did not lower on falling edge of clock!" severity failure;
+            assert s_pulse = '0' report "Failure: s_pulse did not lower on rising edge of clock!" severity failure;
             assert s_counter_en = '1' report "Failure: s_counter_en did not raise on falling edge of clock!" severity failure;
 
             -- Rest
             s_rst_n <= '0';
             s_start <= '0';
             -- Wait for next rising edge of clock.
-            wait for CLOCK_WIDTH;
+            wait for CLOCK_PERIOD;
 
             -- Verify reset
             assert s_pulse = '0' report "Failure: s_pulse is high after reset!" severity failure;
