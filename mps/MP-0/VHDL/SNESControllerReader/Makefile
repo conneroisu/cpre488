@@ -7,7 +7,7 @@ BUILT_FILES := $(REG_OBJECT_FILES) $(COUNTER_OBJECT_FILES) $(CLOCK_PULSER_OBJECT
 GHDL_ARGS := --workdir=work
 ANALYZE = ghdl -a $(GHDL_ARGS) $<
 
-all : counter_4_bit_tb.exe clock_pulser_tb.exe reg_tb.exe shift_reg_n_bit_tb.exe
+all : counter_4_bit_tb.exe clock_pulser_tb.exe reg_tb.exe shift_reg_n_bit_tb.exe system_tb.exe
 
 counter_4_bit_tb.exe : $(COUNTER_OBJECT_FILES)
 	ghdl -e $(GHDL_ARGS) counter_4_bit_tb
@@ -21,6 +21,11 @@ reg_tb.exe : $(REG_OBJECT_FILES)
 shift_reg_n_bit_tb.exe : $(SHIFT_REG_OBJECT_FILES)
 	ghdl -e $(GHDL_ARGS) shift_reg_n_bit_tb
 
+system_tb.exe : work/system_tb.o
+	ghdl -e $(GHDL_ARGS) system_tb
+
+work/system_tb.o : system_tb.vhd
+	$(ANALYZE)
 
 work/shift_reg_n_bit_tb.o : shift_reg_n_bit_tb.vhd work/shift_reg_n_bit.o
 	$(ANALYZE)
