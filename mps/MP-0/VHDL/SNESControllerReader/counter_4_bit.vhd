@@ -32,6 +32,10 @@ begin
                     s_done <= s_done;
                     s_enabled <= s_enabled;
                 end if;
+            else
+                s_value <= s_value;
+                s_done <= s_done;
+                s_enabled <= s_enabled;
             end if;
         end if;
         
