@@ -21,7 +21,9 @@ begin
             if(i_rst_n = '0') then
                 o_q <= '0';
             end if;
-        elsif(falling_edge(i_clk)) then
+        end if;
+        
+        if(falling_edge(i_clk)) then
             if(i_en = '1') then
                 o_q <= i_d;
             end if;

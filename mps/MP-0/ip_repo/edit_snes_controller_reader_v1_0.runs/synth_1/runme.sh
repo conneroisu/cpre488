@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='c:/users/neastbur/cpre488/mps/mp-0/ip_repo/edit_snes_controller_reader_v1_0.runs/synth_1'
+HD_PWD='C:/Users/neastbur/cpre488/mps/MP-0/ip_repo/edit_snes_controller_reader_v1_0.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

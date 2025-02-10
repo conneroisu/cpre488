@@ -31,13 +31,16 @@ begin
                 o_pulse <= '1';
                 s_started <= '1';
             end if;
-        elsif(falling_edge(i_clk)) then
+        end if;
+        
+        if(falling_edge(i_clk)) then
             if(i_start = '1' and s_done = '0' and s_started = '1') then
                 o_pulse <= '0';
                 o_counter_en <= '1';
                 s_done <= '1';
             end if;
         end if;
+        
     end process;
 
 end architecture;

@@ -29,7 +29,9 @@ begin
                     s_value <= s_value + X"1";
                 end if;
             end if;
-        else
+        end if;
+        
+        if(rising_edge(i_clk)) then
             if(i_rst_n = '0') then
                 s_done <= '0';
                 s_enabled <= '0';
@@ -38,6 +40,7 @@ begin
                 s_enabled <= '1';
             end if;
         end if;
+        
     end process;
 
     o_done <= s_done;
