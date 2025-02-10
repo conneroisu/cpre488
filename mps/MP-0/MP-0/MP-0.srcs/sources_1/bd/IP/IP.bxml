@@ -40,7 +40,6 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\IP_ps7_0_axi_periph_2\IP_ps7_0_axi_periph_2.xci" Type="IP">
-        <Instance HierarchyPath="ps7_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -168,7 +167,6 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\IP_axi_interconnect_0_0\IP_axi_interconnect_0_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_interconnect_0"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
