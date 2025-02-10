@@ -2,7 +2,7 @@ TESTBENCH_NAME := clock_pulser_tb
 CLOCK_PULSER_OBJECT_FILES := work/clock_pulser.o work/clock_pulser_tb.o
 COUNTER_OBJECT_FILES := work/counter_4_bit.o work/counter_4_bit_tb.o
 REG_OBJECT_FILES := work/reg.o work/reg_tb.o
-BUILT_FILES := $(COUNTER_OBJECT_FILES) $(CLOCK_PULSER_OBJECT_FILES) $(TESTBENCH_NAME).exe e~$(TESTBENCH_NAME).o
+BUILT_FILES := $(REG_OBJECT_FILES) $(COUNTER_OBJECT_FILES) $(CLOCK_PULSER_OBJECT_FILES) $(TESTBENCH_NAME).exe e~$(TESTBENCH_NAME).o
 GHDL_ARGS := --workdir=work
 ANALYZE = ghdl -a $(GHDL_ARGS) $<
 
