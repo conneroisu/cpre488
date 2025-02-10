@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Sun Feb  9 14:34:02 2025
+-- Date        : Mon Feb 10 01:33:39 2025
 -- Host        : CO2041-16 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/neastbur/cpre488/mps/MP-0/MP-0/MP-0.srcs/sources_1/bd/IP/ip/IP_rst_ps7_0_100M_2/IP_rst_ps7_0_100M_2_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top IP_rst_ps7_0_100M_2 -prefix
+--               IP_rst_ps7_0_100M_2_ IP_rst_ps7_0_100M_2_sim_netlist.vhdl
 -- Design      : IP_rst_ps7_0_100M_2
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,8 +25,6 @@ entity IP_rst_ps7_0_100M_2_cdc_sync is
     aux_reset_in : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of IP_rst_ps7_0_100M_2_cdc_sync : entity is "cdc_sync";
 end IP_rst_ps7_0_100M_2_cdc_sync;
 
 architecture STRUCTURE of IP_rst_ps7_0_100M_2_cdc_sync is
@@ -237,8 +235,6 @@ entity IP_rst_ps7_0_100M_2_upcnt_n is
     seq_cnt_en : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of IP_rst_ps7_0_100M_2_upcnt_n : entity is "upcnt_n";
 end IP_rst_ps7_0_100M_2_upcnt_n;
 
 architecture STRUCTURE of IP_rst_ps7_0_100M_2_upcnt_n is
@@ -403,8 +399,6 @@ entity IP_rst_ps7_0_100M_2_lpf is
     ext_reset_in : in STD_LOGIC;
     aux_reset_in : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of IP_rst_ps7_0_100M_2_lpf : entity is "lpf";
 end IP_rst_ps7_0_100M_2_lpf;
 
 architecture STRUCTURE of IP_rst_ps7_0_100M_2_lpf is
@@ -591,8 +585,6 @@ entity IP_rst_ps7_0_100M_2_sequence_psr is
     lpf_int : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of IP_rst_ps7_0_100M_2_sequence_psr : entity is "sequence_psr";
 end IP_rst_ps7_0_100M_2_sequence_psr;
 
 architecture STRUCTURE of IP_rst_ps7_0_100M_2_sequence_psr is
@@ -911,7 +903,7 @@ entity IP_rst_ps7_0_100M_2_proc_sys_reset is
     bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 6 )
+    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 5 )
   );
   attribute C_AUX_RESET_HIGH : string;
   attribute C_AUX_RESET_HIGH of IP_rst_ps7_0_100M_2_proc_sys_reset : entity is "1'b0";
@@ -928,11 +920,9 @@ entity IP_rst_ps7_0_100M_2_proc_sys_reset is
   attribute C_NUM_INTERCONNECT_ARESETN : integer;
   attribute C_NUM_INTERCONNECT_ARESETN of IP_rst_ps7_0_100M_2_proc_sys_reset : entity is 1;
   attribute C_NUM_PERP_ARESETN : integer;
-  attribute C_NUM_PERP_ARESETN of IP_rst_ps7_0_100M_2_proc_sys_reset : entity is 7;
+  attribute C_NUM_PERP_ARESETN of IP_rst_ps7_0_100M_2_proc_sys_reset : entity is 6;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of IP_rst_ps7_0_100M_2_proc_sys_reset : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of IP_rst_ps7_0_100M_2_proc_sys_reset : entity is "proc_sys_reset";
 end IP_rst_ps7_0_100M_2_proc_sys_reset;
 
 architecture STRUCTURE of IP_rst_ps7_0_100M_2_proc_sys_reset is
@@ -950,7 +940,6 @@ architecture STRUCTURE of IP_rst_ps7_0_100M_2_proc_sys_reset is
   attribute box_type of \ACTIVE_LOW_PR_OUT_DFF[3].FDRE_PER_N\ : label is "PRIMITIVE";
   attribute box_type of \ACTIVE_LOW_PR_OUT_DFF[4].FDRE_PER_N\ : label is "PRIMITIVE";
   attribute box_type of \ACTIVE_LOW_PR_OUT_DFF[5].FDRE_PER_N\ : label is "PRIMITIVE";
-  attribute box_type of \ACTIVE_LOW_PR_OUT_DFF[6].FDRE_PER_N\ : label is "PRIMITIVE";
   attribute box_type of \BSR_OUT_DFF[0].FDRE_BSR\ : label is "PRIMITIVE";
   attribute box_type of FDRE_inst : label is "PRIMITIVE";
   attribute box_type of \PR_OUT_DFF[0].FDRE_PER\ : label is "PRIMITIVE";
@@ -1053,20 +1042,6 @@ begin
       Q => peripheral_aresetn(5),
       R => '0'
     );
-\ACTIVE_LOW_PR_OUT_DFF[6].FDRE_PER_N\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0',
-      IS_C_INVERTED => '0',
-      IS_D_INVERTED => '0',
-      IS_R_INVERTED => '0'
-    )
-        port map (
-      C => slowest_sync_clk,
-      CE => '1',
-      D => SEQ_n_4,
-      Q => peripheral_aresetn(6),
-      R => '0'
-    );
 \BSR_OUT_DFF[0].FDRE_BSR\: unisim.vcomponents.FDRE
     generic map(
       INIT => '1',
@@ -1144,7 +1119,7 @@ entity IP_rst_ps7_0_100M_2 is
     bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 6 )
+    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 5 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of IP_rst_ps7_0_100M_2 : entity is true;
@@ -1172,7 +1147,7 @@ architecture STRUCTURE of IP_rst_ps7_0_100M_2 is
   attribute C_NUM_INTERCONNECT_ARESETN : integer;
   attribute C_NUM_INTERCONNECT_ARESETN of U0 : label is 1;
   attribute C_NUM_PERP_ARESETN : integer;
-  attribute C_NUM_PERP_ARESETN of U0 : label is 7;
+  attribute C_NUM_PERP_ARESETN of U0 : label is 6;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of U0 : label is 1;
   attribute x_interface_info : string;
@@ -1186,7 +1161,7 @@ architecture STRUCTURE of IP_rst_ps7_0_100M_2 is
   attribute x_interface_info of mb_reset : signal is "xilinx.com:signal:reset:1.0 mb_rst RST";
   attribute x_interface_parameter of mb_reset : signal is "XIL_INTERFACENAME mb_rst, POLARITY ACTIVE_HIGH, TYPE PROCESSOR, INSERT_VIP 0";
   attribute x_interface_info of slowest_sync_clk : signal is "xilinx.com:signal:clock:1.0 clock CLK";
-  attribute x_interface_parameter of slowest_sync_clk : signal is "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  attribute x_interface_parameter of slowest_sync_clk : signal is "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute x_interface_info of bus_struct_reset : signal is "xilinx.com:signal:reset:1.0 bus_struct_reset RST";
   attribute x_interface_parameter of bus_struct_reset : signal is "XIL_INTERFACENAME bus_struct_reset, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0";
   attribute x_interface_info of interconnect_aresetn : signal is "xilinx.com:signal:reset:1.0 interconnect_low_rst RST";
@@ -1205,7 +1180,7 @@ U0: entity work.IP_rst_ps7_0_100M_2_proc_sys_reset
       interconnect_aresetn(0) => interconnect_aresetn(0),
       mb_debug_sys_rst => mb_debug_sys_rst,
       mb_reset => mb_reset,
-      peripheral_aresetn(0 to 6) => peripheral_aresetn(0 to 6),
+      peripheral_aresetn(0 to 5) => peripheral_aresetn(0 to 5),
       peripheral_reset(0) => peripheral_reset(0),
       slowest_sync_clk => slowest_sync_clk
     );

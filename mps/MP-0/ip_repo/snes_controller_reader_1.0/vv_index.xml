@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Index Version="1" Minor="0">
+	<Repository value="c:/Users/neastbur/cpre488/mps/MP-0/ip_repo/snes_controller_reader_1.0">
+	</Repository>
+	<IP>
+		<VLNV value="iastate.edu:user:snes_controller_reader:1.0">
+		</VLNV>
+		<DisplayName value="snes_controller_reader_v1.0">
+		</DisplayName>
+		<Description value="My new AXI IP">
+		</Description>
+		<ManuallyDisabled value="true">
+		</ManuallyDisabled>
+		<CoreRevision value="1">
+		</CoreRevision>
+		<ComponentPath value="component.xml">
+		</ComponentPath>
+		<Families>
+			<Family name="zynq">
+				<Part status="Pre-Production" name="ALL">
+				</Part>
+			</Family>
+		</Families>
+		<Taxonomies>
+			<Taxonomy value="AXI_Peripheral">
+			</Taxonomy>
+		</Taxonomies>
+		<LockPrevVersions value="false">
+		</LockPrevVersions>
+		<Interfaces>
+			<Interface value="AXI4">
+			</Interface>
+		</Interfaces>
+	</IP>
+</Index>
+

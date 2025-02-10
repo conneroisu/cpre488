@@ -70,6 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
+set_param chipscope.maxJobs 5
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
@@ -82,8 +85,8 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property ip_repo_paths {
-  c:/Users/neastbur/cpre488/mps/MP-0/ip_repo/snes_controller_reader_1.0
-  c:/Users/neastbur/cpre488/mps/MP-0/ip_repo/snes_controller_reader_1.0
+  c:/users/neastbur/cpre488/mps/mp-0/SNES
+  c:/Users/neastbur/cpre488/mps/MP-0/ip_repo
   c:/Users/neastbur/cpre488/mps/MP-0/ip_repo/snes_controller_reader_1.0
 } [current_project]
 update_ip_catalog

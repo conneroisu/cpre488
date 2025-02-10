@@ -3,7 +3,6 @@
 	<name>Custom_AXI_Read_Test</name>
 	<comment>Created by Vitis v2020.1</comment>
 	<projects>
-		<project>NES_HW_Platform</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

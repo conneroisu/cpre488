@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1739168508">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1739183849">
   <File Type="PA-TCL" Name="snes_controller_reader_v1_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="snes_controller_reader_v1_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="snes_controller_reader_v1_0_reports.tcl"/>
@@ -53,7 +53,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/snes_controller_reader_1.0/component.xml">
+    <File Path="$PPRDIR/../../../../../../users/neastbur/cpre488/mps/mp-0/SNES/component.xml">
       <FileInfo SFType="IPXACT"/>
     </File>
     <Config>

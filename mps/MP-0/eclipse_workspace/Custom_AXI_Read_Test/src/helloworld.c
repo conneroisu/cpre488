@@ -50,17 +50,37 @@
 #include "xil_printf.h"
 #include <xparameters.h>
 #include "xil_types.h"
+#include "sleep.h"
 
-#define SNES_READ *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_S00_AXI_BASEADDR)
+#define SNES_READ *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_BASEADDR)
+#define SNES_COMMAND *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_BASEADDR + 0x1)
+#define SNES_STATUS *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_BASEADDR + 0x2)
+#define EXTRA *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_BASEADDR + 0x3)
 
 int main()
 {
     init_platform();
 
-    print("Hello World\n\r");
+    while(1)
+    {
+        // Poll SNES
+        SNES_COMMAND = 0x3;
+    	// Reset test
 
-    // Read from SNES
-    xil_printf("SNES Reading: %x\n\r", SNES_READ);
+        while(!SNES_STATUS)
+        {
+        }
+
+        usleep(250000);
+
+        // Read from SNES
+        xil_printf("SNES Reading: %x\n\r", SNES_READ);
+
+        // Reset SNES
+        SNES_COMMAND = 0x0;
+    }
+
+
 
 
     cleanup_platform();

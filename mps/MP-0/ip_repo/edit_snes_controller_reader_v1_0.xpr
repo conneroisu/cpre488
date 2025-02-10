@@ -29,8 +29,8 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/snes_controller_reader_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/snes_controller_reader_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../users/neastbur/cpre488/mps/mp-0/SNES"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/."/>
     <Option Name="IPRepoPath" Val="$PPRDIR/snes_controller_reader_1.0"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PSRCDIR/sources_1"/>
@@ -113,7 +113,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/snes_controller_reader_1.0/component.xml">
+      <File Path="$PPRDIR/../../../../../../users/neastbur/cpre488/mps/mp-0/SNES/component.xml">
         <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
