@@ -8,7 +8,7 @@ end entity counter_4_bit_tb;
 
 
 architecture sim of counter_4_bit_tb is
-    signal s_clk, s_rst_n, s_start, s_done : STD_LOGIC;
+    signal s_clk, s_rst_n, s_start, s_done, s_started : STD_LOGIC;
 begin
 
     pulser : entity work.counter_4_bit(rtl)
@@ -17,6 +17,7 @@ begin
             i_clk => s_clk,
             i_rst_n => s_rst_n,
             i_start => s_start,
+            o_started => s_started,
             o_done => s_done
         );
 
@@ -51,6 +52,7 @@ begin
             -- Wait 16 clock cycles
             for i in 0 to 14 loop
                 wait for CLOCK_PERIOD;
+                assert s_started = '1' report "Failure: s_started was low during operation!" severity failure;
                 assert s_done = '0' report "Failure: s_done was high before 16 clock cycles!" severity failure;
             end loop;
 
