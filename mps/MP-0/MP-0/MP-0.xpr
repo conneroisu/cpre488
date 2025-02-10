@@ -90,11 +90,11 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_snes_controller_read_0_7/IP_snes_controller_read_0_7.xci">
-          <Proxy FileSetName="IP_snes_controller_read_0_7"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_pixel_stream_correct_0_0/IP_pixel_stream_correct_0_0.xci">
           <Proxy FileSetName="IP_pixel_stream_correct_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_snes_controller_read_0_8/IP_snes_controller_read_0_8.xci">
+          <Proxy FileSetName="IP_snes_controller_read_0_8"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/IP/hdl/IP_wrapper.vhd">
@@ -153,9 +153,9 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="IP_snes_controller_read_0_7" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_snes_controller_read_0_7">
+    <FileSet Name="IP_snes_controller_read_0_8" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_snes_controller_read_0_8">
       <Config>
-        <Option Name="TopModule" Val="IP_snes_controller_read_0_7"/>
+        <Option Name="TopModule" Val="IP_snes_controller_read_0_8"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -199,7 +199,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_snes_controller_read_0_7_synth_1" Type="Ft3:Synth" SrcSet="IP_snes_controller_read_0_7" Part="xc7z020clg484-1" ConstrsSet="IP_snes_controller_read_0_7" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_snes_controller_read_0_7_synth_1" IncludeInArchive="true">
+    <Run Id="IP_snes_controller_read_0_8_synth_1" Type="Ft3:Synth" SrcSet="IP_snes_controller_read_0_8" Part="xc7z020clg484-1" ConstrsSet="IP_snes_controller_read_0_8" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_snes_controller_read_0_8_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -246,7 +246,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_snes_controller_read_0_7_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_snes_controller_read_0_7" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_snes_controller_read_0_7_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="IP_snes_controller_read_0_8_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_snes_controller_read_0_8" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_snes_controller_read_0_8_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
           <Desc>Default settings for Implementation.</Desc>

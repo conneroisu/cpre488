@@ -63,6 +63,8 @@ int main()
 
     while(1)
     {
+    	SNES_COMMAND = 0x0;
+
         // Poll SNES
         SNES_COMMAND = 0x3;
     	// Reset test

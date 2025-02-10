@@ -12,22 +12,28 @@ entity reg is
 end entity reg;
 
 architecture rtl of reg is
-
+    signal s_q : STD_LOGIC;
 begin
 
     process(i_clk)
     begin
         if(rising_edge(i_clk)) then
             if(i_rst_n = '0') then
-                o_q <= '0';
+                s_q <= '0';
+            else
+                s_q <= s_q;
             end if;
         end if;
         
         if(falling_edge(i_clk)) then
             if(i_en = '1') then
-                o_q <= i_d;
+                s_q <= i_d;
+            else
+                s_q <= s_q;
             end if;
         end if;
     end process;
+    
+    o_q <= s_q;
 
 end architecture;

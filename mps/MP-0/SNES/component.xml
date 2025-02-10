@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>NolanEastburn</spirit:vendor>
-  <spirit:library>sns</spirit:library>
-  <spirit:name>snes_controller_reader_v5</spirit:name>
+  <spirit:library>snes</spirit:library>
+  <spirit:name>snes_controller_reader_v7</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
@@ -242,7 +242,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e31abce9</spirit:value>
+            <spirit:value>d3d399a0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -258,7 +258,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e31abce9</spirit:value>
+            <spirit:value>d3d399a0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -759,14 +759,14 @@
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/snes_controller_reader_v5_v1_0.tcl</spirit:name>
+        <spirit:name>xgui/snes_controller_reader_v7_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_dfc3df4a</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>snes_controller_reader_v5</spirit:description>
+  <spirit:description>snes_controller_reader_v7</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
@@ -793,35 +793,34 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>snes_controller_reader_v5</xilinx:displayName>
+      <xilinx:displayName>snes_controller_reader_v7</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:coreRevision>1</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>iastate.edu:user:snes_controller_reader_v1_0:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2025-02-10T10:38:35Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-02-10T19:33:44Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a446a8e_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@10407a1f_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cbfa385_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@37ebd392_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e5b8930_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3610c910_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@74b699e8_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bf2c297_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@159aec46_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@27da153e_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@f5aa6_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@66bb0f3b_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e1a4558_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fc56ce9_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64bfb67a_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2de9d9ff_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@550c4e18_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54a886f0_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d111f88_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f8da0ad_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bd6cab7_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31eb4bff_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f807c71_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d8c0209_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3109d305_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3268128_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@548d2289_ARCHIVE_LOCATION">c:/users/neastbur/cpre488/mps/mp-0/SNES</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9add38af"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="871c369d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="976accd2"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="5997fa62"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="1cfbfbc9"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="67e6fb9f"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="4348ef7c"/>

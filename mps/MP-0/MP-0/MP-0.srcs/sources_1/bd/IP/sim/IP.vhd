@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Mon Feb 10 04:40:10 2025
+--Date        : Mon Feb 10 13:36:12 2025
 --Host        : CO2041-16 running 64-bit major release  (build 9200)
 --Command     : generate_target IP.bd
 --Design      : IP
@@ -2796,7 +2796,7 @@ entity IP is
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of IP : entity is "IP,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=IP,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=39,numReposBlks=28,numNonXlnxBlks=1,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,""""""""""""""""""""""""""""""""""""""""""""da_axi4_cnt""""""""""""""""""""""""""""""""""""""""""""=11,""""""""""""""""""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""""""""""""""""""=9,""""""""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""""""""=4,""""""""""""""""""""""""""""""""""""""""""""da_ps7_cnt""""""""""""""""""""""""""""""""""""""""""""=2,""""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""""=5,""""""""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""""""""=1,""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""=8,""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""=1,""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""=1,""""""""""da_axi4_cnt""""""""""=1,""""""""da_axi4_cnt""""""""=1,""""""""da_board_cnt""""""""=1,""""da_clkrst_cnt""""=1,""da_board_cnt""=1,""da_clkrst_cnt""=2,da_axi4_cnt=4,da_clkrst_cnt=3,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of IP : entity is "IP,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=IP,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=38,numReposBlks=27,numNonXlnxBlks=1,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,""""""""""""""""""""""""""""""""""""""""""""""da_axi4_cnt""""""""""""""""""""""""""""""""""""""""""""""=11,""""""""""""""""""""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""""""""""""""""""""=9,""""""""""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""""""""""=4,""""""""""""""""""""""""""""""""""""""""""""""da_ps7_cnt""""""""""""""""""""""""""""""""""""""""""""""=2,""""""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""""""=5,""""""""""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""""""""""=1,""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""=8,""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""=1,""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""=1,""""""""""""da_axi4_cnt""""""""""""=1,""""""""""da_axi4_cnt""""""""""=1,""""""""""da_board_cnt""""""""""=1,""""""da_clkrst_cnt""""""=1,""""da_board_cnt""""=1,""""da_clkrst_cnt""""=2,""da_axi4_cnt""=4,""da_clkrst_cnt""=3,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of IP : entity is "IP.hwdef";
 end IP;
@@ -3255,13 +3255,7 @@ architecture STRUCTURE of IP is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component IP_proc_sys_reset_1_0;
-  component IP_system_ila_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component IP_system_ila_0_0;
-  component IP_snes_controller_read_0_7 is
+  component IP_snes_controller_read_0_8 is
   port (
     i_snes_d : in STD_LOGIC;
     i_snes_clk : in STD_LOGIC;
@@ -3288,7 +3282,7 @@ architecture STRUCTURE of IP is
     s00_axi_rvalid : out STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  end component IP_snes_controller_read_0_7;
+  end component IP_snes_controller_read_0_8;
   signal ACLK_1 : STD_LOGIC;
   signal SNES_D_1 : STD_LOGIC;
   signal axi_gpio_0_GPIO1_TRI_O : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -3537,10 +3531,6 @@ architecture STRUCTURE of IP is
   signal rst_ps7_0_100M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 5 );
   signal snes_controller_read_0_o_pulse : STD_LOGIC;
-  attribute DEBUG : string;
-  attribute DEBUG of snes_controller_read_0_o_pulse : signal is "true";
-  attribute MARK_DEBUG : boolean;
-  attribute MARK_DEBUG of snes_controller_read_0_o_pulse : signal is std.standard.true;
   signal v_axi4s_vid_out_0_s_axis_video_tready : STD_LOGIC;
   signal v_axi4s_vid_out_0_vid_data : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal v_axi4s_vid_out_0_vid_hsync : STD_LOGIC;
@@ -4195,7 +4185,7 @@ rst_ps7_0_100M: component IP_rst_ps7_0_100M_2
       peripheral_reset(0) => NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
     );
-snes_controller_read_0: component IP_snes_controller_read_0_7
+snes_controller_read_0: component IP_snes_controller_read_0_8
      port map (
       i_snes_clk => ACLK_1,
       i_snes_d => SNES_D_1,
@@ -4221,11 +4211,6 @@ snes_controller_read_0: component IP_snes_controller_read_0_7
       s00_axi_wready => axi_interconnect_2_M00_AXI_WREADY,
       s00_axi_wstrb(3 downto 0) => axi_interconnect_2_M00_AXI_WSTRB(3 downto 0),
       s00_axi_wvalid => axi_interconnect_2_M00_AXI_WVALID
-    );
-system_ila_0: component IP_system_ila_0_0
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(0) => snes_controller_read_0_o_pulse
     );
 v_axi4s_vid_out_0: component IP_v_axi4s_vid_out_0_1
      port map (

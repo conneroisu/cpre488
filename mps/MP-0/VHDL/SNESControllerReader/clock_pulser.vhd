@@ -30,10 +30,15 @@ begin
             elsif(i_start = '1' and s_done = '0' and s_started = '0') then
                 o_pulse <= '1';
                 s_started <= '1';
+                s_done <= s_done;
             elsif(i_start = '1' and s_done = '0' and s_started = '1') then
                 o_pulse <= '0';
                 o_counter_en <= '1';
                 s_done <= '1';
+                s_started <= s_started;
+            else
+                s_started <= s_started;
+                s_done <= s_done;
             end if;
         end if;
     end process;

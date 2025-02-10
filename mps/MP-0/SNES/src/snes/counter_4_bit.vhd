@@ -25,8 +25,12 @@ begin
             if(s_enabled = '1' and s_done = '0') then
                 if(s_value = X"F") then
                     s_done <= '1';
+                    s_enabled <= s_enabled;
+                    s_value <= s_value;
                 else
                     s_value <= s_value + X"1";
+                    s_done <= s_done;
+                    s_enabled <= s_enabled;
                 end if;
             end if;
         end if;
@@ -38,6 +42,12 @@ begin
                 s_value <= (others => '0');
             elsif(i_start = '1') then
                 s_enabled <= '1';
+                s_done <= s_done;
+                s_value <= s_value;
+            else
+                s_enabled <= s_enabled;
+                s_done <= s_done;
+                s_value <= s_value;
             end if;
         end if;
         
