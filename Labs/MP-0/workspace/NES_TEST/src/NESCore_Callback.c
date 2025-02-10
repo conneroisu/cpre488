@@ -88,9 +88,20 @@ void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2) {
     UINTPTR ButtonIn = 0x41210000;
     int32_t LEDOut = 0x00000000;
 
+    UINTPTR SNES = 0x43C00000;
+
+    int32_t test;
+    char str[50];
+
+    if ((Xil_In32(SNES)) != 0) {
+    	test = (Xil_In32(SNES));
+    	sprintf(str, "result: %lu", test);
+    	print(str);
+    }
+
     *pdwPad1 = 0;
 
-    char str[50];
+
 
     // BTNC
 	if ((Xil_In32(ButtonIn) & 0x00000001) == 0x00000001) {
@@ -138,6 +149,8 @@ void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2) {
 		*pdwPad1 =  NCTL_B;
 		LEDOut = LEDOut + 0x00000002;
 	}
+
+
 
 //	Xil_Out32(LEDIn, LEDOut);
 //	LEDOut = 0x00000000;

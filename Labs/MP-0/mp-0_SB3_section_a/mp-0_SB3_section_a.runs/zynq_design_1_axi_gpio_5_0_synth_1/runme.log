@@ -1,4 +1,0 @@
-
-*** Running vivado
-    with args -log zynq_design_1_axi_gpio_5_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_design_1_axi_gpio_5_0.tcl
-

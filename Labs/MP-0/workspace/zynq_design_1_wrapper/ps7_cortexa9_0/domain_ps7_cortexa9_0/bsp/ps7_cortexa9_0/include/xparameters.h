@@ -213,6 +213,11 @@
 /******************************************************************/
 
 
+/* Definitions for peripheral SNES_CONTROLLER_PERI_0 */
+#define XPAR_SNES_CONTROLLER_PERI_0_S00_AXI_BASEADDR 0x43C00000
+#define XPAR_SNES_CONTROLLER_PERI_0_S00_AXI_HIGHADDR 0x43C0FFFF
+
+
 /* Definitions for peripheral PS7_AFI_0 */
 #define XPAR_PS7_AFI_0_S_AXI_BASEADDR 0xF8008000
 #define XPAR_PS7_AFI_0_S_AXI_HIGHADDR 0xF8008FFF
@@ -583,8 +588,8 @@
 
 /* Definitions for peripheral V_TC_0 */
 #define XPAR_V_TC_0_DEVICE_ID 0
-#define XPAR_V_TC_0_BASEADDR 0x43C00000
-#define XPAR_V_TC_0_HIGHADDR 0x43C0FFFF
+#define XPAR_V_TC_0_BASEADDR 0x43C10000
+#define XPAR_V_TC_0_HIGHADDR 0x43C1FFFF
 #define XPAR_V_TC_0_GENERATE_EN 1
 #define XPAR_V_TC_0_DETECT_EN 0
 #define XPAR_V_TC_0_DET_HSYNC_EN 1
@@ -599,8 +604,8 @@
 
 /* Canonical definitions for peripheral V_TC_0 */
 #define XPAR_VTC_0_DEVICE_ID XPAR_V_TC_0_DEVICE_ID
-#define XPAR_VTC_0_BASEADDR 0x43C00000
-#define XPAR_VTC_0_HIGHADDR 0x43C0FFFF
+#define XPAR_VTC_0_BASEADDR 0x43C10000
+#define XPAR_VTC_0_HIGHADDR 0x43C1FFFF
 #define XPAR_VTC_0_GENERATE_EN 1
 #define XPAR_VTC_0_DETECT_EN 0
 #define XPAR_VTC_0_DET_HSYNC_EN 1

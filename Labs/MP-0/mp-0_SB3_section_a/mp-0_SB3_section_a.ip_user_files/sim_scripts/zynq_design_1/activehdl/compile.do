@@ -29,9 +29,9 @@ vlib activehdl/v_axi4s_vid_out_v4_0_10
 vlib activehdl/xlslice_v1_0_2
 vlib activehdl/axi_vip_v1_1_7
 vlib activehdl/processing_system7_vip_v1_0_9
+vlib activehdl/xlconstant_v1_1_7
 vlib activehdl/gigantic_mux
 vlib activehdl/xlconcat_v2_1_3
-vlib activehdl/xlconstant_v1_1_7
 vlib activehdl/axi_protocol_converter_v2_1_21
 
 vmap xilinx_vip activehdl/xilinx_vip
@@ -62,9 +62,9 @@ vmap v_axi4s_vid_out_v4_0_10 activehdl/v_axi4s_vid_out_v4_0_10
 vmap xlslice_v1_0_2 activehdl/xlslice_v1_0_2
 vmap axi_vip_v1_1_7 activehdl/axi_vip_v1_1_7
 vmap processing_system7_vip_v1_0_9 activehdl/processing_system7_vip_v1_0_9
+vmap xlconstant_v1_1_7 activehdl/xlconstant_v1_1_7
 vmap gigantic_mux activehdl/gigantic_mux
 vmap xlconcat_v2_1_3 activehdl/xlconcat_v2_1_3
-vmap xlconstant_v1_1_7 activehdl/xlconstant_v1_1_7
 vmap axi_protocol_converter_v2_1_21 activehdl/axi_protocol_converter_v2_1_21
 
 vlog -work xilinx_vip  -sv2k12 "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
@@ -198,60 +198,82 @@ vlog -work processing_system7_vip_v1_0_9  -sv2k12 "+incdir+../../../../mp-0_SB3_
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
 "../../../bd/zynq_design_1/ip/zynq_design_1_processing_system7_0_1/sim/zynq_design_1_processing_system7_0_1.v" \
 
-vcom -work xil_defaultlib -93 \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/sim/bd_c3fe.vhd" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_0/sim/bd_c3fe_ila_lib_0.vhd" \
-
-vlog -work gigantic_mux  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
-"../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/d322/hdl/gigantic_mux_v1_0_cntr.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_1/bd_c3fe_g_inst_0_gigantic_mux.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_1/sim/bd_c3fe_g_inst_0.v" \
-
-vlog -work xlconcat_v2_1_3  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
-"../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_2/sim/bd_c3fe_slot_0_aw_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_3/sim/bd_c3fe_slot_0_w_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_4/sim/bd_c3fe_slot_0_b_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_5/sim/bd_c3fe_slot_0_ar_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_6/sim/bd_c3fe_slot_0_r_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_7/sim/bd_c3fe_slot_1_aw_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_8/sim/bd_c3fe_slot_1_w_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_9/sim/bd_c3fe_slot_1_b_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_10/sim/bd_c3fe_slot_1_ar_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_11/sim/bd_c3fe_slot_1_r_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_12/sim/bd_c3fe_slot_2_aw_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_13/sim/bd_c3fe_slot_2_w_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_14/sim/bd_c3fe_slot_2_b_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_15/sim/bd_c3fe_slot_2_ar_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_16/sim/bd_c3fe_slot_2_r_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_17/sim/bd_c3fe_slot_3_aw_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_18/sim/bd_c3fe_slot_3_w_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_19/sim/bd_c3fe_slot_3_b_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_20/sim/bd_c3fe_slot_3_ar_0.v" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/bd_0/ip/ip_21/sim/bd_c3fe_slot_3_r_0.v" \
-
-vcom -work xil_defaultlib -93 \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_0_0/sim/zynq_design_1_system_ila_0_0.vhd" \
-"../../../bd/zynq_design_1/sim/zynq_design_1.vhd" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/sim/bd_03af.vhd" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/ip/ip_0/sim/bd_03af_ila_lib_0.vhd" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/sim/zynq_design_1_system_ila_1_0.vhd" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/bd_0/sim/bd_035f.vhd" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/bd_0/ip/ip_0/sim/bd_035f_ila_lib_0.vhd" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_2_0/sim/zynq_design_1_system_ila_2_0.vhd" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/sim/bd_c30e.vhd" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/bd_0/ip/ip_0/sim/bd_c30e_ila_lib_0.vhd" \
-"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_0/sim/zynq_design_1_system_ila_3_0.vhd" \
-
 vlog -work xlconstant_v1_1_7  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
 "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/fcfc/hdl/xlconstant_v1_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
 "../../../bd/zynq_design_1/ip/zynq_design_1_xlconstant_0_0/sim/zynq_design_1_xlconstant_0_0.v" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/zynq_design_1/ip/zynq_design_1_rst_ps7_0_50M_0/sim/zynq_design_1_rst_ps7_0_50M_0.vhd" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/sim/bd_03cf.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_0/sim/bd_03cf_ila_lib_0.v" \
+
+vlog -work gigantic_mux  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
+"../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/d322/hdl/gigantic_mux_v1_0_cntr.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_1/bd_03cf_g_inst_0_gigantic_mux.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_1/sim/bd_03cf_g_inst_0.v" \
+
+vlog -work xlconcat_v2_1_3  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
+"../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_2/sim/bd_03cf_slot_0_aw_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_3/sim/bd_03cf_slot_0_w_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_4/sim/bd_03cf_slot_0_b_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_5/sim/bd_03cf_slot_0_ar_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_6/sim/bd_03cf_slot_0_r_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_7/sim/bd_03cf_slot_1_aw_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_8/sim/bd_03cf_slot_1_w_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_9/sim/bd_03cf_slot_1_b_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_10/sim/bd_03cf_slot_1_ar_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_11/sim/bd_03cf_slot_1_r_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_12/sim/bd_03cf_slot_2_aw_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_13/sim/bd_03cf_slot_2_w_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_14/sim/bd_03cf_slot_2_b_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_15/sim/bd_03cf_slot_2_ar_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_16/sim/bd_03cf_slot_2_r_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_17/sim/bd_03cf_slot_3_aw_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_18/sim/bd_03cf_slot_3_w_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_19/sim/bd_03cf_slot_3_b_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_20/sim/bd_03cf_slot_3_ar_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_21/sim/bd_03cf_slot_3_r_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_22/sim/bd_03cf_slot_5_aw_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_23/sim/bd_03cf_slot_5_w_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_24/sim/bd_03cf_slot_5_b_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_25/sim/bd_03cf_slot_5_ar_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/bd_0/ip/ip_26/sim/bd_03cf_slot_5_r_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_3_1/sim/zynq_design_1_system_ila_3_1.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_4_1/bd_0/sim/bd_c27e.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_4_1/bd_0/ip/ip_0/sim/bd_c27e_ila_lib_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_4_1/sim/zynq_design_1_system_ila_4_1.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_5_0/bd_0/sim/bd_c2ee.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_5_0/bd_0/ip/ip_0/sim/bd_c2ee_ila_lib_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_5_0/sim/zynq_design_1_system_ila_5_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_6_0/bd_0/sim/bd_c21e.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_6_0/bd_0/ip/ip_0/sim/bd_c21e_ila_lib_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_6_0/sim/zynq_design_1_system_ila_6_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/sim/bd_03af.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/bd_0/ip/ip_0/sim/bd_03af_ila_lib_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_1_0/sim/zynq_design_1_system_ila_1_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_2_2/bd_0/sim/bd_c2de.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_2_2/bd_0/ip/ip_0/sim/bd_c2de_ila_lib_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_2_2/sim/zynq_design_1_system_ila_2_2.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_MUX2_1_0_0/sim/zynq_design_1_MUX2_1_0_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_MUX2_1_0_1/sim/zynq_design_1_MUX2_1_0_1.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_MUX2_1_0_2/sim/zynq_design_1_MUX2_1_0_2.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_xlconstant_0_1/sim/zynq_design_1_xlconstant_0_1.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_10_0/bd_0/sim/bd_855e.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_10_0/bd_0/ip/ip_0/sim/bd_855e_ila_lib_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_system_ila_10_0/sim/zynq_design_1_system_ila_10_0.v" \
+"../../../bd/zynq_design_1/ipshared/d692/src/SNES_controller.v" \
+"../../../bd/zynq_design_1/ipshared/d692/hdl/SNES_controller_periph_v1_0_S00_AXI.v" \
+"../../../bd/zynq_design_1/ipshared/d692/hdl/SNES_controller_periph_v1_0.v" \
+"../../../bd/zynq_design_1/ip/zynq_design_1_SNES_controller_peri_0_0/sim/zynq_design_1_SNES_controller_peri_0_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_21  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
 "../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/8dfa/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
@@ -259,6 +281,7 @@ vlog -work axi_protocol_converter_v2_1_21  -v2k5 "+incdir+../../../../mp-0_SB3_s
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/ec67/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/7af1/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/6b56/hdl" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/b205/hdl/verilog" "+incdir+../../../../mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/c968/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
 "../../../bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/sim/zynq_design_1_auto_pc_0.v" \
 "../../../bd/zynq_design_1/ip/zynq_design_1_auto_pc_1/sim/zynq_design_1_auto_pc_1.v" \
+"../../../bd/zynq_design_1/sim/zynq_design_1.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

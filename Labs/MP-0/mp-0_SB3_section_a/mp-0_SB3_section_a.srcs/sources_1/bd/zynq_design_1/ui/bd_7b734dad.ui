@@ -1,97 +1,93 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.717938",
-   "Default View_TopLeft":"2244,474",
+   "Default View_ScaleFactor":"0.813331",
+   "Default View_TopLeft":"1652,649",
    "ExpandedHierarchyInLayout":"",
    "PinnedPorts":"",
-   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS-threadsafe
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 9 -x 3120 -y 740 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 9 -x 3120 -y 760 -defaultsOSRD
-preplace port leds_8bits -pg 1 -lvl 9 -x 3120 -y 1060 -defaultsOSRD
-preplace port sws_8bits -pg 1 -lvl 9 -x 3120 -y 1580 -defaultsOSRD
-preplace port btns_5bits -pg 1 -lvl 9 -x 3120 -y 1430 -defaultsOSRD
-preplace port SNES_CLCK -pg 1 -lvl 9 -x 3120 -y 1190 -defaultsOSRD
-preplace port SNES_LATCH -pg 1 -lvl 9 -x 3120 -y 960 -defaultsOSRD
-preplace port SNES_DATA -pg 1 -lvl 9 -x 3120 -y 820 -defaultsOSRD
-preplace port VGA_HSYNC -pg 1 -lvl 9 -x 3120 -y 180 -defaultsOSRD
-preplace port VGA_VSYNC -pg 1 -lvl 9 -x 3120 -y 390 -defaultsOSRD
-preplace portBus VGA_G -pg 1 -lvl 9 -x 3120 -y 1740 -defaultsOSRD
-preplace portBus VGA_R -pg 1 -lvl 9 -x 3120 -y 1880 -defaultsOSRD
-preplace portBus VGA_B -pg 1 -lvl 9 -x 3120 -y 1720 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 6 -x 2120 -y 1060 -defaultsOSRD
-preplace inst axi_gpio_1 -pg 1 -lvl 6 -x 2120 -y 1430 -defaultsOSRD
-preplace inst axi_gpio_2 -pg 1 -lvl 6 -x 2120 -y 1580 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -x 690 -y 1090 -defaultsOSRD
-preplace inst rst_ps7_0_100M -pg 1 -lvl 2 -x 350 -y 1210 -defaultsOSRD
-preplace inst axi_vdma_0 -pg 1 -lvl 4 -x 1150 -y 680 -defaultsOSRD
-preplace inst v_tc_0 -pg 1 -lvl 4 -x 1150 -y 150 -defaultsOSRD
-preplace inst v_axi4s_vid_out_0 -pg 1 -lvl 5 -x 1580 -y 380 -defaultsOSRD
-preplace inst xlslice_0 -pg 1 -lvl 6 -x 2120 -y 1920 -defaultsOSRD
-preplace inst xlslice_1 -pg 1 -lvl 6 -x 2120 -y 1720 -defaultsOSRD
-preplace inst xlslice_2 -pg 1 -lvl 6 -x 2120 -y 2020 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 6 -x 2120 -y 830 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 5 -x 1580 -y 700 -defaultsOSRD
-preplace inst High -pg 1 -lvl 3 -x 690 -y 110 -defaultsOSRD
-preplace inst rst_ps7_0_25M -pg 1 -lvl 5 -x 1580 -y 930 -defaultsOSRD
-preplace inst system_ila_3 -pg 1 -lvl 6 -x 2120 -y 540 -defaultsOSRD
-preplace inst system_ila_4 -pg 1 -lvl 8 -x 2800 -y 1950 -defaultsOSRD
-preplace inst system_ila_5 -pg 1 -lvl 8 -x 2800 -y 1650 -defaultsOSRD
-preplace inst system_ila_6 -pg 1 -lvl 8 -x 2800 -y 1810 -defaultsOSRD
-preplace inst system_ila_1 -pg 1 -lvl 7 -x 2530 -y 1510 -defaultsOSRD
-preplace inst system_ila_2 -pg 1 -lvl 5 -x 1580 -y 100 -defaultsOSRD
-preplace inst MUX2_1_0 -pg 1 -lvl 7 -x 2530 -y 1860 -defaultsOSRD
-preplace inst MUX2_1_1 -pg 1 -lvl 7 -x 2530 -y 2000 -defaultsOSRD
-preplace inst MUX2_1_2 -pg 1 -lvl 7 -x 2530 -y 1700 -defaultsOSRD
-preplace inst LOW -pg 1 -lvl 6 -x 2120 -y 1820 -defaultsOSRD
-preplace inst axi_gpio_4 -pg 1 -lvl 8 -x 2800 -y 1190 -defaultsOSRD
-preplace inst axi_gpio_5 -pg 1 -lvl 8 -x 2800 -y 960 -defaultsOSRD
-preplace inst axi_gpio_6 -pg 1 -lvl 8 -x 2800 -y 820 -defaultsOSRD
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 2 6 530 710 920 380 1340 1160 1840 670 N 670 2650
-preplace netloc v_axi4s_vid_out_0_vid_data 1 5 2 1770 1350 2360J
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 6 100 830 NJ 830 NJ 830 1330 1030 1810J 980 2350
-preplace netloc v_axi4s_vid_out_0_vid_hsync 1 4 5 1380 180 1760 180 NJ 180 NJ 180 NJ
-preplace netloc v_axi4s_vid_out_0_vid_vsync 1 5 4 1810 390 NJ 390 NJ 390 NJ
-preplace netloc v_axi4s_vid_out_0_vtg_ce 1 3 3 910 -20 NJ -20 1750
-preplace netloc High_dout 1 3 2 900 360 1370
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 7 110 1110 520 690 890 340 1380 830 1830 680 2400 820 2660
-preplace netloc processing_system7_0_FCLK_CLK1 1 3 4 920 0 1350 20 NJ 20 2350
-preplace netloc v_axi4s_vid_out_0_vid_active_video 1 5 2 N 270 2380
-preplace netloc LOW_dout 1 6 1 2390 1700n
-preplace netloc MUX2_1_2_out_0 1 7 2 2680 1720 NJ
-preplace netloc xlslice_2_Dout 1 6 1 NJ 2020
-preplace netloc MUX2_1_1_out_0 1 7 2 2680 1740 NJ
-preplace netloc xlslice_0_Dout 1 6 1 2400J 1880n
-preplace netloc MUX2_1_0_out_0 1 7 2 2650 1880 NJ
-preplace netloc xlslice_1_Dout 1 6 1 NJ 1720
-preplace netloc ps7_0_axi_periph_M03_AXI 1 3 3 840 10 NJ 10 1800
-preplace netloc v_tc_0_vtiming_out 1 4 1 1370 80n
-preplace netloc axi_vdma_0_M_AXI_MM2S 1 4 2 1370 580 1780
-preplace netloc processing_system7_0_DDR 1 6 3 NJ 740 NJ 740 NJ
-preplace netloc axi_gpio_1_GPIO 1 6 3 NJ 1430 NJ 1430 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 6 3 2370J 730 NJ 730 2910J
-preplace netloc axi_gpio_0_GPIO 1 6 3 NJ 1060 NJ 1060 NJ
-preplace netloc axi_interconnect_0_M00_AXI 1 5 1 1820 470n
-preplace netloc ps7_0_axi_periph_M04_AXI 1 3 3 880 820 NJ 820 1800
-preplace netloc axi_vdma_0_M_AXIS_MM2S 1 4 2 1360 570 1790
-preplace netloc ps7_0_axi_periph_M02_AXI 1 3 3 850 1150 NJ 1150 1790J
-preplace netloc processing_system7_0_M_AXI_GP0 1 2 5 540 -40 NJ -40 NJ -40 NJ -40 2360
-preplace netloc axi_gpio_2_GPIO 1 6 3 NJ 1580 NJ 1580 NJ
-preplace netloc ps7_0_axi_periph_M00_AXI 1 3 3 910 1040 NJ 1040 NJ
-preplace netloc ps7_0_axi_periph_M01_AXI 1 3 3 890 1140 NJ 1140 1810J
-preplace netloc axi_gpio_4_GPIO 1 8 1 NJ 1190
-preplace netloc axi_gpio_5_GPIO 1 8 1 NJ 960
-preplace netloc axi_gpio_6_GPIO 1 8 1 NJ 820
-preplace netloc ps7_0_axi_periph_M05_AXI 1 3 5 840J 1170 NJ 1170 NJ 1170 NJ 1170 N
-preplace netloc ps7_0_axi_periph_M06_AXI 1 3 5 870J -10 NJ -10 NJ -10 NJ -10 2670
-preplace netloc ps7_0_axi_periph_M07_AXI 1 3 5 860J -30 NJ -30 NJ -30 NJ -30 2680
-levelinfo -pg 1 -20 80 350 690 1150 1580 2120 2530 2800 3120
-pagesize -pg 1 -db -bbox -sgen -20 -50 3270 2200
+preplace port DDR -pg 1 -lvl 8 -x 2770 -y 770 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 8 -x 2770 -y 790 -defaultsOSRD
+preplace port leds_8bits -pg 1 -lvl 8 -x 2770 -y 220 -defaultsOSRD
+preplace port sws_8bits -pg 1 -lvl 8 -x 2770 -y 360 -defaultsOSRD
+preplace port btns_5bits -pg 1 -lvl 8 -x 2770 -y 80 -defaultsOSRD
+preplace port VGA_HSYNC -pg 1 -lvl 8 -x 2770 -y 1270 -defaultsOSRD
+preplace port VGA_VSYNC -pg 1 -lvl 8 -x 2770 -y 700 -defaultsOSRD
+preplace port SNES_Latch_0 -pg 1 -lvl 8 -x 2770 -y 950 -defaultsOSRD
+preplace port SNES_clk_1_0 -pg 1 -lvl 8 -x 2770 -y 1210 -defaultsOSRD
+preplace port SNES_DATA -pg 1 -lvl 0 -x 0 -y 790 -defaultsOSRD
+preplace portBus VGA_G -pg 1 -lvl 8 -x 2770 -y 1550 -defaultsOSRD
+preplace portBus VGA_R -pg 1 -lvl 8 -x 2770 -y 1690 -defaultsOSRD
+preplace portBus VGA_B -pg 1 -lvl 8 -x 2770 -y 1410 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 5 -x 2020 -y 220 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 5 -x 2020 -y 80 -defaultsOSRD
+preplace inst axi_gpio_2 -pg 1 -lvl 5 -x 2020 -y 360 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 550 -y 510 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 210 -y 890 -defaultsOSRD
+preplace inst axi_vdma_0 -pg 1 -lvl 3 -x 990 -y 640 -defaultsOSRD
+preplace inst v_tc_0 -pg 1 -lvl 3 -x 990 -y 970 -defaultsOSRD
+preplace inst v_axi4s_vid_out_0 -pg 1 -lvl 4 -x 1450 -y 990 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 5 -x 2020 -y 1680 -defaultsOSRD
+preplace inst xlslice_1 -pg 1 -lvl 5 -x 2020 -y 1440 -defaultsOSRD
+preplace inst xlslice_2 -pg 1 -lvl 5 -x 2020 -y 1540 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 5 -x 2020 -y 870 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 4 -x 1450 -y 660 -defaultsOSRD
+preplace inst High -pg 1 -lvl 2 -x 550 -y 860 -defaultsOSRD
+preplace inst rst_ps7_0_25M -pg 1 -lvl 4 -x 1450 -y 1270 -defaultsOSRD
+preplace inst system_ila_3 -pg 1 -lvl 5 -x 2020 -y 580 -defaultsOSRD
+preplace inst system_ila_4 -pg 1 -lvl 7 -x 2660 -y 1620 -defaultsOSRD
+preplace inst system_ila_5 -pg 1 -lvl 7 -x 2660 -y 1340 -defaultsOSRD
+preplace inst system_ila_6 -pg 1 -lvl 7 -x 2660 -y 1480 -defaultsOSRD
+preplace inst system_ila_1 -pg 1 -lvl 6 -x 2440 -y 1200 -defaultsOSRD
+preplace inst system_ila_2 -pg 1 -lvl 4 -x 1450 -y 1430 -defaultsOSRD
+preplace inst LOW -pg 1 -lvl 5 -x 2020 -y 1340 -defaultsOSRD
+preplace inst MUX2_1_0 -pg 1 -lvl 6 -x 2440 -y 1660 -defaultsOSRD
+preplace inst MUX2_1_1 -pg 1 -lvl 6 -x 2440 -y 1520 -defaultsOSRD
+preplace inst MUX2_1_2 -pg 1 -lvl 6 -x 2440 -y 1380 -defaultsOSRD
+preplace inst SNES_controller_peri_0 -pg 1 -lvl 5 -x 2020 -y 1120 -defaultsOSRD
+preplace netloc v_axi4s_vid_out_0_vid_data 1 4 2 1640 1260 2310J
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 20 1160 NJ 1160 NJ 1160 1190 1160 1660J 1240 2250
+preplace netloc v_axi4s_vid_out_0_vid_hsync 1 3 5 1280 1510 1630 1280 NJ 1280 2570J 1270 NJ
+preplace netloc v_axi4s_vid_out_0_vid_vsync 1 4 4 1750 1020 2280J 700 NJ 700 NJ
+preplace netloc v_axi4s_vid_out_0_vtg_ce 1 2 3 790 1150 NJ 1150 1620
+preplace netloc High_dout 1 2 2 730 1110 1260
+preplace netloc processing_system7_0_FCLK_CLK1 1 2 4 780 1120 1270 1600 N 1600 2270
+preplace netloc v_axi4s_vid_out_0_vid_active_video 1 4 2 1670 1610 2310
+preplace netloc LOW_dout 1 5 1 2290 1340n
+preplace netloc MUX2_1_2_out_0 1 6 2 2570 1410 NJ
+preplace netloc xlslice_2_Dout 1 5 1 NJ 1540
+preplace netloc MUX2_1_1_out_0 1 6 2 2570 1550 NJ
+preplace netloc xlslice_0_Dout 1 5 1 NJ 1680
+preplace netloc MUX2_1_0_out_0 1 6 2 2560 1690 NJ
+preplace netloc xlslice_1_Dout 1 5 1 2300J 1400n
+preplace netloc SNES_controller_0_SNES_Latch 1 4 4 1770 1230 2280J 1100 2560 950 NJ
+preplace netloc SNES_controller_0_SNES_clk_1 1 4 4 1760 1250 2300J 1270 2560 1210 NJ
+preplace netloc SNES_DATA_1 1 0 5 NJ 790 NJ 790 NJ 790 NJ 790 1690
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 4 390 740 770 760 1250 500 1680
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 7 20 730 380 730 760 530 1210 480 1700 1270 2290 1290 2560
+preplace netloc axi_gpio_0_GPIO 1 5 3 NJ 220 NJ 220 NJ
+preplace netloc axi_vdma_0_M_AXI_MM2S 1 3 2 1240 510 1690
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 3 720 60 NJ 60 NJ
+preplace netloc axi_vdma_0_M_AXIS_MM2S 1 3 2 1260 540 1720
+preplace netloc processing_system7_0_DDR 1 5 3 2250J 770 NJ 770 NJ
+preplace netloc v_tc_0_vtiming_out 1 3 1 1200 930n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 3 730 200 NJ 200 NJ
+preplace netloc ps7_0_axi_periph_M03_AXI 1 2 3 720 510 1230J 520 NJ
+preplace netloc axi_gpio_1_GPIO 1 5 3 NJ 80 NJ 80 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 400 1170 NJ 1170 NJ 1170 1650J 1220 2260
+preplace netloc axi_interconnect_0_M00_AXI 1 4 1 1740 480n
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 3 740 340 NJ 340 NJ
+preplace netloc axi_gpio_2_GPIO 1 5 3 NJ 360 NJ 360 NJ
+preplace netloc ps7_0_axi_periph_M05_AXI 1 2 3 730 520 1220J 530 1710J
+preplace netloc ps7_0_axi_periph_M04_AXI 1 2 3 750 490 NJ 490 1730J
+preplace netloc processing_system7_0_FIXED_IO 1 5 3 2290J 790 NJ 790 NJ
+levelinfo -pg 1 0 210 550 990 1450 2020 2440 2660 2770
+pagesize -pg 1 -db -bbox -sgen -140 0 2920 1740
 "
 }
 {
-   "da_axi4_cnt":"23",
-   "da_board_cnt":"11",
-   "da_clkrst_cnt":"70",
+   "da_axi4_cnt":"26",
+   "da_board_cnt":"12",
+   "da_clkrst_cnt":"94",
    "da_ps7_cnt":"2"
 }

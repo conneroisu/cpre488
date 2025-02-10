@@ -1,12 +1,44 @@
-2025-02-07T22:48:13.630061100255-22:48:13 **** Incremental Build of configuration Debug for project NES_TEST ****
+2025-02-10T04:48:42.979928300255-04:48:42 **** Build of configuration Debug for project NES_TEST ****
 000-make all 
 000-make --no-print-directory pre-build
 000-a9-linaro-pre-build-step
 000-' '
 000-make --no-print-directory main-build
+000-'Building file: ../src/xilsd/ff.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\xilsd" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/xilsd/ff.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/xilsd/ff.d" -MT"src/xilsd/ff.o" -o "src/xilsd/ff.o" "../src/xilsd/ff.c"
+000-'Finished building: ../src/xilsd/ff.c'
+000-' '
+000-'Building file: ../src/xilsd/mmc.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\xilsd" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/xilsd/mmc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/xilsd/mmc.d" -MT"src/xilsd/mmc.o" -o "src/xilsd/mmc.o" "../src/xilsd/mmc.c"
+000-'Finished building: ../src/xilsd/mmc.c'
+000-' '
+000-'Building file: ../src/xilsd/xilsd.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\xilsd" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/xilsd/xilsd.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/xilsd/xilsd.d" -MT"src/xilsd/xilsd.o" -o "src/xilsd/xilsd.o" "../src/xilsd/xilsd.c"
+000-'Finished building: ../src/xilsd/xilsd.c'
+000-' '
+000-'Building file: ../src/NESCore/NESCore.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\xilsd" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/NESCore/NESCore.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/NESCore/NESCore.d" -MT"src/NESCore/NESCore.o" -o "src/NESCore/NESCore.o" "../src/NESCore/NESCore.c"
+000-../src/NESCore/NESCore.c: In function 'NESCore_LoadROM':
+000/NES_TEST/src/NESCore/NESCore.c78-1-1unused variable 'j' [-Wunused-variable]1-../src/NESCore/NESCore.c:78:9: warning: unused variable 'j' [-Wunused-variable]
+000-   78 |  int i, j;
+000-      |         ^
+000/NES_TEST/src/NESCore/NESCore.c78-1-1unused variable 'i' [-Wunused-variable]1-../src/NESCore/NESCore.c:78:6: warning: unused variable 'i' [-Wunused-variable]
+000-   78 |  int i, j;
+000-      |      ^
+000-In file included from ../src/NESCore/NESCore.c:30:
+000-../src/NESCore/NESCore.c: At top level:
+000/NES_TEST/src/NESCore/NESCore_Callback.h34-1-1inline function 'play_next_squeue' declared but never defined1-C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src/NESCore/NESCore_Callback.h:34:13: warning: inline function 'play_next_squeue' declared but never defined
+000-   34 | inline void play_next_squeue();
+000-      |             ^~~~~~~~~~~~~~~~
+000-'Finished building: ../src/NESCore/NESCore.c'
+000-' '
 000-'Building file: ../src/NESCore_Callback.c'
 000-'Invoking: ARM v7 gcc compiler'
-000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/jaxie963/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\jaxie963\workspace\NES_TEST\src\NESCore" -I"C:\Users\jaxie963\workspace\NES_TEST\src\xilsd" -I"C:\Users\jaxie963\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/NESCore_Callback.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/NESCore_Callback.d" -MT"src/NESCore_Callback.o" -o "src/NESCore_Callback.o" "../src/NESCore_Callback.c"
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\xilsd" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/NESCore_Callback.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/NESCore_Callback.d" -MT"src/NESCore_Callback.o" -o "src/NESCore_Callback.o" "../src/NESCore_Callback.c"
 000-../src/NESCore_Callback.c: In function 'NESCore_Callback_OutputFrame':
 000/NES_TEST/src/NESCore_Callback.c36-1-1unused variable 'str' [-Wunused-variable]1-../src/NESCore_Callback.c:36:10: warning: unused variable 'str' [-Wunused-variable]
 000-   36 |     char str[50];
@@ -17,17 +49,74 @@
 000-      |             ^~~~~
 000-'Finished building: ../src/NESCore_Callback.c'
 000-' '
+000-'Building file: ../src/VGA_TEST.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\xilsd" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/VGA_TEST.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/VGA_TEST.d" -MT"src/VGA_TEST.o" -o "src/VGA_TEST.o" "../src/VGA_TEST.c"
+000/NES_TEST/src/VGA_TEST.c83-1-1"/*" within comment [-Wcomment]1-../src/VGA_TEST.c:83:1: warning: "/*" within comment [-Wcomment]
+000-   83 | /*
+000-      |  
+000-'Finished building: ../src/VGA_TEST.c'
+000-' '
+000-'Building file: ../src/bmp_misc.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\xilsd" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/bmp_misc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/bmp_misc.d" -MT"src/bmp_misc.o" -o "src/bmp_misc.o" "../src/bmp_misc.c"
+000-'Finished building: ../src/bmp_misc.c'
+000-' '
+000-'Building file: ../src/nes_bootloader.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\xilsd" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/nes_bootloader.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/nes_bootloader.d" -MT"src/nes_bootloader.o" -o "src/nes_bootloader.o" "../src/nes_bootloader.c"
+000-../src/nes_bootloader.c: In function 'nes_load':
+000/NES_TEST/src/nes_bootloader.c53-1-1pointer targets in passing argument 2 of 'nes_strncpy' differ in signedness [-Wpointer-sign]1-../src/nes_bootloader.c:53:25: warning: pointer targets in passing argument 2 of 'nes_strncpy' differ in signedness [-Wpointer-sign]
+000-   53 |  nes_strncpy(nes_fname, "megaman2.nes", 15);
+000-      |                         ^~~~~~~~~~~~~~
+000-      |                         |
+000-      |                         char *
+000-In file included from ../src/nes_bootloader.h:31,
+000-                 from ../src/nes_bootloader.c:19:
+000/NES_TEST/src/utils.h24-1-1expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'0-../src/utils.h:24:10: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+000-   24 | uint8_t *nes_strncpy(uint8_t *dest, uint8_t *src, uint8_t n);
+000-      |          ^~~~~~~~~~~
+000/NES_TEST/src/nes_bootloader.c63-1-1pointer targets in passing argument 1 of 'NESCore_LoadROM' differ in signedness [-Wpointer-sign]1-../src/nes_bootloader.c:63:27: warning: pointer targets in passing argument 1 of 'NESCore_LoadROM' differ in signedness [-Wpointer-sign]
+000-   63 |  result = NESCore_LoadROM(nes_fname);
+000-      |                           ^~~~~~~~~
+000-      |                           |
+000-      |                           uint8_t * {aka unsigned char *}
+000-In file included from ../src/nes_bootloader.c:20:
+000/NES_TEST/src/NESCore/NESCore.h298-1-1expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}0-C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore/NESCore.h:298:33: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+000-  298 | int NESCore_LoadROM(const char *fileName);
+000-      |                     ~~~~~~~~~~~~^~~~~~~~
+000-../src/nes_bootloader.c: In function 'xil_init':
+000/NES_TEST/src/nes_bootloader.c108-1-1unused variable 'Status' [-Wunused-variable]1-../src/nes_bootloader.c:108:10: warning: unused variable 'Status' [-Wunused-variable]
+000-  108 |  XStatus Status = XST_SUCCESS;
+000-      |          ^~~~~~
+000-'Finished building: ../src/nes_bootloader.c'
+000-' '
+000-'Building file: ../src/platform.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\xilsd" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+000-'Finished building: ../src/platform.c'
+000-' '
+000-'Building file: ../src/utils.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\xilsd" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/utils.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/utils.d" -MT"src/utils.o" -o "src/utils.o" "../src/utils.c"
+000-'Finished building: ../src/utils.c'
+000-' '
+000-'Building file: ../src/wav_misc.c'
+000-'Invoking: ARM v7 gcc compiler'
+000-arm-none-eabi-gcc -Wall -O0 -g3 -IC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\NESCore" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src\xilsd" -I"C:\Users\Jaxie963\Temp\cpre488\Labs\MP-0\workspace\NES_TEST\src" -c -fmessage-length=0 -MT"src/wav_misc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/wav_misc.d" -MT"src/wav_misc.o" -o "src/wav_misc.o" "../src/wav_misc.c"
+000-'Finished building: ../src/wav_misc.c'
+000-' '
 000-'Building target: NES_TEST.elf'
 000-'Invoking: ARM v7 gcc linker'
-000-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/jaxie963/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "NES_TEST.elf"  ./src/xilsd/ff.o ./src/xilsd/mmc.o ./src/xilsd/xilsd.o  ./src/NESCore/M6502.o ./src/NESCore/NESCore.o ./src/NESCore/NESCore_Mapper.o ./src/NESCore/NESCore_pAPU.o  ./src/NESCore_Callback.o ./src/VGA_TEST.o ./src/bmp_misc.o ./src/nes_bootloader.o ./src/platform.o ./src/utils.o ./src/wav_misc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+000-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/workspace/zynq_design_1_wrapper/export/zynq_design_1_wrapper/sw/zynq_design_1_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "NES_TEST.elf"  ./src/xilsd/ff.o ./src/xilsd/mmc.o ./src/xilsd/xilsd.o  ./src/NESCore/M6502.o ./src/NESCore/NESCore.o ./src/NESCore/NESCore_Mapper.o ./src/NESCore/NESCore_pAPU.o  ./src/NESCore_Callback.o ./src/VGA_TEST.o ./src/bmp_misc.o ./src/nes_bootloader.o ./src/platform.o ./src/utils.o ./src/wav_misc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 000-'Finished building target: NES_TEST.elf'
 000-' '
 000-'Invoking: ARM v7 Print Size'
 000-arm-none-eabi-size NES_TEST.elf  |tee "NES_TEST.elf.size"
 000-   text	   data	    bss	    dec	    hex	filename
-000- 481051	   4676	5561264	6046991	 5c450f	NES_TEST.elf
+000- 488635	   4676	5561264	6054575	 5c62af	NES_TEST.elf
 000-'Finished building: NES_TEST.elf.size'
 000-' '
 00255-
-22:48:14 Build Finished (took 770ms)
+04:48:45 Build Finished (took 2s.866ms)
 

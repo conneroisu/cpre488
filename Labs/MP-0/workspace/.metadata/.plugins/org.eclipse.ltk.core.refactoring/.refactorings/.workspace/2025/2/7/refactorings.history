@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 6 resources" deleteContents="false" description="Delete 6 resources" element1="/NES_TEST/src/helloworld.c" element2="/NES_TEST/src/platform_config.h" element3="/NES_TEST/src/platform.c" element4="/NES_TEST/src/platform.h" element5="/NES_TEST/src/lscript.ld" element6="/NES_TEST/src/Xilinx.spec" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="6" stamp="1739177708090"/>
+</session>

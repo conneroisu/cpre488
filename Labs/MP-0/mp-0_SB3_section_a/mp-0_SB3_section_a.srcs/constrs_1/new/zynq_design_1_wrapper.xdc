@@ -37,6 +37,10 @@ connect_debug_port u_ila_0/probe29 [get_nets [list {zynq_design_1_i/ps7_0_axi_pe
 connect_debug_port dbg_hub/clk [get_nets clk]
 
 
-set_property PACKAGE_PIN W12 [get_ports {SNES_DATA_tri_io[0]}]
-set_property PACKAGE_PIN W11 [get_ports {SNES_LATCH_tri_io[0]}]
-set_property PACKAGE_PIN V10 [get_ports {SNES_CLCK_tri_io[0]}]
+set_property PACKAGE_PIN W12 [get_ports {SNES_DATA}]
+set_property PACKAGE_PIN W11 [get_ports {SNES_Latch_0}]
+set_property PACKAGE_PIN V10 [get_ports {SNES_clk_1_0}]
+
+set_property IOSTANDARD LVCMOS33 [get_ports {SNES_DATA}]
+set_property IOSTANDARD LVCMOS33 [get_ports {SNES_Latch_0}]
+set_property IOSTANDARD LVCMOS33 [get_ports {SNES_clk_1_0}]

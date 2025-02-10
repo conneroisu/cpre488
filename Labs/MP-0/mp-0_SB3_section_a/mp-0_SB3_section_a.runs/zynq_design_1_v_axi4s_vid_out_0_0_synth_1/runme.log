@@ -10,6 +10,24 @@
     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 
 source zynq_design_1_v_axi4s_vid_out_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/myip_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.cache/ip 
 Command: synth_design -top zynq_design_1_v_axi4s_vid_out_0_0 -part xc7z020clg484-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
@@ -17,12 +35,12 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 4384
+INFO: [Synth 8-7075] Helper process launched with PID 15752
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.324 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 993.098 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'zynq_design_1_v_axi4s_vid_out_0_0' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/synth/zynq_design_1_v_axi4s_vid_out_0_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:2107]
+INFO: [Synth 8-6157] synthesizing module 'zynq_design_1_v_axi4s_vid_out_0_0' [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/synth/zynq_design_1_v_axi4s_vid_out_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10' [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:2107]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_PIXELS_PER_CLOCK bound to: 1 - type: integer 
 	Parameter C_COMPONENTS_PER_PIXEL bound to: 1 - type: integer 
@@ -38,7 +56,7 @@ INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10' [c:/Users/jax
 	Parameter C_INCLUDE_PIXEL_REPEAT bound to: 0 - type: integer 
 	Parameter C_INCLUDE_PIXEL_REMAP_420 bound to: 0 - type: integer 
 	Parameter C_ADDR_WIDTH_PIXEL_REMAP_420 bound to: 10 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_cdc_single' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:207]
+INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_cdc_single' [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:207]
 	Parameter C_SYNC_FF bound to: 4 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single' [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:153]
 	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
@@ -47,8 +65,8 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single' [C:/Xilinx/Vivado/2020
 	Parameter SRC_INPUT_REG bound to: 0 - type: integer 
 	Parameter VERSION bound to: 0 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single' (1#1) [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:153]
-INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10_cdc_single' (2#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:207]
-INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_coupler' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:294]
+INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10_cdc_single' (2#1) [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:207]
+INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_coupler' [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:294]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_HAS_ASYNC_CLK bound to: 1 - type: integer 
 	Parameter C_ADDR_WIDTH bound to: 10 - type: integer 
@@ -63,7 +81,7 @@ INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_coupler' [c:/U
 	Parameter C_DO_PAD bound to: 1'b0 
 	Parameter C_DATA_WIDTH bound to: 19 - type: integer 
 	Parameter C_DIFF_COMPONENT_WIDTH bound to: 0 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_fifo_async' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:59]
+INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_fifo_async' [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:59]
 	Parameter C_ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 19 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_async' [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2037]
@@ -292,14 +310,14 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized2' [C:/
 INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized2' (9#1) [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1750]
 INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_base' (10#1) [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:56]
 INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_async' (11#1) [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2037]
-WARNING: [Synth 8-7071] port 'almost_full' of module 'xpm_fifo_async' is unconnected for instance 'XPM_FIFO_ASYNC_INST' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:108]
-WARNING: [Synth 8-7071] port 'wr_ack' of module 'xpm_fifo_async' is unconnected for instance 'XPM_FIFO_ASYNC_INST' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:108]
-WARNING: [Synth 8-7071] port 'almost_empty' of module 'xpm_fifo_async' is unconnected for instance 'XPM_FIFO_ASYNC_INST' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:108]
-WARNING: [Synth 8-7071] port 'data_valid' of module 'xpm_fifo_async' is unconnected for instance 'XPM_FIFO_ASYNC_INST' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:108]
-WARNING: [Synth 8-7023] instance 'XPM_FIFO_ASYNC_INST' of module 'xpm_fifo_async' has 26 connections declared, but only 22 given [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:108]
-INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10_fifo_async' (12#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:59]
-INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10_coupler' (13#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:294]
-INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_sync' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:506]
+WARNING: [Synth 8-7071] port 'almost_full' of module 'xpm_fifo_async' is unconnected for instance 'XPM_FIFO_ASYNC_INST' [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:108]
+WARNING: [Synth 8-7071] port 'wr_ack' of module 'xpm_fifo_async' is unconnected for instance 'XPM_FIFO_ASYNC_INST' [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:108]
+WARNING: [Synth 8-7071] port 'almost_empty' of module 'xpm_fifo_async' is unconnected for instance 'XPM_FIFO_ASYNC_INST' [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:108]
+WARNING: [Synth 8-7071] port 'data_valid' of module 'xpm_fifo_async' is unconnected for instance 'XPM_FIFO_ASYNC_INST' [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:108]
+WARNING: [Synth 8-7023] instance 'XPM_FIFO_ASYNC_INST' of module 'xpm_fifo_async' has 26 connections declared, but only 22 given [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:108]
+INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10_fifo_async' (12#1) [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10_coupler' (13#1) [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:294]
+INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_sync' [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:506]
 	Parameter C_ADDR_WIDTH bound to: 10 - type: integer 
 	Parameter C_VTG_MASTER_SLAVE bound to: 0 - type: integer 
 	Parameter C_HYSTERESIS_LEVEL bound to: 12 - type: integer 
@@ -318,37 +336,37 @@ INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_sync' [c:/User
 	Parameter C_SYNC_LALN_EOL_LAGGING bound to: 4'b1010 
 	Parameter C_SYNC_LALN_SOF_LEADING bound to: 4'b1011 
 	Parameter C_SYNC_LALN_SOF_LAGGING bound to: 4'b1100 
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:820]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:648]
-INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10_sync' (14#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:506]
-INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_formatter' [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:1142]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:820]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:648]
+INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10_sync' (14#1) [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:506]
+INFO: [Synth 8-6157] synthesizing module 'v_axi4s_vid_out_v4_0_10_formatter' [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:1142]
 	Parameter C_NATIVE_DATA_WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10_formatter' (15#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:1142]
-INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10' (16#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:2107]
-INFO: [Synth 8-6155] done synthesizing module 'zynq_design_1_v_axi4s_vid_out_0_0' (17#1) [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/synth/zynq_design_1_v_axi4s_vid_out_0_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10_formatter' (15#1) [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:1142]
+INFO: [Synth 8-6155] done synthesizing module 'v_axi4s_vid_out_v4_0_10' (16#1) [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/a87e/hdl/v_axi4s_vid_out_v4_0_vl_rfs.v:2107]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_design_1_v_axi4s_vid_out_0_0' (17#1) [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/synth/zynq_design_1_v_axi4s_vid_out_0_0.v:58]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.324 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 993.098 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.324 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 993.098 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.324 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 993.098 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1013.324 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 993.098 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_ooc.xdc] for cell 'inst'
-Finished Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_ooc.xdc] for cell 'inst'
-Parsing XDC File [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_v_axi4s_vid_out_0_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_v_axi4s_vid_out_0_0_synth_1/dont_touch.xdc]
-Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_clocks.xdc] for cell 'inst'
-Finished Parsing XDC File [c:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_clocks.xdc] for cell 'inst'
+Parsing XDC File [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [C:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_v_axi4s_vid_out_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_v_axi4s_vid_out_0_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_clocks.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_v_axi4s_vid_out_0_0/zynq_design_1_v_axi4s_vid_out_0_0_clocks.xdc] for cell 'inst'
 Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/COUPLER_INST/generate_async_fifo.FIFO_INST/XPM_FIFO_ASYNC_INST/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
 Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/COUPLER_INST/generate_async_fifo.FIFO_INST/XPM_FIFO_ASYNC_INST/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.rd_pntr_cdc_inst'
 Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/COUPLER_INST/generate_async_fifo.FIFO_INST/XPM_FIFO_ASYNC_INST/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst'
@@ -375,25 +393,25 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/zynq_design_1_v_axi4s_vid_out_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1045.836 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1025.852 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1047.516 ; gain = 1.680
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1027.863 ; gain = 2.012
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1027.863 ; gain = 34.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1027.863 ; gain = 34.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_v_axi4s_vid_out_0_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_v_axi4s_vid_out_0_0_synth_1/dont_touch.xdc, line 9).
 Applied set_property DONT_TOUCH = true for inst/COUPLER_INST/\generate_async_fifo.FIFO_INST /XPM_FIFO_ASYNC_INST/\gnuram_async_fifo.xpm_fifo_base_inst /\gen_cdc_pntr.rd_pntr_cdc_inst . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/COUPLER_INST/\generate_async_fifo.FIFO_INST /XPM_FIFO_ASYNC_INST/\gnuram_async_fifo.xpm_fifo_base_inst /\gen_cdc_pntr.wr_pntr_cdc_inst . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/COUPLER_INST/\generate_async_fifo.FIFO_INST /XPM_FIFO_ASYNC_INST/\gnuram_async_fifo.xpm_fifo_base_inst /\gen_cdc_pntr.rd_pntr_cdc_dc_inst . (constraint file  auto generated constraint, line ).
@@ -404,7 +422,7 @@ Applied set_property DONT_TOUCH = true for inst/COUPLER_INST/\generate_async_fif
 Applied set_property DONT_TOUCH = true for inst/COUPLER_INST/\generate_async_fifo.FIFO_INST /XPM_FIFO_ASYNC_INST/\gnuram_async_fifo.xpm_fifo_base_inst /xpm_fifo_rst_inst/\gen_rst_ic.wrst_rd_inst . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/COUPLER_INST/\generate_async_fifo.FIFO_INST /XPM_FIFO_ASYNC_INST. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1027.863 ; gain = 34.766
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'gen_rst_ic.curr_wrst_state_reg' in module 'xpm_fifo_rst'
 INFO: [Synth 8-802] inferred FSM for state register 'gen_rst_ic.curr_rrst_state_reg' in module 'xpm_fifo_rst'
@@ -460,7 +478,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'gen_fwft.curr_fwft_state_r
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'v_axi4s_vid_out_v4_0_10_sync'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1027.863 ; gain = 34.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -522,7 +540,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1027.863 ; gain = 34.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -543,13 +561,13 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1027.863 ; gain = 34.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1027.863 ; gain = 34.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -569,7 +587,7 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1033.406 ; gain = 40.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -588,37 +606,37 @@ Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-3295] tying undriven pin CDC_SINGLE_REMAP_UNDERFLOW_INST/xpm_cdc_single_inst:src_in to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1033.406 ; gain = 40.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1033.406 ; gain = 40.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1033.406 ; gain = 40.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1033.406 ; gain = 40.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1033.406 ; gain = 40.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1033.406 ; gain = 40.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -646,29 +664,29 @@ Report Cell Usage:
 |10    |FDSE     |    11|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1033.406 ; gain = 40.309
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 1047.516 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 1047.516 ; gain = 34.191
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:23 . Memory (MB): peak = 1033.406 ; gain = 5.543
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1033.406 ; gain = 40.309
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1047.516 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1043.320 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1047.516 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1045.824 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-80 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+90 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:23 . Memory (MB): peak = 1047.516 ; gain = 34.191
-INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_v_axi4s_vid_out_0_0_synth_1/zynq_design_1_v_axi4s_vid_out_0_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1045.824 ; gain = 52.727
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_v_axi4s_vid_out_0_0_synth_1/zynq_design_1_v_axi4s_vid_out_0_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP zynq_design_1_v_axi4s_vid_out_0_0, cache-ID = 3441f5d99da404c5
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP zynq_design_1_v_axi4s_vid_out_0_0, cache-ID = b4d6715c176368da
 INFO: [Coretcl 2-1174] Renamed 30 cell refs.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_v_axi4s_vid_out_0_0_synth_1/zynq_design_1_v_axi4s_vid_out_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_v_axi4s_vid_out_0_0_synth_1/zynq_design_1_v_axi4s_vid_out_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file zynq_design_1_v_axi4s_vid_out_0_0_utilization_synth.rpt -pb zynq_design_1_v_axi4s_vid_out_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Feb  7 19:11:17 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 10 01:04:31 2025...

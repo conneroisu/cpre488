@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Root VersionMajor="1" VersionMinor="15">
-  <GenAppInfo Name="Vivado" Version="2020.1" CL="2902540" TimeStamp="Fri Feb  7 20:34:54 2025"/>
+  <GenAppInfo Name="Vivado" Version="2020.1" CL="2902540" TimeStamp="Mon Feb 10 02:51:07 2025"/>
   <DSA Vendor="xilinx" BoardId="zed" Name="" VersionMajor="0" VersionMinor="0" Description="Vivado generated Hardware Platform" FeatureRomTimestamp="0" DcpLogicFunctionStripped="false" DcpEncrypt="false" Unified="true" Fixed="true" DefaultOutputType="hw_export">
     <Build UsesPR="false" PlatformState="pre_synth" AcceleratorBinaryContent="bitstream" ValidBinaryContentValues="dcp,bitstream" TopModuleName="zynq_design_1_wrapper"/>
     <Board Name="em.avnet.com:zed:1.4" Vendor="em.avnet.com" Part="xc7z020clg484-1" BoardPart="em.avnet.com:zed:part0:1.4">
@@ -16,7 +16,7 @@
       </Device>
     </Devices>
     <Files>
-      <File Type="FULL_BIT" Name="zynq_design_1_wrapper_muxed.bit"/>
+      <File Type="FULL_BIT" Name="zynq_design_1_wrapper.bit"/>
       <File Type="SIM_BINARY" Name="sim.bin"/>
     </Files>
   </DSA>

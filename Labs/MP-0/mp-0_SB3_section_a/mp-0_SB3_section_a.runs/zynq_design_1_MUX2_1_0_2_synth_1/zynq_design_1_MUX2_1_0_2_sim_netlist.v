@@ -1,8 +1,8 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Fri Feb  7 20:30:21 2025
-// Host        : CO2041-06 running 64-bit major release  (build 9200)
+// Date        : Mon Feb 10 01:04:25 2025
+// Host        : CO2041-04 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ zynq_design_1_MUX2_1_0_2_sim_netlist.v
 // Design      : zynq_design_1_MUX2_1_0_2
@@ -61,8 +61,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MUX2_1
         .O(out_0[3]));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "zynq_design_1_MUX2_1_0_2,MUX2_1,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
-(* x_core_info = "MUX2_1,Vivado 2020.1" *) 
+(* CHECK_LICENSE_TYPE = "zynq_design_1_MUX2_1_0_2,MUX2_1,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "MUX2_1,Vivado 2020.1" *) 
 (* NotValidForBitStream *)
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (S,
@@ -79,7 +79,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   wire [3:0]in_1;
   wire [3:0]out_0;
 
-  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MUX2_1 U0
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MUX2_1 inst
        (.S(S),
         .in_0(in_0),
         .in_1(in_1),

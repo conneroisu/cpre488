@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Sun Feb  2 20:57:20 2025
+// Date        : Mon Feb 10 01:05:27 2025
 // Host        : CO2041-04 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top zynq_design_1_axi_vdma_0_0 -prefix
-//               zynq_design_1_axi_vdma_0_0_ zynq_design_1_axi_vdma_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_axi_vdma_0_0/zynq_design_1_axi_vdma_0_0_stub.v
 // Design      : zynq_design_1_axi_vdma_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1

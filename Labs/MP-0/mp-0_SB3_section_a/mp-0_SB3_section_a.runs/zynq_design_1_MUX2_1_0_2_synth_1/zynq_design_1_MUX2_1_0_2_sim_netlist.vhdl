@@ -1,8 +1,8 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Fri Feb  7 20:30:21 2025
--- Host        : CO2041-06 running 64-bit major release  (build 9200)
+-- Date        : Mon Feb 10 01:04:25 2025
+-- Host        : CO2041-04 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ zynq_design_1_MUX2_1_0_2_sim_netlist.vhdl
 -- Design      : zynq_design_1_MUX2_1_0_2
@@ -86,17 +86,17 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "zynq_design_1_MUX2_1_0_2,MUX2_1,{}";
-  attribute downgradeipidentifiedwarnings : string;
-  attribute downgradeipidentifiedwarnings of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "yes";
-  attribute ip_definition_source : string;
-  attribute ip_definition_source of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "module_ref";
-  attribute x_core_info : string;
-  attribute x_core_info of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "MUX2_1,Vivado 2020.1";
+  attribute DowngradeIPIdentifiedWarnings : string;
+  attribute DowngradeIPIdentifiedWarnings of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "yes";
+  attribute IP_DEFINITION_SOURCE : string;
+  attribute IP_DEFINITION_SOURCE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "module_ref";
+  attribute X_CORE_INFO : string;
+  attribute X_CORE_INFO of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "MUX2_1,Vivado 2020.1";
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
 begin
-U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MUX2_1
+inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_MUX2_1
      port map (
       S => S,
       in_0(3 downto 0) => in_0(3 downto 0),

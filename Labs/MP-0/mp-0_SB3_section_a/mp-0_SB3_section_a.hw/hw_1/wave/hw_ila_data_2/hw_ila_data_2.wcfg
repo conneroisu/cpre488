@@ -3,64 +3,19 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/Users/Jaxie963/test/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
+      <db_ref path="C:/Users/Jaxie963/Temp/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1025fs"></ZoomEndTime>
-      <Cursor1Time time="280fs"></Cursor1Time>
+      <ZoomEndTime time="8768fs"></ZoomEndTime>
+      <Cursor1Time time="614fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="369"></NameColumnWidth>
-      <ValueColumnWidth column_width="68"></ValueColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
-   <wave_markers>
-   </wave_markers>
-   <wvobject fp_name="zynq_design_1_i/system_ila_2/U0/probe0_1" type="logic">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_2/U0/probe0_1</obj_property>
-      <obj_property name="ObjectShortName">probe0_1</obj_property>
-      <obj_property name="label">v_axi4s_vid_out_0_vid_hsync</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="zynq_design_1_i/system_ila_2/U0/SLOT_0_VIDEO_TIMING_active_video_1" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_2/U0/SLOT_0_VIDEO_TIMING_active_video_1</obj_property>
-      <obj_property name="ObjectShortName">SLOT_0_VIDEO_TIMING_active_video_1</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="zynq_design_1_i/system_ila_2/U0/SLOT_0_VIDEO_TIMING_hblank_1" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_2/U0/SLOT_0_VIDEO_TIMING_hblank_1</obj_property>
-      <obj_property name="ObjectShortName">SLOT_0_VIDEO_TIMING_hblank_1</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="zynq_design_1_i/system_ila_2/U0/SLOT_0_VIDEO_TIMING_hsync_1" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_2/U0/SLOT_0_VIDEO_TIMING_hsync_1</obj_property>
-      <obj_property name="ObjectShortName">SLOT_0_VIDEO_TIMING_hsync_1</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="zynq_design_1_i/system_ila_2/U0/SLOT_0_VIDEO_TIMING_vblank_1" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_2/U0/SLOT_0_VIDEO_TIMING_vblank_1</obj_property>
-      <obj_property name="ObjectShortName">SLOT_0_VIDEO_TIMING_vblank_1</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="zynq_design_1_i/system_ila_2/U0/SLOT_0_VIDEO_TIMING_vsync_1" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">zynq_design_1_i/system_ila_2/U0/SLOT_0_VIDEO_TIMING_vsync_1</obj_property>
-      <obj_property name="ObjectShortName">SLOT_0_VIDEO_TIMING_vsync_1</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
+   <WVObjectSize size="0" />
 </wave_config>
