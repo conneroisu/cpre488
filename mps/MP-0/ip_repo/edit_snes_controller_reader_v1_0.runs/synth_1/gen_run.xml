@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1739215942">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1739228881">
   <File Type="PA-TCL" Name="snes_controller_reader_v1_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="snes_controller_reader_v1_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="snes_controller_reader_v1_0_reports.tcl"/>

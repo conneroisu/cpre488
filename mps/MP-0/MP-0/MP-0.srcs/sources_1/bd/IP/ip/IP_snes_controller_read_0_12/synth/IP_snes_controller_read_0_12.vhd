@@ -46,14 +46,14 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: NolanEastburn:snes:snes_controller_reader_v7:1.0
+-- IP VLNV: NolanEastburn:smes:snes_controller_reader_v11:1.0
 -- IP Revision: 1
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY IP_snes_controller_read_0_8 IS
+ENTITY IP_snes_controller_read_0_12 IS
   PORT (
     i_snes_d : IN STD_LOGIC;
     i_snes_clk : IN STD_LOGIC;
@@ -80,11 +80,11 @@ ENTITY IP_snes_controller_read_0_8 IS
     s00_axi_rvalid : OUT STD_LOGIC;
     s00_axi_rready : IN STD_LOGIC
   );
-END IP_snes_controller_read_0_8;
+END IP_snes_controller_read_0_12;
 
-ARCHITECTURE IP_snes_controller_read_0_8_arch OF IP_snes_controller_read_0_8 IS
+ARCHITECTURE IP_snes_controller_read_0_12_arch OF IP_snes_controller_read_0_12 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
-  ATTRIBUTE DowngradeIPIdentifiedWarnings OF IP_snes_controller_read_0_8_arch: ARCHITECTURE IS "yes";
+  ATTRIBUTE DowngradeIPIdentifiedWarnings OF IP_snes_controller_read_0_12_arch: ARCHITECTURE IS "yes";
   COMPONENT snes_controller_reader_v1_0 IS
     GENERIC (
       C_S00_AXI_DATA_WIDTH : INTEGER;
@@ -117,8 +117,12 @@ ARCHITECTURE IP_snes_controller_read_0_8_arch OF IP_snes_controller_read_0_8 IS
       s00_axi_rready : IN STD_LOGIC
     );
   END COMPONENT snes_controller_reader_v1_0;
+  ATTRIBUTE X_CORE_INFO : STRING;
+  ATTRIBUTE X_CORE_INFO OF IP_snes_controller_read_0_12_arch: ARCHITECTURE IS "snes_controller_reader_v1_0,Vivado 2020.1";
+  ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
+  ATTRIBUTE CHECK_LICENSE_TYPE OF IP_snes_controller_read_0_12_arch : ARCHITECTURE IS "IP_snes_controller_read_0_12,snes_controller_reader_v1_0,{}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
-  ATTRIBUTE IP_DEFINITION_SOURCE OF IP_snes_controller_read_0_8_arch: ARCHITECTURE IS "package_project";
+  ATTRIBUTE IP_DEFINITION_SOURCE OF IP_snes_controller_read_0_12_arch: ARCHITECTURE IS "package_project";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_rready: SIGNAL IS "xilinx.com:interface:aximm:1.0 s00_axi RREADY";
@@ -178,4 +182,4 @@ BEGIN
       s00_axi_rvalid => s00_axi_rvalid,
       s00_axi_rready => s00_axi_rready
     );
-END IP_snes_controller_read_0_8_arch;
+END IP_snes_controller_read_0_12_arch;

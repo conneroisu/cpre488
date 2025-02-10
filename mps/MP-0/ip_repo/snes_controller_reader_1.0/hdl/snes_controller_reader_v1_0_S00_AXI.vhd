@@ -123,7 +123,7 @@ architecture arch_imp of snes_controller_reader_v1_0_S00_AXI is
 	signal aw_en	: std_logic;
 	
 	-- User defines
-	signal s_shift_reg_en, s_done, s_counter_en, s_pulse : std_logic;
+	signal s_shift_reg_en, s_done, s_counter_en, s_pulse, s_started : std_logic;
 	signal s_data : std_logic_vector(15 downto 0);
 
 begin
@@ -379,7 +379,8 @@ begin
 	   i_clk => i_snes_clk,
 	   i_rst_n => slv_reg1(0),
 	   i_start => s_counter_en,
-	   o_done => s_done
+	   o_done => s_done,
+	   o_started => s_started
 	);
 	
 	SHIFT_REG_INST : entity snes.shift_reg_n_bit(rtl)
@@ -393,14 +394,9 @@ begin
 	   o_d => s_data
 	);
 	
-	-- Use reg 3 for misc status
-	slv_reg3(0) <= s_pulse;
-	slv_reg3(1) <= s_counter_en;
-	slv_reg3(2) <= s_shift_reg_en;
-	
 	slv_reg0(15 downto 0) <= s_data;
 	slv_reg2(0) <= s_done;
-	s_shift_reg_en <= s_counter_en and not s_done;
+	s_shift_reg_en <= s_counter_en and not s_done and s_started;
 	o_pulse <= s_pulse;
 	
 	-- User logic ends

@@ -67,13 +67,15 @@ int main()
 
         // Poll SNES
         SNES_COMMAND = 0x3;
-    	// Reset test
+
+        xil_printf("SNES_COMMAND: %x\n\r", SNES_COMMAND);
 
         while(!SNES_STATUS)
         {
+
         }
 
-        usleep(250000);
+        usleep(100000);
 
         // Read from SNES
         xil_printf("SNES Reading: %x\n\r", SNES_READ);

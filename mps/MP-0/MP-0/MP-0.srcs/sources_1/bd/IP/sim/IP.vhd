@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Mon Feb 10 13:36:12 2025
---Host        : CO2041-16 running 64-bit major release  (build 9200)
+--Date        : Mon Feb 10 17:14:00 2025
+--Host        : CO2041-09 running 64-bit major release  (build 9200)
 --Command     : generate_target IP.bd
 --Design      : IP
 --Purpose     : IP block netlist
@@ -2796,7 +2796,7 @@ entity IP is
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of IP : entity is "IP,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=IP,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=38,numReposBlks=27,numNonXlnxBlks=1,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,""""""""""""""""""""""""""""""""""""""""""""""da_axi4_cnt""""""""""""""""""""""""""""""""""""""""""""""=11,""""""""""""""""""""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""""""""""""""""""""=9,""""""""""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""""""""""=4,""""""""""""""""""""""""""""""""""""""""""""""da_ps7_cnt""""""""""""""""""""""""""""""""""""""""""""""=2,""""""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""""""=5,""""""""""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""""""""""=1,""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""=8,""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""=1,""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""=1,""""""""""""da_axi4_cnt""""""""""""=1,""""""""""da_axi4_cnt""""""""""=1,""""""""""da_board_cnt""""""""""=1,""""""da_clkrst_cnt""""""=1,""""da_board_cnt""""=1,""""da_clkrst_cnt""""=2,""da_axi4_cnt""=4,""da_clkrst_cnt""=3,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of IP : entity is "IP,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=IP,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=38,numReposBlks=27,numNonXlnxBlks=1,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,""""""""""""""""""""""""""""""""""""""""""""""""""""""da_axi4_cnt""""""""""""""""""""""""""""""""""""""""""""""""""""""=11,""""""""""""""""""""""""""""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""""""""""""""""""""""""""""=9,""""""""""""""""""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""""""""""""""""""=4,""""""""""""""""""""""""""""""""""""""""""""""""""""""da_ps7_cnt""""""""""""""""""""""""""""""""""""""""""""""""""""""=2,""""""""""""""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""""""""""""""=5,""""""""""""""""""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""""""""""""""""""=1,""""""""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""""""""=8,""""""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""""""=1,""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""=1,""""""""""""""""""""da_axi4_cnt""""""""""""""""""""=1,""""""""""""""""""da_axi4_cnt""""""""""""""""""=1,""""""""""""""""""da_board_cnt""""""""""""""""""=1,""""""""""""""da_clkrst_cnt""""""""""""""=1,""""""""""""da_board_cnt""""""""""""=1,""""""""""""da_clkrst_cnt""""""""""""=2,""""""""""da_axi4_cnt""""""""""=4,""""""""""da_clkrst_cnt""""""""""=3,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of IP : entity is "IP.hwdef";
 end IP;
@@ -3255,7 +3255,7 @@ architecture STRUCTURE of IP is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component IP_proc_sys_reset_1_0;
-  component IP_snes_controller_read_0_8 is
+  component IP_snes_controller_read_0_12 is
   port (
     i_snes_d : in STD_LOGIC;
     i_snes_clk : in STD_LOGIC;
@@ -3282,7 +3282,7 @@ architecture STRUCTURE of IP is
     s00_axi_rvalid : out STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  end component IP_snes_controller_read_0_8;
+  end component IP_snes_controller_read_0_12;
   signal ACLK_1 : STD_LOGIC;
   signal SNES_D_1 : STD_LOGIC;
   signal axi_gpio_0_GPIO1_TRI_O : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -4185,7 +4185,7 @@ rst_ps7_0_100M: component IP_rst_ps7_0_100M_2
       peripheral_reset(0) => NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
     );
-snes_controller_read_0: component IP_snes_controller_read_0_8
+snes_controller_read_0: component IP_snes_controller_read_0_12
      port map (
       i_snes_clk => ACLK_1,
       i_snes_d => SNES_D_1,

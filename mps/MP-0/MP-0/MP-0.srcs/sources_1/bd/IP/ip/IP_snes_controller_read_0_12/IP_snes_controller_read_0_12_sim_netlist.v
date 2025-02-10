@@ -1,21 +1,21 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Mon Feb 10 13:36:10 2025
-// Host        : CO2041-16 running 64-bit major release  (build 9200)
+// Date        : Mon Feb 10 17:14:44 2025
+// Host        : CO2041-09 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/neastbur/cpre488/mps/MP-0/MP-0/MP-0.srcs/sources_1/bd/IP/ip/IP_snes_controller_read_0_8/IP_snes_controller_read_0_8_sim_netlist.v
-// Design      : IP_snes_controller_read_0_8
+//               c:/Users/neastbur/cpre488/mps/MP-0/MP-0/MP-0.srcs/sources_1/bd/IP/ip/IP_snes_controller_read_0_12/IP_snes_controller_read_0_12_sim_netlist.v
+// Design      : IP_snes_controller_read_0_12
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7z020clg484-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "IP_snes_controller_read_0_8,snes_controller_reader_v1_0,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "package_project" *) 
+(* CHECK_LICENSE_TYPE = "IP_snes_controller_read_0_12,snes_controller_reader_v1_0,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "package_project" *) 
 (* x_core_info = "snes_controller_reader_v1_0,Vivado 2020.1" *) 
 (* NotValidForBitStream *)
-module IP_snes_controller_read_0_8
+module IP_snes_controller_read_0_12
    (i_snes_d,
     i_snes_clk,
     o_pulse,
@@ -93,7 +93,7 @@ module IP_snes_controller_read_0_8
   assign s00_axi_rresp[0] = \<const0> ;
   GND GND
        (.G(\<const0> ));
-  IP_snes_controller_read_0_8_snes_controller_reader_v1_0 U0
+  IP_snes_controller_read_0_12_snes_controller_reader_v1_0 U0
        (.S_AXI_ARREADY(s00_axi_arready),
         .S_AXI_AWREADY(s00_axi_awready),
         .S_AXI_WREADY(s00_axi_wready),
@@ -117,67 +117,51 @@ module IP_snes_controller_read_0_8
 endmodule
 
 (* ORIG_REF_NAME = "clock_pulser" *) 
-module IP_snes_controller_read_0_8_clock_pulser
+module IP_snes_controller_read_0_12_clock_pulser
    (o_pulse,
     s_counter_en,
+    SR,
     i_snes_clk,
     Q);
   output o_pulse;
   output s_counter_en;
+  input [0:0]SR;
   input i_snes_clk;
   input [1:0]Q;
 
   wire [1:0]Q;
+  wire [0:0]SR;
   wire i_snes_clk;
-  wire o_counter_en_i_1_n_0;
   wire o_pulse;
-  wire o_pulse_i_1_n_0;
   wire s_counter_en;
+  wire s_counter_en_i_1_n_0;
   wire s_done;
   wire s_done_i_1_n_0;
+  wire s_pulse_i_2_n_0;
   wire s_started;
-  wire s_started_i_1_n_0;
+  wire s_started_i_1__0_n_0;
 
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'hAAEA0000)) 
-    o_counter_en_i_1
-       (.I0(s_counter_en),
-        .I1(s_started),
-        .I2(Q[1]),
-        .I3(s_done),
-        .I4(Q[0]),
-        .O(o_counter_en_i_1_n_0));
-  FDRE o_counter_en_reg
-       (.C(i_snes_clk),
-        .CE(1'b1),
-        .D(o_counter_en_i_1_n_0),
-        .Q(s_counter_en),
-        .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h8ABA0000)) 
-    o_pulse_i_1
-       (.I0(o_pulse),
-        .I1(s_done),
-        .I2(Q[1]),
-        .I3(s_started),
-        .I4(Q[0]),
-        .O(o_pulse_i_1_n_0));
-  FDRE o_pulse_reg
-       (.C(i_snes_clk),
-        .CE(1'b1),
-        .D(o_pulse_i_1_n_0),
-        .Q(o_pulse),
-        .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
-    .INIT(16'hA888)) 
+    .INIT(16'hFF40)) 
+    s_counter_en_i_1
+       (.I0(s_done),
+        .I1(Q[1]),
+        .I2(s_started),
+        .I3(s_counter_en),
+        .O(s_counter_en_i_1_n_0));
+  FDRE s_counter_en_reg
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_counter_en_i_1_n_0),
+        .Q(s_counter_en),
+        .R(SR));
+  LUT4 #(
+    .INIT(16'hA8A0)) 
     s_done_i_1
        (.I0(Q[0]),
-        .I1(s_done),
-        .I2(Q[1]),
-        .I3(s_started),
+        .I1(s_started),
+        .I2(s_done),
+        .I3(Q[1]),
         .O(s_done_i_1_n_0));
   FDRE s_done_reg
        (.C(i_snes_clk),
@@ -185,598 +169,1345 @@ module IP_snes_controller_read_0_8_clock_pulser
         .D(s_done_i_1_n_0),
         .Q(s_done),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
-    .INIT(16'hAE00)) 
-    s_started_i_1
+    .INIT(16'hF704)) 
+    s_pulse_i_2
        (.I0(s_started),
         .I1(Q[1]),
         .I2(s_done),
-        .I3(Q[0]),
-        .O(s_started_i_1_n_0));
+        .I3(o_pulse),
+        .O(s_pulse_i_2_n_0));
+  FDRE s_pulse_reg
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_pulse_i_2_n_0),
+        .Q(o_pulse),
+        .R(SR));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'hF4)) 
+    s_started_i_1__0
+       (.I0(s_done),
+        .I1(Q[1]),
+        .I2(s_started),
+        .O(s_started_i_1__0_n_0));
   FDRE s_started_reg
        (.C(i_snes_clk),
         .CE(1'b1),
-        .D(s_started_i_1_n_0),
+        .D(s_started_i_1__0_n_0),
         .Q(s_started),
+        .R(SR));
+endmodule
+
+(* ORIG_REF_NAME = "counter_4_bit" *) 
+module IP_snes_controller_read_0_12_counter_4_bit
+   (s_done,
+    SR,
+    s_shift_reg_en,
+    i_snes_clk,
+    s_counter_en,
+    Q);
+  output s_done;
+  output [0:0]SR;
+  output s_shift_reg_en;
+  input i_snes_clk;
+  input s_counter_en;
+  input [0:0]Q;
+
+  wire [0:0]Q;
+  wire [0:0]SR;
+  wire i_snes_clk;
+  wire s_counter_en;
+  wire s_done;
+  wire s_done_i_1__0_n_0;
+  wire s_done_i_2_n_0;
+  wire s_done_i_3_n_0;
+  wire s_done_i_4_n_0;
+  wire s_done_i_5_n_0;
+  wire s_done_reg__1;
+  wire s_shift_reg_en;
+  wire s_started;
+  wire s_started_i_1_n_0;
+  wire s_started_reg__1;
+  wire [15:0]s_value;
+  wire \s_value[3]_i_2_n_0 ;
+  wire \s_value[3]_i_3_n_0 ;
+  wire [15:0]s_value_reg;
+  wire \s_value_reg[0]__0_n_0 ;
+  wire \s_value_reg[10]__0_n_0 ;
+  wire \s_value_reg[11]__0_n_0 ;
+  wire \s_value_reg[11]_i_1_n_0 ;
+  wire \s_value_reg[11]_i_1_n_1 ;
+  wire \s_value_reg[11]_i_1_n_2 ;
+  wire \s_value_reg[11]_i_1_n_3 ;
+  wire \s_value_reg[12]__0_n_0 ;
+  wire \s_value_reg[13]__0_n_0 ;
+  wire \s_value_reg[14]__0_n_0 ;
+  wire \s_value_reg[15]__0_n_0 ;
+  wire \s_value_reg[15]_i_1_n_1 ;
+  wire \s_value_reg[15]_i_1_n_2 ;
+  wire \s_value_reg[15]_i_1_n_3 ;
+  wire \s_value_reg[1]__0_n_0 ;
+  wire \s_value_reg[2]__0_n_0 ;
+  wire \s_value_reg[3]__0_n_0 ;
+  wire \s_value_reg[3]_i_1_n_0 ;
+  wire \s_value_reg[3]_i_1_n_1 ;
+  wire \s_value_reg[3]_i_1_n_2 ;
+  wire \s_value_reg[3]_i_1_n_3 ;
+  wire \s_value_reg[4]__0_n_0 ;
+  wire \s_value_reg[5]__0_n_0 ;
+  wire \s_value_reg[6]__0_n_0 ;
+  wire \s_value_reg[7]__0_n_0 ;
+  wire \s_value_reg[7]_i_1_n_0 ;
+  wire \s_value_reg[7]_i_1_n_1 ;
+  wire \s_value_reg[7]_i_1_n_2 ;
+  wire \s_value_reg[7]_i_1_n_3 ;
+  wire \s_value_reg[8]__0_n_0 ;
+  wire \s_value_reg[9]__0_n_0 ;
+  wire [3:3]\NLW_s_value_reg[15]_i_1_CO_UNCONNECTED ;
+
+  LUT6 #(
+    .INIT(64'hFFFFFFFF00010000)) 
+    s_done_i_1__0
+       (.I0(s_done_i_2_n_0),
+        .I1(s_done_i_3_n_0),
+        .I2(s_done_i_4_n_0),
+        .I3(s_done_i_5_n_0),
+        .I4(s_started),
+        .I5(s_done),
+        .O(s_done_i_1__0_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    s_done_i_2
+       (.I0(\s_value_reg[5]__0_n_0 ),
+        .I1(\s_value_reg[4]__0_n_0 ),
+        .I2(\s_value_reg[7]__0_n_0 ),
+        .I3(\s_value_reg[6]__0_n_0 ),
+        .O(s_done_i_2_n_0));
+  LUT4 #(
+    .INIT(16'hDFFF)) 
+    s_done_i_3
+       (.I0(\s_value_reg[1]__0_n_0 ),
+        .I1(\s_value_reg[0]__0_n_0 ),
+        .I2(\s_value_reg[3]__0_n_0 ),
+        .I3(\s_value_reg[2]__0_n_0 ),
+        .O(s_done_i_3_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    s_done_i_4
+       (.I0(\s_value_reg[13]__0_n_0 ),
+        .I1(\s_value_reg[12]__0_n_0 ),
+        .I2(\s_value_reg[15]__0_n_0 ),
+        .I3(\s_value_reg[14]__0_n_0 ),
+        .O(s_done_i_4_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    s_done_i_5
+       (.I0(\s_value_reg[9]__0_n_0 ),
+        .I1(\s_value_reg[8]__0_n_0 ),
+        .I2(\s_value_reg[11]__0_n_0 ),
+        .I3(\s_value_reg[10]__0_n_0 ),
+        .O(s_done_i_5_n_0));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    s_done_reg
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_done_i_1__0_n_0),
+        .Q(s_done_reg__1),
         .R(1'b0));
+  FDRE s_done_reg__0
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_done_reg__1),
+        .Q(s_done),
+        .R(SR));
+  LUT1 #(
+    .INIT(2'h1)) 
+    s_pulse_i_1
+       (.I0(Q),
+        .O(SR));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'h40)) 
+    s_q_i_1
+       (.I0(s_done),
+        .I1(s_started),
+        .I2(s_counter_en),
+        .O(s_shift_reg_en));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'hF4)) 
+    s_started_i_1
+       (.I0(s_done),
+        .I1(s_counter_en),
+        .I2(s_started),
+        .O(s_started_i_1_n_0));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    s_started_reg
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_started_i_1_n_0),
+        .Q(s_started_reg__1),
+        .R(1'b0));
+  FDRE s_started_reg__0
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_started_reg__1),
+        .Q(s_started),
+        .R(SR));
+  LUT6 #(
+    .INIT(64'h666666666666666A)) 
+    \s_value[3]_i_2 
+       (.I0(\s_value_reg[0]__0_n_0 ),
+        .I1(\s_value[3]_i_3_n_0 ),
+        .I2(s_done_i_2_n_0),
+        .I3(s_done_i_3_n_0),
+        .I4(s_done_i_4_n_0),
+        .I5(s_done_i_5_n_0),
+        .O(\s_value[3]_i_2_n_0 ));
+  LUT2 #(
+    .INIT(4'h2)) 
+    \s_value[3]_i_3 
+       (.I0(s_started),
+        .I1(s_done),
+        .O(\s_value[3]_i_3_n_0 ));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[0] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[0]),
+        .Q(s_value_reg[0]),
+        .R(1'b0));
+  FDRE \s_value_reg[0]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[0]),
+        .Q(\s_value_reg[0]__0_n_0 ),
+        .R(SR));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[10] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[10]),
+        .Q(s_value_reg[10]),
+        .R(1'b0));
+  FDRE \s_value_reg[10]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[10]),
+        .Q(\s_value_reg[10]__0_n_0 ),
+        .R(SR));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[11] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[11]),
+        .Q(s_value_reg[11]),
+        .R(1'b0));
+  FDRE \s_value_reg[11]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[11]),
+        .Q(\s_value_reg[11]__0_n_0 ),
+        .R(SR));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 \s_value_reg[11]_i_1 
+       (.CI(\s_value_reg[7]_i_1_n_0 ),
+        .CO({\s_value_reg[11]_i_1_n_0 ,\s_value_reg[11]_i_1_n_1 ,\s_value_reg[11]_i_1_n_2 ,\s_value_reg[11]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(s_value[11:8]),
+        .S({\s_value_reg[11]__0_n_0 ,\s_value_reg[10]__0_n_0 ,\s_value_reg[9]__0_n_0 ,\s_value_reg[8]__0_n_0 }));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[12] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[12]),
+        .Q(s_value_reg[12]),
+        .R(1'b0));
+  FDRE \s_value_reg[12]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[12]),
+        .Q(\s_value_reg[12]__0_n_0 ),
+        .R(SR));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[13] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[13]),
+        .Q(s_value_reg[13]),
+        .R(1'b0));
+  FDRE \s_value_reg[13]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[13]),
+        .Q(\s_value_reg[13]__0_n_0 ),
+        .R(SR));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[14] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[14]),
+        .Q(s_value_reg[14]),
+        .R(1'b0));
+  FDRE \s_value_reg[14]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[14]),
+        .Q(\s_value_reg[14]__0_n_0 ),
+        .R(SR));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[15] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[15]),
+        .Q(s_value_reg[15]),
+        .R(1'b0));
+  FDRE \s_value_reg[15]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[15]),
+        .Q(\s_value_reg[15]__0_n_0 ),
+        .R(SR));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 \s_value_reg[15]_i_1 
+       (.CI(\s_value_reg[11]_i_1_n_0 ),
+        .CO({\NLW_s_value_reg[15]_i_1_CO_UNCONNECTED [3],\s_value_reg[15]_i_1_n_1 ,\s_value_reg[15]_i_1_n_2 ,\s_value_reg[15]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(s_value[15:12]),
+        .S({\s_value_reg[15]__0_n_0 ,\s_value_reg[14]__0_n_0 ,\s_value_reg[13]__0_n_0 ,\s_value_reg[12]__0_n_0 }));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[1] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[1]),
+        .Q(s_value_reg[1]),
+        .R(1'b0));
+  FDRE \s_value_reg[1]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[1]),
+        .Q(\s_value_reg[1]__0_n_0 ),
+        .R(SR));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[2] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[2]),
+        .Q(s_value_reg[2]),
+        .R(1'b0));
+  FDRE \s_value_reg[2]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[2]),
+        .Q(\s_value_reg[2]__0_n_0 ),
+        .R(SR));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[3] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[3]),
+        .Q(s_value_reg[3]),
+        .R(1'b0));
+  FDRE \s_value_reg[3]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[3]),
+        .Q(\s_value_reg[3]__0_n_0 ),
+        .R(SR));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 \s_value_reg[3]_i_1 
+       (.CI(1'b0),
+        .CO({\s_value_reg[3]_i_1_n_0 ,\s_value_reg[3]_i_1_n_1 ,\s_value_reg[3]_i_1_n_2 ,\s_value_reg[3]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,\s_value_reg[0]__0_n_0 }),
+        .O(s_value[3:0]),
+        .S({\s_value_reg[3]__0_n_0 ,\s_value_reg[2]__0_n_0 ,\s_value_reg[1]__0_n_0 ,\s_value[3]_i_2_n_0 }));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[4] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[4]),
+        .Q(s_value_reg[4]),
+        .R(1'b0));
+  FDRE \s_value_reg[4]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[4]),
+        .Q(\s_value_reg[4]__0_n_0 ),
+        .R(SR));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[5] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[5]),
+        .Q(s_value_reg[5]),
+        .R(1'b0));
+  FDRE \s_value_reg[5]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[5]),
+        .Q(\s_value_reg[5]__0_n_0 ),
+        .R(SR));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[6] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[6]),
+        .Q(s_value_reg[6]),
+        .R(1'b0));
+  FDRE \s_value_reg[6]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[6]),
+        .Q(\s_value_reg[6]__0_n_0 ),
+        .R(SR));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[7] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[7]),
+        .Q(s_value_reg[7]),
+        .R(1'b0));
+  FDRE \s_value_reg[7]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[7]),
+        .Q(\s_value_reg[7]__0_n_0 ),
+        .R(SR));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 \s_value_reg[7]_i_1 
+       (.CI(\s_value_reg[3]_i_1_n_0 ),
+        .CO({\s_value_reg[7]_i_1_n_0 ,\s_value_reg[7]_i_1_n_1 ,\s_value_reg[7]_i_1_n_2 ,\s_value_reg[7]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(s_value[7:4]),
+        .S({\s_value_reg[7]__0_n_0 ,\s_value_reg[6]__0_n_0 ,\s_value_reg[5]__0_n_0 ,\s_value_reg[4]__0_n_0 }));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[8] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[8]),
+        .Q(s_value_reg[8]),
+        .R(1'b0));
+  FDRE \s_value_reg[8]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[8]),
+        .Q(\s_value_reg[8]__0_n_0 ),
+        .R(SR));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    \s_value_reg[9] 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value[9]),
+        .Q(s_value_reg[9]),
+        .R(1'b0));
+  FDRE \s_value_reg[9]__0 
+       (.C(i_snes_clk),
+        .CE(1'b1),
+        .D(s_value_reg[9]),
+        .Q(\s_value_reg[9]__0_n_0 ),
+        .R(SR));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg
+module IP_snes_controller_read_0_12_reg
    (s_q,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     i_snes_d,
-    i_snes_clk);
+    i_snes_clk,
+    s_done,
+    axi_araddr,
+    Q);
   output s_q;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input i_snes_d;
   input i_snes_clk;
+  input s_done;
+  input [1:0]axi_araddr;
+  input [0:0]Q;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
   wire i_snes_d;
-  wire s_counter_en;
+  wire s_done;
   wire s_q;
+  wire s_shift_reg_en;
 
+  LUT5 #(
+    .INIT(32'h0FCA00CA)) 
+    \axi_rdata[0]_i_1 
+       (.I0(s_q),
+        .I1(s_done),
+        .I2(axi_araddr[1]),
+        .I3(axi_araddr[0]),
+        .I4(Q),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(i_snes_d),
         .Q(s_q),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_0
-   (s_q_reg_0,
-    s_counter_en,
-    s_q_reg_1,
-    i_snes_clk);
-  output s_q_reg_0;
-  input s_counter_en;
-  input s_q_reg_1;
+module IP_snes_controller_read_0_12_reg_0
+   (D,
+    s_shift_reg_en,
+    s_q_reg_0,
+    i_snes_clk,
+    Q,
+    axi_araddr);
+  output [0:0]D;
+  input s_shift_reg_en;
+  input s_q_reg_0;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
-  wire s_q_reg_1;
+  wire s_q_reg_n_0;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[15]_i_1 
+       (.I0(s_q_reg_n_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
+        .D(s_q_reg_0),
+        .Q(s_q_reg_n_0),
+        .R(1'b0));
+endmodule
+
+(* ORIG_REF_NAME = "reg" *) 
+module IP_snes_controller_read_0_12_reg_1
+   (s_q_reg_0,
+    D,
+    s_shift_reg_en,
+    s_q_reg_1,
+    i_snes_clk,
+    Q,
+    axi_araddr);
+  output s_q_reg_0;
+  output [0:0]D;
+  input s_shift_reg_en;
+  input s_q_reg_1;
+  input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
+
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
+  wire i_snes_clk;
+  wire s_q_reg_0;
+  wire s_q_reg_1;
+  wire s_shift_reg_en;
+
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[10]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
+  FDRE #(
+    .IS_C_INVERTED(1'b1)) 
+    s_q_reg
+       (.C(i_snes_clk),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_1
+module IP_snes_controller_read_0_12_reg_10
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[5]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_10
+module IP_snes_controller_read_0_12_reg_11
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[6]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_11
+module IP_snes_controller_read_0_12_reg_12
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[7]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_12
+module IP_snes_controller_read_0_12_reg_13
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[8]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_13
+module IP_snes_controller_read_0_12_reg_14
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[9]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_14
+module IP_snes_controller_read_0_12_reg_2
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[11]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_2
+module IP_snes_controller_read_0_12_reg_3
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[12]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_3
+module IP_snes_controller_read_0_12_reg_4
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[13]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_4
+module IP_snes_controller_read_0_12_reg_5
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[14]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_5
+module IP_snes_controller_read_0_12_reg_6
    (s_q_reg_0,
-    s_counter_en,
-    s_q_reg_1,
-    i_snes_clk);
-  output s_q_reg_0;
-  input s_counter_en;
-  input s_q_reg_1;
-  input i_snes_clk;
-
-  wire i_snes_clk;
-  wire s_counter_en;
-  wire s_q_reg_0;
-  wire s_q_reg_1;
-
-  FDRE #(
-    .IS_C_INVERTED(1'b1)) 
-    s_q_reg
-       (.C(i_snes_clk),
-        .CE(s_counter_en),
-        .D(s_q_reg_1),
-        .Q(s_q_reg_0),
-        .R(1'b0));
-endmodule
-
-(* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_6
-   (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q;
   wire s_q_reg_0;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[1]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_7
+module IP_snes_controller_read_0_12_reg_7
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[2]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_8
+module IP_snes_controller_read_0_12_reg_8
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[3]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "reg" *) 
-module IP_snes_controller_read_0_8_reg_9
+module IP_snes_controller_read_0_12_reg_9
    (s_q_reg_0,
-    s_counter_en,
+    D,
+    s_shift_reg_en,
     s_q_reg_1,
-    i_snes_clk);
+    i_snes_clk,
+    Q,
+    axi_araddr);
   output s_q_reg_0;
-  input s_counter_en;
+  output [0:0]D;
+  input s_shift_reg_en;
   input s_q_reg_1;
   input i_snes_clk;
+  input [0:0]Q;
+  input [1:0]axi_araddr;
 
+  wire [0:0]D;
+  wire [0:0]Q;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
-  wire s_counter_en;
   wire s_q_reg_0;
   wire s_q_reg_1;
+  wire s_shift_reg_en;
 
+  LUT4 #(
+    .INIT(16'h00CA)) 
+    \axi_rdata[4]_i_1 
+       (.I0(s_q_reg_0),
+        .I1(Q),
+        .I2(axi_araddr[0]),
+        .I3(axi_araddr[1]),
+        .O(D));
   FDRE #(
     .IS_C_INVERTED(1'b1)) 
     s_q_reg
        (.C(i_snes_clk),
-        .CE(s_counter_en),
+        .CE(s_shift_reg_en),
         .D(s_q_reg_1),
         .Q(s_q_reg_0),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "shift_reg_n_bit" *) 
-module IP_snes_controller_read_0_8_shift_reg_n_bit
-   (s_q,
-    s_q_reg,
-    s_q_reg_0,
-    s_q_reg_1,
-    s_q_reg_2,
-    s_q_reg_3,
-    s_q_reg_4,
-    s_q_reg_5,
-    s_q_reg_6,
-    s_q_reg_7,
-    s_q_reg_8,
-    s_q_reg_9,
-    s_q_reg_10,
-    s_q_reg_11,
-    s_q_reg_12,
-    s_q_reg_13,
-    s_counter_en,
+module IP_snes_controller_read_0_12_shift_reg_n_bit
+   (D,
+    s_shift_reg_en,
     i_snes_d,
-    i_snes_clk);
-  output s_q;
-  output s_q_reg;
-  output s_q_reg_0;
-  output s_q_reg_1;
-  output s_q_reg_2;
-  output s_q_reg_3;
-  output s_q_reg_4;
-  output s_q_reg_5;
-  output s_q_reg_6;
-  output s_q_reg_7;
-  output s_q_reg_8;
-  output s_q_reg_9;
-  output s_q_reg_10;
-  output s_q_reg_11;
-  output s_q_reg_12;
-  output s_q_reg_13;
-  input s_counter_en;
+    i_snes_clk,
+    s_done,
+    axi_araddr,
+    Q);
+  output [15:0]D;
+  input s_shift_reg_en;
   input i_snes_d;
   input i_snes_clk;
+  input s_done;
+  input [1:0]axi_araddr;
+  input [15:0]Q;
 
+  wire [15:0]D;
+  wire [15:0]Q;
+  wire \REG_GEN[10].REG_INST_n_0 ;
+  wire \REG_GEN[11].REG_INST_n_0 ;
+  wire \REG_GEN[12].REG_INST_n_0 ;
+  wire \REG_GEN[13].REG_INST_n_0 ;
+  wire \REG_GEN[14].REG_INST_n_0 ;
+  wire \REG_GEN[1].REG_INST_n_0 ;
+  wire \REG_GEN[2].REG_INST_n_0 ;
+  wire \REG_GEN[3].REG_INST_n_0 ;
+  wire \REG_GEN[4].REG_INST_n_0 ;
+  wire \REG_GEN[5].REG_INST_n_0 ;
+  wire \REG_GEN[6].REG_INST_n_0 ;
+  wire \REG_GEN[7].REG_INST_n_0 ;
+  wire \REG_GEN[8].REG_INST_n_0 ;
+  wire \REG_GEN[9].REG_INST_n_0 ;
+  wire [1:0]axi_araddr;
   wire i_snes_clk;
   wire i_snes_d;
-  wire s_counter_en;
+  wire s_done;
   wire s_q;
-  wire s_q_reg;
-  wire s_q_reg_0;
-  wire s_q_reg_1;
-  wire s_q_reg_10;
-  wire s_q_reg_11;
-  wire s_q_reg_12;
-  wire s_q_reg_13;
-  wire s_q_reg_2;
-  wire s_q_reg_3;
-  wire s_q_reg_4;
-  wire s_q_reg_5;
-  wire s_q_reg_6;
-  wire s_q_reg_7;
-  wire s_q_reg_8;
-  wire s_q_reg_9;
+  wire s_shift_reg_en;
 
-  IP_snes_controller_read_0_8_reg FIRST_REG_INST
-       (.i_snes_clk(i_snes_clk),
+  IP_snes_controller_read_0_12_reg FIRST_REG_INST
+       (.D(D[0]),
+        .Q(Q[0]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
         .i_snes_d(i_snes_d),
-        .s_counter_en(s_counter_en),
-        .s_q(s_q));
-  IP_snes_controller_read_0_8_reg_0 LAST_REG_INST
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_13),
-        .s_q_reg_1(s_q_reg_12));
-  IP_snes_controller_read_0_8_reg_1 \REG_GEN[10].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_8),
-        .s_q_reg_1(s_q_reg_7));
-  IP_snes_controller_read_0_8_reg_2 \REG_GEN[11].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_9),
-        .s_q_reg_1(s_q_reg_8));
-  IP_snes_controller_read_0_8_reg_3 \REG_GEN[12].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_10),
-        .s_q_reg_1(s_q_reg_9));
-  IP_snes_controller_read_0_8_reg_4 \REG_GEN[13].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_11),
-        .s_q_reg_1(s_q_reg_10));
-  IP_snes_controller_read_0_8_reg_5 \REG_GEN[14].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_12),
-        .s_q_reg_1(s_q_reg_11));
-  IP_snes_controller_read_0_8_reg_6 \REG_GEN[1].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
+        .s_done(s_done),
         .s_q(s_q),
-        .s_q_reg_0(s_q_reg));
-  IP_snes_controller_read_0_8_reg_7 \REG_GEN[2].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_0),
-        .s_q_reg_1(s_q_reg));
-  IP_snes_controller_read_0_8_reg_8 \REG_GEN[3].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_1),
-        .s_q_reg_1(s_q_reg_0));
-  IP_snes_controller_read_0_8_reg_9 \REG_GEN[4].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_2),
-        .s_q_reg_1(s_q_reg_1));
-  IP_snes_controller_read_0_8_reg_10 \REG_GEN[5].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_3),
-        .s_q_reg_1(s_q_reg_2));
-  IP_snes_controller_read_0_8_reg_11 \REG_GEN[6].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_4),
-        .s_q_reg_1(s_q_reg_3));
-  IP_snes_controller_read_0_8_reg_12 \REG_GEN[7].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_5),
-        .s_q_reg_1(s_q_reg_4));
-  IP_snes_controller_read_0_8_reg_13 \REG_GEN[8].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_6),
-        .s_q_reg_1(s_q_reg_5));
-  IP_snes_controller_read_0_8_reg_14 \REG_GEN[9].REG_INST 
-       (.i_snes_clk(i_snes_clk),
-        .s_counter_en(s_counter_en),
-        .s_q_reg_0(s_q_reg_7),
-        .s_q_reg_1(s_q_reg_6));
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_0 LAST_REG_INST
+       (.D(D[15]),
+        .Q(Q[15]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[14].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_1 \REG_GEN[10].REG_INST 
+       (.D(D[10]),
+        .Q(Q[10]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[10].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[9].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_2 \REG_GEN[11].REG_INST 
+       (.D(D[11]),
+        .Q(Q[11]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[11].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[10].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_3 \REG_GEN[12].REG_INST 
+       (.D(D[12]),
+        .Q(Q[12]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[12].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[11].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_4 \REG_GEN[13].REG_INST 
+       (.D(D[13]),
+        .Q(Q[13]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[13].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[12].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_5 \REG_GEN[14].REG_INST 
+       (.D(D[14]),
+        .Q(Q[14]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[14].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[13].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_6 \REG_GEN[1].REG_INST 
+       (.D(D[1]),
+        .Q(Q[1]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q(s_q),
+        .s_q_reg_0(\REG_GEN[1].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_7 \REG_GEN[2].REG_INST 
+       (.D(D[2]),
+        .Q(Q[2]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[2].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[1].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_8 \REG_GEN[3].REG_INST 
+       (.D(D[3]),
+        .Q(Q[3]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[3].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[2].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_9 \REG_GEN[4].REG_INST 
+       (.D(D[4]),
+        .Q(Q[4]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[4].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[3].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_10 \REG_GEN[5].REG_INST 
+       (.D(D[5]),
+        .Q(Q[5]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[5].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[4].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_11 \REG_GEN[6].REG_INST 
+       (.D(D[6]),
+        .Q(Q[6]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[6].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[5].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_12 \REG_GEN[7].REG_INST 
+       (.D(D[7]),
+        .Q(Q[7]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[7].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[6].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_13 \REG_GEN[8].REG_INST 
+       (.D(D[8]),
+        .Q(Q[8]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[8].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[7].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_reg_14 \REG_GEN[9].REG_INST 
+       (.D(D[9]),
+        .Q(Q[9]),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .s_q_reg_0(\REG_GEN[9].REG_INST_n_0 ),
+        .s_q_reg_1(\REG_GEN[8].REG_INST_n_0 ),
+        .s_shift_reg_en(s_shift_reg_en));
 endmodule
 
 (* ORIG_REF_NAME = "snes_controller_reader_v1_0" *) 
-module IP_snes_controller_read_0_8_snes_controller_reader_v1_0
+module IP_snes_controller_read_0_12_snes_controller_reader_v1_0
    (S_AXI_AWREADY,
     S_AXI_WREADY,
     S_AXI_ARREADY,
     s00_axi_rdata,
-    o_pulse,
     s00_axi_rvalid,
     s00_axi_bvalid,
+    o_pulse,
     s00_axi_awaddr,
     s00_axi_awvalid,
     s00_axi_wvalid,
     s00_axi_aclk,
     s00_axi_wdata,
-    i_snes_d,
     i_snes_clk,
+    i_snes_d,
     s00_axi_araddr,
     s00_axi_arvalid,
     s00_axi_wstrb,
@@ -787,16 +1518,16 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0
   output S_AXI_WREADY;
   output S_AXI_ARREADY;
   output [31:0]s00_axi_rdata;
-  output o_pulse;
   output s00_axi_rvalid;
   output s00_axi_bvalid;
+  output o_pulse;
   input [1:0]s00_axi_awaddr;
   input s00_axi_awvalid;
   input s00_axi_wvalid;
   input s00_axi_aclk;
   input [31:0]s00_axi_wdata;
-  input i_snes_d;
   input i_snes_clk;
+  input i_snes_d;
   input [1:0]s00_axi_araddr;
   input s00_axi_arvalid;
   input [3:0]s00_axi_wstrb;
@@ -825,7 +1556,7 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
 
-  IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI snes_controller_reader_v1_0_S00_AXI_inst
+  IP_snes_controller_read_0_12_snes_controller_reader_v1_0_S00_AXI snes_controller_reader_v1_0_S00_AXI_inst
        (.S_AXI_ARREADY(S_AXI_ARREADY),
         .S_AXI_AWREADY(S_AXI_AWREADY),
         .S_AXI_WREADY(S_AXI_WREADY),
@@ -849,21 +1580,21 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0
 endmodule
 
 (* ORIG_REF_NAME = "snes_controller_reader_v1_0_S00_AXI" *) 
-module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
+module IP_snes_controller_read_0_12_snes_controller_reader_v1_0_S00_AXI
    (S_AXI_AWREADY,
     S_AXI_WREADY,
     S_AXI_ARREADY,
     s00_axi_rdata,
-    o_pulse,
     s00_axi_rvalid,
     s00_axi_bvalid,
+    o_pulse,
     s00_axi_awaddr,
     s00_axi_awvalid,
     s00_axi_wvalid,
     s00_axi_aclk,
     s00_axi_wdata,
-    i_snes_d,
     i_snes_clk,
+    i_snes_d,
     s00_axi_araddr,
     s00_axi_arvalid,
     s00_axi_wstrb,
@@ -874,16 +1605,16 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
   output S_AXI_WREADY;
   output S_AXI_ARREADY;
   output [31:0]s00_axi_rdata;
-  output o_pulse;
   output s00_axi_rvalid;
   output s00_axi_bvalid;
+  output o_pulse;
   input [1:0]s00_axi_awaddr;
   input s00_axi_awvalid;
   input s00_axi_wvalid;
   input s00_axi_aclk;
   input [31:0]s00_axi_wdata;
-  input i_snes_d;
   input i_snes_clk;
+  input i_snes_d;
   input [1:0]s00_axi_araddr;
   input s00_axi_arvalid;
   input [3:0]s00_axi_wstrb;
@@ -891,21 +1622,6 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
   input s00_axi_bready;
   input s00_axi_rready;
 
-  wire SHIFT_REG_INST_n_1;
-  wire SHIFT_REG_INST_n_10;
-  wire SHIFT_REG_INST_n_11;
-  wire SHIFT_REG_INST_n_12;
-  wire SHIFT_REG_INST_n_13;
-  wire SHIFT_REG_INST_n_14;
-  wire SHIFT_REG_INST_n_15;
-  wire SHIFT_REG_INST_n_2;
-  wire SHIFT_REG_INST_n_3;
-  wire SHIFT_REG_INST_n_4;
-  wire SHIFT_REG_INST_n_5;
-  wire SHIFT_REG_INST_n_6;
-  wire SHIFT_REG_INST_n_7;
-  wire SHIFT_REG_INST_n_8;
-  wire SHIFT_REG_INST_n_9;
   wire S_AXI_ARREADY;
   wire S_AXI_AWREADY;
   wire S_AXI_WREADY;
@@ -926,6 +1642,7 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
   wire i_snes_clk;
   wire i_snes_d;
   wire o_pulse;
+  wire p_0_in;
   wire [31:0]p_1_in;
   wire [31:0]reg_data_out;
   wire s00_axi_aclk;
@@ -943,7 +1660,8 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
   wire s_counter_en;
-  wire s_q;
+  wire s_done;
+  wire s_shift_reg_en;
   wire [1:0]slv_reg1;
   wire \slv_reg1_reg_n_0_[10] ;
   wire \slv_reg1_reg_n_0_[11] ;
@@ -978,31 +1696,27 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
   wire slv_reg_rden;
   wire slv_reg_wren__2;
 
-  IP_snes_controller_read_0_8_clock_pulser CLOCK_PULSE_INST
+  IP_snes_controller_read_0_12_clock_pulser CLOCK_PULSE_INST
        (.Q(slv_reg1),
+        .SR(p_0_in),
         .i_snes_clk(i_snes_clk),
         .o_pulse(o_pulse),
         .s_counter_en(s_counter_en));
-  IP_snes_controller_read_0_8_shift_reg_n_bit SHIFT_REG_INST
-       (.i_snes_clk(i_snes_clk),
-        .i_snes_d(i_snes_d),
+  IP_snes_controller_read_0_12_counter_4_bit COUNTER_INST
+       (.Q(slv_reg1[0]),
+        .SR(p_0_in),
+        .i_snes_clk(i_snes_clk),
         .s_counter_en(s_counter_en),
-        .s_q(s_q),
-        .s_q_reg(SHIFT_REG_INST_n_1),
-        .s_q_reg_0(SHIFT_REG_INST_n_2),
-        .s_q_reg_1(SHIFT_REG_INST_n_3),
-        .s_q_reg_10(SHIFT_REG_INST_n_12),
-        .s_q_reg_11(SHIFT_REG_INST_n_13),
-        .s_q_reg_12(SHIFT_REG_INST_n_14),
-        .s_q_reg_13(SHIFT_REG_INST_n_15),
-        .s_q_reg_2(SHIFT_REG_INST_n_4),
-        .s_q_reg_3(SHIFT_REG_INST_n_5),
-        .s_q_reg_4(SHIFT_REG_INST_n_6),
-        .s_q_reg_5(SHIFT_REG_INST_n_7),
-        .s_q_reg_6(SHIFT_REG_INST_n_8),
-        .s_q_reg_7(SHIFT_REG_INST_n_9),
-        .s_q_reg_8(SHIFT_REG_INST_n_10),
-        .s_q_reg_9(SHIFT_REG_INST_n_11));
+        .s_done(s_done),
+        .s_shift_reg_en(s_shift_reg_en));
+  IP_snes_controller_read_0_12_shift_reg_n_bit SHIFT_REG_INST
+       (.D(reg_data_out[15:0]),
+        .Q({\slv_reg1_reg_n_0_[15] ,\slv_reg1_reg_n_0_[14] ,\slv_reg1_reg_n_0_[13] ,\slv_reg1_reg_n_0_[12] ,\slv_reg1_reg_n_0_[11] ,\slv_reg1_reg_n_0_[10] ,\slv_reg1_reg_n_0_[9] ,\slv_reg1_reg_n_0_[8] ,\slv_reg1_reg_n_0_[7] ,\slv_reg1_reg_n_0_[6] ,\slv_reg1_reg_n_0_[5] ,\slv_reg1_reg_n_0_[4] ,\slv_reg1_reg_n_0_[3] ,\slv_reg1_reg_n_0_[2] ,slv_reg1}),
+        .axi_araddr(axi_araddr),
+        .i_snes_clk(i_snes_clk),
+        .i_snes_d(i_snes_d),
+        .s_done(s_done),
+        .s_shift_reg_en(s_shift_reg_en));
   LUT6 #(
     .INIT(64'hBFFF8CCC8CCC8CCC)) 
     aw_en_i_1
@@ -1047,7 +1761,7 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
         .D(\axi_araddr[3]_i_1_n_0 ),
         .Q(axi_araddr[3]),
         .S(axi_awready_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'h2)) 
     axi_arready_i_1
@@ -1097,7 +1811,7 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
     axi_awready_i_1
        (.I0(s00_axi_aresetn),
         .O(axi_awready_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h0080)) 
     axi_awready_i_2
@@ -1128,206 +1842,125 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
         .D(axi_bvalid_i_1_n_0),
         .Q(s00_axi_bvalid),
         .R(axi_awready_i_1_n_0));
-  LUT5 #(
-    .INIT(32'hF0AC00AC)) 
-    \axi_rdata[0]_i_1 
-       (.I0(slv_reg1[0]),
-        .I1(s_q),
-        .I2(axi_araddr[2]),
-        .I3(axi_araddr[3]),
-        .I4(o_pulse),
-        .O(reg_data_out[0]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[10]_i_1 
-       (.I0(SHIFT_REG_INST_n_10),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[10] ),
-        .O(reg_data_out[10]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[11]_i_1 
-       (.I0(SHIFT_REG_INST_n_11),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[11] ),
-        .O(reg_data_out[11]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[12]_i_1 
-       (.I0(SHIFT_REG_INST_n_12),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[12] ),
-        .O(reg_data_out[12]));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[13]_i_1 
-       (.I0(SHIFT_REG_INST_n_13),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[13] ),
-        .O(reg_data_out[13]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[14]_i_1 
-       (.I0(SHIFT_REG_INST_n_14),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[14] ),
-        .O(reg_data_out[14]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[15]_i_1 
-       (.I0(SHIFT_REG_INST_n_15),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[15] ),
-        .O(reg_data_out[15]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
-    .INIT(8'h20)) 
+    .INIT(8'h40)) 
     \axi_rdata[16]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[16] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[16] ),
         .O(reg_data_out[16]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT3 #(
-    .INIT(8'h20)) 
-    \axi_rdata[17]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[17] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .O(reg_data_out[17]));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
-    .INIT(8'h20)) 
+    .INIT(8'h40)) 
+    \axi_rdata[17]_i_1 
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[17] ),
+        .O(reg_data_out[17]));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT3 #(
+    .INIT(8'h40)) 
     \axi_rdata[18]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[18] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[18] ),
         .O(reg_data_out[18]));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
-    .INIT(8'h20)) 
+    .INIT(8'h40)) 
     \axi_rdata[19]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[19] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[19] ),
         .O(reg_data_out[19]));
-  LUT5 #(
-    .INIT(32'hF0AC00AC)) 
-    \axi_rdata[1]_i_1 
-       (.I0(slv_reg1[1]),
-        .I1(SHIFT_REG_INST_n_1),
-        .I2(axi_araddr[2]),
-        .I3(axi_araddr[3]),
-        .I4(s_counter_en),
-        .O(reg_data_out[1]));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
-    .INIT(8'h20)) 
+    .INIT(8'h40)) 
     \axi_rdata[20]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[20] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[20] ),
         .O(reg_data_out[20]));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'h40)) 
+    \axi_rdata[21]_i_1 
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[21] ),
+        .O(reg_data_out[21]));
   (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
-    .INIT(8'h20)) 
-    \axi_rdata[21]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[21] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .O(reg_data_out[21]));
+    .INIT(8'h40)) 
+    \axi_rdata[22]_i_1 
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[22] ),
+        .O(reg_data_out[22]));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'h40)) 
+    \axi_rdata[23]_i_1 
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[23] ),
+        .O(reg_data_out[23]));
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
-    .INIT(8'h20)) 
-    \axi_rdata[22]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[22] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .O(reg_data_out[22]));
+    .INIT(8'h40)) 
+    \axi_rdata[24]_i_1 
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[24] ),
+        .O(reg_data_out[24]));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'h40)) 
+    \axi_rdata[25]_i_1 
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[25] ),
+        .O(reg_data_out[25]));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
-    .INIT(8'h20)) 
-    \axi_rdata[23]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[23] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .O(reg_data_out[23]));
+    .INIT(8'h40)) 
+    \axi_rdata[26]_i_1 
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[26] ),
+        .O(reg_data_out[26]));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT3 #(
+    .INIT(8'h40)) 
+    \axi_rdata[27]_i_1 
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[27] ),
+        .O(reg_data_out[27]));
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
-    .INIT(8'h20)) 
-    \axi_rdata[24]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[24] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .O(reg_data_out[24]));
+    .INIT(8'h40)) 
+    \axi_rdata[28]_i_1 
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[28] ),
+        .O(reg_data_out[28]));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT3 #(
+    .INIT(8'h40)) 
+    \axi_rdata[29]_i_1 
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[29] ),
+        .O(reg_data_out[29]));
   (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
-    .INIT(8'h20)) 
-    \axi_rdata[25]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[25] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .O(reg_data_out[25]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT3 #(
-    .INIT(8'h20)) 
-    \axi_rdata[26]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[26] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .O(reg_data_out[26]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT3 #(
-    .INIT(8'h20)) 
-    \axi_rdata[27]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[27] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .O(reg_data_out[27]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT3 #(
-    .INIT(8'h20)) 
-    \axi_rdata[28]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[28] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .O(reg_data_out[28]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT3 #(
-    .INIT(8'h20)) 
-    \axi_rdata[29]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[29] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .O(reg_data_out[29]));
-  LUT5 #(
-    .INIT(32'hF0AC00AC)) 
-    \axi_rdata[2]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[2] ),
-        .I1(SHIFT_REG_INST_n_2),
-        .I2(axi_araddr[2]),
-        .I3(axi_araddr[3]),
-        .I4(s_counter_en),
-        .O(reg_data_out[2]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT3 #(
-    .INIT(8'h20)) 
+    .INIT(8'h40)) 
     \axi_rdata[30]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[30] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
+       (.I0(axi_araddr[3]),
+        .I1(axi_araddr[2]),
+        .I2(\slv_reg1_reg_n_0_[30] ),
         .O(reg_data_out[30]));
   LUT3 #(
     .INIT(8'h08)) 
@@ -1336,76 +1969,14 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
         .I1(s00_axi_arvalid),
         .I2(s00_axi_rvalid),
         .O(slv_reg_rden));
-  LUT3 #(
-    .INIT(8'h20)) 
-    \axi_rdata[31]_i_2 
-       (.I0(\slv_reg1_reg_n_0_[31] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .O(reg_data_out[31]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[3]_i_1 
-       (.I0(SHIFT_REG_INST_n_3),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[3] ),
-        .O(reg_data_out[3]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[4]_i_1 
-       (.I0(SHIFT_REG_INST_n_4),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[4] ),
-        .O(reg_data_out[4]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[5]_i_1 
-       (.I0(SHIFT_REG_INST_n_5),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[5] ),
-        .O(reg_data_out[5]));
   (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[6]_i_1 
-       (.I0(SHIFT_REG_INST_n_6),
+  LUT3 #(
+    .INIT(8'h40)) 
+    \axi_rdata[31]_i_2 
+       (.I0(axi_araddr[3]),
         .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[6] ),
-        .O(reg_data_out[6]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[7]_i_1 
-       (.I0(SHIFT_REG_INST_n_7),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[7] ),
-        .O(reg_data_out[7]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[8]_i_1 
-       (.I0(SHIFT_REG_INST_n_8),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[8] ),
-        .O(reg_data_out[8]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT4 #(
-    .INIT(16'h0E02)) 
-    \axi_rdata[9]_i_1 
-       (.I0(SHIFT_REG_INST_n_9),
-        .I1(axi_araddr[2]),
-        .I2(axi_araddr[3]),
-        .I3(\slv_reg1_reg_n_0_[9] ),
-        .O(reg_data_out[9]));
+        .I2(\slv_reg1_reg_n_0_[31] ),
+        .O(reg_data_out[31]));
   FDRE \axi_rdata_reg[0] 
        (.C(s00_axi_aclk),
         .CE(slv_reg_rden),
@@ -1598,7 +2169,7 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
         .D(reg_data_out[9]),
         .Q(s00_axi_rdata[9]),
         .R(axi_awready_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'h08F8)) 
     axi_rvalid_i_1
@@ -1613,7 +2184,7 @@ module IP_snes_controller_read_0_8_snes_controller_reader_v1_0_S00_AXI
         .D(axi_rvalid_i_1_n_0),
         .Q(s00_axi_rvalid),
         .R(axi_awready_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h0080)) 
     axi_wready_i_1
