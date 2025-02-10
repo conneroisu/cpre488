@@ -1,17 +1,29 @@
 TESTBENCH_NAME := clock_pulser_tb
-SOURCE_FILE_NAMES := $(basename $(wildcard *.vhd))
-OBJECT_FILES := $(foreach name,$(SOURCE_FILE_NAMES),work/$(name).o)
-BUILT_FILES := $(OBJECT_FILES) $(TESTBENCH_NAME).exe e~$(TESTBENCH_NAME).o
+CLOCK_PULSER_OBJECT_FILES := work/clock_pulser.o work/clock_pulser_tb.o
+COUNTER_OBJECT_FILES := work/counter_4_bit.o work/counter_4_bit_tb.o
+BUILT_FILES := $(COUNTER_OBJECT_FILES) $(CLOCK_PULSER_OBJECT_FILES) $(TESTBENCH_NAME).exe e~$(TESTBENCH_NAME).o
 GHDL_ARGS := --workdir=work
 ANALYZE = ghdl -a $(GHDL_ARGS) $<
 
-$(TESTBENCH_NAME).exe : $(OBJECT_FILES)
-	ghdl -e $(GHDL_ARGS) $(TESTBENCH_NAME)
+all : counter_4_bit_tb.exe clock_pulser_tb.exe
+
+counter_4_bit_tb.exe : $(COUNTER_OBJECT_FILES)
+	ghdl -e $(GHDL_ARGS) counter_4_bit_tb
+
+clock_pulser_tb.exe : $(CLOCK_PULSER_OBJECT_FILES)
+	ghdl -e $(GHDL_ARGS) clock_pulser_tb
+
 
 work/clock_pulser.o : clock_pulser.vhd
 	$(ANALYZE)
 
-work/$(TESTBENCH_NAME).o: $(TESTBENCH_NAME).vhd work/clock_pulser.o
+work/counter_4_bit.o : counter_4_bit.vhd
+	$(ANALYZE)
+
+work/clock_pulser_tb.o: clock_pulser_tb.vhd work/clock_pulser.o
+	$(ANALYZE)
+
+work/counter_4_bit_tb.o : counter_4_bit_tb.vhd work/counter_4_bit.o
 	$(ANALYZE)
 
 .PHONY: clean
