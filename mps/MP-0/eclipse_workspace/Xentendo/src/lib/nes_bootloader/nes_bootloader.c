@@ -1,7 +1,8 @@
 #include "../../lib/nes_bootloader/nes_bootloader.h"
 
-#include <unistd.h> // for usleep
 #include "../../lib/nes_bootloader/NESCore/NESCore.h"
+#include "sleep.h"  // for ignoring ccls usleep error
+#include <unistd.h> // for usleep
 
 // Initializes
 // - bootloader state
@@ -72,7 +73,7 @@ void xil_init() {
       XPAR_AXIVDMA_0_BASEADDR,          // VDMA Base Addr
       XAXIVDMA_MM2S_ADDR_OFFSET         // MM2S Addr Offset
           + XAXIVDMA_START_ADDR_OFFSET, // Start Addr Offset
-      FBUFFER_BASEADDR//
+      FBUFFER_BASEADDR                  //
   );
 
   XAxiVdma_WriteReg(                   //
@@ -88,7 +89,8 @@ void xil_init() {
           + XAXIVDMA_HSIZE_OFFSET, // HSize Offset
       0x0500                       //
   );
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_FRMSTORE_OFFSET, 1);  // VDMA MM2S Number FRM_Stores
+  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_FRMSTORE_OFFSET,
+                    1); // VDMA MM2S Number FRM_Stores
 
   XAxiVdma_WriteReg( // Read Ch: VDMA MM2S VSIZE & Start VDMA transaction
       XPAR_AXIVDMA_0_BASEADDR,                           //
@@ -99,8 +101,8 @@ void xil_init() {
   return;
 }
 
-void nes_load(const char* *rom_name) {
-	  int32_t result = 0, i;
+void nes_load(const char *rom_name) {
+  int32_t result = 0, i;
 
   usleep(100000);
 
@@ -123,7 +125,7 @@ void nes_load(const char* *rom_name) {
   }
 
   if (bootstate.debug_level >= 1) {
-	    xil_printf("nes_load(): beginning emulation of %s\r\n", rom_name);
+    xil_printf("nes_load(): beginning emulation of %s\r\n", rom_name);
   }
 
   bootstate.nes_playing = 1;
@@ -144,4 +146,3 @@ void nes_load(const char* *rom_name) {
 
   return;
 }
-

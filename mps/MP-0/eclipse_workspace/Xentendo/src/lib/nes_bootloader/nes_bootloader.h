@@ -5,6 +5,11 @@
 #ifndef _NES_BOOTLOADER_H_
 #define _NES_BOOTLOADER_H_
 
+#include "../../lib/nes_bootloader/bmp_misc.h"
+#include "../../lib/nes_bootloader/mmap.h"
+#include "../../lib/nes_bootloader/utils.h"
+#include "../../lib/nes_bootloader/wav_misc.h"
+#include "../../lib/nes_bootloader/xilsd/xilsd.h"
 #include "xaxivdma.h"
 #include "xvtc.h"
 #include <stdint.h>
@@ -12,11 +17,6 @@
 #include <xgpiops.h>
 #include <xil_exception.h>
 #include <xparameters.h>
-#include "../../lib/nes_bootloader/bmp_misc.h"
-#include "../../lib/nes_bootloader/mmap.h"
-#include "../../lib/nes_bootloader/utils.h"
-#include "../../lib/nes_bootloader/wav_misc.h"
-#include "../../lib/nes_bootloader/xilsd/xilsd.h"
 
 // Compile-time constants
 #define DEBUG_LEVEL 10
@@ -84,7 +84,7 @@ int32_t ptv;
 
 // Function definitions for nes_bootloader.c
 void xil_init();
-void nes_load();
+void nes_load(const char *rom_name);
 
 // Some helpful macros
 #define DRAW_SPLASH()                                                          \
