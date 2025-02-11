@@ -245,7 +245,7 @@ void IP_processing_system7_0_0::before_end_of_elaboration()
     M_AXI_GP1_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
     M_AXI_GP1_transactor_param_props.addLong("DATA_WIDTH", "32");
-    M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "500000");
+    M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "1000000");
     M_AXI_GP1_transactor_param_props.addLong("ID_WIDTH", "12");
     M_AXI_GP1_transactor_param_props.addLong("ADDR_WIDTH", "32");
     M_AXI_GP1_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -633,7 +633,7 @@ void IP_processing_system7_0_0::before_end_of_elaboration()
     M_AXI_GP1_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
     M_AXI_GP1_transactor_param_props.addLong("DATA_WIDTH", "32");
-    M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "500000");
+    M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "1000000");
     M_AXI_GP1_transactor_param_props.addLong("ID_WIDTH", "12");
     M_AXI_GP1_transactor_param_props.addLong("ADDR_WIDTH", "32");
     M_AXI_GP1_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -1021,7 +1021,7 @@ void IP_processing_system7_0_0::before_end_of_elaboration()
     M_AXI_GP1_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
     M_AXI_GP1_transactor_param_props.addLong("DATA_WIDTH", "32");
-    M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "500000");
+    M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "1000000");
     M_AXI_GP1_transactor_param_props.addLong("ID_WIDTH", "12");
     M_AXI_GP1_transactor_param_props.addLong("ADDR_WIDTH", "32");
     M_AXI_GP1_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -1382,7 +1382,7 @@ IP_processing_system7_0_0::IP_processing_system7_0_0(const sc_core::sc_module_na
     M_AXI_GP1_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
     M_AXI_GP1_transactor_param_props.addLong("DATA_WIDTH", "32");
-    M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "500000");
+    M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "1000000");
     M_AXI_GP1_transactor_param_props.addLong("ID_WIDTH", "12");
     M_AXI_GP1_transactor_param_props.addLong("ADDR_WIDTH", "32");
     M_AXI_GP1_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -1777,7 +1777,7 @@ IP_processing_system7_0_0::IP_processing_system7_0_0(const sc_core::sc_module_na
     M_AXI_GP1_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP1_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
     M_AXI_GP1_transactor_param_props.addLong("DATA_WIDTH", "32");
-    M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "500000");
+    M_AXI_GP1_transactor_param_props.addLong("FREQ_HZ", "1000000");
     M_AXI_GP1_transactor_param_props.addLong("ID_WIDTH", "12");
     M_AXI_GP1_transactor_param_props.addLong("ADDR_WIDTH", "32");
     M_AXI_GP1_transactor_param_props.addLong("AWUSER_WIDTH", "0");

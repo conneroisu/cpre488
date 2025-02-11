@@ -67,7 +67,7 @@ ENTITY IP_proc_sys_reset_1_0 IS
     bus_struct_reset : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     peripheral_reset : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     interconnect_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    peripheral_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+    peripheral_aresetn : OUT STD_LOGIC_VECTOR(0 TO 1)
   );
 END IP_proc_sys_reset_1_0;
 
@@ -96,7 +96,7 @@ ARCHITECTURE IP_proc_sys_reset_1_0_arch OF IP_proc_sys_reset_1_0 IS
       bus_struct_reset : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       peripheral_reset : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       interconnect_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-      peripheral_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+      peripheral_aresetn : OUT STD_LOGIC_VECTOR(0 TO 1)
     );
   END COMPONENT proc_sys_reset;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -117,7 +117,7 @@ ARCHITECTURE IP_proc_sys_reset_1_0_arch OF IP_proc_sys_reset_1_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF aux_reset_in: SIGNAL IS "xilinx.com:signal:reset:1.0 aux_reset RST";
   ATTRIBUTE X_INTERFACE_PARAMETER OF ext_reset_in: SIGNAL IS "XIL_INTERFACENAME ext_reset, BOARD.ASSOCIATED_PARAM RESET_BOARD_INTERFACE, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF ext_reset_in: SIGNAL IS "xilinx.com:signal:reset:1.0 ext_reset RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF slowest_sync_clk: SIGNAL IS "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 500000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK2, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF slowest_sync_clk: SIGNAL IS "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN IP_processing_system7_0_0_FCLK_CLK2, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF slowest_sync_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clock CLK";
 BEGIN
   U0 : proc_sys_reset
@@ -130,7 +130,7 @@ BEGIN
       C_NUM_BUS_RST => 1,
       C_NUM_PERP_RST => 1,
       C_NUM_INTERCONNECT_ARESETN => 1,
-      C_NUM_PERP_ARESETN => 1
+      C_NUM_PERP_ARESETN => 2
     )
     PORT MAP (
       slowest_sync_clk => slowest_sync_clk,

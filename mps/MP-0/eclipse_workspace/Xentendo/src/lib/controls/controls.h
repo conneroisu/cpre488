@@ -40,8 +40,7 @@
 	typedef struct general_button_states t_general_button_states;
 
 	// Functions
-	void get_dpad_state(t_dpad_state* state);
-	void get_general_buttons_state(t_general_button_states* state);
-	void configure_control_interface();
+	void get_dpad_state(t_dpad_state* state, int player);
+	void get_general_buttons_state(t_general_button_states* state, int player);
 
 #endif

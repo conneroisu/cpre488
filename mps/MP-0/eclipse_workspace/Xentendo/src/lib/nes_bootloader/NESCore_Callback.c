@@ -77,21 +77,28 @@ void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2)
 
 	// Get dpad_state container from entry.c
 	// This object has the space allocated for it already.
-	extern t_dpad_state dpad_state;
+	extern t_dpad_state dpad_state_p1;
 
-	extern t_general_button_states general_button_states;
+	extern t_general_button_states general_button_states_p1;
+
+	extern t_dpad_state dpad_state_p2;
+
+	extern t_general_button_states general_button_states_p2;
 
 	// Get input
-	get_dpad_state(&dpad_state);
-	get_general_buttons_state(&general_button_states);
+	get_dpad_state(&dpad_state_p1, 0);
+	get_general_buttons_state(&general_button_states_p1, 0);
+	get_dpad_state(&dpad_state_p2, 1);
+	get_general_buttons_state(&general_button_states_p2, 1);
 
 	// Clear old input
 	*pdwPad1 = 0;
+	*pdwPad2 = 0;
 
 	// Process dpad inputs
-	for(int i = 0; i < dpad_state.len; ++i)
+	for(int i = 0; i < dpad_state_p1.len; ++i)
 	{
-		switch(dpad_state.active_buttons[i])
+		switch(dpad_state_p1.active_buttons[i])
 		{
 			case UP:
 				*pdwPad1 |= NCTL_UP;
@@ -111,9 +118,9 @@ void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2)
 	}
 
 	// Process general button inputs
-	for(int i = 0; i < general_button_states.len; ++i)
+	for(int i = 0; i < general_button_states_p1.len; ++i)
 	{
-		switch(general_button_states.active_buttons[i])
+		switch(general_button_states_p1.active_buttons[i])
 		{
 			case A:
 				*pdwPad1 |= NCTL_A;
@@ -131,7 +138,49 @@ void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2)
 		}
 	}
 
-	*pdwPad2 = 0;
+	// Process dpad inputs
+	for(int i = 0; i < dpad_state_p2.len; ++i)
+	{
+		switch(dpad_state_p2.active_buttons[i])
+		{
+			case UP:
+				*pdwPad2 |= NCTL_UP;
+				break;
+			case DOWN:
+				*pdwPad2 |= NCTL_DOWN;
+				break;
+			case LEFT:
+				*pdwPad2 |= NCTL_LEFT;
+				break;
+			case RIGHT:
+				*pdwPad2 |= NCTL_RIGHT;
+				break;
+			default:
+				break;
+		}
+	}
+
+	// Process general button inputs
+	for(int i = 0; i < general_button_states_p2.len; ++i)
+	{
+		switch(general_button_states_p2.active_buttons[i])
+		{
+			case A:
+				*pdwPad2 |= NCTL_A;
+				break;
+			case B:
+				*pdwPad2 |= NCTL_B;
+				break;
+			case START:
+				*pdwPad2 |= NCTL_START;
+				break;
+			case SELECT:
+				*pdwPad2 |= NCTL_SELECT;
+			default:
+				break;
+		}
+	}
+
 
 	return;
 }

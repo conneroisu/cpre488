@@ -52,9 +52,9 @@
 #include "xil_types.h"
 #include "sleep.h"
 
-#define SNES_READ *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_BASEADDR)
-#define SNES_COMMAND *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_BASEADDR + 0x1)
-#define SNES_STATUS *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_BASEADDR + 0x2)
+#define SNES_READ_A *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_BASEADDR)
+#define SNES_CONTROL_A *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_BASEADDR + 0x1)
+#define SNES_STATUS_A *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_BASEADDR + 0x2)
 #define EXTRA *((volatile u32*) XPAR_SNES_CONTROLLER_READ_0_BASEADDR + 0x3)
 
 int main()
@@ -63,14 +63,14 @@ int main()
 
     while(1)
     {
-    	SNES_COMMAND = 0x0;
+    	SNES_CONTROL_A = 0x0;
 
         // Poll SNES
-        SNES_COMMAND = 0x3;
+        SNES_CONTROL_A = 0x3;
 
-        xil_printf("SNES_COMMAND: %x\n\r", SNES_COMMAND);
+        xil_printf("SNES_COMMAND: %x\n\r", SNES_CONTROL_A);
 
-        while(!SNES_STATUS)
+        while(!SNES_STATUS_A)
         {
 
         }
@@ -78,10 +78,10 @@ int main()
         usleep(100000);
 
         // Read from SNES
-        xil_printf("SNES Reading: %x\n\r", SNES_READ);
+        xil_printf("SNES Reading: %x\n\r", SNES_READ_A);
 
         // Reset SNES
-        SNES_COMMAND = 0x0;
+        SNES_CONTROL_A = 0x0;
     }
 
 

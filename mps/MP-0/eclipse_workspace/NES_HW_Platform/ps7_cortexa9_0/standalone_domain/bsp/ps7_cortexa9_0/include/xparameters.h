@@ -213,6 +213,16 @@
 /******************************************************************/
 
 
+/* Definitions for peripheral PLAYERONESNESREAD */
+#define XPAR_PLAYERONESNESREAD_BASEADDR 0x83C00000
+#define XPAR_PLAYERONESNESREAD_HIGHADDR 0x83C0FFFF
+
+
+/* Definitions for peripheral PLAYERTWOSNESREAD */
+#define XPAR_PLAYERTWOSNESREAD_BASEADDR 0x83C10000
+#define XPAR_PLAYERTWOSNESREAD_HIGHADDR 0x83C1FFFF
+
+
 /* Definitions for peripheral PS7_AFI_0 */
 #define XPAR_PS7_AFI_0_S_AXI_BASEADDR 0xF8008000
 #define XPAR_PS7_AFI_0_S_AXI_HIGHADDR 0xF8008FFF
@@ -303,11 +313,6 @@
 /* Definitions for peripheral PS7_SLCR_0 */
 #define XPAR_PS7_SLCR_0_S_AXI_BASEADDR 0xF8000000
 #define XPAR_PS7_SLCR_0_S_AXI_HIGHADDR 0xF8000FFF
-
-
-/* Definitions for peripheral SNES_CONTROLLER_READ_0 */
-#define XPAR_SNES_CONTROLLER_READ_0_BASEADDR 0x83C00000
-#define XPAR_SNES_CONTROLLER_READ_0_HIGHADDR 0x83C0FFFF
 
 
 /******************************************************************/
