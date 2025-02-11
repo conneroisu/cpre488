@@ -1,18 +1,22 @@
 clang
 %c -std=c11
 %cpp -std=c++2a
-%h %hpp --include=./sw/nes_bootloader/src/NESCore/*.h
-%h %hpp --include=./sw/nes_bootloader/src/xilsd/diskio.h
-%h %hpp --include=./sw/nes_bootloader/src/xilsd/ff.h
-%h %hpp --include=./sw/nes_bootloader/src/xilsd/integer.h
-%h %hpp --include=./sw/nes_bootloader/src/xilsd/ffconf.h
-%h %hpp --include=./sw/nes_bootloader/src/xilsd/mmc.c
-%h %hpp --include=./sw/nes_bootloader/src/xilsd/xilsd.h
-%h %hpp --include=./sw/nes_bootloader/src/xilsd/sd_hardware.h
-%h %hpp --include=./sw/nes_bootloader/src/*.h
+%h %hpp --include=./eclipse_workspace/Xentendo/src/lib/menu/*.h
+%h %hpp --include=./eclipse_workspace/Xentendo/src/lib/nes_bootloader/*.h
+%h %hpp --include=./eclipse_workspace/Xentendo/src/lib/controls/*.h
+%h %hpp --include=./eclipse_workspace/Xentendo/src/lib/nes_bootloader/NESCore/*.h
+%h %hpp --include=./eclipse_workspace/Xentendo/src/lib/display/*.h
+%h %hpp --include=./eclipse_workspace/Xentendo/src/lib/nes_bootloader/xilsd/*.h
+%h %hpp --include=./eclipse_workspace/NES_HW_Platform/zynq_fsbl/zynq_fsbl_bsp/ps7_cortexa9_0/include/*.h
+%h %hpp --include=./eclipse_workspace/NES_HW_Platform/zynq_fsbl/zynq_fsbl_bsp/ps7_cortexa9_0/libsrc/**/*.h
+
 -Iinc
 -DMACRO
--I./sw/nes_bootloader/src/xilsd/
--I./sw/nes_bootloader/src/NESCore/
--I./sw/nes_bootloader/src/NESCore/mapper/
--I./sw/nes_bootloader/src/
+-I./eclipse_workspace/Xentendo/src/lib/menu
+-I./eclipse_workspace/Xentendo/src/lib/nes_bootloader
+-I./eclipse_workspace/Xentendo/src/lib/controls
+-I./eclipse_workspace/Xentendo/src/lib/nes_bootloader/NESCore
+-I./eclipse_workspace/Xentendo/src/lib/display
+-I./eclipse_workspace/Xentendo/src/lib/nes_bootloader/xilsd
+-I./eclipse_workspace/NES_HW_Platform/zynq_fsbl/zynq_fsbl_bsp/ps7_cortexa9_0/include
+-I./eclipse_workspace/NES_HW_Platform/zynq_fsbl/zynq_fsbl_bsp/ps7_cortexa9_0/libsrc/**/*.h
