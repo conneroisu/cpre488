@@ -1,18 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "platform.h"
-#include "xil_printf.h"
-#include "nes_bootloader.h"
 #include "NESCore.h"
+#include "controls.h"
+#include "menu.h"
+#include "nes_bootloader.h"
 #include "platform.h"
+#include "sleep.h"
 #include "xaxivdma.h"
+#include "xgpiops.h"
 #include "xil_cache.h"
+#include "xil_printf.h"
 #include "xparameters.h"
 #include "xvtc.h"
-#include "menu.h"
-#include "controls.h"
-#include "xgpiops.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 
 #define IMAGE_WIDTH 640
 #define IMAGE_HEIGHT 480
@@ -20,26 +19,112 @@
 
 typedef u16 t_image_type[IMAGE_HEIGHT][IMAGE_WIDTH];
 
-t_image_type front_buffer;
-
 t_dpad_state dpad_state_p1;
 t_general_button_states general_button_states_p1;
 
 t_dpad_state dpad_state_p2;
 t_general_button_states general_button_states_p2;
 
-char *game_menu()
-{
-  int selected_index = 0;
-  int menu_offset = 0;
+t_image_type front_buffer;
+t_image_type back_buffer;
+t_image_type *draw_buffer = &back_buffer;
 
-  draw_game_menu(front_buffer, selected_index, menu_offset);
+/*
+ * Renders the game menu
+ */
+void render_game_menu(int selected_index, int menu_offset) {
+  draw_game_menu(draw_buffer, selected_index, menu_offset);
 
-  return "ISUBros.nes";
+  Xil_DCacheFlush();
+
+  XAxiVdma_WriteReg(
+      XPAR_AXI_VDMA_0_BASEADDR,
+      XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET,
+      /*old: (u32)*draw_buffer); // Read Channel: VDMA MM2S Frame buffer Start
+         Addr
+         1*/
+      (u32)(uintptr_t)&((*draw_buffer)[0][0])); // Read Channel: VDMA MM2S Frame
+                                                // buffer Start Addr 1
+
+  draw_buffer = (draw_buffer == &front_buffer ? &back_buffer : &front_buffer);
+
+  XAxiVdma_WriteReg(
+      XPAR_AXI_VDMA_0_BASEADDR,
+      XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET,
+      480); // Read Channel: VDMA MM2S VSIZE and start transaction.
 }
 
-int main()
-{
+char *game_menu() {
+  int menu_offset = 0;
+  int selected_index = 0;
+
+  int num_games = get_games_length();
+  int i = 0;
+  char *rom_name;
+  char *selected_game = get_selected_game_rom_name(selected_index, menu_offset);
+
+  render_game_menu(selected_index, menu_offset);
+
+  while (1) {
+  control_start:
+    if (selected_index < menu_offset) {
+      menu_offset = selected_index;
+    } else if (selected_index >= menu_offset + ROWS_GAME_MENU) {
+      menu_offset = selected_index - ROWS_GAME_MENU + 1;
+    }
+
+    get_dpad_state(&dpad_state_p1, 0);
+    get_general_buttons_state(&general_button_states_p1, 0);
+
+    for (i = 0; i < dpad_state_p1.len; ++i) {
+      switch (dpad_state_p1.active_buttons[i]) {
+      case UP:
+        if (selected_index < 1) {
+          continue;
+        }
+        selected_index--;
+
+        render_game_menu(selected_index, menu_offset);
+        goto control_start;
+      case DOWN:
+        if (selected_index > num_games) {
+          continue;
+        }
+        selected_index++;
+
+        render_game_menu(selected_index, menu_offset);
+        goto control_start;
+      default:
+        continue;
+      }
+    }
+
+    for (int i = 0; i < general_button_states_p1.len; ++i) {
+      switch (general_button_states_p1.active_buttons[i]) {
+      case A:
+        return get_selected_game_rom_name(selected_index, menu_offset);
+      case START:
+        return get_selected_game_rom_name(selected_index, menu_offset);
+      default:
+        continue;
+      }
+    }
+
+    usleep(50);
+  }
+
+  rom_name = get_selected_game_rom_name(selected_index, menu_offset);
+
+  return rom_name;
+}
+
+int main() {
+  int num_games = get_games_length();
+  int i = 0;
+  int menu_offset = 0;
+  int selected_index = 0;
+  char *rom_name;
+  char *selected_game = get_selected_game_rom_name(selected_index, menu_offset);
 
   init_platform();
 
@@ -47,17 +132,21 @@ int main()
   xil_init();
 
   // Allocate space for the dpad data.
-  dpad_state_p1.active_buttons = malloc(sizeof(t_dpad_buttons) * DPAD_BUTTON_COUNT);
+  dpad_state_p1.active_buttons =
+      malloc(sizeof(t_dpad_buttons) * DPAD_BUTTON_COUNT);
   dpad_state_p1.len = 0;
 
-  dpad_state_p2.active_buttons = malloc(sizeof(t_dpad_buttons) * DPAD_BUTTON_COUNT);
+  dpad_state_p2.active_buttons =
+      malloc(sizeof(t_dpad_buttons) * DPAD_BUTTON_COUNT);
   dpad_state_p2.len = 0;
 
   // Allocate space for the general button data.
-  general_button_states_p1.active_buttons = malloc(sizeof(t_general_button_states) * GENERAL_BUTTON_COUNT);
+  general_button_states_p1.active_buttons =
+      malloc(sizeof(t_general_button_states) * GENERAL_BUTTON_COUNT);
   general_button_states_p1.len = 0;
 
-  general_button_states_p2.active_buttons = malloc(sizeof(t_general_button_states) * GENERAL_BUTTON_COUNT);
+  general_button_states_p2.active_buttons =
+      malloc(sizeof(t_general_button_states) * GENERAL_BUTTON_COUNT);
   general_button_states_p2.len = 0;
 
   // Initialize the NESCore
@@ -66,10 +155,10 @@ int main()
   // Enable the cache
   Xil_DCacheEnable();
 
-  char *selected_game = game_menu();
-
-  while (1)
-  {
+  while (1) {
+    selected_game = game_menu();
+    xil_init();
+    NESCore_Init();
     nes_load(selected_game);
   }
   cleanup_platform();
