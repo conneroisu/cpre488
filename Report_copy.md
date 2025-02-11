@@ -217,7 +217,9 @@ int main()
 }
 ```
 
-An example of the code working: %% TODO
+An example of the code working: 
+![](LED_BTNS_EX.mp4)
+
 
 
 ## [TASK] In VIVADO, add these peripherals to your project , connect and then configure them to generate a 640x480 output signal.
