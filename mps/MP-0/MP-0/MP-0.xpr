@@ -29,6 +29,8 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/snes_controller_reader_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../SNES"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PSRCDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -68,16 +70,16 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../VHDL/user_types.vhd">
+      <File Path="$PPRDIR/../VHDL/PixelStreamCorrection/user_types.vhd">
         <FileInfo>
-          <Attr Name="Library" Val="stream_correct"/>
+          <Attr Name="Library" Val="pixel_correct"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../VHDL/pixel_stream_correction.vhd">
+      <File Path="$PPRDIR/../VHDL/PixelStreamCorrection/pixel_stream_correction.vhd">
         <FileInfo>
-          <Attr Name="Library" Val="stream_correct"/>
+          <Attr Name="Library" Val="pixel_correct"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -88,47 +90,50 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_gpio_0_3/IP_axi_gpio_0_3.xci">
-          <Proxy FileSetName="IP_axi_gpio_0_3"/>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_gpio_0_4/IP_axi_gpio_0_4.xci">
+          <Proxy FileSetName="IP_axi_gpio_0_4"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_gpio_0_5/IP_axi_gpio_0_5.xci">
-          <Proxy FileSetName="IP_axi_gpio_0_5"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_xbar_0/IP_xbar_0.xci">
-          <Proxy FileSetName="IP_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_processing_system7_0_0/IP_processing_system7_0_0.xci">
-          <Proxy FileSetName="IP_processing_system7_0_0"/>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_auto_pc_2/IP_auto_pc_2.xci">
+          <Proxy FileSetName="IP_auto_pc_2"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_pixel_stream_correct_0_0/IP_pixel_stream_correct_0_0.xci">
           <Proxy FileSetName="IP_pixel_stream_correct_0_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_proc_sys_reset_0_0/IP_proc_sys_reset_0_0.xci">
+          <Proxy FileSetName="IP_proc_sys_reset_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_processing_system7_0_0/IP_processing_system7_0_0.xci">
+          <Proxy FileSetName="IP_processing_system7_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_xbar_0/IP_xbar_0.xci">
+          <Proxy FileSetName="IP_xbar_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_v_axi4s_vid_out_0_1/IP_v_axi4s_vid_out_0_1.xci">
           <Proxy FileSetName="IP_v_axi4s_vid_out_0_1"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_v_tc_0_0/IP_v_tc_0_0.xci">
-          <Proxy FileSetName="IP_v_tc_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_gpio_0_4/IP_axi_gpio_0_4.xci">
-          <Proxy FileSetName="IP_axi_gpio_0_4"/>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_gpio_0_3/IP_axi_gpio_0_3.xci">
+          <Proxy FileSetName="IP_axi_gpio_0_3"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_rst_ps7_0_100M_2/IP_rst_ps7_0_100M_2.xci">
           <Proxy FileSetName="IP_rst_ps7_0_100M_2"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_gpio_0_5/IP_axi_gpio_0_5.xci">
+          <Proxy FileSetName="IP_axi_gpio_0_5"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_axi_vdma_0_0/IP_axi_vdma_0_0.xci">
           <Proxy FileSetName="IP_axi_vdma_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_proc_sys_reset_0_0/IP_proc_sys_reset_0_0.xci">
-          <Proxy FileSetName="IP_proc_sys_reset_0_0"/>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_v_tc_0_0/IP_v_tc_0_0.xci">
+          <Proxy FileSetName="IP_v_tc_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_auto_pc_1/IP_auto_pc_1.xci">
-          <Proxy FileSetName="IP_auto_pc_1"/>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_snes_controller_read_0_12/IP_snes_controller_read_0_12.xci">
+          <Proxy FileSetName="IP_snes_controller_read_0_12"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_auto_us_0/IP_auto_us_0.xci">
-          <Proxy FileSetName="IP_auto_us_0"/>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_xbar_1/IP_xbar_1.xci">
+          <Proxy FileSetName="IP_xbar_1"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_auto_pc_0/IP_auto_pc_0.xci">
-          <Proxy FileSetName="IP_auto_pc_0"/>
+        <CompFileExtendedInfo CompFileName="IP.bd" FileRelPathName="ip/IP_proc_sys_reset_1_0/IP_proc_sys_reset_1_0.xci">
+          <Proxy FileSetName="IP_proc_sys_reset_1_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/IP/hdl/IP_wrapper.vhd">
@@ -181,21 +186,9 @@
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
-    <FileSet Name="IP_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_processing_system7_0_0">
+    <FileSet Name="IP_pixel_stream_correct_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_pixel_stream_correct_0_0">
       <Config>
-        <Option Name="TopModule" Val="IP_processing_system7_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="IP_v_axi4s_vid_out_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_v_axi4s_vid_out_0_1">
-      <Config>
-        <Option Name="TopModule" Val="IP_v_axi4s_vid_out_0_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="IP_axi_gpio_0_4" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_axi_gpio_0_4">
-      <Config>
-        <Option Name="TopModule" Val="IP_axi_gpio_0_4"/>
+        <Option Name="TopModule" Val="IP_pixel_stream_correct_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -205,15 +198,15 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="IP_rst_ps7_0_100M_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_rst_ps7_0_100M_2">
+    <FileSet Name="IP_axi_gpio_0_4" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_axi_gpio_0_4">
       <Config>
-        <Option Name="TopModule" Val="IP_rst_ps7_0_100M_2"/>
+        <Option Name="TopModule" Val="IP_axi_gpio_0_4"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="IP_axi_gpio_0_3" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_axi_gpio_0_3">
+    <FileSet Name="IP_proc_sys_reset_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_proc_sys_reset_1_0">
       <Config>
-        <Option Name="TopModule" Val="IP_axi_gpio_0_3"/>
+        <Option Name="TopModule" Val="IP_proc_sys_reset_1_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -223,15 +216,39 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="IP_v_tc_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_v_tc_0_0">
+      <Config>
+        <Option Name="TopModule" Val="IP_v_tc_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="IP_v_axi4s_vid_out_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_v_axi4s_vid_out_0_1">
+      <Config>
+        <Option Name="TopModule" Val="IP_v_axi4s_vid_out_0_1"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="IP_axi_gpio_0_3" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_axi_gpio_0_3">
+      <Config>
+        <Option Name="TopModule" Val="IP_axi_gpio_0_3"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="IP_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_processing_system7_0_0">
+      <Config>
+        <Option Name="TopModule" Val="IP_processing_system7_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="IP_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_xbar_0">
       <Config>
         <Option Name="TopModule" Val="IP_xbar_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="IP_v_tc_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_v_tc_0_0">
+    <FileSet Name="IP_rst_ps7_0_100M_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_rst_ps7_0_100M_2">
       <Config>
-        <Option Name="TopModule" Val="IP_v_tc_0_0"/>
+        <Option Name="TopModule" Val="IP_rst_ps7_0_100M_2"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -241,27 +258,21 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="IP_pixel_stream_correct_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_pixel_stream_correct_0_0">
+    <FileSet Name="IP_snes_controller_read_0_12" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_snes_controller_read_0_12">
       <Config>
-        <Option Name="TopModule" Val="IP_pixel_stream_correct_0_0"/>
+        <Option Name="TopModule" Val="IP_snes_controller_read_0_12"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="IP_auto_pc_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_auto_pc_1">
+    <FileSet Name="IP_xbar_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_xbar_1">
       <Config>
-        <Option Name="TopModule" Val="IP_auto_pc_1"/>
+        <Option Name="TopModule" Val="IP_xbar_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="IP_auto_us_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_auto_us_0">
+    <FileSet Name="IP_auto_pc_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_auto_pc_2">
       <Config>
-        <Option Name="TopModule" Val="IP_auto_us_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="IP_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IP_auto_pc_0">
-      <Config>
-        <Option Name="TopModule" Val="IP_auto_pc_0"/>
+        <Option Name="TopModule" Val="IP_auto_pc_2"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -295,27 +306,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="IP_processing_system7_0_0" Part="xc7z020clg484-1" ConstrsSet="IP_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_processing_system7_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="IP_v_axi4s_vid_out_0_1_synth_1" Type="Ft3:Synth" SrcSet="IP_v_axi4s_vid_out_0_1" Part="xc7z020clg484-1" ConstrsSet="IP_v_axi4s_vid_out_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_v_axi4s_vid_out_0_1_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="IP_axi_gpio_0_4_synth_1" Type="Ft3:Synth" SrcSet="IP_axi_gpio_0_4" Part="xc7z020clg484-1" ConstrsSet="IP_axi_gpio_0_4" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_axi_gpio_0_4_synth_1" IncludeInArchive="true">
+    <Run Id="IP_pixel_stream_correct_0_0_synth_1" Type="Ft3:Synth" SrcSet="IP_pixel_stream_correct_0_0" Part="xc7z020clg484-1" ConstrsSet="IP_pixel_stream_correct_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_pixel_stream_correct_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
@@ -335,7 +326,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_rst_ps7_0_100M_2_synth_1" Type="Ft3:Synth" SrcSet="IP_rst_ps7_0_100M_2" Part="xc7z020clg484-1" ConstrsSet="IP_rst_ps7_0_100M_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_rst_ps7_0_100M_2_synth_1" IncludeInArchive="true">
+    <Run Id="IP_axi_gpio_0_4_synth_1" Type="Ft3:Synth" SrcSet="IP_axi_gpio_0_4" Part="xc7z020clg484-1" ConstrsSet="IP_axi_gpio_0_4" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_axi_gpio_0_4_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
@@ -345,7 +336,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_axi_gpio_0_3_synth_1" Type="Ft3:Synth" SrcSet="IP_axi_gpio_0_3" Part="xc7z020clg484-1" ConstrsSet="IP_axi_gpio_0_3" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_axi_gpio_0_3_synth_1" IncludeInArchive="true">
+    <Run Id="IP_proc_sys_reset_1_0_synth_1" Type="Ft3:Synth" SrcSet="IP_proc_sys_reset_1_0" Part="xc7z020clg484-1" ConstrsSet="IP_proc_sys_reset_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_proc_sys_reset_1_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
@@ -365,6 +356,46 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
+    <Run Id="IP_v_tc_0_0_synth_1" Type="Ft3:Synth" SrcSet="IP_v_tc_0_0" Part="xc7z020clg484-1" ConstrsSet="IP_v_tc_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_v_tc_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="IP_v_axi4s_vid_out_0_1_synth_1" Type="Ft3:Synth" SrcSet="IP_v_axi4s_vid_out_0_1" Part="xc7z020clg484-1" ConstrsSet="IP_v_axi4s_vid_out_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_v_axi4s_vid_out_0_1_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="IP_axi_gpio_0_3_synth_1" Type="Ft3:Synth" SrcSet="IP_axi_gpio_0_3" Part="xc7z020clg484-1" ConstrsSet="IP_axi_gpio_0_3" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_axi_gpio_0_3_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="IP_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="IP_processing_system7_0_0" Part="xc7z020clg484-1" ConstrsSet="IP_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_processing_system7_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
     <Run Id="IP_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="IP_xbar_0" Part="xc7z020clg484-1" ConstrsSet="IP_xbar_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_xbar_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
@@ -375,7 +406,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_v_tc_0_0_synth_1" Type="Ft3:Synth" SrcSet="IP_v_tc_0_0" Part="xc7z020clg484-1" ConstrsSet="IP_v_tc_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_v_tc_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="IP_rst_ps7_0_100M_2_synth_1" Type="Ft3:Synth" SrcSet="IP_rst_ps7_0_100M_2" Part="xc7z020clg484-1" ConstrsSet="IP_rst_ps7_0_100M_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_rst_ps7_0_100M_2_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
@@ -395,17 +426,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_pixel_stream_correct_0_0_synth_1" Type="Ft3:Synth" SrcSet="IP_pixel_stream_correct_0_0" Part="xc7z020clg484-1" ConstrsSet="IP_pixel_stream_correct_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_pixel_stream_correct_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="IP_auto_pc_1_synth_1" Type="Ft3:Synth" SrcSet="IP_auto_pc_1" Part="xc7z020clg484-1" ConstrsSet="IP_auto_pc_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_auto_pc_1_synth_1" IncludeInArchive="true">
+    <Run Id="IP_snes_controller_read_0_12_synth_1" Type="Ft3:Synth" SrcSet="IP_snes_controller_read_0_12" Part="xc7z020clg484-1" ConstrsSet="IP_snes_controller_read_0_12" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_snes_controller_read_0_12_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -417,7 +438,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_auto_us_0_synth_1" Type="Ft3:Synth" SrcSet="IP_auto_us_0" Part="xc7z020clg484-1" ConstrsSet="IP_auto_us_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_auto_us_0_synth_1" IncludeInArchive="true">
+    <Run Id="IP_xbar_1_synth_1" Type="Ft3:Synth" SrcSet="IP_xbar_1" Part="xc7z020clg484-1" ConstrsSet="IP_xbar_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_xbar_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -429,7 +450,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="IP_auto_pc_0" Part="xc7z020clg484-1" ConstrsSet="IP_auto_pc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_auto_pc_0_synth_1" IncludeInArchive="true">
+    <Run Id="IP_auto_pc_2_synth_1" Type="Ft3:Synth" SrcSet="IP_auto_pc_2" Part="xc7z020clg484-1" ConstrsSet="IP_auto_pc_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/IP_auto_pc_2_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -459,41 +480,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_processing_system7_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="IP_v_axi4s_vid_out_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_v_axi4s_vid_out_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_v_axi4s_vid_out_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="IP_axi_gpio_0_4_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_axi_gpio_0_4" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_axi_gpio_0_4_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="IP_pixel_stream_correct_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_pixel_stream_correct_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_pixel_stream_correct_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
@@ -527,7 +514,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_rst_ps7_0_100M_2_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_rst_ps7_0_100M_2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_rst_ps7_0_100M_2_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="IP_axi_gpio_0_4_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_axi_gpio_0_4" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_axi_gpio_0_4_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
@@ -544,7 +531,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_axi_gpio_0_3_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_axi_gpio_0_3" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_axi_gpio_0_3_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="IP_proc_sys_reset_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_proc_sys_reset_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_proc_sys_reset_1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
@@ -578,6 +565,74 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
+    <Run Id="IP_v_tc_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_v_tc_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_v_tc_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="IP_v_axi4s_vid_out_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_v_axi4s_vid_out_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_v_axi4s_vid_out_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="IP_axi_gpio_0_3_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_axi_gpio_0_3" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_axi_gpio_0_3_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="IP_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_processing_system7_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
     <Run Id="IP_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_xbar_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
@@ -595,7 +650,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_v_tc_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_v_tc_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_v_tc_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="IP_rst_ps7_0_100M_2_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_rst_ps7_0_100M_2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_rst_ps7_0_100M_2_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
@@ -629,24 +684,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_pixel_stream_correct_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_pixel_stream_correct_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_pixel_stream_correct_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="IP_auto_pc_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_auto_pc_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_auto_pc_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="IP_snes_controller_read_0_12_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_snes_controller_read_0_12" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_snes_controller_read_0_12_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
           <Desc>Default settings for Implementation.</Desc>
@@ -665,7 +703,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_auto_us_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_auto_us_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_auto_us_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="IP_xbar_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_xbar_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_xbar_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
           <Desc>Default settings for Implementation.</Desc>
@@ -684,7 +722,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="IP_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_auto_pc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_auto_pc_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="IP_auto_pc_2_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="IP_auto_pc_2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="IP_auto_pc_2_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
           <Desc>Default settings for Implementation.</Desc>

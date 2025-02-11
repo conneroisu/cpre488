@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Sat Feb  8 21:32:22 2025
-// Host        : CO2041-16 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/neastbur/cpre488/mps/MP-0/MP-0/MP-0.srcs/sources_1/bd/IP/ip/IP_auto_us_0/IP_auto_us_0_sim_netlist.v
+// Date        : Mon Feb 10 16:01:16 2025
+// Host        : CO2041-09 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim -rename_top IP_auto_us_0 -prefix
+//               IP_auto_us_0_ IP_auto_us_0_sim_netlist.v
 // Design      : IP_auto_us_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -242,7 +242,6 @@ module IP_auto_us_0
         .s_axi_wvalid(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_dwidth_converter_v2_1_21_a_upsizer" *) 
 module IP_auto_us_0_axi_dwidth_converter_v2_1_21_a_upsizer
    (\USE_READ.rd_cmd_valid ,
     s_axi_rready_0,
@@ -385,7 +384,6 @@ module IP_auto_us_0_axi_dwidth_converter_v2_1_21_a_upsizer
         .R(SR));
 endmodule
 
-(* ORIG_REF_NAME = "axi_dwidth_converter_v2_1_21_axi_upsizer" *) 
 module IP_auto_us_0_axi_dwidth_converter_v2_1_21_axi_upsizer
    (m_axi_arburst,
     m_axi_araddr,
@@ -667,7 +665,6 @@ module IP_auto_us_0_axi_dwidth_converter_v2_1_21_axi_upsizer
         .s_ready_i_reg(\USE_READ.read_addr_inst_n_22 ));
 endmodule
 
-(* ORIG_REF_NAME = "axi_dwidth_converter_v2_1_21_r_upsizer" *) 
 module IP_auto_us_0_axi_dwidth_converter_v2_1_21_r_upsizer
    (\USE_RTL_LENGTH.first_mi_word_q ,
     s_axi_aresetn,
@@ -1853,8 +1850,8 @@ endmodule
 (* C_RATIO = "0" *) (* C_RATIO_LOG = "0" *) (* C_SUPPORTS_ID = "0" *) 
 (* C_SYNCHRONIZER_STAGE = "3" *) (* C_S_AXI_ACLK_RATIO = "1" *) (* C_S_AXI_BYTES_LOG = "2" *) 
 (* C_S_AXI_DATA_WIDTH = "32" *) (* C_S_AXI_ID_WIDTH = "1" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
-(* ORIG_REF_NAME = "axi_dwidth_converter_v2_1_21_top" *) (* P_AXI3 = "1" *) (* P_AXI4 = "0" *) 
-(* P_AXILITE = "2" *) (* P_CONVERSION = "2" *) (* P_MAX_SPLIT_BEATS = "16" *) 
+(* P_AXI3 = "1" *) (* P_AXI4 = "0" *) (* P_AXILITE = "2" *) 
+(* P_CONVERSION = "2" *) (* P_MAX_SPLIT_BEATS = "16" *) 
 module IP_auto_us_0_axi_dwidth_converter_v2_1_21_top
    (s_axi_aclk,
     s_axi_aresetn,
@@ -2221,7 +2218,6 @@ module IP_auto_us_0_axi_dwidth_converter_v2_1_21_top
         .s_ready_i_reg(m_axi_rready));
 endmodule
 
-(* ORIG_REF_NAME = "axi_register_slice_v2_1_21_axi_register_slice" *) 
 module IP_auto_us_0_axi_register_slice_v2_1_21_axi_register_slice
    (s_ready_i_reg,
     mr_rvalid,
@@ -4844,7 +4840,6 @@ module IP_auto_us_0_axi_register_slice_v2_1_21_axic_register_slice__parameterize
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "generic_baseblocks_v2_1_0_command_fifo" *) 
 module IP_auto_us_0_generic_baseblocks_v2_1_0_command_fifo
    (\USE_FF_OUT.USE_RTL_OUTPUT_PIPELINE.M_VALID_Q_reg_0 ,
     s_axi_rready_0,
