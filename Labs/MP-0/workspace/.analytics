@@ -1,24 +1,7 @@
-timestamp=[2025-02-10 02:53:47], mode=WORKBENCH_START, duration=0:00:03.596, duration_ms=3596, data={}
-timestamp=[2025-02-10 02:53:48], mode=WORKBENCH_UI_INIT, duration=0:00:00.345, duration_ms=345, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
-timestamp=[2025-02-10 02:53:51], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:03.161, duration_ms=3161, data={}
-timestamp=[2025-02-10 02:54:56], mode=APP_CREATION, duration=0:00:24.205, duration_ms=24205, data={name=NES_TEST, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=zynq_design_1_wrapper, application_type=application}
-timestamp=[2025-02-10 02:56:49], mode=PLATFORM_GENERATION, duration=0:00:29.377, duration_ms=29377, data={name=zynq_design_1_wrapper}
-timestamp=[2025-02-10 02:56:53], mode=BUILD, duration=0:00:04.217, duration_ms=4217, data={name=NES_TEST, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:01:07], mode=BUILD, duration=0:00:00.284, duration_ms=284, data={name=NES_TEST, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:18:15], mode=BUILD, duration=0:00:00.486, duration_ms=486, data={name=NES_TEST, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:18:19], mode=BUILD, duration=0:00:03.534, duration_ms=3534, data={name=NES_TEST_system, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:18:56], mode=BUILD, duration=0:00:00.480, duration_ms=480, data={name=NES_TEST, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:18:59], mode=BUILD, duration=0:00:02.977, duration_ms=2977, data={name=NES_TEST_system, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:19:08], mode=BUILD, duration=0:00:00.479, duration_ms=479, data={name=NES_TEST, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:19:11], mode=BUILD, duration=0:00:02.893, duration_ms=2893, data={name=NES_TEST_system, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:19:31], mode=BUILD, duration=0:00:00.473, duration_ms=473, data={name=NES_TEST, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:19:34], mode=BUILD, duration=0:00:02.959, duration_ms=2959, data={name=NES_TEST_system, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:19:49], mode=BUILD, duration=0:00:00.789, duration_ms=789, data={name=NES_TEST, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:19:50], mode=BUILD, duration=0:00:01.152, duration_ms=1152, data={name=NES_TEST_system, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:20:00], mode=BUILD, duration=0:00:00.716, duration_ms=716, data={name=NES_TEST, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 03:20:03], mode=BUILD, duration=0:00:02.956, duration_ms=2956, data={name=NES_TEST_system, configuration=Debug, clean_build=false}
-timestamp=[2025-02-10 04:47:26], mode=WORKBENCH_START, duration=0:00:07.503, duration_ms=7503, data={}
-timestamp=[2025-02-10 04:47:27], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.058, duration_ms=58, data={}
-timestamp=[2025-02-10 04:47:27], mode=WORKBENCH_UI_INIT, duration=0:00:00.630, duration_ms=630, data={editors_count=4, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=NES_TEST,NES_TEST_system,RemoteSystemsTempFiles,zynq_design_1_wrapper}
-timestamp=[2025-02-10 04:48:38], mode=PLATFORM_GENERATION, duration=0:00:18.595, duration_ms=18595, data={name=zynq_design_1_wrapper}
-timestamp=[2025-02-10 04:48:45], mode=BUILD, duration=0:00:02.886, duration_ms=2886, data={name=NES_TEST, configuration=Debug, clean_build=false}
+timestamp=[2025-02-10 16:39:57], mode=WORKBENCH_START, duration=0:00:03.304, duration_ms=3304, data={}
+timestamp=[2025-02-10 16:39:57], mode=WORKBENCH_UI_INIT, duration=0:00:00.313, duration_ms=313, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2025-02-10 16:39:59], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.658, duration_ms=1658, data={}
+timestamp=[2025-02-10 16:44:04], mode=APP_CREATION, duration=0:00:22.306, duration_ms=22306, data={name=NES_PLEASE, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=zynq_design_1_wrapper, application_type=application}
+timestamp=[2025-02-10 16:48:45], mode=PLATFORM_GENERATION, duration=0:00:27.447, duration_ms=27447, data={name=zynq_design_1_wrapper}
+timestamp=[2025-02-10 16:48:49], mode=BUILD, duration=0:00:04.001, duration_ms=4001, data={name=NES_PLEASE, configuration=Debug, clean_build=false}
+timestamp=[2025-02-10 16:48:55], mode=BUILD, duration=0:00:00.347, duration_ms=347, data={name=NES_PLEASE, configuration=Debug, clean_build=false}

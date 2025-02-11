@@ -56,6 +56,8 @@
 module zynq_design_1_system_ila_3_1 (
   clk,
   probe0,
+  probe1,
+  probe2,
   SLOT_0_AXI_awaddr,
   SLOT_0_AXI_awlen,
   SLOT_0_AXI_awsize,
@@ -176,6 +178,8 @@ module zynq_design_1_system_ila_3_1 (
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.clk CLK" *)
 input wire clk;
 input wire [0 : 0] probe0;
+input wire [0 : 0] probe1;
+input wire [0 : 0] probe2;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWADDR" *)
 input wire [31 : 0] SLOT_0_AXI_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_0_AXI AWLEN" *)
@@ -420,6 +424,8 @@ input wire resetn;
   bd_03cf inst (
     .clk(clk),
     .probe0(probe0),
+    .probe1(probe1),
+    .probe2(probe2),
     .SLOT_0_AXI_awaddr(SLOT_0_AXI_awaddr),
     .SLOT_0_AXI_awlen(SLOT_0_AXI_awlen),
     .SLOT_0_AXI_awsize(SLOT_0_AXI_awsize),

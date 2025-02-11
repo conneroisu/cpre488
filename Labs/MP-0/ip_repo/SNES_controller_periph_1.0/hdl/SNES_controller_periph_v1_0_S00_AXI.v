@@ -226,10 +226,10 @@
 	begin
 	  if ( S_AXI_ARESETN == 1'b0 )
 	    begin
-	      slv_reg0 <= 0;
-	      slv_reg1 <= 0;
-	      slv_reg2 <= 0;
-	      slv_reg3 <= 0;
+//	      slv_reg0 <= 0;
+//	      slv_reg1 <= 0;
+//	      slv_reg2 <= 0;
+//	      slv_reg3 <= 0;
 	    end 
 	  else begin
 	    if (slv_reg_wren)
@@ -409,7 +409,7 @@
     .SNES_Data(SNES_Data),
     .SNES_Latch(SNES_Latch),
     .SNES_clk_1(SNES_clk_1),
-    .btn_output(btn_output)
+    .btn_output(slv_reg0)
     );
 	// User logic ends
 

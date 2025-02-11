@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xE635C1940CE25EC2",
+      "boundary_crc": "0xD7C46B0E9678DAFD",
       "design_src": "SBD",
       "device": "xc7z020clg484-1",
       "name": "bd_03cf",
@@ -748,6 +748,18 @@
             "value_src": "default"
           }
         }
+      },
+      "SLOT_6_GPIO": {
+        "mode": "Monitor",
+        "vlnv": "xilinx.com:interface:gpio_rtl:1.0",
+        "port_maps": {
+          "TRI_O": {
+            "physical_name": "SLOT_6_GPIO_tri_o",
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          }
+        }
       }
     },
     "ports": {
@@ -811,6 +823,11 @@
             "value_src": "constant"
           }
         }
+      },
+      "SLOT_6_GPIO_tri_o": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
       }
     },
     "components": {
@@ -846,7 +863,7 @@
             "value": "Native"
           },
           "C_NUM_OF_PROBES": {
-            "value": "107"
+            "value": "108"
           },
           "C_PROBE0_MU_CNT": {
             "value": "1"
@@ -898,6 +915,12 @@
           },
           "C_PROBE106_WIDTH": {
             "value": "2"
+          },
+          "C_PROBE107_TYPE": {
+            "value": "0"
+          },
+          "C_PROBE107_WIDTH": {
+            "value": "8"
           },
           "C_PROBE10_TYPE": {
             "value": "0"
@@ -2142,16 +2165,22 @@
       }
     },
     "interface_nets": {
-      "Conn4": {
-        "interface_ports": [
-          "SLOT_4_AXIS",
-          "g_inst/slot_4_axis"
-        ]
-      },
       "Conn": {
         "interface_ports": [
           "SLOT_0_AXI",
           "g_inst/slot_0_axi"
+        ]
+      },
+      "Conn3": {
+        "interface_ports": [
+          "SLOT_3_AXI",
+          "g_inst/slot_3_axi"
+        ]
+      },
+      "Conn2": {
+        "interface_ports": [
+          "SLOT_2_AXI",
+          "g_inst/slot_2_axi"
         ]
       },
       "Conn1": {
@@ -2166,16 +2195,10 @@
           "g_inst/slot_5_axi"
         ]
       },
-      "Conn3": {
+      "Conn4": {
         "interface_ports": [
-          "SLOT_3_AXI",
-          "g_inst/slot_3_axi"
-        ]
-      },
-      "Conn2": {
-        "interface_ports": [
-          "SLOT_2_AXI",
-          "g_inst/slot_2_axi"
+          "SLOT_4_AXIS",
+          "g_inst/slot_4_axis"
         ]
       }
     },
@@ -3157,6 +3180,12 @@
         "ports": [
           "g_inst/m_slot_5_axi_rready",
           "slot_5_r/In1"
+        ]
+      },
+      "SLOT_6_GPIO_tri_o_1": {
+        "ports": [
+          "SLOT_6_GPIO_tri_o",
+          "ila_lib/probe107"
         ]
       }
     }

@@ -43,21 +43,6 @@
       }
     },
     "ports": {
-      "SLOT_0_VIDEO_TIMING_active_video": {
-        "direction": "I"
-      },
-      "SLOT_0_VIDEO_TIMING_hblank": {
-        "direction": "I"
-      },
-      "SLOT_0_VIDEO_TIMING_hsync": {
-        "direction": "I"
-      },
-      "SLOT_0_VIDEO_TIMING_vblank": {
-        "direction": "I"
-      },
-      "SLOT_0_VIDEO_TIMING_vsync": {
-        "direction": "I"
-      },
       "clk": {
         "type": "clk",
         "direction": "I",
@@ -88,6 +73,21 @@
         "direction": "I",
         "left": "0",
         "right": "0"
+      },
+      "SLOT_0_VIDEO_TIMING_active_video": {
+        "direction": "I"
+      },
+      "SLOT_0_VIDEO_TIMING_hblank": {
+        "direction": "I"
+      },
+      "SLOT_0_VIDEO_TIMING_hsync": {
+        "direction": "I"
+      },
+      "SLOT_0_VIDEO_TIMING_vblank": {
+        "direction": "I"
+      },
+      "SLOT_0_VIDEO_TIMING_vsync": {
+        "direction": "I"
       }
     },
     "components": {

@@ -34,15 +34,15 @@ parameter CYCLE_LOW   = 4'b0100;   // Clock goes high for 6 us, cycle through SA
 parameter FINISH      = 4'b1000;   // Clock stays high for 12 us
 
 // For 25MHz
-//parameter delay6us    = 9'd150;
-//parameter delay12us   = 9'd300;
+parameter delay6us    = 9'd150;
+parameter delay12us   = 9'd300;
 
 // For 100Mhz
-parameter delay6us    = 10'd600;
-parameter delay12us   = 10'd1200;
+//parameter delay6us    = 10'd600;
+//parameter delay12us   = 10'd1200;
 
 reg [3:0] state = LATCH_PULSE;
-reg [9:0] timer = delay12us;
+reg [8:0] timer = delay12us;
 reg [3:0] num_clks = 4'd0;
 reg [15:0] btn_status = 15'd0;
 
