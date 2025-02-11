@@ -8,8 +8,8 @@
 
 #include "../../../src/lib/nes_bootloader/NESCore/M6502.h"
 #include "../../../src/lib/nes_bootloader/NESCore/NESCore_Mapper.h"
-#include "../../../src/lib/nes_bootloader/NESCore/NESCore_pAPU.h"
 #include "../../../src/lib/nes_bootloader/NESCore/NESCore_Types.h"
+#include "../../../src/lib/nes_bootloader/NESCore/NESCore_pAPU.h"
 
 #define GAMEGENIE_CODES 4
 
@@ -263,7 +263,7 @@ void NESCore_Init_PPU();
 void NESCore_Mirroring(int mType);
 void NESCore_Run();
 void NESCore_Halt();
-void NESCore_Cycle();
+int NESCore_Cycle();
 int NESCore_HSync();
 void NESCore_DrawScanline();
 void NESCore_WriteIndex();

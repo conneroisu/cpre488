@@ -137,7 +137,9 @@ void nes_load(const char *rom_name) {
   do {
 
     for (i = 0; i < RESET_TIME; i++) {
-      NESCore_Cycle();
+      if (NESCore_Cycle() == -1) {
+        return;
+      }
     }
 
   } while (1);

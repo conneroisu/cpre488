@@ -12,11 +12,11 @@
 
 #include <unistd.h>
 
-#include "../../../src/lib/nes_bootloader/nes_bootloader.h"
 #include "../../../src/lib/nes_bootloader/NESCore/M6502.h"
 #include "../../../src/lib/nes_bootloader/NESCore/NESCore_Callback.h"
 #include "../../../src/lib/nes_bootloader/NESCore/NESCore_Mapper.h"
 #include "../../../src/lib/nes_bootloader/NESCore/NESCore_pAPU.h"
+#include "../../../src/lib/nes_bootloader/nes_bootloader.h"
 
 struct NES_State S;
 struct NES_Wiring W;
@@ -778,7 +778,7 @@ void NESCore_Step(int nStep) {
  *                 control is returned back to NESCore_Run(). NMI and IRQ
  *                 requests are also serviced here.
  */
-void NESCore_Cycle() {
+int NESCore_Cycle() {
 
   for (;;) {
 
@@ -796,7 +796,7 @@ void NESCore_Cycle() {
 
     /* HSync will return -1 if the emulator is told to quit */
     if (NESCore_HSync() == -1)
-      return;
+      return -1;
 
     /* Audio IRQ */
     if (S.FrameStep > S.ClockFrame && S.FrameIRQ_Enable) {
@@ -867,7 +867,9 @@ int NESCore_HSync() {
 
     NESCore_pAPU_VSync();
     MapperVSync();
-    NESCore_Callback_InputPadState(&S.PAD1_Latch, &S.PAD2_Latch);
+    if (NESCore_Callback_InputPadState(&S.PAD1_Latch, &S.PAD2_Latch) == -1) {
+      return -1;
+    }
 
     /* There is a delay between vblank flag being set and NMI */
     S.CpuLag += abs(Exec6502(&S.m6502_state, 12 * S.MasterCycleMultiplier));

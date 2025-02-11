@@ -82,17 +82,17 @@ char *game_menu() {
           continue;
         }
         selected_index--;
-
         render_game_menu(selected_index, menu_offset);
         goto control_start;
+
       case DOWN:
         if (selected_index > num_games) {
           continue;
         }
         selected_index++;
-
         render_game_menu(selected_index, menu_offset);
         goto control_start;
+
       default:
         continue;
       }

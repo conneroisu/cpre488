@@ -6,11 +6,11 @@
 #ifndef NESCORE_CALLBACK_H
 #define NESCORE_CALLBACK_H
 
-#include <stdint.h>
 #include "../../../src/lib/nes_bootloader/NESCore/NESCore_Types.h"
+#include <stdint.h>
 
 void NESCore_Callback_OutputFrame(word *WorkFrame);
-void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2);
+int NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2);
 void NESCore_Callback_Wait();
 
 /* Sound Functions */
