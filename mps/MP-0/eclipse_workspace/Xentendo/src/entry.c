@@ -1,5 +1,6 @@
 #include "NESCore.h"
 #include "controls.h"
+#include "display.h" // for t_image_type
 #include "menu.h"
 #include "nes_bootloader.h"
 #include "platform.h"
@@ -16,8 +17,6 @@
 #define IMAGE_WIDTH 640
 #define IMAGE_HEIGHT 480
 #define STRIDE IMAGE_WIDTH * 2
-
-typedef u16 t_image_type[IMAGE_HEIGHT][IMAGE_WIDTH];
 
 t_dpad_state dpad_state_p1;
 t_general_button_states general_button_states_p1;
