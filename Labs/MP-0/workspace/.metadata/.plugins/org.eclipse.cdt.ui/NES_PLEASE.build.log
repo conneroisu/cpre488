@@ -1,4 +1,4 @@
-16:48:55 **** Incremental Build of configuration Debug for project NES_PLEASE ****
+19:07:09 **** Incremental Build of configuration Debug for project NES_PLEASE ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -6,5 +6,5 @@ a9-linaro-pre-build-step
 make --no-print-directory main-build
 make[1]: Nothing to be done for 'main-build'.
 
-16:48:55 Build Finished (took 333ms)
+19:07:09 Build Finished (took 337ms)
 

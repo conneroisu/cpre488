@@ -1,6 +1,7 @@
-Nothing to build in platform 'zynq_design_1_wrapper'
-
-16:48:55 **** Incremental Build of configuration Debug for project NES_PLEASE ****
+19:07:07 **** Incremental Build of project zynq_design_1_wrapper ****
+buildplatform.bat 60820 zynq_design_1_wrapper no_domain_build 
+XSDB Server Channel: tcfchan#3
+19:07:09 **** Incremental Build of configuration Debug for project NES_PLEASE ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step

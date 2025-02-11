@@ -5,3 +5,6 @@ timestamp=[2025-02-10 16:44:04], mode=APP_CREATION, duration=0:00:22.306, durati
 timestamp=[2025-02-10 16:48:45], mode=PLATFORM_GENERATION, duration=0:00:27.447, duration_ms=27447, data={name=zynq_design_1_wrapper}
 timestamp=[2025-02-10 16:48:49], mode=BUILD, duration=0:00:04.001, duration_ms=4001, data={name=NES_PLEASE, configuration=Debug, clean_build=false}
 timestamp=[2025-02-10 16:48:55], mode=BUILD, duration=0:00:00.347, duration_ms=347, data={name=NES_PLEASE, configuration=Debug, clean_build=false}
+timestamp=[2025-02-10 19:05:13], mode=BUILD, duration=0:00:00.861, duration_ms=861, data={name=NES_PLEASE, configuration=Debug, clean_build=false}
+timestamp=[2025-02-10 19:07:08], mode=PLATFORM_GENERATION, duration=0:00:00.973, duration_ms=973, data={name=zynq_design_1_wrapper}
+timestamp=[2025-02-10 19:07:09], mode=BUILD, duration=0:00:00.350, duration_ms=350, data={name=NES_PLEASE, configuration=Debug, clean_build=false}

@@ -160,19 +160,82 @@ We think that Xilinx has this feature because methods/functions can be declared 
 
 This is used in the Hello World example to print the "Hello World" string to the console while operating correctly in the xilinx emulator and on the actual fpga hardware.
 
-## [TASK] Step 9: Connect to the Vivado Logic Analyzer: i) Take a screen capture of an LED wire turning on? Can you turn the LED on and off fast enough to get a screen capture of the Logic Analyzer displaying this pulse? If so, then provide this screen capture as well. For how long does the pulse stay high?
+## [TASK] Step 9: Connect to the Vivado Logic Analyzer: Take a screen capture of an LED wire turning on? Can you turn the LED on and off fast enough to get a screen capture of the Logic Analyzer displaying this pulse? If so, then provide this screen capture as well. For how long does the pulse stay high?
 
-LED PHOTO GOES HERE
+The LED outputs were connected to an Axi interconnect at slot_0. Because the LED is sending data, we can read the respective GPIO responses in the W Channel. The image below illustrates that the first and seventh switches were toggled in succession per the signals in WDATA. 
+
+![LED capture](assets/Step9_LED_Flash_Capture.png "Example") 
 
 25 ns pulse duration is shown in the image above.
 
+## [TASK] Modify the hello_world application to also interface with the switches, buttons, and LEDs that are configured in the programmable logic. For example, have the application print out the state of the switches when a button is pressed, or light up certain LEDs given an input integer.
+
+The following code uses switches to toggle a respective LED and print to PuTTY if button 1 is active.
+
+```
+int main()
+{
+    init_platform();
+    UINTPTR SWIn = 0x41220000;
+    UINTPTR LEDIn = 0x41200000;
+    UINTPTR ButtonIn = 0x41210000;
+    int32_t LEDOut = 0x00000000;
+    while (1) {
+    	if ((Xil_In32(SWIn) & 0x00000001) == 0x00000001) {
+    		LEDOut = LEDOut + 0x00000001;
+    	}
+    	if ((Xil_In32(SWIn) & 0x00000002) == 0x00000002) {
+			LEDOut = LEDOut + 0x00000002;
+		}
+    	if ((Xil_In32(SWIn) & 0x00000004) == 0x00000004) {
+			LEDOut = LEDOut + 0x00000004;
+		}
+    	if ((Xil_In32(SWIn) & 0x00000008) == 0x00000008) {
+    		LEDOut = LEDOut + 0x00000008;
+    	}
+    	if ((Xil_In32(SWIn) & 0x000000010) == 0x00000010) {
+			LEDOut = LEDOut + 0x00000010;
+		}
+    	if ((Xil_In32(SWIn) & 0x000000020) == 0x00000020) {
+			LEDOut = LEDOut + 0x00000020;
+		}
+    	if ((Xil_In32(SWIn) & 0x00000040) == 0x00000040) {
+    		LEDOut = LEDOut + 0x00000040;
+    	}
+    	if ((Xil_In32(SWIn) & 0x00000080) == 0x00000080) {
+			LEDOut = LEDOut + 0x00000080;
+		}
+    	if((Xil_In32(ButtonIn) & 0x00000001) == 0x00000001){
+    		print("Button 1 is on\n\r");
+    		LEDOut = LEDOut + 0x00000001;
+    	}
+    	Xil_Out32(LEDIn, LEDOut);
+    	LEDOut = 0x00000000;
+    }
+    cleanup_platform();
+    return 0;
+}
+```
+
+An example of the code working: %% TODO
+
+
 ## [TASK] In VIVADO, add these peripherals to your project , connect and then configure them to generate a 640x480 output signal.
 
-![VGA output](assets/VTC_setup.png "Example")
+The Video Timing Control IP was set to the given timing values for 640x480 video. However, we had to change the active polarity of the Hsync and Vsync as the VTC defualt values did not align with the standard VGA protocol.
+![VTC output](assets/VTC_setup.png "Example")
+
+The Video Direct Memory Access IP was set such that it had a data width of 16 bits to correspond to our Video Output IP.
 ![VDMA output](assets/VDMA_setup.png "Example")
+
+The AXI4-Stream to Video Out IP was setup such that it could read 16 bits and output 16 bits. Because the VGA protocol did need any additional signals from this IP, we could use the Mono/Sensor video format to ensure our data stream widths were the desired sizes. 
 ![Vidout output](assets/Vidout_setup.png "Example")
 
+Some other important considerations were that the input clock had to be as close to 25.125 MHz, the VTC enable on the AXI4-Stream to Video Out IP had to be connected to the generation clock enable output on the Video Timing, and ensuring the AXI4-Stream to Video Out IP had an independent clock for video if we had a faster clock for the AXI stream. 
+
 ## [TASK] Modify the configuration registers for correct VDMA operation, and in your writeup, provide a justification based on the VDMA documentation for how you set these values.
+
+![VGA output](assets/VGA.jpg "Example")
 
 Our VDMA register configurations were as follows:
 
@@ -192,13 +255,13 @@ Our VDMA register configurations were as follows:
 
 - The stride was set to the size of our horizontal offset and there was no frame delay
 
-- The horizontal offset was set to 2x our desired horizontal size %% TODO
+- The horizontal offset was set to 2x our desired horizontal size since the horizontal line was 2 biytes
 
 - The vertical offset was set to our desired vertical size
 
 ## [TASK] In your writeup, explain how you converted these color values valid values for the 16-bit framebuffer.
 
-![VGA output](assets/VGA.jpg "Example")
+![VGA output](assets/Cyclone_checker.jpg "Example")
 
 We worked through calculating the RGB values manually using python and then implemented the necessary conversion functions in the nes_bootloader.c file.
 

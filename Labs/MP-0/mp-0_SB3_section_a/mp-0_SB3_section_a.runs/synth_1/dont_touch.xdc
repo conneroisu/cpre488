@@ -84,8 +84,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_M
 # IP: bd/zynq_design_1/ip/zynq_design_1_xlconstant_0_1/zynq_design_1_xlconstant_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_xlconstant_0_1 || ORIG_REF_NAME==zynq_design_1_xlconstant_0_1} -quiet] -quiet
 
-# IP: bd/zynq_design_1/ip/zynq_design_1_SNES_controller_peri_0_0/zynq_design_1_SNES_controller_peri_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_SNES_controller_peri_0_0 || ORIG_REF_NAME==zynq_design_1_SNES_controller_peri_0_0} -quiet] -quiet
+# IP: bd/zynq_design_1/ip/zynq_design_1_SNES_controller_peri_1_1/zynq_design_1_SNES_controller_peri_1_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_SNES_controller_peri_1_1 || ORIG_REF_NAME==zynq_design_1_SNES_controller_peri_1_1} -quiet] -quiet
 
 # IP: bd/zynq_design_1/ip/zynq_design_1_auto_pc_0/zynq_design_1_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==zynq_design_1_auto_pc_0 || ORIG_REF_NAME==zynq_design_1_auto_pc_0} -quiet] -quiet

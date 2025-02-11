@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="zynq_design_1" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1739232681"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1739232681"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1739232681"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1739232681"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1739233026"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1739233026"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1739233026"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1739233026"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\zynq_design_1_axi_gpio_0_0\zynq_design_1_axi_gpio_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_gpio_0"/>
@@ -223,16 +223,19 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\zynq_design_1_auto_pc_0\zynq_design_1_auto_pc_0.xci" Type="IP">
-        <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+      <File Name="synth\zynq_design_1.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
+      </File>
+      <File Name="sim\zynq_design_1.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\zynq_design_1_s00_mmu_0\zynq_design_1_s00_mmu_0.xci" Type="IP">
-        <Instance HierarchyPath="ps7_0_axi_periph/s00_mmu"/>
+      <File Name="ip\zynq_design_1_auto_pc_0\zynq_design_1_auto_pc_0.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -245,17 +248,6 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="synth\zynq_design_1.v" Type="Verilog">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-      </File>
-      <File Name="sim\zynq_design_1.v" Type="Verilog">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="zynq_design_1_ooc.xdc" Type="XDC">

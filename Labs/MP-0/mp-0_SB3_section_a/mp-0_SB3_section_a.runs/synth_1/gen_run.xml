@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1739184010">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1739233047">
   <File Type="PA-TCL" Name="zynq_design_1_wrapper.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="zynq_design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="zynq_design_1_wrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="zynq_design_1_wrapper.vds"/>
   <File Type="RDS-UTIL" Name="zynq_design_1_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="zynq_design_1_wrapper_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="zynq_design_1_wrapper.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="zynq_design_1_wrapper_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="zynq_design_1_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/MUX2_1.vhd">
@@ -64,18 +67,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_MUX2_1_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_axi_gpio_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_v_axi4s_vid_out_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_processing_system7_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_v_tc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_axi_gpio_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_MUX2_1_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_MUX2_1_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_MUX2_1_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_axi_vdma_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_rst_ps7_0_50M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_rst_ps7_0_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_SNES_controller_peri_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_1_SNES_controller_peri_1_1"/>
 </GenRun>
