@@ -1,0 +1,75 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Feb 10 18:11:51 2025
+# Process ID: 15392
+# Current directory: C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_SNES_controller_peri_1_1_synth_1
+# Command line: vivado.exe -log zynq_design_1_SNES_controller_peri_1_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_design_1_SNES_controller_peri_1_1.tcl
+# Log file: C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_SNES_controller_peri_1_1_synth_1/zynq_design_1_SNES_controller_peri_1_1.vds
+# Journal file: C:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.runs/zynq_design_1_SNES_controller_peri_1_1_synth_1\vivado.jou
+#-----------------------------------------------------------
+source zynq_design_1_SNES_controller_peri_1_1.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/myip_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jaxie963/cpre488/Labs/MP-0/ip_repo/SNES_controller_periph_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.cache/ip 
+Command: synth_design -top zynq_design_1_SNES_controller_peri_1_1 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 17452
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.113 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'zynq_design_1_SNES_controller_peri_1_1' [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_SNES_controller_peri_1_1/synth/zynq_design_1_SNES_controller_peri_1_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'SNES_controller_periph_v1_0' [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/4308/hdl/SNES_controller_periph_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'SNES_controller_periph_v1_0_S00_AXI' [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/4308/hdl/SNES_controller_periph_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/4308/hdl/SNES_controller_periph_v1_0_S00_AXI.v:237]
+INFO: [Synth 8-226] default block is never used [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/4308/hdl/SNES_controller_periph_v1_0_S00_AXI.v:378]
+INFO: [Synth 8-6157] synthesizing module 'SNES_controller' [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/4308/src/SNES_controller.v:22]
+	Parameter LATCH_PULSE bound to: 4'b0001 
+	Parameter CYCLE_HIGH bound to: 4'b0010 
+	Parameter CYCLE_LOW bound to: 4'b0100 
+	Parameter FINISH bound to: 4'b1000 
+	Parameter delay6us bound to: 9'b010010110 
+	Parameter delay12us bound to: 9'b100101100 
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/4308/src/SNES_controller.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'SNES_controller' (1#1) [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/4308/src/SNES_controller.v:22]
+WARNING: [Synth 8-689] width (32) of port connection 'btn_output' does not match port width (16) of module 'SNES_controller' [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/4308/hdl/SNES_controller_periph_v1_0_S00_AXI.v:412]
+ERROR: [Synth 8-685] variable 'slv_reg0' should not be used in output port connection [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/4308/hdl/SNES_controller_periph_v1_0_S00_AXI.v:412]
+ERROR: [Synth 8-6156] failed synthesizing module 'SNES_controller_periph_v1_0_S00_AXI' [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/4308/hdl/SNES_controller_periph_v1_0_S00_AXI.v:4]
+ERROR: [Synth 8-6156] failed synthesizing module 'SNES_controller_periph_v1_0' [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ipshared/4308/hdl/SNES_controller_periph_v1_0.v:4]
+ERROR: [Synth 8-6156] failed synthesizing module 'zynq_design_1_SNES_controller_peri_1_1' [c:/Users/jaxie963/cpre488/Labs/MP-0/mp-0_SB3_section_a/mp-0_SB3_section_a.srcs/sources_1/bd/zynq_design_1/ip/zynq_design_1_SNES_controller_peri_1_1/synth/zynq_design_1_SNES_controller_peri_1_1.v:57]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1013.113 ; gain = 0.000
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 8 Warnings, 0 Critical Warnings and 5 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 10 18:12:04 2025...

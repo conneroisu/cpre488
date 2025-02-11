@@ -171,6 +171,7 @@ module zynq_design_1_system_ila_3_1 (
   SLOT_5_AXI_rresp,
   SLOT_5_AXI_rvalid,
   SLOT_5_AXI_rready,
+  SLOT_6_GPIO_tri_o,
   resetn
 );
 
@@ -417,6 +418,8 @@ input wire SLOT_5_AXI_rvalid;
 AD_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 SLOT_5_AXI RREADY" *)
 input wire SLOT_5_AXI_rready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 SLOT_6_GPIO TRI_O" *)
+input wire [7 : 0] SLOT_6_GPIO_tri_o;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.resetn RST" *)
 input wire resetn;
@@ -539,6 +542,7 @@ input wire resetn;
     .SLOT_5_AXI_rresp(SLOT_5_AXI_rresp),
     .SLOT_5_AXI_rvalid(SLOT_5_AXI_rvalid),
     .SLOT_5_AXI_rready(SLOT_5_AXI_rready),
+    .SLOT_6_GPIO_tri_o(SLOT_6_GPIO_tri_o),
     .resetn(resetn)
   );
 endmodule
