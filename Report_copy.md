@@ -255,7 +255,7 @@ Our VDMA register configurations were as follows:
 
 - The stride was set to the size of our horizontal offset and there was no frame delay
 
-- The horizontal offset was set to 2x our desired horizontal size since the horizontal line was 2 biytes
+- The horizontal offset was set to 2x our desired horizontal size since the horizontal line was 2 bytes
 
 - The vertical offset was set to our desired vertical size
 
