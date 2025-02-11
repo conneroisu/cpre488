@@ -218,7 +218,7 @@ int main()
 ```
 
 An example of the code working: 
-![](LED_BTNS_EX.mp4)
+![](assets/LED_BTNS_EX.mp4)
 
 
 
