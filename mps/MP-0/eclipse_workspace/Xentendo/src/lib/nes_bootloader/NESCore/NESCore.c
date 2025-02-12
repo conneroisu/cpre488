@@ -10,8 +10,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <unistd.h>
-
 #include "../../../src/lib/nes_bootloader/NESCore/M6502.h"
 #include "../../../src/lib/nes_bootloader/NESCore/NESCore_Callback.h"
 #include "../../../src/lib/nes_bootloader/NESCore/NESCore_Mapper.h"

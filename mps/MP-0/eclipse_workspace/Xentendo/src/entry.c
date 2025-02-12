@@ -1,6 +1,6 @@
 #include "NESCore.h"
 #include "controls.h"
-#include "display.h" // for t_image_type
+#include "lib/display/display.h" // for t_image_type
 #include "menu.h"
 #include "nes_bootloader.h"
 #include "platform.h"

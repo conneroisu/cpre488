@@ -2,7 +2,6 @@
 
 #include "../../lib/nes_bootloader/NESCore/NESCore.h"
 #include "sleep.h"  // for ignoring ccls usleep error
-#include <unistd.h> // for usleep
 
 // Initializes
 // - bootloader state

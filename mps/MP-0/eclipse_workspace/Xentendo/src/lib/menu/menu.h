@@ -1,7 +1,7 @@
 #ifndef GAME_MENU_H
 #define GAME_MENU_H
 
-#include "display.h"
+#include "../display/display.h"
 #include <stddef.h>
 #include <stdint.h>
 

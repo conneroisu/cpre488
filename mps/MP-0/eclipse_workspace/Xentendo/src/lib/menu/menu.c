@@ -1,4 +1,4 @@
-#include "display.h"
+#include "../display/display.h"
 #include "mmap.h"
 #include <ctype.h>
 #include <ff.h>
@@ -1013,7 +1013,7 @@ void draw_char(t_image_type *fb, int x, int y, char c, u16 color) {
         int px = x + col;
         int py = y + row;
         if (px >= 0 && px < VIDEO_WIDTH && py >= 0 && py < VIDEO_HEIGHT) {
-          *fb[py][px] = color;
+          (*fb)[py][px] = color;
         }
       }
     }
@@ -1045,7 +1045,7 @@ void draw_rounded_rect(t_image_type *fb, int rect_x, int rect_y, int rect_width,
 #define SET_PIXEL(x, y)                                                        \
   do {                                                                         \
     if ((x) >= 0 && (x) < VIDEO_WIDTH && (y) >= 0 && (y) < VIDEO_HEIGHT) {     \
-      *fb[(y)][(x)] = (color);                                                 \
+      *(fb)[(y)][(x)] = (color);                                                 \
     }                                                                          \
   } while (0)
 
@@ -1099,7 +1099,7 @@ void fill_rect(t_image_type *fb, int x, int y, int width, int height,
   for (int j = y; j < y + height; j++) {
     for (int i = x; i < x + width; i++) {
       if (i >= 0 && i < VIDEO_WIDTH && j >= 0 && j < VIDEO_HEIGHT) {
-        *fb[j][i] = color;
+        (*fb)[j][i] = color;
       }
     }
   }
@@ -1311,7 +1311,7 @@ int render_ppm_scaled(t_image_type *fb, const char *filename, int dest_x,
       u8 g4 = g >> 4;
       u8 b4 = b >> 4;
       u16 pixel = (b4 << 12) | (g4 << 8) | (r4 << 4);
-      *fb[fb_y][fb_x] = pixel;
+      (*fb)[fb_y][fb_x] = pixel;
     }
   }
   return 0;
@@ -1435,7 +1435,12 @@ void draw_game_menu(t_image_type *fb, int selected_index, int menu_offset) {
             games[selected_index].genre,     // text: genre info
             0x0000);                         // color: black
 
-  char *c;
+  // Init c to store 1024 bytes.
+  char c[1025];
+  for(int i = 0; i < 1025; ++i)
+  {
+	  c[i] = 0;
+  }
   sprintf(c, "%c", games[selected_index].year_released); // text: year released
   draw_text(fb,                                          // framebuffer pointer
             COVER_INFO_X, // x: starting x coordinate for info
