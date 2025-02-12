@@ -1,0 +1,24 @@
+table
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td, th
+{
+    border-color: black !important;
+}
+
+ol, ul
+{
+    --list-marker-color: black;
+}
+
+@media print{
+    img {page-break-inside: avoid;}
+    table {page-break-inside: avoid;}
+
+    h1, h2, h3 {page-break-after: avoid; page-break-inside: avoid;}
+
+    p {page-break-inside: avoid;}
+}
