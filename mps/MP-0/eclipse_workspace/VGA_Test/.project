@@ -3,7 +3,7 @@
 	<name>VGA_Test</name>
 	<comment>Created by Vitis v2020.1</comment>
 	<projects>
-		<project>VGA_Please</project>
+		<project>NES_HW_Platform</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -67,11 +67,13 @@ int main()
     int gpio2_val = 0;
     while(1)
     {
+    	// Alternate from setting 0x1 and 0x7 so we can see transactions on the ILA.
+    	// GPIO 1 value is always printed, which demonstrates that we can read from GPIO.
+
     	Xil_Out32(XPAR_GPIO_0_BASEADDR + GPIO_DATA_OFFSET, 0x1);
     	gpio1_val = Xil_In32(XPAR_GPIO_1_BASEADDR + GPIO_DATA_OFFSET);
     	gpio2_val = Xil_In32(XPAR_GPIO_2_BASEADDR + GPIO_DATA_OFFSET);
     	xil_printf("GPIO_1 Value: %d\r\n", gpio1_val);
-    	// Turn on LEDs corresponding to the switches.
     	Xil_Out32(XPAR_GPIO_0_BASEADDR + GPIO_DATA_OFFSET, 0x7);
     }
     cleanup_platform();
