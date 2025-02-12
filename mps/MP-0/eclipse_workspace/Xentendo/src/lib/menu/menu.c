@@ -42,7 +42,7 @@
 typedef uint16_t u16;
 typedef uint8_t u8;
 
-// The framebuffer is defined globally only to allocate storage.
+// The frame buffer is defined globally only to allocate storage.
 // All drawing functions now take a pointer to the framebuffer as an argument.
 u16 framebuffer[VIDEO_HEIGHT][VIDEO_WIDTH];
 
@@ -394,7 +394,6 @@ u8 *load_ppm(const char *filename, int *width, int *height) {
 
   xil_printf("menu.load_ppm(): beginning loading coverfile %s\r\n", filename);
   Xil_DCacheDisable();
-
   status = xilsd_fopen(fp, filename);
   if (status != XST_SUCCESS) {
     xil_printf("menu.load_ppm(): Error opening coverfile %s %h\r\n", filename,
@@ -447,10 +446,10 @@ u8 *load_ppm(const char *filename, int *width, int *height) {
   static u8 image_data[MAX_PPM_WIDTH * MAX_PPM_HEIGHT * 3];
   if (fread(image_data, 1, data_size, fp) != data_size) {
     fprintf(stderr, "Error: Could not read image data from %s\n", filename);
-    fclose(fp);
+    xilsd_fclose(fp);
     return NULL;
   }
-  fclose(fp);
+  xilsd_fclose(fp);
   Xil_DCacheEnable();
   return image_data;
 }
