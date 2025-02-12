@@ -89,14 +89,13 @@ Inside **NESCore.c**, there is a main loop in **`NESCore_Cycle()`** that continu
 At the end of each scanline, it calls **`NESCore_HSync()`**. Within **`NESCore_HSync()`**, once it reaches scanline 240 (the constant `SCAN_UNKNOWN_START`), there is a check:
 
 ```c
-  847    case SCAN_UNKNOWN_START:
-     1     if (S.FrameCnt == 0) {
-     2       /* Calback function for rendering */
-     3       NESCore_Callback_OutputFrame(S.WorkFrame);
-     4
-     5       /* Wait callback (for timing) */
-     6       NESCore_Callback_Wait();
-     7       break;
+case SCAN_UNKNOWN_START:
+	if (S.FrameCnt == 0) {
+    		/* Calback function for rendering */
+  		NESCore_Callback_OutputFrame(S.WorkFrame);
+		/* Wait callback (for timing) */
+		NESCore_Callback_Wait();
+break;
 ```
 
 That snippet shows exactly where (appox. line 847) **`NESCore_Callback_OutputFrame(S.WorkFrame)`** is invoked. Essentially:
