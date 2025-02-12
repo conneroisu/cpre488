@@ -62,7 +62,7 @@ Game games[] = {
 		2025,
 		"Arcade",
 		"ISUBros.nes",
-		"foo.ppm"
+		"foo"
 	},
 
     {
@@ -70,7 +70,7 @@ Game games[] = {
         1985,                //
         "Action/Simulation", //
         "Paperboy.nes",      //
-        "Paperboy.ppm"       //
+        "Paperboy"       //
     },                       //
 
 	{
@@ -78,7 +78,7 @@ Game games[] = {
 		1988,
 		"Platformer",
 		"smario2.nes",
-		"foo.ppm"
+		"foo"
 	},
 
 	{
@@ -86,7 +86,7 @@ Game games[] = {
 		1988,
 		"Platformer",
 		"smario3.nes",
-		"foo.ppm"
+		"foo"
 	},
 
     {
@@ -94,21 +94,21 @@ Game games[] = {
         1987,                //
         "Action-Platformer", //
         "MegaMan.nes",       //
-        "MegaMan.ppm"        //
+        "MegaMan"        //
     },                       //
     {
         "The Legend of Zelda",  //
         1986,                   //
         "Action-Adventure",     //
         "zelda.nes", //
-        "TheLegendOfZelda.ppm"  //
+        "TheLegendOfZelda"  //
     },                          //
     {
         "The Legend of Zelda II", //
         1987,                     //
         "Action-Adventure/RPG",   //
         "zelda2.nes", //
-        "TheLegendOfZeldaII.ppm"  //
+        "TheLegendOfZeldaII"  //
     },
 
 	{
@@ -116,7 +116,7 @@ Game games[] = {
 		1984,
 		"Scrolling Shooter",
 		"1943.nes",
-		"foo.ppm"
+		"foo"
 	}
 
 
@@ -441,7 +441,7 @@ u8 *load_ppm(const char *filename, int *width, int *height) {
   if (max_val != 255) {
     fprintf(stderr, "Warning: max color value is not 255 (%d).\n", max_val);
   }
-  fgetc(fp); // consume whitespace after header
+	fgetc(fp); // consume whitespace after header
   size_t data_size = 3 * (*width) * (*height);
   static u8 image_data[MAX_PPM_WIDTH * MAX_PPM_HEIGHT * 3];
   if (fread(image_data, 1, data_size, fp) != data_size) {
