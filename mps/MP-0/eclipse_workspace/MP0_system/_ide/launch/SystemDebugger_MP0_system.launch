@@ -55,11 +55,11 @@
     <booleanAttribute key="multilaunch.emulation" value="false"/>
     <stringAttribute key="multilaunch.linux_peer_id" value="Linux Agent"/>
     <stringAttribute key="multilaunch.linux_remote_work_dir" value="/mnt/sd-mmcblk0p1/"/>
-    <stringAttribute key="multilaunch.project_name" value="VGA_Test_system"/>
+    <stringAttribute key="multilaunch.project_name" value="MP0_system"/>
     <stringAttribute key="multilaunch.selected_apps" value=""/>
     <stringAttribute key="multilaunch.standalone_peer_id" value="Local"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-        <listEntry value="/VGA_Test_system"/>
+        <listEntry value="/MP0_system"/>
     </listAttribute>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="4"/>

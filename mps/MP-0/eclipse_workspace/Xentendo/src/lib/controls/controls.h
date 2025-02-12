@@ -1,7 +1,7 @@
 #ifndef __CONTROLS_H_
 #define __CONTROLS_H_
 #define DPAD_BUTTON_COUNT 4
-#define EXTRA_BUTTON_COUNT 2
+#define EXTRA_BUTTON_COUNT 4
 #define GENERAL_BUTTON_COUNT 4
 
 	// Types

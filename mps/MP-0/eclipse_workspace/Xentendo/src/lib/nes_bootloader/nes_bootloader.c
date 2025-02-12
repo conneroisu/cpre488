@@ -1,7 +1,7 @@
 #include "../../lib/nes_bootloader/nes_bootloader.h"
-
-#include <unistd.h> // for usleep
 #include "../../lib/nes_bootloader/NESCore/NESCore.h"
+#include <unistd.h>
+#include "../../lib/controls/controls.h"
 
 // Initializes
 // - bootloader state
@@ -72,7 +72,7 @@ void xil_init() {
       XPAR_AXIVDMA_0_BASEADDR,          // VDMA Base Addr
       XAXIVDMA_MM2S_ADDR_OFFSET         // MM2S Addr Offset
           + XAXIVDMA_START_ADDR_OFFSET, // Start Addr Offset
-      FBUFFER_BASEADDR//
+      FBUFFER_BASEADDR                  //
   );
 
   XAxiVdma_WriteReg(                   //
@@ -88,7 +88,8 @@ void xil_init() {
           + XAXIVDMA_HSIZE_OFFSET, // HSize Offset
       0x0500                       //
   );
-  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_FRMSTORE_OFFSET, 1);  // VDMA MM2S Number FRM_Stores
+  XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_FRMSTORE_OFFSET,
+                    1); // VDMA MM2S Number FRM_Stores
 
   XAxiVdma_WriteReg( // Read Ch: VDMA MM2S VSIZE & Start VDMA transaction
       XPAR_AXIVDMA_0_BASEADDR,                           //
@@ -99,8 +100,8 @@ void xil_init() {
   return;
 }
 
-void nes_load(const char* *rom_name) {
-	  int32_t result = 0, i;
+void nes_load( char *rom_name) {
+  int32_t result = 0, i;
 
   usleep(100000);
 
@@ -113,7 +114,9 @@ void nes_load(const char* *rom_name) {
   result = NESCore_LoadROM(rom_name);
   if (result != 0) {
     xil_printf("nes_load(): invalid ROM load. Returning\r\n");
+    return;
   }
+
   // Enable the cache for performance reasons
   Xil_DCacheEnable();
 
@@ -123,19 +126,42 @@ void nes_load(const char* *rom_name) {
   }
 
   if (bootstate.debug_level >= 1) {
-	    xil_printf("nes_load(): beginning emulation of %s\r\n", rom_name);
+    xil_printf("nes_load(): beginning emulation of %s\r\n", rom_name);
   }
 
   bootstate.nes_playing = 1;
   usleep(100000);
   ptv = 0;
 
-  // Runs the emulator 20 cycles at a time. Currently there is no exit
-  // condition.
+  int cyRes;
+
   do {
 
     for (i = 0; i < RESET_TIME; i++) {
-      NESCore_Cycle();
+
+	// Got START and SELECT at the same time from user, go back to menu.
+	extern t_general_button_states general_button_states_p1;
+
+	get_general_buttons_state(&general_button_states_p1, 0);
+
+	// Or all together.
+	u16 state = 0x0;
+
+	for(int i = 0; i < general_button_states_p1.len; ++i)
+	{
+		state |= (u16) general_button_states_p1.active_buttons[i];
+	}
+
+	if(state == (u16)(((u16)START | (u16)SELECT)))
+	{
+		xil_printf("Returning to main menu!\n\r");
+
+		// Give user time to release buttons.
+		sleep(1);
+		return;
+	}
+
+     NESCore_Cycle();
     }
 
   } while (1);
@@ -144,4 +170,3 @@ void nes_load(const char* *rom_name) {
 
   return;
 }
-

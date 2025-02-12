@@ -3,7 +3,7 @@
 	<name>MP0</name>
 	<comment>Created by Vitis v2020.1</comment>
 	<projects>
-		<project>IP_wrapper</project>
+		<project>NES_HW_Platform</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
