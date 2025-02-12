@@ -21,7 +21,6 @@ void NESCore_Callback_OutputFrame(word *WorkFrame) {
   uint32_t i, j, i_ptr, j_ptr;
   uint16_t *ptr = (uint16_t *)FBUFFER_BASEADDR;
   uint16_t tpixel;
-  uint16_t tcol;
 
   // blank unused part of screen
   for (i = 0; i < 480; i++) {

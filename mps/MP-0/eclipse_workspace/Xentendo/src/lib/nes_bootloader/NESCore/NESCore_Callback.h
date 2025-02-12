@@ -20,7 +20,6 @@ void NESCore_Callback_CloseSound(void);
 void NESCore_Callback_OutputSample(int nSamples, byte *channel1, byte *channel2,
                                    byte *channel3, byte *channel4,
                                    byte *channel5);
-inline void play_next_squeue();
 
 #define NESCore_Debug xil_printf
 

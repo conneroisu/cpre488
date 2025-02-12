@@ -8,7 +8,6 @@
 // - Xilinx peripherals
 // - front buffer
 void xil_init() {
-  XStatus Status = XST_SUCCESS;
   uint32_t i;
   uint16_t *ptr;
 

@@ -26,9 +26,9 @@
 #define VIDEO_WIDTH 640
 #define VIDEO_HEIGHT 480
 
-#define FONT_WIDTH 8
-#define FONT_HEIGHT 8
-#define ITEM_SPACING (FONT_HEIGHT + 2)
+#define CUSTOM_FONT_WIDTH 8
+#define CUSTOM_FONT_HEIGHT 8
+#define ITEM_SPACING (CUSTOM_FONT_HEIGHT + 2)
 
 //----------------------------------------------------------------------
 // Type Definitions

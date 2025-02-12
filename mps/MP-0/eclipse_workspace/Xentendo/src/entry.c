@@ -60,7 +60,6 @@ char *game_menu() {
   int num_games = get_games_length();
   int i = 0;
   char *rom_name;
-  char *selected_game = get_selected_game_rom_name(selected_index, menu_offset);
 
   render_game_menu(selected_index, menu_offset);
 
@@ -118,11 +117,8 @@ char *game_menu() {
 }
 
 int main() {
-  int num_games = get_games_length();
-  int i = 0;
   int menu_offset = 0;
   int selected_index = 0;
-  char *rom_name;
   char *selected_game = get_selected_game_rom_name(selected_index, menu_offset);
 
   init_platform();
@@ -158,7 +154,7 @@ int main() {
     selected_game = game_menu();
     xil_init();
     NESCore_Init();
-    nes_load(selected_game);
+    nes_load("zelda.nes");
   }
   cleanup_platform();
 

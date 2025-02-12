@@ -1332,7 +1332,6 @@ void clear_framebuffer(u16 (*fb)[VIDEO_WIDTH]) {
  * Draws the game menu into the given framebuffer.
  */
 void draw_game_menu(t_image_type *fb, int selected_index, int menu_offset) {
-  char display_title[128];
 
   fill_rect(fb, 2, 2, VIDEO_WIDTH - 4, VIDEO_HEIGHT - 4, 0xFFFF);
   int visible_items = ROWS_GAME_MENU;

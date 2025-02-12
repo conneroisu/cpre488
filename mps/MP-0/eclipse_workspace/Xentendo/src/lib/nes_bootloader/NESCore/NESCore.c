@@ -55,7 +55,6 @@ int NESCore_LoadROM(const char *fileName) {
   FIL *fp = NULL;
   int nIdx, mapperSupported = 0;
   uint8_t *tmpPtr;
-  int i, j;
 
   if (bootstate.debug_level >= 1)
     xil_printf("NESCore_LoadROM(): loading romfile %s\r\n", fileName);
