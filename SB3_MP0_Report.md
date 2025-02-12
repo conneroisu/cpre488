@@ -1,4 +1,4 @@
-# Report
+<h1 style="text-align:center">SB3 MP0 Report</h1>
 
 ## Describe how nes_bootloader.c currently works. Using a similar approach as what is presented in Chapter 1 of the Wolf textbook, draw a high-level structural diagram.
 
@@ -113,20 +113,29 @@ The configuration options are run, debug, and hardware (single application debug
 
 We analyzed the following three green boxes;
 
-Generic Interrupt Controller (GIC )
+**Generic Interrupt Controller (GIC)**
 - Interrupts for programmable logic (PL) and processing systems (PS)
 - PL-PS Interrupt Ports
   - Can enable fast or not fast interrupt signals from PL to PS (CPU 0 or CPU 1)
   - Enable 16-bit shared interrupt port from PL
-- PS-PL Interrupt Ports
+- **PS-PL Interrupt Ports**
   - Enable interrupts from DMAC, SMC, QSPI, CTI, GPIO, USB, SDIO, ETHERNET, I2C, SPI, UART, CAN to PL
+	
+	**Usefulness Description:**
+	Having interrupt functionality is extremely important when working with embedded systems since they enable the CPU to respond to stimuli almost immediately. This removes the need to poll the status of a component or peripheral, which wastes CPU time. For example, let's say the embedded system has a UART module that is receiving data. Instead of polling the FIFO status register to know when data can be read out, an interrupt can be setup that will interrupt the CPU when a new character is ready to be read from the FIFO. Then the CPU will execute the interrupt handler, which reads the character. After the character is read, the CPU restores its previous state. No polling of status registers was needed to read out of the FIFO, which saved a lot of CPU time.
 
-System Watch Dog Timer (SWDT)
+**System Watch Dog Timer (SWDT)**
   - Can enable Watch dog timer in APU
   - Change IO (EMIO or MIO)
 
-Direct Memory Access Controller (DMA8 Controller)
+	**Usefulness Description:**
+	Watchdog timers are useful in embedded systems to make sure that some process is not taking control of the CPU permanently and to handle hardware exceptions. Specifically, the watchdog timers can be used to make sure a set of asynchronous processes or threads are not taking up too much CPU time.
+
+**Direct Memory Access Controller (DMA Controller)**
 - Enable peripheral request interfaces that supports the connection of DMA-capable peripherals resident in the PL
+
+	**Usefulness Description:**
+	DMA is extremely useful in embedded systems when many memory operations or required. Instead of using up CPU time to facilitate memory operations, the CPU just has to tell the DMA what memory operations should be done and it executes them. This saves tons of CPU time, which is always desired when developing an embedded system. However, synchronization between the CPU and DMA must be established. This is usually done using interrupts, which were previously discussed.
 
 ## Step 5: Are these buttons, LEDs, and switches connected via the PS subsystem or the PL subsystem? Briefly defend your answer. Note also that all three peripherals appear to be the same exact IP type (axi_gpio) – how can this be possible?
  
@@ -236,7 +245,8 @@ Some other important considerations were that the input clock had to be as close
 
 Our VDMA register configurations were as follows:
 
-```// Simple function abstraction by Vendor for writing VDMA registers
+```c
+// Simple function abstraction by Vendor for writing VDMA registers
     XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET,  0x00000003);  // Read Channel: VDMA MM2S Circular Mode and Start bits set, VDMA MM2S Control
     XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET, 0x00000001);  // Read Channel: VDMA MM2S Reg_Index
     XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, (UINTPTR)test_image);  // Read Channel: VDMA MM2S Frame buffer Start Addr 1
@@ -267,6 +277,7 @@ Second, we shift the given color value to the right by 1 byte to get the green v
 Third, we shift the given color value to the right by 4 bits to get the blue value.
 
 Here is our function:
+
 ```c
 // Example: 0xC8103E
 // 0xC8 -> Red | 0x10 -> Green | 0x3E -> Blue
@@ -293,7 +304,6 @@ u16 convert_color_24_16(u32 color)
 	return r | g | b;
 }
 ```
-
 ## Modify the nes_bootloader code such that the NES games are reasonably playable. In your report, describe your general approach to implementing both of the NESCore_Callback functions.
 
 For the “NESCore_Callback_OutputFrame,” our task was to expand the 256x240 image to a 640x480 resolution. For this, we first started by finding the scalar needed to enlarge the image. This scalar was then used to repeat the WorkFrame multiple times for every pixel read. Once implemented, we realized that we needed to add borders to our image since we couldn’t have scalars that weren’t whole numbers. We just found the missing pixels and added them as black borders before reading the WorkFrame.
