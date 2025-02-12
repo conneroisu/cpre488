@@ -12,11 +12,11 @@
 
 #include <unistd.h>
 
-#include "../../../src/lib/nes_bootloader/nes_bootloader.h"
 #include "../../../src/lib/nes_bootloader/NESCore/M6502.h"
 #include "../../../src/lib/nes_bootloader/NESCore/NESCore_Callback.h"
 #include "../../../src/lib/nes_bootloader/NESCore/NESCore_Mapper.h"
 #include "../../../src/lib/nes_bootloader/NESCore/NESCore_pAPU.h"
+#include "../../../src/lib/nes_bootloader/nes_bootloader.h"
 
 struct NES_State S;
 struct NES_Wiring W;

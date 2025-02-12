@@ -26,7 +26,7 @@ uint32_t *bmpRead(FIL *bmp_file, uint32_t *bmpAddr) {
   xilsd_fread(tmpPtr, sizeof(bmp_magic), 1, bmp_file);
   tmpPtr = (uint8_t *)&bmp.h2;
   xilsd_fread(tmpPtr, sizeof(bmp_header), 1, bmp_file);
-  // Read only 40 bytes of the dib_header for now (for compatability purposes)
+  // Read only 40 bytes of the dib_header for now (for compatibility purposes)
   tmpPtr = (uint8_t *)&bmp.h3;
   xilsd_fread(tmpPtr, 1, 40, bmp_file);
 

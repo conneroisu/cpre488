@@ -84,7 +84,7 @@ int32_t ptv;
 
 // Function definitions for nes_bootloader.c
 void xil_init();
-void nes_load();
+void nes_load(char* rom_name);
 
 // Some helpful macros
 #define DRAW_SPLASH()                                                          \
