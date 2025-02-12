@@ -113,7 +113,7 @@ The configuration options are run, debug, and hardware (single application debug
 
 We analyzed the following three green boxes;
 
-Generic Interrupt Controller (GIC )
+1) Generic Interrupt Controller (GIC )
 - Interrupts for programmable logic (PL) and processing systems (PS)
 - PL-PS Interrupt Ports
   - Can enable fast or not fast interrupt signals from PL to PS (CPU 0 or CPU 1)
@@ -121,11 +121,11 @@ Generic Interrupt Controller (GIC )
 - PS-PL Interrupt Ports
   - Enable interrupts from DMAC, SMC, QSPI, CTI, GPIO, USB, SDIO, ETHERNET, I2C, SPI, UART, CAN to PL
 
-System Watch Dog Timer (SWDT)
+2) System Watch Dog Timer (SWDT)
   - Can enable Watch dog timer in APU
   - Change IO (EMIO or MIO)
 
-Direct Memory Access Controller (DMA8 Controller)
+3) Direct Memory Access Controller (DMA8 Controller)
 - Enable peripheral request interfaces that supports the connection of DMA-capable peripherals resident in the PL
 
 ## [TASK] Step 5: Are these buttons, LEDs, and switches connected via the PS subsystem or the PL subsystem? Briefly defend your answer. Note also that all three peripherals appear to be the same exact IP type (axi_gpio) – how can this be possible?
@@ -141,8 +141,6 @@ The reason why buttons, LEDs, and switches can all use the same axi_gpio IP is t
 Each instance is mapped to a different memory address and connected to separate GPIO pins, making it possible to use the same IP type multiple times within the system.
 
 ## [TASK] Step 5: Based on the datasheet and the address map shown in the “Address Editor” (mentioned in instruction 7 of Step 2: Use Designer Assistance), how would you (in software) read the current state of the switches? Be specific
-
-%%TODO
 
 The processing system can read the register of the axi_gpio which communicates with the switches. For example, 
     
