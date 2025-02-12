@@ -12,6 +12,9 @@
 #define SNES_CONTROL_B *((volatile u32*) XPAR_PLAYERTWOSNESREAD_BASEADDR + 0x1)
 #define SNES_STATUS_B *((volatile u32*) XPAR_PLAYERTWOSNESREAD_BASEADDR + 0x2)
 
+int have_read_dpad_button(t_dpad_state* state, t_dpad_buttons button);
+int have_read_general_button(t_general_button_states* state, t_general_buttons button);
+
 void get_dpad_state(t_dpad_state* state, int player)
 {
 	// Read data
@@ -34,7 +37,7 @@ void get_dpad_state(t_dpad_state* state, int player)
 
 	}
 
-	u32 data = player ? ~SNES_READ_B : ~SNES_READ_A;
+	u16 data = player ? ~SNES_READ_B : ~SNES_READ_A;
 
 	// Clear previous data
 	for (int i = 0; i < DPAD_BUTTON_COUNT; ++i)
@@ -50,19 +53,19 @@ void get_dpad_state(t_dpad_state* state, int player)
 	for (int i = 1; i <= DPAD_BUTTON_COUNT; ++i)
 	{
 		// Up
-		if(data & (u16)~0xF7FF)
+		if((data & (u16)~0xF7FF) > 0 && !have_read_dpad_button(state, UP))
 		{
 			dpad = UP;
 		}
-		else if(data & (u16)~0xFBFF)
+		else if((data & (u16)~0xFBFF) > 0 && !have_read_dpad_button(state, DOWN))
 		{
 			dpad = DOWN;
 		}
-		else if(data & (u16)~0xFDFF)
+		else if((data & (u16)~0xFDFF) > 0 && !have_read_dpad_button(state, LEFT))
 		{
 			dpad = LEFT;
 		}
-		else if(data & (u16)~0xFEFF)
+		else if((data & (u16)~0xFEFF) > 0 && !have_read_dpad_button(state, RIGHT))
 		{
 			dpad = RIGHT;
 		}
@@ -103,7 +106,7 @@ void get_general_buttons_state(t_general_button_states* state, int player)
 
 	}
 
-	u32 data = player ? ~SNES_READ_B : ~SNES_READ_A;
+	u16 data = player ? ~SNES_READ_B : ~SNES_READ_A;
 
 	// Clear previous data
 	for (int i = 0; i < GENERAL_BUTTON_COUNT; ++i)
@@ -121,19 +124,19 @@ void get_general_buttons_state(t_general_button_states* state, int player)
 	for(int i = 0; i < EXTRA_BUTTON_COUNT; ++i)
 	{
 		// B
-		if(data & (u16)~0xFFBF)
+		if((data & (u16)~0xFFBF) > 0 && !have_read_general_button(state, B))
 		{
 			general_buttons = B;
 		}
-		else if(data & (u16)~0xFF7F)
+		else if((data & (u16)~0xFF7F) > 0 && !have_read_general_button(state, A))
 		{
 			general_buttons = A;
 		}
-		else if(data & (u16)~0xDFFF)
+		else if((data & (u16)~0xDFFF) > 0 && !have_read_general_button(state, SELECT))
 		{
 			general_buttons = SELECT;
 		}
-		else if(data & (u16)~0xEFFF)
+		else if((data & (u16)~0xEFFF) > 0 && !have_read_general_button(state, START))
 		{
 			general_buttons = START;
 		}
@@ -151,4 +154,30 @@ void get_general_buttons_state(t_general_button_states* state, int player)
 	}
 
 
+}
+
+int have_read_dpad_button(t_dpad_state* state, t_dpad_buttons button)
+{
+	for(int i = 0; i < state->len; ++i)
+	{
+		if(state->active_buttons[i] == button)
+		{
+			return 1;
+		}
+	}
+
+	return 0;
+}
+
+int have_read_general_button(t_general_button_states* state, t_general_buttons button)
+{
+	for(int i = 0; i < state->len; ++i)
+	{
+		if(state->active_buttons[i] == button)
+		{
+			return 1;
+		}
+	}
+
+	return 0;
 }

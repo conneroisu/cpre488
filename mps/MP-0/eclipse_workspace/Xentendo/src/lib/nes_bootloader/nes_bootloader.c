@@ -1,6 +1,7 @@
 #include "../../lib/nes_bootloader/nes_bootloader.h"
 #include "../../lib/nes_bootloader/NESCore/NESCore.h"
 #include <unistd.h>
+#include "../../lib/controls/controls.h"
 
 // Initializes
 // - bootloader state
@@ -137,6 +138,29 @@ void nes_load( char *rom_name) {
   do {
 
     for (i = 0; i < RESET_TIME; i++) {
+
+	// Got START and SELECT at the same time from user, go back to menu.
+	extern t_general_button_states general_button_states_p1;
+
+	get_general_buttons_state(&general_button_states_p1, 0);
+
+	// Or all together.
+	u16 state = 0x0;
+
+	for(int i = 0; i < general_button_states_p1.len; ++i)
+	{
+		state |= (u16) general_button_states_p1.active_buttons[i];
+	}
+
+	if(state == (u16)(((u16)START | (u16)SELECT)))
+	{
+		xil_printf("Returning to main menu!\n\r");
+
+		// Give user time to release buttons.
+		sleep(1);
+		return;
+	}
+
      NESCore_Cycle();
     }
 

@@ -782,6 +782,7 @@ void NESCore_Cycle() {
 
   for (;;) {
 
+
     if (S.PPU_Scanline == S.SpriteJustHit &&
         PPU_ScanTable[S.PPU_Scanline] == SCAN_ON_SCREEN) {
       /* Set sprite hit register flag */
@@ -793,6 +794,9 @@ void NESCore_Cycle() {
 
     /* Call H-Sync Mapper Callback */
     MapperHSync();
+
+
+
 
     /* HSync will return -1 if the emulator is told to quit */
     if (NESCore_HSync() == -1)
@@ -879,6 +883,7 @@ int NESCore_HSync() {
     if (S.EmulatorRun == 0)
       return -1;
     break;
+
   }
 
   return 0;
