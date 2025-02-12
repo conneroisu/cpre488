@@ -337,26 +337,28 @@ void draw_text(u16 (*fb)[VIDEO_WIDTH], int x, int y, const char *text,
 }
 
 /*
+ * Set a single pixel in the framebuffer if it is within bounds.
+ */
+static inline void set_pixel(u16 (*fb)[VIDEO_WIDTH], int x, int y, u16 color) {
+  if (x >= 0 && x < VIDEO_WIDTH && y >= 0 && y < VIDEO_HEIGHT) {
+    fb[y][x] = color;
+  }
+}
+
+/*
  * Draws a rounded rectangle border (outline only) into the given framebuffer.
  */
 void draw_rounded_rect(u16 (*fb)[VIDEO_WIDTH], int rect_x, int rect_y,
                        int rect_width, int rect_height, int radius, u16 color) {
-#define SET_PIXEL(x, y)                                                        \
-  do {                                                                         \
-    if ((x) >= 0 && (x) < VIDEO_WIDTH && (y) >= 0 && (y) < VIDEO_HEIGHT) {     \
-      fb[(y)][(x)] = (color);                                                  \
-    }                                                                          \
-  } while (0)
-
   // Draw horizontal lines (top and bottom) excluding rounded corners.
   for (int x = rect_x + radius; x < rect_x + rect_width - radius; x++) {
-    SET_PIXEL(x, rect_y);                   // Top edge
-    SET_PIXEL(x, rect_y + rect_height - 1); // Bottom edge
+    set_pixel(fb, x, rect_y, color);                   // Top edge
+    set_pixel(fb, x, rect_y + rect_height - 1, color); // Bottom edge
   }
   // Draw vertical lines (left and right) excluding rounded corners.
   for (int y = rect_y + radius; y < rect_y + rect_height - radius; y++) {
-    SET_PIXEL(rect_x, y);                  // Left edge
-    SET_PIXEL(rect_x + rect_width - 1, y); // Right edge
+    set_pixel(fb, rect_x, y, color);                  // Left edge
+    set_pixel(fb, rect_x + rect_width - 1, y, color); // Right edge
   }
 
   // Midpoint circle algorithm for the corner arcs.
@@ -366,19 +368,19 @@ void draw_rounded_rect(u16 (*fb)[VIDEO_WIDTH], int rect_x, int rect_y,
   int d = 1 - r;
   while (x <= y) {
     // Top-left corner (arc from 180° to 270°):
-    SET_PIXEL(rect_x + r - x, rect_y + r - y);
-    SET_PIXEL(rect_x + r - y, rect_y + r - x);
+    set_pixel(fb, rect_x + r - x, rect_y + r - y, color);
+    set_pixel(fb, rect_x + r - y, rect_y + r - x, color);
     // Top-right corner (arc from 270° to 360°):
-    SET_PIXEL(rect_x + rect_width - r - 1 + x, rect_y + r - y);
-    SET_PIXEL(rect_x + rect_width - r - 1 + y, rect_y + r - x);
+    set_pixel(fb, rect_x + rect_width - r - 1 + x, rect_y + r - y, color);
+    set_pixel(fb, rect_x + rect_width - r - 1 + y, rect_y + r - x, color);
     // Bottom-left corner (arc from 90° to 180°):
-    SET_PIXEL(rect_x + r - x, rect_y + rect_height - r - 1 + y);
-    SET_PIXEL(rect_x + r - y, rect_y + rect_height - r - 1 + x);
+    set_pixel(fb, rect_x + r - x, rect_y + rect_height - r - 1 + y, color);
+    set_pixel(fb, rect_x + r - y, rect_y + rect_height - r - 1 + x, color);
     // Bottom-right corner (arc from 0° to 90°):
-    SET_PIXEL(rect_x + rect_width - r - 1 + x,
-              rect_y + rect_height - r - 1 + y);
-    SET_PIXEL(rect_x + rect_width - r - 1 + y,
-              rect_y + rect_height - r - 1 + x);
+    set_pixel(fb, rect_x + rect_width - r - 1 + x,
+              rect_y + rect_height - r - 1 + y, color);
+    set_pixel(fb, rect_x + rect_width - r - 1 + y,
+              rect_y + rect_height - r - 1 + x, color);
     x++;
     if (d < 0) {
       d += 4 * x + 2;
@@ -387,7 +389,6 @@ void draw_rounded_rect(u16 (*fb)[VIDEO_WIDTH], int rect_x, int rect_y,
       d += 4 * (x - y) + 2;
     }
   }
-#undef SET_PIXEL
 }
 
 /*
