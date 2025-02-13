@@ -459,7 +459,6 @@ char *game_menu()
     }
 
     get_dpad_state(&dpad_state_p1, 0);
-
     get_general_buttons_state(&general_button_states_p1, 0);
 
     switch (dpad_state_p1.active_buttons[0])
