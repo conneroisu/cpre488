@@ -536,7 +536,7 @@ int main()
 }
 ```
 
-Finally, when we actually load the `.nes` rom, the internal game loop of the emulator allows us to listen for the controller state to potentially exit from the game if the user presses both start and select at the same time, and return from`nes_load` as mentioned:
+Finally, when we actually load the `.nes` rom, by a call to `nes_load()`, the internal game loop of the emulator allows us to listen for the controller state to potentially exit from the game if the user presses both start and select at the same time, and return from`nes_load` as mentioned:
 
 ```c
 void nes_load( char *rom_name) {
