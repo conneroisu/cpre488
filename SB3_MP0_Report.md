@@ -335,12 +335,26 @@ For “NESCore_Callback_InputPadState,” we were able to use our GPIO code from
 
 ## **BONUS credit.** 
 
-MP-0's bonus point criteria is *creativity*. The current nes_bootloader design is very limited in terms of functionality. Bonus points will be provided for groups that successfully implement the following features:
+We implemented the following extra credit items:
 
-- Interactive menu for selecting NES games, either a nice text-based menu (5 bonus points) or a graphical menu (20 bonus points).
+- SNES Controller Implementation
+- Graphical Menu
+- Return to Menu Functionality
 
-- A method for exiting a current game and returning back to the menu (5 bonus points).
+Brief descriptions of each of these items are given below:
 
-- Interfacing with an original NES controller (15 bonus points)
+### SNES Controller Implementation
 
+To implement a reader for the SNES controller, we first did some research on the protocol that the controller used. The website https://gamesx.com/controldata/snesdat.htm provided a sufficient writeup of the protocol. However, to verify that we understood the protocol, we took the SNES controller and went out to one of the circuit labs. In the lab, we hooked up the function generator to generate the `clock` and `latch` signals. We then were able to read the response from the SNES controller using an oscilloscope. Am image of such a reading is shown below:
 
+![SNES in Lab|center](assets/oscope.png)
+
+After we verified we understood the protocol, we devised a block diagram of an implementation. This block diagram is shown below:
+
+![bd|center](assets/snes_controller_reader_bd.png)
+
+This block diagram is made up of three major components: the pulse generator, a 4-bit counter, and a 16-bit shift register. The pulse generator creates the `latch` signal for the SNES controller upon receiving the `start` signal. After the pulse is sent, the pulse generator will not sent another pulse until it is reset and `start` is sent again. Then once the pulse has finished, the `counter_enable` signal is sent out to the 4-bit counter. The 4-bit counter will count 16 clock cycles, which will be aligned to the 16 data bits that the SNES controller sends. Once 16 clock cycles have been read, the `done` signal is sent out and the 16-bit shift register is disabled so we don't shift the read data off. Like the pulse generator, the 4-bit counter cannot be activated again until it is reset. This is to avoid restarting the 4-bit counter by accidently holding the enable signal high for too long.
+
+Finally, this system was hooked up to an AXI-Lite interface which allowed us to send the `start`  and `rest_n` signals, read the `done` signal, and read the controller from C code via memory-mapped registers.
+
+Once all of this was implemented, we ran many tests, fixed many issues and got a result that mostly worked. The design will always read the first data bit as a '1', which corresponds to the B button not being pressed. To work around this, we simply re-bound X to B since we could read all the other buttons just fine. We believe this is due to some timing issue not caught in our simulated testbenches or due to running the `snes_clk` too fast. We originally had the AXI but clock and the `snes_clk` at different frequencies, but this introduced negative slack so we made them the same frequency. We found that when two SNES controller reader modules (for two player support) were instantiated, the AXI clock needed to be at least 1MHz to function properly. Finally, the VHDL was not written the best. I had FSMs baked into many of my blocks where the next state logic was handled in a sequential process. We now understand this not to be the best practice since it is a bit unclear how it will synthesize, but this was a good learning experience overall.
