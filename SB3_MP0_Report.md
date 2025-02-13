@@ -265,7 +265,7 @@ Our VDMA register configurations were as follows:
 
 ## In your writeup, explain how you converted these color values valid values for the 16-bit framebuffer.
 
-![VGA output](assets/Cyclone_checker.jpg%20"Example")
+![VGA output](assets/Cyclone_checker.jpg)
 
 We worked through calculating the RGB values manually using python and then implemented the necessary conversion functions in the nes_bootloader.c file.
 
