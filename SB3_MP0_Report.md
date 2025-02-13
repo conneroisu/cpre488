@@ -366,3 +366,240 @@ There was another attempt to interface with a SNES controller through a Verilog 
 Below is an example of the SNES controller correctly communicating with the FPGA.
 
 ![Verilog SNES example|center](assets/Verilog_SNES_ex.PNG)
+
+
+### Graphical Menu
+
+##### Design
+
+###### Navigation
+
+In designing the graphical window for our system, our goal was to enable smooth and intuitive scrolling through a rendered list of game options. This list not only displayed the names of available games but also included additional information about each game or ROM, providing a more informative and user-friendly interface.
+
+To ensure seamless navigation, we implemented an offset-based scrolling mechanism that allows users to freely scroll through the game list without restrictions. This feature dynamically adjusts the menu offset based on the selected index, ensuring that the currently highlighted game remains visible at all times. If the selected index moves beyond the visible portion of the menu, the offset is updated accordingly to bring the relevant content into view. This allows users to navigate effortlessly through large game lists without losing track of their current selection.
+
+###### Visuals
+
+To enhance the visual experience, we incorporated image rendering using the PPM (Portable Pixmap) format. This allowed us to include visual previews of games alongside their textual descriptions, enriching the browsing experience for users. The PPM format was chosen due to its simplicity and ease of implementation in our system. While this solution worked seamlessly on our development machines, we encountered issues when attempting to read PPM files from the Xilinx SD card. The format did not function as expected in this environment, leading to difficulties in rendering the images correctly.
+
+
+
+![[Pasted image 20250212204454.png]]
+
+Furthermore, we implemented a feature that allows users to return to the game menu after launching a game. To achieve this, we designed a specific input recognition system that detects when both the Start and Select buttons are pressed simultaneously. This shortcut provides a convenient and intuitive method for users to exit a game and navigate back to the menu without needing to reset the system.
+
+#### Implementation
+
+Implementation of the menu was the easy part, combing the working functionality with the existing NES emulator proved to be more of a problem to be solved...
+
+##### Navigation
+
+
+The implementation of the game menu navigation relies on a structured control loop that governs menu behavior and game launching. By designing the render_game_menu function to accept both the selected index and menu offset, we created a system that seamlessly integrates with the NES emulation. This approach ensures clarity and modularity in our implementation.
+
+First, by making our, `render_game_menu` function take the selected index and the menu offset, we allowed for our integration of the menu into the nes emulation implementation to be as clear as possible:
+```c
+void render_game_menu(int selected_index, int menu_offset)
+{
+  // draws the actual game menu to the draw buffer
+  draw_game_menu(*draw_buffer, selected_index, menu_offset);
+
+  Xil_DCacheFlush();
+
+  XAxiVdma_WriteReg(
+      XPAR_AXI_VDMA_0_BASEADDR,
+      XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET,
+      (u32)*draw_buffer); // Read Channel: VDMA MM2S Frame buffer Start Addr 1
+
+  draw_buffer = (draw_buffer == &front_buffer ? &back_buffer : &front_buffer);
+
+  XAxiVdma_WriteReg(
+      XPAR_AXI_VDMA_0_BASEADDR,
+      XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET,
+      480); // Read Channel: VDMA MM2S VSIZE and start transaction.
+}
+```
+
+A dedicated game menu loop runs prior to ROM execution, maintaining functionality for game selection and ensuring smooth returns to the menu upon exiting a game. Within this loop, control inputs are continuously read, updating the selected game index accordingly. The menu offset dynamically adjusts to keep the selected game within view. Once a selection is confirmed, the game loads, and control is passed to the emulator.
+
+```c
+char *game_menu()
+{
+  int selected_index = 0;
+  int menu_offset = 0;
+  // the number of games to select from. (gotten from menu.c)
+  int num_games = get_games_length();
+  // actual name of the name
+  char *rom_name;
+  // currectly selected game (0, 0)
+  char *selected_game = get_selected_game_rom_name(selected_index, menu_offset);
+
+  // Allocate space for the dpad data.
+  dpad_state_p1.active_buttons = malloc(sizeof(t_dpad_buttons) * DPAD_BUTTON_COUNT);
+  dpad_state_p1.len = 0;
+  dpad_state_p2.active_buttons = malloc(sizeof(t_dpad_buttons) * DPAD_BUTTON_COUNT);
+  dpad_state_p2.len = 0;
+
+  // Allocate space for the general button data.
+  general_button_states_p1.active_buttons = malloc(sizeof(t_general_button_states) * GENERAL_BUTTON_COUNT);
+  general_button_states_p1.len = 0;
+  general_button_states_p2.active_buttons = malloc(sizeof(t_general_button_states) * GENERAL_BUTTON_COUNT);
+  general_button_states_p2.len = 0;
+
+  render_game_menu(selected_index, menu_offset);
+
+  while (1)
+  {
+    if (selected_index < menu_offset)
+    {
+      menu_offset = selected_index;
+    }
+    else if (selected_index >= menu_offset + ROWS_GAME_MENU)
+    {
+      menu_offset = selected_index - ROWS_GAME_MENU + 1;
+    }
+
+    get_dpad_state(&dpad_state_p1, 0);
+
+    get_general_buttons_state(&general_button_states_p1, 0);
+
+    switch (dpad_state_p1.active_buttons[0])
+    {
+    case UP:
+      if (selected_index < 1)
+      {
+        continue;
+      }
+      selected_index--;
+
+      selected_game = get_selected_game_rom_name(selected_index, menu_offset);
+      render_game_menu(selected_index, menu_offset);
+      break;
+    case DOWN:
+      if (selected_index > num_games)
+      {
+        continue;
+      }
+      selected_index++;
+
+      selected_game = get_selected_game_rom_name(selected_index, menu_offset);
+      render_game_menu(selected_index, menu_offset);
+      break;
+    default:
+      break;
+    }
+
+    switch (general_button_states_p1.active_buttons[0])
+    {
+    	case A:
+    	case START:
+    		return selected_game;
+    	default:
+    		break;
+    }
+
+    usleep(50);
+  }
+
+  rom_name = get_selected_game_rom_name(selected_index, menu_offset);
+
+  return rom_name;
+}
+```
+
+To handle game selection and navigation, we allocate memory for button state tracking, ensuring responsiveness and accuracy in user interactions. Input signals such as directional pad presses update the menu selection, while button confirmations trigger game execution. Additionally, the `main` program loop continuously resets the system environment when exiting a game, allowing users to navigate back to the menu without requiring a system restart.
+
+```c
+int main()
+{
+  init_platform();
+
+  // Initialize all memory space
+  xil_init();
+
+  // Initialize the NESCore
+  NESCore_Init();
+
+  // Enable the cache
+  Xil_DCacheEnable();
+
+  while (1)
+  {
+	// return the selected game
+    char *selected_game = game_menu();
+    xil_init();
+    NESCore_Init();
+    nes_load(selected_game); // shown below
+  }
+  cleanup_platform();
+
+  return 0;
+}
+```
+
+Finally, when we actually load the `.nes` rom, the internal game loop of the emulator allows us to listen for the controller state to potentially exit from the game if the user presses both start and select at the same time, and return from`nes_load` as mentioned:
+
+```c
+void nes_load( char *rom_name) {
+  int32_t result = 0, i;
+
+  usleep(100000);
+
+  // Disable the cache so it will play nice with xilsd (needed here)
+  Xil_DCacheDisable();
+  result = NESCore_LoadROM(rom_name);
+  if (result != 0) {
+    xil_printf("nes_load(): invalid ROM load. Returning\r\n"); return;
+  }
+
+  // Enable the cache for performance reasons
+  Xil_DCacheEnable();
+
+  result = NESCore_Reset();
+  if (result != 0) {
+    xil_printf("nes_load(): invalid reset. Returning\r\n"); return;
+  }
+
+  // set the boot state that we are playing a game
+  bootstate.nes_playing = 1;
+  usleep(100000);
+  ptv = 0;
+
+  int cyRes;
+
+  do {
+
+    for (i = 0; i < RESET_TIME; i++) {
+
+	// Got START and SELECT at the same time from user, go back to menu.
+	extern t_general_button_states general_button_states_p1;
+
+	get_general_buttons_state(&general_button_states_p1, 0);
+
+	// Or all together.
+	u16 state = 0x0;
+
+	for(int i = 0; i < general_button_states_p1.len; ++i)
+	{
+		state |= (u16) general_button_states_p1.active_buttons[i];
+	}
+
+	if(state == (u16)(((u16)START | (u16)SELECT)))
+	{
+		xil_printf("Returning to main menu!\n\r");
+
+		// Give user time to release buttons.
+		sleep(1);
+		return;
+	}
+
+     NESCore_Cycle();
+    }
+
+  } while (1);
+
+  bootstate.nes_playing = 0;
+
+  return;
+}
+```
