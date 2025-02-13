@@ -169,7 +169,7 @@ This is used in the Hello World example to print the "Hello World" string to the
 
 The LED outputs were connected to an Axi interconnect at slot_0. Because the LED is sending data, we can read the respective GPIO responses in the W Channel. The image below illustrates that the first and seventh switches were toggled in succession per the signals in WDATA. 
 
-![LED capture](assets/Step9_LED_Flash_Capture.png "Example") 
+![LED capture](assets/Step9_LED_Flash_Capture.png%20"Example") 
 
 25 ns pulse duration is shown in the image above.
 
@@ -226,19 +226,19 @@ int main()
 ## In VIVADO, add these peripherals to your project , connect and then configure them to generate a 640x480 output signal.
 
 The Video Timing Control IP was set to the given timing values for 640x480 video. However, we had to change the active polarity of the Hsync and Vsync as the VTC defualt values did not align with the standard VGA protocol.
-![VTC output](assets/VTC_setup.png "Example")
+![VTC output](assets/VTC_setup.png%20"Example")
 
 The Video Direct Memory Access IP was set such that it had a data width of 16 bits to correspond to our Video Output IP.
-![VDMA output](assets/VDMA_setup.png "Example")
+![VDMA output](assets/VDMA_setup.png%20"Example")
 
 The AXI4-Stream to Video Out IP was setup such that it could read 16 bits and output 16 bits. Because the VGA protocol did need any additional signals from this IP, we could use the Mono/Sensor video format to ensure our data stream widths were the desired sizes (12-bits also works for the output as long as it is properly mapped to the VGA pins). 
-![Vidout output](assets/Vidout_setup.png "Example")
+![Vidout output](assets/Vidout_setup.png%20"Example")
 
 Some other important considerations were that the input clock had to be as close to 25.125 MHz, the VTC enable on the AXI4-Stream to Video Out IP had to be connected to the generation clock enable output on the Video Timing, and ensuring the AXI4-Stream to Video Out IP had an independent clock for video if we had a faster clock for the AXI stream. 
 
 ## Modify the configuration registers for correct VDMA operation, and in your writeup, provide a justification based on the VDMA documentation for how you set these values.
 
-![VGA output](assets/VGA.jpg "Example")
+![VGA output](assets/VGA.jpg%20"Example")
 
 Our VDMA register configurations were as follows:
 
@@ -265,7 +265,7 @@ Our VDMA register configurations were as follows:
 
 ## In your writeup, explain how you converted these color values valid values for the 16-bit framebuffer.
 
-![VGA output](assets/Cyclone_checker.jpg "Example")
+![VGA output](assets/Cyclone_checker.jpg%20"Example")
 
 We worked through calculating the RGB values manually using python and then implemented the necessary conversion functions in the nes_bootloader.c file.
 
@@ -384,7 +384,7 @@ To enhance the visual experience, we incorporated image rendering using the PPM 
 
 
 
-![[Pasted image 20250212204454.png]]
+![Pasted image 20250212204454](Pasted%20image%2020250212204454.png)
 
 Furthermore, we implemented a feature that allows users to return to the game menu after launching a game. To achieve this, we designed a specific input recognition system that detects when both the Start and Select buttons are pressed simultaneously. This shortcut provides a convenient and intuitive method for users to exit a game and navigate back to the menu without needing to reset the system.
 
