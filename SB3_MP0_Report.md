@@ -226,19 +226,19 @@ int main()
 ## In VIVADO, add these peripherals to your project , connect and then configure them to generate a 640x480 output signal.
 
 The Video Timing Control IP was set to the given timing values for 640x480 video. However, we had to change the active polarity of the Hsync and Vsync as the VTC defualt values did not align with the standard VGA protocol.
-![VTC output](assets/VTC_setup.png%20"Example")
+![VTC output](assets/VTC_setup.png%20)
 
 The Video Direct Memory Access IP was set such that it had a data width of 16 bits to correspond to our Video Output IP.
-![VDMA output](assets/VDMA_setup.png%20"Example")
+![VDMA output](assets/VDMA_setup.png%20)
 
 The AXI4-Stream to Video Out IP was setup such that it could read 16 bits and output 16 bits. Because the VGA protocol did need any additional signals from this IP, we could use the Mono/Sensor video format to ensure our data stream widths were the desired sizes (12-bits also works for the output as long as it is properly mapped to the VGA pins). 
-![Vidout output](assets/Vidout_setup.png%20"Example")
+![Vidout output](assets/Vidout_setup.png%20)
 
 Some other important considerations were that the input clock had to be as close to 25.125 MHz, the VTC enable on the AXI4-Stream to Video Out IP had to be connected to the generation clock enable output on the Video Timing, and ensuring the AXI4-Stream to Video Out IP had an independent clock for video if we had a faster clock for the AXI stream. 
 
 ## Modify the configuration registers for correct VDMA operation, and in your writeup, provide a justification based on the VDMA documentation for how you set these values.
 
-![VGA output](assets/VGA.jpg%20"Example")
+![VGA output](assets/VGA.jpg%20)
 
 Our VDMA register configurations were as follows:
 
