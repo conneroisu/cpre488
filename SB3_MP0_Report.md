@@ -139,7 +139,7 @@ We analyzed the following three green boxes;
 
 ## Step 5: Are these buttons, LEDs, and switches connected via the PS subsystem or the PL subsystem? Briefly defend your answer. Note also that all three peripherals appear to be the same exact IP type (axi_gpio) – how can this be possible?
  
-The LEDS, buttons and switches are connected to the PS subsystem as they are connected/controlled through gpio pins. The peripherals appear to be at the same exact IP type because an IP core such as `axi_gpio` is a general-purpose GPIO controller that can be instantiated multiple times within the design. Each instantiation can be configured independently to handle different sets of GPIOs.
+The LEDS, buttons and switches are connected to the PL subsystem as they are connected/controlled through GPIO subsystem, which belongs to the PL subsystem. The peripherals appear to be at the same exact IP type because an IP core such as `axi_gpio` is a general-purpose GPIO controller that can be instantiated multiple times within the design. Each instantiation can be configured independently to handle different sets of GPIOs.
 
 The reason why buttons, LEDs, and switches can all use the same axi_gpio IP is that the axi_gpio module is highly configurable, allowing different instances to be set up for input or output operations. For example:
 
@@ -152,11 +152,8 @@ Each instance is mapped to a different memory address and connected to separate 
 ## Step 5: Based on the datasheet and the address map shown in the “Address Editor” (mentioned in instruction 7 of Step 2: Use Designer Assistance), how would you (in software) read the current state of the switches? Be specific
 
 
-The processing system can read the register of the axi_gpio which communicates with the switches. For example, 
-    
-    On our system, the GPIO connected to the switches has a base register 0x4122. 
-    0x4122_XXXX where 0x0001-0x0100 would be used to count which switches are on.
-
+The processing system can read the register of the axi_gpio which communicates with the switches. For example:
+	On our system, the GPIO AXI interface connected to the switches has a base address of 0x4122_0000 (this will most likely be different than the current one since other AXI interfaces have been added). According to the datasheet, an address offset of 0x4 from the base address points to the tri-state buffer register, which allows us to configure the GPIO interface to be read or write. According to the datasheet, if this register has a value of 0x0, the GPIO interface is configured for writes and if the register has a value of 0x1, it is configured for reads. So, to read from the switches we need to set the 32-bit register stored at 0x4122_0004 to 0x1. Then, according to the GPIO datasheet, the base address of the GPIO interface points to a 32-bit register where the GPIO data can be read from. So to read the switch states, we simply need to access the value stored at 0x4122_0000. That is it!*
 ## Step 7: modifications: Create a Software Application A nice feature is the ability to right-click on any function to view its declaration – do this for the print() function. In your writeup, use this feature and describe what print() does, and how. Why do you believe this function is used by Xilinx for their Hello World application, as opposed to the more conventional printf() function?
 
 Right-clicking on the print() function opens a dialog for going to a specific declaration of the function from the available declarations. Clicking on the declarations. 
@@ -164,7 +161,7 @@ Right-clicking on the print() function opens a dialog for going to a specific de
 If certain Xilinx preprocessor macros are defined, the print function output is console. 
 You give the print function a `*char` and it sends the "string" to the UART on stdout base address.
 
-We think that Xilinx has this feature because methods/functions can be declared the same name in different files across larger projects. We also believe that the print function is a more efficient function that allows for reduced memory and processing overhead by not having format specifiers. Printf requires additional processing to parse and handle a multitude of arguments.
+The stdio printf() function outputs the formatted input to the STDOUT stream. We believe that this stream is not hooked up to the UART since when we tried using the stdio printf(), we saw no output on the UART. So, it makes sense that the default "Hello World" example uses the Xilinx print() function instead since it manually sends the input using the UART, no streams invovled!
 
 This is used in the Hello World example to print the "Hello World" string to the console while operating correctly in the xilinx emulator and on the actual fpga hardware.
 
@@ -234,7 +231,7 @@ The Video Timing Control IP was set to the given timing values for 640x480 video
 The Video Direct Memory Access IP was set such that it had a data width of 16 bits to correspond to our Video Output IP.
 ![VDMA output](assets/VDMA_setup.png "Example")
 
-The AXI4-Stream to Video Out IP was setup such that it could read 16 bits and output 16 bits. Because the VGA protocol did need any additional signals from this IP, we could use the Mono/Sensor video format to ensure our data stream widths were the desired sizes. 
+The AXI4-Stream to Video Out IP was setup such that it could read 16 bits and output 16 bits. Because the VGA protocol did need any additional signals from this IP, we could use the Mono/Sensor video format to ensure our data stream widths were the desired sizes (12-bits also works for the output as long as it is properly mapped to the VGA pins). 
 ![Vidout output](assets/Vidout_setup.png "Example")
 
 Some other important considerations were that the input clock had to be as close to 25.125 MHz, the VTC enable on the AXI4-Stream to Video Out IP had to be connected to the generation clock enable output on the Video Timing, and ensuring the AXI4-Stream to Video Out IP had an independent clock for video if we had a faster clock for the AXI stream. 
@@ -254,17 +251,17 @@ Our VDMA register configurations were as follows:
     XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET, 0x00000500);  // Read Channel: VDMA MM2S HSIZE
     XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET, 0x000001E0);  // Read Channel: VDMA MM2S VSIZE  (Note: Also Starts VDMA transaction)
 ```
-- To enable the VDMA MM2S circular Mode and start bits, we referenced the MM2S_VDMACR Register and enabled the first and second bit which enabled circular mode and started VDMA operations
+- To enable the VDMA MM2S circular Mode and start bits, we referenced the MM2S_VDMACR Register and enabled the first and second bit which enabled circular mode and started VDMA operations. Since the start bit was at bit position 0 and the circular mode enable was on bit position 1, we wrote 0x3 to the register to make both the bits '1'.
 
-- Since our VDMA we wanted any read access between 0x5C and 0x98 to access the start address 1 to 16 so we set this register to 0x0
+- Since our VDMA we wanted any read access between 0x5C and 0x98 to access the start address 1 to 16 so we set this register to 0x0.
 
-- We set the MM2S start Address enabled by the previously discussed register to the image we wanted to display
+- We set the MM2S start Address enabled by the previously discussed register to the address of the first byte of the image we wanted to display.
 
-- The stride was set to the size of our horizontal offset and there was no frame delay
+- The stride was set to the size of our horizontal offset and there was no frame delay. Since all the pixel data is aligned to 16-bits, our stride equaled the horizontal offset in bytes. See next bullet for horizontal offset size justification.
 
-- The horizontal offset was set to 2x our desired horizontal size since the horizontal line was 2 bytes
+- The horizontal offset was set to 2x our desired horizontal size since the horizontal line was 2 bytes. So since we are drawing 640 pixels horizontally, the offset is 640 * 2 = 1280, which is 0x500.
 
-- The vertical offset was set to our desired vertical size
+- The vertical offset was set to our desired vertical size of 480 lines, which is 0x1E0 in hex.
 
 ## In your writeup, explain how you converted these color values valid values for the 16-bit framebuffer.
 
@@ -272,11 +269,37 @@ Our VDMA register configurations were as follows:
 
 We worked through calculating the RGB values manually using python and then implemented the necessary conversion functions in the nes_bootloader.c file.
 
-First, we shift the given color value to the right by 2 bytes to get the red value.
-Second, we shift the given color value to the right by 1 byte to get the green value.
-Third, we shift the given color value to the right by 4 bits to get the blue value.
+**Conversion Description**
 
-Here is our function:
+In 24-bit color, 8 bits are used for each color (RGB). Since we are using 12-bit color with 4-bits of padding, we need 4 bits per color. This means that we need to map the 8-bit colors to 4-bit colors using a linear relationship. This was done by only using the most significant byte of each of the colors in the 12-bit color. This makes it so 0x0 in 24-bit maps to 0x0 in 12-bit and 0xFFFFFF in 24-bit maps to 0xFFFF in 12-bit color, which is what we want. However the endianness of the colors in the two formats differ. Red is on the MSB in 24-bit color while red is on the LSB in 12-bit color, so some shifting needs to be done.
+
+To derive the shift values, it is best to isolate the 3 different colors in the 24-bit format.
+
+**24-Bit Color**
+0xABCDEF:
+Red: 0xAB | Green: 0xCD | Blue: EF
+
+**12-Bit Color
+0xABC
+
+Red: 0xC | Green: 0xB | Blue: 0xA
+
+Now that we have an example 24-bit color separated into the three colors, we can look at the conversion for each.
+
+**Red**
+For red, we need the upper 4 bits to be moved to bit positions 0-3 for the 12-bit color. This is achieved by shifting the value right 20 bits. No masking is needed since the lower 4 bits are shifted off.
+
+**Green**
+For green, we need the upper 4 bits to be in bit positions 4-7. To achieve this, we can shift it to the right 8 bits and then mask off the lower 4 bits via & 0xF0.
+
+**Blue**
+For blue, we need to get the upper 4 bits in bit positions 8-11. To achieve this, we can shift it to the left 4 bits and then mask off the lower 4 bits via & 0xF00.
+
+All of these color values are stored in their own 16-bit unsigned-integer variables so they can be bitwise OR'd together to give the final 12-Bit RGB value.
+
+
+The function that performs this conversion is given below:
+
 
 ```c
 // Example: 0xC8103E
@@ -306,9 +329,9 @@ u16 convert_color_24_16(u32 color)
 ```
 ## Modify the nes_bootloader code such that the NES games are reasonably playable. In your report, describe your general approach to implementing both of the NESCore_Callback functions.
 
-For the “NESCore_Callback_OutputFrame,” our task was to expand the 256x240 image to a 640x480 resolution. For this, we first started by finding the scalar needed to enlarge the image. This scalar was then used to repeat the WorkFrame multiple times for every pixel read. Once implemented, we realized that we needed to add borders to our image since we couldn’t have scalars that weren’t whole numbers. We just found the missing pixels and added them as black borders before reading the WorkFrame.
+For the “NESCore_Callback_OutputFrame,” our task was to expand the 256x240 image to a 640x480 resolution. For this, we first started by finding the scalar needed to enlarge the image. This scalar was then used to repeat the WorkFrame multiple times for every pixel read. Once implemented, we realized that we needed to add borders to our image to ensure that the VGA HW had a reference for black. This is because the VGA timing was slightly off, which caused data from the blanking period to be drawn in the drawing window. The black reference bars were implemented by updating the left and right columns of the WorkFrame to have a value of 0x0, which is black.
 
-For “NESCore_Callback_InputPadState,” this was much easier since we already figured out how to read the buttons and switches in part 5. Once a button was clicked, we just set the player1 data to our desired button press.
+For “NESCore_Callback_InputPadState,” we were able to use our GPIO code from step 5. However, we also created a simple interface (controls.h) to make the usage easier. Using this interface, we just had to call the configure function to configure the GPIO interfaces and then run the data collection function. We provided a pointer to a struct that stores all the data to this function to be populated. After the function ran, we had an array of enumeration values, where each value represented a pressed button. We decided to represent the button presses this way for simplicity. All one has to do to determine what buttons are being pressed down are look at each of the enumeration values in the array, no bit-parsing needed. However, this does require more CPU time and can make the mapping to how the NESCore has the inputs defined more tedious.
 
 ## **BONUS credit.** 
 
