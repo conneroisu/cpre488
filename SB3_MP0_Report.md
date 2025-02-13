@@ -169,7 +169,7 @@ This is used in the Hello World example to print the "Hello World" string to the
 
 The LED outputs were connected to an Axi interconnect at slot_0. Because the LED is sending data, we can read the respective GPIO responses in the W Channel. The image below illustrates that the first and seventh switches were toggled in succession per the signals in WDATA. 
 
-![LED capture](assets/Step9_LED_Flash_Capture.png%20"Example") 
+![LED capture](assets/Step9_LED_Flash_Capture.png "Example") 
 
 25 ns pulse duration is shown in the image above.
 
