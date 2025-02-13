@@ -394,7 +394,6 @@ Implementation of the menu was the easy part, combing the working functionality 
 
 ##### Navigation
 
-
 The implementation of the game menu navigation relies on a structured control loop that governs menu behavior and game launching. By designing the render_game_menu function to accept both the selected index and menu offset, we created a system that seamlessly integrates with the NES emulation. This approach ensures clarity and modularity in our implementation.
 
 First, by making our, `render_game_menu` function take the selected index and the menu offset, we allowed for our integration of the menu into the nes emulation implementation to be as clear as possible:
