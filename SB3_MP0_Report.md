@@ -601,3 +601,76 @@ void nes_load( char *rom_name) {
   return;
 }
 ```
+
+Additionally, to define our font, we statically declared a basic 8 bit font to use:
+```c
+/*
+ * Complete 8x8 font table for the first 128 ASCII characters.
+ * (Data derived from the public domain font8x8_basic)
+ */
+static const u8 font8x8_basic[128][8] = {
+	// ...
+    [0x1C] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},
+    [0x1D] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},
+    [0x1E] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},
+    [0x1F] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},
+    // Printable characters (0x20 to 0x7E)
+    [0x20] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, // space
+    [0x21] = {0x18, 0x3C, 0x3C, 0x18, 0x18, 0x00, 0x18, 0x00}, // !
+	// ...
+    [0x41] = {0x38, 0x6C, 0xC6, 0xFE, 0xC6, 0xC6, 0xC6, 0x00}, // A
+    [0x42] = {0xFC, 0x66, 0x66, 0x7C, 0x66, 0x66, 0xFC, 0x00}, // B
+    [0x43] = {0x3C, 0x66, 0xC0, 0xC0, 0xC0, 0x66, 0x3C, 0x00}, // C
+    [0x44] = {0xF8, 0x6C, 0x66, 0x66, 0x66, 0x6C, 0xF8, 0x00}, // D
+    [0x45] = {0xFE, 0x62, 0x68, 0x78, 0x68, 0x62, 0xFE, 0x00}, // E
+    [0x46] = {0xFE, 0x62, 0x68, 0x78, 0x68, 0x60, 0xF0, 0x00}, // F
+	// ...
+};
+```
+
+This static declaration of the font allowed for a very simple implementation of `draw_char()` and `draw_text()`,
+
+```c
+/*
+ * Draw a single character at (x, y) using the given 16-bit color.
+ */
+void draw_char(u16 (*fb)[VIDEO_WIDTH], int x, int y, char c, u16 color) {
+  if ((unsigned char)c > 127)
+    return;
+  for (int row = 0; row < MENU_FONT_HEIGHT; row++) {
+    u8 row_bits = font8x8_basic[(unsigned char)c][row];
+    for (int col = 0; col < MENU_FONT_WIDTH; col++) {
+      if (row_bits & (1 << (7 - col))) {
+        int px = x + col;
+        int py = y + row;
+        if (px >= 0 && px < VIDEO_WIDTH && py >= 0 && py < VIDEO_HEIGHT) {
+          fb[py][px] = color;
+        }
+      }
+    }
+  }
+}
+```
+
+This simple but parameterized implementation allows for a clear and short definition of a `draw_text()` function:
+```c
+/*
+ * Draw a null-terminated string starting at (x, y) with the given 16-bit color.
+ */
+void draw_text(u16 (*fb)[VIDEO_WIDTH], int x, int y, const char *text,
+               u16 color) {
+  int cursor_x = x;
+  while (*text) {
+    if (*text == '\n') {
+      cursor_x = x;
+      y += MENU_FONT_HEIGHT;
+    } else {
+      draw_char(fb, cursor_x, y, *text, color);
+      cursor_x += MENU_FONT_WIDTH;
+    }
+    text++;
+  }
+}
+```
+
+
