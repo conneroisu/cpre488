@@ -21,6 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -46,10 +47,11 @@ end Capture_PPM;
 
 architecture Behavioral of Capture_PPM is
 
-signal counter : STD_LOGIC_VECTOR(2 downto 0);
-signal temp_output : std_logic_vector (31 downto 0);
+signal counter : integer range 0 to 15;
+signal validate_counter : interger range 0 to 15;
+signal temp_output : unsigned (31 downto 0);
 
-type state_type is (IDLE,MEASURE,VALIDATE,STORE);
+type state_type is (IDLE,VALIDATE,MEASURE,GAP,STORE);
 signal PS,NS : state_type;
 
 begin
@@ -57,28 +59,44 @@ begin
     begin
         if (CLR = '1') then
             PS <= IDLE;
-            counter <= (others => '0');
         elsif (rising_edge(CLK)) then 
             PS <= NS;
         end if;
     end process sync_proc;
     
-    comb_proc: process(PS,PPM_Input,out_channel_1,out_channel_2,out_channel_3,out_channel_4,out_channel_5,out_channel_6)
+    comb_proc: process(PS,PPM_Input,temp_output,counter,validate_counter)
     begin 
         
         case PS is 
             when IDLE => 
-                counter <= (others => '0');
+                counter <= 0;
                 out_channel_1 <= (others => '0');
                 out_channel_2 <= (others => '0');
                 out_channel_3 <= (others => '0');
                 out_channel_4 <= (others => '0');
                 out_channel_5 <= (others => '0');
                 out_channel_6 <= (others => '0');
-                if (rising_edge(PPM_Input)) then
-                    NS <= MEASURE;
+                temp_output <= (others => '0');
+                if (PPM_Input = 1) then
+                    validate_counter <= 0;
+                    NS <= VALIDATE;
                 else 
                     NS <= IDLE;
+                end if;
+
+            when VALIDATE_HIGH =>
+                if (PPM_Input = 1) then 
+                    validate_counter = validate_counter + 1;
+                    if (validate_counter >= 3) then
+                        NS <= MEASURE;
+                    end if;
+                else 
+                    if (counter = 0) then
+                        NS <= IDLE;
+                    else 
+                        validate_counter <= 0;
+                        NS <= VALIDATE_HIGH;
+                    end if;
                 end if;
              
             when MEASURE => 
@@ -87,32 +105,44 @@ begin
                     temp_output <= temp_output + 1;
                 end if;
                 
-                if(falling_edge(PPM_Input)) then
-                    --NS <= VALIDATE;
-                    NS <= STORE;
-                    counter <= counter + 1;
+                if(PPM_Input = 0) then
+                    --NS <= GAP;
+                    validate_bit = 0
+                    NS <= VALIDATE_LOW;
+                else 
+                    NS <= MEASURE;
+                    validate_counter = 0;
+                end if;
+
+            when VALIDATE_LOW =>
+                if (PPM_Input = 0) then 
+                    validate_counter = validate_counter + 1;
+                    if (validate_counter >= 3) then
+                        NS <= STORE;
+                    end if;
                 else 
                     NS <= MEASURE;
                 end if;
 
-            --when VALIDATE =>
+            --when GAP  =>
     
             when STORE =>
-                if (counter == 1) then
-                    out_channel_1 <= temp_output;
-                elsif (counter == 2) then 
-                    out_channel_2 <= temp_output;
-                elsif (counter == 3) then 
-                    out_channel_3 <= temp_output;
-                elsif (counter == 4) then 
-                    out_channel_4 <= temp_output;
-                elsif (counter == 5) then 
-                    out_channel_5 <= temp_output;
-                elsif (counter == 6) then 
-                    out_channel_6 <= temp_output;
+                counter <= counter + 1;
+                if (counter = 1) then
+                    out_channel_1 <= std_logic_vector(temp_output);
+                elsif (counter = 2) then 
+                    out_channel_2 <= std_logic_vector(temp_output);
+                elsif (counter = 3) then 
+                    out_channel_3 <= std_logic_vector(temp_output);
+                elsif (counter = 4) then 
+                    out_channel_4 <= std_logic_vector(temp_output);
+                elsif (counter = 5) then 
+                    out_channel_5 <= std_logic_vector(temp_output);
+                elsif (counter = 6) then 
+                    out_channel_6 <= std_logic_vector(temp_output);
                 end if;
 
-                if (counter == 6) then
+                if (counter = 6) then
                     NS <= IDLE;
                 else 
                     NS <= MEASURE;
