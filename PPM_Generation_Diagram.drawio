@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.13">
+  <diagram name="Page-1" id="hbCaFbsLZB5nVaUopwEl">
+    <mxGraphModel dx="1154" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="V150V9mAOHtHL611iEyy-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="V150V9mAOHtHL611iEyy-1" target="V150V9mAOHtHL611iEyy-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-4" value="On posedge of PPM input" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="V150V9mAOHtHL611iEyy-3">
+          <mxGeometry x="-0.16" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-1" value="Idle" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="V150V9mAOHtHL611iEyy-2" target="V150V9mAOHtHL611iEyy-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-7" value="On negedge of PPM input" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="V150V9mAOHtHL611iEyy-6">
+          <mxGeometry x="-0.0357" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-2" value="Measure&lt;br&gt;- Start counter&lt;div&gt;- Measures width of pulse&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="V150V9mAOHtHL611iEyy-5" target="V150V9mAOHtHL611iEyy-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="720" />
+              <mxPoint x="540" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-11" value="On posedge&amp;nbsp;&lt;div&gt;&amp;amp;&amp;amp; Frame_end != 1&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="V150V9mAOHtHL611iEyy-10">
+          <mxGeometry x="0.1593" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V150V9mAOHtHL611iEyy-5" target="V150V9mAOHtHL611iEyy-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-17" value="On posedge&amp;nbsp;&lt;br&gt;&amp;amp;&amp;amp; Frame_end == 1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="V150V9mAOHtHL611iEyy-16">
+          <mxGeometry x="-0.3714" y="-3" relative="1" as="geometry">
+            <mxPoint x="3" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V150V9mAOHtHL611iEyy-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="365" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="320" y="710" />
+              <mxPoint x="320" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-19" value="Invalid gap == 1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="V150V9mAOHtHL611iEyy-18">
+          <mxGeometry x="0.1325" y="2" relative="1" as="geometry">
+            <mxPoint y="86" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-5" value="Validate interchannel gap" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="V150V9mAOHtHL611iEyy-15" target="V150V9mAOHtHL611iEyy-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="820" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="260" y="820" />
+              <mxPoint x="260" y="445" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V150V9mAOHtHL611iEyy-15" value="STORE" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
