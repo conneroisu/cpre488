@@ -22,6 +22,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -48,10 +49,10 @@ end Capture_PPM;
 architecture Behavioral of Capture_PPM is
 
 signal counter : integer range 0 to 15;
-signal validate_counter : interger range 0 to 15;
+signal validate_counter : integer range 0 to 15;
 signal temp_output : unsigned (31 downto 0);
 
-type state_type is (IDLE,VALIDATE,MEASURE,GAP,STORE);
+type state_type is (IDLE,VALIDATE_LOW,VALIDATE_HIGH,MEASURE,GAP,STORE);
 signal PS,NS : state_type;
 
 begin
@@ -77,22 +78,23 @@ begin
                 out_channel_5 <= (others => '0');
                 out_channel_6 <= (others => '0');
                 temp_output <= (others => '0');
-                if (PPM_Input = 1) then
+                if (PPM_Input = '0') then
                     validate_counter <= 0;
-                    NS <= VALIDATE;
+                    NS <= VALIDATE_LOW;
                 else 
                     NS <= IDLE;
                 end if;
 
             when VALIDATE_HIGH =>
-                if (PPM_Input = 1) then 
-                    validate_counter = validate_counter + 1;
+                if (PPM_Input = '1') then 
+                    validate_counter <= validate_counter + 1;
                     if (validate_counter >= 3) then
                         NS <= MEASURE;
                     end if;
                 else 
                     if (counter = 0) then
-                        NS <= IDLE;
+                        validate_counter <= 0;
+                        NS <= VALIDATE_LOW;
                     else 
                         validate_counter <= 0;
                         NS <= VALIDATE_HIGH;
@@ -105,23 +107,26 @@ begin
                     temp_output <= temp_output + 1;
                 end if;
                 
-                if(PPM_Input = 0) then
+                if(PPM_Input = '0') then
                     --NS <= GAP;
-                    validate_bit = 0
-                    NS <= VALIDATE_LOW;
+                    NS <= STORE;
                 else 
                     NS <= MEASURE;
-                    validate_counter = 0;
                 end if;
 
             when VALIDATE_LOW =>
-                if (PPM_Input = 0) then 
-                    validate_counter = validate_counter + 1;
+                if (PPM_Input = '0') then 
+                    validate_counter <= validate_counter + 1;
                     if (validate_counter >= 3) then
-                        NS <= STORE;
+                        NS <= VALIDATE_HIGH;
                     end if;
                 else 
-                    NS <= MEASURE;
+                    if (counter = 0) then
+                        NS <= IDLE;
+                    else 
+                        validate_counter <= 0;
+                        NS <= VALIDATE_LOW;
+                    end if;
                 end if;
 
             --when GAP  =>
@@ -145,7 +150,7 @@ begin
                 if (counter = 6) then
                     NS <= IDLE;
                 else 
-                    NS <= MEASURE;
+                    NS <= VALIDATE_HIGH;
                 end if;
 
             when others =>
