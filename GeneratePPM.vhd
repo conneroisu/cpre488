@@ -16,11 +16,12 @@ end Generate_PPM;
 architecture Behavioral of Generate_PPM is
 
     type state_type is (IDLE, GAP_LOW, PULSE_HIGH, NEXT_CHANNEL, FRAME_COMPLETE);
+    type int_array is array(0 to 5) of integer;
     signal PS, NS : state_type;
     
     signal cycle_counter : integer := 0;
     signal channel_index : integer range 0 to 5 := 0;
-    signal pulse_widths : array (0 to 5) of integer := (others => 0);
+    signal pulse_widths : int_array := (others => 0);
 
 begin
 
@@ -34,25 +35,25 @@ begin
     end process;
 
     -- Next State Logic
-    process(PS, cycle_counter, channel_index)
+    process(PS, cycle_counter, channel_index,RESET)
     begin
         case PS is
             when IDLE =>
                 if RESET = '0' then
                     NS <= GAP_LOW; 
-                else
+               else
                     NS <= IDLE;
-                end if;
+               end if;
 
             when GAP_LOW =>
-                if cycle_counter = 400 then
+                if cycle_counter >= 400 then
                     NS <= PULSE_HIGH;
                 else
                     NS <= GAP_LOW;
                 end if;
 
             when PULSE_HIGH =>
-                if cycle_counter = pulse_widths(channel_index) then
+                if (cycle_counter- 400) = pulse_widths(channel_index) then
                     if channel_index = 5 then
                         NS <= FRAME_COMPLETE;
                     else
@@ -66,10 +67,14 @@ begin
                 NS <= GAP_LOW;
 
             when FRAME_COMPLETE =>
-                NS <= IDLE; 
+--                if RESET = '1' then
+                    NS <= IDLE; 
+--               else
+--                    NS <= FRAME_COMPLETE;
+--               end if;
 
             when others =>
-                NS <= IDLE;
+                NS <= GAP_LOW;
         end case;
     end process;
 
@@ -82,26 +87,27 @@ begin
                     cycle_counter <= 0;
                     channel_index <= 0;
                     sw_PPM_Output <= '1';
+                    PPM_Done <= '0';
 
                 when GAP_LOW =>
                     cycle_counter <= cycle_counter + 1;
                     sw_PPM_Output <= '0';
-                    PPM_Done <= 0;
+                    PPM_Done <= '0';
 
                 when PULSE_HIGH =>
                     cycle_counter <= cycle_counter + 1;
                     sw_PPM_Output <= '1';
-                    PPM_Done <= 0;
+                    PPM_Done <= '0';
 
                 when NEXT_CHANNEL =>
                     channel_index <= channel_index + 1;
                     cycle_counter <= 0;
-                    PPM_Done <= 0;
+                    PPM_Done <= '0';
 
                 when FRAME_COMPLETE =>
                     cycle_counter <= 0;
                     channel_index <= 0;
-                    PPM_Done <= 1;
+                    PPM_Done <= '1';
 
                 when others =>
                     cycle_counter <= 0;

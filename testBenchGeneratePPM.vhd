@@ -11,11 +11,11 @@ architecture Behavioral of Generate_PPM_tb is
     -- Component Declaration
     component Generate_PPM
         Port (
-            CLK : in std_logic;
-            RESET : in std_logic;
-            slv_reg20, slv_reg21, slv_reg22, slv_reg23, slv_reg24, slv_reg25 : in std_logic_vector(31 downto 0);
-            PPM_Done : out std_logic
-            sw_PPM_Output : out std_logic;
+        CLK : in std_logic; 
+        RESET : in std_logic; 
+        slv_reg20, slv_reg21, slv_reg22, slv_reg23, slv_reg24, slv_reg25 : in std_logic_vector(31 downto 0);  
+        PPM_Done : out std_logic;
+        sw_PPM_Output : out std_logic  
         );
     end component;
 
@@ -61,19 +61,18 @@ begin
         RESET_tb <= '0';
         wait for 50 ns;
 
-        slv_reg20_tb <= conv_std_logic_vector(150000, 32);
-        slv_reg21_tb <= conv_std_logic_vector(80000, 32);
-        slv_reg22_tb <= conv_std_logic_vector(100000, 32);
-        slv_reg23_tb <= conv_std_logic_vector(125000, 32);
-        slv_reg24_tb <= conv_std_logic_vector(200000, 32);
-        slv_reg25_tb <= conv_std_logic_vector(175000, 32);
+        slv_reg20_tb <= conv_std_logic_vector(1500, 32);
+        slv_reg21_tb <= conv_std_logic_vector(800, 32);
+        slv_reg22_tb <= conv_std_logic_vector(1000, 32);
+        slv_reg23_tb <= conv_std_logic_vector(1250, 32);
+        slv_reg24_tb <= conv_std_logic_vector(2000, 32);
+        slv_reg25_tb <= conv_std_logic_vector(1750, 32);
 
         wait until PPM_Done_tb = '1';
 
-        wait for 100 ns;
+        wait for 15000 ns;
 
         report "Done" severity note;
-        wait;
     end process;
 
 end Behavioral;
