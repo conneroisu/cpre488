@@ -17,7 +17,7 @@ architecture test of Capture_PPM_simp_tb is
     constant MAX_PULSE  : time := 2500 us; -- Maximum pulse width
 
     -- DUT Signals
-    signal PPM_Input    : std_logic := '0';
+    signal PPM_Input    : std_logic := '1';
     signal CLK          : std_logic := '0';
     signal CLR          : std_logic := '1';
     signal out_channel_1, out_channel_2, out_channel_3 : std_logic_vector(31 downto 0);
@@ -61,11 +61,11 @@ begin
 
         -- Loop to generate PPM frames
         while now < 50 ms loop
-            for i in 1 to 6 loop
-                PPM_Input <= '1'; -- Start pulse
-                wait for MIN_PULSE + (i * 200 us); -- Vary each channel pulse
+            for i in 1 to 7 loop
                 PPM_Input <= '0';
                 wait for 500 us; -- Gap before next channel
+                PPM_Input <= '1'; -- Start pulse
+                wait for MIN_PULSE + (i * 200 us); -- Vary each channel pulse
             end loop;
             wait for PPM_FRAME - (6 * (MIN_PULSE + 500 us)); -- Frame gap
         end loop;
