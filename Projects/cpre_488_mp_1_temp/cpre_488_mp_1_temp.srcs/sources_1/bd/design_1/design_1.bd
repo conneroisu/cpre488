@@ -1,0 +1,45 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7z020clg484-1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.1"
+    },
+    "design_tree": {
+      "PPM_0": "",
+      "axi_vip_0": ""
+    },
+    "components": {
+      "PPM_0": {
+        "vlnv": "xilinx.com:user:PPM:1.0",
+        "xci_name": "design_1_PPM_0_0"
+      },
+      "axi_vip_0": {
+        "vlnv": "xilinx.com:ip:axi_vip:1.1",
+        "xci_name": "design_1_axi_vip_0_0",
+        "addressing": {
+          "interface_ports": {
+            "S_AXI": {
+              "mode": "Slave",
+              "memory_map_ref": "S_AXI",
+              "bridges": [
+                "M_AXI"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "axi_vip_0_M_AXI": {
+        "interface_ports": [
+          "axi_vip_0/M_AXI",
+          "PPM_0/S00_AXI"
+        ]
+      }
+    }
+  }
+}

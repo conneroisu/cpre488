@@ -1,0 +1,6 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../CPRE488_git/cpre488/Capture_PPM_simp.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,7 @@
+Running: xsim.dir/PPM_v1_0_func_synth/xsimk.exe -simmode gui -wdb PPM_v1_0_func_synth.wdb -simrunnum 0 -socket 54572
+Design successfully loaded
+Design Loading Memory Usage: 9284 KB (Peak: 9284 KB)
+Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 10360 KB (Peak: 10360 KB)
+Simulation CPU Usage: 93 ms

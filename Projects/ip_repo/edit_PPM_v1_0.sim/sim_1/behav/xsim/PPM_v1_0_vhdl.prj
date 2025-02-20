@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../PPM_1.0/src/Capture_PPM_simp.vhd" \
+
+vhdl   \
+"../../../../PPM_1.0/hdl/PPM_v1_0_S00_AXI.vhd" \
+"../../../../PPM_1.0/hdl/PPM_v1_0.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "z:/vivado/projects/ip_repo/edit_PPM_v1_0.sim/sim_1/synth/func/xsim/PPM_v1_0_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Capture_PPM_simp'
+INFO: [VRFC 10-3107] analyzing entity 'GeneratePPM'
+INFO: [VRFC 10-3107] analyzing entity 'PPM_v1_0_S00_AXI'
+INFO: [VRFC 10-3107] analyzing entity 'PPM_v1_0'
