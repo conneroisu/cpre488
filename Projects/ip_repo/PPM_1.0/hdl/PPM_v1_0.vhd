@@ -22,25 +22,25 @@ entity PPM_v1_0 is
 		PPM_Input : in std_logic;
 		PPM_Output : out std_logic;
 		
-		-- Generator RTL Probes --
-		generator_input_probe_20 : out std_logic_vector (31 downto 0);
-		generator_input_probe_21 : out std_logic_vector (31 downto 0);
-		generator_input_probe_22 : out std_logic_vector (31 downto 0);
-		generator_input_probe_23 : out std_logic_vector (31 downto 0);
-		generator_input_probe_24 : out std_logic_vector (31 downto 0);
-		generator_input_probe_25 : out std_logic_vector (31 downto 0);
-		generator_done_probe : out std_logic;
-		generator_output_probe : out std_logic;
+--		-- Generator RTL Probes --
+--		generator_input_probe_20 : out std_logic_vector (31 downto 0);
+--		generator_input_probe_21 : out std_logic_vector (31 downto 0);
+--		generator_input_probe_22 : out std_logic_vector (31 downto 0);
+--		generator_input_probe_23 : out std_logic_vector (31 downto 0);
+--		generator_input_probe_24 : out std_logic_vector (31 downto 0);
+--		generator_input_probe_25 : out std_logic_vector (31 downto 0);
+--		generator_done_probe : out std_logic;
+--		generator_output_probe : out std_logic;
 		
-		-- Capture RTL Probes --
-        capture_output_probe_0 : out std_logic_vector (31 downto 0);
-        capture_output_probe_1 : out std_logic_vector (31 downto 0);
-        capture_output_probe_2 : out std_logic_vector (31 downto 0);
-        capture_output_probe_3 : out std_logic_vector (31 downto 0);
-        capture_output_probe_4 : out std_logic_vector (31 downto 0);
-        capture_output_probe_5 : out std_logic_vector (31 downto 0);
+--		-- Capture RTL Probes --
+--        capture_output_probe_0 : out std_logic_vector (31 downto 0);
+--        capture_output_probe_1 : out std_logic_vector (31 downto 0);
+--        capture_output_probe_2 : out std_logic_vector (31 downto 0);
+--        capture_output_probe_3 : out std_logic_vector (31 downto 0);
+--        capture_output_probe_4 : out std_logic_vector (31 downto 0);
+--        capture_output_probe_5 : out std_logic_vector (31 downto 0);
         capture_state_probe : out std_logic_vector (2 downto 0);
-        capture_done_probe : out std_logic;
+--        capture_done_probe : out std_logic;
 		 
 		 
 		-- User ports ends
@@ -273,21 +273,21 @@ PPM_v1_0_S00_AXI_inst : PPM_v1_0_S00_AXI
         );
         
     -- Passing internal signals to TOP probe outputs
-    generator_input_probe_20 <= PPM_generator_output_0;
-    generator_input_probe_21 <= PPM_generator_output_1;
-    generator_input_probe_22 <= PPM_generator_output_2;
-    generator_input_probe_23 <= PPM_generator_output_3;
-    generator_input_probe_24 <= PPM_generator_output_4;
-    generator_input_probe_25 <= PPM_generator_output_5;
-    generator_done_probe <= PPM_generator_done;
-    generator_output_probe <= PPM_generator_input;
-    capture_output_probe_0 <= PPM_capture_input_0;
-    capture_output_probe_1 <= PPM_capture_input_1;
-    capture_output_probe_2 <= PPM_capture_input_2;
-    capture_output_probe_3 <= PPM_capture_input_3;
-    capture_output_probe_4 <= PPM_capture_input_4;
-    capture_output_probe_5 <= PPM_capture_input_5;
-    capture_done_probe <= PPM_capture_done;
+--    generator_input_probe_20 <= PPM_generator_output_0;
+--    generator_input_probe_21 <= PPM_generator_output_1;
+--    generator_input_probe_22 <= PPM_generator_output_2;
+--    generator_input_probe_23 <= PPM_generator_output_3;
+--    generator_input_probe_24 <= PPM_generator_output_4;
+--    generator_input_probe_25 <= PPM_generator_output_5;
+--    generator_done_probe <= PPM_generator_done;
+--    generator_output_probe <= PPM_generator_input;
+--    capture_output_probe_0 <= PPM_capture_input_0;
+--    capture_output_probe_1 <= PPM_capture_input_1;
+--    capture_output_probe_2 <= PPM_capture_input_2;
+--    capture_output_probe_3 <= PPM_capture_input_3;
+--    capture_output_probe_4 <= PPM_capture_input_4;
+--    capture_output_probe_5 <= PPM_capture_input_5;
+--    capture_done_probe <= PPM_capture_done;
     
 	-- User logic ends
 

@@ -167,9 +167,13 @@ begin
             -- Waits for high_valid (to trigger measurement)
             -- Triggers start_count
             when INTERCHANNEL =>
-                count_reg_reset <= count_reg_reset;
+                out_reg_reset <= '0';
+                count_reg_reset <= '0';
                 send_output <= '0';
                 clk_counter_reset <= '0';
+                done <= '0';
+                start_count <= '0';
+                iterate_count <= '0';
 
                 -- First channel of frame found, reset output channels
                 if (channel_counter = 0) then
@@ -197,8 +201,14 @@ begin
             -- Waits for low_valid (signifies end of data transfer)
             -- low_valid and high_valid cancel each other out in terms of data capture duration
             when MEASURE => 
+                done <= '0';
+                send_output <= '0';
+                count_reg_reset <= '0';
                 out_reg_reset <= '0';
                 iterate_count <= '0';
+                clk_counter_reset <= '0';
+                start_count <= '0';
+                
                 if (low_valid = '1') then
                     start_count <= '0';
                     NS <= STORE;
@@ -210,9 +220,13 @@ begin
             -- STORE --
             -- Stores measured widths into respective registers
             when STORE =>
-
+                done <= '0';
+                out_reg_reset <= '0';
+                count_reg_reset <= '0';
                 send_output <= '1';
                 clk_counter_reset <= '1';
+                start_count <= '0';
+                iterate_count <= '0';
                 NS <= INTERCHANNEL;
 
             -- DEFAULT --

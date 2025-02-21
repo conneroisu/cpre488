@@ -127,12 +127,6 @@ begin
     begin 
 
         -- Defaults
-        -- out_reg_reset <= '0';
-        -- clk_counter_reset <= '0';
-        -- count_reg_reset <= '0';
-        -- done <= '0';
-        -- iterate_count <= '0';
-        -- start_count <= '0';
         NS <= IDLE;
 
 

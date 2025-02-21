@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="49" Path="C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/edit_PPM_v1_0.xpr">
+<Project Version="7" Minor="49" Path="Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/edit_PPM_v1_0.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="e9f3b8e946174b8d92264e23fdb3fe44"/>

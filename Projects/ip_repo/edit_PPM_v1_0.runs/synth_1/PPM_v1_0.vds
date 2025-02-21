@@ -2,63 +2,62 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Feb 20 23:00:27 2025
-# Process ID: 16040
-# Current directory: C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/edit_PPM_v1_0.runs/synth_1
+# Start of session at: Fri Feb 21 00:59:24 2025
+# Process ID: 18092
+# Current directory: Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/edit_PPM_v1_0.runs/synth_1
 # Command line: vivado.exe -log PPM_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PPM_v1_0.tcl
-# Log file: C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/edit_PPM_v1_0.runs/synth_1/PPM_v1_0.vds
-# Journal file: C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/edit_PPM_v1_0.runs/synth_1\vivado.jou
+# Log file: Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/edit_PPM_v1_0.runs/synth_1/PPM_v1_0.vds
+# Journal file: Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/edit_PPM_v1_0.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source PPM_v1_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0'.
-WARNING: [IP_Flow 19-2207] Repository 'c:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0' already exists; ignoring attempt to add it again.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0'.
-WARNING: [IP_Flow 19-2207] Repository 'c:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0' already exists; ignoring attempt to add it again.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'Z:/Vivado/Xilinx/Vivado/2020.1/data/ip'.
 Command: synth_design -top PPM_v1_0 -part xc7z020clg484-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 20064
+INFO: [Synth 8-7075] Helper process launched with PID 19404
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'PPM_v1_0' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'PPM_v1_0' [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd:75]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 6 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-3491] module 'PPM_v1_0_S00_AXI' declared at 'C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0_S00_AXI.vhd:5' bound to instance 'PPM_v1_0_S00_AXI_inst' of component 'PPM_v1_0_S00_AXI' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd:195]
-INFO: [Synth 8-638] synthesizing module 'PPM_v1_0_S00_AXI' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0_S00_AXI.vhd:115]
+INFO: [Synth 8-3491] module 'PPM_v1_0_S00_AXI' declared at 'Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0_S00_AXI.vhd:5' bound to instance 'PPM_v1_0_S00_AXI_inst' of component 'PPM_v1_0_S00_AXI' [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd:195]
+INFO: [Synth 8-638] synthesizing module 'PPM_v1_0_S00_AXI' [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0_S00_AXI.vhd:115]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0_S00_AXI.vhd:539]
-INFO: [Synth 8-256] done synthesizing module 'PPM_v1_0_S00_AXI' (1#1) [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0_S00_AXI.vhd:115]
-INFO: [Synth 8-3491] module 'GeneratePPM' declared at 'C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/GeneratePPM.vhd:6' bound to instance 'GeneratePPM_inst' of component 'GeneratePPM' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd:245]
-INFO: [Synth 8-638] synthesizing module 'GeneratePPM' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/GeneratePPM.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'GeneratePPM' (2#1) [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/GeneratePPM.vhd:16]
-INFO: [Synth 8-3491] module 'Capture_PPM_simp' declared at 'C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:15' bound to instance 'Capture_PPM_simp_inst' of component 'Capture_PPM_simp' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd:259]
-INFO: [Synth 8-638] synthesizing module 'Capture_PPM_simp' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:30]
-INFO: [Synth 8-226] default block is never used [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:139]
-WARNING: [Synth 8-614] signal 'count_reg_reset' is read in the process but is not in the sensitivity list [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:126]
-INFO: [Synth 8-256] done synthesizing module 'Capture_PPM_simp' (3#1) [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'PPM_v1_0' (4#1) [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd:75]
+INFO: [Synth 8-226] default block is never used [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0_S00_AXI.vhd:539]
+INFO: [Synth 8-256] done synthesizing module 'PPM_v1_0_S00_AXI' (1#1) [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0_S00_AXI.vhd:115]
+INFO: [Synth 8-3491] module 'GeneratePPM' declared at 'Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/src/GeneratePPM.vhd:6' bound to instance 'GeneratePPM_inst' of component 'GeneratePPM' [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd:245]
+INFO: [Synth 8-638] synthesizing module 'GeneratePPM' [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/src/GeneratePPM.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'GeneratePPM' (2#1) [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/src/GeneratePPM.vhd:16]
+INFO: [Synth 8-3491] module 'Capture_PPM_simp' declared at 'Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:15' bound to instance 'Capture_PPM_simp_inst' of component 'Capture_PPM_simp' [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd:259]
+INFO: [Synth 8-638] synthesizing module 'Capture_PPM_simp' [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:30]
+INFO: [Synth 8-226] default block is never used [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:139]
+INFO: [Synth 8-256] done synthesizing module 'Capture_PPM_simp' (3#1) [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'PPM_v1_0' (4#1) [Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd:75]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-802] inferred FSM for state register 'PS_reg' in module 'GeneratePPM'
@@ -82,14 +81,8 @@ INFO: [Synth 8-3354] encoded FSM with state register 'PS_reg' using encoding 'on
                    store |                             1000 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'PS_reg' using encoding 'one-hot' in module 'Capture_PPM_simp'
-WARNING: [Synth 8-327] inferring latch for variable 'out_reg_reset_reg' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:147]
-WARNING: [Synth 8-327] inferring latch for variable 'count_reg_reset_reg' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:148]
-WARNING: [Synth 8-327] inferring latch for variable 'iterate_count_reg' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:152]
-WARNING: [Synth 8-327] inferring latch for variable 'send_output_reg' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:98]
-WARNING: [Synth 8-327] inferring latch for variable 'start_count_reg' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:94]
-WARNING: [Synth 8-327] inferring latch for variable 'done_reg' [C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd:153]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -117,8 +110,8 @@ Detailed RTL Component Info :
 	   4 Input    3 Bit        Muxes := 2     
 	   2 Input    1 Bit        Muxes := 13    
 	   5 Input    1 Bit        Muxes := 5     
+	   4 Input    1 Bit        Muxes := 5     
 	   3 Input    1 Bit        Muxes := 1     
-	   4 Input    1 Bit        Muxes := 8     
 	   6 Input    1 Bit        Muxes := 1     
 	   7 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
@@ -138,20 +131,20 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -169,37 +162,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -217,52 +210,50 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     1|
 |2     |CARRY4 |    31|
-|3     |LUT1   |    30|
-|4     |LUT2   |    39|
-|5     |LUT3   |    18|
+|3     |LUT1   |    29|
+|4     |LUT2   |    37|
+|5     |LUT3   |    16|
 |6     |LUT4   |    16|
-|7     |LUT5   |    39|
-|8     |LUT6   |    82|
+|7     |LUT5   |    38|
+|8     |LUT6   |    81|
 |9     |MUXF7  |    31|
 |10    |FDCE   |     4|
 |11    |FDPE   |     1|
 |12    |FDRE   |   381|
 |13    |FDSE   |     9|
-|14    |LD     |     6|
-|15    |IBUF   |    52|
-|16    |OBUF   |   432|
+|14    |IBUF   |    52|
+|15    |OBUF   |   432|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+------------------------+-----------------+------+
 |      |Instance                |Module           |Cells |
 +------+------------------------+-----------------+------+
-|1     |top                     |                 |  1172|
-|2     |  Capture_PPM_simp_inst |Capture_PPM_simp |   350|
+|1     |top                     |                 |  1159|
+|2     |  Capture_PPM_simp_inst |Capture_PPM_simp |   337|
 |3     |  GeneratePPM_inst      |GeneratePPM      |   145|
 |4     |  PPM_v1_0_S00_AXI_inst |PPM_v1_0_S00_AXI |   192|
 +------+------------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1035.594 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.492 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1035.594 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1035.594 ; gain = 0.000
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1013.492 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 68 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1035.594 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 62 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1013.492 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1106.223 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 6 instances were transformed.
-  LD => LDCE: 6 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+34 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 1013.492 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/edit_PPM_v1_0.runs/synth_1/PPM_v1_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:31 . Memory (MB): peak = 1106.223 ; gain = 70.629
+INFO: [Common 17-1381] The checkpoint 'Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo/edit_PPM_v1_0.runs/synth_1/PPM_v1_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file PPM_v1_0_utilization_synth.rpt -pb PPM_v1_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Feb 20 23:00:43 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 21 01:00:00 2025...
