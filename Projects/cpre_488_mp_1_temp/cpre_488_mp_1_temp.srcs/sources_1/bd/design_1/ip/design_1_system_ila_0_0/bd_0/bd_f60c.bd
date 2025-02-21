@@ -1,0 +1,101 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "design_src": "SBD",
+      "device": "xc7z020clg484-1",
+      "name": "bd_f60c",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "scoped": "true",
+      "synth_flow_mode": "None",
+      "tool_version": "2020.1"
+    },
+    "design_tree": {},
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I"
+      },
+      "probe0": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe1": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe2": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe3": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe4": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe5": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe6": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe7": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe8": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe9": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe10": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe11": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe12": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe13": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe14": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "probe15": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      }
+    }
+  }
+}

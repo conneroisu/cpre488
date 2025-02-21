@@ -370,3 +370,141 @@ selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 148, 
 selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 824, 85); // bP (w, cs)
 selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 823, 129); // bP (w, cs)
 selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 817, 115); // bP (w, cs)
+// Elapsed time: 186 seconds
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 701, 383); // bP (w, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active__pt_slv__slv_passive]", 11); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active__pt_slv__slv_passive, axi_vip_0_exdes_basic_mst_active__pt_slv__slv_passive (axi_vip_0_exdes_basic_mst_active__pt_slv__slv_passive.sv)]", 13, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active__pt_slv__slv_passive, axi_vip_0_exdes_basic_mst_active__pt_slv__slv_passive (axi_vip_0_exdes_basic_mst_active__pt_slv__slv_passive.sv)]", 13, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active__pt_slv__slv_passive, axi_vip_0_exdes_basic_mst_active__pt_slv__slv_passive (axi_vip_0_exdes_basic_mst_active__pt_slv__slv_passive.sv)]", 13); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active_pt_mem__slv_passive]", 14); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active_pt_mem__slv_passive, axi_vip_0__exdes_basic_mst_active_pt_mem__slv_passive (axi_vip_0_exdes_basic_mst_active_pt_mem__slv_passive.sv)]", 16, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active_pt_mem__slv_passive, axi_vip_0__exdes_basic_mst_active_pt_mem__slv_passive (axi_vip_0_exdes_basic_mst_active_pt_mem__slv_passive.sv), mst : axi_vip_0_mst_stimulus (axi_vip_0_exdes_basic_mst_active_pt_mem__slv_passive.sv)]", 18, false, false, false, false, false, true); // B (F, cs) - Double Click
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 90 MB. Current time: 2/20/25, 4:20:14 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 79 MB. Current time: 2/20/25, 4:50:14 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 5:20:14 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 5:50:15 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 6:20:15 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 6:50:15 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 7:20:16 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 7:50:16 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 8:20:16 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 8:50:17 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 9:20:17 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 9:50:18 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 10:20:18 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 10:50:18 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 11:20:19 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 11:50:19 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 12:20:19 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 12:50:20 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 1:20:20 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 1:50:21 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 2:20:21 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 2:50:21 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 3:20:22 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 3:50:22 PM CST
+// Elapsed time: 44144 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active_pt_mem__slv_passive, axi_vip_0__exdes_basic_mst_active_pt_mem__slv_passive (axi_vip_0_exdes_basic_mst_active_pt_mem__slv_passive.sv)]", 16); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active_pt_mem__slv_passive, Verilog Header]", 15); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active_pt_mem__slv_passive, Verilog Header]", 15); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active_pt_mem__slv_passive]", 14); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_active__pt_slv__slv_passive]", 11); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb]", 8); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb]", 8, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb]", 8, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb]", 8, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 78 MB. Current time: 2/20/25, 4:20:23 PM CST
+// Elapsed time: 511 seconds
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 777, 410); // bP (w, cs)
+// Elapsed time: 149 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb]", 8); // B (F, cs)
+// Elapsed time: 40 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb]", 8); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10, true); // B (F, cs) - Node
+// Elapsed time: 159 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // m (l, cs)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// r (cs): Re-customize IP: addNotify
+// Elapsed time: 35 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (r)
+dismissDialog("Re-customize IP"); // r (cs)
+// Elapsed time: 681 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // m (l, cs)
+// Elapsed time: 319 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // m (l, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // m (l, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 2); // m (l, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 313, 568); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 262, 558); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 180, 595); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 168, 630); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 136, 661); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 138, 728); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 226, 775); // bP (w, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), generic_tb : axi_vip_0_exdes_generic (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 11, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), generic_tb : axi_vip_0_exdes_generic (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 11, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), generic_tb : axi_vip_0_exdes_generic (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 11, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), generic_tb : axi_vip_0_exdes_generic (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 11, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), mst : axi_vip_0_passthrough_mst_stimulus (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 12, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), mst : axi_vip_0_passthrough_mst_stimulus (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 12, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), mst : axi_vip_0_passthrough_mst_stimulus (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 12, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), mst : axi_vip_0_passthrough_mst_stimulus (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 12, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), slv : axi_vip_0_slv_basic_stimulus (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 13, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), slv : axi_vip_0_slv_basic_stimulus (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 13, false, false, false, false, false, true); // B (F, cs) - Double Click
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), DUT : chip (axi_vip_0_chip.sv)]", 14); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), DUT : chip (axi_vip_0_chip.sv), ex_design : ex_sim (ex_sim.bd)]", 15, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), DUT : chip (axi_vip_0_chip.sv), ex_design : ex_sim (ex_sim.bd), ex_sim(STRUCTURE) (ex_sim.vhd)]", 16, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), DUT : chip (axi_vip_0_chip.sv)]", 14, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv), DUT : chip (axi_vip_0_chip.sv)]", 14, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+selectCodeEditor("axi_vip_0_chip.sv", 535, 302); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 82 MB. Current time: 2/20/25, 4:50:23 PM CST
+// Elapsed time: 709 seconds
+selectCodeEditor("axi_vip_0_chip.sv", 1014, 501); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 81 MB. Current time: 2/20/25, 5:20:24 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 81 MB. Current time: 2/20/25, 5:50:24 PM CST
+// Elapsed time: 3660 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb]", 8); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb]", 8); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10, true); // B (F, cs) - Node
+selectCodeEditor("axi_vip_0_chip.sv", 515, 229); // bP (w, cs)
+typeControlKey(null, null, 'z');
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 626, 380); // bP (w, cs)
+// Elapsed time: 653 seconds
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 479, 350); // bP (w, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb (axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv)]", 10); // B (F, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // m (l, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // m (l, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 2); // m (l, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // m (l, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 2); // m (l, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 620, 175); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 499, 181); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 411, 179); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 475, 197); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 473, 206); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 122, 73); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 23, 115); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 711, 124); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 21, 129); // bP (w, cs)
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 670, 182); // bP (w, cs)
+// Elapsed time: 152 seconds
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 851, 504); // bP (w, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, Verilog Header]", 9); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_basic_mst_passive__pt_mst__slv_comb, Verilog Header]", 9); // B (F, cs)
+// Elapsed time: 102 seconds
+selectCodeEditor("axi_vip_0_exdes_basic_mst_passive__pt_mst__slv_comb.sv", 426, 413); // bP (w, cs)

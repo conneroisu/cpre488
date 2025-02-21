@@ -142,3 +142,8 @@ INFO: [SIM-utils-43] Exported 'Z:/Vivado/Projects/axi_vip_0_ex/axi_vip_0_ex.ip_u
 INFO: [SIM-utils-43] Exported 'Z:/Vivado/Projects/axi_vip_0_ex/axi_vip_0_ex.ip_user_files/sim_scripts/ex_sim/xcelium/ex_sim_axi_vip_slv_0.h'
 INFO: [open_example_project] Open Example Project completed
 update_compile_order -fileset sources_1
+WARNING: [IP_Flow 19-4331] Invalid usage of property - Setting enabled property is not allowed in procedure init_gui
+WARNING: [IP_Flow 19-4331] Invalid usage of property - Setting enabled property is not allowed in procedure init_gui
+WARNING: [IP_Flow 19-4331] Invalid usage of property - Setting enabled property is not allowed in procedure init_gui
+WARNING: [IP_Flow 19-4331] Invalid usage of property - Setting enabled property is not allowed in procedure init_gui
+WARNING: [IP_Flow 19-4331] Invalid usage of property - Setting enabled property is not allowed in procedure init_gui
