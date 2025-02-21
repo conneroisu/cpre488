@@ -19,7 +19,7 @@ architecture test of Capture_PPM_simp_tb is
     -- DUT Signals
     signal PPM_Input    : std_logic := '1';
     signal CLK          : std_logic := '0';
-    signal CLR          : std_logic := '1';
+    signal CLR          : std_logic := '0';
     signal out_channel_1, out_channel_2, out_channel_3 : std_logic_vector(31 downto 0);
     signal out_channel_4, out_channel_5, out_channel_6 : std_logic_vector(31 downto 0);
 
@@ -54,9 +54,9 @@ begin
     ppm_process : process
     begin
         -- Reset the system
-        CLR <= '1';
-        wait for 1 us;
         CLR <= '0';
+        wait for 1 us;
+        CLR <= '1';
         wait for 1 us;
 
         -- Loop to generate PPM frames

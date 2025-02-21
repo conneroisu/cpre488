@@ -1,0 +1,757 @@
+09:12:06 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\oparker\cpre488\temp_xsdb_launch_script.tcl
+09:12:06 INFO  : Registering command handlers for Vitis TCF services
+09:12:08 INFO  : XSCT server has started successfully.
+09:12:09 INFO  : Platform repository initialization has completed.
+09:12:11 INFO  : plnx-install-location is set to ''
+09:12:11 INFO  : Successfully done setting XSCT server connection channel  
+09:12:11 INFO  : Successfully done query RDI_DATADIR 
+09:12:11 INFO  : Successfully done setting workspace for the tool. 
+09:27:51 INFO  : Result from executing command 'getProjects': design_1_wrapper
+09:27:51 INFO  : Result from executing command 'getPlatforms': 
+09:27:51 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+09:27:58 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+09:40:34 INFO  : Result from executing command 'getProjects': design_1_wrapper
+09:40:34 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+09:40:34 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+09:41:19 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+09:41:24 INFO  : Result from executing command 'getProjects': design_1_wrapper
+09:41:24 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+09:41:35 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+09:41:38 INFO  : The hardware specfication used by project 'MP1_SDK' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+09:41:38 INFO  : The file 'C:\Users\oparker\cpre488\MP1_SDK\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+09:41:38 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\oparker\cpre488\MP1_SDK\_ide\bitstream' in project 'MP1_SDK'.
+09:41:38 INFO  : The file 'C:\Users\oparker\cpre488\MP1_SDK\_ide\psinit\ps7_init.tcl' stored in project is removed.
+09:41:41 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\oparker\cpre488\MP1_SDK\_ide\psinit' in project 'MP1_SDK'.
+09:41:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:41:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+09:41:56 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+09:42:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:42:01 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+09:42:01 INFO  : 'jtag frequency' command is executed.
+09:42:01 INFO  : Context for 'APU' is selected.
+09:42:01 INFO  : System reset is completed.
+09:42:04 INFO  : 'after 3000' command is executed.
+09:42:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+09:42:07 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+09:42:07 INFO  : Context for 'APU' is selected.
+09:42:07 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+09:42:07 INFO  : 'configparams force-mem-access 1' command is executed.
+09:42:07 INFO  : Context for 'APU' is selected.
+09:42:07 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+09:42:07 INFO  : 'ps7_init' command is executed.
+09:42:07 INFO  : 'ps7_post_config' command is executed.
+09:42:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:42:07 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:42:07 INFO  : 'configparams force-mem-access 0' command is executed.
+09:42:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:42:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:42:07 INFO  : 'con' command is executed.
+09:42:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+09:42:07 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+09:57:09 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+09:57:20 INFO  : Result from executing command 'getProjects': design_1_wrapper
+09:57:20 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+09:57:20 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+09:57:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:57:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+09:57:29 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+09:57:39 INFO  : Disconnected from the channel tcfchan#4.
+09:57:39 INFO  : The hardware specfication used by project 'MP1_SDK' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+09:57:39 INFO  : The file 'C:\Users\oparker\cpre488\MP1_SDK\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+09:57:39 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\oparker\cpre488\MP1_SDK\_ide\bitstream' in project 'MP1_SDK'.
+09:57:39 INFO  : The file 'C:\Users\oparker\cpre488\MP1_SDK\_ide\psinit\ps7_init.tcl' stored in project is removed.
+09:57:43 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\oparker\cpre488\MP1_SDK\_ide\psinit' in project 'MP1_SDK'.
+09:57:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:57:44 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+09:57:44 INFO  : 'jtag frequency' command is executed.
+09:57:44 INFO  : Context for 'APU' is selected.
+09:57:44 INFO  : System reset is completed.
+09:57:47 INFO  : 'after 3000' command is executed.
+09:57:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+09:57:49 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+09:57:49 INFO  : Context for 'APU' is selected.
+09:57:49 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+09:57:49 INFO  : 'configparams force-mem-access 1' command is executed.
+09:57:49 INFO  : Context for 'APU' is selected.
+09:57:49 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+09:57:49 INFO  : 'ps7_init' command is executed.
+09:57:50 INFO  : 'ps7_post_config' command is executed.
+09:57:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:57:50 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:57:50 INFO  : 'configparams force-mem-access 0' command is executed.
+09:57:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:57:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:57:50 INFO  : 'con' command is executed.
+09:57:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+09:57:50 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+10:07:37 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+10:07:56 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+10:08:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:08:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:08:06 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:08:11 INFO  : Disconnected from the channel tcfchan#6.
+10:08:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:08:11 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:08:11 INFO  : 'jtag frequency' command is executed.
+10:08:11 INFO  : Context for 'APU' is selected.
+10:08:11 INFO  : System reset is completed.
+10:08:14 INFO  : 'after 3000' command is executed.
+10:08:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:08:17 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:08:17 INFO  : Context for 'APU' is selected.
+10:08:17 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+10:08:17 INFO  : 'configparams force-mem-access 1' command is executed.
+10:08:17 INFO  : Context for 'APU' is selected.
+10:08:17 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+10:08:17 INFO  : 'ps7_init' command is executed.
+10:08:17 INFO  : 'ps7_post_config' command is executed.
+10:08:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:08:17 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:08:17 INFO  : 'configparams force-mem-access 0' command is executed.
+10:08:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:08:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:08:17 INFO  : 'con' command is executed.
+10:08:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:08:17 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+10:08:46 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+10:08:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:08:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:08:51 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:08:55 INFO  : Disconnected from the channel tcfchan#7.
+10:08:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:08:55 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:08:55 INFO  : 'jtag frequency' command is executed.
+10:08:55 INFO  : Context for 'APU' is selected.
+10:08:55 INFO  : System reset is completed.
+10:08:58 INFO  : 'after 3000' command is executed.
+10:08:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:09:01 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:09:01 INFO  : Context for 'APU' is selected.
+10:09:01 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+10:09:01 INFO  : 'configparams force-mem-access 1' command is executed.
+10:09:01 INFO  : Context for 'APU' is selected.
+10:09:01 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+10:09:01 INFO  : 'ps7_init' command is executed.
+10:09:01 INFO  : 'ps7_post_config' command is executed.
+10:09:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:09:01 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:09:01 INFO  : 'configparams force-mem-access 0' command is executed.
+10:09:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:09:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:09:01 INFO  : 'con' command is executed.
+10:09:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:09:01 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+10:11:35 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+10:11:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:11:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:11:42 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:29:32 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+10:29:36 INFO  : Result from executing command 'getProjects': design_1_wrapper
+10:29:36 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+10:29:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:29:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:29:44 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:29:52 INFO  : Disconnected from the channel tcfchan#8.
+10:29:52 INFO  : The hardware specfication used by project 'MP1_SDK' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+10:29:52 INFO  : The file 'C:\Users\oparker\cpre488\MP1_SDK\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+10:29:52 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\oparker\cpre488\MP1_SDK\_ide\bitstream' in project 'MP1_SDK'.
+10:29:52 INFO  : The file 'C:\Users\oparker\cpre488\MP1_SDK\_ide\psinit\ps7_init.tcl' stored in project is removed.
+10:29:56 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\oparker\cpre488\MP1_SDK\_ide\psinit' in project 'MP1_SDK'.
+10:29:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:29:56 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:29:56 INFO  : 'jtag frequency' command is executed.
+10:29:56 INFO  : Context for 'APU' is selected.
+10:29:56 INFO  : System reset is completed.
+10:30:00 INFO  : 'after 3000' command is executed.
+10:30:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:30:02 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:30:02 INFO  : Context for 'APU' is selected.
+10:30:02 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+10:30:02 INFO  : 'configparams force-mem-access 1' command is executed.
+10:30:02 INFO  : Context for 'APU' is selected.
+10:30:02 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+10:30:02 INFO  : 'ps7_init' command is executed.
+10:30:02 INFO  : 'ps7_post_config' command is executed.
+10:30:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:30:02 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:30:02 INFO  : 'configparams force-mem-access 0' command is executed.
+10:30:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:30:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:30:03 INFO  : 'con' command is executed.
+10:30:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:30:03 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+10:32:01 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+10:32:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:32:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:32:07 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:32:10 INFO  : Disconnected from the channel tcfchan#10.
+10:32:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:32:11 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:32:11 INFO  : 'jtag frequency' command is executed.
+10:32:11 INFO  : Context for 'APU' is selected.
+10:32:11 INFO  : System reset is completed.
+10:32:14 INFO  : 'after 3000' command is executed.
+10:32:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:32:16 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:32:16 INFO  : Context for 'APU' is selected.
+10:32:16 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+10:32:16 INFO  : 'configparams force-mem-access 1' command is executed.
+10:32:16 INFO  : Context for 'APU' is selected.
+10:32:16 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+10:32:16 INFO  : 'ps7_init' command is executed.
+10:32:16 INFO  : 'ps7_post_config' command is executed.
+10:32:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:32:17 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:32:17 INFO  : 'configparams force-mem-access 0' command is executed.
+10:32:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:32:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:32:17 INFO  : 'con' command is executed.
+10:32:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:32:17 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+10:32:41 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+10:32:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:32:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:32:46 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:32:49 INFO  : Disconnected from the channel tcfchan#11.
+10:32:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:32:50 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:32:50 INFO  : 'jtag frequency' command is executed.
+10:32:50 INFO  : Context for 'APU' is selected.
+10:32:50 INFO  : System reset is completed.
+10:32:53 INFO  : 'after 3000' command is executed.
+10:32:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:32:55 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:32:55 INFO  : Context for 'APU' is selected.
+10:32:55 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+10:32:55 INFO  : 'configparams force-mem-access 1' command is executed.
+10:32:55 INFO  : Context for 'APU' is selected.
+10:32:55 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+10:32:55 INFO  : 'ps7_init' command is executed.
+10:32:55 INFO  : 'ps7_post_config' command is executed.
+10:32:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:32:55 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:32:56 INFO  : 'configparams force-mem-access 0' command is executed.
+10:32:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:32:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:32:56 INFO  : 'con' command is executed.
+10:32:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:32:56 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+10:44:06 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+10:44:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:44:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:44:12 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:44:15 INFO  : Disconnected from the channel tcfchan#12.
+10:44:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:44:15 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:44:15 INFO  : 'jtag frequency' command is executed.
+10:44:15 INFO  : Context for 'APU' is selected.
+10:44:15 INFO  : System reset is completed.
+10:44:18 INFO  : 'after 3000' command is executed.
+10:44:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:44:20 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:44:20 INFO  : Context for 'APU' is selected.
+10:44:20 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+10:44:20 INFO  : 'configparams force-mem-access 1' command is executed.
+10:44:20 INFO  : Context for 'APU' is selected.
+10:44:20 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+10:44:21 INFO  : 'ps7_init' command is executed.
+10:44:21 INFO  : 'ps7_post_config' command is executed.
+10:44:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:44:21 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:44:21 INFO  : 'configparams force-mem-access 0' command is executed.
+10:44:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:44:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:44:21 INFO  : 'con' command is executed.
+10:44:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:44:21 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+10:54:27 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+10:54:35 INFO  : Result from executing command 'getProjects': design_1_wrapper
+10:54:35 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+10:54:35 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+10:54:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:54:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:54:48 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:54:51 INFO  : Disconnected from the channel tcfchan#13.
+10:54:51 INFO  : The hardware specfication used by project 'MP1_SDK' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+10:54:51 INFO  : The file 'C:\Users\oparker\cpre488\MP1_SDK\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+10:54:51 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\oparker\cpre488\MP1_SDK\_ide\bitstream' in project 'MP1_SDK'.
+10:54:51 INFO  : The file 'C:\Users\oparker\cpre488\MP1_SDK\_ide\psinit\ps7_init.tcl' stored in project is removed.
+10:54:55 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\oparker\cpre488\MP1_SDK\_ide\psinit' in project 'MP1_SDK'.
+10:54:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:54:56 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+10:54:56 INFO  : 'jtag frequency' command is executed.
+10:54:56 INFO  : Context for 'APU' is selected.
+10:54:56 INFO  : System reset is completed.
+10:54:59 INFO  : 'after 3000' command is executed.
+10:54:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+10:55:01 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+10:55:01 INFO  : Context for 'APU' is selected.
+10:55:01 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+10:55:01 INFO  : 'configparams force-mem-access 1' command is executed.
+10:55:01 INFO  : Context for 'APU' is selected.
+10:55:01 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+10:55:01 INFO  : 'ps7_init' command is executed.
+10:55:01 INFO  : 'ps7_post_config' command is executed.
+10:55:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:55:02 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:55:02 INFO  : 'configparams force-mem-access 0' command is executed.
+10:55:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:55:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:55:02 INFO  : 'con' command is executed.
+10:55:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:55:02 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+11:43:45 INFO  : Result from executing command 'getProjects': design_1_wrapper
+11:43:45 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+11:43:45 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+11:43:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:43:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:43:59 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+11:44:02 INFO  : Disconnected from the channel tcfchan#15.
+11:44:02 INFO  : The hardware specfication used by project 'MP1_SDK' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+11:44:02 INFO  : The file 'C:\Users\oparker\cpre488\MP1_SDK\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+11:44:02 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\oparker\cpre488\MP1_SDK\_ide\bitstream' in project 'MP1_SDK'.
+11:44:02 INFO  : The file 'C:\Users\oparker\cpre488\MP1_SDK\_ide\psinit\ps7_init.tcl' stored in project is removed.
+11:44:07 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\oparker\cpre488\MP1_SDK\_ide\psinit' in project 'MP1_SDK'.
+11:44:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:44:07 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:44:07 INFO  : 'jtag frequency' command is executed.
+11:44:07 INFO  : Context for 'APU' is selected.
+11:44:07 INFO  : System reset is completed.
+11:44:10 INFO  : 'after 3000' command is executed.
+11:44:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:44:12 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+11:44:12 INFO  : Context for 'APU' is selected.
+11:44:12 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:44:12 INFO  : 'configparams force-mem-access 1' command is executed.
+11:44:12 INFO  : Context for 'APU' is selected.
+11:44:12 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+11:44:13 INFO  : 'ps7_init' command is executed.
+11:44:13 INFO  : 'ps7_post_config' command is executed.
+11:44:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:44:13 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:44:13 INFO  : 'configparams force-mem-access 0' command is executed.
+11:44:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:44:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:44:13 INFO  : 'con' command is executed.
+11:44:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:44:13 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+11:44:33 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+11:44:39 INFO  : Result from executing command 'getProjects': design_1_wrapper
+11:44:39 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+11:44:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:44:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:44:47 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+11:44:54 INFO  : Disconnected from the channel tcfchan#17.
+11:44:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:44:54 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:44:54 INFO  : 'jtag frequency' command is executed.
+11:44:54 INFO  : Context for 'APU' is selected.
+11:44:54 INFO  : System reset is completed.
+11:44:57 INFO  : 'after 3000' command is executed.
+11:44:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:45:00 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+11:45:00 INFO  : Context for 'APU' is selected.
+11:45:00 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:45:00 INFO  : 'configparams force-mem-access 1' command is executed.
+11:45:00 INFO  : Context for 'APU' is selected.
+11:45:00 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+11:45:00 INFO  : 'ps7_init' command is executed.
+11:45:00 INFO  : 'ps7_post_config' command is executed.
+11:45:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:00 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:45:00 INFO  : 'configparams force-mem-access 0' command is executed.
+11:45:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:45:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:00 INFO  : 'con' command is executed.
+11:45:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:45:00 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+11:48:13 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+11:48:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:48:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:48:24 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+11:48:31 INFO  : Disconnected from the channel tcfchan#19.
+11:48:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:48:31 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:48:31 INFO  : 'jtag frequency' command is executed.
+11:48:31 INFO  : Context for 'APU' is selected.
+11:48:31 INFO  : System reset is completed.
+11:48:34 INFO  : 'after 3000' command is executed.
+11:48:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:48:36 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+11:48:36 INFO  : Context for 'APU' is selected.
+11:48:36 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:48:36 INFO  : 'configparams force-mem-access 1' command is executed.
+11:48:36 INFO  : Context for 'APU' is selected.
+11:48:36 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+11:48:37 INFO  : 'ps7_init' command is executed.
+11:48:37 INFO  : 'ps7_post_config' command is executed.
+11:48:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:48:37 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:48:37 INFO  : 'configparams force-mem-access 0' command is executed.
+11:48:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:48:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:48:37 INFO  : 'con' command is executed.
+11:48:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:48:37 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+11:49:18 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+11:49:29 INFO  : Disconnected from the channel tcfchan#20.
+11:49:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:49:29 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:49:29 INFO  : 'jtag frequency' command is executed.
+11:49:29 INFO  : Context for 'APU' is selected.
+11:49:29 INFO  : System reset is completed.
+11:49:32 INFO  : 'after 3000' command is executed.
+11:49:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:49:34 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+11:49:34 INFO  : Context for 'APU' is selected.
+11:49:34 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:49:34 INFO  : 'configparams force-mem-access 1' command is executed.
+11:49:34 INFO  : Context for 'APU' is selected.
+11:49:34 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+11:49:34 INFO  : 'ps7_init' command is executed.
+11:49:34 INFO  : 'ps7_post_config' command is executed.
+11:49:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:49:35 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:49:35 INFO  : 'configparams force-mem-access 0' command is executed.
+11:49:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:49:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:49:35 INFO  : 'con' command is executed.
+11:49:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:49:35 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+11:53:27 INFO  : Checking for BSP changes to sync application flags for project 'MP1_SDK'...
+11:53:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:53:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:53:36 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+11:53:42 INFO  : Disconnected from the channel tcfchan#21.
+11:53:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:53:42 INFO  : Jtag cable 'Digilent Zed 210248526090' is selected.
+11:53:42 INFO  : 'jtag frequency' command is executed.
+11:53:42 INFO  : Context for 'APU' is selected.
+11:53:43 INFO  : System reset is completed.
+11:53:46 INFO  : 'after 3000' command is executed.
+11:53:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}' command is executed.
+11:53:48 INFO  : FPGA configured successfully with bitstream "C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit"
+11:53:48 INFO  : Context for 'APU' is selected.
+11:53:48 INFO  : Hardware design and registers information is loaded from 'C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:53:48 INFO  : 'configparams force-mem-access 1' command is executed.
+11:53:48 INFO  : Context for 'APU' is selected.
+11:53:48 INFO  : Sourcing of 'C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl' is done.
+11:53:48 INFO  : 'ps7_init' command is executed.
+11:53:48 INFO  : 'ps7_post_config' command is executed.
+11:53:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:53:48 INFO  : The application 'C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:53:48 INFO  : 'configparams force-mem-access 0' command is executed.
+11:53:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248526090" && level==0 && jtag_device_ctx=="jsn-Zed-210248526090-23727093-0"}
+fpga -file C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/oparker/cpre488/MP1_SDK/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:53:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:53:48 INFO  : 'con' command is executed.
+11:53:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:53:48 INFO  : Launch script is exported to file 'C:\Users\oparker\cpre488\.sdk\launch_scripts\single_application_debug\systemdebugger_mp1_sdk_system_standalone.tcl'
+11:55:52 INFO  : Disconnected from the channel tcfchan#22.

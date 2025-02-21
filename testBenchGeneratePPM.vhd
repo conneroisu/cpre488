@@ -9,7 +9,7 @@ end Generate_PPM_tb;
 architecture Behavioral of Generate_PPM_tb is
 
     -- Component Declaration
-    component Generate_PPM
+    component GeneratePPM
         Port (
         CLK : in std_logic; 
         RESET : in std_logic; 
@@ -21,7 +21,7 @@ architecture Behavioral of Generate_PPM_tb is
 
     -- Signals
     signal CLK_tb : std_logic := '0';
-    signal RESET_tb : std_logic := '1'; 
+    signal RESET_tb : std_logic := '0'; 
     signal slv_reg20_tb, slv_reg21_tb, slv_reg22_tb, slv_reg23_tb, slv_reg24_tb, slv_reg25_tb : std_logic_vector(31 downto 0);
     signal sw_PPM_Output_tb : std_logic;
     signal PPM_Done_tb : std_logic;
@@ -30,7 +30,7 @@ architecture Behavioral of Generate_PPM_tb is
 
 begin
 
-    uut: Generate_PPM
+    uut: GeneratePPM
         port map (
             CLK => CLK_tb,
             RESET => RESET_tb,
@@ -56,9 +56,9 @@ begin
 
     process
     begin
-        RESET_tb <= '1';
-        wait for 50 ns;
         RESET_tb <= '0';
+        wait for 50 ns;
+        RESET_tb <= '1';
         wait for 50 ns;
 
         slv_reg20_tb <= conv_std_logic_vector(1500, 32);

@@ -1,0 +1,10 @@
+09:41:41 **** Build of configuration Debug for project MP1_SDK_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 51775 C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm domain_ps7_cortexa9_0 C:/Users/oparker/cpre488/MP1_SDK_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/oparker/cpre488/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif C:/Users/oparker/cpre488/MP1_SDK_system/Debug/system.bif --bitstream C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit --elf C:/Users/oparker/cpre488/MP1_SDK/Debug/MP1_SDK.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Users/oparker/cpre488/MP1_SDK/_ide/bitstream/design_1_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image C:/Users/oparker/cpre488/MP1_SDK_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+09:41:44 Build Finished (took 3s.186ms)
+

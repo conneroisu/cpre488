@@ -1,20 +1,20 @@
 -makelib ies_lib/xilinx_vip -sv \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/xil_common_vip_pkg.sv" \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi4stream_vip_pkg.sv" \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi_vip_pkg.sv" \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi4stream_vip_if.sv" \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi_vip_if.sv" \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/clk_vip_if.sv" \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/rst_vip_if.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/xil_common_vip_pkg.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi4stream_vip_pkg.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi_vip_pkg.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi4stream_vip_if.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi_vip_if.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/clk_vip_if.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/rst_vip_if.sv" \
 -endlib
 -makelib ies_lib/xpm -sv \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 -endlib
 -makelib ies_lib/xpm \
-  "Z:/Vivado/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_VCOMP.vhd" \
+  "C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
 -makelib ies_lib/axi_infrastructure_v1_1_0 \
   "../../../../MP1_test.srcs/sources_1/bd/design_1/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
@@ -29,10 +29,10 @@
   "../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/design_1/ipshared/d94b/src/Capture_PPM_simp.vhd" \
-  "../../../bd/design_1/ipshared/d94b/src/GeneratePPM.vhd" \
-  "../../../bd/design_1/ipshared/d94b/hdl/PPM_v1_0_S00_AXI.vhd" \
-  "../../../bd/design_1/ipshared/d94b/hdl/PPM_v1_0.vhd" \
+  "../../../bd/design_1/ipshared/84c0/src/Capture_PPM_simp.vhd" \
+  "../../../bd/design_1/ipshared/84c0/src/GeneratePPM.vhd" \
+  "../../../bd/design_1/ipshared/84c0/hdl/PPM_v1_0_S00_AXI.vhd" \
+  "../../../bd/design_1/ipshared/84c0/hdl/PPM_v1_0.vhd" \
   "../../../bd/design_1/ip/design_1_PPM_0_3/sim/design_1_PPM_0_3.vhd" \
 -endlib
 -makelib ies_lib/lib_cdc_v1_0_2 \

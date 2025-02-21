@@ -591,10 +591,6 @@
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>9:3ff62282</spirit:value>
           </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>sim_type</spirit:name>
-            <spirit:value>rtl</spirit:value>
-          </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
       <spirit:view>
@@ -615,10 +611,6 @@
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>9:3ff62282</spirit:value>
           </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>sim_type</spirit:name>
-            <spirit:value>rtl</spirit:value>
-          </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
       <spirit:view>
@@ -631,7 +623,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Feb 21 09:03:04 UTC 2025</spirit:value>
+            <spirit:value>Fri Feb 21 17:39:50 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -649,11 +641,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Feb 21 08:45:07 UTC 2025</spirit:value>
+            <spirit:value>Fri Feb 21 16:51:24 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1de20f5e</spirit:value>
+            <spirit:value>9:84ae64c4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -680,7 +672,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Feb 21 09:02:54 UTC 2025</spirit:value>
+            <spirit:value>Fri Feb 21 17:39:44 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -700,7 +692,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Feb 21 09:02:54 UTC 2025</spirit:value>
+            <spirit:value>Fri Feb 21 17:39:44 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -36532,7 +36524,6 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>System ILA</xilinx:displayName>
-      <xilinx:supportsDeferredElaboration>true</xilinx:supportsDeferredElaboration>
       <xilinx:coreRevision>7</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:ip:system_ila:1.0_ARCHIVE_LOCATION">/proj/xhdhdstaff/niloyr/debug_tools/IP3_niloyr_cs/DEV/output/internal/vivado/data/ip/xilinx</xilinx:tag>

@@ -1,0 +1,1 @@
+C:/questasim64_2024.2/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 11747616 work.generate_ppm_tb(behavioral) -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt -id 2-7486e228370b-67b8b9e4-326-4e00 +__design_bin_path+C:/Users/oparker/cpre488 +__betafsm

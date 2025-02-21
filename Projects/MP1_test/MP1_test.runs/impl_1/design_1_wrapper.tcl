@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "Z:/Vivado/CPRE488_git/cpre488/Projects/MP1_test/MP1_test.runs/impl_1/design_1_wrapper.tcl"
+  variable script "C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.runs/impl_1/design_1_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -121,7 +121,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 2
+  set_param chipscope.maxJobs 5
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg484-1
   set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
@@ -129,22 +129,22 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir Z:/Vivado/CPRE488_git/cpre488/Projects/MP1_test/MP1_test.cache/wt [current_project]
-  set_property parent.project_path Z:/Vivado/CPRE488_git/cpre488/Projects/MP1_test/MP1_test.xpr [current_project]
-  set_property ip_repo_paths Z:/Vivado/CPRE488_git/cpre488/Projects/ip_repo [current_project]
+  set_property webtalk.parent_dir C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.cache/wt [current_project]
+  set_property parent.project_path C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.xpr [current_project]
+  set_property ip_repo_paths C:/Users/oparker/cpre488/Projects/ip_repo [current_project]
   update_ip_catalog
-  set_property ip_output_repo Z:/Vivado/CPRE488_git/cpre488/Projects/MP1_test/MP1_test.cache/ip [current_project]
+  set_property ip_output_repo C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet Z:/Vivado/CPRE488_git/cpre488/Projects/MP1_test/MP1_test.runs/synth_1/design_1_wrapper.dcp
+  add_files -quiet C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.runs/synth_1/design_1_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files Z:/Vivado/CPRE488_git/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/design_1.bd
+  add_files C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc Z:/Vivado/CPRE488_git/cpre488/Projects/MP1_test/MP1_test.srcs/constrs_1/new/constraints1.xdc
+  read_xdc C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/constrs_1/new/constraints1.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

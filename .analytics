@@ -1,0 +1,26 @@
+timestamp=[2025-02-21 09:12:05], mode=WORKBENCH_START, duration=0:00:03.447, duration_ms=3447, data={}
+timestamp=[2025-02-21 09:12:06], mode=WORKBENCH_UI_INIT, duration=0:00:00.333, duration_ms=333, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2025-02-21 09:12:09], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:02.980, duration_ms=2980, data={}
+timestamp=[2025-02-21 09:27:57], mode=APP_CREATION, duration=0:00:15.294, duration_ms=15294, data={name=MP1_SDK, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=design_1_wrapper, application_type=application}
+timestamp=[2025-02-21 09:40:34], mode=PLATFORM_GENERATION, duration=0:00:25.268, duration_ms=25268, data={name=design_1_wrapper}
+timestamp=[2025-02-21 09:40:35], mode=BUILD, duration=0:00:00.864, duration_ms=864, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 09:41:24], mode=PLATFORM_GENERATION, duration=0:00:00.966, duration_ms=966, data={name=design_1_wrapper}
+timestamp=[2025-02-21 09:41:37], mode=BUILD, duration=0:00:00.152, duration_ms=152, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 09:41:44], mode=BUILD, duration=0:00:03.196, duration_ms=3196, data={name=MP1_SDK_system, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 09:57:20], mode=PLATFORM_GENERATION, duration=0:00:00.972, duration_ms=972, data={name=design_1_wrapper}
+timestamp=[2025-02-21 09:57:23], mode=BUILD, duration=0:00:00.213, duration_ms=213, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 10:07:38], mode=BUILD, duration=0:00:00.663, duration_ms=663, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 10:07:56], mode=BUILD, duration=0:00:00.611, duration_ms=611, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 10:08:47], mode=BUILD, duration=0:00:00.609, duration_ms=609, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 10:11:35], mode=BUILD, duration=0:00:00.610, duration_ms=610, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 10:29:36], mode=PLATFORM_GENERATION, duration=0:00:00.913, duration_ms=913, data={name=design_1_wrapper}
+timestamp=[2025-02-21 10:32:01], mode=BUILD, duration=0:00:00.663, duration_ms=663, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 10:32:41], mode=BUILD, duration=0:00:00.538, duration_ms=538, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 10:44:07], mode=BUILD, duration=0:00:00.604, duration_ms=604, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 10:54:35], mode=PLATFORM_GENERATION, duration=0:00:00.973, duration_ms=973, data={name=design_1_wrapper}
+timestamp=[2025-02-21 10:54:38], mode=BUILD, duration=0:00:00.662, duration_ms=662, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 11:43:45], mode=PLATFORM_GENERATION, duration=0:00:02.610, duration_ms=2610, data={name=design_1_wrapper}
+timestamp=[2025-02-21 11:44:39], mode=PLATFORM_GENERATION, duration=0:00:00.970, duration_ms=970, data={name=design_1_wrapper}
+timestamp=[2025-02-21 11:48:14], mode=BUILD, duration=0:00:00.724, duration_ms=724, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 11:49:18], mode=BUILD, duration=0:00:00.609, duration_ms=609, data={name=MP1_SDK, configuration=Debug, clean_build=false}
+timestamp=[2025-02-21 11:53:28], mode=BUILD, duration=0:00:00.612, duration_ms=612, data={name=MP1_SDK, configuration=Debug, clean_build=false}

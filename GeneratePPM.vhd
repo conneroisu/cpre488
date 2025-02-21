@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-entity Generate_PPM is
+entity GeneratePPM is
     Port (
         CLK : in std_logic; 
         RESET : in std_logic; 
@@ -11,9 +11,9 @@ entity Generate_PPM is
         PPM_Done : out std_logic;
         sw_PPM_Output : out std_logic  
     );
-end Generate_PPM;
+end GeneratePPM;
 
-architecture Behavioral of Generate_PPM is
+architecture Behavioral of GeneratePPM is
 
     type state_type is (IDLE, GAP_LOW, PULSE_HIGH, NEXT_CHANNEL, FRAME_COMPLETE);
     type int_array is array(0 to 5) of integer;
@@ -27,7 +27,7 @@ begin
 
     process(CLK, RESET)
     begin
-        if RESET = '1' then
+        if RESET = '0' then
             PS <= IDLE;
         elsif rising_edge(CLK) then
             PS <= NS;
@@ -39,7 +39,7 @@ begin
     begin
         case PS is
             when IDLE =>
-                if RESET = '0' then
+                if RESET = '1' then
                     NS <= GAP_LOW; 
                else
                     NS <= IDLE;
@@ -67,7 +67,7 @@ begin
                 NS <= GAP_LOW;
 
             when FRAME_COMPLETE =>
---                if RESET = '1' then
+--                if RESET = '0' then
                     NS <= IDLE; 
 --               else
 --                    NS <= FRAME_COMPLETE;

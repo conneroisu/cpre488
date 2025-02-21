@@ -1,6 +1,111 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Fri Feb 21 11:39:37 2025
+| Host         : CO2041-04 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_PPM_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_PPM_0_3 (xilinx.com:user:PPM:1.0) from (Rev. 12) to (Rev. 13)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Fri Feb 21 10:51:18 2025
+| Host         : CO2041-04 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_PPM_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_PPM_0_3 (xilinx.com:user:PPM:1.0 (Rev. 12)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Fri Feb 21 10:25:46 2025
+| Host         : CO2041-04 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_PPM_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_PPM_0_3 (xilinx.com:user:PPM:1.0) from (Rev. 11) to (Rev. 12)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Fri Feb 21 09:53:09 2025
+| Host         : CO2041-04 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_PPM_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_PPM_0_3 (xilinx.com:user:PPM:1.0) from (Rev. 10) to (Rev. 11)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Fri Feb 21 09:21:58 2025
+| Host         : CO2041-04 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_PPM_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_PPM_0_3 (xilinx.com:user:PPM:1.0) from (Rev. 9) to (Rev. 10)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 | Date         : Fri Feb 21 03:02:45 2025
 | Host         : DESKTOP-V4CC4PR running 64-bit major release  (build 9200)
 | Command      : upgrade_ip
