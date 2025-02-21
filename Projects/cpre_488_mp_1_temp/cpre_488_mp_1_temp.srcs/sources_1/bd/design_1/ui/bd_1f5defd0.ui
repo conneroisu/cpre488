@@ -9,11 +9,11 @@ preplace port DDR -pg 1 -lvl 5 -x 1440 -y 60 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -lvl 5 -x 1440 -y 80 -defaultsOSRD
 preplace port PMOD_Input -pg 1 -lvl 0 -x 0 -y 330 -defaultsOSRD
 preplace port PMOD_Output -pg 1 -lvl 5 -x 1440 -y 180 -defaultsOSRD
-preplace inst PPM_0 -pg 1 -lvl 3 -x 960 -y 340 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -x 240 -y 140 -defaultsOSRD
 preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 620 -y 200 -defaultsOSRD
 preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 240 -y 430 -defaultsOSRD
 preplace inst system_ila_0 -pg 1 -lvl 4 -x 1330 -y 480 -defaultsOSRD
+preplace inst PPM_0 -pg 1 -lvl 3 -x 960 -y 340 -defaultsOSRD
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 20 280 460 70 780 120 1230
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 290 450
 preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 470 370 N

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "Z:/Vivado/Projects/ip_repo/edit_PPM_v1_0.runs/synth_1/PPM_v1_0.tcl"
+  variable script "C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/edit_PPM_v1_0.runs/synth_1/PPM_v1_0.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,34 +70,35 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 5
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir Z:/Vivado/Projects/ip_repo/edit_PPM_v1_0.cache/wt [current_project]
-set_property parent.project_path Z:/Vivado/Projects/ip_repo/edit_PPM_v1_0.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/edit_PPM_v1_0.cache/wt [current_project]
+set_property parent.project_path C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/edit_PPM_v1_0.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property ip_repo_paths {
-  z:/Vivado/Projects/ip_repo/PPM_1.0
-  z:/Vivado/Projects/ip_repo/PPM_1.0
-  z:/Vivado/Projects/ip_repo/PPM_1.0
+  c:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0
+  c:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0
+  c:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0
 } [current_project]
 update_ip_catalog
-set_property ip_output_repo z:/Vivado/Projects/ip_repo/edit_PPM_v1_0.cache/ip [current_project]
+set_property ip_output_repo c:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/edit_PPM_v1_0.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  Z:/Vivado/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd
-  Z:/Vivado/Projects/ip_repo/PPM_1.0/src/GeneratePPM.vhd
+  C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/Capture_PPM_simp.vhd
+  C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/src/GeneratePPM.vhd
 }
 read_vhdl -library "" {
-  Z:/Vivado/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0_S00_AXI.vhd
-  Z:/Vivado/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd
+  C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0_S00_AXI.vhd
+  C:/Users/jaxie963/Temp/cpre488/Projects/ip_repo/PPM_1.0/hdl/PPM_v1_0.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

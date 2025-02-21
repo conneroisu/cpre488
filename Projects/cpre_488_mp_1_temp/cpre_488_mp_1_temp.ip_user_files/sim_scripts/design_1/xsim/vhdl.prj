@@ -1,0 +1,13 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ipshared/e0c9/src/Capture_PPM_simp.vhd" \
+"../../../bd/design_1/ipshared/e0c9/src/GeneratePPM.vhd" \
+"../../../bd/design_1/ipshared/e0c9/hdl/PPM_v1_0_S00_AXI.vhd" \
+"../../../bd/design_1/ipshared/e0c9/hdl/PPM_v1_0.vhd" \
+"../../../bd/design_1/ip/design_1_PPM_0_0/sim/design_1_PPM_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_0/sim/bd_f60c_ila_lib_0.vhd" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/sim/bd_f60c.vhd" \
+"../../../bd/design_1/ip/design_1_system_ila_0_0/sim/design_1_system_ila_0_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+nosort
