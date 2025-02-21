@@ -1071,16 +1071,16 @@
           }
         },
         "interface_nets": {
-          "s00_couplers_to_ps7_0_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "s00_couplers/M_AXI"
-            ]
-          },
           "ps7_0_axi_periph_to_s00_couplers": {
             "interface_ports": [
               "S00_AXI",
               "s00_couplers/S_AXI"
+            ]
+          },
+          "s00_couplers_to_ps7_0_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "s00_couplers/M_AXI"
             ]
           }
         },
@@ -1117,67 +1117,64 @@
       },
       "system_ila_0": {
         "vlnv": "xilinx.com:ip:system_ila:1.1",
-        "xci_name": "design_1_system_ila_0_0",
+        "xci_name": "design_1_system_ila_0_1",
         "parameters": {
           "C_MON_TYPE": {
-            "value": "NATIVE"
+            "value": "MIX"
+          },
+          "C_NUM_MONITOR_SLOTS": {
+            "value": "1"
           },
           "C_NUM_OF_PROBES": {
-            "value": "18"
+            "value": "2"
           },
           "C_PROBE0_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE10_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE11_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE12_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE13_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE14_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE15_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE16_TYPE": {
-            "value": "0"
-          },
-          "C_PROBE17_TYPE": {
             "value": "0"
           },
           "C_PROBE1_TYPE": {
             "value": "0"
           },
-          "C_PROBE2_TYPE": {
+          "C_SLOT_0_APC_EN": {
             "value": "0"
           },
-          "C_PROBE3_TYPE": {
-            "value": "0"
+          "C_SLOT_0_AXI_AR_SEL_DATA": {
+            "value": "1"
           },
-          "C_PROBE4_TYPE": {
-            "value": "0"
+          "C_SLOT_0_AXI_AR_SEL_TRIG": {
+            "value": "1"
           },
-          "C_PROBE5_TYPE": {
-            "value": "0"
+          "C_SLOT_0_AXI_AW_SEL_DATA": {
+            "value": "1"
           },
-          "C_PROBE6_TYPE": {
-            "value": "0"
+          "C_SLOT_0_AXI_AW_SEL_TRIG": {
+            "value": "1"
           },
-          "C_PROBE7_TYPE": {
-            "value": "0"
+          "C_SLOT_0_AXI_B_SEL_DATA": {
+            "value": "1"
           },
-          "C_PROBE8_TYPE": {
-            "value": "0"
+          "C_SLOT_0_AXI_B_SEL_TRIG": {
+            "value": "1"
           },
-          "C_PROBE9_TYPE": {
-            "value": "0"
+          "C_SLOT_0_AXI_R_SEL_DATA": {
+            "value": "1"
+          },
+          "C_SLOT_0_AXI_R_SEL_TRIG": {
+            "value": "1"
+          },
+          "C_SLOT_0_AXI_W_SEL_DATA": {
+            "value": "1"
+          },
+          "C_SLOT_0_AXI_W_SEL_TRIG": {
+            "value": "1"
+          },
+          "C_SLOT_0_INTF_TYPE": {
+            "value": "xilinx.com:interface:aximm_rtl:1.0"
+          }
+        },
+        "interface_ports": {
+          "SLOT_0_AXI": {
+            "mode": "Monitor",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           }
         }
       },
@@ -1187,17 +1184,26 @@
       }
     },
     "interface_nets": {
-      "ps7_0_axi_periph_M00_AXI": {
-        "interface_ports": [
-          "ps7_0_axi_periph/M00_AXI",
-          "PPM_0/S00_AXI"
-        ]
-      },
       "processing_system7_0_M_AXI_GP0": {
         "interface_ports": [
           "processing_system7_0/M_AXI_GP0",
           "ps7_0_axi_periph/S00_AXI"
         ]
+      },
+      "ps7_0_axi_periph_M00_AXI": {
+        "interface_ports": [
+          "ps7_0_axi_periph/M00_AXI",
+          "PPM_0/S00_AXI",
+          "system_ila_0/SLOT_0_AXI"
+        ],
+        "hdl_attributes": {
+          "DEBUG": {
+            "value": "true"
+          },
+          "MARK_DEBUG": {
+            "value": "true"
+          }
+        }
       },
       "processing_system7_0_DDR": {
         "interface_ports": [
@@ -1237,6 +1243,7 @@
           "ps7_0_axi_periph/S00_ARESETN",
           "ps7_0_axi_periph/M00_ARESETN",
           "ps7_0_axi_periph/ARESETN",
+          "system_ila_0/resetn",
           "PPM_0/s00_axi_aresetn"
         ]
       },
@@ -1244,7 +1251,7 @@
         "ports": [
           "PPM_0/PPM_Output",
           "PMOD_Out",
-          "system_ila_0/probe17"
+          "system_ila_0/probe1"
         ],
         "hdl_attributes": {
           "DEBUG": {
@@ -1258,232 +1265,8 @@
       "PMOD_Input_1": {
         "ports": [
           "PMOD_Input",
-          "system_ila_0/probe16",
+          "system_ila_0/probe0",
           "PPM_0/PPM_Input"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "capture_output_probe_4": {
-        "ports": [
-          "PPM_0/capture_output_probe_4",
-          "system_ila_0/probe5"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "generator_done_probe": {
-        "ports": [
-          "PPM_0/generator_done_probe",
-          "system_ila_0/probe8"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "generator_input_probe_20": {
-        "ports": [
-          "PPM_0/generator_input_probe_20",
-          "system_ila_0/probe9"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "generator_input_probe_21": {
-        "ports": [
-          "PPM_0/generator_input_probe_21",
-          "system_ila_0/probe10"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "generator_output_probe": {
-        "ports": [
-          "PPM_0/generator_output_probe",
-          "system_ila_0/probe15"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "capture_output_probe_5": {
-        "ports": [
-          "PPM_0/capture_output_probe_5",
-          "system_ila_0/probe6"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "capture_output_probe_2": {
-        "ports": [
-          "PPM_0/capture_output_probe_2",
-          "system_ila_0/probe3"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "capture_output_probe_3": {
-        "ports": [
-          "PPM_0/capture_output_probe_3",
-          "system_ila_0/probe4"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "generator_input_probe_24": {
-        "ports": [
-          "PPM_0/generator_input_probe_24",
-          "system_ila_0/probe13"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "generator_input_probe_25": {
-        "ports": [
-          "PPM_0/generator_input_probe_25",
-          "system_ila_0/probe14"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "capture_state_probe": {
-        "ports": [
-          "PPM_0/capture_state_probe",
-          "system_ila_0/probe7"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "generator_input_probe_22": {
-        "ports": [
-          "PPM_0/generator_input_probe_22",
-          "system_ila_0/probe11"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "generator_input_probe_23": {
-        "ports": [
-          "PPM_0/generator_input_probe_23",
-          "system_ila_0/probe12"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "capture_output_probe_0": {
-        "ports": [
-          "PPM_0/capture_output_probe_0",
-          "system_ila_0/probe1"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "capture_output_probe_1": {
-        "ports": [
-          "PPM_0/capture_output_probe_1",
-          "system_ila_0/probe2"
-        ],
-        "hdl_attributes": {
-          "DEBUG": {
-            "value": "true"
-          },
-          "MARK_DEBUG": {
-            "value": "true"
-          }
-        }
-      },
-      "capture_done_probe": {
-        "ports": [
-          "PPM_0/capture_done_probe",
-          "system_ila_0/probe0"
         ],
         "hdl_attributes": {
           "DEBUG": {

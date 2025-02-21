@@ -575,26 +575,23 @@ proc create_root_design { parentCell } {
   # Create instance: system_ila_0, and set properties
   set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
   set_property -dict [ list \
-   CONFIG.C_MON_TYPE {NATIVE} \
-   CONFIG.C_NUM_OF_PROBES {18} \
+   CONFIG.C_MON_TYPE {MIX} \
+   CONFIG.C_NUM_MONITOR_SLOTS {1} \
+   CONFIG.C_NUM_OF_PROBES {2} \
    CONFIG.C_PROBE0_TYPE {0} \
-   CONFIG.C_PROBE10_TYPE {0} \
-   CONFIG.C_PROBE11_TYPE {0} \
-   CONFIG.C_PROBE12_TYPE {0} \
-   CONFIG.C_PROBE13_TYPE {0} \
-   CONFIG.C_PROBE14_TYPE {0} \
-   CONFIG.C_PROBE15_TYPE {0} \
-   CONFIG.C_PROBE16_TYPE {0} \
-   CONFIG.C_PROBE17_TYPE {0} \
    CONFIG.C_PROBE1_TYPE {0} \
-   CONFIG.C_PROBE2_TYPE {0} \
-   CONFIG.C_PROBE3_TYPE {0} \
-   CONFIG.C_PROBE4_TYPE {0} \
-   CONFIG.C_PROBE5_TYPE {0} \
-   CONFIG.C_PROBE6_TYPE {0} \
-   CONFIG.C_PROBE7_TYPE {0} \
-   CONFIG.C_PROBE8_TYPE {0} \
-   CONFIG.C_PROBE9_TYPE {0} \
+   CONFIG.C_SLOT_0_APC_EN {0} \
+   CONFIG.C_SLOT_0_AXI_AR_SEL_DATA {1} \
+   CONFIG.C_SLOT_0_AXI_AR_SEL_TRIG {1} \
+   CONFIG.C_SLOT_0_AXI_AW_SEL_DATA {1} \
+   CONFIG.C_SLOT_0_AXI_AW_SEL_TRIG {1} \
+   CONFIG.C_SLOT_0_AXI_B_SEL_DATA {1} \
+   CONFIG.C_SLOT_0_AXI_B_SEL_TRIG {1} \
+   CONFIG.C_SLOT_0_AXI_R_SEL_DATA {1} \
+   CONFIG.C_SLOT_0_AXI_R_SEL_TRIG {1} \
+   CONFIG.C_SLOT_0_AXI_W_SEL_DATA {1} \
+   CONFIG.C_SLOT_0_AXI_W_SEL_TRIG {1} \
+   CONFIG.C_SLOT_0_INTF_TYPE {xilinx.com:interface:aximm_rtl:1.0} \
  ] $system_ila_0
 
   # Create interface connections
@@ -602,47 +599,17 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins PPM_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
+connect_bd_intf_net -intf_net [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins system_ila_0/SLOT_0_AXI]
+  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets ps7_0_axi_periph_M00_AXI]
 
   # Create port connections
-  connect_bd_net -net PMOD_Input_1 [get_bd_ports PMOD_Input] [get_bd_pins PPM_0/PPM_Input] [get_bd_pins system_ila_0/probe16]
+  connect_bd_net -net PMOD_Input_1 [get_bd_ports PMOD_Input] [get_bd_pins PPM_0/PPM_Input] [get_bd_pins system_ila_0/probe0]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets PMOD_Input_1]
-  connect_bd_net -net PPM_0_PPM_Output [get_bd_ports PMOD_Out] [get_bd_pins PPM_0/PPM_Output] [get_bd_pins system_ila_0/probe17]
+  connect_bd_net -net PPM_0_PPM_Output [get_bd_ports PMOD_Out] [get_bd_pins PPM_0/PPM_Output] [get_bd_pins system_ila_0/probe1]
   set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets PPM_0_PPM_Output]
-  connect_bd_net -net capture_done_probe [get_bd_pins PPM_0/capture_done_probe] [get_bd_pins system_ila_0/probe0]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets capture_done_probe]
-  connect_bd_net -net capture_output_probe_0 [get_bd_pins PPM_0/capture_output_probe_0] [get_bd_pins system_ila_0/probe1]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets capture_output_probe_0]
-  connect_bd_net -net capture_output_probe_1 [get_bd_pins PPM_0/capture_output_probe_1] [get_bd_pins system_ila_0/probe2]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets capture_output_probe_1]
-  connect_bd_net -net capture_output_probe_2 [get_bd_pins PPM_0/capture_output_probe_2] [get_bd_pins system_ila_0/probe3]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets capture_output_probe_2]
-  connect_bd_net -net capture_output_probe_3 [get_bd_pins PPM_0/capture_output_probe_3] [get_bd_pins system_ila_0/probe4]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets capture_output_probe_3]
-  connect_bd_net -net capture_output_probe_4 [get_bd_pins PPM_0/capture_output_probe_4] [get_bd_pins system_ila_0/probe5]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets capture_output_probe_4]
-  connect_bd_net -net capture_output_probe_5 [get_bd_pins PPM_0/capture_output_probe_5] [get_bd_pins system_ila_0/probe6]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets capture_output_probe_5]
-  connect_bd_net -net capture_state_probe [get_bd_pins PPM_0/capture_state_probe] [get_bd_pins system_ila_0/probe7]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets capture_state_probe]
-  connect_bd_net -net generator_done_probe [get_bd_pins PPM_0/generator_done_probe] [get_bd_pins system_ila_0/probe8]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets generator_done_probe]
-  connect_bd_net -net generator_input_probe_20 [get_bd_pins PPM_0/generator_input_probe_20] [get_bd_pins system_ila_0/probe9]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets generator_input_probe_20]
-  connect_bd_net -net generator_input_probe_21 [get_bd_pins PPM_0/generator_input_probe_21] [get_bd_pins system_ila_0/probe10]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets generator_input_probe_21]
-  connect_bd_net -net generator_input_probe_22 [get_bd_pins PPM_0/generator_input_probe_22] [get_bd_pins system_ila_0/probe11]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets generator_input_probe_22]
-  connect_bd_net -net generator_input_probe_23 [get_bd_pins PPM_0/generator_input_probe_23] [get_bd_pins system_ila_0/probe12]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets generator_input_probe_23]
-  connect_bd_net -net generator_input_probe_24 [get_bd_pins PPM_0/generator_input_probe_24] [get_bd_pins system_ila_0/probe13]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets generator_input_probe_24]
-  connect_bd_net -net generator_input_probe_25 [get_bd_pins PPM_0/generator_input_probe_25] [get_bd_pins system_ila_0/probe14]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets generator_input_probe_25]
-  connect_bd_net -net generator_output_probe [get_bd_pins PPM_0/generator_output_probe] [get_bd_pins system_ila_0/probe15]
-  set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_nets generator_output_probe]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins PPM_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins system_ila_0/clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins PPM_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins PPM_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins system_ila_0/resetn]
 
   # Create address segments
   assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs PPM_0/S00_AXI/S00_AXI_reg] -force

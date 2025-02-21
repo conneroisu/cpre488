@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:PPM:1.0
--- IP Revision: 7
+-- IP Revision: 9
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -57,22 +57,7 @@ ENTITY design_1_PPM_0_3 IS
   PORT (
     PPM_Input : IN STD_LOGIC;
     PPM_Output : OUT STD_LOGIC;
-    generator_input_probe_20 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    generator_input_probe_21 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    generator_input_probe_22 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    generator_input_probe_23 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    generator_input_probe_24 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    generator_input_probe_25 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    generator_done_probe : OUT STD_LOGIC;
-    generator_output_probe : OUT STD_LOGIC;
-    capture_output_probe_0 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    capture_output_probe_1 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    capture_output_probe_2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    capture_output_probe_3 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    capture_output_probe_4 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    capture_output_probe_5 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     capture_state_probe : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-    capture_done_probe : OUT STD_LOGIC;
     s00_axi_aclk : IN STD_LOGIC;
     s00_axi_aresetn : IN STD_LOGIC;
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
@@ -108,22 +93,7 @@ ARCHITECTURE design_1_PPM_0_3_arch OF design_1_PPM_0_3 IS
     PORT (
       PPM_Input : IN STD_LOGIC;
       PPM_Output : OUT STD_LOGIC;
-      generator_input_probe_20 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      generator_input_probe_21 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      generator_input_probe_22 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      generator_input_probe_23 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      generator_input_probe_24 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      generator_input_probe_25 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      generator_done_probe : OUT STD_LOGIC;
-      generator_output_probe : OUT STD_LOGIC;
-      capture_output_probe_0 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      capture_output_probe_1 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      capture_output_probe_2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      capture_output_probe_3 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      capture_output_probe_4 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      capture_output_probe_5 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       capture_state_probe : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-      capture_done_probe : OUT STD_LOGIC;
       s00_axi_aclk : IN STD_LOGIC;
       s00_axi_aresetn : IN STD_LOGIC;
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
@@ -152,7 +122,7 @@ ARCHITECTURE design_1_PPM_0_3_arch OF design_1_PPM_0_3 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_PPM_0_3_arch : ARCHITECTURE IS "design_1_PPM_0_3,PPM_v1_0,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF design_1_PPM_0_3_arch: ARCHITECTURE IS "design_1_PPM_0_3,PPM_v1_0,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=PPM,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6}";
+  ATTRIBUTE CORE_GENERATION_INFO OF design_1_PPM_0_3_arch: ARCHITECTURE IS "design_1_PPM_0_3,PPM_v1_0,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=PPM,x_ipVersion=1.0,x_ipCoreRevision=9,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_rready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI RREADY";
@@ -189,22 +159,7 @@ BEGIN
     PORT MAP (
       PPM_Input => PPM_Input,
       PPM_Output => PPM_Output,
-      generator_input_probe_20 => generator_input_probe_20,
-      generator_input_probe_21 => generator_input_probe_21,
-      generator_input_probe_22 => generator_input_probe_22,
-      generator_input_probe_23 => generator_input_probe_23,
-      generator_input_probe_24 => generator_input_probe_24,
-      generator_input_probe_25 => generator_input_probe_25,
-      generator_done_probe => generator_done_probe,
-      generator_output_probe => generator_output_probe,
-      capture_output_probe_0 => capture_output_probe_0,
-      capture_output_probe_1 => capture_output_probe_1,
-      capture_output_probe_2 => capture_output_probe_2,
-      capture_output_probe_3 => capture_output_probe_3,
-      capture_output_probe_4 => capture_output_probe_4,
-      capture_output_probe_5 => capture_output_probe_5,
       capture_state_probe => capture_state_probe,
-      capture_done_probe => capture_done_probe,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_aresetn => s00_axi_aresetn,
       s00_axi_awaddr => s00_axi_awaddr,

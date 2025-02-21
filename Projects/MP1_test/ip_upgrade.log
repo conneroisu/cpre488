@@ -1,6 +1,87 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Fri Feb 21 03:02:45 2025
+| Host         : DESKTOP-V4CC4PR running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_PPM_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_PPM_0_3 (xilinx.com:user:PPM:1.0) from (Rev. 8) to (Rev. 9)
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Fri Feb 21 02:43:44 2025
+| Host         : DESKTOP-V4CC4PR running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_PPM_0_3'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_PPM_0_3 (xilinx.com:user:PPM:1.0) from (Rev. 7) to (Rev. 8)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_PPM_0_3'. These changes may impact your design.
+
+
+-Upgrade has removed port 'capture_done_probe'
+
+-Upgrade has removed port 'capture_output_probe_0'
+
+-Upgrade has removed port 'capture_output_probe_1'
+
+-Upgrade has removed port 'capture_output_probe_2'
+
+-Upgrade has removed port 'capture_output_probe_3'
+
+-Upgrade has removed port 'capture_output_probe_4'
+
+-Upgrade has removed port 'capture_output_probe_5'
+
+-Upgrade has removed port 'generator_done_probe'
+
+-Upgrade has removed port 'generator_input_probe_20'
+
+-Upgrade has removed port 'generator_input_probe_21'
+
+-Upgrade has removed port 'generator_input_probe_22'
+
+-Upgrade has removed port 'generator_input_probe_23'
+
+-Upgrade has removed port 'generator_input_probe_24'
+
+-Upgrade has removed port 'generator_input_probe_25'
+
+-Upgrade has removed port 'generator_output_probe'
+
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 | Date         : Thu Feb 20 23:03:51 2025
 | Host         : CO2041-09 running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

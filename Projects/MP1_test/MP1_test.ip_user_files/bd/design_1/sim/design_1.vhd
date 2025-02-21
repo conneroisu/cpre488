@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Thu Feb 20 23:03:58 2025
---Host        : CO2041-09 running 64-bit major release  (build 9200)
+--Date        : Fri Feb 21 03:02:53 2025
+--Host        : DESKTOP-V4CC4PR running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
 --Purpose     : IP block netlist
@@ -707,49 +707,38 @@ architecture STRUCTURE of design_1 is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_rst_ps7_0_100M_0;
-  component design_1_system_ila_0_0 is
+  component design_1_system_ila_0_1 is
   port (
     clk : in STD_LOGIC;
     probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe7 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe8 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe9 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe10 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe11 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe12 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe13 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe14 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe15 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe16 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe17 : in STD_LOGIC_VECTOR ( 0 to 0 )
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SLOT_0_AXI_awaddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    SLOT_0_AXI_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    SLOT_0_AXI_awvalid : in STD_LOGIC;
+    SLOT_0_AXI_awready : in STD_LOGIC;
+    SLOT_0_AXI_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    SLOT_0_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    SLOT_0_AXI_wvalid : in STD_LOGIC;
+    SLOT_0_AXI_wready : in STD_LOGIC;
+    SLOT_0_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    SLOT_0_AXI_bvalid : in STD_LOGIC;
+    SLOT_0_AXI_bready : in STD_LOGIC;
+    SLOT_0_AXI_araddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    SLOT_0_AXI_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    SLOT_0_AXI_arvalid : in STD_LOGIC;
+    SLOT_0_AXI_arready : in STD_LOGIC;
+    SLOT_0_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    SLOT_0_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    SLOT_0_AXI_rvalid : in STD_LOGIC;
+    SLOT_0_AXI_rready : in STD_LOGIC;
+    resetn : in STD_LOGIC
   );
-  end component design_1_system_ila_0_0;
+  end component design_1_system_ila_0_1;
   component design_1_PPM_0_3 is
   port (
     PPM_Input : in STD_LOGIC;
     PPM_Output : out STD_LOGIC;
-    generator_input_probe_20 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    generator_input_probe_21 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    generator_input_probe_22 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    generator_input_probe_23 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    generator_input_probe_24 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    generator_input_probe_25 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    generator_done_probe : out STD_LOGIC;
-    generator_output_probe : out STD_LOGIC;
-    capture_output_probe_0 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    capture_output_probe_1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    capture_output_probe_2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    capture_output_probe_3 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    capture_output_probe_4 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    capture_output_probe_5 : out STD_LOGIC_VECTOR ( 31 downto 0 );
     capture_state_probe : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    capture_done_probe : out STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 5 downto 0 );
@@ -781,54 +770,6 @@ architecture STRUCTURE of design_1 is
   signal PPM_0_PPM_Output : STD_LOGIC;
   attribute DEBUG of PPM_0_PPM_Output : signal is "true";
   attribute MARK_DEBUG of PPM_0_PPM_Output : signal is std.standard.true;
-  signal capture_done_probe : STD_LOGIC;
-  attribute DEBUG of capture_done_probe : signal is "true";
-  attribute MARK_DEBUG of capture_done_probe : signal is std.standard.true;
-  signal capture_output_probe_0 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of capture_output_probe_0 : signal is "true";
-  attribute MARK_DEBUG of capture_output_probe_0 : signal is std.standard.true;
-  signal capture_output_probe_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of capture_output_probe_1 : signal is "true";
-  attribute MARK_DEBUG of capture_output_probe_1 : signal is std.standard.true;
-  signal capture_output_probe_2 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of capture_output_probe_2 : signal is "true";
-  attribute MARK_DEBUG of capture_output_probe_2 : signal is std.standard.true;
-  signal capture_output_probe_3 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of capture_output_probe_3 : signal is "true";
-  attribute MARK_DEBUG of capture_output_probe_3 : signal is std.standard.true;
-  signal capture_output_probe_4 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of capture_output_probe_4 : signal is "true";
-  attribute MARK_DEBUG of capture_output_probe_4 : signal is std.standard.true;
-  signal capture_output_probe_5 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of capture_output_probe_5 : signal is "true";
-  attribute MARK_DEBUG of capture_output_probe_5 : signal is std.standard.true;
-  signal capture_state_probe : STD_LOGIC_VECTOR ( 2 downto 0 );
-  attribute DEBUG of capture_state_probe : signal is "true";
-  attribute MARK_DEBUG of capture_state_probe : signal is std.standard.true;
-  signal generator_done_probe : STD_LOGIC;
-  attribute DEBUG of generator_done_probe : signal is "true";
-  attribute MARK_DEBUG of generator_done_probe : signal is std.standard.true;
-  signal generator_input_probe_20 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of generator_input_probe_20 : signal is "true";
-  attribute MARK_DEBUG of generator_input_probe_20 : signal is std.standard.true;
-  signal generator_input_probe_21 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of generator_input_probe_21 : signal is "true";
-  attribute MARK_DEBUG of generator_input_probe_21 : signal is std.standard.true;
-  signal generator_input_probe_22 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of generator_input_probe_22 : signal is "true";
-  attribute MARK_DEBUG of generator_input_probe_22 : signal is std.standard.true;
-  signal generator_input_probe_23 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of generator_input_probe_23 : signal is "true";
-  attribute MARK_DEBUG of generator_input_probe_23 : signal is std.standard.true;
-  signal generator_input_probe_24 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of generator_input_probe_24 : signal is "true";
-  attribute MARK_DEBUG of generator_input_probe_24 : signal is std.standard.true;
-  signal generator_input_probe_25 : STD_LOGIC_VECTOR ( 31 downto 0 );
-  attribute DEBUG of generator_input_probe_25 : signal is "true";
-  attribute MARK_DEBUG of generator_input_probe_25 : signal is std.standard.true;
-  signal generator_output_probe : STD_LOGIC;
-  attribute DEBUG of generator_output_probe : signal is "true";
-  attribute MARK_DEBUG of generator_output_probe : signal is std.standard.true;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -891,25 +832,84 @@ architecture STRUCTURE of design_1 is
   signal processing_system7_0_M_AXI_GP0_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal processing_system7_0_M_AXI_GP0_WVALID : STD_LOGIC;
   signal ps7_0_axi_periph_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
+  attribute CONN_BUS_INFO : string;
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_ARADDR : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE ARADDR";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_ARADDR : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_ARADDR : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_ARPROT : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE ARPROT";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_ARPROT : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_ARPROT : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_ARREADY : STD_LOGIC;
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_ARREADY : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE ARREADY";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_ARREADY : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_ARREADY : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_ARVALID : STD_LOGIC;
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_ARVALID : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE ARVALID";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_ARVALID : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_ARVALID : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_AWADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_AWADDR : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE AWADDR";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_AWADDR : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_AWADDR : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_AWPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_AWPROT : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE AWPROT";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_AWPROT : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_AWPROT : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_AWREADY : STD_LOGIC;
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_AWREADY : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE AWREADY";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_AWREADY : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_AWREADY : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_AWVALID : STD_LOGIC;
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_AWVALID : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE AWVALID";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_AWVALID : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_AWVALID : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_BREADY : STD_LOGIC;
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_BREADY : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE BREADY";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_BREADY : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_BREADY : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_BRESP : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE BRESP";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_BRESP : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_BRESP : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_BVALID : STD_LOGIC;
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_BVALID : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE BVALID";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_BVALID : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_BVALID : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_RDATA : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE RDATA";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_RDATA : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_RDATA : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_RREADY : STD_LOGIC;
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_RREADY : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE RREADY";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_RREADY : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_RREADY : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_RRESP : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE RRESP";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_RRESP : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_RRESP : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_RVALID : STD_LOGIC;
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_RVALID : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE RVALID";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_RVALID : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_RVALID : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_WDATA : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE WDATA";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_WDATA : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_WDATA : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_WREADY : STD_LOGIC;
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_WREADY : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE WREADY";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_WREADY : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_WREADY : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_WSTRB : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE WSTRB";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_WSTRB : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_WSTRB : signal is std.standard.true;
   signal ps7_0_axi_periph_M00_AXI_WVALID : STD_LOGIC;
+  attribute CONN_BUS_INFO of ps7_0_axi_periph_M00_AXI_WVALID : signal is "ps7_0_axi_periph_M00_AXI xilinx.com:interface:aximm:1.0 AXI4LITE WVALID";
+  attribute DEBUG of ps7_0_axi_periph_M00_AXI_WVALID : signal is "true";
+  attribute MARK_DEBUG of ps7_0_axi_periph_M00_AXI_WVALID : signal is std.standard.true;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_PPM_0_capture_state_probe_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_processing_system7_0_TTC0_WAVE0_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE1_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE2_OUT_UNCONNECTED : STD_LOGIC;
@@ -951,22 +951,7 @@ PPM_0: component design_1_PPM_0_3
      port map (
       PPM_Input => PMOD_Input_1,
       PPM_Output => PPM_0_PPM_Output,
-      capture_done_probe => capture_done_probe,
-      capture_output_probe_0(31 downto 0) => capture_output_probe_0(31 downto 0),
-      capture_output_probe_1(31 downto 0) => capture_output_probe_1(31 downto 0),
-      capture_output_probe_2(31 downto 0) => capture_output_probe_2(31 downto 0),
-      capture_output_probe_3(31 downto 0) => capture_output_probe_3(31 downto 0),
-      capture_output_probe_4(31 downto 0) => capture_output_probe_4(31 downto 0),
-      capture_output_probe_5(31 downto 0) => capture_output_probe_5(31 downto 0),
-      capture_state_probe(2 downto 0) => capture_state_probe(2 downto 0),
-      generator_done_probe => generator_done_probe,
-      generator_input_probe_20(31 downto 0) => generator_input_probe_20(31 downto 0),
-      generator_input_probe_21(31 downto 0) => generator_input_probe_21(31 downto 0),
-      generator_input_probe_22(31 downto 0) => generator_input_probe_22(31 downto 0),
-      generator_input_probe_23(31 downto 0) => generator_input_probe_23(31 downto 0),
-      generator_input_probe_24(31 downto 0) => generator_input_probe_24(31 downto 0),
-      generator_input_probe_25(31 downto 0) => generator_input_probe_25(31 downto 0),
-      generator_output_probe => generator_output_probe,
+      capture_state_probe(2 downto 0) => NLW_PPM_0_capture_state_probe_UNCONNECTED(2 downto 0),
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
       s00_axi_araddr(5 downto 0) => ps7_0_axi_periph_M00_AXI_ARADDR(5 downto 0),
       s00_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
@@ -1139,26 +1124,30 @@ rst_ps7_0_100M: component design_1_rst_ps7_0_100M_0
       peripheral_reset(0) => NLW_rst_ps7_0_100M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
     );
-system_ila_0: component design_1_system_ila_0_0
+system_ila_0: component design_1_system_ila_0_1
      port map (
+      SLOT_0_AXI_araddr(5 downto 0) => ps7_0_axi_periph_M00_AXI_ARADDR(5 downto 0),
+      SLOT_0_AXI_arprot(2 downto 0) => ps7_0_axi_periph_M00_AXI_ARPROT(2 downto 0),
+      SLOT_0_AXI_arready => ps7_0_axi_periph_M00_AXI_ARREADY,
+      SLOT_0_AXI_arvalid => ps7_0_axi_periph_M00_AXI_ARVALID,
+      SLOT_0_AXI_awaddr(5 downto 0) => ps7_0_axi_periph_M00_AXI_AWADDR(5 downto 0),
+      SLOT_0_AXI_awprot(2 downto 0) => ps7_0_axi_periph_M00_AXI_AWPROT(2 downto 0),
+      SLOT_0_AXI_awready => ps7_0_axi_periph_M00_AXI_AWREADY,
+      SLOT_0_AXI_awvalid => ps7_0_axi_periph_M00_AXI_AWVALID,
+      SLOT_0_AXI_bready => ps7_0_axi_periph_M00_AXI_BREADY,
+      SLOT_0_AXI_bresp(1 downto 0) => ps7_0_axi_periph_M00_AXI_BRESP(1 downto 0),
+      SLOT_0_AXI_bvalid => ps7_0_axi_periph_M00_AXI_BVALID,
+      SLOT_0_AXI_rdata(31 downto 0) => ps7_0_axi_periph_M00_AXI_RDATA(31 downto 0),
+      SLOT_0_AXI_rready => ps7_0_axi_periph_M00_AXI_RREADY,
+      SLOT_0_AXI_rresp(1 downto 0) => ps7_0_axi_periph_M00_AXI_RRESP(1 downto 0),
+      SLOT_0_AXI_rvalid => ps7_0_axi_periph_M00_AXI_RVALID,
+      SLOT_0_AXI_wdata(31 downto 0) => ps7_0_axi_periph_M00_AXI_WDATA(31 downto 0),
+      SLOT_0_AXI_wready => ps7_0_axi_periph_M00_AXI_WREADY,
+      SLOT_0_AXI_wstrb(3 downto 0) => ps7_0_axi_periph_M00_AXI_WSTRB(3 downto 0),
+      SLOT_0_AXI_wvalid => ps7_0_axi_periph_M00_AXI_WVALID,
       clk => processing_system7_0_FCLK_CLK0,
-      probe0(0) => capture_done_probe,
-      probe1(31 downto 0) => capture_output_probe_0(31 downto 0),
-      probe10(31 downto 0) => generator_input_probe_21(31 downto 0),
-      probe11(31 downto 0) => generator_input_probe_22(31 downto 0),
-      probe12(31 downto 0) => generator_input_probe_23(31 downto 0),
-      probe13(31 downto 0) => generator_input_probe_24(31 downto 0),
-      probe14(31 downto 0) => generator_input_probe_25(31 downto 0),
-      probe15(0) => generator_output_probe,
-      probe16(0) => PMOD_Input_1,
-      probe17(0) => PPM_0_PPM_Output,
-      probe2(31 downto 0) => capture_output_probe_1(31 downto 0),
-      probe3(31 downto 0) => capture_output_probe_2(31 downto 0),
-      probe4(31 downto 0) => capture_output_probe_3(31 downto 0),
-      probe5(31 downto 0) => capture_output_probe_4(31 downto 0),
-      probe6(31 downto 0) => capture_output_probe_5(31 downto 0),
-      probe7(2 downto 0) => capture_state_probe(2 downto 0),
-      probe8(0) => generator_done_probe,
-      probe9(31 downto 0) => generator_input_probe_20(31 downto 0)
+      probe0(0) => PMOD_Input_1,
+      probe1(0) => PPM_0_PPM_Output,
+      resetn => rst_ps7_0_100M_peripheral_aresetn(0)
     );
 end STRUCTURE;
