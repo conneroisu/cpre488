@@ -5,8 +5,8 @@
 // Base addresses for AXI registers
 #define PPM_INPUT_BASE  0x43C00028  // Read Slave registers 10-15
 #define PPM_OUTPUT_BASE 0x43C00010  // Write Slave registers 4-9
-#define SWITCHES_BASE   0x40000000  // Base address for switches
-#define BUTTONS_BASE    0x40000004  // Base address for buttons
+#define SWITCHES_BASE   0x41210000  // Base address for switches
+#define BUTTONS_BASE    0x41200000  // Base address for buttons
 
 // Buffers for reading and writing PPM data
 UINTPTR ppm_read_buffer[6];
