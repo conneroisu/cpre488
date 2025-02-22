@@ -47,7 +47,7 @@ signal temp_output : std_logic_vector (31 downto 0);
 type state_type is (IDLE,INTERCHANNEL,MEASURE,STORE);
 signal PS,NS : state_type;
 
-signal ppm_shift : std_logic_vector (2 downto 0);
+signal ppm_shift : std_logic_vector (19 downto 0);
 
 signal low_valid : std_logic;
 signal high_valid : std_logic;
@@ -90,7 +90,7 @@ begin
                 temp_output <= (others => '0');
                 low_valid <= '0';
                 high_valid <= '0';
-                ppm_shift <= "111";
+                ppm_shift <= (others => '1');
             else 
                 -- Iterate count for measure --
                 if (start_count = '1') then
@@ -102,15 +102,15 @@ begin
                 end if;
 
                 -- Shift register for input validation --
-                ppm_shift <= ppm_shift(1 downto 0) & PPM_Input;
+                ppm_shift <= ppm_shift(18 downto 0) & PPM_Input;
 
-                if ppm_shift = "000" then
+                if ppm_shift = (ppm_shift'range => '0') then
                     low_valid <= '1';
                 else
                     low_valid <= '0';
                 end if;
 
-                if ppm_shift = "111" then
+                if ppm_shift = (ppm_shift'range => '1') then
                     high_valid <= '1';
                 else
                     high_valid <= '0';
@@ -302,10 +302,8 @@ begin
 
            probe_done <= done;
            probe_state <= state;
-		   
-		   channel_counter_out <= channel_counter;
-		   
-		   
+
+           channel_counter_out <= channel_counter;
         
         end if;
     end process reg_proc;
