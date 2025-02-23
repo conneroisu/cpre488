@@ -3,10 +3,11 @@
 #include "xil_io.h"
 
 // Base addresses for AXI registers
+#define PPM_SLV_BASE  0x43C00000  // Read Slave registers 10-15
 #define PPM_INPUT_BASE  0x43C00028  // Read Slave registers 10-15
 #define PPM_OUTPUT_BASE 0x43C00010  // Write Slave registers 4-9
-#define SWITCHES_BASE   0x40000000  // Base address for switches
-#define BUTTONS_BASE    0x40000004  // Base address for buttons
+#define SWITCHES_BASE   0x41210000  // Base address for switches
+#define BUTTONS_BASE    0x41200000  // Base address for buttons
 
 // Buffers for reading and writing PPM data
 UINTPTR ppm_read_buffer[6];
@@ -19,19 +20,29 @@ int record_index = 0;
 int play_index = 0;
 
 void read_ppm() {
-    for (int i = 0; i < 6; i++) {
-        ppm_read_buffer[i] = Xil_In32(PPM_INPUT_BASE + (i * 4));
-    }
+	while(1){
+		if(Xil_In32(PPM_SLV_BASE + 8) == 1){
+		    for (int i = 5; i >= 0; i--) {
+		        ppm_read_buffer[i] = Xil_In32(PPM_INPUT_BASE + (i * 4));
+		    }
+		    break;
+		}
+	}
 }
 
 void write_ppm() {
-    for (int i = 0; i < 6; i++) {
-        Xil_Out32(PPM_OUTPUT_BASE + (i * 4), ppm_write_buffer[i]);
-    }
+//	while(1){
+//		if(Xil_In32(PPM_SLV_BASE + 12)){
+		    for (int i = 0; i < 6; i++) {
+		        Xil_Out32(PPM_OUTPUT_BASE + (i * 4), ppm_write_buffer[i]);
+		    }
+//		    break;
+//		}
+//	}
 }
 
 void print_ppm(const char* label, UINTPTR* buffer) {
-    char msg[100];
+    char msg[200];
     sprintf(msg, "%s: %08X %08X %08X %08X %08X %08X\n\r",
             label, buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5]);
     print(msg);
@@ -55,8 +66,9 @@ int main() {
         // Hardware vs. Software Relay Mode (SW0)
         if (!(switches & 0x1)) {
             print("Hardware Relay Mode Active\n\r");
-            Xil_Out32(0x43C00000,0x1);
+            Xil_Out32(PPM_SLV_BASE,0x0);
         } else {
+        	Xil_Out32(PPM_SLV_BASE,0x1);
             read_ppm();
             for (int i = 0; i < 6; i++) {
                 ppm_write_buffer[i] = ppm_read_buffer[i];  // Copy input to output
@@ -72,7 +84,7 @@ int main() {
         }
 
         // Software Record Mode (SW2)
-        if (switches & 0x2) {
+        if (switches & 0x4) {
             if (buttons & 0x2 && record_index < MAX_FRAMES) {  // BTND stores
                 read_ppm();
                 for (int i = 0; i < 6; i++) {
@@ -83,7 +95,7 @@ int main() {
                 sprintf(msg, "Frame %d recorded\n\r", record_index);
                 print(msg);
             }
-            if (buttons & 0x8 && record_index > 0) {  // BTNU rewinds
+            if (buttons & 0x4 && record_index > 0) {  // BTNU rewinds
                 record_index--;
                 char msg[50];
                 sprintf(msg, "Rewind to frame %d\n\r", record_index);
@@ -92,8 +104,8 @@ int main() {
         }
 
         // Software Play Mode (SW3)
-        if (switches & 0x3) {
-            if (buttons & 0x3 && play_index < record_index) {  //right button (BTNR) 
+        if (switches & 0x8) {
+            if (buttons & 0x8 && play_index < record_index) {  //right button (BTNR)
                 for (int i = 0; i < 6; i++) {
                     ppm_write_buffer[i] = recorded_frames[play_index][i];
                 }
@@ -103,7 +115,7 @@ int main() {
                 sprintf(msg, "Playing frame %d\n\r", play_index);
                 print(msg);
             }
-            if (buttons & 0x4 && play_index > 0) {  //  left button (BTNL) 
+            if (buttons & 0xC && play_index > 0) {  //  left button (BTNL)
                 play_index--;
                 char msg[50];
                 sprintf(msg, "Rewind to play frame %d\n\r", play_index);
@@ -112,7 +124,7 @@ int main() {
         }
 
         // Software Filter Mode (SW4)? limit max values?
-        if (switches & 0x4) {
+        if (switches & 0xC) {
             read_ppm();
             for (int i = 0; i < 6; i++) {
                 if (ppm_read_buffer[i] > 2000) {  // Example: Limit max value
