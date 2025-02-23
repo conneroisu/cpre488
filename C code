@@ -21,8 +21,8 @@ int play_index = 0;
 
 void read_ppm() {
 	while(1){
-		if(Xil_In32(PPM_SLV_BASE + 8) == 6){
-		    for (int i = 0; i < 6; i++) {
+		if(Xil_In32(PPM_SLV_BASE + 8) == 1){
+		    for (int i = 5; i >= 0; i--) {
 		        ppm_read_buffer[i] = Xil_In32(PPM_INPUT_BASE + (i * 4));
 		    }
 		    break;
@@ -42,7 +42,7 @@ void write_ppm() {
 }
 
 void print_ppm(const char* label, UINTPTR* buffer) {
-    char msg[100];
+    char msg[200];
     sprintf(msg, "%s: %08X %08X %08X %08X %08X %08X\n\r",
             label, buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5]);
     print(msg);
