@@ -29,10 +29,10 @@
   "../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/design_1/ipshared/84c0/src/Capture_PPM_simp.vhd" \
-  "../../../bd/design_1/ipshared/84c0/src/GeneratePPM.vhd" \
-  "../../../bd/design_1/ipshared/84c0/hdl/PPM_v1_0_S00_AXI.vhd" \
-  "../../../bd/design_1/ipshared/84c0/hdl/PPM_v1_0.vhd" \
+  "../../../bd/design_1/ipshared/53c6/src/Capture_PPM_simp.vhd" \
+  "../../../bd/design_1/ipshared/53c6/src/GeneratePPM.vhd" \
+  "../../../bd/design_1/ipshared/53c6/hdl/PPM_v1_0_S00_AXI.vhd" \
+  "../../../bd/design_1/ipshared/53c6/hdl/PPM_v1_0.vhd" \
   "../../../bd/design_1/ip/design_1_PPM_0_3/sim/design_1_PPM_0_3.vhd" \
 -endlib
 -makelib ies_lib/lib_cdc_v1_0_2 \
@@ -69,6 +69,9 @@
 -makelib ies_lib/generic_baseblocks_v2_1_0 \
   "../../../../MP1_test.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
 -endlib
+-makelib ies_lib/axi_register_slice_v2_1_21 \
+  "../../../../MP1_test.srcs/sources_1/bd/design_1/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v" \
+-endlib
 -makelib ies_lib/fifo_generator_v13_2_5 \
   "../../../../MP1_test.srcs/sources_1/bd/design_1/ipshared/276e/simulation/fifo_generator_vlog_beh.v" \
 -endlib
@@ -81,8 +84,24 @@
 -makelib ies_lib/axi_data_fifo_v2_1_20 \
   "../../../../MP1_test.srcs/sources_1/bd/design_1/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v" \
 -endlib
--makelib ies_lib/axi_register_slice_v2_1_21 \
-  "../../../../MP1_test.srcs/sources_1/bd/design_1/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v" \
+-makelib ies_lib/axi_crossbar_v2_1_22 \
+  "../../../../MP1_test.srcs/sources_1/bd/design_1/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+-endlib
+-makelib ies_lib/axi_lite_ipif_v3_0_4 \
+  "../../../../MP1_test.srcs/sources_1/bd/design_1/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/interrupt_control_v3_1_4 \
+  "../../../../MP1_test.srcs/sources_1/bd/design_1/ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/axi_gpio_v2_0_23 \
+  "../../../../MP1_test.srcs/sources_1/bd/design_1/ipshared/bb35/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_axi_gpio_0_0/sim/design_1_axi_gpio_0_0.vhd" \
+  "../../../bd/design_1/ip/design_1_axi_gpio_0_4/sim/design_1_axi_gpio_0_4.vhd" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_21 \
   "../../../../MP1_test.srcs/sources_1/bd/design_1/ipshared/8dfa/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

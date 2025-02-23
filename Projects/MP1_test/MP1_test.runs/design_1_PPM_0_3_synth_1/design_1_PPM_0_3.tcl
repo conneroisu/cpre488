@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3.tcl"
+  variable script "C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3.tcl"
   variable category "vivado_synth"
 }
 
@@ -71,6 +71,10 @@ proc create_report { reportName command } {
 }
 OPTRACE "design_1_PPM_0_3_synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 5
+set_param synth.incrementalSynthesisCache C:/Users/jaxie963/AppData/Local/Temp/.Xil_Jaxie963/Vivado-13808-CO2041-09/incrSyn
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
@@ -79,19 +83,19 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.cache/wt [current_project]
-set_property parent.project_path C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.cache/wt [current_project]
+set_property parent.project_path C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
-set_property ip_repo_paths c:/Users/oparker/cpre488/Projects/ip_repo [current_project]
+set_property ip_repo_paths c:/Users/jaxie963/Temp/cpre488/Projects/ip_repo [current_project]
 update_ip_catalog
-set_property ip_output_repo c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.cache/ip [current_project]
+set_property ip_output_repo c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3.xci
+read_ip -quiet C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -105,7 +109,7 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cached_ip [config_ip_cache -export -no_bom  -dir C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1 -new_name design_1_PPM_0_3 -ip [get_ips design_1_PPM_0_3]]
+set cached_ip [config_ip_cache -export -no_bom  -dir C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1 -new_name design_1_PPM_0_3 -ip [get_ips design_1_PPM_0_3]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cached_ip eq {} } {
@@ -157,32 +161,32 @@ create_report "design_1_PPM_0_3_synth_1_synth_report_utilization_0" "report_util
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3.dcp c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3.dcp
+  file copy -force C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3.dcp c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.v
+  write_verilog -force -mode synth_stub c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.vhdl
+  write_vhdl -force -mode synth_stub c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_sim_netlist.v
+  write_verilog -force -mode funcsim c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -192,47 +196,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3.dcp c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3.dcp
+  file copy -force C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3.dcp c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3_stub.v c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.v
+  file rename -force C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3_stub.v c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3_stub.vhdl c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.vhdl
+  file rename -force C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3_stub.vhdl c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3_sim_netlist.v c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_sim_netlist.v
+  file rename -force C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3_sim_netlist.v c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3_sim_netlist.vhdl c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_sim_netlist.vhdl
+  file rename -force C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.runs/design_1_PPM_0_3_synth_1/design_1_PPM_0_3_sim_netlist.vhdl c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cached_ip 
 
-if {[file isdir C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.ip_user_files/ip/design_1_PPM_0_3]} {
+if {[file isdir C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.ip_user_files/ip/design_1_PPM_0_3]} {
   catch { 
-    file copy -force c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.v C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.ip_user_files/ip/design_1_PPM_0_3
+    file copy -force c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.v C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.ip_user_files/ip/design_1_PPM_0_3
   }
 }
 
-if {[file isdir C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.ip_user_files/ip/design_1_PPM_0_3]} {
+if {[file isdir C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.ip_user_files/ip/design_1_PPM_0_3]} {
   catch { 
-    file copy -force c:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.vhdl C:/Users/oparker/cpre488/Projects/MP1_test/MP1_test.ip_user_files/ip/design_1_PPM_0_3
+    file copy -force c:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.srcs/sources_1/bd/design_1/ip/design_1_PPM_0_3/design_1_PPM_0_3_stub.vhdl C:/Users/jaxie963/Temp/cpre488/Projects/MP1_test/MP1_test.ip_user_files/ip/design_1_PPM_0_3
   }
 }
 file delete __synthesis_is_running__

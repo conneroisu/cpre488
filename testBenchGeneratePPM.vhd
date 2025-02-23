@@ -61,16 +61,15 @@ begin
         RESET_tb <= '1';
         wait for 50 ns;
 
-        slv_reg20_tb <= conv_std_logic_vector(1500, 32);
-        slv_reg21_tb <= conv_std_logic_vector(800, 32);
-        slv_reg22_tb <= conv_std_logic_vector(1000, 32);
-        slv_reg23_tb <= conv_std_logic_vector(1250, 32);
-        slv_reg24_tb <= conv_std_logic_vector(2000, 32);
-        slv_reg25_tb <= conv_std_logic_vector(1750, 32);
+        slv_reg20_tb <= conv_std_logic_vector(50000, 32);
+        slv_reg21_tb <= conv_std_logic_vector(80000, 32);
+        slv_reg22_tb <= conv_std_logic_vector(10000, 32);
+        slv_reg23_tb <= conv_std_logic_vector(20000, 32);
+        slv_reg24_tb <= conv_std_logic_vector(30000, 32);
+        slv_reg25_tb <= conv_std_logic_vector(90000, 32);
 
-        wait until PPM_Done_tb = '1';
 
-        wait for 15000 ns;
+        wait for 20 ms;
 
         report "Done" severity note;
     end process;

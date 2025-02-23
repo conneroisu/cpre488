@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x8B1F68CA42B4F864",
+      "boundary_crc": "0x8B1F68CA4A1E739B",
       "design_src": "SBD",
       "device": "xc7z020clg484-1",
       "name": "bd_36cd",
@@ -110,12 +110,12 @@
             "value_src": "default"
           },
           "NUM_READ_OUTSTANDING": {
-            "value": "8",
-            "value_src": "default"
+            "value": "2",
+            "value_src": "default_prop"
           },
           "NUM_WRITE_OUTSTANDING": {
-            "value": "8",
-            "value_src": "default"
+            "value": "2",
+            "value_src": "default_prop"
           },
           "MAX_BURST_LENGTH": {
             "value": "1",
@@ -130,12 +130,12 @@
             "value_src": "default_prop"
           },
           "NUM_READ_THREADS": {
-            "value": "4",
-            "value_src": "default"
+            "value": "1",
+            "value_src": "default_prop"
           },
           "NUM_WRITE_THREADS": {
-            "value": "4",
-            "value_src": "default"
+            "value": "1",
+            "value_src": "default_prop"
           },
           "RUSER_BITS_PER_BYTE": {
             "value": "0",

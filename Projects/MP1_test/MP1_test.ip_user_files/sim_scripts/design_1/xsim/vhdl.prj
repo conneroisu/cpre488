@@ -1,13 +1,15 @@
 vhdl xil_defaultlib  \
-"../../../bd/design_1/ipshared/84c0/src/Capture_PPM_simp.vhd" \
-"../../../bd/design_1/ipshared/84c0/src/GeneratePPM.vhd" \
-"../../../bd/design_1/ipshared/84c0/hdl/PPM_v1_0_S00_AXI.vhd" \
-"../../../bd/design_1/ipshared/84c0/hdl/PPM_v1_0.vhd" \
+"../../../bd/design_1/ipshared/53c6/src/Capture_PPM_simp.vhd" \
+"../../../bd/design_1/ipshared/53c6/src/GeneratePPM.vhd" \
+"../../../bd/design_1/ipshared/53c6/hdl/PPM_v1_0_S00_AXI.vhd" \
+"../../../bd/design_1/ipshared/53c6/hdl/PPM_v1_0.vhd" \
 "../../../bd/design_1/ip/design_1_PPM_0_3/sim/design_1_PPM_0_3.vhd" \
 "../../../bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
 "../../../bd/design_1/ip/design_1_system_ila_0_1/bd_0/sim/bd_36cd.vhd" \
 "../../../bd/design_1/ip/design_1_system_ila_0_1/bd_0/ip/ip_0/sim/bd_36cd_ila_lib_0.vhd" \
 "../../../bd/design_1/ip/design_1_system_ila_0_1/sim/design_1_system_ila_0_1.vhd" \
+"../../../bd/design_1/ip/design_1_axi_gpio_0_0/sim/design_1_axi_gpio_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_axi_gpio_0_4/sim/design_1_axi_gpio_0_4.vhd" \
 "../../../bd/design_1/sim/design_1.vhd" \
 
 nosort

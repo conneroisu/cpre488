@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Fri Feb 21 11:42:35 2025
-| Host             : CO2041-04 running 64-bit major release  (build 9200)
+| Date             : Sat Feb 22 18:40:45 2025
+| Host             : CO2041-09 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
 | Device           : xc7z020clg484-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.704        |
+| Total On-Chip Power (W)  | 1.705        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.558        |
+| Dynamic (W)              | 1.559        |
 | Device Static (W)        | 0.145        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 65.3         |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.019 |        4 |       --- |             --- |
-| Slice Logic              |     0.003 |     8624 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     2229 |     53200 |            4.19 |
-|   Register               |    <0.001 |     4661 |    106400 |            4.38 |
-|   LUT as Shift Register  |    <0.001 |      303 |     17400 |            1.74 |
-|   CARRY4                 |    <0.001 |      114 |     13300 |            0.86 |
-|   F7/F8 Muxes            |    <0.001 |       59 |     53200 |            0.11 |
+| Clocks                   |     0.020 |        4 |       --- |             --- |
+| Slice Logic              |     0.003 |     9516 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     2519 |     53200 |            4.73 |
+|   Register               |    <0.001 |     5115 |    106400 |            4.81 |
+|   CARRY4                 |    <0.001 |      131 |     13300 |            0.98 |
+|   LUT as Shift Register  |    <0.001 |      305 |     17400 |            1.75 |
+|   F7/F8 Muxes            |    <0.001 |       60 |     53200 |            0.11 |
 |   LUT as Distributed RAM |    <0.001 |       24 |     17400 |            0.14 |
-|   Others                 |     0.000 |      605 |       --- |             --- |
-| Signals                  |     0.005 |     6497 |       --- |             --- |
-| Block RAM                |     0.003 |      3.5 |       140 |            2.50 |
-| I/O                      |    <0.001 |        2 |       200 |            1.00 |
+|   Others                 |     0.000 |      633 |       --- |             --- |
+| Signals                  |     0.004 |     7221 |       --- |             --- |
+| Block RAM                |     0.002 |      3.5 |       140 |            2.50 |
+| I/O                      |    <0.001 |       15 |       200 |            7.50 |
 | PS7                      |     1.529 |        1 |       --- |             --- |
 | Static Power             |     0.145 |          |           |                 |
-| Total                    |     1.704 |          |           |                 |
+| Total                    |     1.705 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -153,19 +153,20 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| design_1_wrapper         |     1.558 |
+| design_1_wrapper         |     1.559 |
 |   dbg_hub                |     0.003 |
 |     inst                 |     0.003 |
 |       BSCANID.u_xsdbm_id |     0.003 |
-|   design_1_i             |     1.555 |
-|     PPM_0                |     0.006 |
-|       U0                 |     0.006 |
+|   design_1_i             |     1.556 |
+|     PPM_0                |     0.005 |
+|       U0                 |     0.005 |
 |     processing_system7_0 |     1.530 |
 |       inst               |     1.530 |
-|     ps7_0_axi_periph     |     0.004 |
+|     ps7_0_axi_periph     |     0.005 |
 |       s00_couplers       |     0.004 |
-|     system_ila_0         |     0.015 |
-|       U0                 |     0.015 |
+|       xbar               |     0.001 |
+|     system_ila_0         |     0.014 |
+|       U0                 |     0.014 |
 +--------------------------+-----------+
 
 

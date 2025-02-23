@@ -15,11 +15,12 @@ end GeneratePPM;
 
 architecture Behavioral of GeneratePPM is
 
-    type state_type is (IDLE, GAP_LOW, PULSE_HIGH, NEXT_CHANNEL, FRAME_COMPLETE);
+    type state_type is (IDLE, GAP_LOW, PULSE_HIGH, NEXT_CHANNEL, FRAME_COMPLETE, IDLE_PULSE, IDLE_LOW_PULSE);
     type int_array is array(0 to 5) of integer;
     signal PS, NS : state_type;
     
     signal cycle_counter : integer := 0;
+    signal cycle_counter_total : integer := 0;
     signal channel_index : integer range 0 to 5 := 0;
     signal pulse_widths : int_array := (others => 0);
 
@@ -35,9 +36,15 @@ begin
     end process;
 
     -- Next State Logic
-    process(PS, cycle_counter, channel_index,RESET)
+    process(PS, cycle_counter, channel_index,RESET,cycle_counter_total)
     begin
         case PS is
+            when IDLE_Pulse =>
+                if cycle_counter_total < 2000000 then
+                    NS <= IDLE_Pulse;
+                else
+                    NS <= IDLE;
+                end if;
             when IDLE =>
                 if RESET = '1' then
                     NS <= GAP_LOW; 
@@ -45,15 +52,22 @@ begin
                     NS <= IDLE;
                end if;
 
+            when IDLE_LOW_PULSE =>
+                if cycle_counter >= 40000 then
+                    NS <= IDLE_Pulse;
+                else
+                    NS <= IDLE_LOW_PULSE;
+                end if; 
+
             when GAP_LOW =>
-                if cycle_counter >= 400 then
+                if cycle_counter >= 40000 then
                     NS <= PULSE_HIGH;
                 else
                     NS <= GAP_LOW;
                 end if;
 
             when PULSE_HIGH =>
-                if (cycle_counter- 400) = pulse_widths(channel_index) then
+                if (cycle_counter- 40000) = pulse_widths(channel_index) then
                     if channel_index = 5 then
                         NS <= FRAME_COMPLETE;
                     else
@@ -68,7 +82,7 @@ begin
 
             when FRAME_COMPLETE =>
 --                if RESET = '0' then
-                    NS <= IDLE; 
+                    NS <= IDLE_LOW_PULSE; 
 --               else
 --                    NS <= FRAME_COMPLETE;
 --               end if;
@@ -88,14 +102,30 @@ begin
                     channel_index <= 0;
                     sw_PPM_Output <= '1';
                     PPM_Done <= '0';
+		            cycle_counter_total <= 0;
+                    
+                when IDLE_Pulse =>
+                    cycle_counter_total <= cycle_counter_total + 1;
+                    sw_PPM_Output <= '1';
+                    PPM_Done <= '1';
+                    cycle_counter <= 0;
+                    channel_index <= 0;
+
+                when IDLE_LOW_Pulse =>
+                    cycle_counter <= cycle_counter + 1;
+                    cycle_counter_total <= cycle_counter_total + 1;
+                    sw_PPM_Output <= '0';
+                    PPM_Done <= '0';
 
                 when GAP_LOW =>
                     cycle_counter <= cycle_counter + 1;
+                    cycle_counter_total <= cycle_counter_total + 1;
                     sw_PPM_Output <= '0';
                     PPM_Done <= '0';
 
                 when PULSE_HIGH =>
                     cycle_counter <= cycle_counter + 1;
+                    cycle_counter_total <= cycle_counter_total + 1;
                     sw_PPM_Output <= '1';
                     PPM_Done <= '0';
 
@@ -107,7 +137,7 @@ begin
                 when FRAME_COMPLETE =>
                     cycle_counter <= 0;
                     channel_index <= 0;
-                    PPM_Done <= '1';
+                    PPM_Done <= '0';
 
                 when others =>
                     cycle_counter <= 0;
