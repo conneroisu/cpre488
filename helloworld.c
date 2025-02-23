@@ -59,31 +59,39 @@ int main()
 //    print("Hello World\n\r");
 //    print("Successfully ran Hello World application");
 
-    UINTPTR Slv = 0x43C0000A;
+    UINTPTR Slv = 0x43C00028;
     char str[50];
     UINTPTR result;
 
 
     while(1){
-    	print("rkj");
-    	Xil_Out32(0x43C00000,0x1);
-    	print("09");
-    	Xil_Out32(0x43C00010,0x500);
-    	print("1");
-    	Xil_Out32(0x43C00014,0x500);
-    	print("2");
-    	Xil_Out32(0x43C00018,0x500);
-    	print("3");
-    	Xil_Out32(0x43C0001C,0x500);
-    	print("4");
-    	Xil_Out32(0x43C00020,0x500);
-    	print("5");
-    	Xil_Out32(0x43C00024,0x500);
-    	print("sf");
-    	//result = Xil_In32(Slv);
-    	print("fs");
-    	//sprintf(str, "\n\r result: %p", result);
-		//print(str);
+    	Xil_Out32(0x43C00000,0x0);
+    	if(Xil_In32(0x43C00008) == 1){
+        	result = Xil_In32(Slv);
+        	sprintf(str, "\n\r result: %08X", result);
+    		print(str);
+
+        	result = Xil_In32(Slv +4);
+        	sprintf(str, " result: %08X", result);
+    		print(str);
+
+        	result = Xil_In32(Slv + 8);
+        	sprintf(str, " result: %08X", result);
+    		print(str);
+
+        	result = Xil_In32(Slv + 12);
+        	sprintf(str, " result: %08X", result);
+    		print(str);
+
+        	result = Xil_In32(Slv + 16);
+        	sprintf(str, " result: %08X", result);
+    		print(str);
+
+        	result = Xil_In32(Slv + 20);
+        	sprintf(str, " result: %08X", result);
+    		print(str);
+    	}
+
     }
 
 
