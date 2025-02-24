@@ -59,6 +59,24 @@ begin
         CLR <= '1';
         wait for 1 us;
 
+        PPM_Input <= '0';
+        wait for 500 us;
+        PPM_Input <= '1';
+        wait for 1 ms;
+        PPM_Input <= '0';
+        wait for 500 us;
+        PPM_Input <= '1';
+        wait for 2 ms;
+        PPM_Input <= '0';
+        wait for 500 us;
+        PPM_Input <= '1';
+        wait for 3 ms;
+
+        PPM_Input <= '0';
+        wait for 500 us;
+        PPM_Input <= '1';
+        wait for 20 ms;
+
         -- Loop to generate PPM frames
         while now < 50 ms loop
             for i in 1 to 7 loop
@@ -67,7 +85,7 @@ begin
                 PPM_Input <= '1'; -- Start pulse
                 wait for MIN_PULSE + (i * 200 us); -- Vary each channel pulse
             end loop;
-            wait for PPM_FRAME - (6 * (MIN_PULSE + 500 us)); -- Frame gap
+            wait for 20 ms; -- Frame gap
         end loop;
         wait;
     end process;

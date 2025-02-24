@@ -72,10 +72,10 @@ vlog -work xil_defaultlib  -incr "+incdir+../../../../MP1_test.srcs/sources_1/bd
 "../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
 
 vcom -work xil_defaultlib  -93 \
-"../../../bd/design_1/ipshared/53c6/src/Capture_PPM_simp.vhd" \
-"../../../bd/design_1/ipshared/53c6/src/GeneratePPM.vhd" \
-"../../../bd/design_1/ipshared/53c6/hdl/PPM_v1_0_S00_AXI.vhd" \
-"../../../bd/design_1/ipshared/53c6/hdl/PPM_v1_0.vhd" \
+"../../../bd/design_1/ipshared/0e4e/src/Capture_PPM_simp.vhd" \
+"../../../bd/design_1/ipshared/0e4e/src/GeneratePPM.vhd" \
+"../../../bd/design_1/ipshared/0e4e/hdl/PPM_v1_0_S00_AXI.vhd" \
+"../../../bd/design_1/ipshared/0e4e/hdl/PPM_v1_0.vhd" \
 "../../../bd/design_1/ip/design_1_PPM_0_3/sim/design_1_PPM_0_3.vhd" \
 
 vcom -work lib_cdc_v1_0_2  -93 \

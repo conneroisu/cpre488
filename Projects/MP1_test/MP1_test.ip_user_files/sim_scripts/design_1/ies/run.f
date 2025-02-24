@@ -29,10 +29,10 @@
   "../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/design_1/ipshared/53c6/src/Capture_PPM_simp.vhd" \
-  "../../../bd/design_1/ipshared/53c6/src/GeneratePPM.vhd" \
-  "../../../bd/design_1/ipshared/53c6/hdl/PPM_v1_0_S00_AXI.vhd" \
-  "../../../bd/design_1/ipshared/53c6/hdl/PPM_v1_0.vhd" \
+  "../../../bd/design_1/ipshared/0e4e/src/Capture_PPM_simp.vhd" \
+  "../../../bd/design_1/ipshared/0e4e/src/GeneratePPM.vhd" \
+  "../../../bd/design_1/ipshared/0e4e/hdl/PPM_v1_0_S00_AXI.vhd" \
+  "../../../bd/design_1/ipshared/0e4e/hdl/PPM_v1_0.vhd" \
   "../../../bd/design_1/ip/design_1_PPM_0_3/sim/design_1_PPM_0_3.vhd" \
 -endlib
 -makelib ies_lib/lib_cdc_v1_0_2 \
