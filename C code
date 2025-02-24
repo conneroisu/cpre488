@@ -3,7 +3,7 @@
 #include "xil_io.h"
 
 // Base addresses for AXI registers
-#define PPM_SLV_BASE  0x43C00000  // Read Slave registers 10-15
+#define PPM_SLV_BASE  0x43C00000  // Base Slave register value
 #define PPM_INPUT_BASE  0x43C00028  // Read Slave registers 10-15
 #define PPM_OUTPUT_BASE 0x43C00010  // Write Slave registers 4-9
 #define SWITCHES_BASE   0x41210000  // Base address for switches
@@ -30,23 +30,35 @@ void read_ppm() {
 	}
 }
 
-void write_ppm() {
-//	while(1){
-//		if(Xil_In32(PPM_SLV_BASE + 12)){
-		    for (int i = 0; i < 6; i++) {
-		        Xil_Out32(PPM_OUTPUT_BASE + (i * 4), ppm_write_buffer[i]);
-		    }
-//		    break;
-//		}
-//	}
-}
-
 void print_ppm(const char* label, UINTPTR* buffer) {
     char msg[200];
     sprintf(msg, "%s: %08X %08X %08X %08X %08X %08X\n\r",
             label, buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5]);
     print(msg);
 }
+
+void write_ppm() {
+    UINTPTR Slv = 0x43C0000C;
+    char str[50];
+    UINTPTR result;
+
+//	while(1){
+		for (int i = 0; i < 6; i++) {
+			Xil_Out32(PPM_OUTPUT_BASE + (i * 4), ppm_write_buffer[i]);
+		}
+
+/*    	result = Xil_In32(Slv);
+    	sprintf(str, "result: %08X\n\r", result);
+    	print(str);
+
+		if(Xil_In32(PPM_SLV_BASE + 12) == 1){
+			break;
+		}
+		print_ppm("PPM Debug", ppm_write_buffer);
+
+	}*/
+}
+
 
 int main() {
     init_platform();
