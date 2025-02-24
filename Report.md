@@ -35,11 +35,12 @@ TODO: Do we want to go into specifics regarding the things we changed in the sla
 The AMBA AXI IP is connected to the Zynq processor on the main design through an AXI interconnect. This connection allows for a base address to be mapped for the IP which enables software access to the 16 slave registers (slv_reg) instantiated in the slave AXI. In order to access the individual slave registers, we had to introduce an appropriate offset to the address. In our case, it was + 0x4 per register. We believed this to be the case as the slave register sizes were set to 32 bits, or 4 bytes. So, for our design, since the base address for the AXI IP was 0x43C00000, our subsequent registers were mapped as such;
 
 - slv_reg0 = 0x43C00000
-- skv_reg1 = 0x43C00004
-- skv_reg1 = 0x43C00008
-- skv_reg2 = 0x43C0000C
-- skv_reg3 = 0x43C00010
-- skv_reg4 = 0x43C00014
+- slv_reg1 = 0x43C00004
+- slv_reg1 = 0x43C00008
+- slv_reg2 = 0x43C0000C
+- slv_reg3 = 0x43C00010
+- slv_reg4 = 0x43C00014
+- slv_regX = 0x43C00000 + (4 * X)
 
 Our system was designed such that the software reads a done signal from the PPM capture and generate FSM 
 
