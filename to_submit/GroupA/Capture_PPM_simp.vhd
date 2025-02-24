@@ -47,21 +47,25 @@ signal temp_output : std_logic_vector (31 downto 0);
 type state_type is (IDLE_DETECT,IDLE,INTERCHANNEL,MEASURE,STORE);
 signal PS,NS : state_type;
 
+-- Shift register for PPM input stability --
 signal ppm_shift : std_logic_vector (19 downto 0);
 
+-- Stable low and stable high indicators --
 signal low_valid : std_logic;
 signal high_valid : std_logic;
 
+-- Signals to relay done and state probes --
 signal done : std_logic;
 signal state : std_logic_vector (2 downto 0);
 
+-- Additional signals for register reset, output relay, and counter resets --
 signal out_reg_reset : std_logic;
 signal send_output : std_logic;
 signal count_reg_reset : std_logic; 
 signal iterate_count : std_logic;
 
+-- Signals for idle detection patch --
 signal idle_counter : std_logic_vector (20 downto 0);
-
 signal idle_detected : std_logic;
 
 begin
@@ -103,6 +107,7 @@ begin
                     temp_output <= std_logic_vector(unsigned(temp_output) + 1);
                 end if;
 
+                -- Resets output counter for next channel --
                 if (clk_counter_reset = '1') then
                     temp_output <= (others => '0');
                 end if;
@@ -130,6 +135,7 @@ begin
                     idle_counter <= (others => '0');
                 end if; 
 				
+                -- Anti-mid-frame logic, counts 5 ms of high to ensure idle status --
 				if (unsigned(idle_counter) >= to_unsigned(500000, 21)) then
 					idle_detected <= '1';
 				else 
@@ -148,17 +154,13 @@ begin
     comb_proc: process (PS, high_valid, low_valid, PPM_Input, channel_counter, idle_counter, idle_detected)
     begin 
 
-        -- Defaults
-        -- out_reg_reset <= '0';
-        -- clk_counter_reset <= '0';
-        -- count_reg_reset <= '0';
-        -- done <= '0';
-        -- iterate_count <= '0';
-        -- start_count <= '0';
-
 
         case PS is 
             
+
+            -- IDLE DETECT -- 
+            -- Anti-mid-frame logic
+            -- counts 5 ms of high to ensure idle status
             when IDLE_DETECT =>
 			
 				out_reg_reset <= '0';
@@ -206,6 +208,7 @@ begin
             -- Waits for high_valid (to trigger measurement)
             -- Triggers start_count
             when INTERCHANNEL =>
+
                 out_reg_reset <= '0';
                 count_reg_reset <= '0';
                 send_output <= '0';
@@ -240,6 +243,7 @@ begin
             -- Waits for low_valid (signifies end of data transfer)
             -- low_valid and high_valid cancel each other out in terms of data capture duration
             when MEASURE => 
+
                 done <= '0';
                 send_output <= '0';
                 count_reg_reset <= '0';
@@ -268,9 +272,11 @@ begin
                 iterate_count <= '0';
                 NS <= INTERCHANNEL;
 
+
             -- DEFAULT --
-            -- Default into IDLE
+            -- Default into IDLE DETECT
             when others =>
+
                 NS <= IDLE_DETECT;
 				out_reg_reset <= '0';
                 count_reg_reset <= '0';
@@ -322,13 +328,6 @@ begin
                 elsif (channel_counter = "110") then 
                     out_channel_6 <= temp_output;
                 end if;
-            -- else 
-            --     out_channel_1 <= out_channel_1;
-            --     out_channel_2 <= out_channel_2;
-            --     out_channel_3 <= out_channel_3;
-            --     out_channel_4 <= out_channel_4;
-            --     out_channel_5 <= out_channel_5;
-            --     out_channel_6 <= out_channel_6; 
             end if;
 
             -- Control state probe
@@ -346,9 +345,9 @@ begin
                 state <= "000";
             end if;
 
+           -- Relay probe outputs and channel counter
            probe_done <= done;
            probe_state <= state;
-
            channel_counter_out <= channel_counter;
         
         end if;
