@@ -1,100 +1,160 @@
-/******************************************************************************
-*
-* Copyright (C) 2009 - 2014 Xilinx, Inc.  All rights reserved.
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in
-* all copies or substantial portions of the Software.
-*
-* Use of the Software is limited solely to applications:
-* (a) running on a Xilinx device, or
-* (b) that interact with a Xilinx device through a bus or interconnect.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-* XILINX  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
-* OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-* SOFTWARE.
-*
-* Except as contained in this notice, the name of the Xilinx shall not be used
-* in advertising or otherwise to promote the sale, use or other dealings in
-* this Software without prior written authorization from Xilinx.
-*
-******************************************************************************/
-
-/*
- * helloworld.c: simple test application
- *
- * This application configures UART 16550 to baud rate 9600.
- * PS7 UART (Zynq) is not initialized by this application, since
- * bootrom/bsp configures it to baud rate 115200
- *
- * ------------------------------------------------
- * | UART TYPE   BAUD RATE                        |
- * ------------------------------------------------
- *   uartns550   9600
- *   uartlite    Configurable only in HW design
- *   ps7_uart    115200 (configured by bootrom/bsp)
- */
-
 #include <stdio.h>
 #include "platform.h"
-#include "xil_printf.h"
-#include <inttypes.h>
 #include "xil_io.h"
 
+// Base addresses for AXI registers
+#define PPM_SLV_BASE  0x43C00000  // Base Slave register value
+#define PPM_INPUT_BASE  0x43C00028  // Read Slave registers 10-15
+#define PPM_OUTPUT_BASE 0x43C00010  // Write Slave registers 4-9
+#define SWITCHES_BASE   0x41210000  // Base address for switches
+#define BUTTONS_BASE    0x41200000  // Base address for buttons
 
-int main()
-{
-    init_platform();
+// Buffers for reading and writing PPM data
+UINTPTR ppm_read_buffer[6];
+UINTPTR ppm_write_buffer[6];
 
-//    print("Hello World\n\r");
-//    print("Successfully ran Hello World application");
+// Array to store recorded frames
+#define MAX_FRAMES 2000
+UINTPTR recorded_frames[MAX_FRAMES][6];
+int record_index = 0;
+int play_index = 0;
 
-    UINTPTR Slv = 0x43C00028;
+void read_ppm() {
+	while(1){
+		if(Xil_In32(PPM_SLV_BASE + 8) == 1){
+		    for (int i = 5; i >= 0; i--) {
+		        ppm_read_buffer[i] = Xil_In32(PPM_INPUT_BASE + (i * 4));
+		    }
+		    break;
+		}
+	}
+}
+
+void print_ppm(const char* label, UINTPTR* buffer) {
+    char msg[200];
+    sprintf(msg, "%s: %08X %08X %08X %08X %08X %08X\n\r",
+            label, buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5]);
+    print(msg);
+}
+
+void write_ppm() {
+    UINTPTR Slv = 0x43C0000C;
     char str[50];
     UINTPTR result;
 
+//	while(1){
+		for (int i = 0; i < 6; i++) {
+			Xil_Out32(PPM_OUTPUT_BASE + (i * 4), ppm_write_buffer[i]);
+		}
 
-    while(1){
-    	Xil_Out32(0x43C00000,0x0);
-    	if(Xil_In32(0x43C00008) == 1){
-        	result = Xil_In32(Slv);
-        	sprintf(str, "\n\r result: %08X", result);
-    		print(str);
+/*    	result = Xil_In32(Slv);
+    	sprintf(str, "result: %08X\n\r", result);
+    	print(str);
 
-        	result = Xil_In32(Slv +4);
-        	sprintf(str, " result: %08X", result);
-    		print(str);
+		if(Xil_In32(PPM_SLV_BASE + 12) == 1){
+			break;
+		}
+		print_ppm("PPM Debug", ppm_write_buffer);
 
-        	result = Xil_In32(Slv + 8);
-        	sprintf(str, " result: %08X", result);
-    		print(str);
+	}*/
+}
 
-        	result = Xil_In32(Slv + 12);
-        	sprintf(str, " result: %08X", result);
-    		print(str);
 
-        	result = Xil_In32(Slv + 16);
-        	sprintf(str, " result: %08X", result);
-    		print(str);
+int main() {
+    init_platform();
+    print("RC Control Program Started\n\r");
 
-        	result = Xil_In32(Slv + 20);
-        	sprintf(str, " result: %08X", result);
-    		print(str);
-    	}
+    while (1) {
+        // Read switch and button states
+        UINTPTR switches = Xil_In32(SWITCHES_BASE);
+        UINTPTR buttons = Xil_In32(BUTTONS_BASE);
 
+        // Exit if BTNC is pressed
+        if (buttons & 0x1) {
+            print("Exit button pressed. Exiting...\n\r");
+            break;
+        }
+
+        // Hardware vs. Software Relay Mode (SW0)
+        if (!(switches & 0x1)) {
+//           print("Hardware Relay Mode Active\n\r");
+            Xil_Out32(PPM_SLV_BASE,0x0);
+        } else {
+        	Xil_Out32(PPM_SLV_BASE,0x1);
+            read_ppm();
+            for (int i = 0; i < 6; i++) {
+                ppm_write_buffer[i] = ppm_read_buffer[i];  // Copy input to output
+            }
+            write_ppm();
+ //           print("Software Relay Mode Active\n\r");
+        }
+
+        // Software Debug Mode (SW1)
+        if (switches & 0x2) {
+            read_ppm();
+            print_ppm("PPM Debug", ppm_read_buffer);
+        }
+
+        // Software Record Mode (SW2)
+        if (switches & 0x4) {
+            if (buttons & 0x2 && record_index < MAX_FRAMES) {  // BTND stores
+                read_ppm();
+                for (int i = 0; i < 6; i++) {
+                    recorded_frames[record_index][i] = ppm_read_buffer[i];
+                }
+                record_index++;
+                char msg[50];
+                sprintf(msg, "Frame %d recorded\n\r", record_index);
+                print(msg);
+            }
+            if (buttons & 0x4 && record_index > 0) {  // BTNU rewinds
+                record_index--;
+                char msg[50];
+                sprintf(msg, "Rewind to frame %d\n\r", record_index);
+                print(msg);
+            }
+        }
+
+        // Software Play Mode (SW3)
+        if (switches & 0x8) {
+            if (buttons & 0x8 && play_index < record_index) {  //right button (BTNR)
+                for (int i = 0; i < 6; i++) {
+                    ppm_write_buffer[i] = recorded_frames[play_index][i];
+                }
+                write_ppm();
+                play_index++;
+                char msg[50];
+                sprintf(msg, "Playing frame %d\n\r", play_index);
+                print(msg);
+            }
+            if (buttons & 0x10 && play_index > 0) {  //  left button (BTNL)
+                play_index--;
+                char msg[50];
+                sprintf(msg, "Rewind to play frame %d\n\r", play_index);
+                print(msg);
+            }
+        }
+
+        // Software Filter Mode (SW4)? limit max values?
+        if (switches & 0x10) {
+            read_ppm();
+/*            for (int i = 0; i < 6; i++) {
+                if (ppm_read_buffer[i] > 5000) {  // Example: Limit max value
+                    ppm_read_buffer[i] = 5000;
+                }
+                ppm_write_buffer[i] = ppm_read_buffer[i];
+            }*/
+
+            ppm_read_buffer[2] = ((ppm_read_buffer[2] - 60000)/2 + 60000);
+            ppm_write_buffer[2] = ppm_read_buffer[2];
+
+            write_ppm();
+            print("Filter Mode Active: Processed PPM values\n\r");
+        }
+
+        // Delay to avoid spamming UART
+        for (volatile int i = 0; i < 100000; i++);
     }
-
-
 
     cleanup_platform();
     return 0;
