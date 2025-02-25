@@ -1,9 +1,9 @@
 <h1 style="text-align:center">SB3 MP1 Report</h1>
 
-![diagram](report_assets/project_diagram.png)
-
 Machine Project 1 is an embedded systems design lab with the goal of implementing and deploying a Positional Pulse Modulation (PPM) detection and generate circuit on a Zedboard FPGA using VHDL. This custom circuit had to be able to detect an incoming PPM signal from an HA-T6A RC controller and generate an identical signal. The final project features a C program that allows users to switch between a hardware relay mode, which relays the HA-T6A raw input, and a software relay mode, which relays the generated PPM output. This C program also allows users to debug the PPM detection circuit, record and play controller inputs for UAV flight, and ease flight controls through a filter mode. 
-This report covers the work of section B3 of CPRE 488 and highlights the differences between subsections A and B.
+This report covers the work of section B3 of CPRE 488 and highlights the differences between subsections
+
+![diagram](report_assets/project_diagram.png)
 
 ## In your writeup, describe your experiences in practicing controlling the quad.
 
@@ -16,6 +16,14 @@ We were able to probe the HK-T6A controller with the Picoscope. Analysing the PP
 ![ppm_on_pico](report_assets/PPM_ex.PNG)
 
 From this observation, we measured the channels, interchannels, and overall frame. In general, we found that the interchannels were consistantly around 400 us, the overall frame was roughly 20 ms, and each channel had a maximum pulse width of about 1.1 ms and a minumum pulse width of about 600 us. With all channels set to their maximum width, we would see an minumum idle pulse of 11 ms. 
+
+Testing the controls, we found that each of the channels corresponded to the following controls:
+- CH1: Right joystick (Horizontal)
+- CH2: Right joystick (Vertical)
+- CH3: Left joystick (Vertical)
+- CH4: Left joystick (Horizontal)
+- CH5: Pit Trim
+- CH6: HOV Pit
 
 ## Based on the ZedBoard documentation and your oscilloscope measurement of the trainer port, what concerns do you have about making this connection?
 
