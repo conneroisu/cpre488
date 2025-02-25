@@ -327,3 +327,7 @@ END PROCESS GENERATE_PPM_UPDATE;
 3. **Dedicated Update Processes**: Separate processes handle the transfer of data between the state machines and registers, acting as a bridge between the AXI domain and the functional logic.
 
 4. **Synchronous Updates**: All updates happen synchronously with the AXI clock, ensuring consistent timing between the bus interface and the internal state machines.
+
+
+## Bonus Credit
+We did not attempt any bonus credit for this lab. 
