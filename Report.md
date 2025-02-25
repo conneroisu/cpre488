@@ -2,7 +2,7 @@
 
 ## In your writeup, describe your experiences in practicing controlling the quad.
 
-We found that flying the drone wasn't too hard, but rather, the hardware was the most problematic part of controlling the quadcopter. Trying to learn how to fly the drone with multiple quadcopters that had broken motors or battery problems turned out to be quite a task. Even at max throttle, most batteries we used couldn't lift the drone off the ground. It also took us too long of a time to realize that the trim of our left joystick was too high, preventing us from moving backward or keeping the drone stable.
+We found that flying the drone wasn't too hard, but rather, the hardware was the most problematic part of controlling the quadcopter. Trying to learn how to fly the drone with multiple quadcopters that had broken motors or battery problems turned out to be quite a task. Even at max throttle, most batteries we used couldn't lift the drone off the ground. It also took us too long of a time to realize that the trim of our right joystick was too high, preventing us from moving backward or keeping the drone stable.
 
 ## In your writeup, describe the PPM signals. What do each of the channels correspond to, and what are their minimum and maximum ranges? What is the total length of the individual PPM frames, and what is the minimum length of the idle pulse?
 
