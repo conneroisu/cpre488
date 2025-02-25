@@ -115,6 +115,7 @@ TODO: elaborate (and add code?)
 
 #### PPM Generator State Machine
 
+TODO: Generator State Machine stuffs
 
 ### Sub-section B:
 
