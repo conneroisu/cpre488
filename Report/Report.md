@@ -58,7 +58,7 @@ The AMBA AXI IP is connected to the Zynq processor on the main design through an
 
 For example, with a 32-bit data bus, the design decodes address bits `[5:2]` to select among the 16 registers. The decoded value creates a 4-bit index (b"0000" to b"1111") that selects registers slv_reg0 through slv_reg15.
 
-- [x] How does the PPM state machine get access to the IP core's Memory Mapped registers:
+## How does the PPM state machine get access to the IP core's Memory Mapped registers:
 
 ### Write Enable Process
 
@@ -149,8 +149,26 @@ TODO: Generator State Machine stuffs
 
 ### Subsection B:
 
-#### PPM Detector State Machine Access
+#### PPM Detector State Machine
 
+##### State Diagram
+Below is the state diagram for the PPM Detector FSM:
+
+![PPM Detect FSM State Diagram](report_assets/PPM_Detect.png)
+
+**Output Description**
+The outputs `c_rst_n, c_en` are the reset and enable signals respectively for the pulse counter. The pulse counter determines how long a PPM pulse lasts for in units of clock counts. The counter value is an output from the FSM that is provided to the registers that contain the PPM pulse widths. The `chan_read` output acts as the write enable for the registers that will store the PPM values.
+
+**Input Description**
+The input `start` determines when the FSM should leave the `NOT_STARTED` state. This allows the C program to control when the FSM runs. The input `ppm` is the current PPM value read from the RC controller. This is used to determine when a PPM pulse starts or ends. In the final design, the `PPM` input is driven by a counter that counts how many clock cycles the real `PPM` input has been high or low for. Then, the counter only outputs the `PPM` signal when the real `PPM` signal has been high or low for a certain amount of clock cycles. This helps combat noisy signals and makes sure the FSM doesn't transition when it should not. The input `all_chan` indicates when all 6 of the channels (or pulses) have been counted. Once we have counted all 6, the FSM can return to its `NOT_STARTED` state since it has finished. Finally the `idle` input indicates when the idle pulse has been seen. To synchronize the channel reads, the circuit must identify where the idle pulse is. Once the idle pulse is identified it is know that the next seen pulse will be channel 1. To detect the idle pulse, the pulse counter is used, but there exists a special condition. The FSM input `idle` is only asserted when a pulse 5 ms or longer has been detected by the pulse counter.
+
+**State Description**
+There are seven states in this FSM: `NOT_STARTED, WAIT_IDLE, COUNT_IDLE, DONE_IDLE, WAIT, COUNT, DONE`.
+
+**NOT_STARTED**
+
+
+##### Brief VHDL Description
 The PPM detector state machine (`detect_fsm`) is instantiated in the AXI interface module and connected directly to certain signals and registers:
 
 ```vhdl
@@ -198,7 +216,7 @@ BEGIN
 END PROCESS DETECT_PPM_UPDATE;
 ```
 
-#### PPM Generator State Machine Access
+#### PPM Generator State Machine
 
 The PPM generator state machine is similarly instantiated and connected:
 
@@ -252,12 +270,12 @@ END PROCESS GENERATE_PPM_UPDATE;
 
 4. **Synchronous Updates**: All updates happen synchronously with the AXI clock, ensuring consistent timing between the bus interface and the internal state machines.
 
-- [x] Generator Implementation:
+## Generator Implementation:
 
 ![generate-state-machine-diagram.png](generate-state-machine-diagram.png)
 
 TODO: Maybe point towards the file within the repo instead of having the code in the report?
 
-- [ ] Detection implementation
+## Detection implementation
 
 ![channel_shifting.png](channel_shifting.png) 
