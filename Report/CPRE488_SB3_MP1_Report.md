@@ -145,7 +145,7 @@ Below is a diagram which illustrates the detector FSM.
 
 #### PPM Generator State Machine
 
-![sub_a_generate_fsm](report_assets/MP1Generate.drawio.png)
+![sub_a_generate_fsm|center](report_assets/MP1Generate.drawio.png)
 
 
 The Generate PPM works by running four different processes. The first one is the standard present state to new state logic. This state is used to move between states. The next process was the logic to determine that next state. This process ensured that the low pulses were 400μs, the high pulse output the duration of the intended register, and an idle pulse for the remainder of the duration of the 20ms frame. This was all done in a non-clocked process, which used a data set in the next clocked process. This was where the main logic of the FSM was done. This clocked process incremented counters, reset values, and determined the output, all based on the current state. With the final process setting the register values of the output. This FSM received the output of the capture, the recorded values in play mode, and the filtered values in filter mode and outputted the 6-channel response over the PMOD. 
