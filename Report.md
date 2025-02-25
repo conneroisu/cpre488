@@ -1,5 +1,10 @@
 <h1 style="text-align:center">SB3 MP1 Report</h1>
 
+![diagram](report_assets/project_diagram.png)
+
+Machine Project 1 is an embedded systems design lab with the goal of implementing and deploying a Positional Pulse Modulation (PPM) detection and generate circuit on a Zedboard FPGA using VHDL. This custom circuit had to be able to detect an incoming PPM signal from an HA-T6A RC controller and generate an identical signal. The final project features a C program that allows users to switch between a hardware relay mode, which relays the HA-T6A raw input, and a software relay mode, which relays the generated PPM output. This C program also allows users to debug the PPM detection circuit, record and play controller inputs for UAV flight, and ease flight controls through a filter mode. 
+This report covers the work of section B3 of CPRE 488 and highlights the differences between subsections A and B.
+
 ## In your writeup, describe your experiences in practicing controlling the quad.
 
 We found that flying the drone wasn't too hard, but rather, the hardware was the most problematic part of controlling the quadcopter. Trying to learn how to fly the drone with multiple quadcopters that had broken motors or battery problems turned out to be quite a task. Even at max throttle, most batteries we used couldn't lift the drone off the ground. It also took us too long of a time to realize that the trim of our right joystick was too high, preventing us from moving backward or keeping the drone stable.
