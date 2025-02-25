@@ -12,7 +12,6 @@ We were able to probe the HK-T6A controller with the Picoscope. Analysing the PP
 
 From this observation, we measured the channels, interchannels, and overall frame. In general, we found that the interchannels were consistantly around 400 us, the overall frame was roughly 20 ms, and each channel had a maximum pulse width of about 1.1 ms and a minumum pulse width of about 600 us. With all channels set to their maximum width, we would see an minumum idle pulse of 11 ms. 
 
-
 ## Based on the ZedBoard documentation and your oscilloscope measurement of the trainer port, what concerns do you have about making this connection?
 
 TODO: Were there any other major issues?
@@ -21,9 +20,9 @@ The only real issue was VCC mismatch between the two systems - the HA-T6A contro
 
 ## In your write up, provide a structural diagram of the axi_ppm design, from the top-level AMBA AXI interface down to where you user logic will reside. 
 
-Attached below is a figure that represents the structure of our custom AMBA AXI4-Lite IP for the axi_ppm design for sub-section A. At the highest level, we instantiated our RTL for our PPM capture and generate FSMs. We also created probes that were accessible by ILAs on the main design. However, it should be noted that the probes were removed once the AXI was functioning as expected. Additional signals were used to connect the FSM outputs and inputs to the AXI slave instatiation. In the slave, FSM inputs are relayed to their respective slave registers, which in turn are configured to be accessed by software. An additional mux was described to switch between software and hardware relay modes. 
+Attached below is a figure that represents the structure of our custom AMBA AXI4-Lite IP for the axi_ppm design for subsection A. At the highest level, we instantiated our RTL for our PPM capture and generate FSMs. We also created probes that were accessible by ILAs on the main design. However, it should be noted that the probes were removed once the AXI was functioning as expected. Additional signals were used to connect the FSM outputs and inputs to the AXI slave instatiation. In the slave, FSM inputs are relayed to their respective slave registers, which in turn are configured to be accessed by software. An additional mux was described to switch between software and hardware relay modes. 
 
-It should be noted that sub-section B deviated in this design by instantiating their PPM capture and generate FSMs in the slave instatiation instead of at the top level. In hindsight, we believe this was the better approach as it eliminated the need for excess signals at the top level. 
+It should be noted that subsection B deviated in this design by instantiating their PPM capture and generate FSMs in the slave instatiation instead of at the top level. In hindsight, we believe this was the better approach as it eliminated the need for excess signals at the top level. 
 
 ![axi_ppm_top](report_assets/AXI.png)
 
@@ -31,7 +30,10 @@ It should be noted that sub-section B deviated in this design by instantiating t
 
 ### Address decoding 
 
-TODO: Do we want to go into specifics regarding the things we changed in the slave AXI to enable read and write for slv_reg?
+The design uses address bits [ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] to select which register to access:
+
+- `ADDR_LSB` is set to (`C_S_AXI_DATA_WIDTH`/32) + 1, which is typically 2 for 32-bit buses (addressing by words)
+- `OPT_MEM_ADDR_BITS` is set to 3, allowing for 16 registers ($2^4 = 16$)
 
 The AMBA AXI IP is connected to the Zynq processor on the main design through an AXI interconnect. This connection allows for a base address to be mapped for the IP which enables software access to the 16 slave registers (slv_reg) instantiated in the slave AXI. In order to access the individual slave registers, we had to introduce an appropriate offset to the address. In our case, it was + 0x4 per register. We believed this to be the case as the slave register sizes were set to 32 bits, or 4 bytes. So, for our design, since the base address for the AXI IP was 0x43C00000, our subsequent registers were mapped as such;
 
@@ -41,18 +43,9 @@ The AMBA AXI IP is connected to the Zynq processor on the main design through an
  ... \
  slv_regX = 0x43C00000 + (4 * X)
 
-TODO: Merge?
-
-The design uses address bits [ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] to select which register to access:
-
-- `ADDR_LSB` is set to (`C_S_AXI_DATA_WIDTH`/32) + 1, which is typically 2 for 32-bit buses (addressing by words)
-- `OPT_MEM_ADDR_BITS` is set to 3, allowing for 16 registers ($2^4 = 16$)
-
 For example, with a 32-bit data bus, the design decodes address bits `[5:2]` to select among the 16 registers. The decoded value creates a 4-bit index (b"0000" to b"1111") that selects registers slv_reg0 through slv_reg15.
 
 - [x] How does the PPM state machine get access to the IP core's Memory Mapped registers:
-
--------------------
 
 ### Write Enable Process
 
@@ -105,11 +98,35 @@ loc_addr := axi_araddr(ADDR_LSB + OPT_MEM_ADDR_BITS DOWNTO ADDR_LSB);
 
 ## Starting from the generic FSMs in your HW-1 write-up, update the User Logic module such that the design can appropriately capture and generate PPM values for the Hobby King 6ch transmitter as described above.
 
-TODO: Add stuff for generate PPM, I also think we should include all of our FSMs since they seem pretty different
+Sicne both subsections worked individually on this lab, our approaches to finite state machines for PPM detection and generation design were relatively different. For that reason, we've decided to include both groups' work in this report. 
 
-### Sub-section A:
+### Subsection A:
 #### PPM Capture State Machine 
-TODO: elaborate (and add code?)
+
+The PPM detect state machine (`Capture_PPM_simp.vhd`) is instantiated in the AXI interface model and relayed into the AXI slave and the respective registers.
+
+```vhdl
+Capture_PPM_simp_inst : Capture_PPM_simp
+    port map (
+        PPM_Input => PPM_Input,
+        CLK => s00_axi_aclk,
+        CLR => s00_axi_aresetn,
+        out_channel_1 => PPM_capture_input_0,
+        out_channel_2 => PPM_capture_input_1,
+        out_channel_3 => PPM_capture_input_2,
+        out_channel_4 => PPM_capture_input_3,
+        out_channel_5 => PPM_capture_input_4,
+        out_channel_6 => PPM_capture_input_5,
+
+        probe_state => capture_state_probe,
+        probe_done => PPM_capture_done,
+        channel_counter_out => PPM_capture_channel_counter
+    );
+```
+
+This detector FSM recieves a PPM signal from the controller inputs sent in from PPM_Input. The state machine will then parse the PPM signal assuming the idle segment of the signal is greater than 5 ms. In order to avoid debouncing errors, a shift register is used to ensure the PPM input has been high or low for 20 cycles. A 32-bit internal counter is used to measure channel widths. Individual channels are latched to individual output registers which are then relayed to their respective slave registers in the AMBA AXI slave (slv_reg10 through slv_reg15). Additionally, a done signal is produced when a frame is completed. This output is fed into slv_reg2 in the AMBA AXI slave. A probe for the current state and channel counter was implemented as well for real-time troubleshooting. 
+
+Below is a diagram which illustrates the detector FSM. 
 
 ![sub_a_capture_fsm](report_assets/PPM_capture_FSM_trim.png)
 
@@ -117,7 +134,7 @@ TODO: elaborate (and add code?)
 
 TODO: Generator State Machine stuffs
 
-### Sub-section B:
+### Subsection B:
 
 #### PPM Detector State Machine Access
 
@@ -225,7 +242,10 @@ END PROCESS GENERATE_PPM_UPDATE;
 - [x] Generator Implementation:
 
 ![generate-state-machine-diagram.png](generate-state-machine-diagram.png)
-After breaking apart some generic types and constants in user_defines, we defined our `generate_fsm` module as follows:
+
+TODO: Maybe point towards the file within the repo instead of having the code in the report?
+
+<!-- After breaking apart some generic types and constants in user_defines, we defined our `generate_fsm` module as follows:
 
 ```vhdl
 LIBRARY IEEE;
@@ -402,4 +422,4 @@ Our testbench implementation further proved our functionality:
 
 - [ ] Detection implementation
 
-![channel_shifting.png](channel_shifting.png)
+![channel_shifting.png](channel_shifting.png) -->
