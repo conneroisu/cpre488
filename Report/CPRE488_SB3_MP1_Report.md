@@ -139,6 +139,25 @@ Capture_PPM_simp_inst : Capture_PPM_simp
 
 This detector FSM receives a PPM signal from the controller inputs sent in from PPM_Input. The state machine will then parse the PPM signal assuming the idle segment of the signal is greater than 5 ms. In order to avoid debouncing errors, a shift register is used to ensure the PPM input has been high or low for 20 cycles. A 32-bit internal counter is used to measure channel widths. Individual channels are latched to individual output registers which are then relayed to their respective slave registers in the AMBA AXI slave (slv_reg10 through slv_reg15). Additionally, a done signal is produced when a frame is completed. This output is fed into slv_reg2 in the AMBA AXI slave. A probe for the current state and channel counter was implemented as well for real-time troubleshooting. 
 
+For further technical details, this FSM is built with three processes. Two clocked processes for counters and register control, and a non-clocked process for the state machine. The state machine is as follows;
+
+**IDLE_DETECT**
+This is the anti-mid-frame logic which counts to 5 ms during a consecutive high input before moving to the next state, IDLE.
+
+**IDLE**
+The IDLE state indicates the that the current PPM signal is sitting at the idle segment where no channels are being communicated. This state looks for a stable low before continuing to the first interchannel.
+
+**INTERCHANNEL**
+Depending on the number of channels that has been counted, the interchannel will look for a stable high before continuing to either the idle detection state if all 6 channels have been found, or the measure state if less than 6 channels have been found. 
+
+**MEASURE**
+Signaling to an internal counter, this state begins the measuring stage for a counter and looks for a valid low. Once that value is detected, the state machine moves to the storage state. 
+
+**STORE**
+This state takes a clock cycle to signal to the register control process to update registers. This state will return to the interchannel state. 
+
+The file `Capture_PPM_simp.vhd` will have further comments on the functions of the register and counter control processes. 
+
 Below is a diagram which illustrates the detector FSM. 
 
 ![sub_a_capture_fsm|center](report_assets/PPM_capture_FSM_trim.png)
@@ -149,7 +168,6 @@ Below is a diagram which illustrates the detector FSM.
 
 
 The Generate PPM works by running four different processes. The first one is the standard present state to new state logic. This state is used to move between states. The next process was the logic to determine that next state. This process ensured that the low pulses were 400μs, the high pulse output the duration of the intended register, and an idle pulse for the remainder of the duration of the 20ms frame. This was all done in a non-clocked process, which used a data set in the next clocked process. This was where the main logic of the FSM was done. This clocked process incremented counters, reset values, and determined the output, all based on the current state. With the final process setting the register values of the output. This FSM received the output of the capture, the recorded values in play mode, and the filtered values in filter mode and outputted the 6-channel response over the PMOD. 
-
 ### Subsection B:
 
 #### PPM Detector State Machine
