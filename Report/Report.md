@@ -187,7 +187,7 @@ This state is identical to `COUNT_IDLE` as it indicates that the FSM is counting
 This state is similar to `DONE_IDLE` as it indicates that the FSM is done counting a pulse. Upon transitioning to this state, the pulse width has been saved to an external register. A counter separate from the pulse counter is counting how many channels have been read. Once all the channels have been read, the FSM will go back to the `NOT_STARTED` state. If more channels need to be read, the entire channel reading process (minus detecting the idle pulse) will repeat.
 
 ##### Brief VHDL Description
-The PPM detector state machine (`detect_fsm`) is instantiated in the AXI interface module and connected directly to certain signals and registers:
+The PPM detector state machine (`detect_fsm`) is instantiated in the AXI slave interface module and has its ports connected to signals/ports defined in the slave interface.
 
 ```vhdl
 detect_fsm : ENTITY ppm.detect_fsm PORT MAP
@@ -207,7 +207,7 @@ The detector FSM:
 - Receives a start signal from slv_reg0 bit 1 (`i_start => slv_reg0(1)`)
 - Outputs the pulse counts via `s_ppm_count`
 - Indicates which register to update via `s_detect_reg_sel`
-- Signals when a channel has been read via `s_channel_read`
+- Signals when a channel has been read via `s_channel_read`, which acts as the write enable for slave registers 2 through 7.
 
 The results from the detector are then written to the appropriate registers (`slv_reg2` through `slv_reg7`) in a dedicated process:
 
@@ -234,6 +234,46 @@ BEGIN
 END PROCESS DETECT_PPM_UPDATE;
 ```
 
+Inside the `detect_fsm` module exists the FSM itself, the pulse counter, the channel counter, the PPM pulse start counter, and the PPM pulse end counter. As previously mentioned, the pulse counter is in charge of counting the pulse widths of the idle pulse and channel pulses. Then the channel counter is in charge of keeping track of which channel is being counted, which determines the `s_detect_reg_sel` value. Then the PPM pulse start counter is in charge of determining when a PPM pulse has started. Since the raw PPM signal is a bit messy, it is needed to see if the PPM signal is high for a certain number of clock cycles. Once this condition is true, we can confidently say that we have detected the start of a PPM pulse. Similar to the PPM pulse start counter, the PPM pulse end counter is in charge of determining when a PPM pulse has ended. This is achieved the same way as the PPM pulse start counter, but it looks for PPM being low instead of high.
+
+The VHDL for the pulse width counter and the channel counter is shown below:
+```vhdl
+  -- Pulse Width Counter
+  PULSE_WIDTH_COUNTER : process(s_pulse_counter_rst_n, i_clk) is
+  begin
+    -- Async reset
+    if(s_pulse_counter_rst_n = '0') then
+      s_count <= (others => '0');
+    elsif(rising_edge(i_clk)) then
+    
+      -- Only count when enabled.
+      if(s_pulse_counter_en = '1') then
+        s_count <= STD_LOGIC_VECTOR(UNSIGNED(s_count) + 1);
+      end if;
+    end if;
+  end process PULSE_WIDTH_COUNTER;
+```
+
+```vhdl
+  -- Channel counter
+  CHANNEL_COUNTER : process(i_rst_n, i_clk) is
+  begin
+    -- Async reset
+    if(i_rst_n = '0') then
+      s_chan <= (others => '0');
+    elsif(rising_edge(i_clk)) then
+    
+      -- If last channel has been counted, reset
+      if(s_chan = LAST_CHANNEL_CONDITION) then
+        s_chan <= (others => '0');
+      elsif(s_channel_read = '1') then
+        s_chan <= STD_LOGIC_VECTOR(UNSIGNED(s_chan) + 1);
+      end if;
+    end if;
+  end process CHANNEL_COUNTER;
+```
+
+The rest of the VHDL can be found in our submission. Many sections were left out here since they are quite large and would bloat this document.
 #### PPM Generator State Machine
 
 The PPM generator state machine is similarly instantiated and connected:
@@ -287,13 +327,3 @@ END PROCESS GENERATE_PPM_UPDATE;
 3. **Dedicated Update Processes**: Separate processes handle the transfer of data between the state machines and registers, acting as a bridge between the AXI domain and the functional logic.
 
 4. **Synchronous Updates**: All updates happen synchronously with the AXI clock, ensuring consistent timing between the bus interface and the internal state machines.
-
-## Generator Implementation:
-
-![generate-state-machine-diagram.png](generate-state-machine-diagram.png)
-
-TODO: Maybe point towards the file within the repo instead of having the code in the report?
-
-## Detection implementation
-
-![channel_shifting.png](channel_shifting.png) 
