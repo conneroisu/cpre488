@@ -1,0 +1,9 @@
+.obsdian
+.obsidian/**
+!.obsidian/snippets
+!.obsidian/snippets/**
+!.obsidian/plugins
+!.obsidian/plugins/**
+
+submission/
+submission/**
