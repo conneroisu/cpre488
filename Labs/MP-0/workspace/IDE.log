@@ -116,3 +116,15 @@ con
 ----------------End of Script----------------
 
 19:07:23 INFO  : Launch script is exported to file 'C:\Users\jaxie963\cpre488\Labs\MP-0\workspace\.sdk\launch_scripts\single_application_debug\systemdebugger_nes_please_system_standalone.tcl'
+17:04:16 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\oparker\cpre488\Labs\MP-0\workspace\temp_xsdb_launch_script.tcl
+17:04:18 INFO  : XSCT server has started successfully.
+17:04:18 INFO  : plnx-install-location is set to ''
+17:04:18 INFO  : Successfully done setting XSCT server connection channel  
+17:04:18 INFO  : Successfully done setting workspace for the tool. 
+17:04:21 ERROR : Error encountered while initializing user repository paths
+Reason: No Platforms Found.
+
+
+17:04:21 INFO  : Platform repository initialization has completed.
+17:04:21 INFO  : Registering command handlers for Vitis TCF services
+17:04:24 INFO  : Successfully done query RDI_DATADIR 
