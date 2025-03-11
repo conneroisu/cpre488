@@ -44,29 +44,6 @@
         inherit inputs pkgs;
         modules = [
           {
-            # shell.nix
-            devcontainer = {
-              enable = true;
-              settings.customizations.vscode.extensions = [
-                "github.copilot"
-                "github.codespaces"
-                "ms-python.vscode-pylance"
-                "redhat.vscode-yaml"
-                "redhat.vscode-xml"
-                "visualstudioexptteam.vscodeintellicode"
-                "bradlc.vscode-tailwindcss"
-                "christian-kohler.path-intellisense"
-                "supermaven.supermaven"
-                "jnoortheen.nix-ide"
-                "mkhl.direnv"
-                "tamasfe.even-better-toml"
-                "eamodio.gitlens"
-                "streetsidesoftware.code-spell-checker"
-                "editorconfig.editorconfig"
-                "ms-vscode.cpptools"
-              ];
-            };
-
             packages = with pkgs;
               [
                 nixd
